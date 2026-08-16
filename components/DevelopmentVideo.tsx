@@ -1,19 +1,18 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import Image from "next/image";
-import { Play, Pause, Volume2, VolumeX, Maximize, Sparkles, CheckCircle2, ShieldCheck, MapPin, Compass } from "lucide-react";
+import React, { useRef, useState } from "react";
+import { Play, Pause, Volume2, VolumeX, Maximize, Sparkles, MapPin, ArrowRight, ShieldCheck } from "lucide-react";
 
 interface DevelopmentVideoProps {
   onOpenEnquiry: (source?: string) => void;
 }
 
 export const DevelopmentVideo: React.FC<DevelopmentVideoProps> = ({ onOpenEnquiry }) => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(true);
 
-  const handleTogglePlay = () => {
+  const togglePlay = () => {
     if (!videoRef.current) return;
     if (isPlaying) {
       videoRef.current.pause();
@@ -24,7 +23,7 @@ export const DevelopmentVideo: React.FC<DevelopmentVideoProps> = ({ onOpenEnquir
     }
   };
 
-  const handleToggleMute = () => {
+  const toggleMute = () => {
     if (!videoRef.current) return;
     videoRef.current.muted = !isMuted;
     setIsMuted(!isMuted);
@@ -38,154 +37,92 @@ export const DevelopmentVideo: React.FC<DevelopmentVideoProps> = ({ onOpenEnquir
   };
 
   return (
-    <section id="development" className="py-24 lg:py-32 bg-gradient-to-b from-forest-950 via-forest-900 to-forest-950 text-white relative overflow-hidden">
-      {/* Background Ambient Glow Orbs */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-gold-500/10 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-96 h-96 bg-emerald-600/10 rounded-full blur-[120px] pointer-events-none" />
-
+    <section id="development" className="py-24 lg:py-32 bg-[#F7F9F6] text-forest-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-forest-900/90 border border-gold-500/40 text-gold-300 text-xs font-bold uppercase tracking-widest shadow-lg shadow-gold-500/10">
-            <Sparkles className="w-3.5 h-3.5 text-gold-400 animate-pulse" />
-            Actual Site & Township Video
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full neu-glass border border-white/90 text-emerald-800 text-xs font-bold uppercase tracking-widest shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+            Actual Site Cinema
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-white tracking-tight leading-tight">
-            See The Development <span className="gold-text-gradient">For Yourself</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
+            Experience <span className="green-text-gradient">The Aurora Hills Drone Tour</span>
           </h2>
-          <p className="text-sand-200 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-            Experience the panoramic landscape, wide internal avenues, lush green surroundings, and prime Dharwad connectivity in action.
+          <p className="text-charcoal-700 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
+            Take a cinematic aerial flight over the development, inspect paved avenues, hill terrain, and actual project boundaries.
           </p>
         </div>
 
-        {/* 16:9 Cinematic Video Theater */}
-        <div className="max-w-5xl mx-auto">
-          <div className="relative rounded-3xl overflow-hidden border border-gold-500/30 shadow-[0_20px_60px_rgba(0,0,0,0.7)] bg-black aspect-video group">
-            {/* HTML5 Native Video Tag */}
+        {/* Cinematic Video Player Frame */}
+        <div className="max-w-5xl mx-auto rounded-3xl overflow-hidden neu-card border border-white/90 p-3 sm:p-4 shadow-2xl relative">
+          <div className="relative aspect-video rounded-2xl overflow-hidden bg-black shadow-inner">
             <video
               ref={videoRef}
               src="/aurora-hills.mp4"
               poster="/images/hero-aerial.jpg"
-              playsInline
               preload="metadata"
+              playsInline
+              muted={isMuted}
+              loop
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
-              className="w-full h-full object-cover cursor-pointer"
-              onClick={handleTogglePlay}
+              className="w-full h-full object-cover"
             />
 
-            {/* Poster / Play Overlay when video is not yet started */}
+            {/* Ambient Vignette Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 pointer-events-none" />
+
+            {/* Center Big Play Button Overlay (when paused) */}
             {!isPlaying && (
-              <div 
-                className="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/40 to-transparent flex flex-col items-center justify-center p-6 text-center cursor-pointer transition-all duration-300 group-hover:bg-forest-950/60"
-                onClick={handleTogglePlay}
+              <button
+                onClick={togglePlay}
+                className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-[2px] transition-all group"
+                aria-label="Play Site Tour Video"
               >
-                {/* Glowing Circular Play Button */}
-                <div className="relative">
-                  <div className="absolute -inset-4 rounded-full bg-gold-400/30 blur-lg animate-pulse" />
-                  <button
-                    onClick={handleTogglePlay}
-                    className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-gold-500 via-gold-400 to-amber-300 text-forest-950 flex items-center justify-center shadow-2xl transform transition-all duration-300 group-hover:scale-110 active:scale-95 group-hover:shadow-gold-500/50"
-                    aria-label="Play Drone Video"
-                  >
-                    <Play className="w-9 h-9 sm:w-11 sm:h-11 fill-current ml-1" />
-                  </button>
+                <div className="w-20 h-20 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                  <Play className="w-8 h-8 fill-current ml-1" />
                 </div>
-
-                <div className="mt-8 space-y-2">
-                  <h3 className="text-xl sm:text-2xl font-bold font-serif text-white tracking-wide">
-                    The Aurora Hills Official Video
-                  </h3>
-                  <p className="text-xs sm:text-sm text-gold-200/90 max-w-md mx-auto">
-                    Mansur & Sanna Somapura, Dharwad • Starting from ₹35.99 Lakhs
-                  </p>
-                </div>
-
-                <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-                  <span className="inline-flex items-center gap-1.5 text-xs bg-forest-900/90 text-emerald-300 px-3.5 py-1.5 rounded-full border border-emerald-500/30 backdrop-blur-md">
-                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                    NA-KJP & HDUDA Approved
-                  </span>
-                  <span className="inline-flex items-center gap-1.5 text-xs bg-forest-900/90 text-gold-300 px-3.5 py-1.5 rounded-full border border-gold-500/30 backdrop-blur-md">
-                    <MapPin className="w-3.5 h-3.5 text-gold-400" />
-                    Near NH-4 Highway
-                  </span>
-                </div>
-              </div>
+              </button>
             )}
 
-            {/* Custom Interactive HUD Controls (Visible when playing or on hover) */}
-            <div className={`absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-center justify-between transition-opacity duration-300 z-20 ${isPlaying ? "opacity-0 group-hover:opacity-100" : "opacity-0"}`}>
+            {/* Bottom Controls Bar */}
+            <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 flex items-center justify-between gap-4 text-white z-10">
               <div className="flex items-center gap-3">
                 <button
-                  onClick={handleTogglePlay}
-                  className="p-3 rounded-full bg-gold-500 text-forest-950 hover:bg-gold-400 transition-colors shadow-lg"
-                  title={isPlaying ? "Pause" : "Play"}
+                  onClick={togglePlay}
+                  className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md transition-colors"
+                  aria-label={isPlaying ? "Pause" : "Play"}
                 >
-                  {isPlaying ? <Pause className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5 fill-current ml-0.5" />}
+                  {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 fill-current ml-0.5" />}
                 </button>
 
                 <button
-                  onClick={handleToggleMute}
-                  className="p-3 rounded-full bg-forest-900/80 text-white hover:text-gold-400 border border-forest-700 transition-colors backdrop-blur-md"
-                  title={isMuted ? "Unmute" : "Mute"}
+                  onClick={toggleMute}
+                  className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md transition-colors"
+                  aria-label={isMuted ? "Unmute" : "Mute"}
                 >
-                  {isMuted ? <VolumeX className="w-5 h-5 text-red-400" /> : <Volume2 className="w-5 h-5" />}
+                  {isMuted ? <VolumeX className="w-4 h-4 text-red-400" /> : <Volume2 className="w-4 h-4" />}
                 </button>
 
-                <span className="text-xs font-semibold text-sand-200 hidden sm:inline-block ml-2">
-                  The Aurora Hills • Live Site Visual
-                </span>
+                <div className="hidden sm:block text-xs font-semibold">
+                  <span>The Aurora Hills • Dharwad Drone Tour</span>
+                </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <button
-                  onClick={() => onOpenEnquiry("Video Showcase Player")}
-                  className="px-4 py-2 rounded-full bg-forest-900/90 hover:bg-gold-500 hover:text-forest-950 text-gold-300 border border-gold-500/40 text-xs font-bold transition-all"
-                >
-                  Enquire for Plot
-                </button>
-
                 <button
                   onClick={handleFullscreen}
-                  className="p-3 rounded-full bg-forest-900/80 text-white hover:text-gold-400 border border-forest-700 transition-colors backdrop-blur-md"
-                  title="Fullscreen"
+                  className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md transition-colors"
+                  aria-label="Fullscreen"
                 >
-                  <Maximize className="w-5 h-5" />
+                  <Maximize className="w-4 h-4" />
                 </button>
-              </div>
-            </div>
-          </div>
 
-          {/* Quick Development Highlights under video */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-forest-900/80 to-forest-950 border border-forest-800 hover:border-gold-500/30 transition-all flex items-center gap-3.5 shadow-xl">
-              <div className="w-10 h-10 rounded-xl bg-gold-500/10 border border-gold-500/30 flex items-center justify-center flex-shrink-0 text-gold-400">
-                <Compass className="w-5 h-5" />
-              </div>
-              <div className="text-xs">
-                <span className="font-bold text-white text-sm block">Centralized Layout</span>
-                <span className="text-sand-200">Organized 30ft/40ft road grid & demarcated plots</span>
-              </div>
-            </div>
-
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-forest-900/80 to-forest-950 border border-forest-800 hover:border-gold-500/30 transition-all flex items-center gap-3.5 shadow-xl">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400">
-                <CheckCircle2 className="w-5 h-5" />
-              </div>
-              <div className="text-xs">
-                <span className="font-bold text-white text-sm block">1.5 Lakh L Overhead Tank</span>
-                <span className="text-sand-200">Dedicated round-the-clock water supply infra</span>
-              </div>
-            </div>
-
-            <div className="p-5 rounded-2xl bg-gradient-to-br from-forest-900/80 to-forest-950 border border-forest-800 hover:border-gold-500/30 transition-all flex items-center gap-3.5 shadow-xl">
-              <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400">
-                <ShieldCheck className="w-5 h-5" />
-              </div>
-              <div className="text-xs">
-                <span className="font-bold text-white text-sm block">Ready For Site Visits</span>
-                <span className="text-sand-200">Complimentary pickup from Dharwad / CBT</span>
+                <button
+                  onClick={() => onOpenEnquiry("Video Section CTA")}
+                  className="hidden sm:flex px-4 py-2 rounded-full bg-gradient-to-r from-emerald-600 to-green-500 text-white text-xs font-bold uppercase tracking-wider shadow-md hover:scale-105 transition-transform"
+                >
+                  Reserve a Plot
+                </button>
               </div>
             </div>
           </div>

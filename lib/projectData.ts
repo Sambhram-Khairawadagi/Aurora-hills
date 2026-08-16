@@ -334,6 +334,9 @@ export const CONTACT_NUMBERS = [
   "9242508288"
 ];
 
+export const WHATSAPP_NUMBER = "919019765265";
+export const EMAIL_ADDRESS = "sales@theaurorahills.com";
+
 export const PARTNERS_INFO = {
   propertyBasket: {
     name: "PROPERTY BASKET",

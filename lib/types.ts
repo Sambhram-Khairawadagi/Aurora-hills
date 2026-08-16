@@ -65,9 +65,10 @@ export interface SiteSettings {
   whatsapp_number: string;
   announcement_text: string;
   hero_title: string;
-  hero_subtitle: string;
+  hero_subtitle?: string;
   project_location: string;
-  village_details: string;
+  village_details?: string;
+  map_url?: string;
   approvals: string[];
   brochure_url: string;
 }

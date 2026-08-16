@@ -96,7 +96,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#040d07] text-[#f3f5f4] selection:bg-gold-500 selection:text-forest-950 font-sans antialiased relative selection:font-bold">
+    <div className="min-h-screen bg-[#F7F9F6] text-[#14281D] selection:bg-emerald-600 selection:text-white font-sans antialiased relative">
       {/* Top Navbar */}
       <Navbar
         onOpenEnquiry={handleOpenEnquiry}
@@ -105,7 +105,7 @@ export default function HomePage() {
       />
 
       <main className="relative z-10">
-        {/* Hero Section */}
+        {/* Hero Section with Three.js 3D Background */}
         <Hero
           onOpenEnquiry={handleOpenEnquiry}
           onOpenVideo={handleOpenVideo}
@@ -136,7 +136,7 @@ export default function HomePage() {
         {/* Categorized Amenities */}
         <Amenities onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* Curated Master Plan Viewer */}
+        {/* Curated Master Plan Viewer with Three.js 3D WebGL */}
         <MasterPlanViewer
           onOpenEnquiry={handleOpenEnquiry}
           onOpenBrochure={handleOpenBrochure}

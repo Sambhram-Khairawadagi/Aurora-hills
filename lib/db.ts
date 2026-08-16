@@ -80,9 +80,9 @@ const defaultSettings: SiteSettings = {
   whatsapp_number: "9019765265",
   announcement_text: "Hosa Lifestyle, Hosa Dharwad – Pre-Launch Exclusive Plot Opportunities Open",
   hero_title: "LIVE CLOSER TO NATURE. INVEST IN TOMORROW.",
-  hero_subtitle: "A premium, thoughtfully planned plotted community in Dharwad, designed around lifestyle, connectivity, greenery and long-term value.",
-  project_location: "Mansur & Sanna Somapura, Dharwad, Karnataka (Near NH-4 Highway)",
-  village_details: "ಗ್ರಾಮ : ಮನಸೂರ + ಸಣ್ಣ ಸೋಮಾಪುರ, ತಾಲೂಕ : ಧಾರವಾಡ (Village: Mansur + Sanna Somapura, Taluka: Dharwad)",
+  hero_subtitle: "A premium, thoughtfully planned plotted community in Dharwad City, designed around lifestyle, connectivity, greenery and long-term value.",
+  project_location: "Dharwad City, Karnataka (Near NH-4 Highway)",
+  map_url: "https://maps.app.goo.gl/3EnF93gjmTueXy667",
   approvals: ["NA-KJP Approved", "HDUDA Approved", "Bank Loans Approved", "Property Tax Updated"],
   brochure_url: "/brochure/the-aurora-hills-brochure.pdf",
 };

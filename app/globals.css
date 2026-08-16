@@ -1,121 +1,197 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Kannada:wght@400;500;600;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --font-serif: "Cinzel", "Playfair Display", Georgia, serif;
-  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-kannada: "Noto Sans Kannada", sans-serif;
+@layer base {
+  :root {
+    --background: 100 20% 98%;
+    --foreground: 145 40% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 145 40% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 145 40% 12%;
+    --primary: 135 60% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 130 25% 94%;
+    --secondary-foreground: 140 45% 15%;
+    --muted: 100 15% 93%;
+    --muted-foreground: 140 15% 40%;
+    --accent: 135 65% 40%;
+    --accent-foreground: 0 0% 100%;
+    --border: 120 15% 88%;
+    --input: 120 15% 88%;
+    --ring: 135 60% 35%;
+    --radius: 1.25rem;
+  }
 }
 
+/* Smooth Scrolling & Universal Resets */
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
-  background-color: #040d07;
+  color-scheme: light;
 }
 
 body {
-  font-family: var(--font-sans);
-  background-color: #040d07;
-  color: #f3f5f4;
+  background-color: #F7F9F6;
+  color: #14281D;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom Minimalist Scrollbar */
+/* Custom Scrollbar - Crayon Green Minimalist */
 ::-webkit-scrollbar {
   width: 6px;
-  height: 6px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #040d07;
+  background: #EEF2EB;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: rgba(200, 155, 60, 0.25);
+  background: #81C784;
   border-radius: 9999px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(200, 155, 60, 0.6);
+  background: #2E7D32;
 }
 
-/* Glassmorphism Classes */
-.glass-panel {
-  background: rgba(10, 31, 20, 0.55);
+/* Crayon Green Luxury Text Gradient */
+.gold-text-gradient,
+.green-text-gradient {
+  background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 50%, #4CAF50 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.emerald-text-gradient {
+  background: linear-gradient(135deg, #0F3822 0%, #1E5128 60%, #4E9A51 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ========================================================
+   CRAYON GREEN & CREAM NEOMORPHISM + GLASSMORPHISM
+   ======================================================== */
+
+/* Neomorphic Soft Extruded Card */
+.neu-card {
+  background: #F7F9F6;
+  border-radius: 1.5rem;
+  box-shadow: 
+    8px 8px 20px rgba(200, 212, 198, 0.65),
+    -8px -8px 20px rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    12px 12px 28px rgba(195, 210, 192, 0.85),
+    -12px -12px 28px rgba(255, 255, 255, 1);
+}
+
+/* Neomorphic Frosted Glass Panel */
+.neu-glass {
+  background: rgba(255, 255, 255, 0.78);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 1.5rem;
+  box-shadow: 
+    6px 6px 18px rgba(195, 208, 192, 0.45),
+    -6px -6px 18px rgba(255, 255, 255, 0.95),
+    inset 0 1px 1px rgba(255, 255, 255, 0.9);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.glass-panel-gold {
-  background: linear-gradient(135deg, rgba(200, 155, 60, 0.08) 0%, rgba(10, 31, 20, 0.6) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(200, 155, 60, 0.25);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+.neu-glass:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 
+    10px 10px 24px rgba(190, 204, 186, 0.6),
+    -10px -10px 24px rgba(255, 255, 255, 1);
 }
 
-.glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+/* Neomorphic Pressed / Inset */
+.neu-inset {
+  background: #EFF3EC;
+  box-shadow: 
+    inset 4px 4px 10px rgba(190, 205, 186, 0.6),
+    inset -4px -4px 10px rgba(255, 255, 255, 0.95);
+  border-radius: 1rem;
 }
 
-.glass-card:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(200, 155, 60, 0.35);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 30px rgba(200, 155, 60, 0.1);
+/* Neomorphic Interactive Button */
+.neu-button {
+  background: #F7F9F6;
+  box-shadow: 
+    5px 5px 12px rgba(198, 210, 195, 0.7),
+    -5px -5px 12px rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.25s ease;
 }
 
-.glass-input {
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #ffffff;
-  transition: all 0.3s ease;
+.neu-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    7px 7px 16px rgba(190, 205, 186, 0.85),
+    -7px -7px 16px rgba(255, 255, 255, 1);
 }
 
-.glass-input:focus {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(200, 155, 60, 0.6);
-  box-shadow: 0 0 20px rgba(200, 155, 60, 0.15);
+.neu-button:active {
+  transform: translateY(1px);
+  box-shadow: 
+    inset 3px 3px 6px rgba(190, 205, 186, 0.7),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.95);
+}
+
+/* Neomorphic Input Fields */
+.neu-input {
+  background: #F0F4ED;
+  box-shadow: 
+    inset 3px 3px 7px rgba(190, 205, 186, 0.5),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(195, 210, 190, 0.5);
+  border-radius: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.neu-input:focus {
   outline: none;
+  border-color: #2E7D32;
+  box-shadow: 
+    inset 2px 2px 5px rgba(190, 205, 186, 0.4),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.95),
+    0 0 0 3px rgba(46, 125, 50, 0.2);
 }
 
-/* Minimalist Gold Text Gradient */
-.gold-text-gradient {
-  background: linear-gradient(135deg, #FFF6D6 0%, #D4AF37 50%, #AA7C1E 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.silver-text-gradient {
-  background: linear-gradient(135deg, #FFFFFF 0%, #D1D5DB 60%, #9CA3AF 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* Ambient Radial Lighting Effects */
-.ambient-glow-gold {
+/* Ambient Radial Glow in Light Theme */
+.ambient-glow-light-green {
   position: absolute;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(200, 155, 60, 0.12) 0%, rgba(200, 155, 60, 0) 70%);
+  background: radial-gradient(circle, rgba(46, 125, 50, 0.12) 0%, rgba(46, 125, 50, 0) 70%);
   pointer-events: none;
 }
 
-.ambient-glow-emerald {
+.ambient-glow-light-emerald {
   position: absolute;
   border-radius: 9999px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0) 70%);
+  background: radial-gradient(circle, rgba(76, 175, 80, 0.1) 0%, rgba(76, 175, 80, 0) 70%);
   pointer-events: none;
+}
+
+/* 3D Canvas WebGL Wrapper */
+.three-canvas-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Smooth Fade In */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Phone, Mail, User, Send, CheckCircle2, MessageSquare, ShieldCheck, Sparkles, Building } from "lucide-react";
+import { Phone, Mail, User, Send, CheckCircle2, MessageSquare, ShieldCheck, Sparkles } from "lucide-react";
 import confetti from "canvas-confetti";
 import { CONTACT_NUMBERS } from "@/lib/projectData";
 
@@ -60,29 +60,29 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-forest-950 text-white relative overflow-hidden border-t border-white/5">
+    <section id="contact" className="py-24 lg:py-32 bg-[#F7F9F6] text-forest-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Direct Call Hub */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gold-300 text-xs font-bold uppercase tracking-widest">
-              <Sparkles className="w-3.5 h-3.5 text-gold-400" />
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full neu-glass border border-white/90 text-emerald-800 text-xs font-bold uppercase tracking-widest shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
               Direct Developer Desk
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-white tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight leading-tight">
               Get in Touch for <br />
-              <span className="gold-text-gradient">Exclusive Pricing</span>
+              <span className="green-text-gradient">Exclusive Pricing</span>
             </h2>
 
-            <p className="text-sand-200 text-sm sm:text-base leading-relaxed font-light">
+            <p className="text-charcoal-700 text-sm sm:text-base leading-relaxed font-normal">
               Speak directly with our project advisory team to reserve corner plots, review sanctions, and avail pre-launch discounts.
             </p>
 
             {/* Direct Telephone Numbers Card */}
-            <div className="p-6 rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-xl space-y-3">
-              <div className="text-xs uppercase tracking-wider font-bold text-gold-400">
-                Official Helpline Lines (Click to Call):
+            <div className="p-6 rounded-3xl neu-glass border border-white/90 shadow-lg space-y-3">
+              <div className="text-xs uppercase tracking-wider font-bold text-emerald-800">
+                Official Helpline Numbers (Click to Call):
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -90,9 +90,9 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
                   <a
                     key={idx}
                     href={`tel:${num}`}
-                    className="p-3 rounded-2xl bg-white/5 hover:bg-gold-500 hover:text-forest-950 border border-white/10 text-white text-xs font-bold flex items-center gap-2 transition-all group"
+                    className="p-3 rounded-2xl neu-button text-forest-950 hover:text-emerald-700 text-xs font-bold flex items-center gap-2 transition-all group"
                   >
-                    <Phone className="w-3.5 h-3.5 text-gold-400 group-hover:text-forest-950" />
+                    <Phone className="w-3.5 h-3.5 text-emerald-600 group-hover:scale-110 transition-transform" />
                     <span>{num}</span>
                   </a>
                 ))}
@@ -102,24 +102,24 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
 
           {/* Right Column: Lead Form Card */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-10 rounded-3xl bg-gradient-to-br from-forest-900/80 via-forest-900/50 to-forest-950/90 border border-white/10 backdrop-blur-2xl shadow-2xl">
+            <div className="p-6 sm:p-10 rounded-3xl neu-card border border-white/90 shadow-2xl">
               {submitted ? (
                 <div className="text-center py-10 space-y-4 animate-fade-in">
-                  <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mx-auto shadow-2xl">
+                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-300 flex items-center justify-center mx-auto shadow-md">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold font-serif text-white">
+                  <h3 className="text-2xl font-bold font-serif text-forest-950">
                     Enquiry Received!
                   </h3>
-                  <p className="text-sm text-sand-200 max-w-md mx-auto">
-                    Thank you, <strong className="text-gold-300">{formData.name}</strong>. Our senior consultant will get in touch with you shortly.
+                  <p className="text-sm text-charcoal-700 max-w-md mx-auto">
+                    Thank you, <strong className="text-emerald-700">{formData.name}</strong>. Our senior consultant will get in touch with you shortly.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-sand-300 mb-2">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-2">
                         Full Name *
                       </label>
                       <input
@@ -128,12 +128,12 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
                         placeholder="John Doe"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/30 text-xs focus:outline-none focus:border-gold-400 transition-colors"
+                        className="w-full px-4 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-xs"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-sand-300 mb-2">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-2">
                         Mobile Number *
                       </label>
                       <input
@@ -142,20 +142,20 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
                         placeholder="10-digit phone"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/30 text-xs focus:outline-none focus:border-gold-400 transition-colors"
+                        className="w-full px-4 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-xs"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-sand-300 mb-2">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-2">
                         Plot Size Interest
                       </label>
                       <select
                         value={formData.requirement}
                         onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-forest-950 border border-white/10 text-white text-xs focus:outline-none focus:border-gold-400 transition-colors"
+                        className="w-full px-4 py-3 neu-input text-forest-950 text-xs bg-[#F0F4ED]"
                       >
                         <option value="1,200 sq.ft (30x40)">1,200 sq.ft (30 x 40 ft)</option>
                         <option value="1,500 sq.ft (30x50)">1,500 sq.ft (30 x 50 ft)</option>
@@ -165,13 +165,13 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold uppercase tracking-wider text-sand-300 mb-2">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-2">
                         Purchase Purpose
                       </label>
                       <select
                         value={formData.purpose}
                         onChange={(e) => setFormData({ ...formData, purpose: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-forest-950 border border-white/10 text-white text-xs focus:outline-none focus:border-gold-400 transition-colors"
+                        className="w-full px-4 py-3 neu-input text-forest-950 text-xs bg-[#F0F4ED]"
                       >
                         <option value="Build a Home">Build a Home (Residential)</option>
                         <option value="Investment">Long Term Investment</option>
@@ -181,7 +181,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-sand-300 mb-2">
+                    <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-2">
                       Specific Requirements / Notes
                     </label>
                     <textarea
@@ -189,12 +189,12 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
                       placeholder="e.g. East facing plot, loan assistance requested..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/30 text-xs focus:outline-none focus:border-gold-400 transition-colors"
+                      className="w-full px-4 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-xs"
                     />
                   </div>
 
                   {errorMsg && (
-                    <div className="p-3 bg-red-950/60 border border-red-800 rounded-xl text-red-300 text-xs">
+                    <div className="p-3 bg-red-100 border border-red-300 rounded-xl text-red-700 text-xs font-semibold">
                       {errorMsg}
                     </div>
                   )}
@@ -202,7 +202,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-4 rounded-full bg-gradient-to-r from-gold-400 via-gold-300 to-amber-400 hover:from-gold-300 hover:to-gold-500 text-forest-950 font-black text-xs uppercase tracking-wider shadow-2xl flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                    className="w-full py-4 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 hover:from-emerald-500 hover:to-green-600 text-white font-black text-xs uppercase tracking-wider shadow-lg hover:shadow-xl flex items-center justify-center gap-2 transition-transform hover:scale-[1.01] active:scale-[0.99]"
                   >
                     <Send className="w-4 h-4" />
                     <span>{loading ? "Submitting..." : "Request Price & Details"}</span>

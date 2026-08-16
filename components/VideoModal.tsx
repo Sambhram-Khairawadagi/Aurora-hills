@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
-import { X, Play, Pause, Volume2, VolumeX, Sparkles, MapPin, ShieldCheck, Download, Maximize } from "lucide-react";
+import React, { useRef, useState, useEffect } from "react";
+import { X, Play, Pause, Volume2, VolumeX, Maximize, Sparkles } from "lucide-react";
 
 interface VideoModalProps {
   isOpen: boolean;
@@ -9,9 +9,9 @@ interface VideoModalProps {
 }
 
 export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
-  const [muted, setMuted] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
 
   useEffect(() => {
     if (isOpen && videoRef.current) {
@@ -35,72 +35,67 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
 
   const toggleMute = () => {
     if (!videoRef.current) return;
-    videoRef.current.muted = !muted;
-    setMuted(!muted);
+    videoRef.current.muted = !isMuted;
+    setIsMuted(!isMuted);
+  };
+
+  const handleFullscreen = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.requestFullscreen) {
+      videoRef.current.requestFullscreen();
+    }
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-xl flex items-center justify-center p-3 sm:p-6 animate-fade-in">
-      <div className="bg-forest-950 border border-gold-500/40 rounded-3xl overflow-hidden max-w-4xl w-full text-white shadow-[0_25px_70px_rgba(0,0,0,0.9)] relative">
-        {/* Header bar */}
-        <div className="px-5 py-4 bg-forest-900/90 border-b border-forest-800 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-            <h3 className="text-sm sm:text-base font-bold font-serif text-white tracking-wide">
-              The Aurora Hills • Official Aerial & Project Video
-            </h3>
-          </div>
+    <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-2xl flex items-center justify-center p-4 animate-fade-in">
+      <div className="relative max-w-5xl w-full rounded-3xl overflow-hidden bg-black border border-white/20 shadow-2xl">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-md transition-colors"
+          aria-label="Close video"
+        >
+          <X className="w-5 h-5" />
+        </button>
 
-          <button
-            onClick={onClose}
-            className="p-2 rounded-full bg-forest-800 hover:bg-forest-700 text-white transition-colors"
-            aria-label="Close video"
-          >
-            <X className="w-5 h-5" />
-          </button>
-        </div>
-
-        {/* Video Player */}
-        <div className="relative aspect-video bg-black flex items-center justify-center group">
+        <div className="relative aspect-video w-full bg-black">
           <video
             ref={videoRef}
             src="/aurora-hills.mp4"
-            poster="/images/hero-aerial.jpg"
             autoPlay
-            controls
             playsInline
-            muted={muted}
-            onPlay={() => setIsPlaying(true)}
-            onPause={() => setIsPlaying(false)}
-            className="w-full h-full object-cover"
-          >
-            <source src="/aurora-hills.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
+            controls={false}
+            loop
+            className="w-full h-full object-contain"
+          />
 
-        {/* Video Footer Banner */}
-        <div className="p-4 sm:p-5 bg-forest-950 flex flex-wrap items-center justify-between gap-3 text-xs border-t border-forest-800/80">
-          <div className="flex items-center gap-2 text-sand-200">
-            <Sparkles className="w-4 h-4 text-gold-400" />
-            <span>Mansur & Sanna Somapura, Dharwad • Starting from <strong className="text-gold-300">₹35.99 Lakhs</strong></span>
-          </div>
-          <div className="flex items-center gap-2.5">
-            <a
-              href="/brochure/the-aurora-hills-brochure.pdf"
-              download
-              className="px-4 py-2 rounded-xl bg-forest-900 border border-forest-700 text-sand-200 hover:text-white font-semibold flex items-center gap-1.5 transition-colors"
+          {/* Bottom HUD Bar */}
+          <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-center justify-between text-white z-10">
+            <div className="flex items-center gap-3">
+              <button
+                onClick={togglePlay}
+                className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md transition-colors"
+              >
+                {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4 fill-current ml-0.5" />}
+              </button>
+
+              <button
+                onClick={toggleMute}
+                className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md transition-colors"
+              >
+                {isMuted ? <VolumeX className="w-4 h-4 text-red-400" /> : <Volume2 className="w-4 h-4" />}
+              </button>
+
+              <span className="text-xs font-semibold text-white/90">
+                The Aurora Hills • Dharwad Drone Perspective
+              </span>
+            </div>
+
+            <button
+              onClick={handleFullscreen}
+              className="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur-md transition-colors"
             >
-              <Download className="w-3.5 h-3.5" />
-              Download Brochure
-            </a>
-            <a
-              href="#contact"
-              onClick={onClose}
-              className="px-5 py-2 rounded-xl bg-gradient-to-r from-gold-400 to-gold-500 text-forest-950 font-bold hover:brightness-110 shadow-lg transition-all"
-            >
-              Enquire For Plot
-            </a>
+              <Maximize className="w-4 h-4" />
+            </button>
           </div>
         </div>
       </div>

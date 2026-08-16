@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Trees, Compass, ArrowRight, ShieldCheck, MapPin, Sparkles, CheckCircle2 } from "lucide-react";
+import { Sparkles, ArrowRight, Trees, Check, ShieldCheck, MapPin } from "lucide-react";
 
 interface ProjectIntroProps {
   onOpenEnquiry: (source?: string) => void;
@@ -14,96 +14,121 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
   onOpenMasterPlan,
 }) => {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-forest-950 text-white relative overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-gold-500/5 rounded-full blur-[140px] pointer-events-none" />
-
+    <section id="about" className="py-24 lg:py-32 bg-[#F7F9F6] text-forest-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          {/* Left Column: Visual Glass Image Composition */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Left Column: Visual Gallery Panel */}
           <div className="lg:col-span-6 relative">
-            <div className="relative rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)] aspect-[4/3] group">
-              <Image
-                src="/images/hero-aerial.webp"
-                alt="The Aurora Hills Dharwad Lifestyle Community"
-                fill
-                sizes="(max-width: 1024px) 100vw, 600px"
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest-950/90 via-forest-950/30 to-transparent" />
+            <div className="relative rounded-3xl overflow-hidden neu-card border border-white/90 p-3 shadow-2xl">
+              <div className="relative h-[380px] sm:h-[450px] rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/master-plan-3d.jpg"
+                  alt="The Aurora Hills Dharwad City 3D Perspective"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 600px"
+                  className="object-cover transition-transform duration-700 hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+              </div>
 
-              {/* Floating Frosted Glass Pill over Image */}
-              <div className="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-forest-950/80 backdrop-blur-xl border border-white/10 shadow-2xl flex items-center justify-between gap-4">
-                <div className="space-y-0.5">
-                  <span className="text-[10px] uppercase tracking-widest font-bold text-gold-300">
-                    Bilingual Legal Title
+              {/* Floating Stat Pill Badge */}
+              <div className="absolute bottom-8 left-8 right-8 p-4 rounded-2xl neu-glass border border-white/90 shadow-xl flex items-center justify-between">
+                <div>
+                  <span className="text-[10px] uppercase font-bold text-emerald-700 tracking-wider">
+                    Plotted Sanctuary
                   </span>
-                  <div className="text-xs font-semibold text-white font-kannada">
-                    ಗ್ರಾಮ : ಮನಸೂರ + ಸಣ್ಣ ಸೋಮಾಪುರ, ತಾಲೂಕ : ಧಾರವಾಡ
+                  <div className="text-sm font-black text-forest-950 font-serif">
+                    Residential Villa Plots
                   </div>
                 </div>
 
-                <div className="p-2 rounded-xl bg-gold-500/10 text-gold-400 border border-gold-500/30 flex-shrink-0">
-                  <ShieldCheck className="w-5 h-5" />
+                <div className="text-right">
+                  <span className="text-xs font-bold text-emerald-800 block">
+                    30ft & 40ft Roads
+                  </span>
+                  <span className="text-[11px] text-charcoal-600">
+                    Underground Electrification
+                  </span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Storytelling & Key Highlights */}
+          {/* Right Column: Introduction Narrative */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/5 border border-white/10 text-gold-300 text-xs font-bold uppercase tracking-widest">
-              <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-              Never-Before Lifestyle Comes to Dharwad
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full neu-glass border border-white/90 text-emerald-800 text-xs font-bold uppercase tracking-widest shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+              About The Development
             </div>
 
-            <div className="space-y-3">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-white tracking-tight leading-tight">
-                Designed for Serenity. <br />
-                <span className="gold-text-gradient">Built for Prosperity.</span>
-              </h2>
-            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight leading-tight">
+              An Architectural Eden in <br />
+              <span className="green-text-gradient">Dharwad City</span>
+            </h2>
 
-            <p className="text-sm sm:text-base text-sand-200 leading-relaxed font-light">
-              <strong>The Aurora Hills</strong> is Dharwad’s landmark residential plotted township, nestled in the scenic green lap of Mansur & Sanna Somapura. Crafted to deliver an elevated lifestyle, the project blends pure hillside air with state-of-the-art urban infrastructure.
+            <p className="text-charcoal-700 text-sm sm:text-base leading-relaxed">
+              <strong>The Aurora Hills</strong> is Dharwad City’s premier planned residential sanctuary. Situated in the tranquil green environs of Dharwad City, adjacent to the National Highway NH-4, it provides effortless connectivity to the Hubli-Dharwad Twin City corridor.
             </p>
 
-            {/* 3 Minimalist Glass Stat Tiles */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-md">
-                <div className="text-2xl font-black text-gold-300 font-serif">15-20</div>
-                <div className="text-xs font-bold text-white mt-1">Minutes</div>
-                <div className="text-[11px] text-sand-300">To Twin City Hubli-Dharwad</div>
+            {/* Strategic Location Highlights Box */}
+            <div className="p-4 rounded-2xl neu-inset border border-white/80 space-y-1">
+              <div className="flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-emerald-600" />
+                <span className="text-xs uppercase tracking-wider font-bold text-emerald-700">
+                  Prime Location • Dharwad City
+                </span>
+              </div>
+              <p className="text-xs text-charcoal-700 font-medium">
+                High-growth residential corridor with instant access to NH-4 Highway and the Twin City network.
+              </p>
+            </div>
+
+            {/* Key Advantages Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div className="flex items-center gap-2.5 text-xs text-charcoal-800 font-semibold">
+                <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-3 h-3" />
+                </div>
+                <span>HDUDA Sanctioned Layout</span>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-md">
-                <div className="text-2xl font-black text-emerald-300 font-serif">1.5 Lakh L</div>
-                <div className="text-xs font-bold text-white mt-1">Overhead Tank</div>
-                <div className="text-[11px] text-sand-300">Continuous Water Supply</div>
+              <div className="flex items-center gap-2.5 text-xs text-charcoal-800 font-semibold">
+                <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-3 h-3" />
+                </div>
+                <span>NA-KJP Approved Clear Titles</span>
               </div>
 
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-md">
-                <div className="text-2xl font-black text-gold-300 font-serif">100%</div>
-                <div className="text-xs font-bold text-white mt-1">Clear Titles</div>
-                <div className="text-[11px] text-sand-300">NA-KJP & HDUDA Sanctioned</div>
+              <div className="flex items-center gap-2.5 text-xs text-charcoal-800 font-semibold">
+                <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-3 h-3" />
+                </div>
+                <span>1.5L Litres Overhead Water Tank</span>
+              </div>
+
+              <div className="flex items-center gap-2.5 text-xs text-charcoal-800 font-semibold">
+                <div className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
+                  <Check className="w-3 h-3" />
+                </div>
+                <span>SBI & HDFC Bank Loan Ready</span>
               </div>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-3">
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3.5 pt-4">
               <button
                 onClick={() => onOpenEnquiry("About Section CTA")}
-                className="px-7 py-3.5 rounded-full bg-gradient-to-r from-gold-400 to-gold-500 hover:from-gold-300 hover:to-gold-400 text-forest-950 text-xs font-black uppercase tracking-wider shadow-lg flex items-center gap-2 transition-transform hover:scale-105"
+                className="px-7 py-3.5 rounded-full bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-600 text-white text-xs font-black uppercase tracking-wider shadow-md hover:shadow-lg transition-transform hover:scale-105"
               >
-                <span>Request Project Details</span>
-                <ArrowRight className="w-4 h-4" />
+                Request Availability
               </button>
 
               <button
                 onClick={onOpenMasterPlan}
-                className="px-6 py-3.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-bold transition-all"
+                className="px-6 py-3.5 rounded-full neu-button text-xs font-bold text-forest-950 flex items-center gap-1.5 transition-colors hover:text-emerald-700"
               >
-                View Master Layout
+                <span>View Master Plan</span>
+                <ArrowRight className="w-3.5 h-3.5 text-emerald-600" />
               </button>
             </div>
           </div>

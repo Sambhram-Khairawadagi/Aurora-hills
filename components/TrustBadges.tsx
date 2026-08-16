@@ -1,68 +1,51 @@
 "use client";
 
 import React from "react";
-import { CheckCircle2, ShieldCheck, Landmark, FileCheck2, Award } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Landmark, Receipt, Sparkles } from "lucide-react";
+import { APPROVAL_CARDS } from "@/lib/projectData";
 
 export const TrustBadges: React.FC = () => {
-  const badgeDetails = [
-    {
-      title: "NA-KJP Approved",
-      desc: "Non-Agricultural Conversion & Layout Approval Certified",
-      icon: <ShieldCheck className="w-7 h-7 text-emerald-400" />,
-      tag: "100% Legal"
-    },
-    {
-      title: "HDUDA Approved",
-      desc: "Hubli-Dharwad Urban Development Authority Sanctioned",
-      icon: <Award className="w-7 h-7 text-gold-400" />,
-      tag: "Verified Plan"
-    },
-    {
-      title: "Bank Loans Approved",
-      desc: "Instant Approvals with SBI, HDFC, ICICI, Canara & Axis",
-      icon: <Landmark className="w-7 h-7 text-blue-400" />,
-      tag: "Easy Financing"
-    },
-    {
-      title: "Property Tax Updated",
-      desc: "Zero Dues & Clear Title Records for immediate registration",
-      icon: <FileCheck2 className="w-7 h-7 text-amber-400" />,
-      tag: "Immediate Sale"
-    }
-  ];
+  const iconMap: Record<string, React.ReactNode> = {
+    "na-kjp": <ShieldCheck className="w-6 h-6 text-emerald-600" />,
+    "hduda": <CheckCircle2 className="w-6 h-6 text-emerald-600" />,
+    "loans": <Landmark className="w-6 h-6 text-emerald-600" />,
+    "tax": <Receipt className="w-6 h-6 text-emerald-700" />,
+  };
 
   return (
-    <section className="bg-forest-950 border-y border-forest-800/80 py-10 relative overflow-hidden">
-      {/* Subtle background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-forest-950 via-forest-900/50 to-forest-950 pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {badgeDetails.map((badge, index) => (
-            <div
-              key={index}
-              className="p-5 rounded-2xl bg-gradient-to-b from-forest-900/80 to-forest-950 border border-forest-800 hover:border-gold-500/50 transition-all duration-300 shadow-xl flex items-start gap-4 group hover:-translate-y-1"
-            >
-              <div className="p-3 rounded-2xl bg-forest-950 border border-forest-800 group-hover:border-gold-500/40 group-hover:scale-110 transition-all flex-shrink-0">
-                {badge.icon}
+    <section className="relative z-20 -mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        {APPROVAL_CARDS.map((card, idx) => (
+          <div
+            key={idx}
+            className="p-6 rounded-3xl neu-glass border border-white/90 shadow-xl flex flex-col justify-between group hover:-translate-y-1.5 transition-all duration-300"
+          >
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="p-3 rounded-2xl neu-inset">
+                  {iconMap[card.id] || <ShieldCheck className="w-6 h-6 text-emerald-600" />}
+                </div>
+                <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-800 bg-emerald-100/70 px-2.5 py-1 rounded-full border border-emerald-300">
+                  {card.highlight}
+                </span>
               </div>
 
-              <div className="space-y-1 min-w-0">
-                <div className="flex items-center justify-between gap-2">
-                  <h3 className="text-sm font-bold text-white tracking-wide truncate">
-                    {badge.title}
-                  </h3>
-                  <span className="text-[10px] uppercase tracking-wider font-bold text-gold-300 bg-gold-500/10 px-2 py-0.5 rounded-full border border-gold-500/30">
-                    {badge.tag}
-                  </span>
-                </div>
-                <p className="text-xs text-sand-200 leading-relaxed">
-                  {badge.desc}
+              <div>
+                <h3 className="text-base font-bold text-forest-950 font-serif group-hover:text-emerald-700 transition-colors">
+                  {card.title}
+                </h3>
+                <p className="text-xs text-charcoal-600 mt-1 leading-relaxed">
+                  {card.description}
                 </p>
               </div>
             </div>
-          ))}
-        </div>
+
+            <div className="pt-3 mt-3 border-t border-charcoal-200/40 flex items-center gap-1.5 text-[11px] font-bold text-emerald-700">
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              <span>100% Legally Verified</span>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

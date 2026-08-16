@@ -76,7 +76,7 @@ export default function RootLayout({
         "@type": "Place",
         "@id": "https://theaurorahills.in/#place",
         "name": "The Aurora Hills",
-        "description": "Premium plotted development township in Mansur and Sanna Somapura, Dharwad, Karnataka.",
+        "description": "Premium plotted development township in Dharwad City, Karnataka.",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Dharwad",
