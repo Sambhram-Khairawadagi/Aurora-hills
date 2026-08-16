@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "The Aurora Hills | Premium Plots in Dharwad | Hosa Lifestyle",
   description:
-    "Explore The Aurora Hills, Hosa Lifestyle, Hosa Dharwad � a thoughtfully planned plotted community with lifestyle amenities, green surroundings, modern infrastructure and strategic connectivity near NH-4.",
+    "Explore The Aurora Hills, Hosa Lifestyle, Hosa Dharwad –� a thoughtfully planned plotted community with lifestyle amenities, green surroundings, modern infrastructure and strategic connectivity near NH-4.",
   keywords: [
     "The Aurora Hills",
     "Aurora Hills Dharwad",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Aurora Hills | Premium Plots in Dharwad | Hosa Lifestyle",
     description:
-      "A premium, thoughtfully planned plotted community in Dharwad, designed around lifestyle, connectivity, greenery and long-term value. Starting from ?35.99 Lakhs.",
+      "A premium, thoughtfully planned plotted community in Dharwad, designed around lifestyle, connectivity, greenery and long-term value. Starting from ₹35.99 Lakhs.",
     url: "https://theaurorahills.in",
     siteName: "The Aurora Hills",
     images: [
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "The Aurora Hills | Premium Plots in Dharwad | Hosa Lifestyle",
     description:
-      "A lifestyle upgrade in Dharwad. NA-KJP & HDUDA approved residential plots near NH-4 Highway starting from ?35.99 Lakhs.",
+      "A lifestyle upgrade in Dharwad. NA-KJP & HDUDA approved residential plots near NH-4 Highway starting from ₹35.99 Lakhs.",
     images: ["/images/hero-aerial.jpg"],
   },
   robots: {

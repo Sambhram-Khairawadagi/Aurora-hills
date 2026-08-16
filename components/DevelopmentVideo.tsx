@@ -66,7 +66,7 @@ export const DevelopmentVideo: React.FC<DevelopmentVideoProps> = ({ onOpenEnquir
                   <div className="mt-4 flex items-center gap-3">
                     <span className="inline-flex items-center gap-1 text-xs bg-forest-900/90 text-gold-300 px-3 py-1 rounded-full border border-forest-700">
                       <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-                      Starting from ?35.99 Lakhs
+                      Starting from ₹35.99 Lakhs
                     </span>
                   </div>
                 </div>

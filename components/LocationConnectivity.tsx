@@ -137,7 +137,7 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
 
               {/* Map Footer Info */}
               <div className="p-4 bg-forest-950 text-xs text-sand-200 flex flex-wrap items-center justify-between gap-3">
-                <span className="font-kannada">????? : ????? + ???? ???????, ????? : ??????</span>
+                <span className="font-kannada">ಗ್ರಾಮ : ಮನಸೂರ + ಸಣ್ಣ ಸೋಮಾಪುರ, ತಾಲೂಕ : ಧಾರವಾಡ : ಗ್ರಾಮ : ಮನಸೂರ + ಸಣ್ಣ ಸೋಮಾಪುರ, ತಾಲೂಕ : ಧಾರವಾಡ + ಗ್ರಾಮ : ಮನಸೂರ + ಸಣ್ಣ ಸೋಮಾಪುರ, ತಾಲೂಕ : ಧಾರವಾಡ ಗ್ರಾಮ : ಮನಸೂರ + ಸಣ್ಣ ಸೋಮಾಪುರ, ತಾಲೂಕ : ಧಾರವಾಡ, ಗ್ರಾಮ : ಮನಸೂರ + ಸಣ್ಣ ಸೋಮಾಪುರ, ತಾಲೂಕ : ಧಾರವಾಡ : ಗ್ರಾಮ : ಮನಸೂರ + ಸಣ್ಣ ಸೋಮಾಪುರ, ತಾಲೂಕ : ಧಾರವಾಡ</span>
                 <button
                   onClick={() => onOpenEnquiry("Location Map CTA")}
                   className="text-gold-300 hover:text-white font-bold underline"

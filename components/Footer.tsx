@@ -58,7 +58,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
               <li><a href="#amenities" className="hover:text-gold-400 transition-colors">Amenities (20+)</a></li>
               <li><a href="#master-plan" className="hover:text-gold-400 transition-colors">Curated Master Plan</a></li>
               <li><a href="#location" className="hover:text-gold-400 transition-colors">Location & Route</a></li>
-              <li><a href="#pricing" className="hover:text-gold-400 transition-colors">Pricing from ?35.99 L</a></li>
+              <li><a href="#pricing" className="hover:text-gold-400 transition-colors">Pricing from ₹35.99 L</a></li>
               <li><a href="#gallery" className="hover:text-gold-400 transition-colors">Gallery</a></li>
             </ul>
           </div>

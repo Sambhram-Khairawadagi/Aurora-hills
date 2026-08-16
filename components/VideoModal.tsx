@@ -54,7 +54,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose }) => {
         {/* Video Footer Banner */}
         <div className="p-4 bg-forest-950 flex flex-wrap items-center justify-between gap-3 text-xs">
           <span className="text-sand-200">
-            Official promotional video � Plots starting from ?35.99 Lakhs
+            Official promotional video � Plots starting from ₹35.99 Lakhs
           </span>
           <a
             href="#contact"

@@ -11,12 +11,12 @@ interface PriceCalculatorProps {
 
 export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
   onOpenEnquiry,
-  startingPrice = "?35.99 LAKHS*",
+  startingPrice = "₹35.99 LAKHS*",
 }) => {
   const [selectedSize, setSelectedSize] = useState<string>("1200");
 
   const plotOptions = [
-    { size: "1200", label: "1,200 sq.ft", dimensions: "30 x 40 ft", estimate: "Starting ?35.99 L*", tag: "Popular" },
+    { size: "1200", label: "1,200 sq.ft", dimensions: "30 x 40 ft", estimate: "Starting ₹35.99 L*", tag: "Popular" },
     { size: "1500", label: "1,500 sq.ft", dimensions: "30 x 50 ft", estimate: "Custom Quote", tag: "Villa Plot" },
     { size: "2400", label: "2,400 sq.ft", dimensions: "40 x 60 ft", estimate: "Custom Quote", tag: "Estate Plot" },
     { size: "custom", label: "Corner / Premium", dimensions: "Custom Sizes", estimate: "Exclusive Pricing", tag: "Prime View" },

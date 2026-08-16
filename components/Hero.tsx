@@ -15,7 +15,7 @@ export const Hero: React.FC<HeroProps> = ({
   onOpenEnquiry,
   onOpenVideo,
   onOpenBrochure,
-  startingPrice = "?35.99 LAKHS*",
+  startingPrice = "₹35.99 LAKHS*",
 }) => {
   return (
     <section id="hero" className="relative min-h-[92vh] lg:min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden bg-forest-950">

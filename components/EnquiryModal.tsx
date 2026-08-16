@@ -85,7 +85,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
           Enquire for Plot Booking
         </h3>
         <p className="text-xs text-sand-200 mt-1 mb-5">
-          Get verified pricing starting from ?35.99 Lakhs, layout maps & current plot inventory.
+          Get verified pricing starting from ₹35.99 Lakhs, layout maps & current plot inventory.
         </p>
 
         {submitted ? (
