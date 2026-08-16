@@ -96,7 +96,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-sand-50 text-charcoal-900 selection:bg-gold-500 selection:text-white font-sans antialiased">
+    <div className="min-h-screen bg-[#040d07] text-[#f3f5f4] selection:bg-gold-500 selection:text-forest-950 font-sans antialiased relative selection:font-bold">
       {/* Top Navbar */}
       <Navbar
         onOpenEnquiry={handleOpenEnquiry}
@@ -104,7 +104,7 @@ export default function HomePage() {
         onOpenSiteVisit={handleOpenSiteVisit}
       />
 
-      <main>
+      <main className="relative z-10">
         {/* Hero Section */}
         <Hero
           onOpenEnquiry={handleOpenEnquiry}

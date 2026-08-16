@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Send, Phone, MessageSquare, Mail, Sparkles, CheckCircle2, ShieldCheck } from "lucide-react";
-import { CONTACT_NUMBERS } from "@/lib/projectData";
+import { Phone, Mail, User, Send, CheckCircle2, MessageSquare, ShieldCheck, Sparkles, Building } from "lucide-react";
 import confetti from "canvas-confetti";
+import { CONTACT_NUMBERS } from "@/lib/projectData";
 
 interface EnquirySectionProps {
   onSuccess?: () => void;
@@ -14,21 +14,25 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
     name: "",
     phone: "",
     email: "",
-    requirement: "1200 sq.ft (30x40)",
+    requirement: "1,200 sq.ft (30x40)",
     purpose: "Build a Home",
     preferred_contact: "Phone",
     message: "",
-    honeypot: "",
   });
 
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formData.name || !formData.phone) {
+      setErrorMsg("Please provide your name and contact phone number.");
+      return;
+    }
+
     setLoading(true);
-    setErrorMessage("");
+    setErrorMsg("");
 
     try {
       const res = await fetch("/api/leads", {
@@ -36,235 +40,172 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
-          source: "Homepage Enquiry Section",
-          utm_source: new URLSearchParams(window.location.search).get("utm_source") || "direct",
-          utm_medium: new URLSearchParams(window.location.search).get("utm_medium") || "",
-          utm_campaign: new URLSearchParams(window.location.search).get("utm_campaign") || "",
+          source: "Main Enquiry Form",
         }),
       });
 
       const data = await res.json();
-      if (data.success) {
+      if (res.ok && data.success) {
         setSubmitted(true);
-        confetti({ particleCount: 70, spread: 70, origin: { y: 0.6 } });
+        confetti({ particleCount: 70, spread: 80 });
         if (onSuccess) onSuccess();
       } else {
-        setErrorMessage(data.error || "Failed to submit enquiry.");
+        setErrorMsg(data.error || "Submission failed. Please call us directly.");
       }
-    } catch (err) {
-      setErrorMessage("Network error. Please call our hotline directly.");
+    } catch {
+      setErrorMsg("Network error. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
-  const handleWhatsAppDirect = () => {
-    const text = encodeURIComponent(
-      "Hello, I am interested in The Aurora Hills, Hosa Dharwad. Please share the latest plot availability, pricing and project details."
-    );
-    window.open(`https://wa.me/919019765265?text=${text}`, "_blank");
-  };
-
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-sand-50 text-forest-950 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          {/* Left Direct Helpline & Contact Info */}
+    <section id="contact" className="py-24 lg:py-32 bg-forest-950 text-white relative overflow-hidden border-t border-white/5">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Left Column: Direct Call Hub */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-forest-100 text-forest-800 text-xs font-bold uppercase tracking-widest">
-              Direct Developer Hotline
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-gold-300 text-xs font-bold uppercase tracking-widest">
+              <Sparkles className="w-3.5 h-3.5 text-gold-400" />
+              Direct Developer Desk
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-serif text-forest-950 tracking-tight">
-              Find Your Place at <span className="text-maroon-700">Aurora Hills</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-white tracking-tight leading-tight">
+              Get in Touch for <br />
+              <span className="gold-text-gradient">Exclusive Pricing</span>
             </h2>
 
-            <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
-              Connect with our dedicated project advisory team for instant layout maps, plot availability charts, and site visit coordination.
+            <p className="text-sand-200 text-sm sm:text-base leading-relaxed font-light">
+              Speak directly with our project advisory team to reserve corner plots, review sanctions, and avail pre-launch discounts.
             </p>
 
-            {/* Contact Phone Numbers from brochure */}
-            <div className="p-6 rounded-2xl bg-white border border-sand-300 shadow-xl space-y-4">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500">
-                Official Contact Numbers
-              </h3>
+            {/* Direct Telephone Numbers Card */}
+            <div className="p-6 rounded-3xl bg-white/[0.02] border border-white/10 backdrop-blur-xl space-y-3">
+              <div className="text-xs uppercase tracking-wider font-bold text-gold-400">
+                Official Helpline Lines (Click to Call):
+              </div>
 
-              <div className="grid grid-cols-2 gap-3">
-                {CONTACT_NUMBERS.map((num) => (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {CONTACT_NUMBERS.map((num, idx) => (
                   <a
-                    key={num}
+                    key={idx}
                     href={`tel:${num}`}
-                    className="p-3 rounded-xl bg-sand-50 hover:bg-forest-900 text-forest-950 hover:text-white border border-sand-200 transition-colors flex items-center gap-2 text-xs font-bold group"
+                    className="p-3 rounded-2xl bg-white/5 hover:bg-gold-500 hover:text-forest-950 border border-white/10 text-white text-xs font-bold flex items-center gap-2 transition-all group"
                   >
-                    <Phone className="w-4 h-4 text-maroon-700 group-hover:text-gold-400" />
+                    <Phone className="w-3.5 h-3.5 text-gold-400 group-hover:text-forest-950" />
                     <span>{num}</span>
                   </a>
                 ))}
               </div>
-
-              {/* WhatsApp CTA */}
-              <button
-                onClick={handleWhatsAppDirect}
-                className="w-full py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg transition-colors"
-              >
-                <MessageSquare className="w-4 h-4" />
-                <span>Chat on WhatsApp (Instant Reply)</span>
-              </button>
             </div>
           </div>
 
-          {/* Right Lead Enquiry Form */}
+          {/* Right Column: Lead Form Card */}
           <div className="lg:col-span-7">
-            <div className="bg-white border border-sand-300 rounded-3xl p-6 sm:p-10 shadow-2xl">
+            <div className="p-6 sm:p-10 rounded-3xl bg-gradient-to-br from-forest-900/80 via-forest-900/50 to-forest-950/90 border border-white/10 backdrop-blur-2xl shadow-2xl">
               {submitted ? (
-                <div className="text-center py-12 space-y-4 animate-fade-in">
-                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto">
+                <div className="text-center py-10 space-y-4 animate-fade-in">
+                  <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center mx-auto shadow-2xl">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold font-serif text-forest-950">
-                    Thank You for Your Enquiry!
+                  <h3 className="text-2xl font-bold font-serif text-white">
+                    Enquiry Received!
                   </h3>
-                  <p className="text-sm text-gray-600 max-w-md mx-auto">
-                    Our sales advisor will reach out to you on <strong>{formData.phone}</strong> with detailed pricing and plot availability.
+                  <p className="text-sm text-sand-200 max-w-md mx-auto">
+                    Thank you, <strong className="text-gold-300">{formData.name}</strong>. Our senior consultant will get in touch with you shortly.
                   </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="mt-4 px-6 py-2.5 rounded-full text-xs font-bold text-white bg-forest-900 hover:bg-forest-800"
-                  >
-                    Submit Another Query
-                  </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <h3 className="text-xl font-bold font-serif text-forest-950">
-                    Request Project Details & Availability
-                  </h3>
-
-                  {errorMessage && (
-                    <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs">
-                      {errorMessage}
-                    </div>
-                  )}
-
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-sand-300 mb-2">
                         Full Name *
                       </label>
                       <input
                         type="text"
                         required
-                        placeholder="Your full name"
+                        placeholder="John Doe"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-sand-50 border border-sand-300 text-forest-950 text-xs focus:outline-none focus:border-forest-700"
+                        className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/30 text-xs focus:outline-none focus:border-gold-400 transition-colors"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">
+                      <label className="block text-xs font-bold uppercase tracking-wider text-sand-300 mb-2">
                         Mobile Number *
                       </label>
                       <input
                         type="tel"
                         required
-                        placeholder="10-digit phone number"
+                        placeholder="10-digit phone"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-sand-50 border border-sand-300 text-forest-950 text-xs focus:outline-none focus:border-forest-700"
+                        className="w-full px-4 py-3 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/30 text-xs focus:outline-none focus:border-gold-400 transition-colors"
                       />
                     </div>
                   </div>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        placeholder="name@example.com"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 rounded-xl bg-sand-50 border border-sand-300 text-forest-950 text-xs focus:outline-none focus:border-forest-700"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">
-                        Preferred Plot Size
+                      <label className="block text-xs font-bold uppercase tracking-wider text-sand-300 mb-2">
+                        Plot Size Interest
                       </label>
                       <select
                         value={formData.requirement}
                         onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
-                        className="w-full px-3 py-3 rounded-xl bg-sand-50 border border-sand-300 text-forest-950 text-xs focus:outline-none focus:border-forest-700"
+                        className="w-full px-4 py-3 rounded-xl bg-forest-950 border border-white/10 text-white text-xs focus:outline-none focus:border-gold-400 transition-colors"
                       >
-                        <option value="1200 sq.ft (30x40)">1,200 sq.ft (30x40)</option>
-                        <option value="1500 sq.ft (30x50)">1,500 sq.ft (30x50)</option>
-                        <option value="2400 sq.ft (40x60)">2,400 sq.ft (40x60)</option>
-                        <option value="Corner / Custom Plot">Corner / Custom Plot</option>
+                        <option value="1,200 sq.ft (30x40)">1,200 sq.ft (30 x 40 ft)</option>
+                        <option value="1,500 sq.ft (30x50)">1,500 sq.ft (30 x 50 ft)</option>
+                        <option value="2,400 sq.ft (40x60)">2,400 sq.ft (40 x 60 ft)</option>
+                        <option value="Custom Estate Plot">Custom Estate Plot</option>
                       </select>
                     </div>
-                  </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">
-                        Purpose of Purchase
+                      <label className="block text-xs font-bold uppercase tracking-wider text-sand-300 mb-2">
+                        Purchase Purpose
                       </label>
                       <select
                         value={formData.purpose}
                         onChange={(e) => setFormData({ ...formData, purpose: e.target.value })}
-                        className="w-full px-3 py-3 rounded-xl bg-sand-50 border border-sand-300 text-forest-950 text-xs focus:outline-none focus:border-forest-700"
+                        className="w-full px-4 py-3 rounded-xl bg-forest-950 border border-white/10 text-white text-xs focus:outline-none focus:border-gold-400 transition-colors"
                       >
-                        <option value="Build a Home">Build a Home</option>
-                        <option value="Investment">Investment</option>
-                        <option value="Both">Both (Living & Appreciation)</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <label className="block text-xs font-semibold text-gray-700 mb-1">
-                        Preferred Contact Mode
-                      </label>
-                      <select
-                        value={formData.preferred_contact}
-                        onChange={(e) => setFormData({ ...formData, preferred_contact: e.target.value })}
-                        className="w-full px-3 py-3 rounded-xl bg-sand-50 border border-sand-300 text-forest-950 text-xs focus:outline-none focus:border-forest-700"
-                      >
-                        <option value="Phone">Phone Call</option>
-                        <option value="WhatsApp">WhatsApp</option>
-                        <option value="Email">Email</option>
+                        <option value="Build a Home">Build a Home (Residential)</option>
+                        <option value="Investment">Long Term Investment</option>
+                        <option value="Both">Both</option>
                       </select>
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1">
-                      Message / Questions
+                    <label className="block text-xs font-bold uppercase tracking-wider text-sand-300 mb-2">
+                      Specific Requirements / Notes
                     </label>
                     <textarea
                       rows={2}
-                      placeholder="Any specific plot or price details you would like to know..."
+                      placeholder="e.g. East facing plot, loan assistance requested..."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-2.5 rounded-xl bg-sand-50 border border-sand-300 text-forest-950 text-xs focus:outline-none focus:border-forest-700"
+                      className="w-full px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/10 text-white placeholder-white/30 text-xs focus:outline-none focus:border-gold-400 transition-colors"
                     />
                   </div>
+
+                  {errorMsg && (
+                    <div className="p-3 bg-red-950/60 border border-red-800 rounded-xl text-red-300 text-xs">
+                      {errorMsg}
+                    </div>
+                  )}
 
                   <button
                     type="submit"
                     disabled={loading}
-                    className="w-full py-4 rounded-xl bg-gradient-to-r from-forest-950 via-forest-900 to-forest-950 hover:bg-forest-800 text-white font-bold uppercase tracking-wider text-xs shadow-xl flex items-center justify-center gap-2 transition-all"
+                    className="w-full py-4 rounded-full bg-gradient-to-r from-gold-400 via-gold-300 to-amber-400 hover:from-gold-300 hover:to-gold-500 text-forest-950 font-black text-xs uppercase tracking-wider shadow-2xl flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-[0.98]"
                   >
-                    {loading ? (
-                      <span>Sending Request...</span>
-                    ) : (
-                      <>
-                        <Send className="w-4 h-4 text-gold-400" />
-                        <span>Request Details</span>
-                      </>
-                    )}
+                    <Send className="w-4 h-4" />
+                    <span>{loading ? "Submitting..." : "Request Price & Details"}</span>
                   </button>
                 </form>
               )}

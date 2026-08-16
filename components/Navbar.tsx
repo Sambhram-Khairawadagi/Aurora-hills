@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { Phone, MessageSquare, Menu, X, Download, Calendar, ShieldCheck } from "lucide-react";
+import Link from "next/link";
+import { Phone, MessageSquare, Menu, X, Download, Calendar, ShieldCheck, ChevronRight } from "lucide-react";
 import { CONTACT_NUMBERS } from "@/lib/projectData";
 
 interface NavbarProps {
@@ -22,15 +22,15 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 40);
+      setIsScrolled(window.scrollY > 30);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { label: "Home", href: "#hero" },
     { label: "About", href: "#about" },
+    { label: "Video", href: "#development" },
     { label: "Amenities", href: "#amenities" },
     { label: "Master Plan", href: "#master-plan" },
     { label: "Location", href: "#location" },
@@ -40,170 +40,119 @@ export const Navbar: React.FC<NavbarProps> = ({
   ];
 
   return (
-    <>
-      {/* Top Announcement & Verified Hotline Bar */}
-      <header className="bg-forest-950 text-gold-100 text-xs border-b border-forest-800/80 relative z-40 hidden md:block">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center">
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
-              <ShieldCheck className="w-3.5 h-3.5 text-gold-400" />
-              NA-KJP & HDUDA Approved Plotted Township
-            </span>
-            <span className="text-forest-600">|</span>
-            <span className="text-sand-200">Mansur & Sanna Somapura, Dharwad (Near NH-4)</span>
-          </div>
-
-          <div className="flex items-center gap-6">
-            <div className="flex items-center gap-2">
-              <Phone className="w-3.5 h-3.5 text-gold-400 animate-pulse" />
-              <span className="text-gray-300">Hotlines:</span>
-              <a
-                href={`tel:${CONTACT_NUMBERS[0]}`}
-                className="font-semibold text-gold-300 hover:text-white transition-colors"
-              >
-                {CONTACT_NUMBERS[0]}
-              </a>
-              <span className="text-forest-600">/</span>
-              <a
-                href={`tel:${CONTACT_NUMBERS[1]}`}
-                className="font-semibold text-gold-300 hover:text-white transition-colors"
-              >
-                {CONTACT_NUMBERS[1]}
-              </a>
-            </div>
-
-            <button
-              onClick={onOpenBrochure}
-              className="flex items-center gap-1 text-gold-300 hover:text-white font-medium transition-colors"
-            >
-              <Download className="w-3.5 h-3.5" />
-              Download Brochure
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Sticky Navigation */}
-      <nav
-        className={`fixed top-0 md:top-auto left-0 right-0 z-30 transition-all duration-300 ${
-          isScrolled
-            ? "bg-forest-950/95 backdrop-blur-md shadow-2xl py-3 border-b border-forest-800/80"
-            : "bg-gradient-to-b from-forest-950/90 via-forest-950/60 to-transparent py-4"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-          {/* Brand Logo */}
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-3 sm:py-4 px-3 sm:px-6 lg:px-8">
+      <div className={`max-w-7xl mx-auto rounded-2xl transition-all duration-500 ${
+        isScrolled
+          ? "bg-forest-950/75 backdrop-blur-2xl border border-white/10 shadow-[0_15px_40px_rgba(0,0,0,0.6)] px-4 sm:px-6 py-2.5"
+          : "bg-forest-950/40 backdrop-blur-md border border-white/5 px-4 sm:px-6 py-3"
+      }`}>
+        <div className="flex items-center justify-between">
+          {/* Brand Logo & Name */}
           <Link href="#hero" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-full border border-gold-400/40 bg-forest-900/90 flex items-center justify-center shadow-lg group-hover:border-gold-400 transition-colors overflow-hidden p-1">
-              {/* Geometric emblem */}
-              <svg viewBox="0 0 100 100" className="w-full h-full text-gold-300" fill="currentColor">
-                <path d="M50 5 C25 5 5 25 5 50 C5 75 25 95 50 95 C75 95 95 75 95 50 C95 25 75 5 50 5 Z M50 15 C69 15 85 31 85 50 C85 69 69 85 50 85 C31 85 15 69 15 50 C15 31 31 15 50 15 Z" fill="none" stroke="currentColor" strokeWidth="4"/>
-                <path d="M25 65 L50 25 L75 65 Z" fill="none" stroke="currentColor" strokeWidth="4"/>
-                <circle cx="50" cy="50" r="12" fill="currentColor" fillOpacity="0.3"/>
-                <path d="M20 75 Q50 60 80 75" fill="none" stroke="currentColor" strokeWidth="3"/>
-              </svg>
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white/5 border border-gold-400/30 flex items-center justify-center overflow-hidden p-1 group-hover:border-gold-400/60 transition-all">
+              <Image
+                src="/images/aurora-hills-logo.png"
+                alt="The Aurora Hills Dharwad Logo"
+                width={40}
+                height={40}
+                className="object-contain"
+              />
             </div>
             <div>
-              <div className="font-serif tracking-widest text-lg md:text-xl font-bold uppercase text-white leading-tight">
-                THE AURORA <span className="text-gold-400">HILLS</span>
-              </div>
-              <div className="text-[10px] tracking-[0.2em] uppercase font-semibold text-emerald-400">
-                Hosa Lifestyle, Hosa Dharwad
-              </div>
+              <span className="text-base sm:text-lg font-bold font-serif text-white tracking-widest block leading-none">
+                THE AURORA HILLS
+              </span>
+              <span className="text-[9px] uppercase tracking-[0.25em] text-gold-300/90 font-medium">
+                Hosa Lifestyle • Dharwad
+              </span>
             </div>
           </Link>
 
-          {/* Desktop Nav Links */}
-          <div className="hidden lg:flex items-center gap-6">
+          {/* Desktop Minimal Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.03] border border-white/5 backdrop-blur-md">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-medium text-sand-100 hover:text-gold-300 transition-colors tracking-wide relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-gold-400 hover:after:w-full after:transition-all"
+                className="text-xs font-medium text-sand-200/90 hover:text-white px-3 py-1.5 rounded-full hover:bg-white/5 transition-all"
               >
                 {link.label}
               </a>
             ))}
-          </div>
+          </nav>
 
-          {/* Action CTAs */}
+          {/* Desktop Right CTAs */}
           <div className="hidden sm:flex items-center gap-3">
-            <button
-              onClick={onOpenSiteVisit}
-              className="px-4 py-2 text-xs font-semibold text-gold-300 hover:text-white border border-gold-400/50 hover:border-gold-400 rounded-full transition-all flex items-center gap-1.5 bg-forest-900/50 backdrop-blur-sm"
+            <a
+              href={`tel:${CONTACT_NUMBERS[0]}`}
+              className="text-xs font-semibold text-sand-200 hover:text-white flex items-center gap-1.5 px-3 py-2 rounded-xl hover:bg-white/5 transition-all"
             >
-              <Calendar className="w-3.5 h-3.5" />
-              Book Site Visit
-            </button>
+              <Phone className="w-3.5 h-3.5 text-gold-400" />
+              <span>{CONTACT_NUMBERS[0]}</span>
+            </a>
 
             <button
               onClick={() => onOpenEnquiry("Navbar CTA")}
-              className="px-5 py-2.5 text-xs font-bold uppercase tracking-wider text-forest-950 bg-gradient-to-r from-gold-400 via-gold-300 to-gold-400 hover:from-gold-300 hover:to-gold-500 rounded-full shadow-lg shadow-gold-500/20 hover:shadow-gold-500/40 transition-all transform hover:-translate-y-0.5 active:translate-y-0"
+              className="px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider text-forest-950 bg-gradient-to-r from-gold-400 via-gold-300 to-amber-400 hover:from-gold-300 hover:to-gold-500 shadow-[0_0_20px_rgba(200,155,60,0.3)] transition-all hover:scale-105 active:scale-95"
             >
               Enquire Now
             </button>
           </div>
 
-          {/* Mobile Hamburger Button */}
+          {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-white hover:text-gold-300 focus:outline-none"
-            aria-label="Toggle menu"
+            className="lg:hidden p-2 rounded-xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
+            aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
+      </div>
 
-        {/* Mobile Navigation Drawer */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden bg-forest-950/98 border-b border-forest-800 px-6 py-6 space-y-4 animate-fade-in backdrop-blur-xl">
-            <div className="grid grid-cols-2 gap-3 pb-4 border-b border-forest-800">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm font-medium text-gray-200 hover:text-gold-300 py-1.5"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-
-            <div className="space-y-2 pt-2">
-              <div className="text-xs text-sand-200 mb-1">Direct Helpline:</div>
-              <div className="flex flex-wrap gap-2 text-xs font-semibold text-gold-300">
-                {CONTACT_NUMBERS.map((num) => (
-                  <a key={num} href={`tel:${num}`} className="bg-forest-900 px-3 py-1.5 rounded-lg border border-forest-800">
-                    ?? {num}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3 pt-3">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenSiteVisit();
-                }}
-                className="w-full py-2.5 text-xs font-bold text-gold-300 border border-gold-400/50 rounded-xl bg-forest-900/80 text-center"
+      {/* Mobile Drawer Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden mt-2 p-5 rounded-3xl bg-forest-950/95 backdrop-blur-2xl border border-white/10 shadow-2xl space-y-4 animate-fade-in max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 gap-2">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="px-4 py-2.5 rounded-xl bg-white/[0.03] border border-white/5 text-sand-200 text-xs font-medium hover:text-white hover:bg-white/10 transition-all flex items-center justify-between"
               >
-                Book Site Visit
-              </button>
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenEnquiry("Mobile Menu");
-                }}
-                className="w-full py-2.5 text-xs font-bold text-forest-950 bg-gold-400 rounded-xl text-center shadow-lg"
-              >
-                Enquire Now
-              </button>
-            </div>
+                <span>{link.label}</span>
+                <ChevronRight className="w-3 h-3 text-gold-400/60" />
+              </a>
+            ))}
           </div>
-        )}
-      </nav>
-    </>
+
+          <div className="pt-3 border-t border-white/10 flex flex-col gap-2.5">
+            <button
+              onClick={() => { setMobileMenuOpen(false); onOpenEnquiry("Mobile Menu CTA"); }}
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-gold-400 to-gold-500 text-forest-950 text-xs font-bold uppercase tracking-wider text-center shadow-lg"
+            >
+              Enquire For Plot
+            </button>
+
+            <button
+              onClick={() => { setMobileMenuOpen(false); onOpenSiteVisit(); }}
+              className="w-full py-2.5 rounded-xl bg-white/5 border border-white/10 text-white text-xs font-semibold flex items-center justify-center gap-2"
+            >
+              <Calendar className="w-4 h-4 text-gold-400" />
+              Book Site Visit
+            </button>
+
+            <button
+              onClick={() => { setMobileMenuOpen(false); onOpenBrochure(); }}
+              className="w-full py-2 rounded-xl text-xs text-sand-300 hover:text-white flex items-center justify-center gap-2"
+            >
+              <Download className="w-3.5 h-3.5" />
+              Download Brochure (PDF)
+            </button>
+          </div>
+        </div>
+      )}
+    </header>
   );
 };
