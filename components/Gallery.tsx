@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
-import { Play, Maximize2, X, Sparkles, MapPin } from "lucide-react";
+import { Maximize2, X, Sparkles } from "lucide-react";
 
 interface GalleryProps {
   onOpenVideo: () => void;
@@ -10,6 +11,11 @@ interface GalleryProps {
 
 export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const galleryItems = [
     {
@@ -49,6 +55,84 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
       desc: "A lifestyle upgrade combining fresh air, natural tranquility, and modern comfort.",
     },
   ];
+
+  // Close lightbox on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setLightboxIndex(null);
+      }
+    };
+    if (lightboxIndex !== null) {
+      window.addEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = "unset";
+    };
+  }, [lightboxIndex]);
+
+  const lightboxModal = lightboxIndex !== null && mounted ? (
+    createPortal(
+      <div 
+        onClick={() => setLightboxIndex(null)}
+        className="fixed inset-0 z-[999999] bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 animate-fade-in"
+      >
+        {/* Top Floating Close Button */}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            setLightboxIndex(null);
+          }}
+          className="fixed top-6 right-6 z-[1000000] px-4 py-2 rounded-full bg-white text-forest-950 hover:bg-emerald-600 hover:text-white font-bold text-xs sm:text-sm shadow-2xl flex items-center gap-2 transition-all hover:scale-105 active:scale-95 cursor-pointer border border-gray-200"
+          aria-label="Close Lightbox Modal"
+        >
+          <X className="w-5 h-5" />
+          <span>Close Window (ESC)</span>
+        </button>
+
+        {/* Modal Content Box */}
+        <div 
+          onClick={(e) => e.stopPropagation()}
+          className="relative max-w-5xl w-full max-h-[85vh] flex flex-col items-center cursor-default"
+        >
+          <div className="relative w-full h-[55vh] sm:h-[70vh] rounded-2xl overflow-hidden bg-black/50 shadow-2xl">
+            <Image
+              src={galleryItems[lightboxIndex].src}
+              alt={galleryItems[lightboxIndex].title}
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+          
+          {/* Caption & Dismiss Tip */}
+          <div className="mt-4 text-center text-white space-y-1.5 max-w-xl px-4">
+            <h4 className="text-lg sm:text-xl font-bold font-serif">
+              {galleryItems[lightboxIndex].title}
+            </h4>
+            <p className="text-xs sm:text-sm text-white/80">
+              {galleryItems[lightboxIndex].desc}
+            </p>
+            <div className="pt-2">
+              <button
+                type="button"
+                onClick={() => setLightboxIndex(null)}
+                className="px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs text-white border border-white/20 transition-colors"
+              >
+                ✕ Click here or press ESC to close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>,
+      document.body
+    )
+  ) : null;
 
   return (
     <section id="gallery" className="py-24 lg:py-32 bg-[#F7F9F6] text-forest-950 relative overflow-hidden">
@@ -112,37 +196,8 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
         </div>
       </div>
 
-      {/* Lightbox Modal */}
-      {lightboxIndex !== null && (
-        <div className="fixed inset-0 z-50 bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 animate-fade-in">
-          <button
-            onClick={() => setLightboxIndex(null)}
-            className="absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-20"
-            aria-label="Close lightbox"
-          >
-            <X className="w-7 h-7" />
-          </button>
-
-          <div className="relative max-w-5xl w-full max-h-[85vh] flex flex-col items-center">
-            <div className="relative w-full h-[60vh] sm:h-[75vh]">
-              <Image
-                src={galleryItems[lightboxIndex].src}
-                alt={galleryItems[lightboxIndex].title}
-                fill
-                className="object-contain"
-              />
-            </div>
-            <div className="mt-4 text-center text-white space-y-1">
-              <h4 className="text-xl font-bold font-serif">
-                {galleryItems[lightboxIndex].title}
-              </h4>
-              <p className="text-sm text-white/80">
-                {galleryItems[lightboxIndex].desc}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Portal Lightbox */}
+      {lightboxModal}
     </section>
   );
 };
