@@ -9,9 +9,10 @@ import { WhyAuroraHills } from "@/components/WhyAuroraHills";
 import { DevelopmentVideo } from "@/components/DevelopmentVideo";
 import { Infrastructure } from "@/components/Infrastructure";
 import { Amenities } from "@/components/Amenities";
-import { MasterPlanViewer } from "@/components/MasterPlanViewer";
+import { SanctionedLayout } from "@/components/SanctionedLayout";
 import { LocationConnectivity } from "@/components/LocationConnectivity";
 import { PriceCalculator } from "@/components/PriceCalculator";
+import { FutureReturnsCalculator } from "@/components/FutureReturnsCalculator";
 import { Gallery } from "@/components/Gallery";
 import { SiteVisitSection } from "@/components/SiteVisitSection";
 import { EnquirySection } from "@/components/EnquirySection";
@@ -36,8 +37,8 @@ export default function HomePage() {
   const [isQROpen, setIsQROpen] = useState(false);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
-  // Dynamic settings from backend if available
-  const [startingPrice, setStartingPrice] = useState("₹35.99 Lakhs");
+  // Dynamic settings from backend (default starting price is ₹42 Lakhs)
+  const [startingPrice, setStartingPrice] = useState("₹42 Lakhs");
 
   useEffect(() => {
     // Log page view analytics
@@ -88,8 +89,8 @@ export default function HomePage() {
     setIsVideoOpen(true);
   };
 
-  const handleScrollToMasterPlan = () => {
-    const el = document.getElementById("master-plan");
+  const handleScrollToLayout = () => {
+    const el = document.getElementById("layout");
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
     }
@@ -97,7 +98,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#F7F9F6] text-[#14281D] selection:bg-emerald-600 selection:text-white font-sans antialiased relative">
-      {/* Top Navbar */}
+      {/* Top Navbar with Prominent Big Logo */}
       <Navbar
         onOpenEnquiry={handleOpenEnquiry}
         onOpenBrochure={handleOpenBrochure}
@@ -105,7 +106,7 @@ export default function HomePage() {
       />
 
       <main className="relative z-10">
-        {/* Hero Section with Three.js 3D Background */}
+        {/* Real Estate Hero Section with Sunset Layout & Family in Garden */}
         <Hero
           onOpenEnquiry={handleOpenEnquiry}
           onOpenVideo={handleOpenVideo}
@@ -119,13 +120,13 @@ export default function HomePage() {
         {/* Project Introduction */}
         <ProjectIntro
           onOpenEnquiry={handleOpenEnquiry}
-          onOpenMasterPlan={handleScrollToMasterPlan}
+          onOpenLayout={handleScrollToLayout}
         />
 
         {/* Why Choose Aurora Hills */}
         <WhyAuroraHills onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* Development Video Showcase */}
+        {/* YouTube Video Tour & Actual Site Footage */}
         <DevelopmentVideo
           onOpenEnquiry={handleOpenEnquiry}
         />
@@ -133,25 +134,30 @@ export default function HomePage() {
         {/* Infrastructure & Engineering */}
         <Infrastructure />
 
-        {/* Categorized Amenities */}
+        {/* Photo-Rich Lifestyle Amenities */}
         <Amenities onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* Curated Master Plan Viewer with Three.js 3D WebGL */}
-        <MasterPlanViewer
+        {/* Sanctioned Layout Blueprint & Real Construction Progress */}
+        <SanctionedLayout
           onOpenEnquiry={handleOpenEnquiry}
           onOpenBrochure={handleOpenBrochure}
         />
 
-        {/* Location & Connectivity */}
+        {/* Location & Proximities to Schools, Colleges, Malls */}
         <LocationConnectivity onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* Transparent Pricing & Plot Calculator */}
+        {/* Transparent Pricing Calculator starting at ₹42 Lakhs */}
         <PriceCalculator
           onOpenEnquiry={handleOpenEnquiry}
           startingPrice={startingPrice}
         />
 
-        {/* Visual Media Gallery */}
+        {/* Dharwad Future Returns & Land Appreciation Calculator */}
+        <FutureReturnsCalculator
+          onOpenEnquiry={handleOpenEnquiry}
+        />
+
+        {/* Photographic Media & Site Gallery */}
         <Gallery onOpenVideo={handleOpenVideo} />
 
         {/* Book a Site Visit Section */}
@@ -164,7 +170,7 @@ export default function HomePage() {
         <Partners />
       </main>
 
-      {/* Corporate Footer */}
+      {/* Corporate Footer with Big Logo */}
       <Footer
         onOpenBrochure={handleOpenBrochure}
         onOpenQR={handleOpenQR}

@@ -74,7 +74,7 @@ function writeJSON<T>(filePath: string, data: T, memoryKey: keyof typeof memoryS
 }
 
 const defaultSettings: SiteSettings = {
-  starting_price: "₹35.99 Lakhs",
+  starting_price: "₹42 Lakhs",
   phone_numbers: ["9019765265", "7019165265", "9880166275", "9242508288"],
   primary_phone: "9019765265",
   whatsapp_number: "9019765265",
