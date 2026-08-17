@@ -143,16 +143,6 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose })
               <Download className="w-4 h-4" />
               <span>{loading ? "Preparing PDF..." : "Download Official Brochure"}</span>
             </button>
-
-            <div className="pt-2 text-center">
-              <button
-                type="button"
-                onClick={handleDirectDownload}
-                className="text-[11px] text-charcoal-500 hover:text-emerald-700 underline"
-              >
-                Skip & download directly
-              </button>
-            </div>
           </form>
         )}
       </div>
