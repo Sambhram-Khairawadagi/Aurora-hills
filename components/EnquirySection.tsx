@@ -60,19 +60,19 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
   };
 
   return (
-    <section id="contact" className="py-24 lg:py-32 bg-[#F7F9F6] text-forest-950 relative overflow-hidden">
+    <section id="contact" className="py-24 lg:py-32 vibrant-section-glow text-forest-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Direct Call Hub */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full neu-glass border border-white/90 text-emerald-800 text-xs font-bold uppercase tracking-widest shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs font-bold uppercase tracking-widest">
               <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
               Direct Developer Desk
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight leading-tight">
               Get in Touch for <br />
-              <span className="green-text-gradient">Exclusive Pricing</span>
+              <span className="vibrant-text-gradient">Exclusive Pricing</span>
             </h2>
 
             <p className="text-charcoal-700 text-sm sm:text-base leading-relaxed font-normal">
@@ -80,8 +80,8 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
             </p>
 
             {/* Direct Telephone Numbers Card */}
-            <div className="p-6 rounded-3xl neu-glass border border-white/90 shadow-lg space-y-3">
-              <div className="text-xs uppercase tracking-wider font-bold text-emerald-800">
+            <div className="p-6 rounded-3xl vibrant-card shadow-lg space-y-3">
+              <div className="text-xs uppercase tracking-wider font-extrabold text-emerald-800">
                 Official Helpline Numbers (Click to Call):
               </div>
 
@@ -90,19 +90,37 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
                   <a
                     key={idx}
                     href={`tel:${num}`}
-                    className="p-3 rounded-2xl neu-button text-forest-950 hover:text-emerald-700 text-xs font-bold flex items-center gap-2 transition-all group"
+                    className="p-3 rounded-2xl bg-white border border-emerald-200/80 text-forest-950 hover:text-emerald-700 text-xs font-bold flex items-center gap-2 transition-all hover:scale-105 shadow-sm group"
                   >
-                    <Phone className="w-3.5 h-3.5 text-emerald-600 group-hover:scale-110 transition-transform" />
+                    <div className="p-1.5 rounded-lg vibrant-icon-emerald">
+                      <Phone className="w-3.5 h-3.5 text-white group-hover:scale-110 transition-transform" />
+                    </div>
                     <span>{num}</span>
                   </a>
                 ))}
+              </div>
+            </div>
+
+            {/* Quick Guarantees Pill */}
+            <div className="flex items-center gap-4 text-xs text-emerald-900 font-bold">
+              <div className="flex items-center gap-1.5">
+                <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                <span>100% Privacy</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                <span>Zero Brokerage</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                <span>Direct Owner Desk</span>
               </div>
             </div>
           </div>
 
           {/* Right Column: Lead Form Card */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-10 rounded-3xl neu-card border border-white/90 shadow-2xl">
+            <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-b from-white to-emerald-50/50 border-2 border-emerald-300/40 shadow-2xl shadow-emerald-950/10">
               {submitted ? (
                 <div className="text-center py-10 space-y-4 animate-fade-in">
                   <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-300 flex items-center justify-center mx-auto shadow-md">

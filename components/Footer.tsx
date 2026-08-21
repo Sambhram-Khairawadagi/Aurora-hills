@@ -13,9 +13,9 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
   return (
-    <footer className="bg-[#EEF3EB] border-t border-emerald-200/80 text-forest-950 pt-16 pb-24 sm:pb-16 relative overflow-hidden">
+    <footer className="bg-gradient-to-b from-[#EEF5EA] to-[#E3EDE0] border-t border-emerald-300/60 text-forest-950 pt-16 pb-24 sm:pb-16 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-charcoal-200/50">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-emerald-200/70">
           {/* Brand & Summary (Big Logo & Clear Description) */}
           <div className="lg:col-span-5 space-y-5">
             <div className="flex items-center gap-3.5">
@@ -26,24 +26,24 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
                 height={54}
                 className="h-12 sm:h-14 w-auto object-contain drop-shadow-sm"
               />
-              <div className="border-l-2 border-emerald-600/30 pl-3">
+              <div className="border-l-2 border-emerald-500/40 pl-3">
                 <span className="text-lg sm:text-xl font-black font-serif text-forest-950 tracking-wider block leading-tight">
                   THE AURORA HILLS
                 </span>
-                <span className="text-[11px] uppercase tracking-[0.2em] font-extrabold green-text-gradient">
+                <span className="text-[11px] uppercase tracking-[0.2em] font-black vibrant-text-gradient">
                   Dharwad City • Luxury Plots
                 </span>
               </div>
             </div>
 
             <p className="text-sm sm:text-base text-charcoal-700 leading-relaxed max-w-md font-medium">
-              Dharwad City’s premier planned residential sanctuary at Sunset Viewpoint. NA-KJP & HDUDA sanctioned layout starting from <strong>₹42 Lakhs</strong> with clear titles and 20+ lifestyle amenities.
+              Dharwad City’s premier planned residential sanctuary at Sunset Viewpoint. NA-KJP & HDUDA sanctioned layout starting from <strong className="text-emerald-900 font-bold">₹42 Lakhs</strong> with clear titles and 20+ lifestyle amenities.
             </p>
 
-            <div className="p-4 rounded-2xl bg-white border border-emerald-100 shadow-sm text-sm space-y-1">
+            <div className="p-4 rounded-2xl bg-white/90 border border-emerald-300/40 shadow-sm text-sm space-y-1">
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-emerald-600" />
-                <span className="text-xs uppercase font-bold text-emerald-800 tracking-wider">
+                <span className="text-xs uppercase font-black text-emerald-800 tracking-wider">
                   Site Address
                 </span>
               </div>

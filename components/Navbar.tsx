@@ -69,14 +69,14 @@ export const Navbar: React.FC<NavbarProps> = ({
           ))}
         </nav>
 
-        {/* CTA Button - Compact */}
+        {/* CTA Button - Compact & Vibrant */}
         <div className="hidden sm:flex items-center flex-shrink-0">
           <button
             onClick={() => onOpenEnquiry("Navbar CTA")}
-            className="px-4 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold tracking-wide shadow-sm hover:shadow-md transition-all hover:scale-105 active:scale-95 whitespace-nowrap flex items-center gap-1.5"
+            className="px-4 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-black uppercase tracking-wider shadow-md shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all hover:scale-105 active:scale-95 whitespace-nowrap flex items-center gap-1.5"
           >
             <span>Enquire Now</span>
-            <ArrowRight className="w-3 h-3" />
+            <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
 
@@ -84,7 +84,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center gap-2 lg:hidden">
           <button
             onClick={() => onOpenEnquiry("Mobile Quick CTA")}
-            className="sm:hidden px-3 py-1 rounded-full bg-emerald-600 text-white text-[11px] font-bold tracking-wide whitespace-nowrap"
+            className="sm:hidden px-3.5 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs font-black uppercase tracking-wider shadow-md shadow-emerald-500/30 whitespace-nowrap"
           >
             Enquire
           </button>

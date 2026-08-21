@@ -24,16 +24,16 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
   const currentOption = plotOptions.find((p) => p.size === selectedSize) || plotOptions[0];
 
   return (
-    <section id="pricing" className="py-24 lg:py-32 bg-[#F7F9F6] text-forest-950 relative overflow-hidden">
+    <section id="pricing" className="py-24 lg:py-32 vibrant-section-glow text-forest-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-black uppercase tracking-widest shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs sm:text-sm font-black uppercase tracking-widest">
             <Calculator className="w-4 h-4 text-emerald-600" />
             Transparent Pricing & Plot Estimator
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
-            Plot Dimensions & <span className="green-text-gradient">Investment Estimator</span>
+            Plot Dimensions & <span className="vibrant-text-gradient">Investment Estimator</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
             Pre-launch pricing advantage starting from ₹42 Lakhs. Pre-approved plot loans available from SBI, HDFC, ICICI and leading nationalized banks.
@@ -41,7 +41,7 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
         </div>
 
         {/* Pricing Calculator Card */}
-        <div className="max-w-4xl mx-auto bg-white border-2 border-emerald-200 p-6 sm:p-10 rounded-3xl shadow-2xl space-y-8">
+        <div className="max-w-4xl mx-auto bg-gradient-to-b from-white to-emerald-50/40 border-2 border-emerald-300/40 p-6 sm:p-10 rounded-3xl shadow-2xl shadow-emerald-900/10 space-y-8">
           {/* Plot Selection Options */}
           <div>
             <label className="block text-xs sm:text-sm font-black uppercase tracking-wider text-charcoal-800 mb-4">
@@ -54,13 +54,13 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
                   onClick={() => setSelectedSize(opt.size)}
                   className={`p-4 rounded-2xl border-2 text-left transition-all duration-300 ${
                     selectedSize === opt.size
-                      ? "bg-gradient-to-tr from-emerald-50 to-green-50 border-emerald-600 shadow-md scale-105"
+                      ? "bg-gradient-to-tr from-emerald-50 via-white to-teal-50 border-emerald-500 shadow-lg shadow-emerald-500/20 scale-[1.03]"
                       : "border-gray-200 hover:border-emerald-300 bg-white"
                   }`}
                 >
                   <div className="flex items-center justify-between mb-1">
                     <span className="text-sm font-black text-forest-950 font-serif">{opt.label}</span>
-                    <span className="text-[9px] uppercase font-black text-emerald-900 bg-emerald-100 px-2 py-0.5 rounded-full">
+                    <span className="text-[9px] uppercase font-black text-emerald-900 vibrant-badge-emerald px-2 py-0.5 rounded-full">
                       {opt.tag}
                     </span>
                   </div>
@@ -71,7 +71,7 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
           </div>
 
           {/* Selected Option Summary Card */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-emerald-50/60 border border-emerald-200 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+          <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-emerald-100/70 via-teal-50/80 to-emerald-50/70 border border-emerald-300/60 grid grid-cols-1 md:grid-cols-3 gap-6 items-center shadow-inner">
             <div className="space-y-1">
               <span className="text-xs text-charcoal-600 uppercase tracking-wider font-extrabold">
                 Selected Dimension
@@ -84,14 +84,14 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
               </div>
             </div>
 
-            <div className="space-y-1 border-t md:border-t-0 md:border-l border-emerald-200/80 pt-4 md:pt-0 md:pl-6">
+            <div className="space-y-1 border-t md:border-t-0 md:border-l border-emerald-300/60 pt-4 md:pt-0 md:pl-6">
               <span className="text-xs text-charcoal-600 uppercase tracking-wider font-extrabold">
                 Pre-Launch Price
               </span>
-              <div className="text-3xl sm:text-4xl font-black green-text-gradient font-serif">
+              <div className="text-3xl sm:text-4xl font-black vibrant-text-gradient font-serif">
                 {currentOption.estimate}
               </div>
-              <div className="text-xs text-emerald-800 flex items-center gap-1 font-bold">
+              <div className="text-xs text-emerald-800 flex items-center gap-1 font-black">
                 <Landmark className="w-4 h-4 text-emerald-600" />
                 {currentOption.emi}
               </div>
@@ -100,7 +100,7 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
             <div className="pt-2 md:pt-0 flex flex-col justify-center gap-2.5">
               <button
                 onClick={() => onOpenEnquiry("Plot Calculator", `${currentOption.label} (${currentOption.dimensions})`)}
-                className="w-full py-4 rounded-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-500 hover:to-green-700 text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-transform hover:scale-105"
+                className="w-full py-4 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 flex items-center justify-center gap-2 transition-all hover:scale-105"
               >
                 <span>Book This Plot</span>
                 <ArrowRight className="w-4 h-4" />
@@ -114,29 +114,21 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
 
           {/* 3 Trust Pillars Under Calculator */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-            <div className="p-4 rounded-2xl bg-white border border-emerald-100 shadow-sm flex items-center gap-3">
-              <CheckCircle2 className="w-6 h-6 text-emerald-600 flex-shrink-0" />
-              <div className="text-xs sm:text-sm">
-                <span className="font-black text-forest-950 block">HDUDA & NA-KJP</span>
-                <span className="text-charcoal-600">Sanctioned layout plan</span>
+            {[
+              { title: "HDUDA & NA-KJP", desc: "Sanctioned layout plan" },
+              { title: "SBI & HDFC Approved", desc: "Fast-track loan processing" },
+              { title: "Clear Title Deed", desc: "Zero legal encumbrances" },
+            ].map((pillar) => (
+              <div key={pillar.title} className="p-4 rounded-2xl vibrant-card flex items-center gap-3">
+                <div className="w-8 h-8 rounded-xl vibrant-icon-emerald flex items-center justify-center flex-shrink-0">
+                  <CheckCircle2 className="w-5 h-5 text-white" />
+                </div>
+                <div className="text-xs sm:text-sm">
+                  <span className="font-black text-forest-950 block">{pillar.title}</span>
+                  <span className="text-charcoal-600 font-medium">{pillar.desc}</span>
+                </div>
               </div>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-white border border-emerald-100 shadow-sm flex items-center gap-3">
-              <CheckCircle2 className="w-6 h-6 text-emerald-600 flex-shrink-0" />
-              <div className="text-xs sm:text-sm">
-                <span className="font-black text-forest-950 block">SBI & HDFC Approved</span>
-                <span className="text-charcoal-600">Fast-track loan processing</span>
-              </div>
-            </div>
-
-            <div className="p-4 rounded-2xl bg-white border border-emerald-100 shadow-sm flex items-center gap-3">
-              <CheckCircle2 className="w-6 h-6 text-emerald-600 flex-shrink-0" />
-              <div className="text-xs sm:text-sm">
-                <span className="font-black text-forest-950 block">Clear Title Deed</span>
-                <span className="text-charcoal-600">Zero legal encumbrances</span>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>

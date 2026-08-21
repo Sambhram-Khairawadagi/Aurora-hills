@@ -82,20 +82,20 @@ export const FutureReturnsCalculator: React.FC<FutureReturnsCalculatorProps> = (
   });
 
   return (
-    <section id="roi-calculator" className="py-24 lg:py-32 bg-gradient-to-b from-[#F7F9F6] via-[#EEF5EA] to-[#F7F9F6] text-forest-950 relative overflow-hidden">
+    <section id="roi-calculator" className="py-24 lg:py-32 vibrant-section-glow text-forest-950 relative overflow-hidden">
       {/* Radiant Glow Accents */}
-      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-emerald-200/25 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 left-0 w-[500px] h-[500px] bg-lime-200/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-emerald-300/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 left-0 w-[500px] h-[500px] bg-amber-300/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-black uppercase tracking-widest shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs sm:text-sm font-black uppercase tracking-widest">
             <TrendingUp className="w-4 h-4 text-emerald-600" />
             Dharwad Smart City Growth Predictor
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
-            Future Returns & <span className="green-text-gradient">Land Appreciation Calculator</span>
+            Future Returns & <span className="vibrant-text-gradient">Land Appreciation Calculator</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
             Project your wealth creation backed by verified historical indices and major economic catalysts across Dharwad’s prime NH-4 corridor.

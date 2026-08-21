@@ -14,12 +14,12 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
   onOpenLayout,
 }) => {
   return (
-    <section id="about" className="py-24 lg:py-32 bg-[#F7F9F6] text-forest-950 relative overflow-hidden">
+    <section id="about" className="py-24 lg:py-32 vibrant-section-glow text-forest-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Visual Gallery Panel */}
           <div className="lg:col-span-6 relative">
-            <div className="relative rounded-3xl overflow-hidden bg-white border-2 border-emerald-100 p-3 shadow-2xl">
+            <div className="relative rounded-3xl overflow-hidden bg-white border-2 border-emerald-300/40 p-3.5 shadow-2xl shadow-emerald-950/10">
               <div className="relative h-[380px] sm:h-[460px] rounded-2xl overflow-hidden group">
                 <Image
                   src="/images/aerial-layout-sunset.jpg"
@@ -28,13 +28,13 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
                   sizes="(max-width: 1024px) 100vw, 600px"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
               </div>
 
               {/* Floating Stat Pill Badge */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-200 shadow-xl flex items-center justify-between">
+              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-300/60 shadow-xl flex items-center justify-between">
                 <div>
-                  <span className="text-xs uppercase font-black text-emerald-800 tracking-wider">
+                  <span className="text-xs uppercase font-black text-emerald-700 tracking-wider">
                     Plotted Sanctuary
                   </span>
                   <div className="text-base font-black text-forest-950 font-serif">
@@ -43,7 +43,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
                 </div>
 
                 <div className="text-right">
-                  <span className="text-xs font-bold text-emerald-800 block">
+                  <span className="text-xs font-black text-emerald-700 block">
                     30ft & 40ft Paved Roads
                   </span>
                   <span className="text-xs text-charcoal-700 font-medium">
@@ -56,22 +56,22 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
 
           {/* Right Column: Introduction Narrative */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-black uppercase tracking-widest shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs sm:text-sm font-black uppercase tracking-widest">
               <Sparkles className="w-4 h-4 text-emerald-600" />
               About The Development
             </div>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight leading-tight">
               An Architectural Eden in <br />
-              <span className="green-text-gradient">Dharwad City</span>
+              <span className="vibrant-text-gradient">Dharwad City</span>
             </h2>
 
             <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed font-normal">
-              <strong>The Aurora Hills</strong> is Dharwad City’s premier master-planned plotted residential community. Situated on the scenic ridge at <strong>Sunset Viewpoint, Karnatak University, Dharwad</strong>, it offers an unpolluted microclimate, panoramic green views, and effortless connectivity to NH-4 highway and top educational hubs.
+              <strong className="text-forest-950 font-bold">The Aurora Hills</strong> is Dharwad City’s premier master-planned plotted residential community. Situated on the scenic ridge at <strong className="text-emerald-900 font-bold">Sunset Viewpoint, Karnatak University, Dharwad</strong>, it offers an unpolluted microclimate, panoramic green views, and effortless connectivity to NH-4 highway and top educational hubs.
             </p>
 
             {/* Strategic Location Highlights Box */}
-            <div className="p-4 rounded-2xl bg-emerald-50/80 border border-emerald-200 space-y-2">
+            <div className="p-4 rounded-2xl bg-gradient-to-r from-emerald-50 to-teal-50/70 border border-emerald-300/50 space-y-2 shadow-sm">
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-emerald-700" />
                 <span className="text-xs sm:text-sm uppercase tracking-wider font-black text-emerald-900">
@@ -85,47 +85,33 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
 
             {/* Key Advantages Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-charcoal-800 font-bold">
-                <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-3.5 h-3.5" />
+              {[
+                "HDUDA Sanctioned Layout",
+                "NA-KJP Clear Title Deeds",
+                "1.5L Litres Overhead Water Tank",
+                "Bank Loan Ready (SBI, HDFC, ICICI)",
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-2.5 text-xs sm:text-sm text-charcoal-900 font-bold">
+                  <div className="w-6 h-6 rounded-full vibrant-icon-emerald flex items-center justify-center flex-shrink-0">
+                    <Check className="w-3.5 h-3.5" />
+                  </div>
+                  <span>{item}</span>
                 </div>
-                <span>HDUDA Sanctioned Layout</span>
-              </div>
-
-              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-charcoal-800 font-bold">
-                <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-3.5 h-3.5" />
-                </div>
-                <span>NA-KJP Clear Title Deeds</span>
-              </div>
-
-              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-charcoal-800 font-bold">
-                <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-3.5 h-3.5" />
-                </div>
-                <span>1.5L Litres Overhead Water Tank</span>
-              </div>
-
-              <div className="flex items-center gap-2.5 text-xs sm:text-sm text-charcoal-800 font-bold">
-                <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-3.5 h-3.5" />
-                </div>
-                <span>Bank Loan Ready (SBI, HDFC, ICICI)</span>
-              </div>
+              ))}
             </div>
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-3.5 pt-4">
               <button
                 onClick={() => onOpenEnquiry("About Section CTA")}
-                className="px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-600 to-green-500 hover:from-emerald-500 hover:to-green-600 text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-md hover:shadow-lg transition-transform hover:scale-105"
+                className="px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all hover:scale-105"
               >
                 Request Availability
               </button>
 
               <button
                 onClick={onOpenLayout}
-                className="px-6 py-3.5 rounded-full bg-white border border-emerald-200 text-xs sm:text-sm font-bold text-forest-950 flex items-center gap-2 transition-colors hover:text-emerald-700 shadow-sm"
+                className="px-6 py-3.5 rounded-full bg-white border border-emerald-300 text-xs sm:text-sm font-bold text-forest-950 flex items-center gap-2 transition-all hover:text-emerald-700 hover:border-emerald-500 shadow-sm"
               >
                 <span>View Sanctioned Layout</span>
                 <ArrowRight className="w-4 h-4 text-emerald-600" />

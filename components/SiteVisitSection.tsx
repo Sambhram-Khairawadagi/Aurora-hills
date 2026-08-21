@@ -60,15 +60,15 @@ export const SiteVisitSection: React.FC<SiteVisitSectionProps> = ({ onSuccess })
   };
 
   return (
-    <section id="site-visit" className="py-24 lg:py-32 bg-[#F7F9F6] text-forest-950 relative overflow-hidden">
+    <section id="site-visit" className="py-24 lg:py-32 vibrant-section-glow text-forest-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full neu-glass border border-white/90 text-emerald-800 text-xs font-bold uppercase tracking-widest shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs font-black uppercase tracking-widest">
             <Calendar className="w-3.5 h-3.5 text-emerald-600" />
             Complimentary Site Visit
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
-            Schedule a <span className="green-text-gradient">Personal Tour</span>
+            Schedule a <span className="vibrant-text-gradient">Personal Tour</span>
           </h2>
           <p className="text-charcoal-700 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
             Walk the paved avenues, inspect actual plot boundaries, and enjoy complimentary pickup from Dharwad / CBT.
@@ -76,7 +76,7 @@ export const SiteVisitSection: React.FC<SiteVisitSectionProps> = ({ onSuccess })
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <div className="neu-card border border-white/90 rounded-3xl p-6 sm:p-10 shadow-2xl">
+          <div className="bg-gradient-to-b from-white to-emerald-50/50 border-2 border-emerald-300/40 rounded-3xl p-6 sm:p-10 shadow-2xl shadow-emerald-950/10">
             {submitted ? (
               <div className="text-center py-10 space-y-4 animate-fade-in">
                 <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-300 flex items-center justify-center mx-auto shadow-md">

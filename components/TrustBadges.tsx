@@ -6,10 +6,10 @@ import { APPROVAL_CARDS } from "@/lib/projectData";
 
 export const TrustBadges: React.FC = () => {
   const iconMap: Record<string, React.ReactNode> = {
-    "na-kjp": <ShieldCheck className="w-7 h-7 text-emerald-600" />,
-    "hduda": <CheckCircle2 className="w-7 h-7 text-emerald-600" />,
-    "loans": <Landmark className="w-7 h-7 text-emerald-600" />,
-    "tax": <Receipt className="w-7 h-7 text-emerald-700" />,
+    "na-kjp": <ShieldCheck className="w-6 h-6 text-white" />,
+    "hduda": <CheckCircle2 className="w-6 h-6 text-white" />,
+    "loans": <Landmark className="w-6 h-6 text-white" />,
+    "tax": <Receipt className="w-6 h-6 text-white" />,
   };
 
   return (
@@ -18,29 +18,29 @@ export const TrustBadges: React.FC = () => {
         {APPROVAL_CARDS.map((card, idx) => (
           <div
             key={idx}
-            className="p-6 rounded-3xl bg-white border border-emerald-100 shadow-xl flex flex-col justify-between group hover:-translate-y-1.5 transition-all duration-300"
+            className="p-6 rounded-3xl vibrant-card flex flex-col justify-between group"
           >
-            <div className="space-y-3">
+            <div className="space-y-3.5">
               <div className="flex items-center justify-between">
-                <div className="p-3 rounded-2xl bg-emerald-50 text-emerald-700">
-                  {iconMap[card.id] || <ShieldCheck className="w-7 h-7 text-emerald-600" />}
+                <div className="p-3 rounded-2xl vibrant-icon-emerald">
+                  {iconMap[card.id] || <ShieldCheck className="w-6 h-6 text-white" />}
                 </div>
-                <span className="text-xs uppercase font-black tracking-wider text-emerald-900 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-200">
+                <span className="text-[11px] uppercase font-black tracking-wider vibrant-badge-emerald px-3 py-1 rounded-full">
                   {card.highlight}
                 </span>
               </div>
 
               <div>
-                <h3 className="text-lg font-black text-forest-950 font-serif group-hover:text-emerald-700 transition-colors">
+                <h3 className="text-lg font-black text-forest-950 font-serif group-hover:text-emerald-600 transition-colors">
                   {card.title} {card.subtitle}
                 </h3>
-                <p className="text-sm text-charcoal-700 mt-1 leading-relaxed font-normal">
+                <p className="text-sm text-charcoal-700 mt-1.5 leading-relaxed font-normal">
                   {card.description}
                 </p>
               </div>
             </div>
 
-            <div className="pt-3 mt-3 border-t border-gray-100 flex items-center gap-1.5 text-xs font-bold text-emerald-800">
+            <div className="pt-3.5 mt-3.5 border-t border-emerald-100/80 flex items-center gap-1.5 text-xs font-black text-emerald-800">
               <CheckCircle2 className="w-4 h-4 text-emerald-600" />
               <span>100% Legally Clear & Sanctioned</span>
             </div>

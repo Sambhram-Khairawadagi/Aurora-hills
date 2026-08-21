@@ -135,16 +135,16 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
   ) : null;
 
   return (
-    <section id="gallery" className="py-24 lg:py-32 bg-[#F7F9F6] text-forest-950 relative overflow-hidden">
+    <section id="gallery" className="py-24 lg:py-32 vibrant-section-glow text-forest-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-emerald-200 text-emerald-800 text-xs sm:text-sm font-black uppercase tracking-widest shadow-sm">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs sm:text-sm font-black uppercase tracking-widest">
             <Sparkles className="w-4 h-4 text-emerald-600" />
             Actual Photographic Showcase
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
-            Real Site Photos & <span className="green-text-gradient">Project Imagery</span>
+            Real Site Photos & <span className="vibrant-text-gradient">Project Imagery</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
             Explore authentic on-ground site photographs, layout blueprints, and scenic hill vistas of The Aurora Hills in Dharwad City.
@@ -157,7 +157,7 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
             <div
               key={idx}
               onClick={() => setLightboxIndex(idx)}
-              className="group relative rounded-3xl overflow-hidden bg-white border-2 border-emerald-100 shadow-xl cursor-pointer hover:shadow-2xl hover:-translate-y-1 transition-all duration-300"
+              className="group relative rounded-3xl overflow-hidden bg-white border-2 border-emerald-300/40 p-2 shadow-xl shadow-emerald-950/8 cursor-pointer hover:shadow-2xl hover:border-emerald-500 hover:-translate-y-1.5 transition-all duration-300"
             >
               <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden bg-sand-200">
                 <Image
@@ -167,18 +167,18 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
                   sizes="(max-width: 768px) 100vw, 400px"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
 
                 {/* Top Badge */}
                 <div className="absolute top-4 left-4">
-                  <span className="text-xs font-black uppercase tracking-wider text-emerald-950 bg-white/95 backdrop-blur-md px-3.5 py-1 rounded-full shadow-md">
+                  <span className="text-xs font-black uppercase tracking-wider text-emerald-950 bg-white/95 backdrop-blur-md px-3.5 py-1 rounded-full shadow-md border border-emerald-200/50">
                     {item.category}
                   </span>
                 </div>
 
                 {/* Enlarge Button */}
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform scale-90 group-hover:scale-100 shadow-lg">
-                  <Maximize2 className="w-5 h-5" />
+                <div className="absolute top-4 right-4 w-10 h-10 rounded-full vibrant-icon-emerald flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform scale-90 group-hover:scale-100 shadow-lg">
+                  <Maximize2 className="w-5 h-5 text-white" />
                 </div>
 
                 {/* Bottom Title & Description */}
