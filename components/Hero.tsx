@@ -34,18 +34,36 @@ export const Hero: React.FC<HeroProps> = ({
 }) => {
   return (
     <section id="hero" className="relative min-h-[92vh] sm:min-h-screen flex flex-col justify-center pt-20 sm:pt-28 lg:pt-32 pb-12 sm:pb-16 overflow-hidden">
-      {/* 8K Ultra-Luxury Full-Bleed Background Image */}
+      {/* 8K Ultra-Luxury Full-Bleed Background Images (Responsive Mobile 9:16 & Desktop 16:9) */}
       <div className="absolute inset-0 -z-20">
-        <Image
-          src="/images/aurora-hills-plotted-masterpiece.png"
-          alt="The Aurora Hills Plotted Villa Sanctuary at Sunset Viewpoint"
-          fill
-          priority
-          unoptimized
-          quality={100}
-          sizes="100vw"
-          className="object-cover object-[65%_center] sm:object-center"
-        />
+        {/* Mobile Portrait (9:16 Ratio) */}
+        <div className="block sm:hidden absolute inset-0">
+          <Image
+            src="/images/aurora-hills-plotted-mobile.png"
+            alt="The Aurora Hills Plotted Villa Sanctuary Dharwad (Mobile)"
+            fill
+            priority
+            unoptimized
+            quality={100}
+            sizes="100vw"
+            className="object-cover object-top"
+          />
+        </div>
+
+        {/* Desktop Landscape (16:9 Ratio) */}
+        <div className="hidden sm:block absolute inset-0">
+          <Image
+            src="/images/aurora-hills-plotted-masterpiece.png"
+            alt="The Aurora Hills Plotted Villa Sanctuary at Sunset Viewpoint"
+            fill
+            priority
+            unoptimized
+            quality={100}
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
+
         {/* Cinematic Dual Gradient Overlay for Peak Contrast & Welcoming Depth */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20 sm:from-black/80 sm:via-black/45 sm:to-black/15 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none" />
