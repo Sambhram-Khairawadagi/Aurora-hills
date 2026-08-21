@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { X, QrCode, Sparkles, Navigation, MapPin } from "lucide-react";
+import Image from "next/image";
+import { X, QrCode, Sparkles, Navigation, Download } from "lucide-react";
 
 interface QRCodeModalProps {
   isOpen: boolean;
@@ -12,61 +13,73 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({ isOpen, onClose }) => 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
-      <div className="bg-[#F7F9F6] border border-white/90 rounded-3xl p-6 sm:p-8 max-w-sm w-full text-forest-950 shadow-2xl relative text-center neu-card">
+    <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
+      <div className="bg-gradient-to-b from-white to-emerald-50/50 border-2 border-emerald-300/60 rounded-3xl p-6 sm:p-8 max-w-sm w-full text-forest-950 shadow-2xl shadow-emerald-950/20 relative text-center">
+        {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2 rounded-full neu-button text-charcoal-700 hover:text-forest-950 transition-colors"
+          className="absolute top-5 right-5 p-2 rounded-full bg-white/80 hover:bg-emerald-100 text-charcoal-700 hover:text-emerald-800 transition-colors border border-emerald-200 shadow-sm"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
         </button>
 
-        <div className="w-14 h-14 rounded-2xl neu-inset text-emerald-700 flex items-center justify-center mx-auto mb-4">
-          <QrCode className="w-7 h-7" />
+        {/* Header Icon */}
+        <div className="w-14 h-14 rounded-2xl vibrant-icon-emerald flex items-center justify-center mx-auto mb-4">
+          <QrCode className="w-7 h-7 text-white" />
+        </div>
+
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full vibrant-badge-emerald text-[11px] font-black uppercase tracking-widest mb-2">
+          <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+          Official Location QR
         </div>
 
         <h3 className="text-xl font-bold font-serif text-forest-950 mb-1">
-          Scan for Mobile Directions
+          Scan for Live GPS Directions
         </h3>
-        <p className="text-xs text-charcoal-600 mb-6">
-          Scan with your smartphone camera to open Google Maps GPS navigation directly to The Aurora Hills.
+        <p className="text-xs text-charcoal-600 mb-5 leading-relaxed">
+          Scan with your smartphone camera to open Google Maps navigation directly to <strong>The Aurora Hills</strong>.
         </p>
 
-        {/* Dynamic Simulated QR Canvas */}
-        <div className="p-4 bg-white rounded-2xl shadow-md inline-block mb-4 border border-charcoal-200">
-          <div className="w-48 h-48 bg-forest-950 rounded-lg p-2 flex flex-col items-center justify-center relative overflow-hidden">
-            <div className="absolute inset-2 border-2 border-white/20 rounded grid grid-cols-6 grid-rows-6 gap-1 p-1">
-              {Array.from({ length: 36 }).map((_, i) => (
-                <div
-                  key={i}
-                  className={`rounded-sm ${
-                    i % 2 === 0 || i % 5 === 0 || i === 0 || i === 5 || i === 30 || i === 35
-                      ? "bg-white"
-                      : "bg-transparent"
-                  }`}
-                />
-              ))}
-            </div>
-            <div className="relative z-10 bg-emerald-600 text-white p-2 rounded-lg text-[10px] font-black font-serif shadow-lg">
-              AURORA HILLS
-            </div>
+        {/* Authentic QR Code Image Frame */}
+        <div className="p-3 bg-white rounded-2xl shadow-xl inline-block mb-4 border-2 border-emerald-300/50 relative group">
+          <div className="relative w-56 h-56 rounded-xl overflow-hidden bg-white flex items-center justify-center">
+            <Image
+              src="/images/aurora-hills-qr.png"
+              alt="The Aurora Hills Dharwad Official Google Maps QR Code"
+              width={224}
+              height={224}
+              className="object-contain p-1"
+              priority
+            />
           </div>
         </div>
 
-        <div className="text-xs text-emerald-800 font-bold mb-4">
-          Dharwad City, Karnataka
+        <div className="text-xs text-emerald-900 font-extrabold mb-5 flex items-center justify-center gap-1.5">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span>Sunset Viewpoint, Dharwad City, Karnataka</span>
         </div>
 
-        <a
-          href="https://maps.app.goo.gl/3EnF93gjmTueXy667"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full neu-button text-xs font-bold text-forest-950 hover:text-emerald-700 transition-colors"
-        >
-          <Navigation className="w-3.5 h-3.5 text-emerald-600" />
-          <span>Open Google Maps Directly</span>
-        </a>
+        <div className="flex flex-col gap-2.5">
+          <a
+            href="https://maps.app.goo.gl/3EnF93gjmTueXy667"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-3 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/25 transition-all hover:scale-[1.02] active:scale-[0.98]"
+          >
+            <Navigation className="w-4 h-4" />
+            <span>Open Google Maps Directly</span>
+          </a>
+
+          <a
+            href="/images/aurora-hills-qr.png"
+            download="Aurora-Hills-Location-QR.png"
+            className="w-full py-2.5 rounded-full bg-white hover:bg-emerald-50 text-emerald-900 border border-emerald-300 text-xs font-bold flex items-center justify-center gap-2 transition-colors"
+          >
+            <Download className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Download QR Code Image</span>
+          </a>
+        </div>
       </div>
     </div>
   );

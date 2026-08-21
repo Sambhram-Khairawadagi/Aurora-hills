@@ -14,15 +14,17 @@ import {
   Plane,
   ExternalLink,
   CheckCircle2,
-  Sparkles
+  Sparkles,
+  QrCode
 } from "lucide-react";
 import { CONNECTIVITY_CATEGORIES } from "@/lib/projectData";
 
 interface LocationConnectivityProps {
   onOpenEnquiry: (source?: string) => void;
+  onOpenQR?: () => void;
 }
 
-export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOpenEnquiry }) => {
+export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOpenEnquiry, onOpenQR }) => {
   const [activeCategory, setActiveCategory] = useState<"education" | "shopping" | "transit" | "nature">("education");
 
   return (
@@ -95,19 +97,30 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
             </div>
 
             {/* Map Action Bar */}
-            <div className="pt-4 flex flex-wrap items-center justify-between gap-4">
+            <div className="pt-4 flex flex-wrap items-center justify-between gap-3">
               <div className="text-xs sm:text-sm text-charcoal-700 font-bold">
                 GPS Coordinates: 15.4589° N, 74.9902° E
               </div>
-              <a
-                href="https://maps.app.goo.gl/3EnF93gjmTueXy667"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white text-xs sm:text-sm font-black uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:scale-105"
-              >
-                <Navigation className="w-4 h-4" />
-                <span>Open Google Maps Navigation</span>
-              </a>
+              <div className="flex flex-wrap items-center gap-2.5">
+                {onOpenQR && (
+                  <button
+                    onClick={onOpenQR}
+                    className="px-4 py-2.5 rounded-full bg-white border border-emerald-300/80 text-forest-950 hover:text-emerald-700 text-xs sm:text-sm font-bold flex items-center gap-2 shadow-sm hover:shadow-md transition-all"
+                  >
+                    <QrCode className="w-4 h-4 text-emerald-600" />
+                    <span>Scan Location QR</span>
+                  </button>
+                )}
+                <a
+                  href="https://maps.app.goo.gl/3EnF93gjmTueXy667"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white text-xs sm:text-sm font-black uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:scale-105"
+                >
+                  <Navigation className="w-4 h-4" />
+                  <span>Open Maps</span>
+                </a>
+              </div>
             </div>
           </div>
 

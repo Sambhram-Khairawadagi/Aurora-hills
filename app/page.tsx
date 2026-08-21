@@ -144,7 +144,10 @@ export default function HomePage() {
         />
 
         {/* Location & Proximities to Schools, Colleges, Malls */}
-        <LocationConnectivity onOpenEnquiry={handleOpenEnquiry} />
+        <LocationConnectivity 
+          onOpenEnquiry={handleOpenEnquiry} 
+          onOpenQR={handleOpenQR}
+        />
 
         {/* Transparent Pricing Calculator starting at ₹42 Lakhs */}
         <PriceCalculator
