@@ -126,7 +126,7 @@ export default function HomePage() {
         {/* Why Choose Aurora Hills */}
         <WhyAuroraHills onOpenEnquiry={handleOpenEnquiry} />
 
-        {/* YouTube Video Tour & Actual Site Footage */}
+        {/* Official Drone Video Tour & Actual Site Footage */}
         <DevelopmentVideo
           onOpenEnquiry={handleOpenEnquiry}
         />

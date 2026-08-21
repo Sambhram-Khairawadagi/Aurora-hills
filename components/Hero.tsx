@@ -196,10 +196,10 @@ export const Hero: React.FC<HeroProps> = ({
               onClick={onOpenVideo}
               className="w-full sm:w-auto justify-center group px-5 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-bold text-white liquid-glass-btn rounded-full transition-all flex items-center gap-2 hover:-translate-y-0.5 shadow-lg"
             >
-              <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-full bg-red-600 text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(220,38,38,0.6)]">
+              <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-500 text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(16,185,129,0.7)]">
                 <Play className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 fill-current ml-0.5" />
               </div>
-              <span>Watch YouTube Site Tour</span>
+              <span>Watch Drone Site Tour</span>
             </button>
 
             <button
