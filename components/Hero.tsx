@@ -43,8 +43,7 @@ export const Hero: React.FC<HeroProps> = ({
             alt="The Aurora Hills Plotted Villa Sanctuary Dharwad (Mobile)"
             fill
             priority
-            unoptimized
-            quality={100}
+            quality={85}
             sizes="100vw"
             className="object-cover object-top"
           />
@@ -57,8 +56,7 @@ export const Hero: React.FC<HeroProps> = ({
             alt="The Aurora Hills Plotted Villa Sanctuary at Sunset Viewpoint"
             fill
             priority
-            unoptimized
-            quality={100}
+            quality={85}
             sizes="100vw"
             className="object-cover object-center"
           />

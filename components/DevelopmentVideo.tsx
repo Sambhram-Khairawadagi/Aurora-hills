@@ -48,6 +48,7 @@ export const DevelopmentVideo: React.FC<DevelopmentVideoProps> = ({ onOpenEnquir
               poster="/images/hero-layout-sunset.png"
               controls
               playsInline
+              preload="none"
               onPlay={() => setIsPlaying(true)}
               onPause={() => setIsPlaying(false)}
               className="w-full h-full object-cover"

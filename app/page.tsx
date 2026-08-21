@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { TrustBadges } from "@/components/TrustBadges";
@@ -12,19 +13,56 @@ import { Amenities } from "@/components/Amenities";
 import { SanctionedLayout } from "@/components/SanctionedLayout";
 import { LocationConnectivity } from "@/components/LocationConnectivity";
 import { PriceCalculator } from "@/components/PriceCalculator";
-import { FutureReturnsCalculator } from "@/components/FutureReturnsCalculator";
-import { Gallery } from "@/components/Gallery";
-import { SiteVisitSection } from "@/components/SiteVisitSection";
-import { EnquirySection } from "@/components/EnquirySection";
 import { Partners } from "@/components/Partners";
 import { Footer } from "@/components/Footer";
 import { FloatingActions } from "@/components/FloatingActions";
 
-import { EnquiryModal } from "@/components/EnquiryModal";
-import { SiteVisitModal } from "@/components/SiteVisitModal";
-import { BrochureModal } from "@/components/BrochureModal";
-import { QRCodeModal } from "@/components/QRCodeModal";
-import { VideoModal } from "@/components/VideoModal";
+// Dynamically load heavy below-the-fold components
+const FutureReturnsCalculator = dynamic(
+  () => import("@/components/FutureReturnsCalculator").then((mod) => mod.FutureReturnsCalculator),
+  { ssr: true }
+);
+
+const Gallery = dynamic(
+  () => import("@/components/Gallery").then((mod) => mod.Gallery),
+  { ssr: true }
+);
+
+const SiteVisitSection = dynamic(
+  () => import("@/components/SiteVisitSection").then((mod) => mod.SiteVisitSection),
+  { ssr: true }
+);
+
+const EnquirySection = dynamic(
+  () => import("@/components/EnquirySection").then((mod) => mod.EnquirySection),
+  { ssr: true }
+);
+
+// Dynamically load modals on-demand (zero impact on initial bundle)
+const EnquiryModal = dynamic(
+  () => import("@/components/EnquiryModal").then((mod) => mod.EnquiryModal),
+  { ssr: false }
+);
+
+const SiteVisitModal = dynamic(
+  () => import("@/components/SiteVisitModal").then((mod) => mod.SiteVisitModal),
+  { ssr: false }
+);
+
+const BrochureModal = dynamic(
+  () => import("@/components/BrochureModal").then((mod) => mod.BrochureModal),
+  { ssr: false }
+);
+
+const QRCodeModal = dynamic(
+  () => import("@/components/QRCodeModal").then((mod) => mod.QRCodeModal),
+  { ssr: false }
+);
+
+const VideoModal = dynamic(
+  () => import("@/components/VideoModal").then((mod) => mod.VideoModal),
+  { ssr: false }
+);
 
 export default function HomePage() {
   // Modal states

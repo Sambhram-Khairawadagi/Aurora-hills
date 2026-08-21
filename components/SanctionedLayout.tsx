@@ -95,7 +95,6 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                 src={getLayoutImageSrc()}
                 alt="The Aurora Hills Dharwad Sanctioned Layout"
                 fill
-                priority
                 sizes="(max-width: 1200px) 100vw, 1200px"
                 className="object-contain"
               />

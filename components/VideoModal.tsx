@@ -34,6 +34,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
             autoPlay
             controls
             playsInline
+            preload="none"
             className="w-full h-full object-contain"
           />
         </div>
