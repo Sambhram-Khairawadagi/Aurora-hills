@@ -9,10 +9,9 @@ interface AmenitiesProps {
 }
 
 export const Amenities: React.FC<AmenitiesProps> = ({ onOpenEnquiry }) => {
-  const [activeCategory, setActiveCategory] = useState<string>("All");
+  const [activeCategory, setActiveCategory] = useState<string>("Wellness");
 
   const categories = [
-    "All",
     "Wellness",
     "Sports",
     "Family",
