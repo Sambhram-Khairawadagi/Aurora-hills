@@ -1,15 +1,8 @@
 "use client";
 
-import React, { useState, useRef } from "react";
-import Image from "next/image";
-import {
-  Sparkles,
-  ArrowRight,
-  CheckCircle2,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
-import { AMENITIES_DATA, AmenityItem } from "@/lib/projectData";
+import React, { useState } from "react";
+import { Sparkles, CheckCircle2 } from "lucide-react";
+import { AMENITIES_DATA } from "@/lib/projectData";
 
 interface AmenitiesProps {
   onOpenEnquiry: (source?: string, requirement?: string) => void;
@@ -17,7 +10,6 @@ interface AmenitiesProps {
 
 export const Amenities: React.FC<AmenitiesProps> = ({ onOpenEnquiry }) => {
   const [activeCategory, setActiveCategory] = useState<string>("All");
-  const scrollRef = useRef<HTMLDivElement>(null);
 
   const categories = [
     "All",
@@ -34,63 +26,35 @@ export const Amenities: React.FC<AmenitiesProps> = ({ onOpenEnquiry }) => {
       ? AMENITIES_DATA
       : AMENITIES_DATA.filter((item) => item.category === activeCategory);
 
-  const scroll = (direction: "left" | "right") => {
-    if (scrollRef.current) {
-      const scrollAmount = 340;
-      scrollRef.current.scrollBy({
-        left: direction === "left" ? -scrollAmount : scrollAmount,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <section
       id="amenities"
-      className="py-16 lg:py-20 bg-[#F7F9F6] text-forest-950 relative overflow-hidden"
+      className="py-16 lg:py-24 bg-[#F7F9F6] text-forest-950 relative overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-widest shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-              20+ Facilities
-            </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black font-serif text-forest-950 tracking-tight">
-              Lifestyle{" "}
-              <span className="green-text-gradient">Amenities</span>
-            </h2>
+        <div className="flex flex-col items-center text-center gap-4 mb-10 sm:mb-12 animate-fade-in-up">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-widest shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
+            20+ Facilities
           </div>
-
-          {/* Carousel Navigation Arrows */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => scroll("left")}
-              className="p-2 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-emerald-50 hover:border-emerald-300 transition-colors"
-              aria-label="Scroll left"
-            >
-              <ChevronLeft className="w-4 h-4 text-gray-700" />
-            </button>
-            <button
-              onClick={() => scroll("right")}
-              className="p-2 rounded-full bg-white border border-gray-200 shadow-sm hover:bg-emerald-50 hover:border-emerald-300 transition-colors"
-              aria-label="Scroll right"
-            >
-              <ChevronRight className="w-4 h-4 text-gray-700" />
-            </button>
-          </div>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
+            Lifestyle <span className="green-text-gradient">Amenities</span>
+          </h2>
+          <p className="text-sm text-gray-500 max-w-xl mx-auto">
+            Discover a thoughtfully curated collection of facilities designed to elevate your everyday living.
+          </p>
         </div>
 
         {/* Compact Filter Tabs */}
-        <div className="flex items-center gap-1.5 mb-6 overflow-x-auto pb-2 scrollbar-hide">
+        <div className="flex items-center justify-start md:justify-center gap-2 mb-10 overflow-x-auto pb-2 scrollbar-hide animate-fade-in-up">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition-all duration-300 whitespace-nowrap ${
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 whitespace-nowrap ${
                 activeCategory === cat
-                  ? "bg-emerald-600 text-white shadow-md"
+                  ? "bg-emerald-600 text-white shadow-md shadow-emerald-600/30"
                   : "bg-white hover:bg-emerald-50 text-gray-600 border border-gray-200"
               }`}
             >
@@ -99,61 +63,31 @@ export const Amenities: React.FC<AmenitiesProps> = ({ onOpenEnquiry }) => {
           ))}
         </div>
 
-        {/* Horizontal Scrolling Carousel */}
-        <div
-          ref={scrollRef}
-          className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
+        {/* Minimalist List Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4 animate-fade-in-up">
           {filteredAmenities.map((amenity) => (
             <div
               key={amenity.id}
-              className="flex-shrink-0 w-[280px] sm:w-[300px] snap-start group bg-white rounded-2xl p-2 border border-emerald-50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              onClick={() => onOpenEnquiry("Amenity List", amenity.name)}
+              className="group flex flex-col sm:flex-row sm:items-center gap-4 p-4 sm:p-5 rounded-2xl bg-white border border-transparent hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-900/5 transition-all duration-300 cursor-pointer"
             >
-              {/* Compact Image Card */}
-              <div className="relative h-44 rounded-2xl overflow-hidden bg-emerald-950 shadow-md">
-                <Image
-                  src={amenity.image}
-                  alt={amenity.name}
-                  fill
-                  sizes="300px"
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                {/* Category Badge */}
-                <span className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-white/90 backdrop-blur-sm text-emerald-900">
-                  {amenity.badge || amenity.category}
-                </span>
-
-                {/* Title on Image */}
-                <div className="absolute bottom-2.5 left-3 right-3">
-                  <h3 className="text-sm font-bold text-white leading-tight drop-shadow-md">
+              <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500 shadow-inner">
+                 <CheckCircle2 className="w-6 h-6" />
+              </div>
+              <div className="flex-1">
+                <div className="flex flex-wrap items-center gap-2 mb-1">
+                  <h3 className="font-bold text-forest-950 group-hover:text-emerald-700 transition-colors">
                     {amenity.name}
                   </h3>
+                  {amenity.badge && (
+                    <span className="text-[9px] font-black uppercase tracking-wider text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full border border-emerald-200">
+                      {amenity.badge}
+                    </span>
+                  )}
                 </div>
-              </div>
-
-              {/* Compact Info Below */}
-              <div className="mt-2.5 px-1">
-                <p className="text-xs text-gray-600 leading-relaxed line-clamp-2">
+                <p className="text-xs sm:text-sm text-gray-500 leading-relaxed group-hover:text-gray-700 transition-colors">
                   {amenity.description}
                 </p>
-                <div className="mt-2 flex items-center justify-between">
-                  <span className="text-[10px] font-bold text-emerald-700 flex items-center gap-1">
-                    <CheckCircle2 className="w-3 h-3" />
-                    Phase 1 Sanctioned
-                  </span>
-                  <button
-                    onClick={() =>
-                      onOpenEnquiry("Amenity Card", amenity.name)
-                    }
-                    className="text-[10px] font-bold text-gray-500 hover:text-emerald-700 flex items-center gap-0.5 transition-colors"
-                  >
-                    Enquire
-                    <ArrowRight className="w-2.5 h-2.5" />
-                  </button>
-                </div>
               </div>
             </div>
           ))}
