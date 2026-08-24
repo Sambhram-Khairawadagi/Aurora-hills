@@ -114,13 +114,17 @@ export const Hero: React.FC<HeroProps> = ({
 
         {/* Top Floating Announcement Strip (Mobile Bank Loan) */}
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-6 sm:mb-8 animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full liquid-glass-pill shadow-lg w-fit border border-white/20">
+          <div className="inline-flex flex-wrap items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full liquid-glass-pill shadow-lg w-fit border border-white/20">
             <span className="text-[10px] sm:text-xs lg:text-sm font-black tracking-wider text-white uppercase drop-shadow">
               Hosa Lifestyle • Hosa Dharwad
             </span>
             <span className="hidden sm:inline text-white/30">|</span>
-            <span className="hidden sm:inline text-xs font-bold text-emerald-300 drop-shadow">
-              NA-KJP & HDUDA Sanctioned
+            <span className="hidden sm:inline text-[10px] sm:text-xs font-bold text-emerald-300 drop-shadow uppercase">
+              NA-KJP Sanctioned
+            </span>
+            <span className="hidden sm:inline text-white/30">|</span>
+            <span className="text-[10px] sm:text-xs font-black text-amber-300 drop-shadow uppercase tracking-wider">
+              Premium Gated Community
             </span>
           </div>
 
