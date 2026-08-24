@@ -167,23 +167,9 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
                   sizes="(max-width: 768px) 100vw, 400px"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
-
-
-
                 {/* Enlarge Button */}
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full vibrant-icon-emerald flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform scale-90 group-hover:scale-100 shadow-lg">
+                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-emerald-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform scale-90 group-hover:scale-100 shadow-lg border border-emerald-400">
                   <Maximize2 className="w-5 h-5 text-white" />
-                </div>
-
-                {/* Bottom Title & Description */}
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <h3 className="text-base sm:text-lg font-bold font-serif leading-tight group-hover:text-emerald-300 transition-colors">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-white/80 mt-1 line-clamp-2">
-                    {item.desc}
-                  </p>
                 </div>
               </div>
             </div>
