@@ -13,7 +13,6 @@ export const DevelopmentVideo: React.FC<DevelopmentVideoProps> = ({ onOpenEnquir
     { id: 1, src: "/videos/drone-2-compressed.mp4", title: "Aerial Flyover 1", type: "4K Drone Video", poster: "/images/posters/drone-2-poster.jpg" },
     { id: 2, src: "/videos/drone-3.mp4", title: "Aerial Flyover 2", type: "4K Drone Video", poster: "/images/posters/drone-3-poster.jpg" },
     { id: 3, src: "/videos/drone-4-compressed.mp4", title: "Site Progress Tour", type: "4K Drone Video", poster: "/images/posters/drone-4-poster.jpg" },
-    { id: 4, src: "/videos/drone-5-compressed.mp4", title: "Hillside Panorama", type: "4K Drone Video", poster: "/images/posters/drone-5-poster.jpg" },
   ];
 
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
