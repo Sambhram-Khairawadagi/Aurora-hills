@@ -33,7 +33,7 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
     {
       title: "Official Sanctioned Layout Map",
       category: "Sanctioned Plan",
-      src: "/images/sanctioned-layout-map.jpg",
+      src: "/images/sanctioned-layout-map.png",
       desc: "Demarcated residential plots with 30ft/40ft wide roads and parks.",
     },
     {

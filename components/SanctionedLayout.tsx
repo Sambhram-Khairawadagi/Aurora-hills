@@ -23,13 +23,13 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
   const getLayoutImageSrc = () => {
     switch (activeLayoutView) {
       case "blueprint":
-        return "/images/sanctioned-layout-map.jpg";
+        return "/images/sanctioned-layout-map.png";
       case "site_roads":
         return "/images/site-actual-1.jpg";
       case "kannada_plan":
         return "/images/layout-kannada-details.jpg";
       default:
-        return "/images/sanctioned-layout-map.jpg";
+        return "/images/sanctioned-layout-map.png";
     }
   };
 
