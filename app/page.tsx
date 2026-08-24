@@ -21,10 +21,7 @@ const Gallery = dynamic(
   { ssr: true }
 );
 
-const SiteVisitSection = dynamic(
-  () => import("@/components/SiteVisitSection").then((mod) => mod.SiteVisitSection),
-  { ssr: true }
-);
+
 
 const EnquirySection = dynamic(
   () => import("@/components/EnquirySection").then((mod) => mod.EnquirySection),
@@ -178,8 +175,7 @@ export default function HomePage() {
         {/* Photographic Media & Site Gallery */}
         <Gallery onOpenVideo={handleOpenVideo} />
 
-        {/* Book a Site Visit Section */}
-        <SiteVisitSection />
+
 
         {/* Plot Enquiry Lead Form Section */}
         <EnquirySection />
