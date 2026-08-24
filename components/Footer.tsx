@@ -110,10 +110,16 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
         <div className="pt-8 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 text-xs sm:text-sm text-charcoal-600 text-center md:text-left">
           <div className="flex flex-col gap-2 md:gap-1.5">
             <p>© 2026 The Aurora Hills Dharwad City. All Rights Reserved.</p>
-            <p className="text-[10px] sm:text-xs text-charcoal-500/80 font-medium tracking-wide flex justify-center md:justify-start items-center gap-1.5 uppercase">
-              Designed & Maintained by <span className="font-black text-emerald-800/70">Property Basket</span>
-              <Sparkles className="w-3 h-3 text-emerald-600/50" />
-            </p>
+            <div className="text-[10px] sm:text-xs text-charcoal-500/80 font-medium tracking-wide flex justify-center md:justify-start items-center gap-2 uppercase">
+              <span>Designed & Maintained by</span>
+              <Image 
+                src="/images/property-basket-logo.jpg" 
+                alt="Property Basket Logo" 
+                width={100} 
+                height={30} 
+                className="h-6 w-auto object-contain mix-blend-multiply opacity-80"
+              />
+            </div>
           </div>
           <div className="flex items-center justify-center gap-3 sm:gap-4 text-charcoal-700 flex-wrap">
             <Link href="/admin" className="hover:text-emerald-700 transition-colors font-bold">
