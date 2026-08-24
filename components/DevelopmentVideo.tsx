@@ -9,11 +9,11 @@ interface DevelopmentVideoProps {
 
 export const DevelopmentVideo: React.FC<DevelopmentVideoProps> = ({ onOpenEnquiry }) => {
   const videos = [
-    { id: 0, src: "/videos/drone-1.mp4", title: "Site Tour Overview", type: "Full HD 1080p", poster: "/images/hero-layout-sunset.png" },
-    { id: 1, src: "/videos/drone-2.mp4", title: "Aerial Flyover 1", type: "4K Drone Video", poster: "/images/sunset-panorama-boards.jpg" },
-    { id: 2, src: "/videos/drone-3.mp4", title: "Aerial Flyover 2", type: "4K Drone Video", poster: "/images/entrance-gate-branding.jpg" },
-    { id: 3, src: "/videos/drone-4.mp4", title: "Site Progress Tour", type: "4K Drone Video", poster: "/images/internal-avenue-visitors.jpg" },
-    { id: 4, src: "/videos/drone-5.mp4", title: "Hillside Panorama", type: "4K Drone Video", poster: "/images/exit-gate-hills.jpg" },
+    { id: 0, src: "/videos/drone-1.mp4", title: "Site Tour Overview", type: "Full HD 1080p" },
+    { id: 1, src: "/videos/drone-2.mp4", title: "Aerial Flyover 1", type: "4K Drone Video" },
+    { id: 2, src: "/videos/drone-3.mp4", title: "Aerial Flyover 2", type: "4K Drone Video" },
+    { id: 3, src: "/videos/drone-4.mp4", title: "Site Progress Tour", type: "4K Drone Video" },
+    { id: 4, src: "/videos/drone-5.mp4", title: "Hillside Panorama", type: "4K Drone Video" },
   ];
 
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
@@ -45,7 +45,6 @@ export const DevelopmentVideo: React.FC<DevelopmentVideoProps> = ({ onOpenEnquir
                     videoRefs.current[video.id] = el;
                   }}
                   src={video.src}
-                  poster={video.poster}
                   autoPlay
                   loop
                   muted
