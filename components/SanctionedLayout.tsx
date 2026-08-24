@@ -84,100 +84,99 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
           </div>
         </div>
 
-        {/* Layout Viewer Card with Zoom Controls */}
-        <div className="relative rounded-3xl overflow-hidden bg-white border-2 border-emerald-200 p-3 sm:p-5 shadow-2xl">
-          <div className="relative min-h-[450px] sm:min-h-[580px] rounded-2xl overflow-hidden bg-sand-50 flex items-center justify-center">
-            <div
-              className="relative w-full h-full min-h-[450px] sm:min-h-[580px] transition-transform duration-300 ease-out flex items-center justify-center"
-              style={{ transform: `scale(${zoomLevel})` }}
-            >
-              <Image
-                src={getLayoutImageSrc()}
-                alt="The Aurora Hills Dharwad Sanctioned Layout"
-                fill
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                className="object-contain"
-              />
-            </div>
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start">
+          {/* Layout Viewer Card with Zoom Controls */}
+          <div className="w-full lg:w-3/4 relative rounded-3xl overflow-hidden bg-white border-2 border-emerald-200 p-3 sm:p-5 shadow-2xl flex-shrink-0">
+            <div className="relative min-h-[450px] sm:min-h-[580px] rounded-2xl overflow-hidden bg-sand-50 flex items-center justify-center">
+              <div
+                className="relative w-full h-full min-h-[450px] sm:min-h-[580px] transition-transform duration-300 ease-out flex items-center justify-center"
+                style={{ transform: `scale(${zoomLevel})` }}
+              >
+                <Image
+                  src={getLayoutImageSrc()}
+                  alt="The Aurora Hills Dharwad Sanctioned Layout"
+                  fill
+                  sizes="(max-width: 1200px) 100vw, 1200px"
+                  className="object-contain"
+                />
+              </div>
 
-            {/* Zoom HUD */}
-            <div className="absolute top-4 right-4 flex flex-col gap-2 z-20">
-              <button
-                onClick={handleZoomIn}
-                className="p-3 rounded-xl bg-white/90 hover:bg-white text-forest-950 shadow-md transition-colors border border-gray-200"
-                aria-label="Zoom in"
-              >
-                <ZoomIn className="w-5 h-5" />
-              </button>
-              <button
-                onClick={handleZoomOut}
-                className="p-3 rounded-xl bg-white/90 hover:bg-white text-forest-950 shadow-md transition-colors border border-gray-200"
-                aria-label="Zoom out"
-              >
-                <ZoomOut className="w-5 h-5" />
-              </button>
-              <button
-                onClick={handleResetZoom}
-                className="p-3 rounded-xl bg-white/90 hover:bg-white text-forest-950 shadow-md transition-colors border border-gray-200"
-                aria-label="Reset zoom"
-              >
-                <RotateCcw className="w-5 h-5" />
-              </button>
+              {/* Zoom HUD */}
+              <div className="absolute top-4 right-4 flex flex-col gap-2 z-20">
+                <button
+                  onClick={handleZoomIn}
+                  className="p-3 rounded-xl bg-white/90 hover:bg-white text-forest-950 shadow-md transition-colors border border-gray-200"
+                  aria-label="Zoom in"
+                >
+                  <ZoomIn className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={handleZoomOut}
+                  className="p-3 rounded-xl bg-white/90 hover:bg-white text-forest-950 shadow-md transition-colors border border-gray-200"
+                  aria-label="Zoom out"
+                >
+                  <ZoomOut className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={handleResetZoom}
+                  className="p-3 rounded-xl bg-white/90 hover:bg-white text-forest-950 shadow-md transition-colors border border-gray-200"
+                  aria-label="Reset zoom"
+                >
+                  <RotateCcw className="w-5 h-5" />
+                </button>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Real Estate Plot Dimension Cards */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-3xl bg-white border border-emerald-100 shadow-xl flex flex-col justify-between space-y-4">
-            <div>
-              <span className="text-xs uppercase font-extrabold text-emerald-800 tracking-wider">
-                Popular Villa Plot
-              </span>
-              <h3 className="text-2xl font-black font-serif text-forest-950 mt-1">1,200 sq.ft</h3>
-              <p className="text-sm text-charcoal-700 mt-1 font-medium">30 x 40 ft • Ideal for 3BHK Luxury Villa</p>
-              <p className="text-sm font-black text-emerald-800 mt-2">Starting ₹42 Lakhs*</p>
-            </div>
-            <button
-              onClick={() => onOpenEnquiry("Sanctioned Plan 30x40", "1,200 sq.ft (30x40)")}
-              className="w-full py-3 rounded-full bg-gradient-to-r from-emerald-600 to-green-600 text-white text-xs font-black uppercase tracking-wider shadow-md hover:scale-105 transition-transform"
-            >
-              Enquire Plot Availability
-            </button>
-          </div>
+          {/* Sidebar Plot Details */}
+          <div className="w-full lg:w-1/4 flex flex-col">
+            <div className="bg-white rounded-3xl p-6 shadow-xl border border-emerald-100">
+              <h3 className="text-lg sm:text-xl font-black font-serif text-forest-950 mb-6 border-b border-emerald-100 pb-4">
+                Available Dimensions
+              </h3>
+              
+              <div className="space-y-6">
+                {/* Plot 1 */}
+                <div 
+                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer" 
+                  onClick={() => onOpenEnquiry("Sanctioned Plan 30x40", "1,200 sq.ft (30x40)")}
+                >
+                  <span className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">Popular Villa Plot</span>
+                  <h4 className="text-xl font-black text-forest-950 mt-1 group-hover:text-emerald-700 transition-colors">1,200 sq.ft</h4>
+                  <p className="text-xs text-gray-500 mt-1 font-medium">30 × 40 ft • 3BHK Luxury Villa</p>
+                  <p className="text-xs font-bold text-emerald-800 mt-1">Starting ₹42 Lakhs*</p>
+                </div>
 
-          <div className="p-6 rounded-3xl bg-white border border-emerald-100 shadow-xl flex flex-col justify-between space-y-4">
-            <div>
-              <span className="text-xs uppercase font-extrabold text-emerald-800 tracking-wider">
-                Family Villa Plot
-              </span>
-              <h3 className="text-2xl font-black font-serif text-forest-950 mt-1">1,500 sq.ft</h3>
-              <p className="text-sm text-charcoal-700 mt-1 font-medium">30 x 50 ft • Spacious Garden Living</p>
-              <p className="text-sm font-black text-emerald-800 mt-2">Starting ₹52.5 Lakhs*</p>
-            </div>
-            <button
-              onClick={() => onOpenEnquiry("Sanctioned Plan 30x50", "1,500 sq.ft (30x50)")}
-              className="w-full py-3 rounded-full bg-gradient-to-r from-emerald-600 to-green-600 text-white text-xs font-black uppercase tracking-wider shadow-md hover:scale-105 transition-transform"
-            >
-              Enquire Plot Availability
-            </button>
-          </div>
+                {/* Plot 2 */}
+                <div 
+                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer" 
+                  onClick={() => onOpenEnquiry("Sanctioned Plan 30x50", "1,500 sq.ft (30x50)")}
+                >
+                  <span className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">Family Villa Plot</span>
+                  <h4 className="text-xl font-black text-forest-950 mt-1 group-hover:text-emerald-700 transition-colors">1,500 sq.ft</h4>
+                  <p className="text-xs text-gray-500 mt-1 font-medium">30 × 50 ft • Spacious Garden Living</p>
+                  <p className="text-xs font-bold text-emerald-800 mt-1">Starting ₹52.5 Lakhs*</p>
+                </div>
 
-          <div className="p-6 rounded-3xl bg-white border border-emerald-100 shadow-xl flex flex-col justify-between space-y-4">
-            <div>
-              <span className="text-xs uppercase font-extrabold text-emerald-800 tracking-wider">
-                Premium Corner Estate
-              </span>
-              <h3 className="text-2xl font-black font-serif text-forest-950 mt-1">2,400 sq.ft</h3>
-              <p className="text-sm text-charcoal-700 mt-1 font-medium">40 x 60 ft • Grand Hillside Mansion</p>
-              <p className="text-sm font-black text-emerald-800 mt-2">Starting ₹84 Lakhs*</p>
+                {/* Plot 3 */}
+                <div 
+                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer" 
+                  onClick={() => onOpenEnquiry("Sanctioned Plan 40x60", "2,400 sq.ft (40x60)")}
+                >
+                  <span className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">Premium Corner Estate</span>
+                  <h4 className="text-xl font-black text-forest-950 mt-1 group-hover:text-emerald-700 transition-colors">2,400 sq.ft</h4>
+                  <p className="text-xs text-gray-500 mt-1 font-medium">40 × 60 ft • Grand Hillside Mansion</p>
+                  <p className="text-xs font-bold text-emerald-800 mt-1">Starting ₹84 Lakhs*</p>
+                </div>
+              </div>
+
+              <button
+                onClick={() => onOpenEnquiry("Sanctioned Plan Sidebar", "Any Size")}
+                className="w-full mt-8 py-3 rounded-full bg-gradient-to-r from-emerald-600 to-green-600 text-white text-xs font-black uppercase tracking-wider shadow-md hover:scale-105 transition-transform"
+              >
+                Check Availability
+              </button>
             </div>
-            <button
-              onClick={() => onOpenEnquiry("Sanctioned Plan 40x60", "2,400 sq.ft (40x60)")}
-              className="w-full py-3 rounded-full bg-gradient-to-r from-emerald-600 to-green-600 text-white text-xs font-black uppercase tracking-wider shadow-md hover:scale-105 transition-transform"
-            >
-              Enquire Plot Availability
-            </button>
           </div>
         </div>
       </div>
