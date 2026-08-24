@@ -8,7 +8,6 @@ import { TrustBadges } from "@/components/TrustBadges";
 import { ProjectIntro } from "@/components/ProjectIntro";
 import { MainShowcaseVideo } from "@/components/MainShowcaseVideo";
 import { DevelopmentVideo } from "@/components/DevelopmentVideo";
-import { Infrastructure } from "@/components/Infrastructure";
 import { Amenities } from "@/components/Amenities";
 import { SanctionedLayout } from "@/components/SanctionedLayout";
 import { Partners } from "@/components/Partners";
@@ -164,9 +163,6 @@ export default function HomePage() {
         <DevelopmentVideo
           onOpenEnquiry={handleOpenEnquiry}
         />
-
-        {/* Infrastructure & Engineering */}
-        <Infrastructure />
 
         {/* Photo-Rich Lifestyle Amenities */}
         <Amenities onOpenEnquiry={handleOpenEnquiry} />
