@@ -141,7 +141,6 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                   className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer" 
                   onClick={() => onOpenEnquiry("Sanctioned Plan 30x40", "1,200 sq.ft (30x40)")}
                 >
-                  <span className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">Popular Villa Plot</span>
                   <h4 className="text-xl font-black text-forest-950 mt-1 group-hover:text-emerald-700 transition-colors">1,200 sq.ft</h4>
                   <p className="text-xs text-gray-500 mt-1 font-medium">30 × 40 ft • 3BHK Luxury Villa</p>
                   <p className="text-xs font-bold text-emerald-800 mt-1">Starting ₹42 Lakhs*</p>
@@ -152,7 +151,6 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                   className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer" 
                   onClick={() => onOpenEnquiry("Sanctioned Plan 30x50", "1,500 sq.ft (30x50)")}
                 >
-                  <span className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">Family Villa Plot</span>
                   <h4 className="text-xl font-black text-forest-950 mt-1 group-hover:text-emerald-700 transition-colors">1,500 sq.ft</h4>
                   <p className="text-xs text-gray-500 mt-1 font-medium">30 × 50 ft • Spacious Garden Living</p>
                   <p className="text-xs font-bold text-emerald-800 mt-1">Starting ₹52.5 Lakhs*</p>
@@ -163,7 +161,6 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                   className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer" 
                   onClick={() => onOpenEnquiry("Sanctioned Plan 40x60", "2,400 sq.ft (40x60)")}
                 >
-                  <span className="text-[10px] uppercase font-black text-emerald-600 tracking-wider">Premium Corner Estate</span>
                   <h4 className="text-xl font-black text-forest-950 mt-1 group-hover:text-emerald-700 transition-colors">2,400 sq.ft</h4>
                   <p className="text-xs text-gray-500 mt-1 font-medium">40 × 60 ft • Grand Hillside Mansion</p>
                   <p className="text-xs font-bold text-emerald-800 mt-1">Starting ₹84 Lakhs*</p>
