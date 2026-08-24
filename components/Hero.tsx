@@ -120,7 +120,7 @@ export const Hero: React.FC<HeroProps> = ({
             </span>
             <span className="hidden sm:inline text-white/30">|</span>
             <span className="hidden sm:inline text-[10px] sm:text-xs font-bold text-emerald-300 drop-shadow uppercase">
-              NA-KJP Sanctioned
+              NA-KJP Approved
             </span>
             <span className="hidden sm:inline text-white/30">|</span>
             <span className="text-[10px] sm:text-xs font-black text-amber-300 drop-shadow uppercase tracking-wider">
@@ -149,18 +149,18 @@ export const Hero: React.FC<HeroProps> = ({
 
           {/* Supporting Welcoming Copy */}
           <p className="text-xs sm:text-base lg:text-lg text-white/90 leading-relaxed font-medium max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
-            Luxury villa plots nestled in lush green hills at <strong className="text-white font-bold">Sunset Viewpoint, Dharwad City</strong> — 20+ amenities, wide paved roads, and instant access to top schools, malls & NH-4.
+            Luxury villa plots nestled in lush green hills at <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:text-emerald-300 hover:underline transition-colors">Sunset Viewpoint, Dharwad City</a> — 20+ amenities, wide paved roads, and instant access to top schools, malls & NH-4.
           </p>
 
           {/* Real Estate Price & Pre-Launch Advantage Card */}
           <div className="p-4 sm:p-5 lg:p-6 rounded-2xl sm:rounded-3xl liquid-glass-card liquid-glass-shimmer w-full max-w-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 relative overflow-hidden transition-all duration-300 hover:scale-[1.01] shadow-2xl border-white/25">
-            <div className="absolute top-0 right-0 bg-gradient-to-l from-emerald-500 to-teal-500 text-white text-[9px] sm:text-[10px] font-black uppercase tracking-wider px-3 sm:px-3.5 py-0.5 sm:py-1 rounded-bl-xl shadow-lg border-b border-l border-emerald-300/40">
+            <div className="absolute top-0 right-0 bg-yellow-400 text-black text-xs sm:text-sm font-black uppercase tracking-wider px-4 py-1.5 sm:py-2 rounded-bl-xl shadow-[0_4px_15px_rgba(250,204,21,0.4)] border-b border-l border-yellow-300">
               Pre-Launch Pricing
             </div>
 
             <div>
               <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-bold text-emerald-300 block drop-shadow">
-                Sanctioned Villa Plots
+                Approved Villa Plots
               </span>
               <div className="text-2xl sm:text-3xl md:text-4xl font-black text-white font-serif flex items-baseline gap-2 mt-0.5 sm:mt-1 drop-shadow-md">
                 <span className="text-xs sm:text-sm font-medium text-white/70">Starting</span>
@@ -206,15 +206,6 @@ export const Hero: React.FC<HeroProps> = ({
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
-            <button
-              onClick={onOpenVideo}
-              className="w-full sm:w-auto justify-center group px-5 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-bold text-white liquid-glass-btn rounded-full transition-all duration-300 flex items-center gap-2 hover:-translate-y-1 shadow-lg hover:shadow-2xl hover:bg-white/10"
-            >
-              <div className="w-5 h-5 sm:w-7 sm:h-7 rounded-full bg-gradient-to-tr from-emerald-500 to-teal-500 text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(16,185,129,0.7)]">
-                <Play className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 fill-current ml-0.5" />
-              </div>
-              <span>Watch Drone Site Tour</span>
-            </button>
 
 
           </div>

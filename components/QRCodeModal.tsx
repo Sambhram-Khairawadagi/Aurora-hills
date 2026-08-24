@@ -57,7 +57,7 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({ isOpen, onClose }) => 
 
         <div className="text-xs text-emerald-900 font-extrabold mb-5 flex items-center justify-center gap-1.5">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-          <span>Sunset Viewpoint, Dharwad City, Karnataka</span>
+          <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-700 hover:underline transition-colors text-center inline-block">Sunset Viewpoint, Dharwad City, Karnataka</a>
         </div>
 
         <div className="flex flex-col gap-2.5">

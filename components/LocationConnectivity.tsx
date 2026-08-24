@@ -88,7 +88,7 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
                   <span className="text-sm font-black text-forest-950 font-serif">The Aurora Hills</span>
                 </div>
                 <p className="text-xs text-charcoal-700 font-medium">
-                  Sunset Viewpoint, Karnatak University, Dharwad
+                  <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-700 hover:underline transition-colors">Sunset Viewpoint, Karnatak University, Dharwad</a>
                 </p>
                 <div className="mt-2 text-[11px] font-bold text-emerald-800 vibrant-badge-emerald px-2.5 py-0.5 rounded-full inline-block">
                   Adjacent to NH-4 Highway

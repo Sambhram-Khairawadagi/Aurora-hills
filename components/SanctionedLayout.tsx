@@ -43,7 +43,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
             HDUDA & NA-KJP Approved Plan
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
-            Sanctioned <span className="green-text-gradient">Layout Plan & Site Progress</span>
+            Approved <span className="green-text-gradient">Layout Plan & Site Progress</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
             Officially approved layout plan with demarcated plot boundaries and actual on-site road work.
@@ -59,7 +59,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                   : "text-charcoal-700 hover:text-emerald-700"
               }`}
             >
-              Sanctioned Master Blueprint
+              Approved Master Blueprint
             </button>
             <button
               onClick={() => { setActiveLayoutView("site_roads"); handleResetZoom(); }}
@@ -84,7 +84,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
               >
                 <Image
                   src={getLayoutImageSrc()}
-                  alt="The Aurora Hills Dharwad Sanctioned Layout"
+                  alt="The Aurora Hills Dharwad Approved Layout"
                   fill
                   sizes="(max-width: 1200px) 100vw, 1200px"
                   className="object-contain"
@@ -129,7 +129,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                 {/* Plot 1 */}
                 <div 
                   className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer" 
-                  onClick={() => onOpenEnquiry("Sanctioned Plan 30x40", "1,200 sq.ft (30x40)")}
+                  onClick={() => onOpenEnquiry("Approved Plan 30x40", "1,200 sq.ft (30x40)")}
                 >
                   <h4 className="text-xl font-black text-forest-950 mt-1 group-hover:text-emerald-700 transition-colors">1,200 sq.ft</h4>
                   <p className="text-xs text-gray-500 mt-1 font-medium">30 × 40 ft • 3BHK Luxury Villa</p>
@@ -139,7 +139,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                 {/* Plot 2 */}
                 <div 
                   className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer" 
-                  onClick={() => onOpenEnquiry("Sanctioned Plan 30x50", "1,500 sq.ft (30x50)")}
+                  onClick={() => onOpenEnquiry("Approved Plan 30x50", "1,500 sq.ft (30x50)")}
                 >
                   <h4 className="text-xl font-black text-forest-950 mt-1 group-hover:text-emerald-700 transition-colors">1,500 sq.ft</h4>
                   <p className="text-xs text-gray-500 mt-1 font-medium">30 × 50 ft • Spacious Garden Living</p>
@@ -149,7 +149,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                 {/* Plot 3 */}
                 <div 
                   className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer" 
-                  onClick={() => onOpenEnquiry("Sanctioned Plan 40x60", "2,400 sq.ft (40x60)")}
+                  onClick={() => onOpenEnquiry("Approved Plan 40x60", "2,400 sq.ft (40x60)")}
                 >
                   <h4 className="text-xl font-black text-forest-950 mt-1 group-hover:text-emerald-700 transition-colors">2,400 sq.ft</h4>
                   <p className="text-xs text-gray-500 mt-1 font-medium">40 × 60 ft • Grand Hillside Mansion</p>
@@ -158,7 +158,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
               </div>
 
               <button
-                onClick={() => onOpenEnquiry("Sanctioned Plan Sidebar", "Any Size")}
+                onClick={() => onOpenEnquiry("Approved Plan Sidebar", "Any Size")}
                 className="w-full mt-8 py-3 rounded-full bg-gradient-to-r from-emerald-600 to-green-600 text-white text-xs font-black uppercase tracking-wider shadow-md hover:scale-105 transition-transform"
               >
                 Check Availability

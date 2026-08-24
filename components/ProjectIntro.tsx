@@ -67,7 +67,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
             </h2>
 
             <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed font-normal">
-              <strong className="text-forest-950 font-bold">The Aurora Hills</strong> is Dharwad’s premier master-planned plotted community at <strong className="text-emerald-900 font-bold">Sunset Viewpoint, Karnatak University</strong>, offering scenic green views and effortless connectivity to NH-4 and top educational hubs.
+              <strong className="text-forest-950 font-bold">The Aurora Hills</strong> is Dharwad’s premier master-planned plotted community at <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="text-emerald-900 font-bold hover:text-emerald-600 hover:underline transition-colors">Sunset Viewpoint, Karnatak University</a>, offering scenic green views and effortless connectivity to NH-4 and top educational hubs.
             </p>
 
             {/* Strategic Location Highlights Box */}
@@ -75,7 +75,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
               <div className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-emerald-700" />
                 <span className="text-xs sm:text-sm uppercase tracking-wider font-black text-emerald-900">
-                  Prime Address • Sunset Viewpoint, Dharwad
+                  Prime Address • <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-200 hover:underline transition-colors">Sunset Viewpoint, Dharwad</a>
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-charcoal-700 font-medium">
@@ -86,7 +86,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
             {/* Key Advantages Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
               {[
-                "HDUDA Sanctioned Layout",
+                "HDUDA Approved Layout",
                 "NA-KJP Clear Title Deeds",
                 "1.5L Litres Overhead Water Tank",
                 "Bank Loan Ready (SBI, HDFC, ICICI)",
@@ -113,7 +113,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
                 onClick={onOpenLayout}
                 className="px-6 py-3.5 rounded-full bg-white border border-emerald-300 text-xs sm:text-sm font-bold text-forest-950 flex items-center gap-2 transition-all hover:text-emerald-700 hover:border-emerald-500 shadow-sm"
               >
-                <span>View Sanctioned Layout</span>
+                <span>View Approved Layout</span>
                 <ArrowRight className="w-4 h-4 text-emerald-600" />
               </button>
             </div>

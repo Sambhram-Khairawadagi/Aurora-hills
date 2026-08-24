@@ -31,8 +31,8 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
       desc: "The branded welcome arch with paved roads and NA-KJP/HDUDA approval banners.",
     },
     {
-      title: "Official Sanctioned Layout Map",
-      category: "Sanctioned Plan",
+      title: "Official Approved Layout Map",
+      category: "Approved Plan",
       src: "/images/sanctioned-layout-map.png",
       desc: "Demarcated residential plots with 30ft/40ft wide roads and parks.",
     },

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Download, QrCode, ShieldCheck, Heart, Sun, Trees, Sparkles } from "lucide-react";
 import { CONTACT_NUMBERS, EMAIL_ADDRESS } from "@/lib/projectData";
+import { PageViewCounter } from "./PageViewCounter";
 
 interface FooterProps {
   onOpenBrochure: () => void;
@@ -37,8 +38,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
             </div>
 
             <p className="text-sm sm:text-base text-charcoal-700 leading-relaxed max-w-md font-medium">
-              Dharwad City’s premier planned residential sanctuary at Sunset Viewpoint. NA-KJP & HDUDA sanctioned layout starting from <strong className="text-emerald-900 font-bold">₹42 Lakhs</strong> with clear titles and 20+ lifestyle amenities.
+              Dharwad City’s premier planned residential sanctuary at Sunset Viewpoint. NA-KJP & HDUDA approved layout starting from <strong className="text-emerald-900 font-bold">₹42 Lakhs</strong> with clear titles and 20+ lifestyle amenities.
             </p>
+
+            <PageViewCounter />
 
             <div className="p-4 rounded-2xl bg-white/90 border border-emerald-300/40 shadow-sm text-sm space-y-1">
               <div className="flex items-center gap-2">
@@ -48,7 +51,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
                 </span>
               </div>
               <div className="font-bold text-forest-950">
-                Sunset Viewpoint, Karnatak University, Dharwad City, Karnataka (Near NH-4)
+                <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-700 transition-colors hover:underline">
+                  Sunset Viewpoint, Karnatak University, Dharwad City, Karnataka (Near NH-4)
+                </a>
               </div>
             </div>
           </div>
@@ -63,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
               <li><a href="#about" className="hover:text-emerald-700 transition-colors">About Project</a></li>
               <li><a href="#development" className="hover:text-emerald-700 transition-colors">Site Video & Drone Tour</a></li>
               <li><a href="#amenities" className="hover:text-emerald-700 transition-colors">20+ Lifestyle Amenities</a></li>
-              <li><a href="#layout" className="hover:text-emerald-700 transition-colors">Sanctioned Layout Plan</a></li>
+              <li><a href="#layout" className="hover:text-emerald-700 transition-colors">Approved Layout Plan</a></li>
               <li><a href="#gallery" className="hover:text-emerald-700 transition-colors">Real Photo Gallery</a></li>
             </ul>
           </div>

@@ -34,7 +34,7 @@ export const MasterPlanViewer: React.FC<MasterPlanViewerProps> = ({
             Master Layout & <span className="green-text-gradient">3D Township Explorer</span>
           </h2>
           <p className="text-charcoal-700 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
-            Inspect the complete layout in interactive 3D, switch between high-definition 2D sanctioned blueprints, and explore plot dimensions.
+            Inspect the complete layout in interactive 3D, switch between high-definition 2D approved blueprints, and explore plot dimensions.
           </p>
 
           {/* View Mode Switcher */}
@@ -57,7 +57,7 @@ export const MasterPlanViewer: React.FC<MasterPlanViewerProps> = ({
                   : "text-charcoal-700 hover:text-emerald-700"
               }`}
             >
-              Sanctioned 2D Master Plan
+              Approved 2D Master Plan
             </button>
             <button
               onClick={() => setViewMode("3d_perspective")}

@@ -220,7 +220,7 @@ export const APPROVAL_CARDS = [
     title: "HDUDA",
     subtitle: "APPROVED",
     description: "Approved by Hubli-Dharwad Urban Development Authority.",
-    highlight: "Government Sanctioned"
+    highlight: "Government Approved"
   },
   {
     id: "loans",

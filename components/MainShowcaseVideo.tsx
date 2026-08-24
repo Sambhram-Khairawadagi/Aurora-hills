@@ -41,6 +41,7 @@ export const MainShowcaseVideo: React.FC = () => {
               src="/videos/aurora-hills-main.mp4"
               poster="/images/welcome-gate-sunset.jpg"
               playsInline
+              controls
               preload="metadata"
               className={`w-full h-full object-cover transition-opacity duration-500 ${isPlaying ? 'opacity-100' : 'opacity-80'}`}
               onPlay={() => setIsPlaying(true)}
@@ -48,27 +49,20 @@ export const MainShowcaseVideo: React.FC = () => {
               onEnded={() => setIsPlaying(false)}
             />
             
-            {/* Custom Play Button Overlay */}
+            {/* Custom Play Button Overlay (Pointer events none so it doesn't block controls) */}
             {!isPlaying && (
               <div 
-                className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm cursor-pointer transition-all duration-300 group-hover:bg-black/20"
-                onClick={togglePlay}
+                className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm transition-all duration-300 pointer-events-none"
               >
-                <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 shadow-[0_0_40px_rgba(255,255,255,0.3)] group-hover:scale-110 transition-transform duration-300">
+                <div 
+                  className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-transform duration-300 pointer-events-auto cursor-pointer hover:scale-110"
+                  onClick={togglePlay}
+                >
                   <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white flex items-center justify-center shadow-xl">
                     <Play className="w-6 h-6 sm:w-8 sm:h-8 text-emerald-600 ml-1.5" />
                   </div>
                 </div>
               </div>
-            )}
-
-            {/* Click to Pause invisible overlay when playing */}
-            {isPlaying && (
-              <div 
-                className="absolute inset-0 cursor-pointer" 
-                onClick={togglePlay}
-                title="Pause Video"
-              />
             )}
           </div>
         </div>

@@ -46,6 +46,7 @@ export const DevelopmentVideo: React.FC<DevelopmentVideoProps> = ({ onOpenEnquir
                   src={video.src}
                   poster={video.poster}
                   autoPlay
+                  controls
                   loop
                   muted
                   playsInline

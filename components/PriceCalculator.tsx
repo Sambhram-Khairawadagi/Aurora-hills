@@ -115,7 +115,7 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
           {/* 3 Trust Pillars Under Calculator */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
             {[
-              { title: "HDUDA & NA-KJP", desc: "Sanctioned layout plan" },
+              { title: "HDUDA & NA-KJP", desc: "Approved layout plan" },
               { title: "SBI & HDFC Approved", desc: "Fast-track loan processing" },
               { title: "Clear Title Deed", desc: "Zero legal encumbrances" },
             ].map((pillar) => (

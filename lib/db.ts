@@ -11,6 +11,7 @@ const LEADS_FILE = path.join(DATA_DIR, "leads.json");
 const VISITS_FILE = path.join(DATA_DIR, "site_visits.json");
 const EVENTS_FILE = path.join(DATA_DIR, "events.json");
 const SETTINGS_FILE = path.join(DATA_DIR, "settings.json");
+const VIEWS_FILE = path.join(DATA_DIR, "page_views.json");
 
 // In-memory runtime cache for serverless resiliency
 const memoryStore: {
@@ -82,7 +83,7 @@ const defaultSettings: SiteSettings = {
   hero_title: "LIVE CLOSER TO NATURE. INVEST IN TOMORROW.",
   hero_subtitle: "A premium, thoughtfully planned plotted community in Dharwad City, designed around lifestyle, connectivity, greenery and long-term value.",
   project_location: "Dharwad City, Karnataka (Near NH-4 Highway)",
-  map_url: "https://maps.app.goo.gl/3EnF93gjmTueXy667",
+  map_url: "https://share.google/lhDyTbBa3vWnMhOFK",
   approvals: ["NA-KJP Approved", "HDUDA Approved", "Bank Loans Approved", "Property Tax Updated"],
   brochure_url: "/brochure/the-aurora-hills-brochure.pdf",
 };
@@ -256,5 +257,19 @@ export const db = {
     const merged = { ...current, ...updates };
     writeJSON(SETTINGS_FILE, merged, "settings");
     return merged;
+  },
+
+  incrementPageView(): number {
+    const defaultViews = { count: 1204 }; // Mock starting count
+    const views = readJSON<{count: number}>(VIEWS_FILE, defaultViews, "pageViews" as any);
+    views.count += 1;
+    writeJSON(VIEWS_FILE, views, "pageViews" as any);
+    return views.count;
+  },
+
+  getPageViewCount(): number {
+    const defaultViews = { count: 1204 };
+    const views = readJSON<{count: number}>(VIEWS_FILE, defaultViews, "pageViews" as any);
+    return views.count;
   }
 };

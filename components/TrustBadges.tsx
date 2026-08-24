@@ -42,7 +42,7 @@ export const TrustBadges: React.FC = () => {
 
             <div className="pt-3.5 mt-4 border-t border-emerald-100/80 flex items-center gap-1.5 text-[10px] sm:text-xs font-black text-emerald-800 shrink-0">
               <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 shrink-0" />
-              <span>100% Legally Clear & Sanctioned</span>
+              <span>100% Legally Clear & Approved</span>
             </div>
           </div>
         ))}
