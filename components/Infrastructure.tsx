@@ -1,34 +1,35 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Droplet, Zap, Route, Trees, ShieldCheck, Sparkles } from "lucide-react";
 
 export const Infrastructure: React.FC = () => {
   const items = [
     {
       title: "1.5 Lakh Litres Water Reservoir",
-      desc: "Massive dedicated elevated storage tank ensuring high-pressure, uninterrupted 24/7 potable water distribution to every plot.",
+      desc: "Elevated storage tank ensuring high-pressure, 24/7 potable water to every plot.",
       icon: <Droplet className="w-6 h-6 text-white" />,
       tag: "Water Security",
       iconClass: "bg-gradient-to-br from-sky-500 to-blue-600 shadow-md shadow-sky-500/30"
     },
     {
       title: "Underground Utilities Network",
-      desc: "Concealed electrical lines, high-speed fiber conduits, and storm drainage hidden beneath tree-lined pedestrian footpaths.",
+      desc: "Concealed electrical lines, fiber conduits, and storm drainage beneath tree-lined footpaths.",
       icon: <Zap className="w-6 h-6 text-white" />,
       tag: "Aesthetic Living",
       iconClass: "bg-gradient-to-br from-amber-500 to-yellow-600 shadow-md shadow-amber-500/30"
     },
     {
       title: "Wide 30ft & 40ft Asphalt Roads",
-      desc: "High-grade smooth asphalt avenues with dedicated curbs, modern avenue street lighting, and demarcated turning radiuses.",
+      desc: "Smooth asphalt avenues with modern street lighting and demarcated turning radiuses.",
       icon: <Route className="w-6 h-6 text-white" />,
       tag: "Seamless Access",
       iconClass: "vibrant-icon-emerald"
     },
     {
       title: "Centralized HTP & Eco-Harvesting",
-      desc: "Modern sewage & wastewater recycling infrastructure with integrated rainwater harvesting preserving Dharwad's pristine hill ecology.",
+      desc: "Modern sewage recycling with integrated rainwater harvesting preserving Dharwad's ecology.",
       icon: <Trees className="w-6 h-6 text-white" />,
       tag: "Eco Sustainable",
       iconClass: "bg-gradient-to-br from-emerald-600 to-teal-700 shadow-md shadow-teal-500/30"
@@ -47,8 +48,25 @@ export const Infrastructure: React.FC = () => {
             Robust <span className="vibrant-text-gradient">Infrastructure & Engineering</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
-            Built to strict township specifications with heavy-duty asphalt roads, underground services, and eco-friendly utilities.
+            Heavy-duty asphalt roads, underground services, and eco-friendly utilities — built to strict township standards.
           </p>
+        </div>
+
+        {/* Real Site Photo */}
+        <div className="max-w-4xl mx-auto mb-12 rounded-3xl overflow-hidden bg-white border-2 border-emerald-300/40 p-3 shadow-2xl shadow-emerald-950/10">
+          <div className="relative h-[280px] sm:h-[380px] rounded-2xl overflow-hidden">
+            <Image
+              src="/images/site-office-infra.jpg"
+              alt="Aurora Hills On-Site Infrastructure & Development Progress"
+              fill
+              sizes="(max-width: 1024px) 100vw, 900px"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute bottom-4 left-4 right-4 text-white">
+              <span className="text-xs font-black uppercase tracking-wider bg-emerald-600/90 backdrop-blur-sm px-3 py-1 rounded-full">Actual Site Progress</span>
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">

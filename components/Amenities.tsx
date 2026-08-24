@@ -108,7 +108,7 @@ export const Amenities: React.FC<AmenitiesProps> = ({ onOpenEnquiry }) => {
           {filteredAmenities.map((amenity) => (
             <div
               key={amenity.id}
-              className="flex-shrink-0 w-[280px] sm:w-[300px] snap-start group"
+              className="flex-shrink-0 w-[280px] sm:w-[300px] snap-start group bg-white rounded-2xl p-2 border border-emerald-50 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               {/* Compact Image Card */}
               <div className="relative h-44 rounded-2xl overflow-hidden bg-emerald-950 shadow-md">

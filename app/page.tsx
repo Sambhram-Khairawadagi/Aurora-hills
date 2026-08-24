@@ -6,22 +6,16 @@ import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { TrustBadges } from "@/components/TrustBadges";
 import { ProjectIntro } from "@/components/ProjectIntro";
-import { WhyAuroraHills } from "@/components/WhyAuroraHills";
+import { MainShowcaseVideo } from "@/components/MainShowcaseVideo";
 import { DevelopmentVideo } from "@/components/DevelopmentVideo";
 import { Infrastructure } from "@/components/Infrastructure";
 import { Amenities } from "@/components/Amenities";
 import { SanctionedLayout } from "@/components/SanctionedLayout";
-import { LocationConnectivity } from "@/components/LocationConnectivity";
-import { PriceCalculator } from "@/components/PriceCalculator";
 import { Partners } from "@/components/Partners";
 import { Footer } from "@/components/Footer";
 import { FloatingActions } from "@/components/FloatingActions";
 
 // Dynamically load heavy below-the-fold components
-const FutureReturnsCalculator = dynamic(
-  () => import("@/components/FutureReturnsCalculator").then((mod) => mod.FutureReturnsCalculator),
-  { ssr: true }
-);
 
 const Gallery = dynamic(
   () => import("@/components/Gallery").then((mod) => mod.Gallery),
@@ -161,8 +155,10 @@ export default function HomePage() {
           onOpenLayout={handleScrollToLayout}
         />
 
-        {/* Why Choose Aurora Hills */}
-        <WhyAuroraHills onOpenEnquiry={handleOpenEnquiry} />
+
+
+        {/* Standalone Main Video Showcase */}
+        <MainShowcaseVideo />
 
         {/* Official Drone Video Tour & Actual Site Footage */}
         <DevelopmentVideo
@@ -181,22 +177,7 @@ export default function HomePage() {
           onOpenBrochure={handleOpenBrochure}
         />
 
-        {/* Location & Proximities to Schools, Colleges, Malls */}
-        <LocationConnectivity 
-          onOpenEnquiry={handleOpenEnquiry} 
-          onOpenQR={handleOpenQR}
-        />
 
-        {/* Transparent Pricing Calculator starting at ₹42 Lakhs */}
-        <PriceCalculator
-          onOpenEnquiry={handleOpenEnquiry}
-          startingPrice={startingPrice}
-        />
-
-        {/* Dharwad Future Returns & Land Appreciation Calculator */}
-        <FutureReturnsCalculator
-          onOpenEnquiry={handleOpenEnquiry}
-        />
 
         {/* Photographic Media & Site Gallery */}
         <Gallery onOpenVideo={handleOpenVideo} />

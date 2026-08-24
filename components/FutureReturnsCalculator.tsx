@@ -98,7 +98,7 @@ export const FutureReturnsCalculator: React.FC<FutureReturnsCalculatorProps> = (
             Future Returns & <span className="vibrant-text-gradient">Land Appreciation Calculator</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
-            Project your wealth creation backed by verified historical indices and major economic catalysts across Dharwad’s prime NH-4 corridor.
+            Project your wealth creation backed by verified historical indices across Dharwad's NH-4 corridor.
           </p>
         </div>
 
@@ -356,28 +356,7 @@ export const FutureReturnsCalculator: React.FC<FutureReturnsCalculatorProps> = (
               </div>
             </div>
 
-            {/* Real Economic Growth Catalysts Card */}
-            <div className="p-6 rounded-3xl bg-white border border-emerald-100 shadow-lg space-y-3">
-              <h4 className="text-sm font-black uppercase tracking-widest text-emerald-900 flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-emerald-600" />
-                Why Dharwad Land Appreciates Rapidly:
-              </h4>
 
-              <ul className="space-y-2 text-xs sm:text-sm text-charcoal-700 font-medium">
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span><strong>IIT & IIIT Dharwad Campuses:</strong> Expanding institutional cluster attracting affluent faculty and research professionals.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span><strong>Mumigatti-Belur FMCG & Industrial Hub:</strong> 15,000+ new high-income jobs along the NH-4 corridor.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <span><strong>HDUDA Clear Title Advantage:</strong> Sanctioned plotted townships appreciate 25–35% faster than unorganized layouts.</span>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>

@@ -19,40 +19,40 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
 
   const galleryItems = [
     {
-      title: "Panoramic Sunset Viewpoint & Green Hills",
+      title: "Sunset Panorama & Project Branding",
       category: "Actual Site View",
-      src: "/images/hero-layout-sunset.png",
-      desc: "Scenic elevated hill vantage point overlooking lush greenery in Dharwad City.",
+      src: "/images/sunset-panorama-boards.jpg",
+      desc: "Golden sunset over the hills with Aurora Hills project boards at the entrance.",
     },
     {
-      title: "Family Dream Villa & Garden Living",
-      category: "Lifestyle",
-      src: "/images/family-happy-home.jpg",
-      desc: "Build your customized luxury villa with private lawns in a secure community.",
+      title: "Welcome Gateway at Sunset",
+      category: "Site Entrance",
+      src: "/images/welcome-gate-sunset.jpg",
+      desc: "The branded welcome arch with paved roads and NA-KJP/HDUDA approval banners.",
     },
     {
       title: "Official Sanctioned Layout Map",
       category: "Sanctioned Plan",
       src: "/images/sanctioned-layout-map.jpg",
-      desc: "Demarcated residential plots, 30ft/40ft wide roads, parks, and civic amenities.",
+      desc: "Demarcated residential plots with 30ft/40ft wide roads and parks.",
     },
     {
-      title: "On-Ground Asphalt Roads & Infrastructure",
+      title: "Internal Avenue & Visitor Access",
       category: "Site Progress",
-      src: "/images/site-actual-1.jpg",
-      desc: "Actual on-site tarred arterial roads and demarcated plot boundary work.",
+      src: "/images/internal-avenue-visitors.jpg",
+      desc: "Wide asphalt avenue with street lights, branding boards, and visitor transport.",
     },
     {
-      title: "Hillside Road Network & Surrounding Greenery",
+      title: "Exit Gate & Green Hills Backdrop",
       category: "Site Progress",
-      src: "/images/site-actual-2.jpg",
-      desc: "Wide planned roads with serene panoramic hills backdrop.",
+      src: "/images/exit-gate-hills.jpg",
+      desc: "The 'Thank You' exit arch with panoramic Dharwad hills in the background.",
     },
     {
-      title: "Modern Villa Architecture & Gardens",
-      category: "Villa Concept",
-      src: "/images/lifestyle-upgrade.jpg",
-      desc: "A lifestyle upgrade combining fresh air, natural tranquility, and modern comfort.",
+      title: "Site Office & Infrastructure Progress",
+      category: "Construction",
+      src: "/images/site-office-infra.jpg",
+      desc: "On-site office with water infrastructure and street lighting in progress.",
     },
   ];
 
@@ -147,7 +147,7 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
             Real Site Photos & <span className="vibrant-text-gradient">Project Imagery</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
-            Explore authentic on-ground site photographs, layout blueprints, and scenic hill vistas of The Aurora Hills in Dharwad City.
+            Authentic on-ground site photographs and layout blueprints of The Aurora Hills.
           </p>
         </div>
 

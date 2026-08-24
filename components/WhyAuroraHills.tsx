@@ -32,12 +32,12 @@ export const WhyAuroraHills: React.FC<WhyAuroraHillsProps> = ({ onOpenEnquiry })
             Why Choose <span className="vibrant-text-gradient">The Aurora Hills?</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
-            Dharwad’s fastest growing residential corridor, offering an unmatched harmony of natural hill serenity, school/college proximity, and rapid capital appreciation.
+            An unmatched harmony of hill serenity, school proximity, and rapid capital appreciation.
           </p>
         </div>
 
         {/* Vibrant Real Estate Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
           {WHY_AURORA_HILLS.map((point, idx) => (
             <div
               key={idx}

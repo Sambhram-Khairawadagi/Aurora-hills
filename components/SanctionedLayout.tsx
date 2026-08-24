@@ -46,7 +46,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
             Sanctioned <span className="green-text-gradient">Layout Plan & Site Progress</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
-            Inspect the officially approved layout plan, demarcated plot boundaries, 30ft/40ft wide asphalt avenues, and actual on-site road work.
+            Officially approved layout plan with demarcated plot boundaries and actual on-site road work.
           </p>
 
           {/* View Mode Buttons */}

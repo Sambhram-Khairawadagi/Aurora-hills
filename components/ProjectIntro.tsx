@@ -22,8 +22,8 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
             <div className="relative rounded-3xl overflow-hidden bg-white border-2 border-emerald-300/40 p-3.5 shadow-2xl shadow-emerald-950/10">
               <div className="relative h-[380px] sm:h-[460px] rounded-2xl overflow-hidden group">
                 <Image
-                  src="/images/aerial-layout-sunset.jpg"
-                  alt="The Aurora Hills Dharwad City Scenic Layout"
+                  src="/images/entrance-gate-branding.jpg"
+                  alt="The Aurora Hills Dharwad - Actual Site Entrance"
                   fill
                   sizes="(max-width: 1024px) 100vw, 600px"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -67,7 +67,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
             </h2>
 
             <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed font-normal">
-              <strong className="text-forest-950 font-bold">The Aurora Hills</strong> is Dharwad City’s premier master-planned plotted residential community. Situated on the scenic ridge at <strong className="text-emerald-900 font-bold">Sunset Viewpoint, Karnatak University, Dharwad</strong>, it offers an unpolluted microclimate, panoramic green views, and effortless connectivity to NH-4 highway and top educational hubs.
+              <strong className="text-forest-950 font-bold">The Aurora Hills</strong> is Dharwad’s premier master-planned plotted community at <strong className="text-emerald-900 font-bold">Sunset Viewpoint, Karnatak University</strong>, offering scenic green views and effortless connectivity to NH-4 and top educational hubs.
             </p>
 
             {/* Strategic Location Highlights Box */}
@@ -79,7 +79,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-charcoal-700 font-medium">
-                Unmatched strategic position: 5 mins to Karnatak University, 10 mins to SDM, 7 mins to D-Mart, adjacent to NH-4 Highway.
+                5 mins to Karnatak University, 10 mins to SDM, 7 mins to D-Mart, adjacent to NH-4.
               </p>
             </div>
 

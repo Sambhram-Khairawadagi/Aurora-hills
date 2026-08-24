@@ -40,7 +40,7 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
             Strategic Location & <span className="vibrant-text-gradient">Landmark Proximities</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
-            Perfect balance of scenic hill serenity and city convenience. Minutes away from top schools, universities, malls, and major highways.
+            Minutes from top schools, universities, malls, and major highways.
           </p>
 
           {/* Proximity Category Switcher */}
@@ -156,21 +156,7 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
               ))}
             </div>
 
-            {/* Hubli-Dharwad Twin City Proximity Highlight Box */}
-            <div className="p-5 rounded-2xl bg-gradient-to-tr from-emerald-950 via-forest-950 to-emerald-900 text-white shadow-xl space-y-2 border border-emerald-500/20">
-              <div className="flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-emerald-300" />
-                <span className="text-xs uppercase tracking-wider font-extrabold text-emerald-300">
-                  Hubli-Dharwad Smart City Axis
-                </span>
-              </div>
-              <h4 className="text-base sm:text-lg font-bold font-serif">
-                15–20 Mins from Twin City Commercial Center
-              </h4>
-              <p className="text-xs text-emerald-100/90 leading-relaxed font-normal">
-                Direct four-lane highway connectivity to airport, software tech corridors, top hospital networks, and shopping districts.
-              </p>
-            </div>
+
           </div>
         </div>
       </div>

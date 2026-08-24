@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import { Calendar, Clock, Car, Phone, Mail, User, CheckCircle2, ShieldCheck, Sparkles, Send } from "lucide-react";
 import confetti from "canvas-confetti";
 
@@ -61,6 +62,16 @@ export const SiteVisitSection: React.FC<SiteVisitSectionProps> = ({ onSuccess })
 
   return (
     <section id="site-visit" className="py-24 lg:py-32 vibrant-section-glow text-forest-950 relative overflow-hidden">
+      {/* Real Site Background Photo */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/images/welcome-gate-sunset.jpg"
+          alt="Aurora Hills Site Entrance"
+          fill
+          sizes="100vw"
+          className="object-cover opacity-10"
+        />
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs font-black uppercase tracking-widest">
@@ -71,7 +82,7 @@ export const SiteVisitSection: React.FC<SiteVisitSectionProps> = ({ onSuccess })
             Schedule a <span className="vibrant-text-gradient">Personal Tour</span>
           </h2>
           <p className="text-charcoal-700 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
-            Walk the paved avenues, inspect actual plot boundaries, and enjoy complimentary pickup from Dharwad / CBT.
+            Walk the paved avenues, inspect plot boundaries, and enjoy complimentary pickup from Dharwad / CBT.
           </p>
         </div>
 

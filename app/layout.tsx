@@ -1,5 +1,18 @@
 import type { Metadata } from "next";
+import { Outfit, Inter } from "next/font/google";
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-serif", // Re-mapping serif to geometric Outfit for minimalist headings
+});
 
 export const metadata: Metadata = {
   title: "The Aurora Hills | Premium Plots in Dharwad | Hosa Lifestyle",
@@ -140,7 +153,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased selection:bg-gold-500 selection:text-forest-950">
+      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased selection:bg-gold-500 selection:text-forest-950`}>
         {children}
       </body>
     </html>

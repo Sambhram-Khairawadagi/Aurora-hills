@@ -76,7 +76,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
             </h2>
 
             <p className="text-charcoal-700 text-sm sm:text-base leading-relaxed font-normal">
-              Speak directly with our project advisory team to reserve corner plots, review sanctions, and avail pre-launch discounts.
+              Speak directly with our team to reserve plots, review sanctions, and avail pre-launch discounts.
             </p>
 
             {/* Direct Telephone Numbers Card */}

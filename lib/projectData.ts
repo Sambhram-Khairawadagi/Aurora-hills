@@ -269,32 +269,22 @@ export const WHY_AURORA_HILLS = [
   {
     icon: "MapPin",
     title: "Strategic Prime Location",
-    description: "Situated in Dharwad City along National Highway NH-4 with fast access to Hubli-Dharwad Twin Smart City."
+    description: "On NH-4 highway in Dharwad City with fast access to the Hubli-Dharwad Twin Smart City corridor."
   },
   {
     icon: "Trees",
     title: "Greenery & Fresh Hill Air",
-    description: "Nestled amidst natural hill backdrops, palm plantations, panoramic sunset views, and fresh unpolluted air."
+    description: "Natural hill backdrops, palm plantations, panoramic sunset views, and pollution-free air."
   },
   {
     icon: "GraduationCap",
     title: "Premier Education & Healthcare",
-    description: "Minutes away from Karnatak University, SDM Medical/Dental College, Podar International School, and KIMS Hospital."
+    description: "Minutes from Karnatak University, SDM College, Podar International School, and KIMS Hospital."
   },
   {
     icon: "Sparkles",
     title: "20+ Lifestyle Amenities",
-    description: "Clubhouse membership, infinity swimming pool, tennis & pickleball courts, temple, dog park, and multi-cuisine restaurant."
-  },
-  {
-    icon: "Navigation",
-    title: "Seamless Highway Connectivity",
-    description: "15–20 minutes to Hubli-Dharwad Twin City, approx 20 km / 20 mins to Hubli Airport, and quick access to Railway Station."
-  },
-  {
-    icon: "TrendingUp",
-    title: "High Value Appreciation",
-    description: "Fast-developing Smart City growth corridor starting at ₹42 Lakhs, ideal for building your dream villa and wealth creation."
+    description: "Clubhouse, infinity pool, tennis & pickleball courts, temple, dog park, and multi-cuisine restaurant."
   }
 ];
 
@@ -302,32 +292,32 @@ export const INFRASTRUCTURE_HIGHLIGHTS = [
   {
     stat: "1.5 Lakh Litres",
     title: "Overhead Water Tank",
-    description: "Dedicated overhead water reservoir providing uninterrupted, pressurized 24x7 water distribution to every plot."
+    description: "Elevated reservoir ensuring 24x7 pressurized water distribution to every plot."
   },
   {
     stat: "Underground",
     title: "Planned Utilities Network",
-    description: "Zero dangling wires. Concealed underground electrical cabling, communication ducts, and efficient stormwater drainage."
+    description: "Concealed electrical cabling, communication ducts, and efficient stormwater drainage."
   },
   {
     stat: "Eco-Friendly",
     title: "Sustainable & Green Planning",
-    description: "Centralized layout planning with rainwater harvesting systems, dense tree planting, and low environmental footprint."
+    description: "Rainwater harvesting systems, dense tree planting, and low environmental footprint."
   },
   {
     stat: "30ft & 40ft",
     title: "Wide Asphalt Internal Roads",
-    description: "Wide paved asphalt roads with pedestrian footpaths, avenue street lighting, and dedicated turning radius."
+    description: "Paved asphalt roads with pedestrian footpaths and avenue street lighting."
   },
   {
     stat: "Dedicated",
     title: "Walking & Cycling Track",
-    description: "Exclusive green tracks for morning jogs, cycling, and evening strolls completely segregated from vehicular roads."
+    description: "Green tracks for morning jogs and cycling, segregated from vehicular roads."
   },
   {
     stat: "NH-4 Proximity",
     title: "Direct Highway Access",
-    description: "Direct seamless access to National Highway 4, connecting Dharwad, Belagavi, Hubli, and Bengaluru corridors."
+    description: "Seamless access to NH-4, connecting Dharwad, Belagavi, Hubli, and Bengaluru."
   }
 ];
 
