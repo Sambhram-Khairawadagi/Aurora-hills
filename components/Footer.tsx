@@ -20,7 +20,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
           <div className="lg:col-span-5 space-y-5">
             <div className="flex items-center gap-3.5">
               <Image
-                src="/images/aurora-hills-logo.png"
+                src="/images/aurora-hills-logo-transparent.png"
                 alt="The Aurora Hills Dharwad Logo"
                 width={130}
                 height={54}

@@ -46,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Brand Logo - Compact */}
         <Link href="/" className="flex items-center group flex-shrink-0">
           <Image
-            src="/images/aurora-hills-logo.png"
+            src="/images/aurora-hills-logo-transparent.png"
             alt="The Aurora Hills"
             width={180}
             height={60}
@@ -103,7 +103,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="lg:hidden mt-2 max-w-lg mx-auto bg-white/90 backdrop-blur-2xl rounded-3xl p-4 border border-white/60 shadow-2xl animate-fade-in space-y-3">
           <div className="flex items-center justify-between pb-2 border-b border-gray-100">
             <Image
-              src="/images/aurora-hills-logo.png"
+              src="/images/aurora-hills-logo-transparent.png"
               alt="The Aurora Hills"
               width={100}
               height={36}
