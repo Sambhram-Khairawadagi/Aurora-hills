@@ -113,11 +113,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
             <div className="text-[10px] sm:text-xs text-charcoal-500/80 font-medium tracking-wide flex justify-center md:justify-start items-center gap-2 uppercase">
               <span>Designed & Maintained by</span>
               <Image 
-                src="/images/property-basket-logo.jpg" 
+                src="/images/property-basket-logo-transparent.png" 
                 alt="Property Basket Logo" 
                 width={100} 
                 height={30} 
-                className="h-6 w-auto object-contain mix-blend-multiply opacity-80"
+                className="h-6 w-auto object-contain opacity-80"
               />
             </div>
           </div>
