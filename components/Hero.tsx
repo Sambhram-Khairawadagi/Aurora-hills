@@ -149,7 +149,7 @@ export const Hero: React.FC<HeroProps> = ({
           </p>
 
           {/* Real Estate Price & Pre-Launch Advantage Card */}
-          <div className="p-4 sm:p-5 lg:p-6 rounded-2xl sm:rounded-3xl liquid-glass-card liquid-glass-shimmer max-w-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 relative overflow-hidden transition-all duration-300 hover:scale-[1.01] shadow-2xl border-white/25">
+          <div className="p-4 sm:p-5 lg:p-6 rounded-2xl sm:rounded-3xl liquid-glass-card liquid-glass-shimmer w-full max-w-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 relative overflow-hidden transition-all duration-300 hover:scale-[1.01] shadow-2xl border-white/25">
             <div className="absolute top-0 right-0 bg-gradient-to-l from-emerald-500 to-teal-500 text-white text-[9px] sm:text-[10px] font-black uppercase tracking-wider px-3 sm:px-3.5 py-0.5 sm:py-1 rounded-bl-xl shadow-lg border-b border-l border-emerald-300/40">
               Pre-Launch Pricing
             </div>
@@ -170,14 +170,14 @@ export const Hero: React.FC<HeroProps> = ({
 
             <button
               onClick={() => onOpenEnquiry("Hero Price Card")}
-              className="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-white text-emerald-950 font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_4px_20px_rgba(255,255,255,0.4)] hover:shadow-[0_6px_28px_rgba(255,255,255,0.6)] transition-all hover:scale-105 active:scale-95 text-center"
+              className="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-white text-emerald-950 font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_4px_20px_rgba(255,255,255,0.4)] hover:shadow-[0_6px_28px_rgba(255,255,255,0.6)] transition-all hover:scale-105 active:scale-95 text-center flex-shrink-0"
             >
               Claim Offer →
             </button>
           </div>
 
           {/* 4 Proximity Advantage Pills */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5 max-w-2xl">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5 w-full max-w-2xl">
             {[
               { icon: Sun, label: "Sunset View Point", sub: "Panoramic Hills", color: "text-amber-400" },
               { icon: Trees, label: "Greenery & Air", sub: "Zero Pollution", color: "text-emerald-400" },
@@ -193,7 +193,7 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
 
           {/* Action Buttons (High Contrast & Mobile-Optimized) */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-3.5 pt-1 sm:pt-2">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-3.5 pt-1 sm:pt-2 w-full max-w-2xl">
             <button
               onClick={() => onOpenEnquiry("Hero Primary CTA")}
               className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-white liquid-glass-emerald rounded-full shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:shadow-[0_0_50px_rgba(16,185,129,0.8)] transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2"
