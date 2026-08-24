@@ -74,37 +74,47 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       {/* Main Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 w-full mt-2 sm:mt-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 w-full mt-2 sm:mt-0 flex flex-col justify-center">
         
-        {/* Sai Smruti Developers Prominent Logo & Heading */}
-        <div className="flex flex-col items-start mb-6 sm:mb-8 animate-fade-in space-y-3">
-          <div className="bg-white/95 backdrop-blur-md px-4 py-2 sm:px-6 sm:py-3 rounded-2xl shadow-2xl border border-white/50">
-            <Image
-              src="/images/sai-smruti-logo-pdf.png"
-              alt="Sai Smruti Developers Logo"
-              width={400}
-              height={100}
-              className="h-12 sm:h-16 w-auto object-contain"
-              priority
-            />
-          </div>
-          <div className="flex flex-col">
-            <h2 className="text-3xl sm:text-5xl md:text-6xl font-black font-sans tracking-tight text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-              SAI SMRUTI DEVELOPERS
+        {/* Floating Right Side Bank Loan Badge (Desktop) */}
+        <div className="absolute top-0 right-4 sm:right-8 animate-fade-in-down z-20 hidden md:block">
+           <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-black text-amber-950 bg-gradient-to-b from-amber-300 via-amber-400 to-amber-500 px-5 py-3 rounded-b-2xl shadow-[0_10px_30px_rgba(251,191,36,0.3)] border border-amber-200/50 hover:py-4 transition-all duration-300 cursor-default">
+             <ShieldCheck className="w-5 h-5 text-amber-900" />
+             <span>Bank Loans: SBI • HDFC • ICICI</span>
+           </div>
+        </div>
+
+        {/* Developers & Main Project Title */}
+        <div className="flex flex-col items-start mb-6 sm:mb-8 animate-fade-in">
+          <div className="flex flex-col space-y-1 bg-black/20 px-4 py-2 rounded-2xl backdrop-blur-sm border border-white/10 w-fit">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-bold font-sans tracking-widest text-white/90 drop-shadow-md uppercase">
+              Sai Smruti Developers
             </h2>
-            <p className="text-emerald-400 font-bold uppercase tracking-[0.3em] text-[10px] sm:text-sm mt-1 sm:mt-2 drop-shadow-md ml-1">
+            <p className="text-emerald-400 font-bold uppercase tracking-[0.2em] text-[9px] sm:text-[10px] drop-shadow ml-0.5">
               Proudly Presents
             </p>
           </div>
+          
+          {/* Massive Project Name */}
+          <div className="mt-5 sm:mt-6">
+            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black font-serif text-white tracking-tighter leading-none drop-shadow-[0_8px_30px_rgba(0,0,0,0.8)]">
+              THE AURORA <br className="hidden sm:block lg:hidden" /> HILLS
+            </h1>
+            <div className="inline-flex items-center gap-2 mt-3 sm:mt-5 px-4 py-2 rounded-full liquid-glass-pill shadow-lg border border-emerald-400/30">
+               <span className="flex h-2.5 w-2.5 relative flex-shrink-0">
+                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+               </span>
+               <span className="text-[10px] sm:text-xs font-black tracking-widest text-emerald-300 uppercase drop-shadow">
+                 Dharwad City's Premier Plotted Sanctuary
+               </span>
+            </div>
+          </div>
         </div>
 
-        {/* Top Floating Announcement & Approvals Strip */}
-        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-4 sm:mb-6 animate-fade-in">
-          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full liquid-glass-pill shadow-lg w-fit">
-            <span className="flex h-2 w-2 sm:h-2.5 sm:w-2.5 relative flex-shrink-0">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 sm:h-2.5 sm:w-2.5 bg-emerald-400"></span>
-            </span>
+        {/* Top Floating Announcement Strip (Mobile Bank Loan) */}
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-6 sm:mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full liquid-glass-pill shadow-lg w-fit border border-white/20">
             <span className="text-[10px] sm:text-xs lg:text-sm font-black tracking-wider text-white uppercase drop-shadow">
               Hosa Lifestyle • Hosa Dharwad
             </span>
@@ -114,35 +124,14 @@ export const Hero: React.FC<HeroProps> = ({
             </span>
           </div>
 
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs lg:text-sm font-bold text-white liquid-glass-pill px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg w-fit">
-            <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400 flex-shrink-0" />
-            <span className="drop-shadow">Bank Loans: SBI • HDFC • ICICI Approved</span>
+          <div className="md:hidden inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-amber-950 bg-gradient-to-r from-amber-400 to-amber-500 px-3 py-1.5 rounded-full shadow-lg w-fit">
+            <ShieldCheck className="w-3.5 h-3.5" />
+            <span>Bank Loans: SBI • HDFC • ICICI</span>
           </div>
         </div>
 
         {/* Hero Content Showcase */}
         <div className="max-w-3xl space-y-4 sm:space-y-6">
-          {/* Big Aurora Hills Brand Capsule Header */}
-          <div className="flex items-center gap-3 p-2.5 sm:p-3 px-3 sm:px-4 liquid-glass-card liquid-glass-shimmer rounded-xl sm:rounded-2xl max-w-sm sm:max-w-md shadow-xl border border-white/30">
-            <div className="bg-white/95 rounded-lg sm:rounded-xl p-1 sm:p-1.5 shadow-sm flex-shrink-0">
-              <Image
-                src="/images/aurora-hills-logo.png"
-                alt="The Aurora Hills Dharwad Logo"
-                width={110}
-                height={44}
-                className="h-7 sm:h-9 w-auto object-contain"
-                priority
-              />
-            </div>
-            <div className="border-l-2 border-emerald-400/50 pl-2.5 sm:pl-3">
-              <h3 className="text-sm sm:text-base font-black font-serif text-white tracking-wider leading-none drop-shadow-md">
-                THE AURORA HILLS
-              </h3>
-              <p className="text-[9px] sm:text-[11px] uppercase font-extrabold text-emerald-300 tracking-wider mt-0.5 sm:mt-1 drop-shadow">
-                Dharwad City's Premier Plotted Sanctuary
-              </p>
-            </div>
-          </div>
 
           {/* Main Welcoming Bold Headline */}
           <div className="space-y-1.5 sm:space-y-2">

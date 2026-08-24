@@ -38,9 +38,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-2 px-4 sm:px-6 lg:px-8">
       <div
-        className={`max-w-6xl mx-auto rounded-full transition-all duration-500 px-4 py-2 flex items-center justify-between ${isScrolled
-            ? "bg-white/90 backdrop-blur-xl border border-white/60 shadow-lg shadow-emerald-950/10 py-2.5 mt-2"
-            : "bg-white/70 backdrop-blur-md border border-white/40 shadow-md"
+        className={`max-w-6xl mx-auto rounded-full transition-all duration-500 px-5 sm:px-8 flex items-center justify-between ${isScrolled
+            ? "bg-white/95 backdrop-blur-xl border border-white/60 shadow-xl shadow-emerald-950/10 py-3.5 mt-3"
+            : "bg-white/80 backdrop-blur-md border border-white/50 shadow-lg py-3 mt-2"
           }`}
       >
         {/* Brand Logo - Compact */}
@@ -48,9 +48,9 @@ export const Navbar: React.FC<NavbarProps> = ({
           <Image
             src="/images/aurora-hills-logo.png"
             alt="The Aurora Hills"
-            width={120}
-            height={40}
-            className="h-8 w-auto object-contain"
+            width={180}
+            height={60}
+            className="h-10 sm:h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-105"
             priority
           />
         </Link>
@@ -71,20 +71,12 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* CTA Button & Contact - More Prominent */}
         <div className="hidden sm:flex items-center gap-4 lg:gap-6 flex-shrink-0">
-          {/* Phone Link (Hidden on smaller tablets to save space) */}
-          <a href="tel:+918073549219" className="hidden lg:flex items-center gap-2 text-forest-950 hover:text-emerald-700 transition-colors">
-            <div className="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center border border-emerald-100">
-              <Phone className="w-4 h-4 text-emerald-600" />
-            </div>
-            <span className="text-sm font-black">+91 80735 49219</span>
-          </a>
-
           <button
             onClick={() => onOpenEnquiry("Navbar CTA")}
-            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-black uppercase tracking-wider shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 active:scale-95 whitespace-nowrap flex items-center gap-2"
+            className="px-6 py-3 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-xl shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 active:scale-95 whitespace-nowrap flex items-center gap-2"
           >
             <span>Enquire Now</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>
 
