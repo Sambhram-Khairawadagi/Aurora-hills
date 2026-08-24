@@ -71,16 +71,6 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
             >
               Actual On-Ground Roads
             </button>
-            <button
-              onClick={() => { setActiveLayoutView("kannada_plan"); handleResetZoom(); }}
-              className={`px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all ${
-                activeLayoutView === "kannada_plan"
-                  ? "bg-gradient-to-r from-emerald-600 to-green-600 text-white shadow-md"
-                  : "text-charcoal-700 hover:text-emerald-700"
-              }`}
-            >
-              Official Government Plan
-            </button>
           </div>
         </div>
 
