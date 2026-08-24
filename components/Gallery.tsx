@@ -169,12 +169,7 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent opacity-85 group-hover:opacity-95 transition-opacity" />
 
-                {/* Top Badge */}
-                <div className="absolute top-4 left-4">
-                  <span className="text-xs font-black uppercase tracking-wider text-emerald-950 bg-white/95 backdrop-blur-md px-3.5 py-1 rounded-full shadow-md border border-emerald-200/50">
-                    {item.category}
-                  </span>
-                </div>
+
 
                 {/* Enlarge Button */}
                 <div className="absolute top-4 right-4 w-10 h-10 rounded-full vibrant-icon-emerald flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform scale-90 group-hover:scale-100 shadow-lg">
