@@ -42,7 +42,7 @@ export async function GET() {
       `"${(l.notes || "").replace(/"/g, '""')}"`
     ]);
 
-    const csvContent = [headers.join(","), ...rows.map((r) => r.join(","))].join("\n");
+    const csvContent = [headers.join(","), ...rows.map((r: any) => r.join(","))].join("\n");
 
     return new NextResponse(csvContent, {
       status: 200,
