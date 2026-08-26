@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
+import { sendAdminNotification, sendUserConfirmation } from "@/lib/email";
 
 export async function POST(req: NextRequest) {
   try {
@@ -69,6 +70,21 @@ export async function POST(req: NextRequest) {
         userAgent: userAgent
       }
     });
+
+    // Send emails asynchronously (don't await so we don't block the response)
+    sendAdminNotification('Lead', {
+      Name: lead.name,
+      Phone: lead.phone,
+      Email: lead.email,
+      Requirement: lead.requirement,
+      Purpose: lead.purpose,
+      Message: lead.message,
+      Source: lead.source
+    }).catch(console.error);
+
+    if (lead.email) {
+      sendUserConfirmation(lead.email, lead.name).catch(console.error);
+    }
 
     return NextResponse.json({
       success: true,
