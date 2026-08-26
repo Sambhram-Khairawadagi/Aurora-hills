@@ -24,7 +24,7 @@ export async function GET() {
       "Notes"
     ];
 
-    const rows = leads.map((l) => [
+    const rows = leads.map((l: any) => [
       `"${l.id}"`,
       `"${(l.name || "").replace(/"/g, '""')}"`,
       `"${l.phone || ""}"`,
