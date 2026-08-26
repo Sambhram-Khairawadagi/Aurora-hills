@@ -17,7 +17,7 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "The Aurora Hills | Premium Plots in Dharwad | Hosa Lifestyle",
   description:
-    "Explore The Aurora Hills, Hosa Lifestyle, Hosa Dharwad –� a thoughtfully planned plotted community with lifestyle amenities, green surroundings, modern infrastructure and strategic connectivity near NH-4.",
+    "Explore The Aurora Hills in Dharwad – a premium plotted community with lifestyle amenities, modern infrastructure, and strategic NH-4 connectivity.",
   keywords: [
     "The Aurora Hills",
     "Aurora Hills Dharwad",
@@ -110,7 +110,7 @@ export default function RootLayout({
         "url": "https://theaurorahills.in",
         "logo": "https://theaurorahills.in/images/aurora-hills-logo.png",
         "telephone": "+91-9019765265",
-        "priceRange": "?35,99,000+",
+        "priceRange": "₹42,00,000+",
         "areaServed": "Hubli-Dharwad Twin City",
         "parentOrganization": {
           "@type": "Organization",

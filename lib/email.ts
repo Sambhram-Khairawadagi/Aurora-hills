@@ -1,11 +1,7 @@
-import sgMail from '@sendgrid/mail';
+import nodemailer from 'nodemailer';
 
-// Initialize SendGrid with API Key
-if (process.env.SENDGRID_API_KEY) {
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-}
-
-const FROM_EMAIL = process.env.SENDGRID_FROM_EMAIL || 'social.propertybasket@gmail.com';
+const FROM_EMAIL = process.env.GMAIL_EMAIL || 'social.propertybasket@gmail.com';
+const APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
 const ADMIN_EMAIL = 'social.propertybasket@gmail.com';
 
 interface EmailPayload {
@@ -15,26 +11,33 @@ interface EmailPayload {
   html: string;
 }
 
+// Create reusable transporter object using the default SMTP transport
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: FROM_EMAIL,
+    pass: APP_PASSWORD,
+  },
+});
+
 export const sendEmail = async (payload: EmailPayload) => {
-  if (!process.env.SENDGRID_API_KEY) {
-    console.warn("SENDGRID_API_KEY is not set. Email not sent:", payload.subject);
+  if (!APP_PASSWORD) {
+    console.warn("GMAIL_APP_PASSWORD is not set. Email not sent:", payload.subject);
     return false;
   }
   
   try {
-    await sgMail.send({
-      to: payload.to,
-      from: FROM_EMAIL,
-      subject: payload.subject,
-      text: payload.text,
-      html: payload.html,
+    const info = await transporter.sendMail({
+      from: `"Aurora Hills" <${FROM_EMAIL}>`, // sender address
+      to: payload.to, // list of receivers
+      subject: payload.subject, // Subject line
+      text: payload.text, // plain text body
+      html: payload.html, // html body
     });
+    console.log("Message sent: %s", info.messageId);
     return true;
   } catch (error) {
     console.error("Error sending email:", error);
-    if ((error as any).response) {
-      console.error((error as any).response.body)
-    }
     return false;
   }
 };

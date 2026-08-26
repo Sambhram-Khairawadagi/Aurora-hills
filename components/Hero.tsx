@@ -139,12 +139,12 @@ export const Hero: React.FC<HeroProps> = ({
 
           {/* Main Welcoming Bold Headline */}
           <div className="space-y-1.5 sm:space-y-2">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-black text-white font-serif tracking-tight leading-[1.15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-black text-white font-serif tracking-tight leading-[1.15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
               Live Closer to <span className="text-emerald-400 drop-shadow-[0_0_20px_rgba(52,211,153,0.5)]">Nature.</span> <br />
               <span className="bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(251,191,36,0.35)]">
                 Invest in Dharwad's Tomorrow.
               </span>
-            </h1>
+            </h2>
           </div>
 
           {/* Supporting Welcoming Copy */}
