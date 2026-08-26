@@ -39,35 +39,45 @@ export async function POST(req: NextRequest) {
     const userAgent = req.headers.get("user-agent") || "";
 
     // Create lead entry if not existing
-    const lead = db.createLead({
-      name: name.trim(),
-      phone: cleanPhone,
-      email: (email || "").trim(),
-      requirement: "Site Visit Request",
-      purpose: "Both",
-      preferred_contact: "Phone",
-      message: `Site Visit on ${preferred_date} at ${preferred_time || "Morning"}. Visitors: ${visitors || 1}. Transport: ${transport_required || "No"}. ${message || ""}`,
-      status: "Site Visit",
-      source: source || "Site Visit Booking Form",
-      device: /mobile|android|iphone/i.test(userAgent) ? "Mobile" : "Desktop",
-      ip
+    const lead = await db.lead.create({
+      data: {
+        name: name.trim(),
+        phone: cleanPhone,
+        email: (email || "").trim(),
+        requirement: "Site Visit Request",
+        purpose: "Both",
+        preferred_contact: "Phone",
+        message: `Site Visit on ${preferred_date} at ${preferred_time || "Morning"}. Visitors: ${visitors || 1}. Transport: ${transport_required || "No"}. ${message || ""}`,
+        status: "Site Visit",
+        source: source || "Site Visit Booking Form",
+        device: /mobile|android|iphone/i.test(userAgent) ? "Mobile" : "Desktop"
+      }
     });
 
-    const visit = db.createSiteVisit({
-      lead_id: lead.id,
-      name: name.trim(),
-      phone: cleanPhone,
-      email: (email || "").trim(),
-      preferred_date,
-      preferred_time: preferred_time || "10:00 AM",
-      visitors: Number(visitors) || 1,
-      transport_required: transport_required === "Yes" ? "Yes" : "No",
-      status: "Scheduled",
-      message: (message || "").trim(),
-      source: source || "Site Visit Booking Form"
+    const visit = await db.siteVisit.create({
+      data: {
+        leadId: lead.id,
+        name: name.trim(),
+        phone: cleanPhone,
+        email: (email || "").trim(),
+        preferredDate: preferred_date,
+        preferredTime: preferred_time || "10:00 AM",
+        visitors: Number(visitors) || 1,
+        transportRequired: transport_required === "Yes" ? "Yes" : "No",
+        status: "Scheduled",
+        message: (message || "").trim(),
+        source: source || "Site Visit Booking Form"
+      }
     });
 
-    db.logEvent("site_visit_submit", { visit_id: visit.id, lead_id: lead.id, date: preferred_date }, ip, userAgent);
+    await db.analyticsEvent.create({
+      data: {
+        eventName: "site_visit_submit",
+        metadata: JSON.stringify({ visit_id: visit.id, lead_id: lead.id, date: preferred_date }),
+        ip: ip,
+        userAgent: userAgent
+      }
+    });
 
     return NextResponse.json({
       success: true,

@@ -9,7 +9,14 @@ export async function POST(req: NextRequest) {
     const userAgent = req.headers.get("user-agent") || "";
 
     if (event_name) {
-      db.logEvent(event_name, metadata, ip, userAgent);
+      await db.analyticsEvent.create({
+        data: {
+          eventName: event_name,
+          metadata: metadata ? JSON.stringify(metadata) : null,
+          ip: ip,
+          userAgent: userAgent
+        }
+      });
     }
     return NextResponse.json({ success: true });
   } catch (err: any) {

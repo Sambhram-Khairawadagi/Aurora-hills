@@ -3,18 +3,24 @@ import { db } from "@/lib/db";
 
 export async function GET() {
   try {
-    // Increment the counter on every GET request to this endpoint
-    const currentCount = db.incrementPageView();
-    
-    return NextResponse.json({ count: currentCount });
+    let pageView = await db.pageView.findUnique({
+      where: { id: "default" },
+    });
+
+    if (!pageView) {
+      pageView = await db.pageView.create({
+        data: { id: "default", count: 1204 }, // Starts at 1204
+      });
+    }
+
+    const updated = await db.pageView.update({
+      where: { id: "default" },
+      data: { count: pageView.count + 1 },
+    });
+
+    return NextResponse.json({ count: updated.count });
   } catch (error) {
     console.error("Failed to increment page view:", error);
-    // If it fails, fallback to get current count without incrementing or just return a default
-    try {
-      const fallbackCount = db.getPageViewCount();
-      return NextResponse.json({ count: fallbackCount });
-    } catch {
-      return NextResponse.json({ count: 1204 }); // safe fallback
-    }
+    return NextResponse.json({ count: 1204 }); // safe fallback
   }
 }

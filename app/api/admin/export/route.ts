@@ -3,7 +3,9 @@ import { db } from "@/lib/db";
 
 export async function GET() {
   try {
-    const leads = db.getLeads();
+    const leads = await db.lead.findMany({
+      orderBy: { createdAt: "desc" }
+    });
     const headers = [
       "ID",
       "Name",
@@ -36,7 +38,7 @@ export async function GET() {
       `"${l.utm_medium || ""}"`,
       `"${l.utm_campaign || ""}"`,
       `"${l.device || ""}"`,
-      `"${l.created_at || ""}"`,
+      `"${l.createdAt ? l.createdAt.toISOString() : ""}"`,
       `"${(l.notes || "").replace(/"/g, '""')}"`
     ]);
 

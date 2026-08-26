@@ -44,25 +44,31 @@ export async function POST(req: NextRequest) {
     const userAgent = req.headers.get("user-agent") || "";
     const isMobile = /mobile|android|iphone/i.test(userAgent);
 
-    const lead = db.createLead({
-      name: name.trim(),
-      phone: cleanPhone,
-      email: (email || "").trim(),
-      requirement: requirement || "Not Specified",
-      purpose: purpose || "Not Specified",
-      preferred_contact: preferred_contact || "Phone",
-      message: (message || "").trim(),
-      source: source || "Website Form",
-      utm_source: utm_source || "direct",
-      utm_medium: utm_medium || "",
-      utm_campaign: utm_campaign || "",
-      utm_term: utm_term || "",
-      utm_content: utm_content || "",
-      device: isMobile ? "Mobile" : "Desktop",
-      ip
+    const lead = await db.lead.create({
+      data: {
+        name: name.trim(),
+        phone: cleanPhone,
+        email: (email || "").trim(),
+        requirement: requirement || "Not Specified",
+        purpose: purpose || "Not Specified",
+        preferred_contact: preferred_contact || "Phone",
+        message: (message || "").trim(),
+        source: source || "Website Form",
+        utm_source: utm_source || "direct",
+        utm_medium: utm_medium || "",
+        utm_campaign: utm_campaign || "",
+        device: isMobile ? "Mobile" : "Desktop"
+      }
     });
 
-    db.logEvent("lead_submit", { lead_id: lead.id, source: lead.source, phone: lead.phone }, ip, userAgent);
+    await db.analyticsEvent.create({
+      data: {
+        eventName: "lead_submit",
+        metadata: JSON.stringify({ lead_id: lead.id, source: lead.source, phone: lead.phone }),
+        ip: ip,
+        userAgent: userAgent
+      }
+    });
 
     return NextResponse.json({
       success: true,

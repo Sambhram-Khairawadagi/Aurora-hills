@@ -1,0 +1,79 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Lead {
+  id                String   @id @default(cuid())
+  name              String
+  phone             String
+  email             String?
+  requirement       String?
+  purpose           String?
+  preferred_contact String?
+  message           String?
+  status            String   @default("New") // "New", "Contacted", "Follow-up", "Site Visit", "Interested", "Converted", "Not Interested"
+  source            String?  @default("Website")
+  utm_source        String?
+  utm_medium        String?
+  utm_campaign      String?
+  device            String?
+  notes             String?
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+  
+  siteVisits        SiteVisit[]
+}
+
+model SiteVisit {
+  id                 String   @id @default(cuid())
+  leadId             String?
+  name               String
+  phone              String
+  email              String?
+  preferredDate      String   // ISO Date string YYYY-MM-DD
+  preferredTime      String
+  visitors           Int      @default(1)
+  transportRequired  String   @default("No")
+  status             String   @default("Scheduled") // "Scheduled", "Completed", "Cancelled"
+  message            String?
+  source             String?
+  createdAt          DateTime @default(now())
+  
+  lead               Lead?    @relation(fields: [leadId], references: [id], onDelete: SetNull)
+}
+
+model AnalyticsEvent {
+  id         String   @id @default(cuid())
+  eventName  String
+  metadata   String?  // JSON string
+  ip         String?
+  userAgent  String?
+  timestamp  DateTime @default(now())
+}
+
+model SiteSettings {
+  id               String   @id @default("default")
+  startingPrice    String?
+  phoneNumbers     String   // JSON string array
+  primaryPhone     String?
+  whatsappNumber   String?
+  announcementText String?
+  heroTitle        String?
+  heroSubtitle     String?
+  projectLocation  String?
+  mapUrl           String?
+  approvals        String   // JSON string array
+  brochureUrl      String?
+  villageDetails   String?
+  updatedAt        DateTime @updatedAt
+}
+
+model PageView {
+  id    String @id @default("default")
+  count Int    @default(0)
+}

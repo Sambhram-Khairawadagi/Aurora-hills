@@ -6,27 +6,26 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
     const { id } = params;
     const data = await req.json();
 
-    const updatedLead = await db.lead.update({
+    const updatedVisit = await db.siteVisit.update({
       where: { id },
       data: {
         status: data.status !== undefined ? data.status : undefined,
-        notes: data.notes !== undefined ? data.notes : undefined,
       },
     });
-    return NextResponse.json(updatedLead);
+    return NextResponse.json(updatedVisit);
   } catch (error) {
-    return NextResponse.json({ error: "Failed to update lead" }, { status: 500 });
+    return NextResponse.json({ error: "Failed to update site visit" }, { status: 500 });
   }
 }
 
 export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
   try {
     const { id } = params;
-    await db.lead.delete({
+    await db.siteVisit.delete({
       where: { id },
     });
     return NextResponse.json({ success: true });
   } catch (error) {
-    return NextResponse.json({ error: "Failed to delete lead" }, { status: 500 });
+    return NextResponse.json({ error: "Failed to delete site visit" }, { status: 500 });
   }
 }

@@ -50,17 +50,19 @@ export default function AdminPage() {
   const [isEditingNotes, setIsEditingNotes] = useState(false);
   const [leadNotes, setLeadNotes] = useState("");
 
+  const [showAddLead, setShowAddLead] = useState(false);
+  const [newLeadForm, setNewLeadForm] = useState({ name: "", phone: "", email: "", requirement: "", source: "Manual Entry" });
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const leadsPerPage = 10;
+
   // Settings form states
   const [settingsForm, setSettingsForm] = useState<Partial<SiteSettings>>({});
   const [settingsSaved, setSettingsSaved] = useState(false);
 
-  // Check auth session from localStorage on mount
+  // Check auth session on mount by attempting to fetch data
   useEffect(() => {
-    const token = localStorage.getItem("aurora_admin_token");
-    if (token === "authenticated_aurora_2026") {
-      setIsAuthenticated(true);
-      fetchDashboardData();
-    }
+    fetchDashboardData();
   }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
@@ -105,6 +107,12 @@ export default function AdminPage() {
         fetch("/api/admin/stats"),
         fetch("/api/admin/settings")
       ]);
+
+      if (leadsRes.status === 401) {
+        setIsAuthenticated(false);
+        return;
+      }
+      setIsAuthenticated(true);
 
       if (leadsRes.ok) {
         const leadsData = await leadsRes.json();
@@ -177,6 +185,66 @@ export default function AdminPage() {
     }
   };
 
+  const handleDeleteLead = async (leadId: string) => {
+    if (!confirm("Are you sure you want to delete this lead? This action cannot be undone.")) return;
+    try {
+      const res = await fetch(`/api/admin/leads/${leadId}`, { method: "DELETE" });
+      if (res.ok) {
+        setLeads((prev) => prev.filter((l) => l.id !== leadId));
+      }
+    } catch (err) {
+      console.error("Failed to delete lead", err);
+    }
+  };
+
+  const handleAddManualLead = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const res = await fetch("/api/admin/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newLeadForm)
+      });
+      if (res.ok) {
+        const added = await res.json();
+        setLeads([added, ...leads]);
+        setShowAddLead(false);
+        setNewLeadForm({ name: "", phone: "", email: "", requirement: "", source: "Manual Entry" });
+      }
+    } catch (err) {
+      console.error("Failed to add manual lead", err);
+    }
+  };
+
+  const handleDeleteVisit = async (visitId: string) => {
+    if (!confirm("Are you sure you want to delete this site visit?")) return;
+    try {
+      const res = await fetch(`/api/admin/site-visits/${visitId}`, { method: "DELETE" });
+      if (res.ok) {
+        setSiteVisits((prev) => prev.filter((v) => v.id !== visitId));
+      }
+    } catch (err) {
+      console.error("Failed to delete visit", err);
+    }
+  };
+
+  const handleVisitStatusChange = async (visitId: string, newStatus: SiteVisit["status"]) => {
+    try {
+      const res = await fetch(`/api/admin/site-visits/${visitId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: newStatus })
+      });
+      if (res.ok) {
+        setSiteVisits((prev) =>
+          prev.map((v) => (v.id === visitId ? ({ ...v, status: newStatus } as SiteVisit) : v))
+        );
+      }
+    } catch (err) {
+      console.error("Failed to update visit status", err);
+    }
+  };
+
   const handleSaveSettings = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -208,6 +276,12 @@ export default function AdminPage() {
 
     return matchesSearch && matchesStatus;
   });
+
+  const totalPages = Math.ceil(filteredLeads.length / leadsPerPage);
+  const paginatedLeads = filteredLeads.slice(
+    (currentPage - 1) * leadsPerPage,
+    currentPage * leadsPerPage
+  );
 
   const getStatusBadge = (status: string) => {
     switch (status) {
@@ -513,6 +587,13 @@ export default function AdminPage() {
                 <Download className="w-4 h-4" />
                 Export CSV
               </a>
+
+              <button
+                onClick={() => setShowAddLead(true)}
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-gold-500 hover:bg-gold-600 text-forest-950 font-semibold rounded-xl text-sm transition-colors shadow-lg"
+              >
+                + Add Lead
+              </button>
             </div>
 
             {/* Leads Table */}
@@ -531,14 +612,14 @@ export default function AdminPage() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-forest-800/60">
-                    {filteredLeads.length === 0 ? (
+                    {paginatedLeads.length === 0 ? (
                       <tr>
                         <td colSpan={7} className="py-12 text-center text-forest-400">
                           No leads match your current search and filter criteria.
                         </td>
                       </tr>
                     ) : (
-                      filteredLeads.map((lead) => (
+                      paginatedLeads.map((lead) => (
                         <tr
                           key={lead.id}
                           className="hover:bg-forest-800/40 transition-colors"
@@ -625,17 +706,26 @@ export default function AdminPage() {
                           </td>
 
                           <td className="py-3.5 px-4 text-right">
-                            <button
-                              onClick={() => {
-                                setSelectedLead(lead);
-                                setLeadNotes(lead.notes || "");
-                                setIsEditingNotes(false);
-                              }}
-                              className="p-1.5 rounded-lg bg-forest-800 hover:bg-forest-700 text-forest-300 hover:text-white transition-colors"
-                              title="View Details"
-                            >
-                              <Eye className="w-4 h-4" />
-                            </button>
+                            <div className="flex items-center justify-end gap-2">
+                              <button
+                                onClick={() => {
+                                  setSelectedLead(lead);
+                                  setLeadNotes(lead.notes || "");
+                                  setIsEditingNotes(false);
+                                }}
+                                className="p-1.5 rounded-lg bg-forest-800 hover:bg-forest-700 text-forest-300 hover:text-white transition-colors"
+                                title="View Details"
+                              >
+                                <Eye className="w-4 h-4" />
+                              </button>
+                              <button
+                                onClick={() => handleDeleteLead(lead.id)}
+                                className="p-1.5 rounded-lg bg-red-950/60 hover:bg-red-900 border border-transparent hover:border-red-800 text-red-300 hover:text-white transition-colors"
+                                title="Delete Lead"
+                              >
+                                <Trash2 className="w-4 h-4" />
+                              </button>
+                            </div>
                           </td>
                         </tr>
                       ))
@@ -644,6 +734,33 @@ export default function AdminPage() {
                 </table>
               </div>
             </div>
+
+            {/* Pagination Controls */}
+            {totalPages > 1 && (
+              <div className="flex items-center justify-between pt-4">
+                <span className="text-xs text-forest-400">
+                  Showing {(currentPage - 1) * leadsPerPage + 1} to{" "}
+                  {Math.min(currentPage * leadsPerPage, filteredLeads.length)} of{" "}
+                  {filteredLeads.length} leads
+                </span>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+                    disabled={currentPage === 1}
+                    className="px-3 py-1.5 rounded-lg bg-forest-800 hover:bg-forest-700 text-forest-300 disabled:opacity-50 text-xs font-semibold"
+                  >
+                    Previous
+                  </button>
+                  <button
+                    onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                    disabled={currentPage === totalPages}
+                    className="px-3 py-1.5 rounded-lg bg-forest-800 hover:bg-forest-700 text-forest-300 disabled:opacity-50 text-xs font-semibold"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         )}
 
@@ -708,13 +825,28 @@ export default function AdminPage() {
                         </td>
 
                         <td className="py-3.5 px-4">
-                          <span className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-emerald-900/60 text-emerald-300 border border-emerald-700">
-                            {visit.status}
-                          </span>
+                          <select
+                            value={visit.status}
+                            onChange={(e) => handleVisitStatusChange(visit.id, e.target.value as SiteVisit["status"])}
+                            className="text-xs font-semibold px-2 py-1 rounded-lg bg-forest-900/60 border border-forest-700 text-forest-200 cursor-pointer focus:outline-none"
+                          >
+                            <option value="Scheduled">Scheduled</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Cancelled">Cancelled</option>
+                          </select>
                         </td>
 
                         <td className="py-3.5 px-4 text-xs text-forest-300 max-w-xs truncate">
-                          {visit.message || "None"}
+                          <div className="flex items-center justify-between">
+                            <span>{visit.message || "None"}</span>
+                            <button
+                              onClick={() => handleDeleteVisit(visit.id)}
+                              className="p-1.5 rounded-lg bg-red-950/60 hover:bg-red-900 border border-transparent hover:border-red-800 text-red-300 hover:text-white transition-colors ml-2"
+                              title="Delete Visit"
+                            >
+                              <Trash2 className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
                         </td>
                       </tr>
                     ))
@@ -878,6 +1010,40 @@ export default function AdminPage() {
           </div>
         )}
       </div>
+
+      {/* Add Lead Modal */}
+      {showAddLead && (
+        <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="bg-forest-900 border border-forest-800 rounded-2xl max-w-md w-full p-6 shadow-2xl">
+            <div className="flex items-center justify-between mb-4 border-b border-forest-800 pb-3">
+              <h3 className="text-lg font-bold text-white">Add New Lead</h3>
+              <button onClick={() => setShowAddLead(false)} className="text-forest-400 hover:text-white">&times;</button>
+            </div>
+            <form onSubmit={handleAddManualLead} className="space-y-4">
+              <div>
+                <label className="block text-xs font-semibold text-forest-300 mb-1">Name</label>
+                <input required type="text" value={newLeadForm.name} onChange={e => setNewLeadForm({...newLeadForm, name: e.target.value})} className="w-full bg-forest-950 border border-forest-800 rounded-xl px-3 py-2 text-white text-sm" />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-forest-300 mb-1">Phone</label>
+                <input required type="text" value={newLeadForm.phone} onChange={e => setNewLeadForm({...newLeadForm, phone: e.target.value})} className="w-full bg-forest-950 border border-forest-800 rounded-xl px-3 py-2 text-white text-sm" />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-forest-300 mb-1">Email</label>
+                <input type="email" value={newLeadForm.email} onChange={e => setNewLeadForm({...newLeadForm, email: e.target.value})} className="w-full bg-forest-950 border border-forest-800 rounded-xl px-3 py-2 text-white text-sm" />
+              </div>
+              <div>
+                <label className="block text-xs font-semibold text-forest-300 mb-1">Requirement</label>
+                <input type="text" placeholder="e.g. 30x40 Plot" value={newLeadForm.requirement} onChange={e => setNewLeadForm({...newLeadForm, requirement: e.target.value})} className="w-full bg-forest-950 border border-forest-800 rounded-xl px-3 py-2 text-white text-sm" />
+              </div>
+              <div className="flex justify-end gap-3 pt-4">
+                <button type="button" onClick={() => setShowAddLead(false)} className="px-4 py-2 rounded-xl text-xs font-semibold text-forest-300">Cancel</button>
+                <button type="submit" className="px-4 py-2 rounded-xl text-xs font-bold bg-gold-500 hover:bg-gold-600 text-forest-950">Add Lead</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* Lead Details & Notes Drawer Modal */}
       {selectedLead && (
