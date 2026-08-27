@@ -177,7 +177,9 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
                       >
                         <option value="1,200 sq.ft (30x40)">1,200 sq.ft (30 x 40 ft)</option>
                         <option value="1,500 sq.ft (30x50)">1,500 sq.ft (30 x 50 ft)</option>
+                        <option value="1,650 sq.ft (33x50)">1,650 sq.ft (33 x 50 ft)</option>
                         <option value="2,400 sq.ft (40x60)">2,400 sq.ft (40 x 60 ft)</option>
+                        <option value="Odd Sizes">Odd Sizes</option>
                         <option value="Custom Estate Plot">Custom Estate Plot</option>
                       </select>
                     </div>

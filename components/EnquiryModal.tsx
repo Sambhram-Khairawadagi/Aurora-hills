@@ -171,7 +171,9 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 >
                   <option value="1,200 sq.ft (30x40)">1,200 sq.ft (30x40)</option>
                   <option value="1,500 sq.ft (30x50)">1,500 sq.ft (30x50)</option>
+                  <option value="1,650 sq.ft (33x50)">1,650 sq.ft (33x50)</option>
                   <option value="2,400 sq.ft (40x60)">2,400 sq.ft (40x60)</option>
+                  <option value="Odd Sizes">Odd Sizes</option>
                   <option value="Custom Estate Plot">Custom Estate Plot</option>
                 </select>
               </div>

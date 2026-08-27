@@ -80,7 +80,7 @@ export const Hero: React.FC<HeroProps> = ({
         <div className="absolute top-0 right-4 sm:right-8 animate-fade-in-down z-20 hidden md:block">
            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-black text-amber-950 bg-gradient-to-b from-amber-300 via-amber-400 to-amber-500 px-5 py-3 rounded-b-2xl shadow-[0_10px_30px_rgba(251,191,36,0.3)] border border-amber-200/50 hover:py-4 transition-all duration-300 cursor-default">
              <ShieldCheck className="w-5 h-5 text-amber-900" />
-             <span>Bank Loans: SBI • HDFC • ICICI</span>
+             <span>Bank Loans: SBI • HDFC • ICICI • IDFC First</span>
            </div>
         </div>
 
@@ -130,7 +130,7 @@ export const Hero: React.FC<HeroProps> = ({
 
           <div className="md:hidden inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-amber-950 bg-gradient-to-r from-amber-400 to-amber-500 px-3 py-1.5 rounded-full shadow-lg w-fit">
             <ShieldCheck className="w-3.5 h-3.5" />
-            <span>Bank Loans: SBI • HDFC • ICICI</span>
+            <span>Bank Loans: SBI • HDFC • ICICI • IDFC First</span>
           </div>
         </div>
 

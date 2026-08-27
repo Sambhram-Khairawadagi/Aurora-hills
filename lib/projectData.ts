@@ -226,7 +226,7 @@ export const APPROVAL_CARDS = [
     id: "loans",
     title: "BANK LOANS",
     subtitle: "APPROVED",
-    description: "Pre-approved plot loans available from SBI, HDFC, ICICI & leading nationalized banks.",
+    description: "Pre-approved plot loans available from SBI, HDFC, ICICI, IDFC First & leading nationalized banks.",
     highlight: "Up to 80% Financing"
   },
   {

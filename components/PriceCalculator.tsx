@@ -17,8 +17,10 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
   const plotOptions = [
     { size: "1200", label: "1,200 sq.ft", dimensions: "30 x 40 ft", estimate: "Starting ₹42 Lakhs*", tag: "Most Popular", emi: "Approx. ₹26,500/mo" },
     { size: "1500", label: "1,500 sq.ft", dimensions: "30 x 50 ft", estimate: "Starting ₹52.5 Lakhs*", tag: "Family Villa", emi: "Approx. ₹33,000/mo" },
+    { size: "1650", label: "1,650 sq.ft", dimensions: "33 x 50 ft", estimate: "Starting ₹57.75 Lakhs*", tag: "Premium Plot", emi: "Approx. ₹36,500/mo" },
     { size: "2400", label: "2,400 sq.ft", dimensions: "40 x 60 ft", estimate: "Starting ₹84 Lakhs*", tag: "Corner Estate", emi: "Approx. ₹52,500/mo" },
-    { size: "Custom", label: "Custom Plot", dimensions: "Custom Size", estimate: "On Request", tag: "Exclusive", emi: "Flexible Bank Loan" },
+    { size: "Odd", label: "Odd Sizes", dimensions: "Various Sizes", estimate: "On Request", tag: "Exclusive", emi: "Flexible Bank Loan" },
+    { size: "Custom", label: "Custom Plot", dimensions: "Custom Size", estimate: "On Request", tag: "Bespoke", emi: "Flexible Bank Loan" },
   ];
 
   const currentOption = plotOptions.find((p) => p.size === selectedSize) || plotOptions[0];

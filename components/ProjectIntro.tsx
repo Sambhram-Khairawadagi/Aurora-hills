@@ -89,7 +89,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
                 "HDUDA Approved Layout",
                 "NA-KJP Clear Title Deeds",
                 "1.5L Litres Overhead Water Tank",
-                "Bank Loan Ready (SBI, HDFC, ICICI)",
+                "Bank Loan Ready (SBI, HDFC, ICICI, IDFC First)",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2.5 text-xs sm:text-sm text-charcoal-900 font-bold">
                   <div className="w-6 h-6 rounded-full vibrant-icon-emerald flex items-center justify-center flex-shrink-0">

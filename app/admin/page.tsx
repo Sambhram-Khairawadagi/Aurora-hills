@@ -994,7 +994,7 @@ export default function AdminPage() {
                 {[
                   { name: "NA-KJP Approved", status: "Verified & Certified", color: "text-emerald-400" },
                   { name: "HDUDA Approved", status: "Hubli-Dharwad Urban Dev Authority", color: "text-emerald-400" },
-                  { name: "Bank Loans Approved", status: "SBI, HDFC, ICICI, Canara, Axis", color: "text-emerald-400" },
+                  { name: "Bank Loans Approved", status: "SBI, HDFC, ICICI, Canara, Axis, IDFC First", color: "text-emerald-400" },
                   { name: "Property Tax Updated", status: "Current Fiscal Cleared", color: "text-emerald-400" }
                 ].map((item) => (
                   <div key={item.name} className="flex items-center justify-between text-sm py-2 border-b border-forest-800/60">
