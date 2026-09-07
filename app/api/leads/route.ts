@@ -85,7 +85,7 @@ export async function POST(req: NextRequest) {
       console.error("[leads] Database write encountered an issue (proceeding with email notification):", dbErr?.message || dbErr);
     }
 
-    const leadPayload = {
+    const leadPayload: Record<string, any> = {
       Name: name.trim(),
       Phone: cleanPhone,
       Email: (email || "Not Provided").trim(),
@@ -94,9 +94,17 @@ export async function POST(req: NextRequest) {
       'Preferred Contact': preferred_contact || "Phone",
       Message: (message || "No message").trim(),
       Source: source || "Website Form",
-      'Saved To Database': savedToDb ? "Yes" : "Fallback (Email Captured)",
-      'Submitted At': new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
     };
+
+    if (utm_source || utm_campaign) {
+      leadPayload['Google Ads Channel'] = utm_source || 'direct';
+      leadPayload['Ad Campaign'] = utm_campaign || 'N/A';
+      if (utm_term) leadPayload['Search Keyword'] = utm_term;
+      if (body.gclid) leadPayload['Google Click ID'] = body.gclid;
+    }
+
+    leadPayload['Saved To Database'] = savedToDb ? "Yes" : "Fallback (Email Captured)";
+    leadPayload['Submitted At'] = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
 
     // 2. Await Admin Email Notification (critical for serverless to prevent premature container termination)
     try {

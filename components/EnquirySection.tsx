@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Phone, Mail, User, Send, CheckCircle2, MessageSquare, ShieldCheck, Sparkles } from "lucide-react";
 import confetti from "canvas-confetti";
+import { getStoredUtm } from "@/lib/utm";
 import { CONTACT_NUMBERS } from "@/lib/projectData";
 
 interface EnquirySectionProps {

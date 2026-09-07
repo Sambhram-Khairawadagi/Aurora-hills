@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { X, Calendar, CheckCircle2, ShieldCheck, Sparkles, Clock, Car } from "lucide-react";
 import confetti from "canvas-confetti";
+import { getStoredUtm } from "@/lib/utm";
 
 interface SiteVisitModalProps {
   isOpen: boolean;

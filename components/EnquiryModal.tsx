@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { X, Send, CheckCircle2, ShieldCheck, Sparkles, Phone, Mail, User } from "lucide-react";
 import confetti from "canvas-confetti";
+import { getStoredUtm } from "@/lib/utm";
 
 interface EnquiryModalProps {
   isOpen: boolean;

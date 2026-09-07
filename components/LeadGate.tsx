@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { Send, CheckCircle2, Sparkles, Lock, ArrowRight } from "lucide-react";
+import { Send, CheckCircle2, Sparkles, Lock, ArrowRight, X } from "lucide-react";
+import { getStoredUtm } from "@/lib/utm";
 import confetti from "canvas-confetti";
 
 const STORAGE_KEY = "lead_gate_unlocked";
@@ -102,13 +103,16 @@ export const LeadGate: React.FC = () => {
     setErrorMsg("");
 
     try {
+      const utmParams = getStoredUtm();
+      const adSource = utmParams.utm_source ? `Google Ads (${utmParams.utm_campaign || "Lead Gate"})` : "Lead Gate";
       const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
           phone: cleanPhone,
-          source: "Lead Gate",
+          source: adSource,
+          ...utmParams,
         }),
       });
 
@@ -155,6 +159,16 @@ export const LeadGate: React.FC = () => {
       <div
         className="relative z-10 bg-[#F7F9F6] border border-white/90 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-forest-950 shadow-2xl neu-card max-h-[90vh] overflow-y-auto"
       >
+        {/* Google Ads Policy-Safe Dismiss Button */}
+        <button
+          type="button"
+          onClick={handleDismiss}
+          className="absolute top-4 right-4 p-2 rounded-full text-charcoal-400 hover:text-charcoal-800 hover:bg-black/5 transition-colors focus:outline-none"
+          aria-label="Close dialog"
+          title="Skip to explore"
+        >
+          <X className="w-5 h-5" />
+        </button>
         {submitted ? (
           /* ── Success State ── */
           <div className="text-center py-6 sm:py-8 space-y-5">
@@ -300,6 +314,15 @@ export const LeadGate: React.FC = () => {
               </button>
 
               {/* Trust line */}
+              <div className="text-center pt-1 mb-2">
+                <button
+                  type="button"
+                  onClick={handleDismiss}
+                  className="text-[11px] text-charcoal-500 hover:text-charcoal-800 underline transition-colors"
+                >
+                  Skip and continue exploring website
+                </button>
+              </div>
               <p className="text-[10px] text-center text-charcoal-500 mt-2">
                 🔒 Your information is secure. By submitting, you agree to our <a href="/privacy-policy" className="underline hover:text-emerald-700">Privacy Policy</a> & <a href="/terms-and-conditions" className="underline hover:text-emerald-700">Terms</a>.
               </p>
