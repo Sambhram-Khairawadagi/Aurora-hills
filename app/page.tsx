@@ -13,22 +13,9 @@ import { SanctionedLayout } from "@/components/SanctionedLayout";
 import { Partners } from "@/components/Partners";
 import { Footer } from "@/components/Footer";
 import { FloatingActions } from "@/components/FloatingActions";
-
-// Dynamically load heavy below-the-fold components
-const WhyAuroraHills = dynamic(
-  () => import("@/components/WhyAuroraHills").then((mod) => mod.WhyAuroraHills),
-  { ssr: true }
-);
-
-const LocationConnectivity = dynamic(
-  () => import("@/components/LocationConnectivity").then((mod) => mod.LocationConnectivity),
-  { ssr: true }
-);
-
-const LocalSeoFaq = dynamic(
-  () => import("@/components/LocalSeoFaq").then((mod) => mod.LocalSeoFaq),
-  { ssr: true }
-);
+import { WhyAuroraHills } from "@/components/WhyAuroraHills";
+import { LocationConnectivity } from "@/components/LocationConnectivity";
+import { LocalSeoFaq } from "@/components/LocalSeoFaq";
 
 const Gallery = dynamic(
   () => import("@/components/Gallery").then((mod) => mod.Gallery),
