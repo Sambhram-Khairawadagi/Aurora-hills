@@ -108,6 +108,15 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/apple-icon.png' },
+    ],
+  },
   other: {
     "geo.region": "IN-KA",
     "geo.placename": "Dharwad, Hubli-Dharwad, Karnataka, India",
@@ -313,6 +322,8 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
         <meta name="geo.region" content="IN-KA" />
         <meta name="geo.placename" content="Dharwad, Hubli-Dharwad, Karnataka, India" />
         <meta name="geo.position" content="15.4589;74.9902" />
