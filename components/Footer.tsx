@@ -72,6 +72,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
               <li><a href="#location" className="hover:text-emerald-700 transition-colors">Location & Connectivity</a></li>
               <li><a href="#faq" className="hover:text-emerald-700 transition-colors">Buyer Guide & FAQ</a></li>
               <li><a href="#gallery" className="hover:text-emerald-700 transition-colors">Real Photo Gallery</a></li>
+              <li><Link href="/privacy-policy" className="hover:text-emerald-700 transition-colors">Privacy Policy</Link></li>
+              <li><Link href="/terms-and-conditions" className="hover:text-emerald-700 transition-colors">Terms & Conditions</Link></li>
             </ul>
           </div>
 
@@ -129,6 +131,14 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
             </div>
           </div>
           <div className="flex items-center justify-center gap-3 sm:gap-4 text-charcoal-700 flex-wrap">
+            <Link href="/privacy-policy" className="hover:text-emerald-700 transition-colors font-medium">
+              Privacy Policy
+            </Link>
+            <span className="text-emerald-300">•</span>
+            <Link href="/terms-and-conditions" className="hover:text-emerald-700 transition-colors font-medium">
+              Terms & Conditions
+            </Link>
+            <span className="text-emerald-300">•</span>
             <Link href="/admin" className="hover:text-emerald-700 transition-colors font-bold">
               Admin Portal
             </Link>
