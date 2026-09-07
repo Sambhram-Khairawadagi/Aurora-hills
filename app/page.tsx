@@ -13,8 +13,6 @@ import { SanctionedLayout } from "@/components/SanctionedLayout";
 import { Partners } from "@/components/Partners";
 import { Footer } from "@/components/Footer";
 import { FloatingActions } from "@/components/FloatingActions";
-import { WhyAuroraHills } from "@/components/WhyAuroraHills";
-import { LocationConnectivity } from "@/components/LocationConnectivity";
 import { LocalSeoFaq } from "@/components/LocalSeoFaq";
 
 const Gallery = dynamic(
@@ -25,10 +23,6 @@ const Gallery = dynamic(
 
 
 
-const EnquirySection = dynamic(
-  () => import("@/components/EnquirySection").then((mod) => mod.EnquirySection),
-  { ssr: true }
-);
 
 // Dynamically load modals on-demand (zero impact on initial bundle)
 const EnquiryModal = dynamic(
@@ -158,9 +152,7 @@ export default function HomePage() {
           onOpenLayout={handleScrollToLayout}
         />
 
-        {/* Why Choose The Aurora Hills — Investment Value & Hubli-Dharwad Growth */}
-        <WhyAuroraHills onOpenEnquiry={handleOpenEnquiry} />
-
+        
         {/* Standalone Main Video Showcase */}
         <MainShowcaseVideo />
 
@@ -178,12 +170,7 @@ export default function HomePage() {
           onOpenBrochure={handleOpenBrochure}
         />
 
-        {/* Strategic Location & Proximities to Hubli, Dharwad, Airport, Highway */}
-        <LocationConnectivity
-          onOpenEnquiry={handleOpenEnquiry}
-          onOpenQR={handleOpenQR}
-        />
-
+        
         {/* Photographic Media & Site Gallery */}
         <Gallery onOpenVideo={handleOpenVideo} />
 
@@ -194,9 +181,7 @@ export default function HomePage() {
           onOpenSiteVisit={handleOpenSiteVisit}
         />
 
-        {/* Plot Enquiry Lead Form Section */}
-        <EnquirySection />
-
+        
         {/* Official Marketing Partners */}
         <Partners />
       </main>
