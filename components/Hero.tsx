@@ -99,6 +99,7 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="mt-5 sm:mt-6">
             <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black font-serif text-white tracking-tighter leading-none drop-shadow-[0_8px_30px_rgba(0,0,0,0.8)]">
               THE AURORA <br className="hidden sm:block lg:hidden" /> HILLS
+              <span className="sr-only"> - Premium Plots in Dharwad & Hubli | Residential Real Estate & Land for Sale</span>
             </h1>
             <div className="inline-flex items-center gap-2 mt-3 sm:mt-5 px-4 py-2 rounded-full liquid-glass-pill shadow-lg border border-emerald-400/30">
                <span className="flex h-2.5 w-2.5 relative flex-shrink-0">
@@ -106,7 +107,7 @@ export const Hero: React.FC<HeroProps> = ({
                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
                </span>
                <span className="text-[10px] sm:text-xs font-black tracking-widest text-emerald-300 uppercase drop-shadow">
-                 Dharwad City's Premier Plotted Sanctuary
+                 Dharwad & Hubli's Premier Plotted Sanctuary
                </span>
             </div>
           </div>
@@ -116,11 +117,11 @@ export const Hero: React.FC<HeroProps> = ({
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-6 sm:mb-8 animate-fade-in">
           <div className="inline-flex flex-wrap items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full liquid-glass-pill shadow-lg w-fit border border-white/20">
             <span className="text-[10px] sm:text-xs lg:text-sm font-black tracking-wider text-white uppercase drop-shadow">
-              Hosa Lifestyle • Hosa Dharwad
+              Hosa Lifestyle • Dharwad & Hubli
             </span>
             <span className="hidden sm:inline text-white/30">|</span>
             <span className="hidden sm:inline text-[10px] sm:text-xs font-bold text-emerald-300 drop-shadow uppercase">
-              NA-KJP Approved
+              HDUDA & NA-KJP Approved
             </span>
             <span className="hidden sm:inline text-white/30">|</span>
             <span className="text-[10px] sm:text-xs font-black text-amber-300 drop-shadow uppercase tracking-wider">
@@ -142,14 +143,14 @@ export const Hero: React.FC<HeroProps> = ({
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-black text-white font-serif tracking-tight leading-[1.15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
               Live Closer to <span className="text-emerald-400 drop-shadow-[0_0_20px_rgba(52,211,153,0.5)]">Nature.</span> <br />
               <span className="bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(251,191,36,0.35)]">
-                Invest in Dharwad's Tomorrow.
+                Invest in Hubli-Dharwad's Tomorrow.
               </span>
             </h2>
           </div>
 
           {/* Supporting Welcoming Copy */}
           <p className="text-xs sm:text-base lg:text-lg text-white/90 leading-relaxed font-medium max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
-            Luxury villa plots nestled in lush green hills at <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:text-emerald-300 hover:underline transition-colors">Sunset Viewpoint, Dharwad City</a> — 20+ amenities, wide paved roads, and instant access to top schools, malls & NH-4.
+            HDUDA & NA-KJP approved luxury residential villa plots nestled at <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:text-emerald-300 hover:underline transition-colors">Sunset Viewpoint, Dharwad City</a> — 20+ lifestyle amenities, wide asphalt roads, and seamless connectivity to Hubli, top universities, malls & NH-4 Highway.
           </p>
 
           {/* Real Estate Price & Pre-Launch Advantage Card */}

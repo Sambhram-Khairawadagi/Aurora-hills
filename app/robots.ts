@@ -7,6 +7,7 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/admin/', '/api/admin/'], // Protect admin routes from being crawled
     },
-    sitemap: 'https://theaurorahills.in/sitemap.xml',
+    sitemap: 'https://theaurorahills.com/sitemap.xml',
   };
 }
+

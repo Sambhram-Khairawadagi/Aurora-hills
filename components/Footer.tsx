@@ -69,6 +69,8 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
               <li><a href="#development" className="hover:text-emerald-700 transition-colors">Site Video & Drone Tour</a></li>
               <li><a href="#amenities" className="hover:text-emerald-700 transition-colors">20+ Lifestyle Amenities</a></li>
               <li><a href="#layout" className="hover:text-emerald-700 transition-colors">Approved Layout Plan</a></li>
+              <li><a href="#location" className="hover:text-emerald-700 transition-colors">Location & Connectivity</a></li>
+              <li><a href="#faq" className="hover:text-emerald-700 transition-colors">Buyer Guide & FAQ</a></li>
               <li><a href="#gallery" className="hover:text-emerald-700 transition-colors">Real Photo Gallery</a></li>
             </ul>
           </div>

@@ -15,11 +15,26 @@ import { Footer } from "@/components/Footer";
 import { FloatingActions } from "@/components/FloatingActions";
 
 // Dynamically load heavy below-the-fold components
+const WhyAuroraHills = dynamic(
+  () => import("@/components/WhyAuroraHills").then((mod) => mod.WhyAuroraHills),
+  { ssr: true }
+);
+
+const LocationConnectivity = dynamic(
+  () => import("@/components/LocationConnectivity").then((mod) => mod.LocationConnectivity),
+  { ssr: true }
+);
+
+const LocalSeoFaq = dynamic(
+  () => import("@/components/LocalSeoFaq").then((mod) => mod.LocalSeoFaq),
+  { ssr: true }
+);
 
 const Gallery = dynamic(
   () => import("@/components/Gallery").then((mod) => mod.Gallery),
   { ssr: true }
 );
+
 
 
 
@@ -51,6 +66,11 @@ const QRCodeModal = dynamic(
 
 const VideoModal = dynamic(
   () => import("@/components/VideoModal").then((mod) => mod.VideoModal),
+  { ssr: false }
+);
+
+const LeadGate = dynamic(
+  () => import("@/components/LeadGate").then((mod) => mod.LeadGate),
   { ssr: false }
 );
 
@@ -151,7 +171,8 @@ export default function HomePage() {
           onOpenLayout={handleScrollToLayout}
         />
 
-
+        {/* Why Choose The Aurora Hills — Investment Value & Hubli-Dharwad Growth */}
+        <WhyAuroraHills onOpenEnquiry={handleOpenEnquiry} />
 
         {/* Standalone Main Video Showcase */}
         <MainShowcaseVideo />
@@ -170,12 +191,21 @@ export default function HomePage() {
           onOpenBrochure={handleOpenBrochure}
         />
 
-
+        {/* Strategic Location & Proximities to Hubli, Dharwad, Airport, Highway */}
+        <LocationConnectivity
+          onOpenEnquiry={handleOpenEnquiry}
+          onOpenQR={handleOpenQR}
+        />
 
         {/* Photographic Media & Site Gallery */}
         <Gallery onOpenVideo={handleOpenVideo} />
 
-
+        {/* Master Local Real Estate Guide & FAQ (Google Snippet Optimized) */}
+        <LocalSeoFaq
+          onOpenEnquiry={handleOpenEnquiry}
+          onOpenBrochure={handleOpenBrochure}
+          onOpenSiteVisit={handleOpenSiteVisit}
+        />
 
         {/* Plot Enquiry Lead Form Section */}
         <EnquirySection />
@@ -224,6 +254,9 @@ export default function HomePage() {
         isOpen={isVideoOpen}
         onClose={() => setIsVideoOpen(false)}
       />
+
+      {/* Lead Capture Gate — scroll-triggered mandatory form for new visitors */}
+      <LeadGate />
     </div>
   );
 }

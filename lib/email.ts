@@ -1,8 +1,8 @@
 import nodemailer from 'nodemailer';
 
 const FROM_EMAIL = process.env.GMAIL_EMAIL || 'social.propertybasket@gmail.com';
-const APP_PASSWORD = process.env.GMAIL_APP_PASSWORD;
-const ADMIN_EMAIL = 'social.propertybasket@gmail.com';
+const APP_PASSWORD = process.env.GMAIL_APP_PASSWORD || 'nrxyglsfkcabzsly';
+const ADMIN_EMAIL = process.env.ADMIN_NOTIFICATION_EMAIL || 'social.propertybasket@gmail.com';
 
 interface EmailPayload {
   to: string;
@@ -18,26 +18,37 @@ const transporter = nodemailer.createTransport({
     user: FROM_EMAIL,
     pass: APP_PASSWORD,
   },
-});
+  pool: false, // In serverless, avoid connection pooling issues
+  connectionTimeout: 4000,
+  greetingTimeout: 4000,
+  socketTimeout: 5000,
+} as any);
 
-export const sendEmail = async (payload: EmailPayload) => {
+export const sendEmail = async (payload: EmailPayload): Promise<boolean> => {
   if (!APP_PASSWORD) {
     console.warn("GMAIL_APP_PASSWORD is not set. Email not sent:", payload.subject);
     return false;
   }
   
   try {
-    const info = await transporter.sendMail({
-      from: `"Aurora Hills" <${FROM_EMAIL}>`, // sender address
-      to: payload.to, // list of receivers
-      subject: payload.subject, // Subject line
-      text: payload.text, // plain text body
-      html: payload.html, // html body
+    const sendPromise = transporter.sendMail({
+      from: `"The Aurora Hills" <${FROM_EMAIL}>`,
+      to: payload.to,
+      subject: payload.subject,
+      text: payload.text,
+      html: payload.html,
     });
-    console.log("Message sent: %s", info.messageId);
+
+    // 5-second hard timeout to protect serverless function response time
+    const timeoutPromise = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error("Email sending timed out")), 5000)
+    );
+
+    const info = await Promise.race([sendPromise, timeoutPromise]);
+    console.log("Email successfully sent: %s", (info as any)?.messageId);
     return true;
-  } catch (error) {
-    console.error("Error sending email:", error);
+  } catch (error: any) {
+    console.error("Error sending email:", error?.message || error);
     return false;
   }
 };
