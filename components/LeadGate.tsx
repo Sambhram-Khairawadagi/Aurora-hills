@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useCallback } from "react";
-import { Send, CheckCircle2, Sparkles, Lock } from "lucide-react";
+import { Send, CheckCircle2, Sparkles, Lock, ArrowRight } from "lucide-react";
 import confetti from "canvas-confetti";
 
 const STORAGE_KEY = "lead_gate_unlocked";
@@ -27,10 +27,11 @@ export const LeadGate: React.FC = () => {
       const unlocked = localStorage.getItem(STORAGE_KEY);
       if (unlocked) {
         setAlreadyUnlocked(true);
+        setGateActive(false);
         return;
       }
     } catch {
-      // localStorage unavailable (incognito edge cases) — show gate
+      // localStorage unavailable
     }
     setAlreadyUnlocked(false);
   }, []);
@@ -40,6 +41,14 @@ export const LeadGate: React.FC = () => {
     if (alreadyUnlocked || gateActive) return;
 
     const handleScroll = () => {
+      try {
+        if (localStorage.getItem(STORAGE_KEY)) {
+          setAlreadyUnlocked(true);
+          setGateActive(false);
+          return;
+        }
+      } catch {}
+
       const scrollY = window.scrollY || window.pageYOffset;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       if (docHeight <= 0) return;
@@ -54,7 +63,7 @@ export const LeadGate: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [alreadyUnlocked, gateActive]);
 
-  // Lock body scroll when gate is active
+  // Lock body scroll only when gate is active and form is not yet submitted
   useEffect(() => {
     if (gateActive && !submitted) {
       document.body.style.overflow = "hidden";
@@ -65,6 +74,15 @@ export const LeadGate: React.FC = () => {
       document.body.style.overflow = "";
     };
   }, [gateActive, submitted]);
+
+  const handleDismiss = useCallback(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, String(Date.now()));
+    } catch {}
+    setAlreadyUnlocked(true);
+    setGateActive(false);
+    document.body.style.overflow = "";
+  }, []);
 
   const handleSubmit = useCallback(async (e: React.FormEvent) => {
     e.preventDefault();
@@ -96,20 +114,23 @@ export const LeadGate: React.FC = () => {
 
       const data = await res.json();
       if (res.ok && data.success) {
-        setSubmitted(true);
-
-        // Persist unlock
+        // Persist unlock immediately to both localStorage and component state
         try {
           localStorage.setItem(STORAGE_KEY, String(Date.now()));
         } catch {}
 
-        // Celebration
-        confetti({ particleCount: 100, spread: 90, origin: { y: 0.6 } });
+        setAlreadyUnlocked(true);
+        setSubmitted(true);
 
-        // Auto-dismiss after 2.5 seconds
+        // Safe celebration confetti
+        try {
+          confetti({ particleCount: 100, spread: 90, origin: { y: 0.6 } });
+        } catch {}
+
+        // Auto-dismiss after 1.8 seconds
         setTimeout(() => {
-          setGateActive(false);
-        }, 2500);
+          handleDismiss();
+        }, 1800);
       } else {
         setErrorMsg(data.error || "Submission failed. Please try again.");
       }
@@ -118,7 +139,7 @@ export const LeadGate: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  }, [formData]);
+  }, [formData, handleDismiss]);
 
   // Don't render anything if already unlocked or gate not yet triggered
   if (alreadyUnlocked || !gateActive) return null;
@@ -126,7 +147,6 @@ export const LeadGate: React.FC = () => {
   return (
     <div
       className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
-      style={{ animation: "leadGateFadeIn 0.4s ease-out" }}
     >
       {/* Blurred overlay — covers full screen */}
       <div className="absolute inset-0 bg-black/50 backdrop-blur-xl" />
@@ -134,23 +154,29 @@ export const LeadGate: React.FC = () => {
       {/* Form card */}
       <div
         className="relative z-10 bg-[#F7F9F6] border border-white/90 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-forest-950 shadow-2xl neu-card max-h-[90vh] overflow-y-auto"
-        style={{ animation: "leadGateSlideUp 0.5s ease-out" }}
       >
         {submitted ? (
           /* ── Success State ── */
-          <div className="text-center py-8 space-y-4">
+          <div className="text-center py-6 sm:py-8 space-y-5">
             <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-300 flex items-center justify-center mx-auto shadow-md">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h4 className="text-xl font-bold font-serif text-forest-950">
+            <h4 className="text-xl sm:text-2xl font-bold font-serif text-forest-950">
               Welcome, {formData.name}!
             </h4>
-            <p className="text-xs text-charcoal-700 max-w-sm mx-auto">
-              Thank you for your interest in The Aurora Hills. Our property consultant will contact you shortly. Enjoy exploring the full website!
+            <p className="text-xs sm:text-sm text-charcoal-700 max-w-sm mx-auto leading-relaxed font-medium">
+              Thank you for your interest in The Aurora Hills. Our property consultant will contact you shortly. Enjoy exploring the full layout and pricing!
             </p>
-            <div className="flex items-center justify-center gap-1.5 text-emerald-600 text-xs font-semibold">
-              <Sparkles className="w-4 h-4" />
-              <span>Unlocking full access...</span>
+            
+            <div className="pt-2">
+              <button
+                type="button"
+                onClick={handleDismiss}
+                className="w-full py-3.5 px-6 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 hover:from-emerald-500 hover:to-green-600 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <span>Continue Exploring Website</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </div>
           </div>
         ) : (
@@ -165,13 +191,13 @@ export const LeadGate: React.FC = () => {
                 <h3 className="text-lg sm:text-xl font-bold font-serif text-forest-950">
                   Unlock Full Access
                 </h3>
-                <span className="text-[10px] sm:text-xs text-charcoal-600">
+                <span className="text-[10px] sm:text-xs text-charcoal-600 font-medium">
                   The Aurora Hills • Premium Plots in Dharwad
                 </span>
               </div>
             </div>
 
-            <p className="text-xs text-charcoal-600 mb-5 leading-relaxed">
+            <p className="text-xs text-charcoal-600 mb-5 leading-relaxed font-medium">
               Share your details to explore the complete project — pricing, layout, amenities, and exclusive offers.
             </p>
 
@@ -275,24 +301,12 @@ export const LeadGate: React.FC = () => {
 
               {/* Trust line */}
               <p className="text-[10px] text-center text-charcoal-500 mt-2">
-                🔒 Your information is secure. We will never share your data.
+                🔒 Your information is secure. By submitting, you agree to our <a href="/privacy-policy" className="underline hover:text-emerald-700">Privacy Policy</a> & <a href="/terms-and-conditions" className="underline hover:text-emerald-700">Terms</a>.
               </p>
             </form>
           </>
         )}
       </div>
-
-      {/* Keyframe animations */}
-      <style jsx>{`
-        @keyframes leadGateFadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes leadGateSlideUp {
-          from { opacity: 0; transform: translateY(30px) scale(0.97); }
-          to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-      `}</style>
     </div>
   );
 };
