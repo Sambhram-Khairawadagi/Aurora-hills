@@ -149,13 +149,9 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
                   <span>Total Area:</span>
                   <span className="text-forest-950 font-black">2,400 sq.ft</span>
                 </div>
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-xs font-bold text-gray-600">
                   <span>Approval:</span>
                   <span className="text-emerald-700 font-black">HDUDA &amp; NA-KJP</span>
-                </div>
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600">
-                  <span>Starting Price:</span>
-                  <span className="text-emerald-800 font-black text-sm">₹84 Lakhs*</span>
                 </div>
               </div>
 
@@ -223,13 +219,9 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
                   <span>Total Area:</span>
                   <span className="text-forest-950 font-black">1,500 sq.ft</span>
                 </div>
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-xs font-bold text-gray-600">
                   <span>Approval:</span>
                   <span className="text-emerald-700 font-black">HDUDA &amp; NA-KJP</span>
-                </div>
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600">
-                  <span>Starting Price:</span>
-                  <span className="text-emerald-800 font-black text-sm">₹52.5 Lakhs*</span>
                 </div>
               </div>
 
@@ -293,13 +285,9 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
                   <span>Total Area:</span>
                   <span className="text-forest-950 font-black">1,200 sq.ft</span>
                 </div>
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-xs font-bold text-gray-600">
                   <span>Approval:</span>
                   <span className="text-emerald-700 font-black">HDUDA &amp; NA-KJP</span>
-                </div>
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600">
-                  <span>Starting Price:</span>
-                  <span className="text-emerald-800 font-black text-sm">₹42 Lakhs*</span>
                 </div>
               </div>
 
