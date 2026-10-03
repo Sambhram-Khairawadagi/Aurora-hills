@@ -1,5 +1,7 @@
 # dependencies
 /node_modules
+/node_modules_corrupt
+/.next_corrupt
 /.pnp
 .pnp.js
 
@@ -39,3 +41,6 @@ public/videos/drone-2.mp4
 public/videos/drone-4.mp4
 public/videos/drone-5.mp4
 public/videos/drone-6.mp4
+godaddy_upload.zip
+test-out.css
+

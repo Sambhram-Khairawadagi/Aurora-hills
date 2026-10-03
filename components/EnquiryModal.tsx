@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from "react";
 import { X, Send, CheckCircle2, ShieldCheck, Sparkles, Phone, Mail, User } from "lucide-react";
 import confetti from "canvas-confetti";
-import { getStoredUtm } from "@/lib/utm";
 
 interface EnquiryModalProps {
   isOpen: boolean;
@@ -97,6 +96,20 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
           </div>
         </div>
 
+        {/* Festive Dasara & Deepawali Scheme Alert */}
+        <div className="p-3 rounded-2xl bg-gradient-to-r from-[#450A14] via-[#7B1123] to-[#450A14] text-white mb-4 border border-amber-400/60 shadow-md flex items-center justify-between gap-2">
+          <div className="flex items-center gap-2.5">
+            <span className="p-1.5 rounded-full bg-amber-400 text-red-950 text-xs font-black">🪔</span>
+            <div className="text-[11px] leading-tight">
+              <span className="font-black text-amber-300 block">Dasara &amp; Deepawali Festive Special</span>
+              <span className="text-white/80 font-medium">Bookings qualify for 50g Pure Gold or up to 1.5kg Silver!</span>
+            </div>
+          </div>
+          <span className="text-[9px] uppercase tracking-wider font-black bg-amber-400 text-red-950 px-2 py-0.5 rounded-full flex-shrink-0">
+            Active
+          </span>
+        </div>
+
         {submitted ? (
           <div className="text-center py-8 space-y-4 animate-fade-in">
             <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-300 flex items-center justify-center mx-auto shadow-md">
@@ -106,7 +119,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
               Thank You, {formData.name}!
             </h4>
             <p className="text-xs text-charcoal-700 max-w-sm mx-auto">
-              Your inquiry has been submitted. Our property consultant will call you at <strong>{formData.phone}</strong> with complete pricing and availability.
+              Your inquiry has been submitted. Our property consultant will call you at <strong>{formData.phone}</strong> with complete pricing and festive offer details.
             </p>
             <button
               onClick={onClose}
@@ -168,13 +181,13 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 <select
                   value={formData.requirement}
                   onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
-                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-xs bg-[#F0F4ED]"
+                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-xs bg-[#F0F4ED] font-medium"
                 >
-                  <option value="1,200 sq.ft (30x40)">1,200 sq.ft (30x40)</option>
-                  <option value="1,500 sq.ft (30x50)">1,500 sq.ft (30x50)</option>
-                  <option value="1,650 sq.ft (33x50)">1,650 sq.ft (33x50)</option>
-                  <option value="2,400 sq.ft (40x60)">2,400 sq.ft (40x60)</option>
-                  <option value="Odd Sizes">Odd Sizes</option>
+                  <option value="40x60 Plot (50g Gold Offer)">40 × 60 (2,400 sq.ft) — 🎁 50g Gold Offer</option>
+                  <option value="30x50 Plot (1.5kg Silver Offer)">30 × 50 (1,500 sq.ft) — 🎁 1.5kg Silver Offer</option>
+                  <option value="30x40 Plot (1kg Silver Offer)">30 × 40 (1,200 sq.ft) — 🎁 1kg Silver Offer</option>
+                  <option value="1,650 sq.ft (33x50)">33 × 50 (1,650 sq.ft) — Luxury Villa Plot</option>
+                  <option value="Odd Sizes">Odd Sizes / Corner Plot</option>
                   <option value="Custom Estate Plot">Custom Estate Plot</option>
                 </select>
               </div>

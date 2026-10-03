@@ -4,9 +4,10 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ArrowRight, Phone } from "lucide-react";
+import { FestiveTicker } from "@/components/FestiveTicker";
 
 interface NavbarProps {
-  onOpenEnquiry: (source?: string) => void;
+  onOpenEnquiry: (source?: string, requirement?: string) => void;
   onOpenBrochure: () => void;
   onOpenSiteVisit: () => void;
 }
@@ -29,44 +30,51 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { label: "Overview", href: "#hero" },
+    { label: "Festive Scheme 🎁", href: "#festive-offer", isSpecial: true },
     { label: "About", href: "#about" },
     { label: "Amenities", href: "#amenities" },
     { label: "Layout", href: "#layout" },
-    { label: "Location", href: "#location" },
-    { label: "FAQ", href: "#faq" },
     { label: "Gallery", href: "#gallery" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-2 px-4 sm:px-6 lg:px-8">
-      <div
-        className={`max-w-6xl mx-auto rounded-full transition-all duration-500 px-5 sm:px-8 flex items-center justify-between ${isScrolled
-            ? "bg-white/95 backdrop-blur-xl border border-white/60 shadow-xl shadow-emerald-950/10 py-3.5 mt-3"
-            : "bg-white/80 backdrop-blur-md border border-white/50 shadow-lg py-3 mt-2"
-          }`}
-      >
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+      <FestiveTicker onOpenEnquiry={onOpenEnquiry} />
+      <div className="py-1 px-4 sm:px-6 lg:px-8">
+        <div
+          className={`max-w-6xl mx-auto rounded-full transition-all duration-500 px-5 sm:px-7 flex items-center justify-between ${isScrolled
+              ? "bg-white/95 backdrop-blur-xl border border-white/60 shadow-xl shadow-emerald-950/10 py-2 mt-0.5"
+              : "bg-white/85 backdrop-blur-md border border-white/50 shadow-lg py-2 mt-0.5"
+            }`}
+        >
         {/* Brand Logo - Compact */}
         <Link href="/" className="flex items-center group flex-shrink-0">
           <Image
             src="/images/aurora-hills-logo-transparent.png"
             alt="The Aurora Hills"
-            width={180}
-            height={60}
-            className="h-10 sm:h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-105"
+            width={160}
+            height={50}
+            className="h-9 sm:h-11 lg:h-12 w-auto object-contain transition-transform group-hover:scale-105"
             priority
           />
         </Link>
 
         {/* Desktop Navigation Links - Animated */}
-        <nav className="hidden lg:flex items-center gap-2 lg:gap-4">
+        <nav className="hidden lg:flex items-center gap-2 lg:gap-3">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
-              className="relative px-2 py-1 text-sm font-bold text-gray-700 hover:text-emerald-700 transition-colors whitespace-nowrap group"
+              className={`relative px-2.5 py-1 text-sm font-bold transition-all whitespace-nowrap group ${
+                link.isSpecial
+                  ? "text-red-900 bg-amber-100 hover:bg-amber-200/90 px-3.5 py-1 rounded-full border border-amber-300 shadow-sm font-black animate-pulse-subtle"
+                  : "text-gray-700 hover:text-emerald-700"
+              }`}
             >
               {link.label}
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-emerald-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
+              {!link.isSpecial && (
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-emerald-500 rounded-full transition-all duration-300 group-hover:w-full"></span>
+              )}
             </a>
           ))}
         </nav>
@@ -99,6 +107,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
         </div>
       </div>
+      </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
@@ -122,7 +131,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                 key={link.label}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="p-2.5 rounded-xl text-sm font-semibold text-gray-700 text-center hover:text-emerald-700 hover:bg-emerald-50 transition-colors"
+                className={`p-2.5 rounded-xl text-sm font-bold text-center transition-all ${
+                  link.isSpecial
+                    ? "col-span-2 bg-gradient-to-r from-[#450A14] via-[#7B1123] to-[#450A14] text-amber-300 font-black border border-amber-400/50 shadow-md py-3"
+                    : "text-gray-700 hover:text-emerald-700 hover:bg-emerald-50"
+                }`}
               >
                 {link.label}
               </a>

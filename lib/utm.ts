@@ -4,38 +4,44 @@ export interface UtmParams {
   utm_campaign?: string;
   utm_term?: string;
   utm_content?: string;
-  gclid?: string;
 }
 
-export function getStoredUtm(): UtmParams {
+export function getUtmParams(): UtmParams {
   if (typeof window === "undefined") return {};
 
-  try {
-    const stored = sessionStorage.getItem("aurora_utm_params");
-    const parsedStored: UtmParams = stored ? JSON.parse(stored) : {};
+  const searchParams = new URLSearchParams(window.location.search);
+  const utms: UtmParams = {};
 
-    const params = new URLSearchParams(window.location.search);
-    const current: UtmParams = {};
+  const source = searchParams.get("utm_source");
+  const medium = searchParams.get("utm_medium");
+  const campaign = searchParams.get("utm_campaign");
+  const term = searchParams.get("utm_term");
+  const content = searchParams.get("utm_content");
 
-    if (params.get("utm_source")) current.utm_source = params.get("utm_source")!;
-    if (params.get("utm_medium")) current.utm_medium = params.get("utm_medium")!;
-    if (params.get("utm_campaign")) current.utm_campaign = params.get("utm_campaign")!;
-    if (params.get("utm_term")) current.utm_term = params.get("utm_term")!;
-    if (params.get("utm_content")) current.utm_content = params.get("utm_content")!;
-    if (params.get("gclid")) {
-      current.gclid = params.get("gclid")!;
-      if (!current.utm_source) current.utm_source = "google_ads";
-      if (!current.utm_medium) current.utm_medium = "cpc";
+  if (source) utms.utm_source = source;
+  if (medium) utms.utm_medium = medium;
+  if (campaign) utms.utm_campaign = campaign;
+  if (term) utms.utm_term = term;
+  if (content) utms.utm_content = content;
+
+  // Persist to session storage if found
+  if (Object.keys(utms).length > 0) {
+    try {
+      sessionStorage.setItem("aurora_utms", JSON.stringify(utms));
+    } catch {
+      // Ignore sessionStorage errors
     }
-
-    const merged: UtmParams = { ...parsedStored, ...current };
-
-    if (Object.keys(merged).length > 0) {
-      sessionStorage.setItem("aurora_utm_params", JSON.stringify(merged));
+  } else {
+    // Try to retrieve from session storage
+    try {
+      const saved = sessionStorage.getItem("aurora_utms");
+      if (saved) {
+        return JSON.parse(saved);
+      }
+    } catch {
+      // Ignore sessionStorage errors
     }
-
-    return merged;
-  } catch {
-    return {};
   }
+
+  return utms;
 }

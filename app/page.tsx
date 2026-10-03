@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { TrustBadges } from "@/components/TrustBadges";
+import { FestiveScheme } from "@/components/FestiveScheme";
 import { ProjectIntro } from "@/components/ProjectIntro";
 import { MainShowcaseVideo } from "@/components/MainShowcaseVideo";
 import { DevelopmentVideo } from "@/components/DevelopmentVideo";
@@ -13,7 +14,8 @@ import { SanctionedLayout } from "@/components/SanctionedLayout";
 import { Partners } from "@/components/Partners";
 import { Footer } from "@/components/Footer";
 import { FloatingActions } from "@/components/FloatingActions";
-import { LocalSeoFaq } from "@/components/LocalSeoFaq";
+
+// Dynamically load heavy below-the-fold components
 
 const Gallery = dynamic(
   () => import("@/components/Gallery").then((mod) => mod.Gallery),
@@ -22,7 +24,10 @@ const Gallery = dynamic(
 
 
 
-
+const EnquirySection = dynamic(
+  () => import("@/components/EnquirySection").then((mod) => mod.EnquirySection),
+  { ssr: true }
+);
 
 // Dynamically load modals on-demand (zero impact on initial bundle)
 const EnquiryModal = dynamic(
@@ -47,11 +52,6 @@ const QRCodeModal = dynamic(
 
 const VideoModal = dynamic(
   () => import("@/components/VideoModal").then((mod) => mod.VideoModal),
-  { ssr: false }
-);
-
-const LeadGate = dynamic(
-  () => import("@/components/LeadGate").then((mod) => mod.LeadGate),
   { ssr: false }
 );
 
@@ -146,13 +146,17 @@ export default function HomePage() {
         {/* 4 Trust Approvals Strip */}
         <TrustBadges />
 
+        {/* Dedicated Dasara & Deepawali Gold & Silver Festive Scheme Section */}
+        <FestiveScheme onOpenEnquiry={handleOpenEnquiry} />
+
         {/* Project Introduction */}
         <ProjectIntro
           onOpenEnquiry={handleOpenEnquiry}
           onOpenLayout={handleScrollToLayout}
         />
 
-        
+
+
         {/* Standalone Main Video Showcase */}
         <MainShowcaseVideo />
 
@@ -170,18 +174,16 @@ export default function HomePage() {
           onOpenBrochure={handleOpenBrochure}
         />
 
-        
+
+
         {/* Photographic Media & Site Gallery */}
         <Gallery onOpenVideo={handleOpenVideo} />
 
-        {/* Master Local Real Estate Guide & FAQ (Google Snippet Optimized) */}
-        <LocalSeoFaq
-          onOpenEnquiry={handleOpenEnquiry}
-          onOpenBrochure={handleOpenBrochure}
-          onOpenSiteVisit={handleOpenSiteVisit}
-        />
 
-        
+
+        {/* Plot Enquiry Lead Form Section */}
+        <EnquirySection />
+
         {/* Official Marketing Partners */}
         <Partners />
       </main>
@@ -226,9 +228,6 @@ export default function HomePage() {
         isOpen={isVideoOpen}
         onClose={() => setIsVideoOpen(false)}
       />
-
-      {/* Lead Capture Gate — scroll-triggered mandatory form for new visitors */}
-      <LeadGate />
     </div>
   );
 }

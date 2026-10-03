@@ -121,39 +121,60 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
           {/* Sidebar Plot Details */}
           <div className="w-full lg:w-1/4 flex flex-col">
             <div className="bg-white rounded-3xl p-6 shadow-xl border border-emerald-100">
-              <h3 className="text-lg sm:text-xl font-black font-serif text-forest-950 mb-6 border-b border-emerald-100 pb-4">
+              <span className="text-[10px] font-black uppercase tracking-wider text-amber-900 bg-amber-100 px-2.5 py-1 rounded-full border border-amber-300 inline-block mb-3">
+                🪔 Festive Scheme Active
+              </span>
+              <h3 className="text-lg sm:text-xl font-black font-serif text-forest-950 mb-6 border-b border-emerald-100 pb-3">
                 Available Dimensions
               </h3>
               
               <div className="space-y-6">
                 {/* Plot 1 */}
                 <div 
-                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer" 
-                  onClick={() => onOpenEnquiry("Approved Plan 30x40", "1,200 sq.ft (30x40)")}
+                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer bg-slate-50/50 p-2 rounded-r-xl" 
+                  onClick={() => onOpenEnquiry("Approved Plan 30x40 (1kg Silver)", "1,200 sq.ft (30x40)")}
                 >
-                  <h4 className="text-xl font-black text-forest-950 mt-1 group-hover:text-emerald-700 transition-colors">1,200 sq.ft</h4>
-                  <p className="text-xs text-gray-500 mt-1 font-medium">30 × 40 ft • 3BHK Luxury Villa</p>
-                  <p className="text-xs font-bold text-emerald-800 mt-1">Starting ₹42 Lakhs*</p>
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-xl font-black text-forest-950 group-hover:text-emerald-700 transition-colors">1,200 sq.ft</h4>
+                    <span className="text-[10px] font-black text-slate-800 bg-slate-200 px-2 py-0.5 rounded-full">30 × 40</span>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-0.5 font-medium">3BHK Luxury Villa</p>
+                  <p className="text-xs font-bold text-emerald-800 mt-0.5">Starting ₹42 Lakhs*</p>
+                  <span className="inline-block mt-2 px-2.5 py-0.5 rounded-md bg-slate-100 border border-slate-300 text-slate-800 text-[10px] font-black">
+                    🎁 Festive Gift: 1 KG Silver
+                  </span>
                 </div>
 
                 {/* Plot 2 */}
                 <div 
-                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer" 
-                  onClick={() => onOpenEnquiry("Approved Plan 30x50", "1,500 sq.ft (30x50)")}
+                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer bg-emerald-50/40 p-2 rounded-r-xl" 
+                  onClick={() => onOpenEnquiry("Approved Plan 30x50 (1.5kg Silver)", "1,500 sq.ft (30x50)")}
                 >
-                  <h4 className="text-xl font-black text-forest-950 mt-1 group-hover:text-emerald-700 transition-colors">1,500 sq.ft</h4>
-                  <p className="text-xs text-gray-500 mt-1 font-medium">30 × 50 ft • Spacious Garden Living</p>
-                  <p className="text-xs font-bold text-emerald-800 mt-1">Starting ₹52.5 Lakhs*</p>
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-xl font-black text-forest-950 group-hover:text-emerald-700 transition-colors">1,500 sq.ft</h4>
+                    <span className="text-[10px] font-black text-emerald-900 bg-emerald-200 px-2 py-0.5 rounded-full">30 × 50</span>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-0.5 font-medium">Spacious Garden Living</p>
+                  <p className="text-xs font-bold text-emerald-800 mt-0.5">Starting ₹52.5 Lakhs*</p>
+                  <span className="inline-block mt-2 px-2.5 py-0.5 rounded-md bg-emerald-100 border border-emerald-300 text-emerald-900 text-[10px] font-black">
+                    🎁 Festive Gift: 1.5 KG Silver
+                  </span>
                 </div>
 
                 {/* Plot 3 */}
                 <div 
-                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer" 
-                  onClick={() => onOpenEnquiry("Approved Plan 40x60", "2,400 sq.ft (40x60)")}
+                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer bg-amber-50/50 p-2 rounded-r-xl" 
+                  onClick={() => onOpenEnquiry("Approved Plan 40x60 (50g Gold)", "2,400 sq.ft (40x60)")}
                 >
-                  <h4 className="text-xl font-black text-forest-950 mt-1 group-hover:text-emerald-700 transition-colors">2,400 sq.ft</h4>
-                  <p className="text-xs text-gray-500 mt-1 font-medium">40 × 60 ft • Grand Hillside Mansion</p>
-                  <p className="text-xs font-bold text-emerald-800 mt-1">Starting ₹84 Lakhs*</p>
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-xl font-black text-forest-950 group-hover:text-emerald-700 transition-colors">2,400 sq.ft</h4>
+                    <span className="text-[10px] font-black text-amber-950 bg-amber-200 px-2 py-0.5 rounded-full">40 × 60</span>
+                  </div>
+                  <p className="text-xs text-gray-500 mt-0.5 font-medium">Grand Hillside Mansion</p>
+                  <p className="text-xs font-bold text-emerald-800 mt-0.5">Starting ₹84 Lakhs*</p>
+                  <span className="inline-block mt-2 px-2.5 py-0.5 rounded-md bg-amber-200/80 border border-amber-400 text-red-950 text-[10px] font-black">
+                    🎁 Festive Gift: 50g Pure Gold
+                  </span>
                 </div>
               </div>
 

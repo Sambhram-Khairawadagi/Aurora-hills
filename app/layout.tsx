@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Inter } from "next/font/google";
+import { Outfit, Inter, Noto_Sans_Kannada } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -12,6 +12,13 @@ const outfit = Outfit({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-serif",
+});
+
+const kannada = Noto_Sans_Kannada({
+  subsets: ["kannada"],
+  weight: ["400", "600", "700", "900"],
+  display: "swap",
+  variable: "--font-kannada",
 });
 
 
@@ -336,7 +343,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} ${outfit.variable} font-sans antialiased selection:bg-gold-500 selection:text-forest-950`}>
+      <body className={`${inter.variable} ${outfit.variable} ${kannada.variable} font-sans antialiased selection:bg-gold-500 selection:text-forest-950`}>
         {children}
       </body>
     </html>

@@ -348,13 +348,13 @@ export const CONNECTIVITY_CATEGORIES = {
 };
 
 export const CONTACT_NUMBERS = [
+  "8970198701",
+  "735331107",
   "9019765265",
-  "7019165265",
-  "9880166275",
-  "9242508288"
+  "7019165265"
 ];
 
-export const WHATSAPP_NUMBER = "919019765265";
+export const WHATSAPP_NUMBER = "918970198701";
 export const EMAIL_ADDRESS = "sales@theaurorahills.com";
 
 export const PARTNERS_INFO = {
@@ -373,4 +373,81 @@ export const PARTNERS_INFO = {
     description: "Reachmaxx crafts distinctive real-estate brand positioning, media design, and communication strategies.",
     logo: "/images/reachmax-logo.png"
   }
+};
+
+export interface FestiveSchemeItem {
+  id: string;
+  dimension: string;
+  areaSqFt: number;
+  plotLabel: string;
+  giftCategory: "gold" | "silver";
+  giftWeight: string;
+  giftItem: string;
+  giftValueBadge: string;
+  idealFor: string;
+  description: string;
+  startingPrice: string;
+  accentColor: string;
+  headerBg: string;
+  ribbonText: string;
+}
+
+export const FESTIVE_SCHEME_DATA = {
+  festivalName: "THIS DASARA & DEEPAWALI SPECIAL",
+  kannadaTitle: "ಭೂಮಿ & ಬಂಗಾರ | ಭೂಮಿ & ಬೆಳ್ಳಿ",
+  tagline: "A Precious Beginning. A Precious Honour.",
+  locationBadge: "WITHIN DHARWAD CITY LIMITS",
+  contactNumbers: ["8970198701", "735331107"],
+  posterImage: "/images/dasara-deepawali-special-poster.jpg",
+  termsNote: "*Limited period festival offer. T&C Apply.",
+  schemes: [
+    {
+      id: "scheme-40x60",
+      dimension: "40 × 60",
+      areaSqFt: 2400,
+      plotLabel: "40 × 60 PLOT",
+      giftCategory: "gold" as const,
+      giftWeight: "50 GRAMS",
+      giftItem: "GOLD",
+      giftValueBadge: "Fine 999.9 Gold Bars & Coins",
+      idealFor: "Grand Hillside Luxury Villa / Mansion",
+      description: "Book an expansive 2,400 sq.ft plot and receive 50 Grams of pure Gold to bless your family home.",
+      startingPrice: "₹84 Lakhs*",
+      accentColor: "from-amber-500 via-yellow-400 to-amber-600",
+      headerBg: "bg-gradient-to-r from-red-950 via-rose-900 to-amber-950 text-white",
+      ribbonText: "Grand Gold Celebration"
+    },
+    {
+      id: "scheme-30x50",
+      dimension: "30 × 50",
+      areaSqFt: 1500,
+      plotLabel: "30 × 50 PLOT",
+      giftCategory: "silver" as const,
+      giftWeight: "1.5 KG",
+      giftItem: "SILVER",
+      giftValueBadge: "2 Ornate Traditional Silver Kalash",
+      idealFor: "Spacious Garden Living & 4BHK Villa",
+      description: "Book a 1,500 sq.ft prime residential plot and receive 1.5 Kilograms of auspicious Silver.",
+      startingPrice: "₹52.5 Lakhs*",
+      accentColor: "from-emerald-600 via-teal-500 to-emerald-700",
+      headerBg: "bg-gradient-to-r from-emerald-950 via-teal-900 to-emerald-950 text-white",
+      ribbonText: "Silver Auspicious Offer"
+    },
+    {
+      id: "scheme-30x40",
+      dimension: "30 × 40",
+      areaSqFt: 1200,
+      plotLabel: "30 × 40 PLOT",
+      giftCategory: "silver" as const,
+      giftWeight: "1 KG",
+      giftItem: "SILVER",
+      giftValueBadge: "1 Ornate Traditional Silver Kalash",
+      idealFor: "Contemporary 3BHK Independent Home",
+      description: "Book our most sought-after 1,200 sq.ft plot and receive 1 Kilogram of pure festive Silver.",
+      startingPrice: "₹42 Lakhs*",
+      accentColor: "from-slate-700 via-slate-600 to-zinc-800",
+      headerBg: "bg-gradient-to-r from-slate-900 via-zinc-900 to-slate-950 text-white",
+      ribbonText: "Festive Silver Blessing"
+    }
+  ]
 };
