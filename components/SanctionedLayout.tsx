@@ -173,7 +173,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                   <p className="text-xs text-gray-500 mt-0.5 font-medium">Grand Hillside Mansion</p>
                   <p className="text-xs font-bold text-emerald-800 mt-0.5">Starting ₹84 Lakhs*</p>
                   <span className="inline-block mt-2 px-2.5 py-0.5 rounded-md bg-amber-200/80 border border-amber-400 text-red-950 text-[10px] font-black">
-                    🎁 Festive Gift: 50g Pure Gold
+                    🎁 Festive Gift: 50g Gold
                   </span>
                 </div>
               </div>

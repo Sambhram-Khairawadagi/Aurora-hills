@@ -79,7 +79,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
           <p className="text-charcoal-700 text-xs sm:text-base max-w-2xl mx-auto font-medium leading-relaxed">
             Celebrate auspicious new beginnings in Dharwad City's most scenic plotted community. 
             Book your sanctioned residential plot this festive season and receive authentic 
-            <strong className="text-red-900 font-extrabold"> 50g Pure Gold</strong> or 
+            <strong className="text-red-900 font-extrabold"> 50g Gold</strong> or 
             <strong className="text-slate-800 font-extrabold"> up to 1.5kg Silver</strong> as a permanent festive blessing.
           </p>
 
@@ -119,9 +119,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
                 {/* Stylized Gold Bars & Coins Icon Representation */}
                 <div className="relative z-10 flex flex-col items-center">
                   <div className="relative w-28 h-20 bg-gradient-to-br from-amber-200 via-amber-400 to-yellow-600 rounded-lg shadow-xl border border-yellow-200 flex flex-col justify-center items-center transform -rotate-3 hover:rotate-0 transition-transform">
-                    <span className="text-[9px] font-black tracking-widest text-amber-950 uppercase">FINE GOLD</span>
-                    <span className="text-xs font-black text-amber-950">999.9</span>
-                    <span className="text-[8px] font-bold text-amber-900">NET WT 50g</span>
+                    <span className="text-lg font-black tracking-widest text-amber-950 uppercase drop-shadow-sm">GOLD</span>
                   </div>
                   <div className="w-14 h-14 -mt-4 bg-gradient-to-tr from-yellow-500 via-amber-300 to-yellow-200 rounded-full shadow-lg border-2 border-white flex items-center justify-center text-amber-950 font-black text-xs">
                     🪙

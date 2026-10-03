@@ -102,7 +102,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             <span className="p-1.5 rounded-full bg-amber-400 text-red-950 text-xs font-black">🪔</span>
             <div className="text-[11px] leading-tight">
               <span className="font-black text-amber-300 block">Dasara &amp; Deepawali Festive Special</span>
-              <span className="text-white/80 font-medium">Bookings qualify for 50g Pure Gold or up to 1.5kg Silver!</span>
+              <span className="text-white/80 font-medium">Bookings qualify for 50g Gold or up to 1.5kg Silver!</span>
             </div>
           </div>
           <span className="text-[9px] uppercase tracking-wider font-black bg-amber-400 text-red-950 px-2 py-0.5 rounded-full flex-shrink-0">
