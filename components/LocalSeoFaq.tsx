@@ -27,28 +27,34 @@ interface FaqItem {
 
 const FAQS_DATA: FaqItem[] = [
   {
+    category: "Pricing & Land Value",
+    question: "What is the average price of land and residential plots in Dharwad?",
+    answer:
+      "The average price of residential land and plots in Dharwad typically ranges between ₹2,000 to ₹4,000 per sq.ft depending on location, HDUDA approval status, and amenities. At The Aurora Hills (Kelgerri, adjacent to Karnatak University & NH-4), premium HDUDA & NA-KJP sanctioned villa plots start at ₹42 Lakhs (approx. ₹3,500/sq.ft) under our pre-launch advantage with pre-approved bank loans up to 80%."
+  },
+  {
+    category: "Plot Dimensions & Cost",
+    question: "What is the price of a 30x40 and 30x50 site in Hubballi-Dharwad?",
+    answer:
+      "A standard 30x40 site (1,200 sq.ft) in Dharwad costs between ₹38 Lakhs to ₹48 Lakhs, while a 30x50 site (1,500 sq.ft) averages ₹48 Lakhs to ₹65 Lakhs. At The Aurora Hills, 30x40 plots start from ₹42 Lakhs*, 30x50 plots start from ₹52.5 Lakhs*, and 40x60 plots (2,400 sq.ft) start from ₹84 Lakhs*, complete with all township infrastructure and festive booking rewards."
+  },
+  {
+    category: "Best Localities",
+    question: "Which is the best area to live and buy plots in Dharwad?",
+    answer:
+      "Kelgerri / Sunset Viewpoint, Vidyagiri, and Sattur near Karnatak University and NH-4 Highway are widely regarded as the best residential areas in Dharwad. Kelgerri offers pristine hill serenity, zero pollution, easy access to Dharwad Railway Station, and swift commuting to Hubli via the 6-lane NH-48 and BRTS corridor, making it the most preferred destination for families and luxury villa builders."
+  },
+  {
     category: "Approvals & Legality",
     question: "Are plots at The Aurora Hills Dharwad HDUDA and NA approved?",
     answer:
       "Yes, The Aurora Hills is a 100% legally clear, NA-KJP and HDUDA sanctioned plotted township. Every plot comes with clean marketable titles, sanctioned layout blueprints, and pre-approved home loan options from top national banks including SBI, HDFC, ICICI, and IDFC First Bank."
   },
   {
-    category: "Pricing & Investment",
-    question: "What is the price of residential plots in Dharwad at The Aurora Hills?",
-    answer:
-      "Residential plots at The Aurora Hills start from ₹42 Lakhs* under our special pre-launch advantage. We provide transparent pricing with no hidden charges, flexible construction-linked milestone schedules, and comprehensive assistance with bank loans up to 80%."
-  },
-  {
     category: "Location & Proximity",
     question: "Where is The Aurora Hills located in Dharwad and how far is it from Hubli?",
     answer:
       "The Aurora Hills is situated at the prime Sunset Viewpoint near Karnatak University in Dharwad City, directly accessible from the 6-lane NH-4 Highway. It is 5 minutes from Karnatak University, 10 minutes from Dharwad Railway Station, and just 15 to 20 minutes from the Hubli-Dharwad Twin City commercial hub and Hubli Airport via the high-speed corridor."
-  },
-  {
-    category: "Plot Dimensions",
-    question: "What plot dimensions and sizes are available for sale?",
-    answer:
-      "The layout accommodates a versatile range of plot dimensions tailored for luxury villas and custom residences, including 30x40 (1,200 sq.ft), 30x50 (1,500 sq.ft), 40x60 (2,400 sq.ft), and exclusive park-facing / corner villa land parcels."
   },
   {
     category: "Financing & Loans",
@@ -74,17 +80,22 @@ const LOCAL_AREAS = [
   "Plots in Dharwad",
   "Plots in Hubli",
   "Plots in Hubli-Dharwad",
-  "Residential Land Dharwad",
-  "Real Estate in Dharwad",
-  "Real Estate Hubli",
+  "Residential Plots Dharwad",
+  "Plots for sale in Dharwad",
+  "Plots for sale in Hubli",
+  "Land for sale in Dharwad",
+  "Sites in Dharwad for sale",
+  "Sites in Hubli for sale",
   "HDUDA Approved Plots",
   "NA Plots Dharwad",
+  "Villa Plots in Dharwad",
+  "Plots near Kelgeri Dharwad",
   "Plots near Karnatak University",
   "Plots near NH-4 Highway",
-  "Plots in Navanagar",
   "Plots in Vidyagiri Dharwad",
   "Plots in Sattur",
-  "Plots in Kelgeri Dharwad",
+  "Plots in Navanagar Hubli",
+  "Plots near SDM College",
   "Plots near Hubli Airport",
   "Gated Community Dharwad"
 ];

@@ -4,7 +4,7 @@
 **Main Branch**: `main`  
 **Hosting & Deployment**: Vercel (Auto-deploys on push to `origin/main`)  
 **Stack**: Next.js 14 (App Router), TypeScript, Tailwind CSS, Prisma (SQLite), Nodemailer  
-**Last Updated**: October 3, 2026
+**Last Updated**: October 5, 2026
 
 ---
 
@@ -49,6 +49,20 @@ The Aurora Hills is a premium real estate landing page and management portal for
 - `lib/db.ts` dynamically detects serverless execution and copies `prisma/dev.db` to `/tmp/dev.db` before connecting.
 - Form endpoints (`/api/leads`, `/api/site-visits`) use isolated try-catch blocks and strictly awaited SMTP email dispatch to `social.propertybasket@gmail.com` to guarantee 0% lead loss.
 
+### E. Karnataka Local SEO Dominance Architecture
+- **Exact-Match On-Page Targeting**:
+  - Main `<h1>` in `components/Hero.tsx` features `THE AURORA HILLS` with high-authority subtitle `Plots in Dharwad & Hubli`.
+  - Canonical Title in `app/layout.tsx`: `Plots in Dharwad & Hubli | HDUDA Approved Residential Plots for Sale | The Aurora Hills`.
+- **People Also Ask (PAA) Schema & Content Interlocking**:
+  - `components/LocalSeoFaq.tsx` and `app/layout.tsx` FAQPage JSON-LD directly answer Google PAA queries:
+    1. Average land/plot prices in Dharwad (₹2,000–₹4,000/sq.ft vs. ₹42L starting at Aurora Hills).
+    2. 30x40 and 30x50 site prices in Hubballi-Dharwad.
+    3. Best areas to live in Dharwad (Kelgeri / Sunset Viewpoint, Vidyagiri, Sattur).
+    4. HDUDA and NA-KJP approvals.
+- **Micro-Market Geo Signals**:
+  - Mounted `components/LocationConnectivity.tsx` (`#location`) and `components/LocalSeoFaq.tsx` (`#faq`) on `app/page.tsx` for full SSR content indexation.
+  - Corrected `app/sitemap.ts` to adhere strictly to Google specifications (zero hash fragments).
+
 ---
 
 ## 3. Important Development Guidelines & Gotchas
@@ -74,3 +88,5 @@ The Aurora Hills is a premium real estate landing page and management portal for
 - `3e23837`: Update festive gold label to **`GOLD`** and remove 999.9 reference across UI and data.
 - `f6300e0`: Remove pricing rows from all festive scheme cards for clean presentation.
 - `40dfa62`: Serverless SQLite `/tmp` fix and lead delivery safeguards for Vercel.
+- `be96fac`: Add MEMORY.md capturing project progress, festive scheme specs, and architecture.
+- `feat(seo)`: Optimize for #1 Hubli-Dharwad plot rankings, H1 keyword hierarchy, PAA FAQ interlocking, and valid sitemap.

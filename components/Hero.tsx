@@ -98,6 +98,9 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="mt-5 sm:mt-6">
             <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black font-serif text-white tracking-tighter leading-none drop-shadow-[0_8px_30px_rgba(0,0,0,0.8)]">
               THE AURORA <br className="hidden sm:block lg:hidden" /> HILLS
+              <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-sans font-extrabold text-amber-300 tracking-tight mt-3 sm:mt-4 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+                Plots in Dharwad &amp; Hubli
+              </span>
             </h1>
             <div className="inline-flex items-center gap-2 mt-3 sm:mt-5 px-4 py-2 rounded-full liquid-glass-pill shadow-lg border border-emerald-400/30">
                <span className="flex h-2.5 w-2.5 relative flex-shrink-0">
@@ -105,7 +108,7 @@ export const Hero: React.FC<HeroProps> = ({
                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
                </span>
                <span className="text-[10px] sm:text-xs font-black tracking-widest text-emerald-300 uppercase drop-shadow">
-                 Dharwad City's Premier Plotted Sanctuary
+                 HDUDA &amp; NA-KJP Approved Luxury Villa Plots
                </span>
             </div>
           </div>

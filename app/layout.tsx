@@ -23,20 +23,23 @@ const kannada = Noto_Sans_Kannada({
 
 
 export const metadata: Metadata = {
-  title: "Plots in Dharwad & Hubli | Residential Land & Real Estate for Sale | The Aurora Hills",
+  title: "Plots in Dharwad & Hubli | HDUDA Approved Residential Plots for Sale | The Aurora Hills",
   description:
-    "Looking for plots or real estate in Dharwad & Hubli? The Aurora Hills offers HDUDA & NA-KJP approved gated community residential plots starting ₹42 Lakhs near NH-4 Highway with 20+ luxury amenities. View layout & book a site visit!",
+    "Looking for plots in Dharwad & Hubli? The Aurora Hills offers 30x40, 30x50 & 40x60 HDUDA & NA-KJP approved residential villa plots starting ₹42 Lakhs near NH-4 Highway with 20+ luxury amenities. View layout plan & book a free site visit today!",
   keywords: [
     // Core Local Real Estate Searches
     "plots in Dharwad",
+    "dharwad plots",
     "plots in Hubli",
     "plots in Hubli Dharwad",
+    "hubli dharwad plots",
     "property in Dharwad",
     "property in Hubli",
     "real estate in Dharwad",
     "real estate in Hubli",
     "real estate Hubli Dharwad",
     "residential plots Dharwad",
+    "residential plots in Dharwad",
     "residential plots Hubli",
     "plots for sale in Dharwad",
     "plots for sale in Hubli",
@@ -44,6 +47,8 @@ export const metadata: Metadata = {
     "land for sale in Hubli",
     "sites in Dharwad for sale",
     "sites in Hubli for sale",
+    "sites in Dharwad",
+    "sites in Hubli",
     "gated community plots Dharwad",
     "gated community plots Hubli",
     "villa plots in Dharwad",
@@ -52,6 +57,7 @@ export const metadata: Metadata = {
     "investment property Dharwad",
     // Legal & Approvals
     "HDUDA approved plots in Dharwad",
+    "HDUDA plots Dharwad",
     "NA plots for sale in Dharwad",
     "NA KJP approved plots Dharwad",
     "RERA approved plots Dharwad",
@@ -60,11 +66,14 @@ export const metadata: Metadata = {
     "plots near Karnatak University Dharwad",
     "plots near NH-4 highway Dharwad",
     "plots near Kelgeri Dharwad",
+    "plots near Kelgerri Dharwad",
+    "plots near Sunset Viewpoint Dharwad",
     "plots near Vidyagiri Dharwad",
     "plots near Sattur Dharwad",
     "plots near Navanagar Hubli",
     "plots near Rayapur Dharwad",
     "plots near SDM College Dharwad",
+    "plots near IIT Dharwad",
     "plots near Hubli Airport",
     // Brand Searches
     "The Aurora Hills",
@@ -81,9 +90,9 @@ export const metadata: Metadata = {
     canonical: "https://theaurorahills.com",
   },
   openGraph: {
-    title: "Plots in Dharwad & Hubli | Residential Plots for Sale | The Aurora Hills",
+    title: "Plots in Dharwad & Hubli | HDUDA Approved Residential Plots for Sale",
     description:
-      "HDUDA & NA-KJP approved luxury residential plots in Dharwad & Hubli starting from ₹42 Lakhs. Gated township near NH-4 with 20+ lifestyle amenities, clubhouse & scenic hill views.",
+      "HDUDA & NA-KJP approved luxury residential villa plots in Dharwad & Hubli starting from ₹42 Lakhs. Gated township near NH-4 Highway with 20+ lifestyle amenities, clubhouse & scenic hill views.",
     url: "https://theaurorahills.com",
     siteName: "The Aurora Hills",
     images: [
@@ -174,6 +183,13 @@ export default function RootLayout({
         "priceRange": "₹42,00,000 - ₹1,20,00,000",
         "currenciesAccepted": "INR",
         "paymentAccepted": "Bank Loan, Cheque, Bank Transfer, NEFT/RTGS",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-9019765265",
+          "contactType": "sales",
+          "areaServed": "IN",
+          "availableLanguage": ["English", "Kannada", "Hindi"]
+        },
         "areaServed": [
           { "@type": "City", "name": "Dharwad" },
           { "@type": "City", "name": "Hubli" },
@@ -222,18 +238,34 @@ export default function RootLayout({
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "Are plots at The Aurora Hills Dharwad HDUDA and NA approved?",
+            "name": "What is the average price of land and residential plots in Dharwad?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, The Aurora Hills is fully NA-KJP and HDUDA sanctioned with 100% clear marketable titles. All regulatory approvals are in place, ensuring safe, secure property ownership with direct bank loan approvals from SBI, HDFC, ICICI, and IDFC First."
+              "text": "The average price of residential land and plots in Dharwad typically ranges between ₹2,000 to ₹4,000 per sq.ft depending on location, HDUDA approval status, and amenities. At The Aurora Hills (Kelgerri, adjacent to Karnatak University & NH-4), premium HDUDA & NA-KJP sanctioned villa plots start at ₹42 Lakhs (approx. ₹3,500/sq.ft) under our pre-launch advantage with pre-approved bank loans up to 80%."
             }
           },
           {
             "@type": "Question",
-            "name": "What is the price of residential plots in Dharwad at The Aurora Hills?",
+            "name": "What is the price of a 30x40 and 30x50 site in Hubballi-Dharwad?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Residential plots at The Aurora Hills start from ₹42 Lakhs* with competitive pre-launch pricing. Flexible payment plans and up to 80% bank loan financing are available."
+              "text": "A standard 30x40 site (1,200 sq.ft) in Dharwad costs between ₹38 Lakhs to ₹48 Lakhs, while a 30x50 site (1,500 sq.ft) averages ₹48 Lakhs to ₹65 Lakhs. At The Aurora Hills, 30x40 plots start from ₹42 Lakhs*, 30x50 plots start from ₹52.5 Lakhs*, and 40x60 plots (2,400 sq.ft) start from ₹84 Lakhs*, complete with all township infrastructure and festive booking rewards."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which is the best area to live and buy plots in Dharwad?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kelgerri / Sunset Viewpoint, Vidyagiri, and Sattur near Karnatak University and NH-4 Highway are widely regarded as the best residential areas in Dharwad. Kelgerri offers pristine hill serenity, zero pollution, easy access to Dharwad Railway Station, and swift commuting to Hubli via the 6-lane NH-48 and BRTS corridor, making it the most preferred destination for families and luxury villa builders."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are plots at The Aurora Hills Dharwad HDUDA and NA approved?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, The Aurora Hills is fully NA-KJP and HDUDA sanctioned with 100% clear marketable titles. Every plot comes with clean marketable titles, approved blueprints, and pre-approved home loan options from top national banks including SBI, HDFC, ICICI, and IDFC First Bank."
             }
           },
           {
@@ -241,15 +273,7 @@ export default function RootLayout({
             "name": "Where is The Aurora Hills located in Dharwad and how far is it from Hubli?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The Aurora Hills is located at Sunset Viewpoint near Karnatak University in Dharwad City, adjacent to the NH-4 Highway. It is 5 minutes from Karnatak University, 10 minutes from Dharwad Railway Station, and just 15 to 20 minutes from the Hubli-Dharwad Twin City commercial center and Hubli Airport."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What plot dimensions and sizes are available for sale?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The township offers standard and luxury plot configurations including 30x40 (1,200 sq.ft), 30x50 (1,500 sq.ft), 40x60 (2,400 sq.ft), as well as premium corner and park-facing villa plots designed for custom home construction."
+              "text": "The Aurora Hills is located at Sunset Viewpoint near Karnatak University in Dharwad City, directly accessible from the 6-lane NH-4 Highway. It is 5 minutes from Karnatak University, 10 minutes from Dharwad Railway Station, and just 15 to 20 minutes from the Hubli-Dharwad Twin City commercial center and Hubli Airport via the high-speed corridor."
             }
           },
           {

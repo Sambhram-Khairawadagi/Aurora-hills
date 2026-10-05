@@ -22,7 +22,20 @@ const Gallery = dynamic(
   { ssr: true }
 );
 
+const LocationConnectivity = dynamic(
+  () => import("@/components/LocationConnectivity").then((mod) => mod.LocationConnectivity),
+  { ssr: true }
+);
 
+const WhyAuroraHills = dynamic(
+  () => import("@/components/WhyAuroraHills").then((mod) => mod.WhyAuroraHills),
+  { ssr: true }
+);
+
+const LocalSeoFaq = dynamic(
+  () => import("@/components/LocalSeoFaq").then((mod) => mod.LocalSeoFaq),
+  { ssr: true }
+);
 
 const EnquirySection = dynamic(
   () => import("@/components/EnquirySection").then((mod) => mod.EnquirySection),
@@ -174,12 +187,26 @@ export default function HomePage() {
           onOpenBrochure={handleOpenBrochure}
         />
 
+        {/* Strategic Location & Landmark Proximity Hub */}
+        <LocationConnectivity
+          onOpenEnquiry={handleOpenEnquiry}
+          onOpenQR={handleOpenQR}
+        />
 
+        {/* Strategic Investment Advantages & Why Aurora Hills */}
+        <WhyAuroraHills
+          onOpenEnquiry={handleOpenEnquiry}
+        />
 
         {/* Photographic Media & Site Gallery */}
         <Gallery onOpenVideo={handleOpenVideo} />
 
-
+        {/* Comprehensive Local SEO Hub & Real Estate FAQ */}
+        <LocalSeoFaq
+          onOpenEnquiry={handleOpenEnquiry}
+          onOpenBrochure={handleOpenBrochure}
+          onOpenSiteVisit={handleOpenSiteVisit}
+        />
 
         {/* Plot Enquiry Lead Form Section */}
         <EnquirySection />
