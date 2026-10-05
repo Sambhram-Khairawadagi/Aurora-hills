@@ -49,19 +49,29 @@ The Aurora Hills is a premium real estate landing page and management portal for
 - `lib/db.ts` dynamically detects serverless execution and copies `prisma/dev.db` to `/tmp/dev.db` before connecting.
 - Form endpoints (`/api/leads`, `/api/site-visits`) use isolated try-catch blocks and strictly awaited SMTP email dispatch to `social.propertybasket@gmail.com` to guarantee 0% lead loss.
 
-### E. Karnataka Local SEO Dominance Architecture
+### E. Karnataka Local SEO Dominance Architecture (October 5, 2026)
+- **Live Search Status Discovery**:
+  - The Aurora Hills reached **Organic #2 on Google** for query `dharwad plots` (ranking immediately beneath Housing.com and outranking 99acres and MagicBricks).
+  - Overall search presence showed the site at position 7 when including Google Maps 3-pack and People Also Ask (PAA) units.
 - **Exact-Match On-Page Targeting**:
-  - Main `<h1>` in `components/Hero.tsx` features `THE AURORA HILLS` with high-authority subtitle `Plots in Dharwad & Hubli`.
+  - Main `<h1>` in `components/Hero.tsx` upgraded to feature `THE AURORA HILLS` with subtitle `Plots in Dharwad & Hubli` to provide maximum topical relevance.
   - Canonical Title in `app/layout.tsx`: `Plots in Dharwad & Hubli | HDUDA Approved Residential Plots for Sale | The Aurora Hills`.
+  - Meta description front-loaded with plot dimensions (30x40, 30x50, 40x60), HDUDA approval, and ₹42L starting price.
 - **People Also Ask (PAA) Schema & Content Interlocking**:
-  - `components/LocalSeoFaq.tsx` and `app/layout.tsx` FAQPage JSON-LD directly answer Google PAA queries:
+  - `components/LocalSeoFaq.tsx` and `app/layout.tsx` FAQPage JSON-LD synchronized to directly answer the 4 exact PAA questions shown by Google:
     1. Average land/plot prices in Dharwad (₹2,000–₹4,000/sq.ft vs. ₹42L starting at Aurora Hills).
     2. 30x40 and 30x50 site prices in Hubballi-Dharwad.
     3. Best areas to live in Dharwad (Kelgeri / Sunset Viewpoint, Vidyagiri, Sattur).
-    4. HDUDA and NA-KJP approvals.
-- **Micro-Market Geo Signals**:
-  - Mounted `components/LocationConnectivity.tsx` (`#location`) and `components/LocalSeoFaq.tsx` (`#faq`) on `app/page.tsx` for full SSR content indexation.
-  - Corrected `app/sitemap.ts` to adhere strictly to Google specifications (zero hash fragments).
+    4. HDUDA and NA-KJP legal approvals.
+- **On-Page Content Hub Mounts (`app/page.tsx`)**:
+  - Mounted previously unrendered `components/LocationConnectivity.tsx` (`#location`) with landmark transit times (Karnatak University, IIT Dharwad, SDM College, NH-48).
+  - Mounted `components/WhyAuroraHills.tsx`.
+  - Mounted `components/LocalSeoFaq.tsx` (`#faq`) for complete Server-Side Rendered (SSR) indexation.
+- **Technical Sitemap Fix (`app/sitemap.ts`)**:
+  - Cleaned `app/sitemap.ts` by removing invalid URL hash fragments (`#location`, `#faq`) to strictly comply with Google Search Console sitemap standards.
+- **Lead Pipeline & Database Safeguard**:
+  - Verified incoming production leads arriving via SMTP to `social.propertybasket@gmail.com`.
+  - Restored `lib/db.ts` to ensure clean local and remote builds.
 
 ---
 
@@ -80,6 +90,10 @@ The Aurora Hills is a premium real estate landing page and management portal for
 3. **Deployment Workflow**:
    - Pushes to `origin main` automatically trigger Vercel deployment.
    - Any modifications to copy, scheme badges, or layout assets must be committed and pushed to `main`.
+4. **Google Business Profile (GBP) 3-Pack Optimization**:
+   - Target name: *The Aurora Hills - Plots in Dharwad & Hubli*.
+   - Categories: Primary: *Real Estate Developer*, Secondary: *Real Estate Agency*.
+   - Pin location: Sunset Viewpoint, Kelgeri, Dharwad (`15.4589, 74.9902`).
 
 ---
 
@@ -89,4 +103,4 @@ The Aurora Hills is a premium real estate landing page and management portal for
 - `f6300e0`: Remove pricing rows from all festive scheme cards for clean presentation.
 - `40dfa62`: Serverless SQLite `/tmp` fix and lead delivery safeguards for Vercel.
 - `be96fac`: Add MEMORY.md capturing project progress, festive scheme specs, and architecture.
-- `feat(seo)`: Optimize for #1 Hubli-Dharwad plot rankings, H1 keyword hierarchy, PAA FAQ interlocking, and valid sitemap.
+- `97a79df`: feat(seo): optimize for #1 Hubli-Dharwad plot rankings, H1 keyword hierarchy, PAA FAQ interlocking, and sitemap compliance.
