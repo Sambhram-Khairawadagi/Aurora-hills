@@ -77,7 +77,14 @@ The Aurora Hills is a premium real estate landing page and management portal for
 - **Search Campaign Details**:
   - **Campaign Name**: `Search - The Aurora Hills - Hubli Dharwad Plots`
   - **Target Geographies**: Strictly `Dharwad, Karnataka`, `Hubballi, Karnataka`, and `Hubli-Dharwad` (`Presence only`).
-  - **Budget & Bidding**: ₹1,200/day (~₹36,000/month), Maximize Clicks with ₹32.00 Max CPC limit.
+  - **Budget & Bidding Calibration**:
+    - Daily Budget: ₹1,200/day (~₹36,000/month).
+    - Bidding Strategy: **Maximize Clicks** with hard **₹32.00 Max CPC bid limit** for Phase 1 learning (prevents algorithmic overbidding of ₹80–₹120/click and guarantees 35–50 clicks/day).
+    - Resolved Google default conflict where automated Target CPA had defaulted to ₹2,866.25 against the ₹1,200 budget.
+  - **Campaign-Specific Conversion Goals Bound**:
+    - Unbound irrelevant default `Leads from messages (Google hosted)`.
+    - Explicitly linked **`Submit lead forms`** -> `Aurora Hills - Website Lead` (Tag: `AW-16689411973/I9fRCMn3upwdEIXvkJY-`) as primary conversion.
+    - Linked **`Contacts (Website)`** as secondary conversion for direct WhatsApp and Call Desk clicks.
   - **Ad Strength**: **EXCELLENT** with 15 headlines, 4 keyword-rich descriptions, and 6 sitelinks.
   - **Extensions**: Call Asset (`+91 8970198701`), Native In-Ad Lead Form ("More qualified"), 6 sitelinks.
   - **Negative Keywords**: Blocked non-buyers (rentals, jobs, agricultural land, cheap 5 lakh plots, Bangalore/Mysore plots).

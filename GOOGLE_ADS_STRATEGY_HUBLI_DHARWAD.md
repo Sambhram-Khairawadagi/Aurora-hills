@@ -76,11 +76,15 @@ When creating the campaign in Google Ads, use these exact parameters:
 
 * **Campaign Type**: `Search Network Only`
   * ⚠️ *Critical Rule*: **Uncheck** "Include Google Search Partners" and **Uncheck** "Include Google Display Network". Display Network burns local real-estate budgets on irrelevant mobile apps.
-* **Campaign Goal**: `Leads`
+* **Campaign Goal**: `Leads` (Campaign-specific conversion goals)
+  * **Selected Goals**:
+    * `Submit lead forms`: **`Aurora Hills - Website Lead`** (`AW-16689411973/I9fRCMn3upwdEIXvkJY-`) *(Primary)*
+    * `Contacts (Website)`: Direct WhatsApp and Call Desk outbound actions *(Secondary)*
+  * ⚠️ *Critical Rule*: **Uncheck** `Leads from messages (Google hosted)` to prevent Google from defaulting to arbitrary ₹2,866 Target CPA targets.
 * **Campaign Name**: `Search - The Aurora Hills - Hubli Dharwad Plots`
 * **Bidding Strategy**:
   * **Phase 1 (First 14 days)**: **Maximize Clicks** with a **Maximum CPC Bid Limit of ₹32.00**.
-    *(This prevents Google's automated algorithm from bidding ₹80+ on day one while it learns).*
+    *(This prevents Google's automated algorithm from bidding ₹80+ on day one while it learns and eliminates budget-CPA mismatch warnings).*
   * **Phase 2 (After 30 conversions)**: Switch to **Maximize Conversions** with a Target CPA of ₹300.
 * **Location Targeting**:
   * Select: **"Enter another location"**
