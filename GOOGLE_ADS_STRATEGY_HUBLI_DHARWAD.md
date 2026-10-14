@@ -264,29 +264,55 @@ Use these exact headlines and descriptions for maximum Ad Relevance and Expected
 
 Ad extensions increase your Ad Rank by 15–20% without paying extra per click:
 
-### 1. Sitelink Assets
+### 1. Sitelink Assets (All 6 Sitelinks Configured)
 * **Sitelink 1: Master Layout & Plots**
   * *Headline*: Sanctioned Layout Plan
   * *Desc 1*: View 30x40, 30x50 & 40x60 plots
   * *Desc 2*: HDUDA & NA-KJP approved plan
-  * *URL*: `https://theaurorahills.com/#inventory`
+  * *URL*: `https://www.theaurorahills.com/#inventory`
 * **Sitelink 2: Festive Gold & Silver Offer**
   * *Headline*: Bhoomi & Bangara Scheme
   * *Desc 1*: Win 50g Gold or 1.5kg Silver
   * *Desc 2*: Auspicious booking rewards
-  * *URL*: `https://theaurorahills.com/#festive-scheme`
+  * *URL*: `https://www.theaurorahills.com/#festive-scheme`
 * **Sitelink 3: 20+ Luxury Amenities**
   * *Headline*: 20+ Resort Amenities
   * *Desc 1*: Clubhouse, Infinity Pool & Tennis
   * *Desc 2*: 1.5L Overhead Tank & 24x7 CCTV
-  * *URL*: `https://theaurorahills.com/#amenities`
+  * *URL*: `https://www.theaurorahills.com/#amenities`
 * **Sitelink 4: Book Free Site Visit**
   * *Headline*: Schedule Site Inspection
   * *Desc 1*: Free cab pickup across Hubli-Dharwad
   * *Desc 2*: Experience scenic sunset hill views
-  * *URL*: `https://theaurorahills.com/#contact`
+  * *URL*: `https://www.theaurorahills.com/#contact`
+* **Sitelink 5: Approved Bank Loans**
+  * *Headline*: SBI & HDFC Bank Loans
+  * *Desc 1*: Up to 80% financing available
+  * *Desc 2*: Fast approval & clear titles
+  * *URL*: `https://www.theaurorahills.com/#contact`
+* **Sitelink 6: Prime Strategic Location**
+  * *Headline*: Direct NH-4 Highway Access
+  * *Desc 1*: 5 mins to KUD, 15 mins to Hubli
+  * *Desc 2*: Near Kelgeri Sunset Viewpoint
+  * *URL*: `https://www.theaurorahills.com/#location`
 
-### 2. Callout Assets
+### 2. Native In-Ad Lead Form Asset
+* **Lead Form Type**: "More qualified" (ensures genuine prospects, filters out accidental clicks).
+* **Headline**: `The Aurora Hills - Villa Plots`
+* **Business Name**: `The Aurora Hills`
+* **Description**: `Enquire for HDUDA approved luxury plots in Dharwad with festive Gold/Silver booking rewards.`
+* **Questions Asked**:
+  * Name
+  * Phone Number
+  * Email
+  * Preferred Plot Dimension (30x40, 30x50, 40x60)
+* **Privacy Policy URL**: `https://www.theaurorahills.com/privacy-policy`
+* **Submission Message**:
+  * *Headline*: `Thank You! Request Received`
+  * *Description*: `Our senior property manager will call you within 15 minutes to share layout plans and schedule your VIP site visit.`
+  * *Call to Action*: Visit Website (`https://www.theaurorahills.com`)
+
+### 3. Callout Assets
 * `HDUDA Approved Layout`
 * `100% Legal Clear Title`
 * `SBI & HDFC Loan Up to 80%`
@@ -295,12 +321,13 @@ Ad extensions increase your Ad Rank by 15–20% without paying extra per click:
 * `20+ Lifestyle Amenities`
 * `Underground Cabling & Water`
 
-### 3. Call Asset (Direct Phone Inbound)
+### 4. Call Asset (Direct Phone Inbound)
 * **Phone Number**: `+91 8970198701`
-* **Display Requirement**: Verification via website contact footer.
+* **Country**: `India (+91)`
+* **Display Requirement**: Verified via website contact header/footer.
 * **Hours**: `08:00 AM – 09:30 PM`
 
-### 4. Structured Snippets
+### 5. Structured Snippets
 * **Header**: `Types`
 * **Values**: `30x40 Villa Plots`, `30x50 Luxury Sites`, `40x60 Grand Plots`, `Gated Community`
 
@@ -325,6 +352,13 @@ Ad extensions increase your Ad Rank by 15–20% without paying extra per click:
   https://theaurorahills.com/?utm_source=google&utm_medium=cpc&utm_campaign=aurora_hills_search&utm_term={keyword}&utm_content={creative}&utm_matchtype={matchtype}&utm_device={device}
   ```
 * **Lead Email Routing**: Form leads dispatch via SMTP to `social.propertybasket@gmail.com` with complete UTM campaign attribution.
+* **Multi-Project Isolation Safeguards (Aurora Hills vs Suraksha Sunrise Park)**:
+  * **Suraksha Sunrise Park** runs under its dedicated landing page (`suraksha.propertybasket.co`) with its own conversion actions and campaigns.
+  * **The Aurora Hills** runs exclusively under `www.theaurorahills.com` with its distinct Google Tag `AW-16689411973` and dedicated conversion action `Aurora Hills - Website Lead` (`AW-16689411973/I9fRCMn3upwdEIXvkJY-`).
+  * Both campaigns operate in the same Google Ads account (`830-030-4291`) with **zero interference**:
+    * Budget isolation: ₹1,200/day dedicated specifically to Aurora Hills.
+    * Geo isolation: Dharwad & Hubli only (does not overlap with Bangalore/Sarjapur).
+    * Conversion isolation: On-site tag fires strictly on `theaurorahills.com` form completions and contact clicks.
 
 ---
 

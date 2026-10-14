@@ -126,3 +126,4 @@ The Aurora Hills is a premium real estate landing page and management portal for
 - `d2a9e76`: feat(head): inject Google Tag script directly into html head for instant detection.
 - `b1e57c3`: feat(conversion): bind exact Aurora Hills lead snippet AW-16689411973/I9fRCMn3upwdEIXvkJY-.
 - `58b133d`: feat(analytics): trigger contact conversion on WhatsApp and Call Desk clicks.
+- `90e7eeb`: docs: update MEMORY.md and ads strategy with verified Google Tag and Conversion tracking architecture.
