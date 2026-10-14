@@ -3,6 +3,7 @@
 import React from "react";
 import { Phone, MessageCircle, Calendar, FileText } from "lucide-react";
 import { WHATSAPP_NUMBER, CONTACT_NUMBERS } from "@/lib/projectData";
+import { trackWhatsAppClick, trackPhoneClick } from "@/lib/gtag";
 
 interface FloatingActionsProps {
   onOpenEnquiry: (source?: string) => void;
@@ -27,6 +28,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={trackWhatsAppClick}
           className="p-3.5 sm:px-5 sm:py-3 rounded-full bg-[#25D366] text-white shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2 hover:scale-105 group border border-white/40"
           aria-label="Chat on WhatsApp"
         >
@@ -41,6 +43,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
       <div className="fixed bottom-0 left-0 right-0 z-40 sm:hidden bg-white/90 backdrop-blur-xl border-t border-charcoal-200/50 p-2.5 flex items-center justify-around shadow-2xl">
         <a
           href={`tel:${CONTACT_NUMBERS[0]}`}
+          onClick={() => trackPhoneClick(CONTACT_NUMBERS[0])}
           className="flex flex-col items-center gap-1 text-[10px] font-bold text-charcoal-700 hover:text-emerald-700"
         >
           <div className="p-1.5 rounded-full neu-inset text-emerald-600">
