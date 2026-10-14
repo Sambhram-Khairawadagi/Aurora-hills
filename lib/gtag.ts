@@ -1,5 +1,5 @@
 export const GOOGLE_TAG_ID = process.env.NEXT_PUBLIC_GOOGLE_TAG_ID || "AW-16689411973";
-export const GOOGLE_CONVERSION_SEND_TO = process.env.NEXT_PUBLIC_GOOGLE_CONVERSION_SEND_TO || "AW-16689411973";
+export const GOOGLE_CONVERSION_SEND_TO = process.env.NEXT_PUBLIC_GOOGLE_CONVERSION_SEND_TO || "AW-16689411973/I9fRCMn3upwdEIXvkJY-";
 
 declare global {
   interface Window {
