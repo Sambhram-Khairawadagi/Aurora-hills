@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Inter, Noto_Sans_Kannada } from "next/font/google";
 import "./globals.css";
+import { GoogleTag } from "@/components/GoogleTag";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -368,6 +369,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} ${outfit.variable} ${kannada.variable} font-sans antialiased selection:bg-gold-500 selection:text-forest-950`}>
+        <GoogleTag />
         {children}
       </body>
     </html>

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { X, Calendar, CheckCircle2, ShieldCheck, Sparkles, Clock, Car } from "lucide-react";
 import confetti from "canvas-confetti";
 import { getStoredUtm } from "@/lib/utm";
+import { trackLeadSubmit } from "@/lib/gtag";
 
 interface SiteVisitModalProps {
   isOpen: boolean;
@@ -58,6 +59,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
       if (res.ok && data.success) {
         setSubmitted(true);
         confetti({ particleCount: 70, spread: 80 });
+        trackLeadSubmit(finalSource, "Site Visit Request");
       } else {
         setErrorMsg(data.error || "Failed to schedule. Please call us.");
       }

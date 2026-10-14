@@ -5,6 +5,7 @@ import { X, Send, CheckCircle2, ShieldCheck, Sparkles, Phone, Mail, User } from 
 import confetti from "canvas-confetti";
 
 import { getStoredUtm } from "@/lib/utm";
+import { trackLeadSubmit } from "@/lib/gtag";
 
 interface EnquiryModalProps {
   isOpen: boolean;
@@ -71,6 +72,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
       if (res.ok && data.success) {
         setSubmitted(true);
         confetti({ particleCount: 70, spread: 80 });
+        trackLeadSubmit(finalSource, formData.requirement);
       } else {
         setErrorMsg(data.error || "Submission failed. Please try again.");
       }

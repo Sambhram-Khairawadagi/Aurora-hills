@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { Send, CheckCircle2, Sparkles, Lock, ArrowRight, X } from "lucide-react";
 import { getStoredUtm } from "@/lib/utm";
+import { trackLeadSubmit } from "@/lib/gtag";
 import confetti from "canvas-confetti";
 
 const STORAGE_KEY = "lead_gate_unlocked";
@@ -125,6 +126,8 @@ export const LeadGate: React.FC = () => {
 
         setAlreadyUnlocked(true);
         setSubmitted(true);
+
+        trackLeadSubmit(adSource, formData.requirement);
 
         // Safe celebration confetti
         try {
