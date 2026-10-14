@@ -39,12 +39,18 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
     setErrorMsg("");
 
     try {
+      const utmParams = getStoredUtm();
+      const finalSource = utmParams.utm_source
+        ? `Google Ads Site Visit (${utmParams.utm_campaign || "Search"})`
+        : "Site Visit Modal";
+
       const res = await fetch("/api/site-visits", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
-          source: "Site Visit Modal",
+          source: finalSource,
+          ...utmParams,
         }),
       });
 

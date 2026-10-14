@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import { X, Send, CheckCircle2, ShieldCheck, Sparkles, Phone, Mail, User } from "lucide-react";
 import confetti from "canvas-confetti";
 
+import { getStoredUtm } from "@/lib/utm";
+
 interface EnquiryModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -50,12 +52,18 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
     setErrorMsg("");
 
     try {
+      const utmParams = getStoredUtm();
+      const finalSource = utmParams.utm_source
+        ? `Google Ads (${utmParams.utm_campaign || source})`
+        : source;
+
       const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
-          source: source || "Modal Form",
+          source: finalSource,
+          ...utmParams,
         }),
       });
 
