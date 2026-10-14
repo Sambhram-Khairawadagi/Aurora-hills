@@ -306,16 +306,25 @@ Ad extensions increase your Ad Rank by 15–20% without paying extra per click:
 
 ---
 
-## 8. Tracking & UTM URL Structure
+## 8. Tracking & Conversion Action Infrastructure (Active & Verified)
 
-To ensure that 100% of incoming leads are identified in the dashboard and CRM with campaign name, keyword, and ad creative:
-
-**Final URL with Dynamic Tracking**:
-```text
-https://theaurorahills.com/?utm_source=google&utm_medium=cpc&utm_campaign=aurora_hills_search&utm_term={keyword}&utm_content={creative}&utm_matchtype={matchtype}&utm_device={device}
-```
-
-*Our Next.js landing page has already been integrated with `lib/utm.ts` and `api/leads` to capture these parameters and automatically email them to `social.propertybasket@gmail.com`.*
+* **Google Tag (gtag.js)**: `AW-16689411973` (Injected directly inside `<head>` in `app/layout.tsx` and verified on `www.theaurorahills.com`).
+* **Primary Conversion Action**:
+  * **Name**: `Aurora Hills - Website Lead`
+  * **Category**: `Submit lead form`
+  * **Conversion Label**: `I9fRCMn3upwdEIXvkJY-`
+  * **Send To Snippet**: `AW-16689411973/I9fRCMn3upwdEIXvkJY-`
+  * **Value**: `1000 INR` | **Count**: `One`
+  * **Status**: **Active & Verified in Tag Assistant**
+* **Secondary Conversion Action**:
+  * **Name**: `Contact` (Google Tag event)
+  * **Category**: `Contact`
+  * **Triggers**: Fired automatically on clicks to the floating WhatsApp pill and mobile Call Desk button (`components/FloatingActions.tsx`).
+* **Final URL with Dynamic Tracking**:
+  ```text
+  https://theaurorahills.com/?utm_source=google&utm_medium=cpc&utm_campaign=aurora_hills_search&utm_term={keyword}&utm_content={creative}&utm_matchtype={matchtype}&utm_device={device}
+  ```
+* **Lead Email Routing**: Form leads dispatch via SMTP to `social.propertybasket@gmail.com` with complete UTM campaign attribution.
 
 ---
 

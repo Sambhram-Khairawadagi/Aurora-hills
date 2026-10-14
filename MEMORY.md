@@ -4,7 +4,7 @@
 **Main Branch**: `main`  
 **Hosting & Deployment**: Vercel (Auto-deploys on push to `origin/main`)  
 **Stack**: Next.js 14 (App Router), TypeScript, Tailwind CSS, Prisma (SQLite), Nodemailer  
-**Last Updated**: October 5, 2026
+**Last Updated**: October 14, 2026
 
 ---
 
@@ -73,6 +73,22 @@ The Aurora Hills is a premium real estate landing page and management portal for
   - Verified incoming production leads arriving via SMTP to `social.propertybasket@gmail.com`.
   - Restored `lib/db.ts` to ensure clean local and remote builds.
 
+### F. Google Ads & Conversion Engine Architecture (October 14, 2026)
+- **Search Campaign Details**:
+  - **Campaign Name**: `Search - The Aurora Hills - Hubli Dharwad Plots`
+  - **Target Geographies**: Strictly `Dharwad, Karnataka`, `Hubballi, Karnataka`, and `Hubli-Dharwad` (`Presence only`).
+  - **Budget & Bidding**: ₹1,200/day (~₹36,000/month), Maximize Clicks with ₹32.00 Max CPC limit.
+  - **Ad Strength**: **EXCELLENT** with 15 headlines, 4 keyword-rich descriptions, and 6 sitelinks.
+  - **Extensions**: Call Asset (`+91 8970198701`), Native In-Ad Lead Form ("More qualified"), 6 sitelinks.
+  - **Negative Keywords**: Blocked non-buyers (rentals, jobs, agricultural land, cheap 5 lakh plots, Bangalore/Mysore plots).
+- **Google Tag & Conversion Setup (`app/layout.tsx`, `lib/gtag.ts`, `components/GoogleTag.tsx`)**:
+  - Injected Google Tag `AW-16689411973` directly inside `<head>` in `app/layout.tsx` for instant crawler and Tag Assistant detection.
+  - **Primary Conversion**: `Aurora Hills - Website Lead` with label `AW-16689411973/I9fRCMn3upwdEIXvkJY-` (Verified and tested live in Tag Assistant).
+  - **Secondary Conversion**: `Contact` conversion event automatically fired on WhatsApp pill and Call Desk clicks ([components/FloatingActions.tsx](file:///d:/Sambhram/aurora%20hills/components/FloatingActions.tsx)).
+  - **Lead Attribution**: [components/EnquiryModal.tsx](file:///d:/Sambhram/aurora%20hills/components/EnquiryModal.tsx), [components/LeadGate.tsx](file:///d:/Sambhram/aurora%20hills/components/LeadGate.tsx), and [components/SiteVisitModal.tsx](file:///d:/Sambhram/aurora%20hills/components/SiteVisitModal.tsx) now pass dynamic UTM parameters and fire `trackLeadSubmit`.
+- **Project Isolation**:
+  - Fully segregated from other live projects (`Suraksha Sunrise Park - Sarjapur`). Zero cross-contamination in tags, budgets, or conversion tracking.
+
 ---
 
 ## 3. Important Development Guidelines & Gotchas
@@ -104,3 +120,9 @@ The Aurora Hills is a premium real estate landing page and management portal for
 - `40dfa62`: Serverless SQLite `/tmp` fix and lead delivery safeguards for Vercel.
 - `be96fac`: Add MEMORY.md capturing project progress, festive scheme specs, and architecture.
 - `97a79df`: feat(seo): optimize for #1 Hubli-Dharwad plot rankings, H1 keyword hierarchy, PAA FAQ interlocking, and sitemap compliance.
+- `a1855bb`: feat(ads): add Hubli-Dharwad Google Ads strategy blueprint and UTM parameter tracking in modals.
+- `e039a19`: feat(analytics): setup Google Tag and conversion tracking on lead forms and site visits.
+- `b74a2d3`: feat(gtag): configure active Google Tag AW-16689411973 on website.
+- `d2a9e76`: feat(head): inject Google Tag script directly into html head for instant detection.
+- `b1e57c3`: feat(conversion): bind exact Aurora Hills lead snippet AW-16689411973/I9fRCMn3upwdEIXvkJY-.
+- `58b133d`: feat(analytics): trigger contact conversion on WhatsApp and Call Desk clicks.
