@@ -4,7 +4,7 @@
 **Main Branch**: `main`  
 **Hosting & Deployment**: Vercel (Auto-deploys on push to `origin/main`)  
 **Stack**: Next.js 14 (App Router), TypeScript, Tailwind CSS, Prisma (SQLite), Nodemailer  
-**Last Updated**: October 14, 2026
+**Last Updated**: October 15, 2026
 
 ---
 
@@ -79,7 +79,7 @@ The Aurora Hills is a premium real estate landing page and management portal for
   - **Target Geographies**: Strictly `Dharwad, Karnataka`, `Hubballi, Karnataka`, and `Hubli-Dharwad` (`Presence only`).
   - **Budget & Bidding Calibration**:
     - Daily Budget: ₹1,200/day (~₹36,000/month).
-    - Bidding Strategy: **Maximize Clicks** with hard **₹32.00 Max CPC bid limit** for Phase 1 learning (prevents algorithmic overbidding of ₹80–₹120/click and guarantees 35–50 clicks/day).
+    - Bidding Strategy: **Maximize Clicks** with **₹48.00 Max CPC bid limit** (upgraded from ₹32 on Oct 15 — previous cap was causing "Limited by bid strategy" warning, restricting impressions to only 34/day).
     - Resolved Google default conflict where automated Target CPA had defaulted to ₹2,866.25 against the ₹1,200 budget.
   - **Campaign-Specific Conversion Goals Bound**:
     - Unbound irrelevant default `Leads from messages (Google hosted)`.
@@ -87,7 +87,9 @@ The Aurora Hills is a premium real estate landing page and management portal for
     - Linked **`Contacts (Website)`** as secondary conversion for direct WhatsApp and Call Desk clicks.
   - **Ad Strength**: **EXCELLENT** with 15 headlines, 4 keyword-rich descriptions, and 6 sitelinks.
   - **Extensions**: Call Asset (`+91 8970198701`), Native In-Ad Lead Form ("More qualified"), 6 sitelinks.
-  - **Negative Keywords**: Blocked non-buyers (rentals, jobs, agricultural land, cheap 5 lakh plots, Bangalore/Mysore plots).
+  - **Negative Keywords**: Blocked non-buyers (rentals, jobs, agricultural land, cheap 5 lakh plots, Bangalore/Mysore plots) + additional 14 informational negatives added Oct 15 (estate layout, layout meaning, dharwad map, plot images, plot photos, plot size meaning, site measurement, layout pdf, dharwad layout download, approved layout pdf, layout plan meaning, plot area calculator, gram panchayat layout, site plan drawing).
+  - **Keyword Match Types**: All 47 keywords converted from Broad Match → **Phrase Match** on Oct 15 to eliminate irrelevant traffic (was triggering on "estate layout meaning", "dharwad map photos", etc.).
+  - **Paused Keywords**: `na plots in hubli dharwad` paused (Not Eligible — Low search volume).
 - **Google Tag & Conversion Setup (`app/layout.tsx`, `lib/gtag.ts`, `components/GoogleTag.tsx`)**:
   - Injected Google Tag `AW-16689411973` directly inside `<head>` in `app/layout.tsx` for instant crawler and Tag Assistant detection.
   - **Primary Conversion**: `Aurora Hills - Website Lead` with label `AW-16689411973/I9fRCMn3upwdEIXvkJY-` (Verified and tested live in Tag Assistant).
@@ -95,6 +97,28 @@ The Aurora Hills is a premium real estate landing page and management portal for
   - **Lead Attribution**: [components/EnquiryModal.tsx](file:///d:/Sambhram/aurora%20hills/components/EnquiryModal.tsx), [components/LeadGate.tsx](file:///d:/Sambhram/aurora%20hills/components/LeadGate.tsx), and [components/SiteVisitModal.tsx](file:///d:/Sambhram/aurora%20hills/components/SiteVisitModal.tsx) now pass dynamic UTM parameters and fire `trackLeadSubmit`.
 - **Project Isolation**:
   - Fully segregated from other live projects (`Suraksha Sunrise Park - Sarjapur`). Zero cross-contamination in tags, budgets, or conversion tracking.
+
+### G. Conversion Rate Optimisation & Zero-Lead Diagnostic Fix (October 15, 2026)
+- **Root Cause Diagnostic**: On Oct 15, 2026 the campaign recorded 34 impressions, 5 clicks, ₹158.51 spend, and **0 leads**. 5 root causes identified and fixed end-to-end.
+- **Google Ads Fixes Applied**:
+  1. **Bid Cap Raised**: ₹32 → **₹48** — removed "Limited by bid strategy" constraint. Expected to increase daily impressions from 34 → 150–300.
+  2. **Not Eligible Keyword Paused**: `na plots in hubli dharwad` paused (Low search volume — was blocking a keyword slot).
+  3. **47 Keywords converted Broad Match → Phrase Match**: Eliminates irrelevant traffic from informational searches; ensures only genuine plot-buyer searches trigger ads.
+  4. **14 New Negative Keywords Added at Campaign Level**: Blocks informational, non-buyer searches (estate layout, layout meaning, dharwad map, plot images, etc.).
+- **Website Code Fixes Deployed (commit `92b1ee1`)**:
+  1. **`components/AdsTopBar.tsx`** (NEW): A fixed urgency strip shown **only to Google Ads visitors** (detected via `utm_source=google`, `utm_medium=cpc`, or `gclid` in URL/sessionStorage). Contains:
+     - Direct **Click-to-Call** button: `+91 8970198701`
+     - **Enquire Now** CTA button (opens EnquiryModal pre-tagged as "Ads Top Bar" source)
+     - Festive offer reminder strip
+     - Dismissible with X button
+  2. **`components/EnquiryModal.tsx`** — Reduced from 6 fields → **3 fields** (Name, Phone, Plot size) to cut form friction on mobile:
+     - Removed: Email, Purchase Purpose, Preferred Contact, Message fields
+     - Added: Icon-prefixed inputs (User icon, Phone icon) for cleaner UX
+     - Added: **WhatsApp alternative CTA** (`wa.me/918970198701`) below the submit button
+     - Changed submit label: "Send Request" → **"Get Pricing & Layout Plan"**
+     - Added: Trust line — "🔒 Your number is safe. Our consultant calls within 15 minutes."
+  3. **`components/Hero.tsx`** — Added **Click-to-Call button** (`+91 89701 98701`) in the Hero CTA row between "Enquire for Booking" and "Festive Scheme Offer" buttons.
+  4. **`app/page.tsx`** — Mounted `<AdsTopBar>` as the first element above `<Navbar>` so it renders above all other fixed elements (z-index: 60).
 
 ---
 
@@ -134,3 +158,4 @@ The Aurora Hills is a premium real estate landing page and management portal for
 - `b1e57c3`: feat(conversion): bind exact Aurora Hills lead snippet AW-16689411973/I9fRCMn3upwdEIXvkJY-.
 - `58b133d`: feat(analytics): trigger contact conversion on WhatsApp and Call Desk clicks.
 - `90e7eeb`: docs: update MEMORY.md and ads strategy with verified Google Tag and Conversion tracking architecture.
+- `92b1ee1`: fix(conversion): slim EnquiryModal to 3 fields, add AdsTopBar for Google Ads traffic, add click-to-call in Hero CTA row.
