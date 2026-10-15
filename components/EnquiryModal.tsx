@@ -24,7 +24,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
     name: "",
     phone: "",
     email: "",
-    requirement: defaultRequirement || "1,200 sq.ft (30x40)",
+    requirement: defaultRequirement || "40x60 Plot (50g Gold Offer)",
     purpose: "Build a Home",
     preferred_contact: "Phone",
     message: "",
@@ -139,83 +139,59 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             </button>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-3">
+            {/* Field 1: Name */}
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1">
                 Full Name *
               </label>
-              <input
-                type="text"
-                required
-                placeholder="Full name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-xs"
-              />
+              <div className="relative">
+                <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal-400 pointer-events-none" />
+                <input
+                  type="text"
+                  required
+                  placeholder="Your full name"
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="w-full pl-9 pr-3.5 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-sm font-medium"
+                />
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1">
-                  Mobile Number *
-                </label>
+            {/* Field 2: Phone */}
+            <div>
+              <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1">
+                Mobile Number *
+              </label>
+              <div className="relative">
+                <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal-400 pointer-events-none" />
                 <input
                   type="tel"
                   required
-                  placeholder="10-digit mobile"
+                  placeholder="10-digit mobile number"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-xs"
-                />
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1">
-                  Email Address
-                </label>
-                <input
-                  type="email"
-                  placeholder="Optional email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-xs"
+                  className="w-full pl-9 pr-3.5 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-sm font-medium"
                 />
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1">
-                  Plot Configuration
-                </label>
-                <select
-                  value={formData.requirement}
-                  onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
-                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-xs bg-[#F0F4ED] font-medium"
-                >
-                  <option value="40x60 Plot (50g Gold Offer)">40 × 60 (2,400 sq.ft) — 🎁 50g Gold Offer</option>
-                  <option value="30x50 Plot (1.5kg Silver Offer)">30 × 50 (1,500 sq.ft) — 🎁 1.5kg Silver Offer</option>
-                  <option value="30x40 Plot (1kg Silver Offer)">30 × 40 (1,200 sq.ft) — 🎁 1kg Silver Offer</option>
-                  <option value="1,650 sq.ft (33x50)">33 × 50 (1,650 sq.ft) — Luxury Villa Plot</option>
-                  <option value="Odd Sizes">Odd Sizes / Corner Plot</option>
-                  <option value="Custom Estate Plot">Custom Estate Plot</option>
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1">
-                  Purchase Purpose
-                </label>
-                <select
-                  value={formData.purpose}
-                  onChange={(e) => setFormData({ ...formData, purpose: e.target.value })}
-                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-xs bg-[#F0F4ED]"
-                >
-                  <option value="Build a Home">Build a Home</option>
-                  <option value="Investment">Investment</option>
-                  <option value="Both">Both</option>
-                </select>
-              </div>
+            {/* Field 3: Plot Size */}
+            <div>
+              <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1">
+                Plot Interested In
+              </label>
+              <select
+                value={formData.requirement}
+                onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
+                className="w-full px-3.5 py-3 neu-input text-forest-950 text-sm bg-[#F0F4ED] font-semibold"
+              >
+                <option value="40x60 Plot (50g Gold Offer)">40 × 60 ft (2,400 sq.ft) — 🎁 Win 50g Gold</option>
+                <option value="30x50 Plot (1.5kg Silver Offer)">30 × 50 ft (1,500 sq.ft) — 🎁 Win 1.5kg Silver</option>
+                <option value="30x40 Plot (1kg Silver Offer)">30 × 40 ft (1,200 sq.ft) — 🎁 Win 1kg Silver</option>
+                <option value="Corner / Odd Size Plot">Corner / Odd Size Plot</option>
+                <option value="Not decided yet">Not decided yet — Show me all options</option>
+              </select>
             </div>
 
             {errorMsg && (
@@ -227,11 +203,26 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 hover:from-emerald-500 hover:to-green-600 text-white font-black text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-transform hover:scale-[1.01] active:scale-[0.99]"
+              className="w-full py-4 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 hover:from-emerald-500 hover:to-green-600 text-white font-black text-sm uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-transform hover:scale-[1.01] active:scale-[0.99]"
             >
               <Send className="w-4 h-4" />
-              <span>{loading ? "Submitting..." : "Send Request"}</span>
+              <span>{loading ? "Submitting..." : "Get Pricing & Layout Plan"}</span>
             </button>
+
+            {/* WhatsApp Alternative CTA */}
+            <a
+              href={`https://wa.me/918970198701?text=${encodeURIComponent("Hi, I am interested in The Aurora Hills plots in Dharwad. Please share pricing and layout plan details.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-3 rounded-full border-2 border-[#25D366] text-[#128C5E] font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#25D366] hover:text-white transition-all duration-200"
+            >
+              <span>💬</span>
+              <span>WhatsApp Instead</span>
+            </a>
+
+            <p className="text-center text-[10px] text-charcoal-500">
+              🔒 Your number is safe. Our consultant calls within 15 minutes.
+            </p>
           </form>
         )}
       </div>

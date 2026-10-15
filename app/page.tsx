@@ -14,6 +14,7 @@ import { SanctionedLayout } from "@/components/SanctionedLayout";
 import { Partners } from "@/components/Partners";
 import { Footer } from "@/components/Footer";
 import { FloatingActions } from "@/components/FloatingActions";
+import { AdsTopBar } from "@/components/AdsTopBar";
 
 // Dynamically load heavy below-the-fold components
 
@@ -140,6 +141,9 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-[#F7F9F6] text-[#14281D] selection:bg-emerald-600 selection:text-white font-sans antialiased relative">
+      {/* Google Ads Traffic Urgency Bar — visible only to CPC visitors */}
+      <AdsTopBar onOpenEnquiry={handleOpenEnquiry} />
+
       {/* Top Navbar with Prominent Big Logo */}
       <Navbar
         onOpenEnquiry={handleOpenEnquiry}

@@ -222,6 +222,16 @@ export const Hero: React.FC<HeroProps> = ({
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
+            {/* Direct Click-to-Call — highest converting CTA for mobile ad traffic */}
+            <a
+              href="tel:+918970198701"
+              id="hero-call-btn"
+              className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-white rounded-full border-2 border-white/70 hover:bg-white hover:text-emerald-900 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2 backdrop-blur-sm"
+            >
+              <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span>+91 89701 98701</span>
+            </a>
+
             <a
               href="#festive-offer"
               className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-300 hover:from-amber-400 hover:to-yellow-400 rounded-full shadow-[0_0_25px_rgba(251,191,36,0.4)] transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2"
