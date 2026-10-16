@@ -82,6 +82,7 @@ export default function HomePage() {
 
   // Dynamic settings from backend (default starting price is ₹42 Lakhs)
   const [startingPrice, setStartingPrice] = useState("₹42 Lakhs");
+  const [hasAdsTopBar, setHasAdsTopBar] = useState(false);
 
   useEffect(() => {
     // Log page view analytics
@@ -142,13 +143,17 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#F7F9F6] text-[#14281D] selection:bg-emerald-600 selection:text-white font-sans antialiased relative">
       {/* Google Ads Traffic Urgency Bar — visible only to CPC visitors */}
-      <AdsTopBar onOpenEnquiry={handleOpenEnquiry} />
+      <AdsTopBar
+        onOpenEnquiry={handleOpenEnquiry}
+        onVisibilityChange={setHasAdsTopBar}
+      />
 
       {/* Top Navbar with Prominent Big Logo */}
       <Navbar
         onOpenEnquiry={handleOpenEnquiry}
         onOpenBrochure={handleOpenBrochure}
         onOpenSiteVisit={handleOpenSiteVisit}
+        hasAdsTopBar={hasAdsTopBar}
       />
 
       <main className="relative z-10">

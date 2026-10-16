@@ -18,6 +18,7 @@ import {
   Phone,
   Calendar
 } from "lucide-react";
+import { HeroLeadCard } from "@/components/HeroLeadCard";
 
 interface HeroProps {
   onOpenEnquiry: (source?: string) => void;
@@ -135,112 +136,122 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
         </div>
 
-        {/* Hero Content Showcase */}
-        <div className="max-w-3xl space-y-4 sm:space-y-6">
+        {/* Hero Content Showcase & Direct Lead Conversion Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start w-full">
 
-          {/* Main Welcoming Bold Headline */}
-          <div className="space-y-1.5 sm:space-y-2">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-black text-white font-serif tracking-tight leading-[1.15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
-              Live Closer to <span className="text-emerald-400 drop-shadow-[0_0_20px_rgba(52,211,153,0.5)]">Nature.</span> <br />
-              <span className="bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(251,191,36,0.35)]">
-                Invest in Dharwad's Tomorrow.
-              </span>
-            </h2>
-          </div>
+          {/* Left Column: Value Proposition & Showcase (7 Cols on desktop) */}
+          <div className="lg:col-span-7 space-y-4 sm:space-y-6">
 
-          {/* Supporting Welcoming Copy */}
-          <p className="text-xs sm:text-base lg:text-lg text-white/90 leading-relaxed font-medium max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
-            Luxury villa plots nestled in lush green hills at <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:text-emerald-300 hover:underline transition-colors">Sunset Viewpoint, Dharwad City</a> — 20+ amenities, wide paved roads, and instant access to top schools, malls & NH-4.
-          </p>
-
-          {/* Real Estate Price & Pre-Launch Advantage Card */}
-          <div className="p-4 sm:p-5 lg:p-6 rounded-2xl sm:rounded-3xl liquid-glass-card liquid-glass-shimmer w-full max-w-2xl flex flex-col justify-between gap-3 sm:gap-4 relative overflow-hidden transition-all duration-300 hover:scale-[1.01] shadow-2xl border-white/25">
-            <div className="absolute top-0 right-0 bg-yellow-400 text-black text-xs sm:text-sm font-black uppercase tracking-wider px-4 py-1.5 sm:py-2 rounded-bl-xl shadow-[0_4px_15px_rgba(250,204,21,0.4)] border-b border-l border-yellow-300">
-              Pre-Launch Pricing
+            {/* Main Welcoming Bold Headline */}
+            <div className="space-y-1.5 sm:space-y-2">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-black text-white font-serif tracking-tight leading-[1.15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
+                Live Closer to <span className="text-emerald-400 drop-shadow-[0_0_20px_rgba(52,211,153,0.5)]">Nature.</span> <br />
+                <span className="bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(251,191,36,0.35)]">
+                  Invest in Dharwad's Tomorrow.
+                </span>
+              </h2>
             </div>
 
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-              <div>
-                <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-bold text-emerald-300 block drop-shadow">
-                  Approved Villa Plots
-                </span>
-                <div className="text-2xl sm:text-3xl md:text-4xl font-black text-white font-serif flex items-baseline gap-2 mt-0.5 sm:mt-1 drop-shadow-md">
-                  <span className="text-xs sm:text-sm font-medium text-white/70">Starting</span>
-                  <span className="text-emerald-300 drop-shadow-[0_0_12px_rgba(110,231,183,0.5)]">{startingPrice}</span>
-                </div>
-                <div className="text-[11px] sm:text-xs text-emerald-200 mt-0.5 sm:mt-1 flex items-center gap-1.5 font-medium drop-shadow">
-                  <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-400 flex-shrink-0" />
-                  <span>Clear Title Deeds • 1,200 to 2,400+ sq.ft Ready</span>
-                </div>
+            {/* Supporting Welcoming Copy */}
+            <p className="text-xs sm:text-base lg:text-lg text-white/90 leading-relaxed font-medium max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+              Luxury villa plots nestled in lush green hills at <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:text-emerald-300 hover:underline transition-colors">Sunset Viewpoint, Dharwad City</a> — 20+ amenities, wide paved roads, and instant access to top schools, malls &amp; NH-4.
+            </p>
+
+            {/* Real Estate Price & Pre-Launch Advantage Card */}
+            <div className="p-4 sm:p-5 lg:p-6 rounded-2xl sm:rounded-3xl liquid-glass-card liquid-glass-shimmer w-full flex flex-col justify-between gap-3 sm:gap-4 relative overflow-hidden transition-all duration-300 hover:scale-[1.01] shadow-2xl border-white/25">
+              <div className="absolute top-0 right-0 bg-yellow-400 text-black text-xs sm:text-sm font-black uppercase tracking-wider px-4 py-1.5 sm:py-2 rounded-bl-xl shadow-[0_4px_15px_rgba(250,204,21,0.4)] border-b border-l border-yellow-300">
+                Pre-Launch Pricing
               </div>
 
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-bold text-emerald-300 block drop-shadow">
+                    Approved Villa Plots
+                  </span>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-black text-white font-serif flex items-baseline gap-2 mt-0.5 sm:mt-1 drop-shadow-md">
+                    <span className="text-xs sm:text-sm font-medium text-white/70">Starting</span>
+                    <span className="text-emerald-300 drop-shadow-[0_0_12px_rgba(110,231,183,0.5)]">{startingPrice}</span>
+                  </div>
+                  <div className="text-[11px] sm:text-xs text-emerald-200 mt-0.5 sm:mt-1 flex items-center gap-1.5 font-medium drop-shadow">
+                    <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-400 flex-shrink-0" />
+                    <span>Clear Title Deeds • 1,200 to 2,400+ sq.ft Ready</span>
+                  </div>
+                </div>
+
+                <button
+                  onClick={() => onOpenEnquiry("Hero Price Card")}
+                  className="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-white text-emerald-950 font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_4px_20px_rgba(255,255,255,0.4)] hover:shadow-[0_6px_28px_rgba(255,255,255,0.6)] transition-all hover:scale-105 active:scale-95 text-center flex-shrink-0"
+                >
+                  Claim Offer →
+                </button>
+              </div>
+
+              {/* Festive Deepawali / Dasara Banner inside Price Card */}
+              <div className="mt-2 pt-3 border-t border-white/20 flex flex-wrap items-center justify-between gap-2">
+                <div className="flex items-center gap-1.5 text-amber-300 text-xs font-bold drop-shadow">
+                  <Sparkles className="w-4 h-4 text-amber-400 flex-shrink-0 animate-pulse" />
+                  <span>
+                    <strong className="text-white">Dasara &amp; Deepawali Special:</strong> 50g Gold or up to 1.5kg Silver Gift!
+                  </span>
+                </div>
+                <a href="#festive-offer" className="text-amber-200 hover:text-white underline font-black text-[11px] uppercase tracking-wider">
+                  Explore Scheme →
+                </a>
+              </div>
+            </div>
+
+            {/* 4 Proximity Advantage Pills */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5 w-full">
+              {[
+                { icon: Sun, label: "Sunset View Point", sub: "Panoramic Hills", color: "text-amber-400" },
+                { icon: Trees, label: "Greenery & Air", sub: "Zero Pollution", color: "text-emerald-400" },
+                { icon: GraduationCap, label: "Near Schools/Univ", sub: "5 Mins to KUD", color: "text-sky-300" },
+                { icon: ShoppingBag, label: "Near Malls & D-Mart", sub: "Easy Shopping", color: "text-rose-400" },
+              ].map(({ icon: Icon, label, sub, color }) => (
+                <div key={label} className="p-2 sm:p-3 rounded-xl sm:rounded-2xl liquid-glass-pill text-center hover:bg-white/20 hover:-translate-y-0.5 transition-all cursor-default shadow-md">
+                  <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${color} mx-auto mb-0.5 sm:mb-1 drop-shadow`} />
+                  <span className="text-[11px] sm:text-xs font-bold text-white block drop-shadow">{label}</span>
+                  <span className="text-[9px] sm:text-[10px] text-white/70">{sub}</span>
+                </div>
+              ))}
+            </div>
+
+            {/* Action Buttons (High Contrast & Mobile-Optimized) */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-3.5 pt-1 sm:pt-2 w-full">
               <button
-                onClick={() => onOpenEnquiry("Hero Price Card")}
-                className="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-full bg-white text-emerald-950 font-black text-xs sm:text-sm uppercase tracking-wider shadow-[0_4px_20px_rgba(255,255,255,0.4)] hover:shadow-[0_6px_28px_rgba(255,255,255,0.6)] transition-all hover:scale-105 active:scale-95 text-center flex-shrink-0"
+                onClick={() => onOpenEnquiry("Hero Primary CTA")}
+                className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-white liquid-glass-emerald rounded-full shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:shadow-[0_0_50px_rgba(16,185,129,0.8)] transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2"
               >
-                Claim Offer →
+                <span>Enquire for Booking</span>
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
               </button>
-            </div>
 
-            {/* Festive Deepawali / Dasara Banner inside Price Card */}
-            <div className="mt-2 pt-3 border-t border-white/20 flex flex-wrap items-center justify-between gap-2">
-              <div className="flex items-center gap-1.5 text-amber-300 text-xs font-bold drop-shadow">
-                <Sparkles className="w-4 h-4 text-amber-400 flex-shrink-0 animate-pulse" />
-                <span>
-                  <strong className="text-white">Dasara &amp; Deepawali Special:</strong> 50g Gold or up to 1.5kg Silver Gift!
-                </span>
-              </div>
-              <a href="#festive-offer" className="text-amber-200 hover:text-white underline font-black text-[11px] uppercase tracking-wider">
-                Explore Scheme →
+              {/* Direct Click-to-Call — highest converting CTA for mobile ad traffic */}
+              <a
+                href="tel:+918970198701"
+                id="hero-call-btn"
+                className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-white rounded-full border-2 border-white/70 hover:bg-white hover:text-emerald-900 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2 backdrop-blur-sm"
+              >
+                <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span>+91 89701 98701</span>
+              </a>
+
+              <a
+                href="#festive-offer"
+                className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-300 hover:from-amber-400 hover:to-yellow-400 rounded-full shadow-[0_0_25px_rgba(251,191,36,0.4)] transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2"
+              >
+                <Sparkles className="w-4 h-4 text-amber-900" />
+                <span>Festive Scheme Offer</span>
               </a>
             </div>
           </div>
 
-          {/* 4 Proximity Advantage Pills */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5 w-full max-w-2xl">
-            {[
-              { icon: Sun, label: "Sunset View Point", sub: "Panoramic Hills", color: "text-amber-400" },
-              { icon: Trees, label: "Greenery & Air", sub: "Zero Pollution", color: "text-emerald-400" },
-              { icon: GraduationCap, label: "Near Schools/Univ", sub: "5 Mins to KUD", color: "text-sky-300" },
-              { icon: ShoppingBag, label: "Near Malls & D-Mart", sub: "Easy Shopping", color: "text-rose-400" },
-            ].map(({ icon: Icon, label, sub, color }) => (
-              <div key={label} className="p-2 sm:p-3 rounded-xl sm:rounded-2xl liquid-glass-pill text-center hover:bg-white/20 hover:-translate-y-0.5 transition-all cursor-default shadow-md">
-                <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${color} mx-auto mb-0.5 sm:mb-1 drop-shadow`} />
-                <span className="text-[11px] sm:text-xs font-bold text-white block drop-shadow">{label}</span>
-                <span className="text-[9px] sm:text-[10px] text-white/70">{sub}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Action Buttons (High Contrast & Mobile-Optimized) */}
-          <div className="flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-3.5 pt-1 sm:pt-2 w-full max-w-2xl">
-            <button
-              onClick={() => onOpenEnquiry("Hero Primary CTA")}
-              className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-white liquid-glass-emerald rounded-full shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:shadow-[0_0_50px_rgba(16,185,129,0.8)] transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2"
-            >
-              <span>Enquire for Booking</span>
-              <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
-            </button>
-
-            {/* Direct Click-to-Call — highest converting CTA for mobile ad traffic */}
-            <a
-              href="tel:+918970198701"
-              id="hero-call-btn"
-              className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-white rounded-full border-2 border-white/70 hover:bg-white hover:text-emerald-900 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2 backdrop-blur-sm"
-            >
-              <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-              <span>+91 89701 98701</span>
-            </a>
-
-            <a
-              href="#festive-offer"
-              className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-300 hover:from-amber-400 hover:to-yellow-400 rounded-full shadow-[0_0_25px_rgba(251,191,36,0.4)] transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2"
-            >
-              <Sparkles className="w-4 h-4 text-amber-900" />
-              <span>Festive Scheme Offer</span>
-            </a>
+          {/* Right Column: Instant In-Page Lead & WhatsApp Form (5 Cols on desktop, full width on mobile) */}
+          <div className="lg:col-span-5 w-full mt-2 lg:mt-0">
+            <HeroLeadCard sourceTag="Hero Instant Card" />
           </div>
         </div>
+
       </div>
     </section>
   );

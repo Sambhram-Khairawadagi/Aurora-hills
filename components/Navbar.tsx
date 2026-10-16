@@ -10,12 +10,14 @@ interface NavbarProps {
   onOpenEnquiry: (source?: string, requirement?: string) => void;
   onOpenBrochure: () => void;
   onOpenSiteVisit: () => void;
+  hasAdsTopBar?: boolean;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
   onOpenEnquiry,
   onOpenBrochure,
   onOpenSiteVisit,
+  hasAdsTopBar = false,
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,8 +40,12 @@ export const Navbar: React.FC<NavbarProps> = ({
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      <FestiveTicker onOpenEnquiry={onOpenEnquiry} />
+    <header
+      className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
+        hasAdsTopBar ? "top-[38px] sm:top-[40px]" : "top-0"
+      }`}
+    >
+      {!hasAdsTopBar && <FestiveTicker onOpenEnquiry={onOpenEnquiry} />}
       <div className="py-1 px-4 sm:px-6 lg:px-8">
         <div
           className={`max-w-6xl mx-auto rounded-full transition-all duration-500 px-5 sm:px-7 flex items-center justify-between ${isScrolled

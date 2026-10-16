@@ -41,3 +41,14 @@ export function getStoredUtm(): UtmParams {
 }
 
 export const getUtmParams = getStoredUtm;
+
+export function isGoogleAdsTraffic(): boolean {
+  if (typeof window === "undefined") return false;
+  const utm = getStoredUtm();
+  return (
+    utm.utm_source === "google" ||
+    utm.utm_source === "google_ads" ||
+    utm.utm_medium === "cpc" ||
+    Boolean(utm.gclid)
+  );
+}

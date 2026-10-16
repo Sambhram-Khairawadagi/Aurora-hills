@@ -56,7 +56,13 @@ export const trackPhoneClick = (phone: string = "8970198701") => {
   window.gtag("event", "contact", {
     event_category: "Phone Call Click",
     event_label: phone,
+    value: 500,
   });
+
+  // Fire Google Ads conversion so inbound phone intent is attributed and counted
+  if (GOOGLE_CONVERSION_SEND_TO) {
+    trackConversion(GOOGLE_CONVERSION_SEND_TO, 500, "INR");
+  }
 };
 
 // Track WhatsApp Chat Clicks
@@ -66,5 +72,11 @@ export const trackWhatsAppClick = () => {
   window.gtag("event", "contact", {
     event_category: "WhatsApp Click",
     event_label: "Aurora Hills WhatsApp",
+    value: 500,
   });
+
+  // Fire Google Ads conversion so inbound WhatsApp intent is attributed and counted
+  if (GOOGLE_CONVERSION_SEND_TO) {
+    trackConversion(GOOGLE_CONVERSION_SEND_TO, 500, "INR");
+  }
 };

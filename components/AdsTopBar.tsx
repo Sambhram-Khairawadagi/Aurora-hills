@@ -6,9 +6,10 @@ import { trackPhoneClick } from "@/lib/gtag";
 
 interface AdsTopBarProps {
   onOpenEnquiry: (source?: string) => void;
+  onVisibilityChange?: (visible: boolean) => void;
 }
 
-export const AdsTopBar: React.FC<AdsTopBarProps> = ({ onOpenEnquiry }) => {
+export const AdsTopBar: React.FC<AdsTopBarProps> = ({ onOpenEnquiry, onVisibilityChange }) => {
   const [visible, setVisible] = useState(false);
   const [dismissed, setDismissed] = useState(false);
 
@@ -35,8 +36,14 @@ export const AdsTopBar: React.FC<AdsTopBarProps> = ({ onOpenEnquiry }) => {
         sessionStorage.setItem("utm_source", params.get("utm_source") || "");
       }
       setVisible(true);
+      onVisibilityChange?.(true);
     }
-  }, []);
+  }, [onVisibilityChange]);
+
+  const handleDismiss = () => {
+    setDismissed(true);
+    onVisibilityChange?.(false);
+  };
 
   if (!visible || dismissed) return null;
 
@@ -84,7 +91,7 @@ export const AdsTopBar: React.FC<AdsTopBarProps> = ({ onOpenEnquiry }) => {
 
         {/* Dismiss */}
         <button
-          onClick={() => setDismissed(true)}
+          onClick={handleDismiss}
           className="p-1 rounded-full text-white/60 hover:text-white transition-colors"
           aria-label="Close"
         >

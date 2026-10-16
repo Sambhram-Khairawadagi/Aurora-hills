@@ -23,7 +23,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
   return (
     <>
       {/* Floating WhatsApp Action Pill (Bottom Right) */}
-      <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3 animate-fade-in">
+      <div className="fixed bottom-20 sm:bottom-6 right-4 sm:right-6 z-40 flex flex-col items-end gap-3 animate-fade-in">
         <a
           href={whatsappUrl}
           target="_blank"

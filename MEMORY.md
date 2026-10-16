@@ -120,6 +120,16 @@ The Aurora Hills is a premium real estate landing page and management portal for
   3. **`components/Hero.tsx`** — Added **Click-to-Call button** (`+91 89701 98701`) in the Hero CTA row between "Enquire for Booking" and "Festive Scheme Offer" buttons.
   4. **`app/page.tsx`** — Mounted `<AdsTopBar>` as the first element above `<Navbar>` so it renders above all other fixed elements (z-index: 60).
 
+### H. Conversion Acceleration & Zero-Leakage Funnel Overhaul (October 16, 2026)
+- **Forensic Diagnostic**: Over Oct 15 & 16, campaign generated 26 total clicks (12 yesterday + 14 today by 3:15 PM), a phenomenal CTR of 29.17%, but **0 recorded conversions**.
+- **Root Causes Fixed**:
+  1. **Invisible Form Removed**: Replaced modal-only lead capture with **`components/HeroLeadCard.tsx`** embedded directly in the Hero viewport (7:5 desktop split, full width on mobile). Visitors can enter Name + 10-digit WhatsApp number to instantly receive the HDUDA layout map PDF and pre-filled WhatsApp conversation with sales desk.
+  2. **Call & WhatsApp Conversion Blind Spot Fixed**: Updated `lib/gtag.ts` so `trackPhoneClick` and `trackWhatsAppClick` fire Google Ads conversion `AW-16689411973/I9fRCMn3upwdEIXvkJY-`, ensuring high-intent callers and WhatsApp chats are counted as conversions in the Google Ads algorithm.
+  3. **Double Mobile Header Overlap Resolved**: Connected `AdsTopBar` and `Navbar` via `hasAdsTopBar` state. Suppressed duplicate `FestiveTicker` and docked `Navbar` neatly at `top-[38px]` when ads top bar is active.
+  4. **Bottom Contact Form Revamped**: Updated `components/EnquirySection.tsx` from 6 fields down to 3 fields with full UTM tracking, `trackLeadSubmit` conversion firing, and WhatsApp alternative CTA.
+  5. **Floating Action Pill Collision Fixed**: Raised mobile WhatsApp floating button to `bottom-20` in `components/FloatingActions.tsx` to prevent overlapping the mobile bottom call/visit bar.
+  6. **Aggregator Negative Keyword Gap Identified**: Identified ₹83.14 wasted today on `99acres dharwad`; documented negative keyword list to block aggregators (`99 acres`, `magicbricks`, `housing.com`, etc.).
+
 ---
 
 ## 3. Important Development Guidelines & Gotchas
@@ -159,3 +169,5 @@ The Aurora Hills is a premium real estate landing page and management portal for
 - `58b133d`: feat(analytics): trigger contact conversion on WhatsApp and Call Desk clicks.
 - `90e7eeb`: docs: update MEMORY.md and ads strategy with verified Google Tag and Conversion tracking architecture.
 - `92b1ee1`: fix(conversion): slim EnquiryModal to 3 fields, add AdsTopBar for Google Ads traffic, add click-to-call in Hero CTA row.
+- `3353b2b`: docs: update MEMORY.md with Oct 15 zero-lead diagnostic, all 5 root cause fixes, Google Ads optimisations and website CRO changes.
+- `[upcoming]`: feat(cro): embed in-page HeroLeadCard, track call/WhatsApp conversions, eliminate mobile header overlap, and revamp EnquirySection.
