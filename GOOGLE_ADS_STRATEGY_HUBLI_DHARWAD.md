@@ -168,41 +168,104 @@ Split the campaign into 4 tightly themed Ad Groups to ensure Quality Score 9/10 
 Add these negative keywords at the **Campaign Level** immediately. This blocks junk searches and prevents losing ₹1,200/day on unqualified clicks:
 
 ```text
-free
-rent
-for rent
-lease
-flat for rent
-house for rent
-job
-jobs
-career
-recruitment
-salary
-vacancy
-olx
-quikr
-second hand
-agricultural land cheap
-agriculture land 1 acre 2 lakh
-gram panchayat plots
-disputed land
-court case
-commercial shop for rent
-mysore plots
-bangalore plots
-belgaum plots
-goa plots
-cheap plots under 5 lakhs
-low budget site 3 lakhs
-meaning
-history
-wiki
-wikipedia
-images
-photos download
-map pdf download
+# Aggregator Portals & Apps (Blocked - burns budget on directory searchers)
+"99 acres"
+"99acres"
+"magicbricks"
+"housing.com"
+"housing app"
+"nobroker"
+"squareyards"
+"commonfloor"
+"olx"
+"quikr"
+"indiaproperty"
+
+# Built Houses, Flats & Apartments (Blocked - we sell plots only)
+"house for sale"
+"houses for sale"
+"ready house"
+"ready to move"
+"independent house"
+"duplex house"
+"individual house"
+"2 bhk"
+"2bhk"
+"3 bhk"
+"3bhk"
+"1 bhk"
+"flat"
+"flats"
+"apartment"
+"apartments"
+"villa for sale ready"
+
+# Agricultural & Farm Land (Blocked - we sell residential approved plots)
+"farm land"
+"farmland"
+"agricultural land"
+"agriculture land"
+"krishi bhoomi"
+"kfdc"
+"poultry farm"
+"dairy farm"
+
+# Third-Party / Competitor Specific Search Terms
+"krishi mela"
+"kiran sector"
+"ashraya"
+"slum board"
+"hudco layout"
+
+# Informational / Meaning / Student / Academic
+"layout meaning"
+"estate layout meaning"
+"plot size meaning"
+"site measurement"
+"layout plan meaning"
+"plot area calculator"
+"dharwad map"
+"dharwad layout download"
+"plot images"
+"plot photos"
+"approved layout pdf"
+"gram panchayat layout"
+"site plan drawing"
+
+# Non-Buyer / Cheap / Distressed Properties
+"cheap"
+"low budget site 3 lakhs"
+"cheap plots under 5 lakhs"
+"disputed land"
+"court case"
+"gram panchayat plots"
+"free"
+"second hand"
+
+# Rentals & Commercial
+"rent"
+"for rent"
+"lease"
+"flat for rent"
+"house for rent"
+"commercial shop for rent"
+
+# Job Seekers & Employment
+"job"
+"jobs"
+"career"
+"recruitment"
+"salary"
+"vacancy"
+"internship"
+
+# Other Cities / Geography
+"mysore plots"
+"bangalore plots"
+"belgaum plots"
+"goa plots"
 ```
+
 
 ---
 
