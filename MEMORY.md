@@ -130,6 +130,28 @@ The Aurora Hills is a premium real estate landing page and management portal for
   5. **Floating Action Pill Collision Fixed**: Raised mobile WhatsApp floating button to `bottom-20` in `components/FloatingActions.tsx` to prevent overlapping the mobile bottom call/visit bar.
   6. **Aggregator Negative Keyword Gap Identified**: Identified ₹83.14 wasted today on `99acres dharwad`; documented negative keyword list to block aggregators (`99 acres`, `magicbricks`, `housing.com`, etc.).
 
+### I. End-to-End Live Verification, Multi-Project Isolation & Keyword Calibration (October 16, 2026)
+- **Live Production Bundle & HTML Verification**:
+  - Live deployment verified on `https://www.theaurorahills.com/` (Commit `4a17b8d` / `622d981`).
+  - Google Tag `AW-16689411973` confirmed active in `<head>` and client runtime.
+  - Conversion snippet `AW-16689411973/I9fRCMn3upwdEIXvkJY-` confirmed present inside live chunk `/_next/static/chunks/app/layout-b27086002c3d219f.js`.
+  - In-page `HeroLeadCard` confirmed rendering live with 10-digit WhatsApp input and festive badge.
+- **Conversion Trigger Verification Across All Actions**:
+  - **Web Forms** (`HeroLeadCard`, `EnquiryModal`, `EnquirySection`, `SiteVisitModal`, `LeadGate`): Trigger `trackLeadSubmit` -> `AW-16689411973/I9fRCMn3upwdEIXvkJY-` (₹1000 value).
+  - **Phone Calls** (`AdsTopBar`, `Hero`, `FloatingActions`, `EnquirySection`): Trigger `trackPhoneClick` -> `AW-16689411973/I9fRCMn3upwdEIXvkJY-` (₹500 value).
+  - **WhatsApp Clicks** (`FloatingActions`, `HeroLeadCard`, `EnquirySection`): Trigger `trackWhatsAppClick` -> `AW-16689411973/I9fRCMn3upwdEIXvkJY-` (₹500 value).
+  - **Live Lead Dispatch Verified**: Production test lead `cmvatfxey00007533iy824qqn` successfully submitted and delivered to `social.propertybasket@gmail.com`.
+- **Multi-Project Isolation Safeguards Verified**:
+  - Fully segregated from `Suraksha Sunrise Park - Sarjapur` in Google Ads Account `830-030-4291`.
+  - Zero tag overlap: `AW-16689411973/I9fRCMn3upwdEIXvkJY-` is hard-coded strictly on `theaurorahills.com`.
+  - Campaign goal isolation: `Search - The Aurora Hills - Hubli Dharwad Plots` conversion goal bound exclusively to `Aurora Hills - Website Lead`.
+  - Budget & Geo isolation: Aurora Hills operates on its own ₹1,200/day budget, geo-targeted exclusively to Hubballi-Dharwad presence.
+- **Google Ads Keyword Strategy Calibration**:
+  - **4 Top Performers** carrying 100% of traffic: `"residential plots in dharwad"`, `"plots in hubli"`, `"site for sale in dharwad"`, `"hubli land for sale"`.
+  - **8 New Non-Repetitive Keywords Added**: `"hduda plots"`, `"hduda approved plots"`, `"hduda plots in hubli"`, `"sites in hubli"`, `"sites for sale in hubli"`, `"residential sites in dharwad"`, `"the aurora hills"`, `"aurora hills dharwad"`.
+  - **1 Budget-Drain Keyword Deleted**: `"na plots for 3 lakhs in dharwad"`.
+  - **Comprehensive Negative Keywords List Deployed**: Blocks aggregators (`99acres`, `magicbricks`), ready-built houses/2BHKs, and farmland.
+
 ---
 
 ## 3. Important Development Guidelines & Gotchas
@@ -171,3 +193,6 @@ The Aurora Hills is a premium real estate landing page and management portal for
 - `92b1ee1`: fix(conversion): slim EnquiryModal to 3 fields, add AdsTopBar for Google Ads traffic, add click-to-call in Hero CTA row.
 - `3353b2b`: docs: update MEMORY.md with Oct 15 zero-lead diagnostic, all 5 root cause fixes, Google Ads optimisations and website CRO changes.
 - `d15e5af`: feat(cro): embed in-page HeroLeadCard, track call/WhatsApp conversions, eliminate mobile header overlap, and revamp EnquirySection.
+- `4a17b8d`: docs: finalize commit hash d15e5af in MEMORY.md.
+- `622d981`: docs: update comprehensive negative keyword master list in ads strategy.
+- `6d3f2ea`: docs: document live production verification, multi-project isolation, and keyword calibration.
