@@ -170,4 +170,4 @@ The Aurora Hills is a premium real estate landing page and management portal for
 - `90e7eeb`: docs: update MEMORY.md and ads strategy with verified Google Tag and Conversion tracking architecture.
 - `92b1ee1`: fix(conversion): slim EnquiryModal to 3 fields, add AdsTopBar for Google Ads traffic, add click-to-call in Hero CTA row.
 - `3353b2b`: docs: update MEMORY.md with Oct 15 zero-lead diagnostic, all 5 root cause fixes, Google Ads optimisations and website CRO changes.
-- `[upcoming]`: feat(cro): embed in-page HeroLeadCard, track call/WhatsApp conversions, eliminate mobile header overlap, and revamp EnquirySection.
+- `d15e5af`: feat(cro): embed in-page HeroLeadCard, track call/WhatsApp conversions, eliminate mobile header overlap, and revamp EnquirySection.
