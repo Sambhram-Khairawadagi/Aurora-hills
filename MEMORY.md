@@ -4,7 +4,7 @@
 **Main Branch**: `main`  
 **Hosting & Deployment**: Vercel (Auto-deploys on push to `origin/main`)  
 **Stack**: Next.js 14 (App Router), TypeScript, Tailwind CSS, Prisma (SQLite), Nodemailer  
-**Last Updated**: October 15, 2026
+**Last Updated**: October 17, 2026
 
 ---
 
@@ -151,6 +151,23 @@ The Aurora Hills is a premium real estate landing page and management portal for
   - **8 New Non-Repetitive Keywords Added**: `"hduda plots"`, `"hduda approved plots"`, `"hduda plots in hubli"`, `"sites in hubli"`, `"sites for sale in hubli"`, `"residential sites in dharwad"`, `"the aurora hills"`, `"aurora hills dharwad"`.
   - **1 Budget-Drain Keyword Deleted**: `"na plots for 3 lakhs in dharwad"`.
   - **Comprehensive Negative Keywords List Deployed**: Blocks aggregators (`99acres`, `magicbricks`), ready-built houses/2BHKs, and farmland.
+
+### J. Conversion Breakthrough & Budget Guardrail Activation (October 16–17, 2026)
+- **October 16 Full-Day Milestone**:
+  - **First Official Google Ads Conversion Recorded**: 1.00 conversion at ₹788.87 overall cost per conversion.
+  - **Star Keyword**: `"sites for sale in dharwad"` generated 6 impressions, 3 clicks (50.0% CTR), and the 1.00 conversion at an astounding **₹124.93 CPA**.
+  - **Traffic Surge**: 88 impressions, 20 clicks, **22.73% overall CTR**, ₹788.87 spend (well within ₹1,200 daily budget).
+  - **Device Split**: Mobile drove **85.0% of clicks and 100.0% of conversions**, validating mobile CRO overhaul.
+- **October 17 Audit & Negative Keyword Guardrail Deployment**:
+  - **Purity Check**: Midday audit (12:26 PM) showed 9 clicks, 25 impressions, 36.00% CTR, and 100% genuine plot buyer searches.
+  - **Brand Recall**: Direct search query `"the aurora hills"` recorded 2 clicks with 100% CTR.
+  - **Campaign-Level Negative Keywords Deployed Live**:
+    - Aggregator portals blocked: `"99acres"`, `"99 acres"`, `"magicbricks"`, `"housing.com"`, `"nobroker"`, `"olx"`, `"quikr"`.
+    - Built houses & apartments blocked: `"house for sale"`, `"houses for sale"`, `"2 bhk"`, `"2bhk"`, `"3 bhk"`, `"3bhk"`, `"1 bhk"`, `"flat"`, `"flats"`, `"apartment"`, `"apartments"`, `"duplex house"`, `"independent house"`.
+    - Farmland & agriculture blocked: `"farm land"`, `"farmland"`, `"agricultural land"`, `"agriculture"`, `"krishi bhoomi"`.
+    - Airport flight/airline transit blocked: `"flight"`, `"flights"`, `"airport timings"`, `"flight schedule"`, `"flight status"`, `"airline"`, `"indigo"`, `"star air"`.
+    - Generic non-real estate blocked: `"twin city"`, `"twin cities"`.
+  - Zero syntax/policy errors encountered; all 34 negative keywords active at campaign level.
 
 ---
 
