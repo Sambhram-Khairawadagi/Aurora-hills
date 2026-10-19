@@ -8,10 +8,25 @@ declare global {
   }
 }
 
+// Safe helper that invokes window.gtag or queues to window.dataLayer
+const safeGtag = (...args: any[]) => {
+  if (typeof window === "undefined") return;
+  if (typeof window.gtag === "function") {
+    window.gtag(...args);
+    return;
+  }
+  window.dataLayer = window.dataLayer || [];
+  const fn = function (...callArgs: any[]) {
+    window.dataLayer!.push(callArgs);
+  };
+  window.gtag = fn;
+  fn(...args);
+};
+
 // Track pageviews
 export const pageview = (url: string) => {
-  if (typeof window !== "undefined" && window.gtag && GOOGLE_TAG_ID) {
-    window.gtag("config", GOOGLE_TAG_ID, {
+  if (GOOGLE_TAG_ID) {
+    safeGtag("config", GOOGLE_TAG_ID, {
       page_path: url,
     });
   }
@@ -19,12 +34,10 @@ export const pageview = (url: string) => {
 
 // Track Google Ads conversions
 export const trackConversion = (sendTo?: string, value: number = 0, currency: string = "INR") => {
-  if (typeof window === "undefined" || !window.gtag) return;
-
   const target = sendTo || GOOGLE_CONVERSION_SEND_TO;
   if (!target) return;
 
-  window.gtag("event", "conversion", {
+  safeGtag("event", "conversion", {
     send_to: target,
     value: value,
     currency: currency,
@@ -33,10 +46,8 @@ export const trackConversion = (sendTo?: string, value: number = 0, currency: st
 
 // Track Lead Form Submissions
 export const trackLeadSubmit = (source: string = "Website Form", requirement?: string) => {
-  if (typeof window === "undefined" || !window.gtag) return;
-
   // General Google Analytics lead event
-  window.gtag("event", "generate_lead", {
+  safeGtag("event", "generate_lead", {
     event_category: "Real Estate Leads",
     event_label: source,
     value: 1000,
@@ -51,9 +62,7 @@ export const trackLeadSubmit = (source: string = "Website Form", requirement?: s
 
 // Track Direct Phone Call Clicks
 export const trackPhoneClick = (phone: string = "8970198701") => {
-  if (typeof window === "undefined" || !window.gtag) return;
-
-  window.gtag("event", "contact", {
+  safeGtag("event", "contact", {
     event_category: "Phone Call Click",
     event_label: phone,
     value: 500,
@@ -67,9 +76,7 @@ export const trackPhoneClick = (phone: string = "8970198701") => {
 
 // Track WhatsApp Chat Clicks
 export const trackWhatsAppClick = () => {
-  if (typeof window === "undefined" || !window.gtag) return;
-
-  window.gtag("event", "contact", {
+  safeGtag("event", "contact", {
     event_category: "WhatsApp Click",
     event_label: "Aurora Hills WhatsApp",
     value: 500,

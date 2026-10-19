@@ -359,7 +359,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
+              window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
+              function gtag(){window.dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'AW-16689411973');
             `,
