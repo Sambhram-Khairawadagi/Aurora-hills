@@ -117,6 +117,12 @@ Split the campaign into 4 tightly themed Ad Groups to ensure Quality Score 9/10 
 * `"plots near karnatak university dharwad"`
 * `"plots near kelgeri dharwad"`
 * `"plots near sunset viewpoint dharwad"`
+* `"30x40 sites in dharwad"`
+* `"30x50 sites in dharwad"`
+* `"40x60 sites in dharwad"`
+* `"30x40 plots in dharwad"`
+* `"30x50 plots in dharwad"`
+* `"40x60 plots in dharwad"`
 * `[plots in dharwad]`
 * `[residential plots in dharwad]`
 * `[plots for sale in dharwad]`
@@ -232,7 +238,7 @@ Add these negative keywords at the **Campaign Level** immediately. This blocks j
 "gram panchayat layout"
 "site plan drawing"
 
-# Non-Buyer / Cheap / Distressed Properties
+# Non-Buyer / Cheap / Distressed Properties / Price Research
 "cheap"
 "low budget site 3 lakhs"
 "cheap plots under 5 lakhs"
@@ -241,6 +247,13 @@ Add these negative keywords at the **Campaign Level** immediately. This blocks j
 "gram panchayat plots"
 "free"
 "second hand"
+"land price"
+price
+
+# Far-off Industrial Hubli Localities & Local Competitors (Blocked)
+"mann properties"
+"gokul road"
+"priyadarshini colony"
 
 # Rentals & Commercial
 "rent"
@@ -277,20 +290,20 @@ Use these exact headlines and descriptions for maximum Ad Relevance and Expected
 
 #### Headlines (15 Headlines — Up to 30 characters each):
 1. `Plots in Dharwad & Hubli` (Pin to Position 1)
-2. `HDUDA Approved Plots` (Pin to Position 2)
+2. `HDUDA Approved Sites` (Pin to Position 2)
 3. `The Aurora Hills Dharwad`
-4. `Sites Starting ₹42 Lakhs*`
-5. `30x40, 30x50 & 40x60 Plots`
+4. `30x40 & 30x50 Sites For Sale`
+5. `Sites Near Sunset Viewpoint`
 6. `Win 50g Gold on Booking*` (Pin to Position 3)
 7. `1.5 Kg Silver Festive Offer*`
 8. `Bank Loans Up to 80% (SBI)`
 9. `Within Dharwad City Limits`
 10. `20+ World-Class Amenities`
 11. `Near Karnatak University`
-12. `Scenic Sunset Hill View`
+12. `Sites Starting ₹42 Lakhs*`
 13. `100% Clear NA-KJP Title`
 14. `Free Pick & Drop Site Visit`
-15. `Book Your Hillside Plot`
+15. `30x40, 30x50 & 40x60 Plots`
 
 #### Descriptions (4 Descriptions — Up to 90 characters each):
 1. `HDUDA & NA-KJP approved luxury villa plots in Dharwad. 30x40, 30x50 & 40x60 sites from ₹42L*.`

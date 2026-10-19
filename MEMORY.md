@@ -169,6 +169,24 @@ The Aurora Hills is a premium real estate landing page and management portal for
     - Generic non-real estate blocked: `"twin city"`, `"twin cities"`.
   - Zero syntax/policy errors encountered; all 34 negative keywords active at campaign level.
 
+### K. Midday Milestone, Confirmed Site Visit & Dimension Scaling (October 19, 2026)
+- **Midday Audit Metrics (2:30 PM)**:
+  - Spend: ₹496.12 (41.3% budget utilization with ₹704 reserve for evening peak).
+  - Clicks: 12 | Impressions: 74 | CTR: **16.22%** | Avg CPC: ₹41.34.
+  - Device Share: **Mobile accounts for 91.7% of all traffic and spend**.
+- **Real-World Business Results**:
+  - **2 Leads Generated**: 1 Confirmed Site Visit + 1 RNR (Ringing No Response).
+  - Real Cost Per Lead (CPL): **₹248.06 per lead**.
+  - Cost Per Confirmed Site Visit: **₹496.12**.
+- **High-Intent Search Query Discovery**:
+  - `30 by 40 sites for sale in dharwad` (1 click, 50% CTR, ₹41.01 CPC) directly correlated to high commercial intent.
+  - Added 6 phrase match dimension keywords: `"30x40 sites in dharwad"`, `"30x50 sites in dharwad"`, `"40x60 sites in dharwad"`, `"30x40 plots in dharwad"`, `"30x50 plots in dharwad"`, `"40x60 plots in dharwad"`.
+- **Negative Keyword Expansion**:
+  - Blocked price curiosity: `price`, `"land price"`.
+  - Blocked competitor/distant locality: `"mann properties"`, `"gokul road"`, `"priyadarshini colony"`.
+- **Ad Creative Alignment**:
+  - Updated RSA headlines to prioritize "Sites" over "Plots" (`HDUDA Approved Sites in Dharwad`, `30x40 & 30x50 Sites For Sale`, `Sites Near Sunset Viewpoint`) to maximize local relevance and reduce CPC.
+
 ---
 
 ## 3. Important Development Guidelines & Gotchas
