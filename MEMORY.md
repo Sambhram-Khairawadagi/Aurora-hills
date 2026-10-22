@@ -8,7 +8,23 @@
 
 ---
 
-## Latest Update: October 22, 2026 — Hero White Mist Reduction & Landscape Clarity Enhancement
+## Latest Update: October 22, 2026 — Official Aurora Hills Logo Integration on Entrance Monument Signboard
+- **User Request**: "this logo should be aurora hills logo" (referencing cropped screenshot of entrance monument signboard at bottom-left of hero background).
+- **Issue**: The AI-generated daylight photo previously featured a generic sun/hills/waves emblem and typo text ("THE AURORA HILLS - Luxury Piotted Völas") on the stone monument board.
+- **Solution & Implementation**:
+  - Replaced the generic emblem and hallucinated text with the **authentic, official The Aurora Hills branding**:
+    - **Crest**: Official geometric oval crest (rising sun, terraced hillside contours, and architectural pillars) extracted directly from `public/images/aurora-hills-logo-transparent.png`.
+    - **Color**: Official deep brand burgundy (`#691930` / RGB `105, 25, 48`) with subtle natural stone bevel and architectural drop shadow.
+    - **Typography**: "THE AURORA HILLS" in bold classic Roman serif paired with the official brand tagline "HOSA LIFESTYLE, HOSA DHARWAD" in clean bold uppercase.
+    - **Perspective & Material**: Warped via `cv2.getPerspectiveTransform` and `cv2.warpPerspective` matching the 3D angle of the stone monument with warm limestone texture and soft 1.5px antialiasing.
+  - Applied to both **Desktop** and **Mobile** assets:
+    - Desktop (16:9): `public/images/aurora-hills-real-site-daylight.jpg` & `.webp`
+    - Mobile (9:16): `public/images/aurora-hills-real-site-daylight-mobile.jpg` & `.webp`
+  - Re-captured and verified via Chrome CDP screenshots on both 1440px desktop and 390px mobile viewports.
+
+---
+
+## Prior Update: October 22, 2026 — Hero White Mist Reduction & Landscape Clarity Enhancement
 - **User Request**: "REDUCE THE WHITE MIST IN THE HERO SECTION"
 - **Changes Applied (`components/Hero.tsx`)**:
   - Cut white gradient overlay opacity in half: changed from `from-white/95 via-white/80 to-white/20 sm:from-white/92 sm:via-white/65` down to `from-white/60 via-white/30 to-transparent sm:from-white/50 sm:via-white/20 to-transparent`.
