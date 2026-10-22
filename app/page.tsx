@@ -172,7 +172,11 @@ export default function HomePage() {
           onOpenLayout={handleScrollToLayout}
         />
 
-
+        {/* Photographic Media & Site Gallery — Brought Up for High Visibility */}
+        <Gallery
+          onOpenVideo={handleOpenVideo}
+          onOpenEnquiry={handleOpenEnquiry}
+        />
 
         {/* Standalone Main Video Showcase */}
         <MainShowcaseVideo />
@@ -201,9 +205,6 @@ export default function HomePage() {
         <WhyAuroraHills
           onOpenEnquiry={handleOpenEnquiry}
         />
-
-        {/* Photographic Media & Site Gallery */}
-        <Gallery onOpenVideo={handleOpenVideo} />
 
         {/* Comprehensive Local SEO Hub & Real Estate FAQ */}
         <LocalSeoFaq

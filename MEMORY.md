@@ -4,9 +4,34 @@
 **Main Branch**: `main`  
 **Hosting & Deployment**: Vercel (Auto-deploys on push to `origin/main`)  
 **Stack**: Next.js 14 (App Router), TypeScript, Tailwind CSS, Prisma (SQLite), Nodemailer  
-**Last Updated**: October 17, 2026
+**Last Updated**: October 22, 2026
 
 ---
+
+## Latest Update: October 22, 2026 — On-Ground Progress Photo Gallery & Section Repositioning
+- **Source Media**: Curated from `OCT-2026-PICS-20261022T083823Z-1-001/OCT-2026-PICS` containing 23 authentic on-ground development progress photos.
+- **Curated Selection & WebP Optimization**:
+  - Selected the 12 highest-impact photos showcasing:
+    - 40ft finished asphalt boulevard with flowering central median & streetlights (`oct-avenue-flowering-median.webp`)
+    - Terraced hillside villa plots with panoramic green hill contours (`oct-panoramic-hillside-plots.webp`)
+    - Landscaped hillside staircase with bougainvillea leading to water reservoir (`oct-hilltop-staircase-reservoir.webp`)
+    - Central avenue climbing toward hilltop reservoir (`oct-main-boulevard-water-tank.webp`)
+    - Individual villa plot demarcation with survey stone marker #184 & storm drains (`oct-demarcated-plot-marker-184.webp`)
+    - Marigold flowerbed landscaping along paved roadway kerb (`oct-landscaped-kerbs-flowerbeds.webp`)
+    - Interlocking concrete paver pedestrian sidewalks & crossroads (`oct-paver-walkways-crossroads.webp`)
+    - Underground electrical feeder pillars & street lighting (`oct-underground-power-feeder.webp`)
+    - Official on-site HDUDA and NA-KJP approval billboard (`oct-hduda-approved-billboard.webp`)
+    - Central median rose garden & ornamental palms (`oct-central-median-rose-garden.webp`)
+    - Dual paver walkways, tree plantations, and transformer substations (`oct-avenue-plantations-utilities.webp`)
+    - Ascending hilltop avenue connecting prime ridge plots (`oct-hilltop-approach-boulevard.webp`)
+    - Sanctioned HDUDA Layout Masterplan (`sanctioned-layout-map.png`)
+  - All images resized to max 1920px, subtly enhanced (contrast, vibrance, sharpness), and saved in both `.webp` and `.jpg` in `public/images/gallery/` (compact 350KB-700KB sizes).
+- **Clean Photo Aesthetic**:
+  - Removed all text overlays, badges, dark gradient masks, and card footers directly over the images to keep pure, pristine, edge-to-edge photography.
+  - Interactive Lightbox with keyboard support (ESC, Left/Right arrows), Next/Prev navigation, image counter, and booking CTA.
+- **Section Re-Ordering**:
+  - Moved `<Gallery />` high up on the homepage in `app/page.tsx` — placed directly after `<ProjectIntro />` (above videos and amenities) so visitors immediately see real on-ground execution.
+  - Updated `components/Navbar.tsx` navLinks to display `Site Photos` in natural top-down browsing sequence.
 
 ## 1. Project Overview
 The Aurora Hills is a premium real estate landing page and management portal for luxury residential villa plots located near NH-4 Highway, Kelgerri, Dharwad, Karnataka. The layout is HDUDA and NA-KJP approved with 20+ world-class amenities.

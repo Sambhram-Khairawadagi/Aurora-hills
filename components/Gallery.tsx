@@ -1,15 +1,44 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { createPortal } from "react-dom";
 import Image from "next/image";
-import { Maximize2, X, Sparkles } from "lucide-react";
+import {
+  Maximize2,
+  X,
+  Sparkles,
+  ChevronLeft,
+  ChevronRight,
+  Calendar,
+  CheckCircle2,
+  Layers,
+  Trees,
+  Compass,
+  Zap,
+  MapPin,
+  FileCheck,
+} from "lucide-react";
 
-interface GalleryProps {
-  onOpenVideo: () => void;
+export interface GalleryItem {
+  id: string;
+  title: string;
+  category: "roads" | "plots" | "infra" | "plan";
+  categoryLabel: string;
+  badge: string;
+  src: string;
+  desc: string;
 }
 
-export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
+interface GalleryProps {
+  onOpenVideo?: () => void;
+  onOpenEnquiry?: (source?: string, requirement?: string) => void;
+}
+
+export const Gallery: React.FC<GalleryProps> = ({
+  onOpenVideo,
+  onOpenEnquiry,
+}) => {
+  const [activeCategory, setActiveCategory] = useState<string>("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const [mounted, setMounted] = useState(false);
 
@@ -17,50 +46,162 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
     setMounted(true);
   }, []);
 
-  const galleryItems = [
+  const galleryItems: GalleryItem[] = [
     {
-      title: "Sunset Panorama & Project Branding",
-      category: "Actual Site View",
-      src: "/images/sunset-panorama-boards.jpg",
-      desc: "Golden sunset over the hills with Aurora Hills project boards at the entrance.",
+      id: "avenue-median",
+      title: "Dual-Lane Asphalt Avenue with Flowering Median",
+      category: "roads",
+      categoryLabel: "Avenues & Greenery",
+      badge: "Main Boulevard",
+      src: "/images/gallery/oct-avenue-flowering-median.webp",
+      desc: "Freshly asphalted 40ft main boulevard featuring a manicured central median with flowering shrubs, street lighting, and clear views of the Dharwad hills.",
     },
     {
-      title: "Welcome Gateway at Sunset",
-      category: "Site Entrance",
-      src: "/images/welcome-gate-sunset.jpg",
-      desc: "The branded welcome arch with paved roads and NA-KJP/HDUDA approval banners.",
+      id: "hillside-plots",
+      title: "Terraced Hillside Villa Plots & Panoramic Contours",
+      category: "plots",
+      categoryLabel: "Villa Plots & Views",
+      badge: "Hilltop Elevation",
+      src: "/images/gallery/oct-panoramic-hillside-plots.webp",
+      desc: "Sweeping view of the naturally terraced villa plots with boundary fencing, internal layout roads, and lush green countryside backdrop.",
     },
     {
-      title: "Official Approved Layout Map",
-      category: "Approved Plan",
+      id: "hilltop-staircase",
+      title: "Landscaped Hilltop Staircase & Water Reservoir Deck",
+      category: "infra",
+      categoryLabel: "Infrastructure & Utilities",
+      badge: "Water & Gazebo",
+      src: "/images/gallery/oct-hilltop-staircase-reservoir.webp",
+      desc: "Architectural steps with handrails, bougainvillea, and marigolds leading directly up to the hilltop overhead water tank and sunset vantage deck.",
+    },
+    {
+      id: "main-boulevard",
+      title: "Central Avenue Looking Towards Hilltop Reservoir",
+      category: "roads",
+      categoryLabel: "Avenues & Greenery",
+      badge: "40ft Road",
+      src: "/images/gallery/oct-main-boulevard-water-tank.webp",
+      desc: "Wide central spine road with dual LED streetlights, curb drainage, and terraced plots climbing gracefully up the hillside.",
+    },
+    {
+      id: "plot-demarcation",
+      title: "Individual Villa Plot Demarcation (Plot #184)",
+      category: "plots",
+      categoryLabel: "Villa Plots & Views",
+      badge: "Plot Demarcation",
+      src: "/images/gallery/oct-demarcated-plot-marker-184.webp",
+      desc: "Clearly demarcated residential plots with official survey stone markers, concrete kerb edging, and underground storm drainage channels.",
+    },
+    {
+      id: "flowerbeds-kerbs",
+      title: "Landscaped Kerbside Flowerbeds & Survey Markers",
+      category: "roads",
+      categoryLabel: "Avenues & Greenery",
+      badge: "Avenue Landscaping",
+      src: "/images/gallery/oct-landscaped-kerbs-flowerbeds.webp",
+      desc: "Lush marigold flowerbeds along the paved roadway kerb with official boundary demarcation stones and mountain vistas.",
+    },
+    {
+      id: "paver-crossroads",
+      title: "Finished Paver Pedestrian Footpaths & Crossroads",
+      category: "infra",
+      categoryLabel: "Infrastructure & Utilities",
+      badge: "Pedestrian Walkways",
+      src: "/images/gallery/oct-paver-walkways-crossroads.webp",
+      desc: "Interlocking concrete paver pedestrian sidewalks at internal layout crossroads, designed for safe family morning walks.",
+    },
+    {
+      id: "underground-power",
+      title: "Underground Power Feeder Pillars & Electrification",
+      category: "infra",
+      categoryLabel: "Infrastructure & Utilities",
+      badge: "Underground Power",
+      src: "/images/gallery/oct-underground-power-feeder.webp",
+      desc: "State-of-the-art underground electrical distribution boxes and street lighting poles installed cleanly alongside paved footpaths.",
+    },
+    {
+      id: "hduda-billboard",
+      title: "Official HDUDA & NA-KJP Approved Site Billboard",
+      category: "plan",
+      categoryLabel: "Approved Masterplan",
+      badge: "100% Legal Approval",
+      src: "/images/gallery/oct-hduda-approved-billboard.webp",
+      desc: "Authentic on-site project signage displaying HDUDA and NA-KJP approvals, assuring 100% legal safety and clear titles.",
+    },
+    {
+      id: "rose-garden-median",
+      title: "Blooming Rose Garden Along Central Median",
+      category: "roads",
+      categoryLabel: "Avenues & Greenery",
+      badge: "Central Median",
+      src: "/images/gallery/oct-central-median-rose-garden.webp",
+      desc: "Red roses and ornamental palms planted along the concrete-curbed avenue median extending toward the township plateau.",
+    },
+    {
+      id: "avenue-plantations",
+      title: "Dual Sidewalks, Transformers & Tree Plantations",
+      category: "infra",
+      categoryLabel: "Infrastructure & Utilities",
+      badge: "Township Utilities",
+      src: "/images/gallery/oct-avenue-plantations-utilities.webp",
+      desc: "Dual interlocking paver sidewalks with tree plantations, dedicated electrical transformer substations, and clear layout roads.",
+    },
+    {
+      id: "hilltop-approach",
+      title: "Hilltop Approach Road & Elevated Contours",
+      category: "plots",
+      categoryLabel: "Villa Plots & Views",
+      badge: "Scenic Vantage",
+      src: "/images/gallery/oct-hilltop-approach-boulevard.webp",
+      desc: "Ascending layout avenue connecting prime hillside plots to the top ridge with streetlights and stormwater drains in place.",
+    },
+    {
+      id: "sanctioned-masterplan",
+      title: "Official Sanctioned HDUDA Layout Masterplan",
+      category: "plan",
+      categoryLabel: "Approved Masterplan",
+      badge: "Sanctioned Blueprint",
       src: "/images/sanctioned-layout-map.png",
-      desc: "Demarcated residential plots with 30ft/40ft wide roads and parks.",
-    },
-    {
-      title: "Internal Avenue & Visitor Access",
-      category: "Site Progress",
-      src: "/images/internal-avenue-visitors.jpg",
-      desc: "Wide asphalt avenue with street lights, branding boards, and visitor transport.",
-    },
-    {
-      title: "Exit Gate & Green Hills Backdrop",
-      category: "Site Progress",
-      src: "/images/exit-gate-hills.jpg",
-      desc: "The 'Thank You' exit arch with panoramic Dharwad hills in the background.",
-    },
-    {
-      title: "Site Office & Infrastructure Progress",
-      category: "Construction",
-      src: "/images/site-office-infra.jpg",
-      desc: "On-site office with water infrastructure and street lighting in progress.",
+      desc: "Official approved layout blueprint showing residential plot dimensions (30x40, 30x50, 40x60, odd sizes), road widths, and public open green spaces.",
     },
   ];
 
-  // Close lightbox on Escape key
+  const categories = [
+    { key: "all", label: "All Photos", icon: Layers, count: galleryItems.length },
+    { key: "roads", label: "Avenues & Greenery", icon: Trees, count: galleryItems.filter(i => i.category === "roads").length },
+    { key: "plots", label: "Villa Plots & Views", icon: Compass, count: galleryItems.filter(i => i.category === "plots").length },
+    { key: "infra", label: "Infrastructure & Utilities", icon: Zap, count: galleryItems.filter(i => i.category === "infra").length },
+    { key: "plan", label: "Approved Masterplan", icon: FileCheck, count: galleryItems.filter(i => i.category === "plan").length },
+  ];
+
+  const filteredItems = activeCategory === "all"
+    ? galleryItems
+    : galleryItems.filter(item => item.category === activeCategory);
+
+  const handlePrev = useCallback(() => {
+    if (lightboxIndex === null) return;
+    setLightboxIndex((prev) =>
+      prev === null || prev === 0 ? filteredItems.length - 1 : prev - 1
+    );
+  }, [lightboxIndex, filteredItems.length]);
+
+  const handleNext = useCallback(() => {
+    if (lightboxIndex === null) return;
+    setLightboxIndex((prev) =>
+      prev === null || prev === filteredItems.length - 1 ? 0 : prev + 1
+    );
+  }, [lightboxIndex, filteredItems.length]);
+
+  // Close lightbox on Escape key & Arrow navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (lightboxIndex === null) return;
       if (e.key === "Escape") {
         setLightboxIndex(null);
+      } else if (e.key === "ArrowLeft") {
+        handlePrev();
+      } else if (e.key === "ArrowRight") {
+        handleNext();
       }
     };
     if (lightboxIndex !== null) {
@@ -73,60 +214,125 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "unset";
     };
-  }, [lightboxIndex]);
+  }, [lightboxIndex, handlePrev, handleNext]);
 
-  const lightboxModal = lightboxIndex !== null && mounted ? (
+  const currentLightboxItem =
+    lightboxIndex !== null && filteredItems[lightboxIndex]
+      ? filteredItems[lightboxIndex]
+      : null;
+
+  const lightboxModal = currentLightboxItem && mounted ? (
     createPortal(
-      <div 
+      <div
         onClick={() => setLightboxIndex(null)}
-        className="fixed inset-0 z-[999999] bg-black/90 backdrop-blur-xl flex items-center justify-center p-4 sm:p-6 animate-fade-in"
+        className="fixed inset-0 z-[999999] bg-black/92 backdrop-blur-2xl flex items-center justify-center p-3 sm:p-6 animate-fade-in select-none"
       >
-        {/* Top Floating Close Button */}
+        {/* Top Controls Header */}
+        <div className="fixed top-4 left-4 right-4 sm:top-6 sm:left-6 sm:right-6 z-[1000000] flex items-center justify-between pointer-events-none">
+          <div className="pointer-events-auto flex items-center gap-2 px-3 sm:px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs sm:text-sm font-semibold shadow-xl">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span>
+              Photo {lightboxIndex! + 1} of {filteredItems.length}
+            </span>
+            <span className="text-white/40">|</span>
+            <span className="text-emerald-300 hidden sm:inline">
+              {currentLightboxItem.badge}
+            </span>
+          </div>
+
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setLightboxIndex(null);
+            }}
+            className="pointer-events-auto px-4 py-2 rounded-full bg-white text-forest-950 hover:bg-emerald-600 hover:text-white font-bold text-xs sm:text-sm shadow-2xl flex items-center gap-2 transition-all hover:scale-105 active:scale-95 cursor-pointer border border-gray-200"
+            aria-label="Close Lightbox"
+          >
+            <X className="w-4 h-4" />
+            <span className="hidden sm:inline">Close</span>
+            <span className="text-xs opacity-60 font-mono">(ESC)</span>
+          </button>
+        </div>
+
+        {/* Previous Navigation Arrow */}
         <button
           type="button"
           onClick={(e) => {
             e.stopPropagation();
-            setLightboxIndex(null);
+            handlePrev();
           }}
-          className="fixed top-6 right-6 z-[1000000] px-4 py-2 rounded-full bg-white text-forest-950 hover:bg-emerald-600 hover:text-white font-bold text-xs sm:text-sm shadow-2xl flex items-center gap-2 transition-all hover:scale-105 active:scale-95 cursor-pointer border border-gray-200"
-          aria-label="Close Lightbox Modal"
+          className="fixed left-2 sm:left-6 z-[1000000] w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/60 hover:bg-emerald-600 text-white border border-white/20 flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-2xl cursor-pointer"
+          aria-label="Previous Photo"
         >
-          <X className="w-5 h-5" />
-          <span>Close Window (ESC)</span>
+          <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8" />
         </button>
 
-        {/* Modal Content Box */}
-        <div 
-          onClick={(e) => e.stopPropagation()}
-          className="relative max-w-5xl w-full max-h-[85vh] flex flex-col items-center cursor-default"
+        {/* Next Navigation Arrow */}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            handleNext();
+          }}
+          className="fixed right-2 sm:right-6 z-[1000000] w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-black/60 hover:bg-emerald-600 text-white border border-white/20 flex items-center justify-center transition-all hover:scale-110 active:scale-95 shadow-2xl cursor-pointer"
+          aria-label="Next Photo"
         >
-          <div className="relative w-full h-[55vh] sm:h-[70vh] rounded-2xl overflow-hidden bg-black/50 shadow-2xl">
+          <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8" />
+        </button>
+
+        {/* Modal Main Content Box */}
+        <div
+          onClick={(e) => e.stopPropagation()}
+          className="relative max-w-6xl w-full flex flex-col items-center cursor-default pt-14 pb-4"
+        >
+          {/* Main Image Container */}
+          <div className="relative w-full h-[52vh] sm:h-[65vh] rounded-3xl overflow-hidden bg-black/60 shadow-2xl border border-white/10 flex items-center justify-center">
             <Image
-              src={galleryItems[lightboxIndex].src}
-              alt={galleryItems[lightboxIndex].title}
+              src={currentLightboxItem.src}
+              alt={currentLightboxItem.title}
               fill
+              sizes="(max-width: 1280px) 100vw, 1200px"
               className="object-contain"
               priority
             />
           </div>
-          
-          {/* Caption & Dismiss Tip */}
-          <div className="mt-4 text-center text-white space-y-1.5 max-w-xl px-4">
-            <h4 className="text-lg sm:text-xl font-bold font-serif">
-              {galleryItems[lightboxIndex].title}
-            </h4>
-            <p className="text-xs sm:text-sm text-white/80">
-              {galleryItems[lightboxIndex].desc}
-            </p>
-            <div className="pt-2">
+
+          {/* Caption & Actions Card */}
+          <div className="mt-4 w-full max-w-3xl px-4 py-3 sm:py-4 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/15 text-white shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+            <div className="space-y-1 max-w-xl">
+              <div className="flex items-center justify-center sm:justify-start gap-2">
+                <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/30 text-emerald-300 text-xs font-bold border border-emerald-400/30 uppercase tracking-wider">
+                  {currentLightboxItem.categoryLabel}
+                </span>
+                <span className="text-xs text-white/60 font-medium">
+                  {currentLightboxItem.badge}
+                </span>
+              </div>
+              <h4 className="text-base sm:text-lg font-bold font-serif text-white">
+                {currentLightboxItem.title}
+              </h4>
+              <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
+                {currentLightboxItem.desc}
+              </p>
+            </div>
+
+            {/* Quick Inquiry CTA */}
+            {onOpenEnquiry && (
               <button
                 type="button"
-                onClick={() => setLightboxIndex(null)}
-                className="px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-xs text-white border border-white/20 transition-colors"
+                onClick={() => {
+                  setLightboxIndex(null);
+                  onOpenEnquiry(
+                    `Gallery Photo: ${currentLightboxItem.title}`,
+                    `Inquiry regarding site photo: ${currentLightboxItem.title}`
+                  );
+                }}
+                className="flex-shrink-0 px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold text-xs sm:text-sm shadow-lg hover:shadow-emerald-500/30 transition-all hover:scale-105 active:scale-95 flex items-center gap-1.5"
               >
-                ✕ Click here or press ESC to close
+                <span>Book Free Site Visit</span>
               </button>
-            </div>
+            )}
           </div>
         </div>
       </div>,
@@ -135,45 +341,150 @@ export const Gallery: React.FC<GalleryProps> = ({ onOpenVideo }) => {
   ) : null;
 
   return (
-    <section id="gallery" className="py-24 lg:py-32 vibrant-section-glow text-forest-950 relative overflow-hidden">
+    <section
+      id="gallery"
+      className="py-20 lg:py-28 vibrant-section-glow text-forest-950 relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs sm:text-sm font-black uppercase tracking-widest">
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-10">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs sm:text-sm font-black uppercase tracking-widest shadow-sm">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
             <Sparkles className="w-4 h-4 text-emerald-600" />
-            Actual Photographic Showcase
+            October 2026 Live Township Progress Update
           </div>
+
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
-            Real Site Photos & <span className="vibrant-text-gradient">Project Imagery</span>
+            Real Site Photos &{" "}
+            <span className="vibrant-text-gradient">Township Progress</span>
           </h2>
+
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
-            Authentic on-ground site photographs and layout blueprints of The Aurora Hills.
+            See the actual on-ground transformation: 40ft wide finished asphalt
+            boulevards, flowering medians, demarcated villa plots, underground
+            power feeder pillars, and hilltop water reservoir.
           </p>
+
+          {/* Quick Metrics Strip */}
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm font-bold text-forest-900">
+            <div className="flex items-center gap-1.5 bg-emerald-50/80 px-3 py-1 rounded-full border border-emerald-200">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <span>40ft & 30ft Asphalt Avenues Done</span>
+            </div>
+            <div className="flex items-center gap-1.5 bg-emerald-50/80 px-3 py-1 rounded-full border border-emerald-200">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <span>Yellow Plot Demarcation Stones Placed</span>
+            </div>
+            <div className="flex items-center gap-1.5 bg-emerald-50/80 px-3 py-1 rounded-full border border-emerald-200">
+              <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <span>Underground Electrification Active</span>
+            </div>
+          </div>
         </div>
 
-        {/* Gallery Grid */}
+        {/* Filter Tabs */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
+          {categories.map((cat) => {
+            const Icon = cat.icon;
+            const isActive = activeCategory === cat.key;
+            return (
+              <button
+                key={cat.key}
+                type="button"
+                onClick={() => {
+                  setActiveCategory(cat.key);
+                  setLightboxIndex(null);
+                }}
+                className={`flex items-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer ${
+                  isActive
+                    ? "bg-forest-950 text-white shadow-xl shadow-forest-950/20 scale-105"
+                    : "bg-white text-forest-900 hover:bg-emerald-50 border border-emerald-200/60 shadow-sm"
+                }`}
+              >
+                <Icon className={`w-4 h-4 ${isActive ? "text-emerald-400" : "text-emerald-700"}`} />
+                <span>{cat.label}</span>
+                <span
+                  className={`text-[11px] px-2 py-0.5 rounded-full font-black ${
+                    isActive
+                      ? "bg-emerald-500/30 text-emerald-200"
+                      : "bg-emerald-100 text-emerald-800"
+                  }`}
+                >
+                  {cat.count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Gallery Grid — Clean Photos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {galleryItems.map((item, idx) => (
+          {filteredItems.map((item, idx) => (
             <div
-              key={idx}
+              key={item.id}
               onClick={() => setLightboxIndex(idx)}
-              className="group relative rounded-3xl overflow-hidden bg-white border-2 border-emerald-300/40 p-2 shadow-xl shadow-emerald-950/8 cursor-pointer hover:shadow-2xl hover:border-emerald-500 hover:-translate-y-1.5 transition-all duration-300"
+              className="group relative rounded-3xl overflow-hidden bg-white border-2 border-emerald-300/40 p-2 sm:p-2.5 shadow-xl shadow-emerald-950/8 cursor-pointer hover:shadow-2xl hover:border-emerald-500 hover:-translate-y-1.5 transition-all duration-300"
             >
-              <div className="relative h-64 sm:h-72 rounded-2xl overflow-hidden bg-sand-200">
+              <div className="relative h-64 sm:h-72 lg:h-80 rounded-2xl overflow-hidden bg-sand-200">
                 <Image
                   src={item.src}
                   alt={item.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, 400px"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-                {/* Enlarge Button */}
-                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-emerald-600/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform scale-90 group-hover:scale-100 shadow-lg border border-emerald-400">
+
+                {/* Subtle Hover Enlarge Button */}
+                <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-emerald-600/90 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform scale-90 group-hover:scale-100 shadow-xl border border-emerald-400">
                   <Maximize2 className="w-5 h-5 text-white" />
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Bottom Tour Booking Banner */}
+        <div className="mt-14 rounded-3xl bg-gradient-to-r from-forest-950 via-forest-900 to-emerald-950 p-6 sm:p-8 text-white shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-6 border border-emerald-500/30">
+          <div className="space-y-2 text-center sm:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-400/30">
+              <Calendar className="w-3.5 h-3.5" />
+              <span>Complimentary Weekend Site Visits Available</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-black font-serif">
+              Want to walk on these finished avenues in person?
+            </h3>
+            <p className="text-white/80 text-xs sm:text-sm max-w-xl">
+              We arrange comfortable AC pickup and drop from Hubli & Dharwad for
+              you and your family to inspect available villa plots.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-3 flex-shrink-0">
+            {onOpenEnquiry && (
+              <button
+                type="button"
+                onClick={() =>
+                  onOpenEnquiry(
+                    "Township Gallery Bottom Banner",
+                    "Complimentary site visit request to inspect finished roads and plots"
+                  )
+                }
+                className="px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-forest-950 font-black text-sm shadow-xl shadow-amber-500/20 hover:scale-105 active:scale-95 transition-all cursor-pointer"
+              >
+                Schedule Free Site Visit
+              </button>
+            )}
+
+            {onOpenVideo && (
+              <button
+                type="button"
+                onClick={onOpenVideo}
+                className="px-5 py-3 rounded-2xl bg-white/10 hover:bg-white/20 text-white font-bold text-sm border border-white/20 backdrop-blur-md hover:scale-105 active:scale-95 transition-all cursor-pointer"
+              >
+                Watch Drone Video
+              </button>
+            )}
+          </div>
         </div>
       </div>
 

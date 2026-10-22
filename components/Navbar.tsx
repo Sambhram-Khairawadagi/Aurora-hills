@@ -34,9 +34,9 @@ export const Navbar: React.FC<NavbarProps> = ({
     { label: "Overview", href: "#hero" },
     { label: "Festive Scheme 🎁", href: "#festive-offer", isSpecial: true },
     { label: "About", href: "#about" },
+    { label: "Site Photos", href: "#gallery" },
     { label: "Amenities", href: "#amenities" },
     { label: "Layout", href: "#layout" },
-    { label: "Gallery", href: "#gallery" },
   ];
 
   return (
