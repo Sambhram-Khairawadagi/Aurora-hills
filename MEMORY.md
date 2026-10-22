@@ -10,8 +10,8 @@
 
 ## Latest Update: October 22, 2026 — On-Ground Progress Photo Gallery & Section Repositioning
 - **Source Media**: Curated from `OCT-2026-PICS-20261022T083823Z-1-001/OCT-2026-PICS` containing 23 authentic on-ground development progress photos.
-- **Curated Selection & WebP Optimization**:
-  - Selected the 12 highest-impact photos showcasing:
+- **Full 23-Photo Integration & WebP Optimization**:
+  - Included 100% of all 23 photos from `OCT-2026-PICS-20261022T083823Z-1-001/OCT-2026-PICS` + the Sanctioned Layout Blueprint (24 items total):
     - 40ft finished asphalt boulevard with flowering central median & streetlights (`oct-avenue-flowering-median.webp`)
     - Terraced hillside villa plots with panoramic green hill contours (`oct-panoramic-hillside-plots.webp`)
     - Landscaped hillside staircase with bougainvillea leading to water reservoir (`oct-hilltop-staircase-reservoir.webp`)
@@ -24,8 +24,19 @@
     - Central median rose garden & ornamental palms (`oct-central-median-rose-garden.webp`)
     - Dual paver walkways, tree plantations, and transformer substations (`oct-avenue-plantations-utilities.webp`)
     - Ascending hilltop avenue connecting prime ridge plots (`oct-hilltop-approach-boulevard.webp`)
-    - Sanctioned HDUDA Layout Masterplan (`sanctioned-layout-map.png`)
-  - All images resized to max 1920px, subtly enhanced (contrast, vibrance, sharpness), and saved in both `.webp` and `.jpg` in `public/images/gallery/` (compact 350KB-700KB sizes).
+    - Grand entrance welcome arch & main boulevard (`oct-security-arch-gateway-boulevard.webp`)
+    - Interlocking paver laying & avenue tree planting (`oct-paver-laying-avenue-trees.webp`)
+    - Perimeter security fence & royal palm plantations (`oct-perimeter-fence-palm-plantations.webp`)
+    - Boundary fence landscaping & ornamental greenery (`oct-boundary-fence-ornamental-greenery.webp`)
+    - Panoramic hillside vista of terraced plots & roads (`oct-panoramic-terraced-layout-vista.webp`)
+    - Contoured retaining wall & amphitheater tiering (`oct-stepped-retaining-wall-contour.webp`)
+    - Overhead water tank & hilltop boulevard access (`oct-hilltop-water-reservoir-boulevard.webp`)
+    - Electrical transformer substation & level plots (`oct-electrical-transformer-contour.webp`)
+    - Finished paver footpath & underground power pillar (`oct-paver-footpath-power-pillar.webp`)
+    - Electrification distribution mast & storm drainage (`oct-utility-power-pole-drainage.webp`)
+    - Underground high-pressure water supply pipeline (`oct-underground-water-pipeline.webp`)
+    - Official Sanctioned HDUDA Layout Masterplan (`sanctioned-layout-map.png`)
+  - All images resized to max 1920px, subtly enhanced (contrast, vibrance, sharpness), and saved in both `.webp` and `.jpg` in `public/images/gallery/` (compact 320KB-850KB sizes).
 - **Clean Photo Aesthetic**:
   - Removed all text overlays, badges, dark gradient masks, and card footers directly over the images to keep pure, pristine, edge-to-edge photography.
   - Interactive Lightbox with keyboard support (ESC, Left/Right arrows), Next/Prev navigation, image counter, and booking CTA.
