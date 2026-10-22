@@ -20,7 +20,8 @@
   - Removed `"SBI Approved"` pill from the top festive banner.
   - Replaced `"Any Plot (Exploring)"` with **`"Odd Size (Custom)"`** in the plot selection buttons.
 - **Trust Badges (`components/TrustBadges.tsx`)**:
-  - Removed repetitive bottom checkmark strip (`"100% Clear & Approved"` / `"100% Legally Clear & Approved"`) from all 4 approval cards, streamlining the 2x2 grid.
+  - Removed repetitive bottom checkmark strip (`"100% Clear & Approved"` / `"100% Legally Clear & Approved"`) from all 4 approval cards.
+  - Reduced height significantly (~45% more compact): streamlined padding (`p-2.5 sm:p-3.5 lg:p-4`), eliminated artificial `sm:h-16` spacers, resized icons (`w-4 sm:w-4.5`), and set snug line-heights so the entire trust strip acts like a sleek ribbon.
 - **Gallery Updates (`components/Gallery.tsx`)**:
   - Removed top badge pill (`"OCTOBER 2026 LIVE TOWNSHIP PROGRESS UPDATE"`).
   - Configured title `"Real Site Photos & Township Progress"` to remain on a single line on desktop (`lg:whitespace-nowrap`).
