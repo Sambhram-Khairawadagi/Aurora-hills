@@ -8,7 +8,37 @@
 
 ---
 
-## Latest Update: October 22, 2026 — Hero Supporting Copy Update
+## Latest Update: October 22, 2026 — Modern Bold Sans-Serif Font Specimen Overhaul & End-to-End Sub-Text Enlargement
+- **Reference**: User request with font specimen image `9843e934-6757-46d8-931e-a53bb491504f.jpg` ("use this fonts and sub texts have become very small in everywhere please check end to end all the things ayout spaccing and everything if anything missing out add it r correct it").
+- **Font Specimen Identified**: Clean, modern, high-contrast, bold neo-grotesque Sans-Serif font (Inter / Arial style with heavy weights like "Penultimate" and "SCHADENFREUDE"). Replaced previous vintage serif styling across all headings and cards.
+- **Global Font Configuration (`tailwind.config.ts` & `app/layout.tsx`)**:
+  - Mapped `serif`, `vintage`, and `sans` font families to `["var(--font-sans)", "Arial", "Helvetica", "sans-serif"]` backed by Google Fonts `Inter` with all weights (100 to 900) loaded.
+- **End-to-End Sub-Text & Layout Spacing Remediation (35 Files Updated)**:
+  - **Eliminated All Tiny Text Classes**: Completely removed microscopic classes (`text-[7.5px]`, `text-[8px]`, `text-[9px]`, `text-[10px]`, `text-[11px]`) across the entire repository.
+  - **Standardized Text Scale**:
+    - Minimum badge/chip size: `text-xs` (12px) with bold weights (`font-bold` / `font-black`).
+    - Minimum card description/sub-text: `text-xs sm:text-sm` (12-14px) or `text-sm sm:text-base` (14-16px).
+    - Form labels and inputs: `text-xs font-bold uppercase` / `text-sm` inputs.
+    - Card headings: `text-xl sm:text-2xl font-black font-sans`.
+    - Section headings: `text-3xl sm:text-4xl lg:text-5xl font-black font-sans tracking-tight`.
+  - **Sections Audited & Enhanced**:
+    - `Hero.tsx`: H1 title (`font-sans font-black tracking-tight lg:text-[5.75rem]`), subtitle, developer pill, approval badges, price callouts.
+    - `TrustBadges.tsx`: Replaced micro-text with `text-xs uppercase font-black` badges, `text-sm sm:text-base font-black` titles, `text-xs sm:text-sm` descriptions, generous card padding.
+    - `HeroLeadCard.tsx`: Converted to `font-sans font-black`, plot option sub-text raised to `text-xs font-bold`, form inputs and labels enlarged.
+    - `FestiveScheme.tsx`: All plot scheme cards, dimensions, ribbons, pricing tables, and feature cards upgraded to bold sans-serif with enlarged descriptions.
+    - `SanctionedLayout.tsx`: Dimensions and starting prices elevated to `text-sm font-black` / `font-medium`, duplicate copy removed.
+    - `Amenities.tsx`: Category filter badges, amenity cards, descriptions, and tag pills enlarged.
+    - `Infrastructure.tsx`, `LocationConnectivity.tsx`, `PriceCalculator.tsx`, `FutureReturnsCalculator.tsx`, `Gallery.tsx`, `DevelopmentVideo.tsx`, `MainShowcaseVideo.tsx`, `ProjectIntro.tsx`, `WhyAuroraHills.tsx`, `Partners.tsx`, `SiteVisitSection.tsx`.
+    - Modals & Floating CTAs: `EnquiryModal.tsx`, `BrochureModal.tsx`, `QRCodeModal.tsx`, `SiteVisitModal.tsx`, `LeadGate.tsx`, `FloatingActions.tsx`, `AdsTopBar.tsx`, `FestiveTicker.tsx`, `Navbar.tsx`, `Footer.tsx`.
+    - Legal & Admin pages: `app/terms-and-conditions/page.tsx`, `app/privacy-policy/page.tsx`, `app/admin/page.tsx`.
+- **Verification**:
+  - `npx tsc --noEmit` exited with code 0 (zero compiler errors).
+  - Browser subagent visual inspection confirmed bold, legible typography, proper spacing, and zero layout overflow across desktop and mobile.
+  - Changes committed and pushed to `origin main` (commit `9d12c99`).
+
+---
+
+## Prior Update: October 22, 2026 — Hero Supporting Copy Update
 - **Reference**: User request with annotated screenshot `WhatsApp Image 2026-10-22 at 5.48.06 PM.jpeg` red-scribbling the previous supporting copy.
 - **Updated Copy (`components/Hero.tsx`)**:
   - Replaced the previous single-paragraph text with the new luxury value proposition:
