@@ -3,9 +3,9 @@ import { db } from "@/lib/db";
 
 const defaultSettings = {
   startingPrice: "₹42 Lakhs",
-  phoneNumbers: JSON.stringify(["9019765265", "7019165265", "9880166275", "9242508288"]),
-  primaryPhone: "9019765265",
-  whatsappNumber: "9019765265",
+  phoneNumbers: JSON.stringify(["89701 98701", "73533 11107", "98801 66275", "92425 08288"]),
+  primaryPhone: "8970198701",
+  whatsappNumber: "8970198701",
   announcementText: "Hosa Lifestyle, Hosa Dharwad – Pre-Launch Exclusive Plot Opportunities Open",
   heroTitle: "LIVE CLOSER TO NATURE. INVEST IN TOMORROW.",
   heroSubtitle: "A premium, thoughtfully planned plotted community in Dharwad City, designed around lifestyle, connectivity, greenery and long-term value.",

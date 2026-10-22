@@ -235,7 +235,7 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
             <div className="text-[11px] text-charcoal-700 pt-0.5">
               Need immediate answers?{" "}
               <a
-                href={`tel:${salesPhone}`}
+                href={`tel:${salesPhone.replace(/\s+/g, "")}`}
                 onClick={() => trackPhoneClick(salesPhone)}
                 className="font-black text-emerald-800 hover:underline inline-flex items-center gap-1 ml-1"
               >

@@ -104,7 +104,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
                 {CONTACT_NUMBERS.map((num, idx) => (
                   <a
                     key={idx}
-                    href={`tel:${num}`}
+                    href={`tel:${num.replace(/\s+/g, "")}`}
                     onClick={() => trackPhoneClick(num)}
                     className="p-3 rounded-2xl bg-white border border-emerald-200/80 text-forest-950 hover:text-emerald-700 text-xs font-bold flex items-center gap-2 transition-all hover:scale-105 shadow-sm group"
                   >

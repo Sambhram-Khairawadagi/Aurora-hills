@@ -84,14 +84,30 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
             </h4>
 
             <div className="space-y-3 text-sm text-charcoal-700 font-medium">
-              <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span className="font-bold">{CONTACT_NUMBERS.join(" • ")}</span>
+              <div className="flex items-start gap-2.5">
+                <Phone className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-1" />
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-bold">
+                  {CONTACT_NUMBERS.map((num, idx) => (
+                    <React.Fragment key={num}>
+                      <a
+                        href={`tel:${num.replace(/\s+/g, "")}`}
+                        className="hover:text-emerald-700 hover:underline transition-colors whitespace-nowrap"
+                      >
+                        {num}
+                      </a>
+                      {idx < CONTACT_NUMBERS.length - 1 && (
+                        <span className="text-emerald-400 select-none">•</span>
+                      )}
+                    </React.Fragment>
+                  ))}
+                </div>
               </div>
 
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-emerald-600 flex-shrink-0" />
-                <span>{EMAIL_ADDRESS}</span>
+                <a href={`mailto:${EMAIL_ADDRESS}`} className="hover:text-emerald-700 hover:underline transition-colors">
+                  {EMAIL_ADDRESS}
+                </a>
               </div>
             </div>
 

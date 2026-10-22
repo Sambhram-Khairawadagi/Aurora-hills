@@ -180,13 +180,13 @@ export default function RootLayout({
         "url": "https://theaurorahills.com",
         "logo": "https://theaurorahills.com/images/aurora-hills-logo.png",
         "image": "https://theaurorahills.com/images/hero-layout-sunset.png",
-        "telephone": "+91-9019765265",
+        "telephone": "+91-8970198701",
         "priceRange": "₹42,00,000 - ₹1,20,00,000",
         "currenciesAccepted": "INR",
         "paymentAccepted": "Bank Loan, Cheque, Bank Transfer, NEFT/RTGS",
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+91-9019765265",
+          "telephone": "+91-8970198701",
           "contactType": "sales",
           "areaServed": "IN",
           "availableLanguage": ["English", "Kannada", "Hindi"]

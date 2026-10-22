@@ -348,9 +348,10 @@ export const CONNECTIVITY_CATEGORIES = {
 };
 
 export const CONTACT_NUMBERS = [
-  "8970198701",
-  "9019765265",
-  "7019165265"
+  "89701 98701",
+  "73533 11107",
+  "98801 66275",
+  "92425 08288"
 ];
 
 export const WHATSAPP_NUMBER = "918970198701";
@@ -396,7 +397,7 @@ export const FESTIVE_SCHEME_DATA = {
   kannadaTitle: "ಭೂಮಿ & ಬಂಗಾರ | ಭೂಮಿ & ಬೆಳ್ಳಿ",
   tagline: "A Precious Beginning. A Precious Honour.",
   locationBadge: "WITHIN DHARWAD CITY LIMITS",
-  contactNumbers: ["8970198701", "9019765265"],
+  contactNumbers: ["89701 98701", "73533 11107", "98801 66275", "92425 08288"],
   posterImage: "/images/dasara-deepawali-special-poster.jpg",
   termsNote: "*Limited period festival offer. T&C Apply.",
   schemes: [
