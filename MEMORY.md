@@ -8,7 +8,19 @@
 
 ---
 
-## Latest Update: October 22, 2026 — Light Theme Transformation & Vintage Luxury Estate Typography
+## Latest Update: October 22, 2026 — Hero White Mist Reduction & Landscape Clarity Enhancement
+- **User Request**: "REDUCE THE WHITE MIST IN THE HERO SECTION"
+- **Changes Applied (`components/Hero.tsx`)**:
+  - Cut white gradient overlay opacity in half: changed from `from-white/95 via-white/80 to-white/20 sm:from-white/92 sm:via-white/65` down to `from-white/60 via-white/30 to-transparent sm:from-white/50 sm:via-white/20 to-transparent`.
+  - Removed top white fog layer (`to-white/40`) entirely. Replaced full-height vertical gradient with a crisp, low bottom fade (`bottom-0 h-24 sm:h-32 bg-gradient-to-t from-[#F8FAF7] to-transparent`).
+  - Removed ambient blur blobs that contributed to haze over the scenery.
+  - Enhanced text drop shadows (`drop-shadow-[0_2px_12px_rgba(255,255,255,0.95)]` on H1 title and subtitle) to maintain high contrast and readability against the richer, un-fogged landscape.
+  - The lush Dharwad rolling hills, 40ft curved asphalt avenue, flowering marigold central median, and panoramic terraced plots now shine through with vibrant real-world clarity.
+- **Verification**: Verified via Chrome CDP screenshots on desktop (1440px) and mobile (390px). 0 TypeScript errors.
+
+---
+
+## Prior Update: October 22, 2026 — Light Theme Transformation & Vintage Luxury Estate Typography
 - **User Request**: "the hero looks very dark make it look like light theme and use any typography but little vintage you decide"
 - **Light Theme Visual Transformation**:
   - Replaced dark sunset visuals and heavy black gradient masks (`from-black/85 via-black/70 to-black/40`) with a luminous, airy, daytime aesthetic that flows seamlessly into the rest of the site.

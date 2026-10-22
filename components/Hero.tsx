@@ -54,15 +54,9 @@ export const Hero: React.FC<HeroProps> = ({
           />
         </div>
 
-        {/* Airy Light-Theme Radiant Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-white/20 sm:from-white/92 sm:via-white/65 sm:to-transparent pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#F8FAF7] via-transparent to-white/40 pointer-events-none" />
-      </div>
-
-      {/* Subtle Ambient Glowing Light Blobs */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute -top-20 left-1/4 w-96 h-96 bg-emerald-200/20 rounded-full blur-[100px]" />
-        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-amber-200/20 rounded-full blur-[80px]" />
+        {/* Clean, Subtle Light-Theme Gradient Overlays (Mist Greatly Reduced for Maximum Photo Clarity) */}
+        <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent sm:from-white/50 sm:via-white/20 sm:to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 inset-x-0 h-24 sm:h-32 bg-gradient-to-t from-[#F8FAF7] to-transparent pointer-events-none" />
       </div>
 
       {/* Main Content Container */}
@@ -88,18 +82,18 @@ export const Hero: React.FC<HeroProps> = ({
           
         {/* Vintage Luxury Project Title Header */}
         <div className="mt-3 sm:mt-4 mb-5 sm:mb-7">
-          <h1 className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[6.25rem] font-black font-serif text-forest-950 tracking-tight leading-[1.06] drop-shadow-sm">
+          <h1 className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[6.25rem] font-black font-serif text-forest-950 tracking-tight leading-[1.06] drop-shadow-[0_2px_12px_rgba(255,255,255,0.95)]">
             THE AURORA <br className="sm:hidden" /><span className="hidden sm:inline"> </span>HILLS
-            <span className="block text-2xl sm:text-4xl md:text-5xl lg:text-[2.85rem] font-serif italic font-bold text-amber-800 tracking-normal mt-2 sm:mt-3">
+            <span className="block text-2xl sm:text-4xl md:text-5xl lg:text-[2.85rem] font-serif italic font-bold text-amber-800 tracking-normal mt-2 sm:mt-3 drop-shadow-[0_1px_8px_rgba(255,255,255,0.9)]">
               Villa Plots in Dharwad
             </span>
           </h1>
-          <div className="inline-flex items-center gap-2 mt-3 sm:mt-4 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-emerald-50/90 border border-emerald-300/80 shadow-sm max-w-full">
+          <div className="inline-flex items-center gap-2 mt-3 sm:mt-4 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/95 border border-emerald-300 shadow-sm max-w-full">
              <span className="flex h-2.5 w-2.5 relative flex-shrink-0">
                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600"></span>
              </span>
-             <span className="text-[10px] sm:text-xs font-black tracking-wider sm:tracking-widest text-emerald-900 uppercase truncate">
+             <span className="text-[10px] sm:text-xs font-black tracking-wider sm:tracking-widest text-emerald-950 uppercase truncate">
                HDUDA &amp; NA-KJP Approved Villa Plots
              </span>
           </div>
@@ -112,8 +106,8 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="lg:col-span-7 space-y-4 sm:space-y-6">
 
             {/* Supporting Welcoming Copy */}
-            <p className="text-sm sm:text-base lg:text-lg text-charcoal-800 leading-relaxed font-medium max-w-2xl">
-              Luxury villa plots nestled in lush green hills at <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="text-emerald-800 font-bold hover:text-emerald-600 hover:underline transition-colors">Sunset Viewpoint, Dharwad City</a> — 20+ amenities, wide paved roads, and instant access to top schools, malls &amp; NH-4.
+            <p className="text-sm sm:text-base lg:text-lg text-charcoal-900 leading-relaxed font-semibold max-w-2xl drop-shadow-[0_1px_6px_rgba(255,255,255,0.95)]">
+              Luxury villa plots nestled in lush green hills at <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="text-emerald-900 font-bold hover:text-emerald-700 hover:underline transition-colors underline decoration-emerald-500/50">Sunset Viewpoint, Dharwad City</a> — 20+ amenities, wide paved roads, and instant access to top schools, malls &amp; NH-4.
             </p>
 
             {/* Real Estate Price & Pre-Launch Advantage Card (Light Luxury Edition) */}
