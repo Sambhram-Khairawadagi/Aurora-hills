@@ -106,9 +106,22 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="lg:col-span-7 space-y-4 sm:space-y-6">
 
             {/* Supporting Welcoming Copy */}
-            <p className="text-sm sm:text-base lg:text-lg text-charcoal-900 leading-relaxed font-semibold max-w-2xl drop-shadow-[0_1px_6px_rgba(255,255,255,0.95)]">
-              Luxury villa plots nestled in lush green hills at <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="text-emerald-900 font-bold hover:text-emerald-700 hover:underline transition-colors underline decoration-emerald-500/50">Sunset Viewpoint, Dharwad City</a> — 20+ amenities, wide paved roads, and instant access to top schools, malls &amp; NH-4.
-            </p>
+            <div className="space-y-2 sm:space-y-2.5 max-w-2xl">
+              <p className="text-base sm:text-lg lg:text-xl font-bold text-forest-950 leading-snug drop-shadow-[0_1px_6px_rgba(255,255,255,0.95)]">
+                Discover Luxury Living Amidst Nature at{" "}
+                <a
+                  href="https://share.google/lhDyTbBa3vWnMhOFK"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-900 hover:text-emerald-700 hover:underline transition-colors underline decoration-emerald-500/50"
+                >
+                  Sunset Viewpoint, Dharwad!
+                </a>
+              </p>
+              <p className="text-xs sm:text-sm lg:text-base text-charcoal-800 leading-relaxed font-medium drop-shadow-[0_1px_4px_rgba(255,255,255,0.95)]">
+                Premium villa plots, 20+ world-class amenities, wide paved roads, and seamless access to top schools, malls &amp; NH-4 — your dream lifestyle starts here!
+              </p>
+            </div>
 
             {/* Real Estate Price & Pre-Launch Advantage Card (Light Luxury Edition) */}
             <div className="p-4 sm:p-5 lg:p-6 rounded-2xl sm:rounded-3xl bg-white/95 backdrop-blur-xl border border-emerald-300/80 w-full flex flex-col justify-between gap-3 sm:gap-4 relative overflow-hidden transition-all duration-300 hover:scale-[1.01] shadow-xl">

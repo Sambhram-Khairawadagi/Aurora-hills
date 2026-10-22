@@ -8,7 +8,18 @@
 
 ---
 
-## Latest Update: October 22, 2026 — Official Aurora Hills Logo Integration on Entrance Monument Signboard
+## Latest Update: October 22, 2026 — Hero Supporting Copy Update
+- **Reference**: User request with annotated screenshot `WhatsApp Image 2026-10-22 at 5.48.06 PM.jpeg` red-scribbling the previous supporting copy.
+- **Updated Copy (`components/Hero.tsx`)**:
+  - Replaced the previous single-paragraph text with the new luxury value proposition:
+    - **Header**: `"Discover Luxury Living Amidst Nature at Sunset Viewpoint, Dharwad!"` (with interactive Google Maps link to Sunset Viewpoint).
+    - **Body**: `"Premium villa plots, 20+ world-class amenities, wide paved roads, and seamless access to top schools, malls & NH-4 — your dream lifestyle starts here!"`
+  - Styled with high-contrast text colors (`text-forest-950` bold heading + `text-charcoal-800` medium description) and soft white drop shadows for legibility over the daylight landscape.
+  - Verified across desktop (1440px) and mobile (390px) viewports with zero layout shift or overflow.
+
+---
+
+## Prior Update: October 22, 2026 — Official Aurora Hills Logo Integration on Entrance Monument Signboard
 - **User Request**: "this logo should be aurora hills logo" (referencing cropped screenshot of entrance monument signboard at bottom-left of hero background).
 - **Issue**: The AI-generated daylight photo previously featured a generic sun/hills/waves emblem and typo text ("THE AURORA HILLS - Luxury Piotted Völas") on the stone monument board.
 - **Solution & Implementation**:
