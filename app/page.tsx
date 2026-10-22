@@ -38,11 +38,6 @@ const LocalSeoFaq = dynamic(
   { ssr: true }
 );
 
-const EnquirySection = dynamic(
-  () => import("@/components/EnquirySection").then((mod) => mod.EnquirySection),
-  { ssr: true }
-);
-
 // Dynamically load modals on-demand (zero impact on initial bundle)
 const EnquiryModal = dynamic(
   () => import("@/components/EnquiryModal").then((mod) => mod.EnquiryModal),
@@ -216,9 +211,6 @@ export default function HomePage() {
           onOpenBrochure={handleOpenBrochure}
           onOpenSiteVisit={handleOpenSiteVisit}
         />
-
-        {/* Plot Enquiry Lead Form Section */}
-        <EnquirySection />
 
         {/* Official Marketing Partners */}
         <Partners />

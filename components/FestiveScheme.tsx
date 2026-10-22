@@ -362,7 +362,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
         >
           <div 
             className="relative max-w-2xl w-full bg-white rounded-3xl p-3 sm:p-5 shadow-2xl overflow-hidden"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between mb-3 pb-2 border-b border-gray-100">
               <div className="flex items-center gap-2 text-forest-950">
