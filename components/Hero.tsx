@@ -31,11 +31,11 @@ export const Hero: React.FC<HeroProps> = ({
         {/* Mobile Portrait (9:16 Ratio) */}
         <div className="block sm:hidden absolute inset-0">
           <Image
-            src="/images/aurora-hills-plotted-mobile.png"
+            src="/images/aurora-hills-real-site-hero-mobile.webp"
             alt="The Aurora Hills Plotted Villa Sanctuary Dharwad (Mobile)"
             fill
             priority
-            quality={85}
+            quality={90}
             sizes="100vw"
             className="object-cover object-top"
           />
@@ -44,11 +44,11 @@ export const Hero: React.FC<HeroProps> = ({
         {/* Desktop Landscape (16:9 Ratio) */}
         <div className="hidden sm:block absolute inset-0">
           <Image
-            src="/images/aurora-hills-plotted-masterpiece.png"
+            src="/images/aurora-hills-real-site-hero.webp"
             alt="The Aurora Hills Plotted Villa Sanctuary at Sunset Viewpoint"
             fill
             priority
-            quality={85}
+            quality={90}
             sizes="100vw"
             className="object-cover object-center"
           />
