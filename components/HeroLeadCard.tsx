@@ -16,7 +16,7 @@ const PLOT_OPTIONS = [
   { label: "30×40", sub: "1,200 sq.ft" },
   { label: "30×50", sub: "1,500 sq.ft" },
   { label: "40×60", sub: "2,400 sq.ft" },
-  { label: "Odd Size", sub: "Custom" },
+  { label: "Odd Size", sub: "" },
 ];
 
 export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
@@ -140,20 +140,22 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
                   type="button"
                   key={opt.label}
                   onClick={() => setSelectedPlot(opt.label)}
-                  className={`py-1.5 px-1 rounded-xl text-center border transition-all ${
+                  className={`py-1.5 px-1 rounded-xl text-center border transition-all flex flex-col items-center justify-center min-h-[44px] ${
                     selectedPlot === opt.label
                       ? "bg-emerald-700 text-white border-emerald-800 shadow-md scale-102 font-black"
                       : "bg-emerald-50/70 text-charcoal-800 border-emerald-200 hover:bg-emerald-100 font-bold"
                   }`}
                 >
-                  <span className="block text-xs leading-none">{opt.label}</span>
-                  <span
-                    className={`block text-[9px] mt-0.5 leading-none ${
-                      selectedPlot === opt.label ? "text-emerald-100" : "text-charcoal-500"
-                    }`}
-                  >
-                    {opt.sub}
-                  </span>
+                  <span className="block text-xs leading-none whitespace-nowrap">{opt.label}</span>
+                  {opt.sub ? (
+                    <span
+                      className={`block text-[9px] mt-0.5 leading-none ${
+                        selectedPlot === opt.label ? "text-emerald-100" : "text-charcoal-500"
+                      }`}
+                    >
+                      {opt.sub}
+                    </span>
+                  ) : null}
                 </button>
               ))}
             </div>
