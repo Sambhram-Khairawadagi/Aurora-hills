@@ -8,7 +8,23 @@
 
 ---
 
-## Latest Update: October 22, 2026 — Official Helpline Contact Numbers Update
+## Latest Update: October 22, 2026 — Authentic Real-Site Hero Background Generation (Desktop 16:9 & Mobile 9:16)
+- **Source Context**: Generated directly using reference images from the October 2026 on-ground site development photos (`oct-avenue-flowering-median.jpg`, `oct-panoramic-terraced-layout-vista.jpg`, `oct-panoramic-hillside-plots.jpg`).
+- **Features Captured in Hero Visual**:
+  - 40ft wide finished black asphalt boulevard curving gracefully up the hillside.
+  - Curvilinear central median planted with flowering marigolds and red ornamental shrubs.
+  - Terraced villa plots on green rolling hills at Dharwad's Sunset Viewpoint.
+  - Water tank structure visible on the upper hill ridge.
+  - Warm golden sunset lighting across Dharwad hills with crisp text contrast overlays.
+- **Assets & Integration (`components/Hero.tsx`)**:
+  - Desktop (16:9): `/images/aurora-hills-real-site-hero.webp` & `.jpg` (1376x768).
+  - Mobile (9:16): `/images/aurora-hills-real-site-hero-mobile.webp` & `.jpg` (768x1376).
+  - Tested and visually verified across 1440x900 and 390x844 viewports.
+  - Pushed to `origin/main` in commit `8e86338`.
+
+---
+
+## Prior Update: October 22, 2026 — Official Helpline Contact Numbers Update
 - **Reference Image**: `8311f7a3-a27c-4b00-b2d8-429dfc3aa6fb (1).jpg` showing `DIRECT HELPLINE & DOWNLOADS`.
 - **New Contact Numbers**:
   1. `89701 98701` (Primary helpline & WhatsApp line)
