@@ -234,5 +234,5 @@ The Aurora Hills is a premium real estate landing page and management portal for
 - `6d3f2ea`: docs: document live production verification, multi-project isolation, and keyword calibration.
 - `c2f5964`: docs: record Oct 16 conversion milestone and Oct 17 live negative keyword deployment.
 - `7f9f0a7`: docs: record Oct 19 audit milestone, dimension keywords, and negative keyword updates in strategy.
-- `7700dd3`: fix(analytics): bulletproof gtag event queueing and explicit window.gtag binding.
-- feat(festive): upgrade festive scheme cards with high-res 3D gold and silver visual assets.
+- `2cc7f74`: feat(festive): upgrade festive scheme cards with high-res 3D gold and silver visual assets.
+- `HEAD`: feat(festive): re-export 3D assets directly from client PSDs with enhanced card height framing.

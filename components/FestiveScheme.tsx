@@ -112,7 +112,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             {/* Visual Festive Gift Card */}
             <div className="p-5 sm:p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-amber-50/70 via-white to-amber-50/40 relative">
               {/* Gold Ornament Visual Container */}
-              <div className="relative w-full h-48 sm:h-52 flex items-center justify-center my-1 group-hover:scale-105 transition-transform duration-300">
+              <div className="relative w-full h-52 sm:h-56 flex items-center justify-center my-1 group-hover:scale-105 transition-transform duration-300">
                 <div className="absolute inset-0 bg-gradient-to-tr from-amber-300/30 to-yellow-200/20 rounded-full blur-2xl animate-pulse" />
                 <Image
                   src="/images/festive/festive-50g-gold.webp"
@@ -175,7 +175,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             {/* Visual Festive Gift Card */}
             <div className="p-5 sm:p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-emerald-50/70 via-white to-emerald-50/40 relative">
               {/* Silver Ornaments Visual Container */}
-              <div className="relative w-full h-48 sm:h-52 flex items-center justify-center my-1 group-hover:scale-105 transition-transform duration-300">
+              <div className="relative w-full h-52 sm:h-56 flex items-center justify-center my-1 group-hover:scale-105 transition-transform duration-300">
                 <div className="absolute inset-0 bg-gradient-to-tr from-emerald-300/20 to-teal-200/20 rounded-full blur-2xl animate-pulse" />
                 <Image
                   src="/images/festive/festive-1-5kg-silver.webp"
@@ -237,7 +237,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             {/* Visual Festive Gift Card */}
             <div className="p-5 sm:p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-slate-50/70 via-white to-slate-50/40 relative">
               {/* Silver Kalash Visual Container */}
-              <div className="relative w-full h-48 sm:h-52 flex items-center justify-center my-1 group-hover:scale-105 transition-transform duration-300">
+              <div className="relative w-full h-52 sm:h-56 flex items-center justify-center my-1 group-hover:scale-105 transition-transform duration-300">
                 <div className="absolute inset-0 bg-gradient-to-tr from-slate-300/30 to-zinc-200/20 rounded-full blur-2xl animate-pulse" />
                 <Image
                   src="/images/festive/festive-1kg-silver.webp"
