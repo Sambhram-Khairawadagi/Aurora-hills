@@ -153,7 +153,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                   placeholder="Your full name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full pl-9 pr-3.5 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-sm font-medium"
+                  className="w-full pl-9 pr-3.5 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm font-medium"
                 />
               </div>
             </div>
@@ -171,7 +171,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                   placeholder="10-digit mobile number"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full pl-9 pr-3.5 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-sm font-medium"
+                  className="w-full pl-9 pr-3.5 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm font-medium"
                 />
               </div>
             </div>
@@ -184,7 +184,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
               <select
                 value={formData.requirement}
                 onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
-                className="w-full px-3.5 py-3 neu-input text-forest-950 text-sm bg-[#F0F4ED] font-semibold"
+                className="w-full px-3.5 py-3 neu-input text-forest-950 text-base sm:text-sm bg-[#F0F4ED] font-semibold"
               >
                 <option value="40x60 Plot (50g Gold Offer)">40 × 60 ft (2,400 sq.ft) — 🎁 Win 50g Gold</option>
                 <option value="30x50 Plot (1.5kg Silver Offer)">30 × 50 ft (1,500 sq.ft) — 🎁 Win 1.5kg Silver</option>

@@ -349,7 +349,6 @@ export const CONNECTIVITY_CATEGORIES = {
 
 export const CONTACT_NUMBERS = [
   "8970198701",
-  "735331107",
   "9019765265",
   "7019165265"
 ];
@@ -397,7 +396,7 @@ export const FESTIVE_SCHEME_DATA = {
   kannadaTitle: "ಭೂಮಿ & ಬಂಗಾರ | ಭೂಮಿ & ಬೆಳ್ಳಿ",
   tagline: "A Precious Beginning. A Precious Honour.",
   locationBadge: "WITHIN DHARWAD CITY LIMITS",
-  contactNumbers: ["8970198701", "735331107"],
+  contactNumbers: ["8970198701", "9019765265"],
   posterImage: "/images/dasara-deepawali-special-poster.jpg",
   termsNote: "*Limited period festival offer. T&C Apply.",
   schemes: [

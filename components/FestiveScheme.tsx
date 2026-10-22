@@ -342,10 +342,10 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
                 <span>Call 8970198701</span>
               </a>
               <a
-                href="tel:+91735331107"
+                href="tel:+919019765265"
                 className="px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-black text-xs sm:text-sm uppercase tracking-wider border border-white/20 hover:scale-105 transition-transform"
               >
-                <span>735331107</span>
+                <span>9019765265</span>
               </a>
             </div>
 

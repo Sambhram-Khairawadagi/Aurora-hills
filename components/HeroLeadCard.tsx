@@ -173,7 +173,7 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Dr. Patil / Ramesh"
-                className="w-full px-3.5 py-2.5 rounded-xl border border-charcoal-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 text-xs sm:text-sm text-forest-950 bg-white shadow-inner outline-none transition-all"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-charcoal-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 text-base sm:text-sm text-forest-950 bg-white shadow-inner outline-none transition-all"
               />
             </div>
 
@@ -192,7 +192,7 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
                   value={phone}
                   onChange={(e) => setPhone(e.target.value.replace(/[^0-9]/g, ""))}
                   placeholder="Enter 10-digit number"
-                  className="w-full pl-20 pr-3.5 py-2.5 rounded-xl border-2 border-emerald-600/60 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 text-xs sm:text-sm font-bold text-forest-950 bg-white shadow-inner outline-none transition-all placeholder:font-normal"
+                  className="w-full pl-20 pr-3.5 py-2.5 rounded-xl border-2 border-emerald-600/60 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 text-base sm:text-sm font-bold text-forest-950 bg-white shadow-inner outline-none transition-all placeholder:font-normal"
                 />
               </div>
             </div>

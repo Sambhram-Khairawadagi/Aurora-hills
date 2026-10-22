@@ -97,19 +97,19 @@ export const Hero: React.FC<HeroProps> = ({
           
           {/* Massive Project Name */}
           <div className="mt-5 sm:mt-6">
-            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black font-serif text-white tracking-tighter leading-none drop-shadow-[0_8px_30px_rgba(0,0,0,0.8)]">
-              THE AURORA <br className="hidden sm:block lg:hidden" /> HILLS
-              <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-sans font-extrabold text-amber-300 tracking-tight mt-3 sm:mt-4 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
+            <h1 className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black font-serif text-white tracking-tighter leading-[1.08] drop-shadow-[0_8px_30px_rgba(0,0,0,0.8)]">
+              THE AURORA <br className="sm:hidden" /><span className="hidden sm:inline"> </span>HILLS
+              <span className="block text-xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-sans font-extrabold text-amber-300 tracking-tight mt-2 sm:mt-4 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
                 Plots in Dharwad &amp; Hubli
               </span>
             </h1>
-            <div className="inline-flex items-center gap-2 mt-3 sm:mt-5 px-4 py-2 rounded-full liquid-glass-pill shadow-lg border border-emerald-400/30">
+            <div className="inline-flex items-center gap-2 mt-3 sm:mt-5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full liquid-glass-pill shadow-lg border border-emerald-400/30 max-w-full">
                <span className="flex h-2.5 w-2.5 relative flex-shrink-0">
                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
                </span>
-               <span className="text-[10px] sm:text-xs font-black tracking-widest text-emerald-300 uppercase drop-shadow">
-                 HDUDA &amp; NA-KJP Approved Luxury Villa Plots
+               <span className="text-[10px] sm:text-xs font-black tracking-wider sm:tracking-widest text-emerald-300 uppercase drop-shadow truncate">
+                 HDUDA &amp; NA-KJP Approved Villa Plots
                </span>
             </div>
           </div>
@@ -144,7 +144,7 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Main Welcoming Bold Headline */}
             <div className="space-y-1.5 sm:space-y-2">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-black text-white font-serif tracking-tight leading-[1.15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
+              <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-black text-white font-serif tracking-tight leading-[1.15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
                 Live Closer to <span className="text-emerald-400 drop-shadow-[0_0_20px_rgba(52,211,153,0.5)]">Nature.</span> <br />
                 <span className="bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(251,191,36,0.35)]">
                   Invest in Dharwad's Tomorrow.
