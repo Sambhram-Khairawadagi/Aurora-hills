@@ -10,7 +10,6 @@ import {
   ChevronLeft,
   ChevronRight,
   Calendar,
-  CheckCircle2,
   Layers,
   Trees,
   Compass,
@@ -466,39 +465,16 @@ export const Gallery: React.FC<GalleryProps> = ({
     >
       <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4 mb-6 sm:mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full vibrant-badge-emerald text-xs sm:text-sm font-black uppercase tracking-widest shadow-sm">
-            <span className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600" />
-            October 2026 Live Township Progress Update
-          </div>
-
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
-            Real Site Photos &{" "}
+        <div className="text-center max-w-4xl mx-auto space-y-3 sm:space-y-4 mb-6 sm:mb-10">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black font-serif text-forest-950 tracking-tight whitespace-normal lg:whitespace-nowrap">
+            Real Site Photos &amp;{" "}
             <span className="vibrant-text-gradient">Township Progress</span>
           </h2>
 
-          <p className="text-charcoal-700 text-xs sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
-            See the actual on-ground transformation: 40ft wide finished asphalt
-            boulevards, flowering medians, demarcated villa plots, underground
-            power feeder pillars, and hilltop water reservoir.
+          <p className="text-charcoal-700 text-xs sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
+            See the actual on-ground transformation: 40ft wide finished asphalt boulevards, flowering medians, <br className="hidden sm:inline" />
+            demarcated villa plots, underground power feeder pillars, and hilltop water reservoir.
           </p>
-
-          {/* Quick Metrics Strip */}
-          <div className="pt-1 sm:pt-2 flex flex-wrap items-center justify-center gap-2 sm:gap-6 text-[11px] sm:text-sm font-bold text-forest-900">
-            <div className="flex items-center gap-1.5 bg-emerald-50/80 px-2.5 py-1 rounded-full border border-emerald-200">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
-              <span>40ft & 30ft Asphalt Avenues Done</span>
-            </div>
-            <div className="flex items-center gap-1.5 bg-emerald-50/80 px-2.5 py-1 rounded-full border border-emerald-200">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
-              <span>Demarcation Stones Placed</span>
-            </div>
-            <div className="flex items-center gap-1.5 bg-emerald-50/80 px-2.5 py-1 rounded-full border border-emerald-200">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 flex-shrink-0" />
-              <span>Underground Power Active</span>
-            </div>
-          </div>
         </div>
 
         {/* Filter Tabs — Horizontal Swipeable Bar on Mobile */}

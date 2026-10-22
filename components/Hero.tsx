@@ -7,16 +7,7 @@ import {
   Sparkles, 
   ArrowRight, 
   ShieldCheck, 
-  MapPin, 
-  CheckCircle2, 
-  Trees, 
-  Sun, 
-  GraduationCap, 
-  ShoppingBag, 
-  Compass, 
-  Award,
-  Phone,
-  Calendar
+  Phone
 } from "lucide-react";
 import { HeroLeadCard } from "@/components/HeroLeadCard";
 
@@ -96,11 +87,11 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
           
           {/* Massive Project Name */}
-          <div className="mt-5 sm:mt-6">
+          <div className="mt-5 sm:mt-6 mb-6 sm:mb-8">
             <h1 className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[6.5rem] font-black font-serif text-white tracking-tighter leading-[1.08] drop-shadow-[0_8px_30px_rgba(0,0,0,0.8)]">
               THE AURORA <br className="sm:hidden" /><span className="hidden sm:inline"> </span>HILLS
               <span className="block text-xl sm:text-3xl md:text-4xl lg:text-[2.75rem] font-sans font-extrabold text-amber-300 tracking-tight mt-2 sm:mt-4 drop-shadow-[0_4px_16px_rgba(0,0,0,0.9)]">
-                Plots in Dharwad &amp; Hubli
+                Villa Plots in Dharwad
               </span>
             </h1>
             <div className="inline-flex items-center gap-2 mt-3 sm:mt-5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full liquid-glass-pill shadow-lg border border-emerald-400/30 max-w-full">
@@ -114,46 +105,14 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
           </div>
 
-        {/* Top Floating Announcement Strip (Mobile Bank Loan) */}
-        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-6 sm:mb-8 animate-fade-in">
-          <div className="inline-flex flex-wrap items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full liquid-glass-pill shadow-lg w-fit border border-white/20">
-            <span className="text-[10px] sm:text-xs lg:text-sm font-black tracking-wider text-white uppercase drop-shadow">
-              Hosa Lifestyle • Hosa Dharwad
-            </span>
-            <span className="hidden sm:inline text-white/30">|</span>
-            <span className="hidden sm:inline text-[10px] sm:text-xs font-bold text-emerald-300 drop-shadow uppercase">
-              NA-KJP Approved
-            </span>
-            <span className="hidden sm:inline text-white/30">|</span>
-            <span className="text-[10px] sm:text-xs font-black text-amber-300 drop-shadow uppercase tracking-wider">
-              Premium Gated Community
-            </span>
-          </div>
-
-          <div className="md:hidden inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-amber-950 bg-gradient-to-r from-amber-400 to-amber-500 px-3 py-1.5 rounded-full shadow-lg w-fit">
-            <ShieldCheck className="w-3.5 h-3.5" />
-            <span>Bank Loans: SBI • HDFC • ICICI • IDFC First</span>
-          </div>
-        </div>
-
         {/* Hero Content Showcase & Direct Lead Conversion Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start w-full">
 
           {/* Left Column: Value Proposition & Showcase (7 Cols on desktop) */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-6">
 
-            {/* Main Welcoming Bold Headline */}
-            <div className="space-y-1.5 sm:space-y-2">
-              <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] font-black text-white font-serif tracking-tight leading-[1.15] drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
-                Live Closer to <span className="text-emerald-400 drop-shadow-[0_0_20px_rgba(52,211,153,0.5)]">Nature.</span> <br />
-                <span className="bg-gradient-to-r from-amber-300 via-yellow-200 to-amber-400 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(251,191,36,0.35)]">
-                  Invest in Dharwad's Tomorrow.
-                </span>
-              </h2>
-            </div>
-
             {/* Supporting Welcoming Copy */}
-            <p className="text-xs sm:text-base lg:text-lg text-white/90 leading-relaxed font-medium max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+            <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed font-medium max-w-2xl drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
               Luxury villa plots nestled in lush green hills at <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="text-white font-bold hover:text-emerald-300 hover:underline transition-colors">Sunset Viewpoint, Dharwad City</a> — 20+ amenities, wide paved roads, and instant access to top schools, malls &amp; NH-4.
             </p>
 
@@ -163,18 +122,11 @@ export const Hero: React.FC<HeroProps> = ({
                 Pre-Launch Pricing
               </div>
 
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
                 <div>
-                  <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] font-bold text-emerald-300 block drop-shadow">
-                    Approved Villa Plots
-                  </span>
                   <div className="text-2xl sm:text-3xl md:text-4xl font-black text-white font-serif flex items-baseline gap-2 mt-0.5 sm:mt-1 drop-shadow-md">
                     <span className="text-xs sm:text-sm font-medium text-white/70">Starting</span>
                     <span className="text-emerald-300 drop-shadow-[0_0_12px_rgba(110,231,183,0.5)]">{startingPrice}</span>
-                  </div>
-                  <div className="text-[11px] sm:text-xs text-emerald-200 mt-0.5 sm:mt-1 flex items-center gap-1.5 font-medium drop-shadow">
-                    <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-400 flex-shrink-0" />
-                    <span>Clear Title Deeds • 1,200 to 2,400+ sq.ft Ready</span>
                   </div>
                 </div>
 
@@ -198,22 +150,6 @@ export const Hero: React.FC<HeroProps> = ({
                   Explore Scheme →
                 </a>
               </div>
-            </div>
-
-            {/* 4 Proximity Advantage Pills */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5 w-full">
-              {[
-                { icon: Sun, label: "Sunset View Point", sub: "Panoramic Hills", color: "text-amber-400" },
-                { icon: Trees, label: "Greenery & Air", sub: "Zero Pollution", color: "text-emerald-400" },
-                { icon: GraduationCap, label: "Near Schools/Univ", sub: "5 Mins to KUD", color: "text-sky-300" },
-                { icon: ShoppingBag, label: "Near Malls & D-Mart", sub: "Easy Shopping", color: "text-rose-400" },
-              ].map(({ icon: Icon, label, sub, color }) => (
-                <div key={label} className="p-2 sm:p-3 rounded-xl sm:rounded-2xl liquid-glass-pill text-center hover:bg-white/20 hover:-translate-y-0.5 transition-all cursor-default shadow-md">
-                  <Icon className={`w-4 h-4 sm:w-5 sm:h-5 ${color} mx-auto mb-0.5 sm:mb-1 drop-shadow`} />
-                  <span className="text-[11px] sm:text-xs font-bold text-white block drop-shadow">{label}</span>
-                  <span className="text-[9px] sm:text-[10px] text-white/70">{sub}</span>
-                </div>
-              ))}
             </div>
 
             {/* Action Buttons (High Contrast & Mobile-Optimized) */}

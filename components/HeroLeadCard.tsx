@@ -16,7 +16,7 @@ const PLOT_OPTIONS = [
   { label: "30×40", sub: "1,200 sq.ft" },
   { label: "30×50", sub: "1,500 sq.ft" },
   { label: "40×60", sub: "2,400 sq.ft" },
-  { label: "Any Plot", sub: "Exploring" },
+  { label: "Odd Size", sub: "Custom" },
 ];
 
 export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
@@ -111,14 +111,11 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
       className={`rounded-3xl bg-white/95 backdrop-blur-xl border-2 border-emerald-500/40 shadow-2xl p-5 sm:p-6 text-forest-950 relative overflow-hidden ${className}`}
     >
       {/* Top Auspicious Festive Pill */}
-      <div className="flex items-center justify-between gap-2 mb-3.5 pb-2.5 border-b border-amber-300/40">
+      <div className="flex items-center justify-start gap-2 mb-3.5 pb-2.5 border-b border-amber-300/40">
         <div className="flex items-center gap-1.5 text-xs font-black text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300 shadow-sm">
           <Sparkles className="w-3.5 h-3.5 text-amber-700 animate-pulse" />
           <span>Dasara &amp; Deepawali Booking Gift Live!</span>
         </div>
-        <span className="text-[10px] uppercase font-black tracking-wider text-emerald-800 bg-emerald-100/90 px-2 py-0.5 rounded-md">
-          SBI Approved
-        </span>
       </div>
 
       {!submitted ? (
