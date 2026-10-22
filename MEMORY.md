@@ -8,7 +8,25 @@
 
 ---
 
-## Latest Update: October 22, 2026 — Cleaned Hero, Lead Card, Trust Badges & Gallery per Reference Annotations
+## Latest Update: October 22, 2026 — Official Helpline Contact Numbers Update
+- **Reference Image**: `8311f7a3-a27c-4b00-b2d8-429dfc3aa6fb (1).jpg` showing `DIRECT HELPLINE & DOWNLOADS`.
+- **New Contact Numbers**:
+  1. `89701 98701` (Primary helpline & WhatsApp line)
+  2. `73533 11107`
+  3. `98801 66275`
+  4. `92425 08288`
+- **Updated Locations**:
+  - `lib/projectData.ts`: `CONTACT_NUMBERS` and `contactNumbers` updated with new numbers.
+  - `components/Footer.tsx`: Formatted each number with `tel:` link and non-breaking format under `DIRECT HELPLINE & DOWNLOADS`.
+  - `components/EnquirySection.tsx`: Direct call buttons updated.
+  - `components/FloatingActions.tsx`: Mobile sticky "Call Desk" action link updated to primary number.
+  - `components/HeroLeadCard.tsx`: Instant call helper link updated to primary number.
+  - `data/settings.json` & `app/api/admin/settings/route.ts`: Default site settings synced.
+  - `app/layout.tsx`: Structured Schema.org Organization telephone updated.
+
+---
+
+## Prior Update: October 22, 2026 — Cleaned Hero, Lead Card, Trust Badges & Gallery per Reference Annotations
 - **Reference Request**: User provided 5 annotated screenshots with scribbles and handwritten directions indicating elements to remove and refine.
 - **Hero Updates (`components/Hero.tsx`)**:
   - Subtitle updated from `"Plots in Dharwad & Hubli"` to **`"Villa Plots in Dharwad"`** in gold font.
