@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Inter, Noto_Sans_Kannada } from "next/font/google";
+import { Playfair_Display, Cormorant_Garamond, Inter, Noto_Sans_Kannada } from "next/font/google";
 import "./globals.css";
 import { GoogleTag } from "@/components/GoogleTag";
 
@@ -9,10 +9,18 @@ const inter = Inter({
   variable: "--font-sans",
 });
 
-const outfit = Outfit({
+const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-serif",
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
+const vintage = Cormorant_Garamond({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-vintage",
+  weight: ["400", "500", "600", "700"],
 });
 
 const kannada = Noto_Sans_Kannada({
@@ -381,7 +389,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} ${outfit.variable} ${kannada.variable} font-sans antialiased selection:bg-gold-500 selection:text-forest-950`}>
+      <body className={`${inter.variable} ${playfair.variable} ${vintage.variable} ${kannada.variable} font-sans antialiased selection:bg-gold-500 selection:text-forest-950`}>
         <GoogleTag />
         {children}
       </body>

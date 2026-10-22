@@ -50,6 +50,7 @@ const config: Config = {
       },
       fontFamily: {
         serif: ["var(--font-serif)", "Playfair Display", "Georgia", "serif"],
+        vintage: ["var(--font-vintage)", "Cormorant Garamond", "Playfair Display", "Georgia", "serif"],
         sans: ["var(--font-sans)", "Plus Jakarta Sans", "Inter", "sans-serif"],
         kannada: ["var(--font-kannada)", "Noto Sans Kannada", "sans-serif"],
       },

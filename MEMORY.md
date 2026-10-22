@@ -8,7 +8,32 @@
 
 ---
 
-## Latest Update: October 22, 2026 — Authentic Real-Site Hero Background Generation (Desktop 16:9 & Mobile 9:16)
+## Latest Update: October 22, 2026 — Light Theme Transformation & Vintage Luxury Estate Typography
+- **User Request**: "the hero looks very dark make it look like light theme and use any typography but little vintage you decide"
+- **Light Theme Visual Transformation**:
+  - Replaced dark sunset visuals and heavy black gradient masks (`from-black/85 via-black/70 to-black/40`) with a luminous, airy, daytime aesthetic that flows seamlessly into the rest of the site.
+  - Generated authentic daylight visuals referencing October 2026 site progress photos:
+    - Desktop (16:9): `/images/aurora-hills-real-site-daylight.webp` & `.jpg` (1376x768).
+    - Mobile (9:16): `/images/aurora-hills-real-site-daylight-mobile.webp` & `.jpg` (768x1376).
+    - Accurately depicts real ground features: 40ft curved asphalt avenue, blooming yellow marigolds in the central median, demarcated terraced villa plots, hillside water reservoir, and clear blue skies with crisp morning sunlight.
+  - Replaced dark backdrop overlays with subtle light daylight gradients (`from-white/92 via-white/65 to-transparent` on desktop, radial sunlight glow on mobile).
+- **Vintage Luxury Typography Setup**:
+  - Configured Google Fonts `Playfair_Display` (`--font-serif`) and `Cormorant_Garamond` (`--font-vintage`) via `next/font/google` in `app/layout.tsx`.
+  - Added `fontFamily.vintage` in `tailwind.config.ts`.
+  - **Main Title**: Set in high-contrast vintage serif `Playfair Display` (`font-serif tracking-tight text-forest-950 font-black`), delivering an authoritative, heritage hillside sanctuary aesthetic.
+  - **Subtitle**: `"Villa Plots in Dharwad"` rendered in elegant warm cognac italic serif (`font-serif italic font-bold text-amber-800`).
+  - **Starting Price**: Styled in rich bold emerald serif (`text-emerald-700 font-serif font-black`) inside the light price card.
+- **Light UI Component Upgrades**:
+  - **Developer Pill**: Frosted ivory glass (`bg-white/90 border-emerald-200 text-emerald-950`).
+  - **Pre-Launch Pricing Card**: Light luxury ivory card (`bg-white/95 border-emerald-300`, `text-forest-950`, with warm amber pre-launch ribbon).
+  - **Action Buttons**: High-contrast light-theme styling — rich forest-emerald gradient for "Enquire for Booking", crisp white card with emerald border for Call Desk (`+91 89701 98701`), and warm golden amber for Festive Scheme Offer.
+- **Verification**:
+  - Zero TypeScript errors (`tsc --noEmit` passed with exit code 0).
+  - Verified across desktop (1440x900) and mobile (390x844) with Chrome CDP screenshots (`scratch/desktop_new_real_site_hero.jpg` and `scratch/mobile_new_real_site_hero.jpg`).
+
+---
+
+## Prior Update: October 22, 2026 — Authentic Real-Site Hero Background Generation (Desktop 16:9 & Mobile 9:16)
 - **Source Context**: Generated directly using reference images from the October 2026 on-ground site development photos (`oct-avenue-flowering-median.jpg`, `oct-panoramic-terraced-layout-vista.jpg`, `oct-panoramic-hillside-plots.jpg`).
 - **Features Captured in Hero Visual**:
   - 40ft wide finished black asphalt boulevard curving gracefully up the hillside.
