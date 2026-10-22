@@ -8,7 +8,32 @@
 
 ---
 
-## Latest Update: October 22, 2026 — Comprehensive Mobile-First Optimization (99% Mobile Ad Traffic)
+## Latest Update: October 22, 2026 — Cleaned Hero, Lead Card, Trust Badges & Gallery per Reference Annotations
+- **Reference Request**: User provided 5 annotated screenshots with scribbles and handwritten directions indicating elements to remove and refine.
+- **Hero Updates (`components/Hero.tsx`)**:
+  - Subtitle updated from `"Plots in Dharwad & Hubli"` to **`"Villa Plots in Dharwad"`** in gold font.
+  - Removed top announcement bar (`Hosa Lifestyle • Hosa Dharwad | NA-KJP Approved | Premium Gated Community`).
+  - Removed large headline (`Live Closer to Nature. Invest in Dharwad's Tomorrow.`), bringing the value proposition into clean, direct focus.
+  - In Pre-Launch Pricing Card: Removed `"APPROVED VILLA PLOTS"` and `"Clear Title Deeds • 1,200 to 2,400+ sq.ft Ready"`.
+  - Removed the 4 proximity pills (`Sunset View Point`, `Greenery & Air`, `Near Schools/Univ`, `Near Malls & D-Mart`).
+- **Lead Card Updates (`components/HeroLeadCard.tsx`)**:
+  - Removed `"SBI Approved"` pill from the top festive banner.
+  - Replaced `"Any Plot (Exploring)"` with **`"Odd Size (Custom)"`** in the plot selection buttons.
+- **Trust Badges (`components/TrustBadges.tsx`)**:
+  - Removed repetitive bottom checkmark strip (`"100% Clear & Approved"` / `"100% Legally Clear & Approved"`) from all 4 approval cards, streamlining the 2x2 grid.
+- **Gallery Updates (`components/Gallery.tsx`)**:
+  - Removed top badge pill (`"OCTOBER 2026 LIVE TOWNSHIP PROGRESS UPDATE"`).
+  - Configured title `"Real Site Photos & Township Progress"` to remain on a single line on desktop (`lg:whitespace-nowrap`).
+  - Formatted description paragraph with `<br className="hidden sm:inline" />` for clean two-line alignment on desktop.
+  - Removed quick metrics strip (`"40ft & 30ft Asphalt Avenues Done"`, etc.).
+- **Validation**:
+  - Verified across desktop (1440x900) and mobile (390x844) via Chrome CDP screenshots.
+  - Zero TypeScript errors (`tsc --noEmit` passed with exit code 0).
+  - Pushed to `origin/main` (`commit 772b656`).
+
+---
+
+## Prior Update: October 22, 2026 — Comprehensive Mobile-First Optimization (99% Mobile Ad Traffic)
 - **Problem**: 99% of visitors arrive via mobile devices (Google Ads & Meta traffic on 360px–390px screens). Previous layout had a 6,000px single-column gallery scroll trap, a floating WhatsApp button obscuring content and forms, vertically stacked 4-card trust badges, and small input font sizes triggering iOS Safari auto-zoom.
 - **Audit & Implementation**:
   1. **Gallery Grid (`components/Gallery.tsx`)**:
