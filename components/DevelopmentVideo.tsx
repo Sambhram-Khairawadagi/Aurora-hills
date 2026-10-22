@@ -26,7 +26,7 @@ export const DevelopmentVideo: React.FC<DevelopmentVideoProps> = ({ onOpenEnquir
             <Video className="w-4 h-4 text-emerald-600" />
             Official Site Walkthrough & Drone Tours
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
             Watch <span className="vibrant-text-gradient">The Aurora Hills Drone Tours</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">

@@ -78,10 +78,10 @@ export const SiteVisitSection: React.FC<SiteVisitSectionProps> = ({ onSuccess })
             <Calendar className="w-3.5 h-3.5 text-emerald-600" />
             Complimentary Site Visit
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
             Schedule a <span className="vibrant-text-gradient">Personal Tour</span>
           </h2>
-          <p className="text-charcoal-700 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
+          <p className="text-charcoal-700 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-medium">
             Walk the paved avenues, inspect plot boundaries, and enjoy complimentary pickup from Dharwad / CBT.
           </p>
         </div>
@@ -93,7 +93,7 @@ export const SiteVisitSection: React.FC<SiteVisitSectionProps> = ({ onSuccess })
                 <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-300 flex items-center justify-center mx-auto shadow-md">
                   <CheckCircle2 className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold font-serif text-forest-950">
+                <h3 className="text-2xl font-bold font-sans text-forest-950">
                   Site Visit Confirmed!
                 </h3>
                 <p className="text-sm text-charcoal-700 max-w-md mx-auto">
@@ -104,7 +104,7 @@ export const SiteVisitSection: React.FC<SiteVisitSectionProps> = ({ onSuccess })
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-2">
+                    <label className="block text-xs sm:text-sm font-bold uppercase tracking-wider text-charcoal-700 mb-2">
                       Your Full Name *
                     </label>
                     <div className="relative">
@@ -115,7 +115,7 @@ export const SiteVisitSection: React.FC<SiteVisitSectionProps> = ({ onSuccess })
                         placeholder="John Doe"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full pl-10 pr-4 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-xs"
+                        className="w-full pl-10 pr-4 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm font-medium"
                       />
                     </div>
                   </div>

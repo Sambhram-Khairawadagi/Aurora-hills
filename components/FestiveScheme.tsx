@@ -53,14 +53,14 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             <div className="relative px-8 sm:px-12 py-3 sm:py-4 rounded-2xl bg-gradient-to-r from-[#450A14] via-[#7B1123] to-[#450A14] text-white shadow-2xl border-2 border-amber-400/70 overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-400/20 via-transparent to-transparent pointer-events-none" />
               
-              <div className="flex items-center justify-center gap-2 text-amber-300 text-[10px] sm:text-xs font-black uppercase tracking-[0.3em] mb-1">
-                <Sparkles className="w-3.5 h-3.5" />
+              <div className="flex items-center justify-center gap-2 text-amber-300 text-xs sm:text-sm font-black uppercase tracking-[0.25em] mb-1">
+                <Sparkles className="w-4 h-4" />
                 <span>Special Festive Celebration</span>
-                <Sparkles className="w-3.5 h-3.5" />
+                <Sparkles className="w-4 h-4" />
               </div>
 
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black font-serif tracking-tight text-white drop-shadow-md">
-                THIS DASARA & DEEPAWALI <br className="sm:hidden" />
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black font-sans tracking-tight text-white drop-shadow-md">
+                THIS DASARA &amp; DEEPAWALI <br className="sm:hidden" />
                 <span className="text-amber-300">SPECIAL</span>
               </h2>
             </div>
@@ -71,12 +71,12 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             <h3 className="font-kannada text-2xl sm:text-3xl md:text-4xl font-black text-red-900 tracking-normal drop-shadow-sm leading-relaxed">
               ಭೂಮಿ &amp; ಬಂಗಾರ <span className="text-amber-600 mx-2">|</span> ಭೂಮಿ &amp; ಬೆಳ್ಳಿ
             </h3>
-            <p className="text-sm sm:text-lg font-serif italic text-amber-950 font-bold tracking-wide mt-1">
+            <p className="text-base sm:text-xl font-sans text-amber-950 font-black tracking-wide mt-1">
               "A Precious Beginning. A Precious Honour."
             </p>
           </div>
 
-          <p className="text-charcoal-700 text-xs sm:text-base max-w-2xl mx-auto font-medium leading-relaxed">
+          <p className="text-charcoal-700 text-sm sm:text-base max-w-2xl mx-auto font-medium leading-relaxed">
             Celebrate auspicious new beginnings in Dharwad City's most scenic plotted community. 
             Book your sanctioned residential plot this festive season and receive authentic 
             <strong className="text-red-900 font-extrabold"> 50g Gold</strong> or 
@@ -86,9 +86,9 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
           <div className="flex items-center justify-center gap-3 pt-1">
             <button
               onClick={() => setIsPosterModalOpen(true)}
-              className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-wider text-amber-900 hover:text-red-900 bg-amber-100 hover:bg-amber-200/80 px-4 py-2 rounded-full border border-amber-300 transition-colors shadow-sm"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-black uppercase tracking-wider text-amber-900 hover:text-red-900 bg-amber-100 hover:bg-amber-200/80 px-5 py-2.5 rounded-full border border-amber-300 transition-colors shadow-sm"
             >
-              <Maximize2 className="w-3.5 h-3.5 text-amber-800" />
+              <Maximize2 className="w-4 h-4 text-amber-800" />
               <span>View Official Festival Poster</span>
             </button>
           </div>
@@ -101,10 +101,10 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
           <div className="relative rounded-3xl bg-white border-2 border-amber-400 shadow-2xl hover:shadow-[0_20px_50px_rgba(245,158,11,0.25)] transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1.5">
             {/* Top Plot Badge */}
             <div className="bg-[#60101D] text-white text-center py-3.5 px-4 relative overflow-hidden">
-              <span className="inline-block text-xl sm:text-2xl font-black font-serif tracking-wider">
+              <span className="inline-block text-xl sm:text-2xl font-black font-sans tracking-wider">
                 40 × 60 PLOT
               </span>
-              <p className="text-[10px] text-amber-200 uppercase tracking-widest font-bold mt-0.5">
+              <p className="text-xs text-amber-200 uppercase tracking-widest font-bold mt-0.5">
                 2,400 SQ.FT • GRAND LUXURY VILLA
               </p>
             </div>
@@ -126,8 +126,8 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
 
               {/* Subtitle Ribbon Strip */}
               <div className="w-full mt-3 py-2 px-3 rounded-xl bg-gradient-to-r from-amber-100 via-amber-50 to-amber-100 text-amber-950 border border-amber-300/80 shadow-sm">
-                <span className="text-[11px] uppercase tracking-wider font-extrabold text-amber-900 inline-flex items-center justify-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+                <span className="text-xs uppercase tracking-wider font-extrabold text-amber-900 inline-flex items-center justify-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-amber-600" />
                   Guaranteed Festive Reward
                 </span>
               </div>
@@ -136,15 +136,15 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             {/* Scheme Details & CTA */}
             <div className="p-6 pt-2 flex flex-col flex-1 justify-between bg-white border-t border-amber-100">
               <div className="space-y-3 mb-6">
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pb-2 border-b border-gray-100">
                   <span>Dimension:</span>
                   <span className="text-forest-950 font-black">40ft × 60ft</span>
                 </div>
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pb-2 border-b border-gray-100">
                   <span>Total Area:</span>
                   <span className="text-forest-950 font-black">2,400 sq.ft</span>
                 </div>
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600">
+                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700">
                   <span>Approval:</span>
                   <span className="text-emerald-700 font-black">HDUDA &amp; NA-KJP</span>
                 </div>
@@ -164,10 +164,10 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
           <div className="relative rounded-3xl bg-white border-2 border-emerald-400 shadow-2xl hover:shadow-[0_20px_50px_rgba(16,185,129,0.25)] transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1.5">
             {/* Top Plot Badge */}
             <div className="bg-[#0A2E1D] text-white text-center py-3.5 px-4 relative overflow-hidden">
-              <span className="inline-block text-xl sm:text-2xl font-black font-serif tracking-wider">
+              <span className="inline-block text-xl sm:text-2xl font-black font-sans tracking-wider">
                 30 × 50 PLOT
               </span>
-              <p className="text-[10px] text-emerald-200 uppercase tracking-widest font-bold mt-0.5">
+              <p className="text-xs text-emerald-200 uppercase tracking-widest font-bold mt-0.5">
                 1,500 SQ.FT • SPACIOUS GARDEN VILLA
               </p>
             </div>
@@ -188,8 +188,8 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
 
               {/* Subtitle Ribbon Strip */}
               <div className="w-full mt-3 py-2 px-3 rounded-xl bg-gradient-to-r from-emerald-100 via-emerald-50 to-emerald-100 text-emerald-950 border border-emerald-300/80 shadow-sm">
-                <span className="text-[11px] uppercase tracking-wider font-extrabold text-emerald-950 inline-flex items-center justify-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
+                <span className="text-xs uppercase tracking-wider font-extrabold text-emerald-950 inline-flex items-center justify-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-emerald-700" />
                   Guaranteed Festive Reward
                 </span>
               </div>
@@ -198,15 +198,15 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             {/* Scheme Details & CTA */}
             <div className="p-6 pt-2 flex flex-col flex-1 justify-between bg-white border-t border-emerald-100">
               <div className="space-y-3 mb-6">
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pb-2 border-b border-gray-100">
                   <span>Dimension:</span>
                   <span className="text-forest-950 font-black">30ft × 50ft</span>
                 </div>
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pb-2 border-b border-gray-100">
                   <span>Total Area:</span>
                   <span className="text-forest-950 font-black">1,500 sq.ft</span>
                 </div>
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600">
+                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700">
                   <span>Approval:</span>
                   <span className="text-emerald-700 font-black">HDUDA &amp; NA-KJP</span>
                 </div>
@@ -226,10 +226,10 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
           <div className="relative rounded-3xl bg-white border-2 border-slate-400 shadow-2xl hover:shadow-[0_20px_50px_rgba(71,85,105,0.25)] transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1.5">
             {/* Top Plot Badge */}
             <div className="bg-[#1E293B] text-white text-center py-3.5 px-4 relative overflow-hidden">
-              <span className="inline-block text-xl sm:text-2xl font-black font-serif tracking-wider">
+              <span className="inline-block text-xl sm:text-2xl font-black font-sans tracking-wider">
                 30 × 40 PLOT
               </span>
-              <p className="text-[10px] text-slate-300 uppercase tracking-widest font-bold mt-0.5">
+              <p className="text-xs text-slate-300 uppercase tracking-widest font-bold mt-0.5">
                 1,200 SQ.FT • 3BHK CONTEMPORARY VILLA
               </p>
             </div>
@@ -250,8 +250,8 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
 
               {/* Subtitle Ribbon Strip */}
               <div className="w-full mt-3 py-2 px-3 rounded-xl bg-gradient-to-r from-slate-100 via-slate-50 to-slate-100 text-slate-900 border border-slate-300/80 shadow-sm">
-                <span className="text-[11px] uppercase tracking-wider font-extrabold text-slate-800 inline-flex items-center justify-center gap-1.5">
-                  <Sparkles className="w-3.5 h-3.5 text-slate-600" />
+                <span className="text-xs uppercase tracking-wider font-extrabold text-slate-800 inline-flex items-center justify-center gap-1.5">
+                  <Sparkles className="w-4 h-4 text-slate-600" />
                   Guaranteed Festive Reward
                 </span>
               </div>
@@ -260,15 +260,15 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             {/* Scheme Details & CTA */}
             <div className="p-6 pt-2 flex flex-col flex-1 justify-between bg-white border-t border-slate-100">
               <div className="space-y-3 mb-6">
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pb-2 border-b border-gray-100">
                   <span>Dimension:</span>
                   <span className="text-forest-950 font-black">30ft × 40ft</span>
                 </div>
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pb-2 border-b border-gray-100">
                   <span>Total Area:</span>
                   <span className="text-forest-950 font-black">1,200 sq.ft</span>
                 </div>
-                <div className="flex items-center justify-between text-xs font-bold text-gray-600">
+                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700">
                   <span>Approval:</span>
                   <span className="text-emerald-700 font-black">HDUDA &amp; NA-KJP</span>
                 </div>
@@ -293,25 +293,25 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             <div className="p-3.5 rounded-2xl bg-white/80 border border-amber-200/60 shadow-sm flex flex-col items-center">
               <Award className="w-6 h-6 text-emerald-700 mb-1" />
               <span className="text-xs sm:text-sm font-black text-forest-950 uppercase tracking-wider">Premium Layout</span>
-              <span className="text-[10px] text-gray-500 font-medium">Asphalted Wide Roads</span>
+              <span className="text-xs text-charcoal-700 font-semibold">Asphalted Wide Roads</span>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-white/80 border border-amber-200/60 shadow-sm flex flex-col items-center">
               <TreePine className="w-6 h-6 text-emerald-600 mb-1" />
               <span className="text-xs sm:text-sm font-black text-forest-950 uppercase tracking-wider">Green Surroundings</span>
-              <span className="text-[10px] text-gray-500 font-medium">Lush Sunset Hills</span>
+              <span className="text-xs text-charcoal-700 font-semibold">Lush Sunset Hills</span>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-white/80 border border-amber-200/60 shadow-sm flex flex-col items-center">
               <ShieldCheck className="w-6 h-6 text-amber-600 mb-1" />
               <span className="text-xs sm:text-sm font-black text-forest-950 uppercase tracking-wider">NA-KJP Approved</span>
-              <span className="text-[10px] text-gray-500 font-medium">100% Legal Clearances</span>
+              <span className="text-xs text-charcoal-700 font-semibold">100% Legal Clearances</span>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-white/80 border border-amber-200/60 shadow-sm flex flex-col items-center">
               <Landmark className="w-6 h-6 text-blue-700 mb-1" />
               <span className="text-xs sm:text-sm font-black text-forest-950 uppercase tracking-wider">HUDDA Approved</span>
-              <span className="text-[10px] text-gray-500 font-medium">Government Sanctioned</span>
+              <span className="text-xs text-charcoal-700 font-semibold">Government Sanctioned</span>
             </div>
 
           </div>
@@ -367,7 +367,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             <div className="flex items-center justify-between mb-3 pb-2 border-b border-gray-100">
               <div className="flex items-center gap-2 text-forest-950">
                 <Sparkles className="w-5 h-5 text-amber-500" />
-                <h4 className="font-serif font-black text-sm sm:text-base">
+                <h4 className="font-sans font-black text-sm sm:text-base">
                   Official Dasara &amp; Deepawali Special Offer Poster
                 </h4>
               </div>

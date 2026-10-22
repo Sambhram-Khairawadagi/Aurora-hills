@@ -40,7 +40,7 @@ export default function TermsAndConditionsPage() {
               <Scale className="w-4 h-4 text-emerald-600" />
               Terms of Service
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
               Terms & Conditions
             </h1>
             <p className="text-sm sm:text-base text-charcoal-600 font-medium">
@@ -50,7 +50,7 @@ export default function TermsAndConditionsPage() {
 
           <div className="p-6 sm:p-8 rounded-3xl bg-white border-2 border-emerald-300/40 shadow-xl shadow-emerald-950/5 space-y-6 text-sm sm:text-base leading-relaxed text-charcoal-800">
             <section className="space-y-3">
-              <h2 className="text-xl font-bold font-serif text-forest-950 flex items-center gap-2">
+              <h2 className="text-xl font-bold font-sans text-forest-950 flex items-center gap-2">
                 <Building2 className="w-5 h-5 text-emerald-600" />
                 1. Project & Marketing Representation
               </h2>
@@ -60,7 +60,7 @@ export default function TermsAndConditionsPage() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold font-serif text-forest-950 flex items-center gap-2">
+              <h2 className="text-xl font-bold font-sans text-forest-950 flex items-center gap-2">
                 <AlertCircle className="w-5 h-5 text-emerald-600" />
                 2. Information Accuracy & Conceptual Renders
               </h2>
@@ -70,7 +70,7 @@ export default function TermsAndConditionsPage() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold font-serif text-forest-950 flex items-center gap-2">
+              <h2 className="text-xl font-bold font-sans text-forest-950 flex items-center gap-2">
                 <CheckCircle2 className="w-5 h-5 text-emerald-600" />
                 3. Approvals, Sanctions & Titles
               </h2>
@@ -80,7 +80,7 @@ export default function TermsAndConditionsPage() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold font-serif text-forest-950">
+              <h2 className="text-xl font-bold font-sans text-forest-950">
                 4. Pricing, Taxes & Availability
               </h2>
               <ul className="list-disc pl-6 space-y-1.5 text-charcoal-700">
@@ -91,7 +91,7 @@ export default function TermsAndConditionsPage() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold font-serif text-forest-950">
+              <h2 className="text-xl font-bold font-sans text-forest-950">
                 5. Bank Loan Approvals
               </h2>
               <p>
@@ -100,7 +100,7 @@ export default function TermsAndConditionsPage() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold font-serif text-forest-950">
+              <h2 className="text-xl font-bold font-sans text-forest-950">
                 6. Guided Site Visits
               </h2>
               <p>
@@ -109,7 +109,7 @@ export default function TermsAndConditionsPage() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold font-serif text-forest-950">
+              <h2 className="text-xl font-bold font-sans text-forest-950">
                 7. Intellectual Property & Brand Usage
               </h2>
               <p>
@@ -118,7 +118,7 @@ export default function TermsAndConditionsPage() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold font-serif text-forest-950">
+              <h2 className="text-xl font-bold font-sans text-forest-950">
                 8. Governing Law & Jurisdiction
               </h2>
               <p>
@@ -127,7 +127,7 @@ export default function TermsAndConditionsPage() {
             </section>
 
             <section className="space-y-3 pt-2 border-t border-emerald-100">
-              <h2 className="text-xl font-bold font-serif text-forest-950">
+              <h2 className="text-xl font-bold font-sans text-forest-950">
                 9. Corporate Office & Legal Inquiries
               </h2>
               <div className="space-y-2 pt-1 font-medium">

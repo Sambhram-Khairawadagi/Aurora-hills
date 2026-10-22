@@ -34,8 +34,8 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
             <Calculator className="w-4 h-4 text-emerald-600" />
             Transparent Pricing & Plot Estimator
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
-            Plot Dimensions & <span className="vibrant-text-gradient">Investment Estimator</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
+            Plot Dimensions &amp; <span className="vibrant-text-gradient">Investment Estimator</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
             Pre-launch pricing advantage starting from ₹42 Lakhs. Pre-approved plot loans available from SBI, HDFC, ICICI and leading nationalized banks.
@@ -61,12 +61,12 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
                   }`}
                 >
                   <div className="flex items-center justify-between mb-1">
-                    <span className="text-sm font-black text-forest-950 font-serif">{opt.label}</span>
-                    <span className="text-[9px] uppercase font-black text-emerald-900 vibrant-badge-emerald px-2 py-0.5 rounded-full">
+                    <span className="text-sm sm:text-base font-black text-forest-950 font-sans">{opt.label}</span>
+                    <span className="text-xs uppercase font-black text-emerald-900 vibrant-badge-emerald px-2.5 py-0.5 rounded-full">
                       {opt.tag}
                     </span>
                   </div>
-                  <div className="text-xs text-charcoal-600 font-mono font-semibold">{opt.dimensions}</div>
+                  <div className="text-xs sm:text-sm text-charcoal-600 font-mono font-semibold">{opt.dimensions}</div>
                 </button>
               ))}
             </div>
@@ -75,25 +75,25 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
           {/* Selected Option Summary Card */}
           <div className="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-emerald-100/70 via-teal-50/80 to-emerald-50/70 border border-emerald-300/60 grid grid-cols-1 md:grid-cols-3 gap-6 items-center shadow-inner">
             <div className="space-y-1">
-              <span className="text-xs text-charcoal-600 uppercase tracking-wider font-extrabold">
+              <span className="text-xs sm:text-sm text-charcoal-600 uppercase tracking-wider font-extrabold">
                 Selected Dimension
               </span>
-              <div className="text-2xl sm:text-3xl font-black font-serif text-forest-950">
+              <div className="text-2xl sm:text-3xl font-black font-sans text-forest-950">
                 {currentOption.label}
               </div>
-              <div className="text-xs text-emerald-900 font-mono font-black">
+              <div className="text-xs sm:text-sm text-emerald-900 font-mono font-black">
                 Dimensions: {currentOption.dimensions}
               </div>
             </div>
 
             <div className="space-y-1 border-t md:border-t-0 md:border-l border-emerald-300/60 pt-4 md:pt-0 md:pl-6">
-              <span className="text-xs text-charcoal-600 uppercase tracking-wider font-extrabold">
+              <span className="text-xs sm:text-sm text-charcoal-600 uppercase tracking-wider font-extrabold">
                 Pre-Launch Price
               </span>
-              <div className="text-3xl sm:text-4xl font-black vibrant-text-gradient font-serif">
+              <div className="text-3xl sm:text-4xl font-black vibrant-text-gradient font-sans">
                 {currentOption.estimate}
               </div>
-              <div className="text-xs text-emerald-800 flex items-center gap-1 font-black">
+              <div className="text-xs sm:text-sm text-emerald-800 flex items-center gap-1 font-black">
                 <Landmark className="w-4 h-4 text-emerald-600" />
                 {currentOption.emi}
               </div>
@@ -108,8 +108,8 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
                 <ArrowRight className="w-4 h-4" />
               </button>
 
-              <span className="text-[11px] text-center text-charcoal-500 italic">
-                *Government stamp duty, registration & taxes extra.
+              <span className="text-xs text-center text-charcoal-600 italic">
+                *Government stamp duty, registration &amp; taxes extra.
               </span>
             </div>
           </div>

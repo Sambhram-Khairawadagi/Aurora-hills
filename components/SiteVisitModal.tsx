@@ -86,10 +86,10 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
             <Calendar className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="text-xl font-bold font-serif text-forest-950">
+            <h3 className="text-xl font-black font-sans text-forest-950">
               Book a Free Site Visit
             </h3>
-            <span className="text-xs text-charcoal-600">Personalized plot inspection in Dharwad</span>
+            <span className="text-sm text-charcoal-700 font-medium">Personalized plot inspection in Dharwad</span>
           </div>
         </div>
 
@@ -98,10 +98,10 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
             <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-300 flex items-center justify-center mx-auto shadow-md">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h4 className="text-xl font-bold font-serif text-forest-950">
+            <h4 className="text-xl font-bold font-sans text-forest-950">
               Visit Booked!
             </h4>
-            <p className="text-xs text-charcoal-700 max-w-sm mx-auto">
+            <p className="text-sm text-charcoal-700 max-w-sm mx-auto font-medium">
               Thank you, {formData.name}. Our tour manager will contact you at <strong>{formData.phone}</strong> to confirm your pickup details for <strong>{formData.preferred_date}</strong>.
             </p>
             <button

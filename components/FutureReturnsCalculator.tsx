@@ -94,8 +94,8 @@ export const FutureReturnsCalculator: React.FC<FutureReturnsCalculatorProps> = (
             <TrendingUp className="w-4 h-4 text-emerald-600" />
             Dharwad Smart City Growth Predictor
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
-            Future Returns & <span className="vibrant-text-gradient">Land Appreciation Calculator</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
+            Future Returns &amp; <span className="vibrant-text-gradient">Land Appreciation Calculator</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
             Project your wealth creation backed by verified historical indices across Dharwad's NH-4 corridor.
@@ -195,8 +195,8 @@ export const FutureReturnsCalculator: React.FC<FutureReturnsCalculatorProps> = (
                       : "bg-gray-50 text-charcoal-800 border-gray-200 hover:bg-emerald-50"
                   }`}
                 >
-                  <span className="text-xs block font-extrabold">Conservative</span>
-                  <span className="text-[11px] opacity-90 font-mono">11.8% CAGR</span>
+                  <span className="text-xs sm:text-sm block font-extrabold">Conservative</span>
+                  <span className="text-xs opacity-90 font-mono font-bold">11.8% CAGR</span>
                 </button>
 
                 <button
@@ -207,8 +207,8 @@ export const FutureReturnsCalculator: React.FC<FutureReturnsCalculatorProps> = (
                       : "bg-gray-50 text-charcoal-800 border-gray-200 hover:bg-emerald-50"
                   }`}
                 >
-                  <span className="text-xs block font-extrabold">Smart City Corridor</span>
-                  <span className="text-[11px] opacity-90 font-mono">14.5% CAGR (Expected)</span>
+                  <span className="text-xs sm:text-sm block font-extrabold">Smart City Corridor</span>
+                  <span className="text-xs opacity-90 font-mono font-bold">14.5% CAGR (Expected)</span>
                 </button>
 
                 <button
@@ -219,8 +219,8 @@ export const FutureReturnsCalculator: React.FC<FutureReturnsCalculatorProps> = (
                       : "bg-gray-50 text-charcoal-800 border-gray-200 hover:bg-emerald-50"
                   }`}
                 >
-                  <span className="text-xs block font-extrabold">High Growth</span>
-                  <span className="text-[11px] opacity-90 font-mono">17.2% CAGR</span>
+                  <span className="text-xs sm:text-sm block font-extrabold">High Growth</span>
+                  <span className="text-xs opacity-90 font-mono font-bold">17.2% CAGR</span>
                 </button>
               </div>
             </div>
@@ -259,7 +259,7 @@ export const FutureReturnsCalculator: React.FC<FutureReturnsCalculatorProps> = (
                   <span className="text-xs uppercase font-extrabold text-charcoal-600 tracking-wider">
                     Initial Investment
                   </span>
-                  <div className="text-xl font-bold text-forest-950 font-serif">
+                  <div className="text-xl font-black text-forest-950 font-sans">
                     {formatCurrency(principal)}
                   </div>
                 </div>
@@ -285,7 +285,7 @@ export const FutureReturnsCalculator: React.FC<FutureReturnsCalculatorProps> = (
                   </span>
                 </div>
 
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-white tracking-tight">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-white tracking-tight">
                   {formatCurrency(futureValue)}
                 </div>
 
@@ -324,16 +324,16 @@ export const FutureReturnsCalculator: React.FC<FutureReturnsCalculatorProps> = (
                   {milestones.map((m) => (
                     <div
                       key={m.year}
-                      className={`p-2 rounded-xl border text-xs transition-all ${
+                      className={`p-2.5 rounded-xl border text-xs transition-all ${
                         m.year === horizonYears
                           ? "bg-emerald-600 text-white font-black border-emerald-700 shadow-md scale-105"
                           : m.isActive
                           ? "bg-emerald-50 text-forest-950 font-bold border-emerald-200"
-                          : "bg-gray-50 text-charcoal-500 border-gray-200"
+                          : "bg-gray-50 text-charcoal-600 border-gray-200"
                       }`}
                     >
-                      <span className="text-[10px] block opacity-80">Yr {m.year}</span>
-                      <span className="text-[11px] sm:text-xs font-mono font-bold block mt-0.5">{m.formatted}</span>
+                      <span className="text-xs block font-bold opacity-80">Yr {m.year}</span>
+                      <span className="text-xs sm:text-sm font-mono font-bold block mt-0.5">{m.formatted}</span>
                     </div>
                   ))}
                 </div>

@@ -40,7 +40,7 @@ export default function PrivacyPolicyPage() {
               <ShieldCheck className="w-4 h-4 text-emerald-600" />
               Legal & Trust
             </div>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
               Privacy Policy
             </h1>
             <p className="text-sm sm:text-base text-charcoal-600 font-medium">
@@ -50,7 +50,7 @@ export default function PrivacyPolicyPage() {
 
           <div className="p-6 sm:p-8 rounded-3xl bg-white border-2 border-emerald-300/40 shadow-xl shadow-emerald-950/5 space-y-6 text-sm sm:text-base leading-relaxed text-charcoal-800">
             <section className="space-y-3">
-              <h2 className="text-xl font-bold font-serif text-forest-950 flex items-center gap-2">
+              <h2 className="text-xl font-bold font-sans text-forest-950 flex items-center gap-2">
                 <Eye className="w-5 h-5 text-emerald-600" />
                 1. Overview & Commitment
               </h2>
@@ -60,7 +60,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold font-serif text-forest-950 flex items-center gap-2">
+              <h2 className="text-xl font-bold font-sans text-forest-950 flex items-center gap-2">
                 <FileText className="w-5 h-5 text-emerald-600" />
                 2. Information We Collect
               </h2>
@@ -74,7 +74,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold font-serif text-forest-950 flex items-center gap-2">
+              <h2 className="text-xl font-bold font-sans text-forest-950 flex items-center gap-2">
                 <Lock className="w-5 h-5 text-emerald-600" />
                 3. How We Use Your Information
               </h2>
@@ -91,7 +91,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold font-serif text-forest-950">
+              <h2 className="text-xl font-bold font-sans text-forest-950">
                 4. Cookies & Local Storage
               </h2>
               <p>
@@ -100,7 +100,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold font-serif text-forest-950">
+              <h2 className="text-xl font-bold font-sans text-forest-950">
                 5. Data Security & Storage
               </h2>
               <p>
@@ -109,7 +109,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="space-y-3">
-              <h2 className="text-xl font-bold font-serif text-forest-950">
+              <h2 className="text-xl font-bold font-sans text-forest-950">
                 6. Your Rights & Opt-Out
               </h2>
               <p>
@@ -118,7 +118,7 @@ export default function PrivacyPolicyPage() {
             </section>
 
             <section className="space-y-3 pt-2 border-t border-emerald-100">
-              <h2 className="text-xl font-bold font-serif text-forest-950">
+              <h2 className="text-xl font-bold font-sans text-forest-950">
                 7. Contact Our Privacy & Advisory Team
               </h2>
               <p>If you have any questions regarding this Privacy Policy or your personal data, please contact:</p>

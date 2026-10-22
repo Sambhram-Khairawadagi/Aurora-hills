@@ -28,10 +28,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
                 className="h-12 sm:h-14 w-auto object-contain drop-shadow-sm"
               />
               <div className="border-l-2 border-emerald-500/40 pl-3">
-                <span className="text-lg sm:text-xl font-black font-serif text-forest-950 tracking-wider block leading-tight">
+                <span className="text-lg sm:text-xl font-black font-sans text-forest-950 tracking-wider block leading-tight">
                   THE AURORA HILLS
                 </span>
-                <span className="text-[11px] uppercase tracking-[0.2em] font-black vibrant-text-gradient">
+                <span className="text-xs uppercase tracking-[0.2em] font-black vibrant-text-gradient">
                   Dharwad City • Luxury Plots
                 </span>
               </div>
@@ -135,7 +135,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
         <div className="pt-8 flex flex-col md:flex-row items-center md:items-start justify-between gap-6 text-xs sm:text-sm text-charcoal-600 text-center md:text-left">
           <div className="flex flex-col gap-2 md:gap-1.5">
             <p>© 2026 The Aurora Hills Dharwad City. All Rights Reserved.</p>
-            <div className="text-[10px] sm:text-xs text-charcoal-500/80 font-medium tracking-wide flex justify-center md:justify-start items-center gap-2 uppercase">
+            <div className="text-xs text-charcoal-600 font-medium tracking-wide flex justify-center md:justify-start items-center gap-2 uppercase">
               <span>Designed & Maintained by</span>
               <Image 
                 src="/images/property-basket-logo-transparent.png" 

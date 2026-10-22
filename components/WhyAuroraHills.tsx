@@ -28,7 +28,7 @@ export const WhyAuroraHills: React.FC<WhyAuroraHillsProps> = ({ onOpenEnquiry })
             <Sparkles className="w-4 h-4 text-emerald-600" />
             Strategic Investment Advantages
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
             Why Choose <span className="vibrant-text-gradient">The Aurora Hills?</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
@@ -54,10 +54,10 @@ export const WhyAuroraHills: React.FC<WhyAuroraHillsProps> = ({ onOpenEnquiry })
               </div>
 
               <div>
-                <h3 className="text-xl font-bold text-forest-950 font-serif mb-2 group-hover:text-emerald-700 transition-colors">
+                <h3 className="text-xl font-black text-forest-950 font-sans mb-2 group-hover:text-emerald-700 transition-colors">
                   {point.title}
                 </h3>
-                <p className="text-sm sm:text-base text-charcoal-700 leading-relaxed font-normal">
+                <p className="text-sm sm:text-base text-charcoal-700 leading-relaxed font-medium">
                   {point.description}
                 </p>
               </div>

@@ -99,10 +99,10 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             <Sparkles className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="text-xl font-bold font-serif text-forest-950">
+            <h3 className="text-xl font-black font-sans text-forest-950">
               Request Exclusive Details
             </h3>
-            <span className="text-xs text-charcoal-600">The Aurora Hills • Dharwad</span>
+            <span className="text-xs sm:text-sm text-charcoal-700 font-medium">The Aurora Hills • Dharwad</span>
           </div>
         </div>
 
@@ -110,12 +110,12 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
         <div className="p-3 rounded-2xl bg-gradient-to-r from-[#450A14] via-[#7B1123] to-[#450A14] text-white mb-4 border border-amber-400/60 shadow-md flex items-center justify-between gap-2">
           <div className="flex items-center gap-2.5">
             <span className="p-1.5 rounded-full bg-amber-400 text-red-950 text-xs font-black">🪔</span>
-            <div className="text-[11px] leading-tight">
+            <div className="text-xs leading-snug">
               <span className="font-black text-amber-300 block">Dasara &amp; Deepawali Festive Special</span>
-              <span className="text-white/80 font-medium">Bookings qualify for 50g Gold or up to 1.5kg Silver!</span>
+              <span className="text-white/90 font-medium">Bookings qualify for 50g Gold or up to 1.5kg Silver!</span>
             </div>
           </div>
-          <span className="text-[9px] uppercase tracking-wider font-black bg-amber-400 text-red-950 px-2 py-0.5 rounded-full flex-shrink-0">
+          <span className="text-xs uppercase tracking-wider font-black bg-amber-400 text-red-950 px-2.5 py-0.5 rounded-full flex-shrink-0">
             Active
           </span>
         </div>
@@ -125,10 +125,10 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-300 flex items-center justify-center mx-auto shadow-md">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h4 className="text-xl font-bold font-serif text-forest-950">
+            <h4 className="text-xl font-black font-sans text-forest-950">
               Thank You, {formData.name}!
             </h4>
-            <p className="text-xs text-charcoal-700 max-w-sm mx-auto">
+            <p className="text-sm text-charcoal-700 max-w-sm mx-auto font-medium">
               Your inquiry has been submitted. Our property consultant will call you at <strong>{formData.phone}</strong> with complete pricing and festive offer details.
             </p>
             <button
@@ -220,7 +220,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
               <span>WhatsApp Instead</span>
             </a>
 
-            <p className="text-center text-[10px] text-charcoal-500">
+            <p className="text-center text-xs text-charcoal-600 font-medium">
               🔒 Your number is safe. Our consultant calls within 15 minutes.
             </p>
           </form>

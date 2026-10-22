@@ -313,7 +313,7 @@ export default function AdminPage() {
             <div className="w-14 h-14 bg-gold-500/10 border border-gold-500/30 rounded-2xl flex items-center justify-center mx-auto mb-4 text-gold-400">
               <Lock className="w-7 h-7" />
             </div>
-            <h1 className="text-2xl font-serif font-bold text-white tracking-wide">
+            <h1 className="text-2xl font-sans font-bold text-white tracking-wide">
               The Aurora Hills
             </h1>
             <p className="text-forest-300 text-sm mt-1">
@@ -383,14 +383,14 @@ export default function AdminPage() {
       <header className="bg-forest-900/80 backdrop-blur-md border-b border-forest-800 sticky top-0 z-30 px-4 sm:px-8 py-3.5 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-2">
-            <div className="w-9 h-9 rounded-xl bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400 font-bold font-serif">
+            <div className="w-9 h-9 rounded-xl bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400 font-bold font-sans">
               AH
             </div>
             <div>
               <h1 className="text-lg font-bold text-white leading-none">
                 The Aurora Hills
               </h1>
-              <span className="text-[11px] text-forest-300">
+              <span className="text-xs text-forest-300">
                 CRM & Management Portal
               </span>
             </div>

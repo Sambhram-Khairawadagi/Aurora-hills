@@ -29,15 +29,15 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({ isOpen, onClose }) => 
           <QrCode className="w-7 h-7 text-white" />
         </div>
 
-        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full vibrant-badge-emerald text-[11px] font-black uppercase tracking-widest mb-2">
+        <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full vibrant-badge-emerald text-xs font-black uppercase tracking-widest mb-2">
           <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
           Official Location QR
         </div>
 
-        <h3 className="text-xl font-bold font-serif text-forest-950 mb-1">
+        <h3 className="text-xl font-black font-sans text-forest-950 mb-1">
           Scan for Live GPS Directions
         </h3>
-        <p className="text-xs text-charcoal-600 mb-5 leading-relaxed">
+        <p className="text-sm text-charcoal-700 mb-5 leading-relaxed font-medium">
           Scan with your smartphone camera to open Google Maps navigation directly to <strong>The Aurora Hills</strong>.
         </p>
 

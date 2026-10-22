@@ -68,10 +68,10 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose })
             <FileText className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="text-lg font-bold font-serif text-forest-950">
+            <h3 className="text-lg font-black font-sans text-forest-950">
               The Aurora Hills Brochure
             </h3>
-            <span className="text-xs text-charcoal-600">Official Project PDF (5 Pages)</span>
+            <span className="text-xs sm:text-sm text-charcoal-700 font-medium">Official Project PDF (5 Pages)</span>
           </div>
         </div>
 
@@ -80,10 +80,10 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose })
             <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-300 flex items-center justify-center mx-auto shadow-md">
               <CheckCircle2 className="w-7 h-7" />
             </div>
-            <h4 className="text-lg font-bold font-serif text-forest-950">
+            <h4 className="text-lg font-black font-sans text-forest-950">
               Download Started!
             </h4>
-            <p className="text-xs text-charcoal-700">
+            <p className="text-sm text-charcoal-700 font-medium">
               Your official PDF brochure is downloading. If it didn&apos;t start automatically, click below:
             </p>
             <a
@@ -96,42 +96,42 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose })
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-3.5">
-            <p className="text-xs text-charcoal-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-charcoal-700 leading-relaxed font-medium">
               Enter your contact details to download the high-resolution digital brochure, master plan layout, and pricing sheets.
             </p>
 
             <div>
-              <label className="block text-[11px] font-bold text-charcoal-700 uppercase tracking-wider mb-1">Your Name *</label>
+              <label className="block text-xs font-bold text-charcoal-700 uppercase tracking-wider mb-1">Your Name *</label>
               <input
                 type="text"
                 required
                 placeholder="Full name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-xs"
+                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-sm"
               />
             </div>
 
             <div>
-              <label className="block text-[11px] font-bold text-charcoal-700 uppercase tracking-wider mb-1">Mobile Number *</label>
+              <label className="block text-xs font-bold text-charcoal-700 uppercase tracking-wider mb-1">Mobile Number *</label>
               <input
                 type="tel"
                 required
                 placeholder="10-digit mobile"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-xs"
+                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-sm"
               />
             </div>
 
             <div>
-              <label className="block text-[11px] font-bold text-charcoal-700 uppercase tracking-wider mb-1">Email Address</label>
+              <label className="block text-xs font-bold text-charcoal-700 uppercase tracking-wider mb-1">Email Address</label>
               <input
                 type="email"
                 placeholder="Optional email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-xs"
+                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-sm"
               />
             </div>
 

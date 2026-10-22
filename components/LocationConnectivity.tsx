@@ -36,8 +36,8 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
             <MapPin className="w-4 h-4 text-emerald-600" />
             Prime Dharwad City Location
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
-            Strategic Location & <span className="vibrant-text-gradient">Landmark Proximities</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
+            Strategic Location &amp; <span className="vibrant-text-gradient">Landmark Proximities</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
             Minutes from top schools, universities, malls, and major highways.
@@ -85,12 +85,12 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
               <div className="absolute top-6 left-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-300/60 shadow-xl max-w-xs">
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
-                  <span className="text-sm font-black text-forest-950 font-serif">The Aurora Hills</span>
+                  <span className="text-sm font-black text-forest-950 font-sans">The Aurora Hills</span>
                 </div>
-                <p className="text-xs text-charcoal-700 font-medium">
+                <p className="text-sm text-charcoal-700 font-medium">
                   <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-700 hover:underline transition-colors">Sunset Viewpoint, Karnatak University, Dharwad</a>
                 </p>
-                <div className="mt-2 text-[11px] font-bold text-emerald-800 vibrant-badge-emerald px-2.5 py-0.5 rounded-full inline-block">
+                <div className="mt-2 text-xs font-bold text-emerald-800 vibrant-badge-emerald px-3 py-1 rounded-full inline-block">
                   Adjacent to NH-4 Highway
                 </div>
               </div>

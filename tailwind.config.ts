@@ -49,9 +49,9 @@ const config: Config = {
         }
       },
       fontFamily: {
-        serif: ["var(--font-serif)", "Playfair Display", "Georgia", "serif"],
-        vintage: ["var(--font-vintage)", "Cormorant Garamond", "Playfair Display", "Georgia", "serif"],
-        sans: ["var(--font-sans)", "Plus Jakarta Sans", "Inter", "sans-serif"],
+        serif: ["var(--font-sans)", "Arial", "Helvetica", "sans-serif"],
+        vintage: ["var(--font-sans)", "Arial", "Helvetica", "sans-serif"],
+        sans: ["var(--font-sans)", "Arial", "Helvetica", "sans-serif"],
         kannada: ["var(--font-kannada)", "Noto Sans Kannada", "sans-serif"],
       },
       animation: {

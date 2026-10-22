@@ -42,8 +42,8 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
             <ShieldCheck className="w-4 h-4 text-emerald-600" />
             HDUDA & NA-KJP Approved Plan
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
-            Approved <span className="green-text-gradient">Layout Plan & Site Progress</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
+            Approved <span className="green-text-gradient">Layout Plan &amp; Site Progress</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
             Officially approved layout plan with demarcated plot boundaries and actual on-site road work.
@@ -53,7 +53,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
           <div className="inline-flex flex-wrap items-center justify-center p-1.5 rounded-full bg-white border border-emerald-200 shadow-sm mt-2">
             <button
               onClick={() => { setActiveLayoutView("blueprint"); handleResetZoom(); }}
-              className={`px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all ${
+              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all ${
                 activeLayoutView === "blueprint"
                   ? "bg-gradient-to-r from-emerald-600 to-green-600 text-white shadow-md"
                   : "text-charcoal-700 hover:text-emerald-700"
@@ -63,7 +63,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
             </button>
             <button
               onClick={() => { setActiveLayoutView("site_roads"); handleResetZoom(); }}
-              className={`px-5 py-2 rounded-full text-xs sm:text-sm font-bold transition-all ${
+              className={`px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all ${
                 activeLayoutView === "site_roads"
                   ? "bg-gradient-to-r from-emerald-600 to-green-600 text-white shadow-md"
                   : "text-charcoal-700 hover:text-emerald-700"
@@ -121,58 +121,58 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
           {/* Sidebar Plot Details */}
           <div className="w-full lg:w-1/4 flex flex-col">
             <div className="bg-white rounded-3xl p-6 shadow-xl border border-emerald-100">
-              <span className="text-[10px] font-black uppercase tracking-wider text-amber-900 bg-amber-100 px-2.5 py-1 rounded-full border border-amber-300 inline-block mb-3">
+              <span className="text-xs font-black uppercase tracking-wider text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300 inline-block mb-3">
                 🪔 Festive Scheme Active
               </span>
-              <h3 className="text-lg sm:text-xl font-black font-serif text-forest-950 mb-6 border-b border-emerald-100 pb-3">
+              <h3 className="text-lg sm:text-xl font-black font-sans text-forest-950 mb-6 border-b border-emerald-100 pb-3">
                 Available Dimensions
               </h3>
               
               <div className="space-y-6">
                 {/* Plot 1 */}
                 <div 
-                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer bg-slate-50/50 p-2 rounded-r-xl" 
+                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer bg-slate-50/50 p-2.5 rounded-r-xl" 
                   onClick={() => onOpenEnquiry("Approved Plan 30x40 (1kg Silver)", "1,200 sq.ft (30x40)")}
                 >
                   <div className="flex items-center justify-between">
                     <h4 className="text-xl font-black text-forest-950 group-hover:text-emerald-700 transition-colors">1,200 sq.ft</h4>
-                    <span className="text-[10px] font-black text-slate-800 bg-slate-200 px-2 py-0.5 rounded-full">30 × 40</span>
+                    <span className="text-xs font-black text-slate-800 bg-slate-200 px-2.5 py-0.5 rounded-full">30 × 40</span>
                   </div>
-                  <p className="text-xs text-gray-500 mt-0.5 font-medium">3BHK Luxury Villa</p>
-                  <p className="text-xs font-bold text-emerald-800 mt-0.5">Starting ₹42 Lakhs*</p>
-                  <span className="inline-block mt-2 px-2.5 py-0.5 rounded-md bg-slate-100 border border-slate-300 text-slate-800 text-[10px] font-black">
+                  <p className="text-sm text-charcoal-700 mt-0.5 font-medium">3BHK Luxury Villa</p>
+                  <p className="text-sm font-black text-emerald-800 mt-0.5">Starting ₹42 Lakhs*</p>
+                  <span className="inline-block mt-2 px-3 py-0.5 rounded-md bg-slate-100 border border-slate-300 text-slate-800 text-xs font-black">
                     🎁 Festive Gift: 1 KG Silver
                   </span>
                 </div>
 
                 {/* Plot 2 */}
                 <div 
-                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer bg-emerald-50/40 p-2 rounded-r-xl" 
+                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer bg-emerald-50/40 p-2.5 rounded-r-xl" 
                   onClick={() => onOpenEnquiry("Approved Plan 30x50 (1.5kg Silver)", "1,500 sq.ft (30x50)")}
                 >
                   <div className="flex items-center justify-between">
                     <h4 className="text-xl font-black text-forest-950 group-hover:text-emerald-700 transition-colors">1,500 sq.ft</h4>
-                    <span className="text-[10px] font-black text-emerald-900 bg-emerald-200 px-2 py-0.5 rounded-full">30 × 50</span>
+                    <span className="text-xs font-black text-emerald-900 bg-emerald-200 px-2.5 py-0.5 rounded-full">30 × 50</span>
                   </div>
-                  <p className="text-xs text-gray-500 mt-0.5 font-medium">Spacious Garden Living</p>
-                  <p className="text-xs font-bold text-emerald-800 mt-0.5">Starting ₹52.5 Lakhs*</p>
-                  <span className="inline-block mt-2 px-2.5 py-0.5 rounded-md bg-emerald-100 border border-emerald-300 text-emerald-900 text-[10px] font-black">
+                  <p className="text-sm text-charcoal-700 mt-0.5 font-medium">Spacious Garden Living</p>
+                  <p className="text-sm font-black text-emerald-800 mt-0.5">Starting ₹52.5 Lakhs*</p>
+                  <span className="inline-block mt-2 px-3 py-0.5 rounded-md bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-black">
                     🎁 Festive Gift: 1.5 KG Silver
                   </span>
                 </div>
 
                 {/* Plot 3 */}
                 <div 
-                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer bg-amber-50/50 p-2 rounded-r-xl" 
+                  className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer bg-amber-50/50 p-2.5 rounded-r-xl" 
                   onClick={() => onOpenEnquiry("Approved Plan 40x60 (50g Gold)", "2,400 sq.ft (40x60)")}
                 >
                   <div className="flex items-center justify-between">
                     <h4 className="text-xl font-black text-forest-950 group-hover:text-emerald-700 transition-colors">2,400 sq.ft</h4>
-                    <span className="text-[10px] font-black text-amber-950 bg-amber-200 px-2 py-0.5 rounded-full">40 × 60</span>
+                    <span className="text-xs font-black text-amber-950 bg-amber-200 px-2.5 py-0.5 rounded-full">40 × 60</span>
                   </div>
-                  <p className="text-xs text-gray-500 mt-0.5 font-medium">Grand Hillside Mansion</p>
-                  <p className="text-xs font-bold text-emerald-800 mt-0.5">Starting ₹84 Lakhs*</p>
-                  <span className="inline-block mt-2 px-2.5 py-0.5 rounded-md bg-amber-200/80 border border-amber-400 text-red-950 text-[10px] font-black">
+                  <p className="text-sm text-charcoal-700 mt-0.5 font-medium">Grand Hillside Mansion</p>
+                  <p className="text-sm font-black text-emerald-800 mt-0.5">Starting ₹84 Lakhs*</p>
+                  <span className="inline-block mt-2 px-3 py-0.5 rounded-md bg-amber-200/80 border border-amber-400 text-red-950 text-xs font-black">
                     🎁 Festive Gift: 50g Gold
                   </span>
                 </div>
@@ -180,7 +180,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
 
               <button
                 onClick={() => onOpenEnquiry("Approved Plan Sidebar", "Any Size")}
-                className="w-full mt-8 py-3 rounded-full bg-gradient-to-r from-emerald-600 to-green-600 text-white text-xs font-black uppercase tracking-wider shadow-md hover:scale-105 transition-transform"
+                className="w-full mt-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-600 to-green-600 text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-md hover:scale-105 transition-transform"
               >
                 Check Availability
               </button>

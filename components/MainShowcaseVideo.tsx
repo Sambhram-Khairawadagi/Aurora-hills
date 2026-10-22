@@ -28,7 +28,7 @@ export const MainShowcaseVideo: React.FC = () => {
             <Video className="w-4 h-4 text-emerald-600" />
             Featured Project Overview
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
             The Aurora Hills <span className="vibrant-text-gradient">Showcase</span>
           </h2>
         </div>

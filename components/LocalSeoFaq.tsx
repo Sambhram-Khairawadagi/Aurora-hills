@@ -125,7 +125,7 @@ export const LocalSeoFaq: React.FC<LocalSeoFaqProps> = ({
             <HelpCircle className="w-4 h-4 text-emerald-600" />
             Buyer's Guide & Real Estate Knowledge
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
             Plots & Real Estate in <span className="vibrant-text-gradient">Dharwad & Hubli</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
@@ -144,7 +144,7 @@ export const LocalSeoFaq: React.FC<LocalSeoFaqProps> = ({
                   <Landmark className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-black font-serif text-forest-950">
+                  <h3 className="text-lg font-black font-sans text-forest-950">
                     Why Invest in Hubli-Dharwad?
                   </h3>
                   <p className="text-xs text-charcoal-600 font-bold uppercase tracking-wider">
@@ -163,7 +163,7 @@ export const LocalSeoFaq: React.FC<LocalSeoFaqProps> = ({
                   <ShieldCheck className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-sm font-bold text-forest-950 block">100% Legal Certainty</span>
-                    <span className="text-xs text-charcoal-600">NA-KJP & HDUDA sanctioned layout with clear individual title deeds.</span>
+                    <span className="text-xs sm:text-sm text-charcoal-700">NA-KJP & HDUDA sanctioned layout with clear individual title deeds.</span>
                   </div>
                 </div>
 
@@ -171,7 +171,7 @@ export const LocalSeoFaq: React.FC<LocalSeoFaqProps> = ({
                   <TrendingUp className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-sm font-bold text-forest-950 block">Rapid Capital Appreciation</span>
-                    <span className="text-xs text-charcoal-600">Prime location near Karnatak University & NH-4 bypass promises steady ROI.</span>
+                    <span className="text-xs sm:text-sm text-charcoal-700">Prime location near Karnatak University & NH-4 bypass promises steady ROI.</span>
                   </div>
                 </div>
 
@@ -179,7 +179,7 @@ export const LocalSeoFaq: React.FC<LocalSeoFaqProps> = ({
                   <Building className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" />
                   <div>
                     <span className="text-sm font-bold text-forest-950 block">Instant Bank Approvals</span>
-                    <span className="text-xs text-charcoal-600">Pre-approved by SBI, HDFC, ICICI, and IDFC First with up to 80% financing.</span>
+                    <span className="text-xs sm:text-sm text-charcoal-700">Pre-approved by SBI, HDFC, ICICI, and IDFC First with up to 80% financing.</span>
                   </div>
                 </div>
               </div>
@@ -213,7 +213,7 @@ export const LocalSeoFaq: React.FC<LocalSeoFaqProps> = ({
                 {LOCAL_AREAS.map((tag, i) => (
                   <span
                     key={i}
-                    className="text-[11px] font-bold px-3 py-1 rounded-full bg-emerald-50 text-forest-950 border border-emerald-200/60 hover:bg-emerald-100/70 transition-colors cursor-default"
+                    className="text-xs font-bold px-3 py-1.5 rounded-full bg-emerald-50 text-forest-950 border border-emerald-200/60 hover:bg-emerald-100/70 transition-colors cursor-default"
                   >
                     {tag}
                   </span>
@@ -241,10 +241,10 @@ export const LocalSeoFaq: React.FC<LocalSeoFaqProps> = ({
                     aria-expanded={isOpen}
                   >
                     <div className="space-y-1">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-emerald-700 block">
+                      <span className="text-xs font-black uppercase tracking-wider text-emerald-700 block">
                         {faq.category}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-forest-950 font-serif leading-snug">
+                      <h3 className="text-base sm:text-lg font-bold text-forest-950 font-sans leading-snug">
                         {faq.question}
                       </h3>
                     </div>

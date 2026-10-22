@@ -64,36 +64,36 @@ export const Hero: React.FC<HeroProps> = ({
         
         {/* Developers & Main Project Title Header Row */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4 sm:mb-6 animate-fade-in max-w-4xl">
-          <div className="flex flex-col space-y-0.5 bg-white/90 px-4 py-2 rounded-2xl backdrop-blur-md border border-emerald-200 shadow-sm w-fit">
+          <div className="flex flex-col space-y-0.5 bg-white/95 px-4 py-2.5 rounded-2xl backdrop-blur-md border border-emerald-200 shadow-sm w-fit">
             <h2 className="text-xs sm:text-sm font-black font-sans tracking-widest text-emerald-950 uppercase">
               Sai Smruti Developers
             </h2>
-            <p className="text-emerald-700 font-extrabold uppercase tracking-[0.2em] text-[9px] sm:text-[10px]">
+            <p className="text-emerald-800 font-black uppercase tracking-[0.2em] text-xs">
               Proudly Presents
             </p>
           </div>
 
           {/* Desktop Bank Loans Badge Inline */}
-          <div className="hidden md:inline-flex items-center gap-2 text-xs sm:text-sm font-black text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 px-5 py-2 rounded-full shadow-md border border-amber-200/60 cursor-default">
+          <div className="hidden md:inline-flex items-center gap-2 text-xs sm:text-sm font-black text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-amber-500 px-5 py-2.5 rounded-full shadow-md border border-amber-200/60 cursor-default">
             <ShieldCheck className="w-4 h-4 text-amber-900" />
             <span>Bank Loans: SBI • HDFC • ICICI • IDFC First</span>
           </div>
         </div>
           
-        {/* Vintage Luxury Project Title Header */}
+        {/* Bold Modern Sans Project Title Header */}
         <div className="mt-3 sm:mt-4 mb-5 sm:mb-7">
-          <h1 className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[6.25rem] font-black font-serif text-forest-950 tracking-tight leading-[1.06] drop-shadow-[0_2px_12px_rgba(255,255,255,0.95)]">
+          <h1 className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[5.75rem] font-black font-sans text-forest-950 tracking-tight leading-[1.04] drop-shadow-[0_2px_12px_rgba(255,255,255,0.95)]">
             THE AURORA <br className="sm:hidden" /><span className="hidden sm:inline"> </span>HILLS
-            <span className="block text-2xl sm:text-4xl md:text-5xl lg:text-[2.85rem] font-serif italic font-bold text-amber-800 tracking-normal mt-2 sm:mt-3 drop-shadow-[0_1px_8px_rgba(255,255,255,0.9)]">
+            <span className="block text-2xl sm:text-4xl md:text-5xl lg:text-[2.75rem] font-sans font-extrabold text-amber-700 tracking-tight mt-2 sm:mt-3 drop-shadow-[0_1px_8px_rgba(255,255,255,0.9)]">
               Villa Plots in Dharwad
             </span>
           </h1>
-          <div className="inline-flex items-center gap-2 mt-3 sm:mt-4 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white/95 border border-emerald-300 shadow-sm max-w-full">
+          <div className="inline-flex items-center gap-2 mt-3 sm:mt-4 px-4 py-2 rounded-full bg-white/95 border border-emerald-300 shadow-sm max-w-full">
              <span className="flex h-2.5 w-2.5 relative flex-shrink-0">
                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-600"></span>
              </span>
-             <span className="text-[10px] sm:text-xs font-black tracking-wider sm:tracking-widest text-emerald-950 uppercase truncate">
+             <span className="text-xs sm:text-sm font-black tracking-wider sm:tracking-widest text-emerald-950 uppercase truncate">
                HDUDA &amp; NA-KJP Approved Villa Plots
              </span>
           </div>
@@ -118,7 +118,7 @@ export const Hero: React.FC<HeroProps> = ({
                   Sunset Viewpoint, Dharwad!
                 </a>
               </p>
-              <p className="text-xs sm:text-sm lg:text-base text-charcoal-800 leading-relaxed font-medium drop-shadow-[0_1px_4px_rgba(255,255,255,0.95)]">
+              <p className="text-sm sm:text-base text-charcoal-800 leading-relaxed font-semibold drop-shadow-[0_1px_4px_rgba(255,255,255,0.95)]">
                 Premium villa plots, 20+ world-class amenities, wide paved roads, and seamless access to top schools, malls &amp; NH-4 — your dream lifestyle starts here!
               </p>
             </div>
@@ -131,8 +131,8 @@ export const Hero: React.FC<HeroProps> = ({
 
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
                 <div>
-                  <div className="text-2xl sm:text-3xl md:text-4xl font-black text-forest-950 font-serif flex items-baseline gap-2 mt-0.5 sm:mt-1">
-                    <span className="text-xs sm:text-sm font-semibold text-charcoal-600">Starting</span>
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-black text-forest-950 font-sans flex items-baseline gap-2 mt-0.5 sm:mt-1">
+                    <span className="text-xs sm:text-sm font-bold text-charcoal-600">Starting</span>
                     <span className="text-emerald-700">{startingPrice}</span>
                   </div>
                 </div>
@@ -147,13 +147,13 @@ export const Hero: React.FC<HeroProps> = ({
 
               {/* Festive Deepawali / Dasara Banner inside Price Card */}
               <div className="mt-2 pt-3 border-t border-emerald-100 flex flex-wrap items-center justify-between gap-2">
-                <div className="flex items-center gap-1.5 text-amber-900 text-xs font-bold">
+                <div className="flex items-center gap-1.5 text-amber-900 text-xs sm:text-sm font-bold">
                   <Sparkles className="w-4 h-4 text-amber-600 flex-shrink-0 animate-pulse" />
                   <span>
                     <strong className="text-forest-950">Dasara &amp; Deepawali Special:</strong> 50g Gold or up to 1.5kg Silver Gift!
                   </span>
                 </div>
-                <a href="#festive-offer" className="text-amber-800 hover:text-emerald-800 underline font-black text-[11px] uppercase tracking-wider">
+                <a href="#festive-offer" className="text-amber-800 hover:text-emerald-800 underline font-black text-xs sm:text-sm uppercase tracking-wider">
                   Explore Scheme →
                 </a>
               </div>

@@ -30,7 +30,7 @@ export const MasterPlanViewer: React.FC<MasterPlanViewerProps> = ({
             <Box className="w-3.5 h-3.5 text-emerald-600" />
             Township Architecture & 3D WebGL
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
             Master Layout & <span className="green-text-gradient">3D Township Explorer</span>
           </h2>
           <p className="text-charcoal-700 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto font-normal">
@@ -126,11 +126,11 @@ export const MasterPlanViewer: React.FC<MasterPlanViewerProps> = ({
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-6 rounded-3xl neu-glass border border-white/90 shadow-lg flex items-center justify-between">
             <div>
-              <span className="text-[10px] uppercase font-bold text-emerald-700 tracking-wider">
+              <span className="text-xs uppercase font-bold text-emerald-700 tracking-wider">
                 Standard Plot Dimension
               </span>
-              <h3 className="text-xl font-bold font-serif text-forest-950">1,200 sq.ft</h3>
-              <p className="text-xs text-charcoal-600">30 x 40 ft • Ideal for Villas</p>
+              <h3 className="text-xl font-bold font-sans text-forest-950">1,200 sq.ft</h3>
+              <p className="text-sm text-charcoal-700 font-medium">30 x 40 ft • Ideal for Villas</p>
             </div>
             <button
               onClick={() => onOpenEnquiry("Master Plan 30x40", "1,200 sq.ft (30x40)")}
@@ -142,11 +142,11 @@ export const MasterPlanViewer: React.FC<MasterPlanViewerProps> = ({
 
           <div className="p-6 rounded-3xl neu-glass border border-white/90 shadow-lg flex items-center justify-between">
             <div>
-              <span className="text-[10px] uppercase font-bold text-emerald-700 tracking-wider">
+              <span className="text-xs uppercase font-bold text-emerald-700 tracking-wider">
                 Large Plot Dimension
               </span>
-              <h3 className="text-xl font-bold font-serif text-forest-950">1,500 sq.ft</h3>
-              <p className="text-xs text-charcoal-600">30 x 50 ft • Spacious Luxury</p>
+              <h3 className="text-xl font-bold font-sans text-forest-950">1,500 sq.ft</h3>
+              <p className="text-sm text-charcoal-700 font-medium">30 x 50 ft • Spacious Luxury</p>
             </div>
             <button
               onClick={() => onOpenEnquiry("Master Plan 30x50", "1,500 sq.ft (30x50)")}
@@ -158,11 +158,11 @@ export const MasterPlanViewer: React.FC<MasterPlanViewerProps> = ({
 
           <div className="p-6 rounded-3xl neu-glass border border-white/90 shadow-lg flex items-center justify-between">
             <div>
-              <span className="text-[10px] uppercase font-bold text-emerald-700 tracking-wider">
+              <span className="text-xs uppercase font-bold text-emerald-700 tracking-wider">
                 Premium Corner Plot
               </span>
-              <h3 className="text-xl font-bold font-serif text-forest-950">2,400 sq.ft</h3>
-              <p className="text-xs text-charcoal-600">40 x 60 ft • Grand Estate</p>
+              <h3 className="text-xl font-bold font-sans text-forest-950">2,400 sq.ft</h3>
+              <p className="text-sm text-charcoal-700 font-medium">40 x 60 ft • Grand Estate</p>
             </div>
             <button
               onClick={() => onOpenEnquiry("Master Plan 40x60", "2,400 sq.ft (40x60)")}

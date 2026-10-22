@@ -178,7 +178,7 @@ export const LeadGate: React.FC = () => {
             <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-300 flex items-center justify-center mx-auto shadow-md">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h4 className="text-xl sm:text-2xl font-bold font-serif text-forest-950">
+            <h4 className="text-xl sm:text-2xl font-black font-sans text-forest-950">
               Welcome, {formData.name}!
             </h4>
             <p className="text-xs sm:text-sm text-charcoal-700 max-w-sm mx-auto leading-relaxed font-medium">
@@ -205,16 +205,16 @@ export const LeadGate: React.FC = () => {
                 <Lock className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="text-lg sm:text-xl font-bold font-serif text-forest-950">
+                <h3 className="text-lg sm:text-xl font-black font-sans text-forest-950">
                   Unlock Full Access
                 </h3>
-                <span className="text-[10px] sm:text-xs text-charcoal-600 font-medium">
+                <span className="text-xs text-charcoal-700 font-medium">
                   The Aurora Hills • Premium Plots in Dharwad
                 </span>
               </div>
             </div>
 
-            <p className="text-xs text-charcoal-600 mb-5 leading-relaxed font-medium">
+            <p className="text-xs sm:text-sm text-charcoal-700 mb-5 leading-relaxed font-medium">
               Share your details to explore the complete project — pricing, layout, amenities, and exclusive offers.
             </p>
 
@@ -321,12 +321,12 @@ export const LeadGate: React.FC = () => {
                 <button
                   type="button"
                   onClick={handleDismiss}
-                  className="text-[11px] text-charcoal-500 hover:text-charcoal-800 underline transition-colors"
+                  className="text-xs text-charcoal-600 hover:text-charcoal-900 underline transition-colors font-medium"
                 >
                   Skip and continue exploring website
                 </button>
               </div>
-              <p className="text-[10px] text-center text-charcoal-500 mt-2">
+              <p className="text-xs text-center text-charcoal-600 mt-2">
                 🔒 Your information is secure. By submitting, you agree to our <a href="/privacy-policy" className="underline hover:text-emerald-700">Privacy Policy</a> & <a href="/terms-and-conditions" className="underline hover:text-emerald-700">Terms</a>.
               </p>
             </form>

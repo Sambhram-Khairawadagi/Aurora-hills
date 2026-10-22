@@ -38,10 +38,10 @@ export const Amenities: React.FC<AmenitiesProps> = ({ onOpenEnquiry }) => {
             <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             20+ Facilities
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
             Lifestyle <span className="green-text-gradient">Amenities</span>
           </h2>
-          <p className="text-sm text-gray-500 max-w-xl mx-auto">
+          <p className="text-base text-charcoal-700 max-w-xl mx-auto font-medium">
             Discover a thoughtfully curated collection of facilities designed to elevate your everyday living.
           </p>
         </div>
@@ -80,12 +80,12 @@ export const Amenities: React.FC<AmenitiesProps> = ({ onOpenEnquiry }) => {
                     {amenity.name}
                   </h3>
                   {amenity.badge && (
-                    <span className="text-[9px] font-black uppercase tracking-wider text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full border border-emerald-200">
+                    <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full border border-emerald-200">
                       {amenity.badge}
                     </span>
                   )}
                 </div>
-                <p className="text-xs sm:text-sm text-gray-500 leading-relaxed group-hover:text-gray-700 transition-colors">
+                <p className="text-sm text-charcoal-700 leading-relaxed group-hover:text-charcoal-900 transition-colors font-medium">
                   {amenity.description}
                 </p>
               </div>

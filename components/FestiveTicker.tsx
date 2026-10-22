@@ -21,7 +21,7 @@ export const FestiveTicker: React.FC<FestiveTickerProps> = ({ onOpenEnquiry }) =
           <span className="p-1 rounded-full bg-amber-400 text-red-950 flex items-center justify-center animate-pulse">
             <Gift className="w-3.5 h-3.5" />
           </span>
-          <span className="hidden sm:inline font-black uppercase tracking-wider text-amber-300 text-[11px] sm:text-xs">
+          <span className="hidden sm:inline font-black uppercase tracking-wider text-amber-300 text-xs">
             Dasara &amp; Deepawali Special:
           </span>
         </div>
@@ -43,7 +43,7 @@ export const FestiveTicker: React.FC<FestiveTickerProps> = ({ onOpenEnquiry }) =
         <div className="flex items-center gap-2 flex-shrink-0">
           <button
             onClick={() => onOpenEnquiry("Top Festive Ticker", "Festive Scheme")}
-            className="px-3.5 py-1 rounded-full bg-gradient-to-r from-amber-400 to-yellow-300 hover:from-amber-300 hover:to-yellow-200 text-red-950 font-black text-[10px] sm:text-xs uppercase tracking-wider shadow-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-1"
+            className="px-3.5 py-1 rounded-full bg-gradient-to-r from-amber-400 to-yellow-300 hover:from-amber-300 hover:to-yellow-200 text-red-950 font-black text-xs uppercase tracking-wider shadow-sm transition-all hover:scale-105 active:scale-95 flex items-center gap-1"
           >
             <span>View Scheme</span>
             <ArrowRight className="w-3 h-3" />

@@ -18,25 +18,25 @@ export const TrustBadges: React.FC = () => {
         {APPROVAL_CARDS.map((card, idx) => (
           <div
             key={idx}
-            className="p-2.5 sm:p-3.5 lg:p-4 rounded-xl sm:rounded-2xl vibrant-card flex flex-col justify-between group shadow-xs hover:shadow-md transition-all"
+            className="p-3.5 sm:p-4 lg:p-5 rounded-2xl vibrant-card flex flex-col justify-between group shadow-sm hover:shadow-md transition-all"
           >
             <div className="flex-1 flex flex-col">
-              {/* Header row: Compact Icon + Highlight Pill */}
-              <div className="flex items-center justify-between gap-1.5 mb-1.5 sm:mb-2">
-                <div className="p-1.5 sm:p-2 rounded-lg sm:rounded-xl vibrant-icon-emerald shrink-0">
+              {/* Header row: Icon + Highlight Pill */}
+              <div className="flex items-center justify-between gap-2 mb-2 sm:mb-2.5">
+                <div className="p-2 rounded-xl vibrant-icon-emerald shrink-0">
                   {iconMap[card.id] || <ShieldCheck className="w-4 h-4 text-white" />}
                 </div>
-                <span className="text-[7.5px] sm:text-[9px] uppercase font-black tracking-tight sm:tracking-wider vibrant-badge-emerald px-2 py-0.5 rounded-full text-center whitespace-nowrap leading-none shrink-0 shadow-xs">
+                <span className="text-xs uppercase font-black tracking-wider vibrant-badge-emerald px-3 py-1 rounded-full text-center whitespace-nowrap leading-none shrink-0 shadow-xs">
                   {card.highlight}
                 </span>
               </div>
 
               {/* Title & Description */}
               <div>
-                <h3 className="text-xs sm:text-sm lg:text-base font-black text-forest-950 font-serif group-hover:text-emerald-600 transition-colors leading-tight">
+                <h3 className="text-sm sm:text-base font-black text-forest-950 font-sans group-hover:text-emerald-700 transition-colors leading-tight">
                   {card.title} {card.subtitle}
                 </h3>
-                <p className="text-[10px] sm:text-xs text-charcoal-700 mt-0.5 sm:mt-1 leading-snug font-normal line-clamp-2">
+                <p className="text-xs sm:text-sm text-charcoal-700 mt-1 sm:mt-1.5 leading-relaxed font-medium">
                   {card.description}
                 </p>
               </div>

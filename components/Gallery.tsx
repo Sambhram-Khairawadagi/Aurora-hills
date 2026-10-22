@@ -420,17 +420,17 @@ export const Gallery: React.FC<GalleryProps> = ({
           <div className="mt-3 sm:mt-4 w-full max-w-3xl px-3.5 py-3 sm:py-4 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/15 text-white shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
             <div className="space-y-1 max-w-xl">
               <div className="flex items-center justify-center sm:justify-start gap-2">
-                <span className="px-2 py-0.5 rounded-full bg-emerald-500/30 text-emerald-300 text-[10px] sm:text-xs font-bold border border-emerald-400/30 uppercase tracking-wider">
+                <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/30 text-emerald-300 text-xs font-bold border border-emerald-400/30 uppercase tracking-wider">
                   {currentLightboxItem.categoryLabel}
                 </span>
-                <span className="text-[10px] sm:text-xs text-white/60 font-medium">
+                <span className="text-xs text-white/70 font-medium">
                   {currentLightboxItem.badge}
                 </span>
               </div>
-              <h4 className="text-sm sm:text-lg font-bold font-serif text-white">
+              <h4 className="text-base sm:text-xl font-bold font-sans text-white">
                 {currentLightboxItem.title}
               </h4>
-              <p className="text-[11px] sm:text-sm text-white/80 leading-relaxed line-clamp-2 sm:line-clamp-none">
+              <p className="text-xs sm:text-sm text-white/90 leading-relaxed line-clamp-2 sm:line-clamp-none">
                 {currentLightboxItem.desc}
               </p>
             </div>
@@ -466,12 +466,12 @@ export const Gallery: React.FC<GalleryProps> = ({
       <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto space-y-3 sm:space-y-4 mb-6 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black font-serif text-forest-950 tracking-tight whitespace-normal lg:whitespace-nowrap">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black font-sans text-forest-950 tracking-tight whitespace-normal lg:whitespace-nowrap">
             Real Site Photos &amp;{" "}
             <span className="vibrant-text-gradient">Township Progress</span>
           </h2>
 
-          <p className="text-charcoal-700 text-xs sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="text-charcoal-700 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
             See the actual on-ground transformation: 40ft wide finished asphalt boulevards, flowering medians, <br className="hidden sm:inline" />
             demarcated villa plots, underground power feeder pillars, and hilltop water reservoir.
           </p>
@@ -499,7 +499,7 @@ export const Gallery: React.FC<GalleryProps> = ({
                 <Icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isActive ? "text-emerald-400" : "text-emerald-700"}`} />
                 <span>{cat.label}</span>
                 <span
-                  className={`text-[10px] sm:text-[11px] px-1.5 sm:px-2 py-0.5 rounded-full font-black ${
+                  className={`text-xs px-2 py-0.5 rounded-full font-black ${
                     isActive
                       ? "bg-emerald-500/30 text-emerald-200"
                       : "bg-emerald-100 text-emerald-800"
@@ -561,15 +561,15 @@ export const Gallery: React.FC<GalleryProps> = ({
         {/* Bottom Tour Booking Banner */}
         <div className="mt-10 sm:mt-14 rounded-2xl sm:rounded-3xl bg-gradient-to-r from-forest-950 via-forest-900 to-emerald-950 p-5 sm:p-8 text-white shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-5 sm:gap-6 border border-emerald-500/30">
           <div className="space-y-1.5 sm:space-y-2 text-center sm:text-left">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[10px] sm:text-xs font-bold border border-emerald-400/30">
-              <Calendar className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-400/30">
+              <Calendar className="w-3.5 h-3.5" />
               <span>Complimentary Weekend Site Visits Available</span>
             </div>
-            <h3 className="text-lg sm:text-2xl font-black font-serif">
+            <h3 className="text-lg sm:text-2xl font-black font-sans">
               Want to walk on these finished avenues in person?
             </h3>
-            <p className="text-white/80 text-[11px] sm:text-sm max-w-xl">
-              We arrange comfortable AC pickup and drop from Hubli & Dharwad for
+            <p className="text-white/90 text-xs sm:text-sm max-w-xl font-medium">
+              We arrange comfortable AC pickup and drop from Hubli &amp; Dharwad for
               you and your family to inspect available villa plots.
             </p>
           </div>

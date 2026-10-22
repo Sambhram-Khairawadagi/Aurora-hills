@@ -37,16 +37,16 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
                   <span className="text-xs uppercase font-black text-emerald-700 tracking-wider">
                     Plotted Sanctuary
                   </span>
-                  <div className="text-base font-black text-forest-950 font-serif">
+                  <div className="text-base font-black text-forest-950 font-sans">
                     Residential Villa Plots
                   </div>
                 </div>
 
                 <div className="text-right">
                   <span className="text-xs font-black text-emerald-700 block">
-                    30ft & 40ft Paved Roads
+                    30ft &amp; 40ft Paved Roads
                   </span>
-                  <span className="text-xs text-charcoal-700 font-medium">
+                  <span className="text-xs sm:text-sm text-charcoal-700 font-medium">
                     Underground Electricity
                   </span>
                 </div>
@@ -61,7 +61,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
               About The Development
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight leading-tight">
               An Architectural Eden in <br />
               <span className="vibrant-text-gradient">Dharwad City</span>
             </h2>

@@ -254,7 +254,7 @@ export const ThreeMasterPlan3D: React.FC<ThreeMasterPlan3DProps> = ({ onSelectPl
           <span>Interactive 3D Master Plan Layout</span>
         </div>
 
-        <div className="p-2 rounded-2xl neu-glass pointer-events-auto flex items-center gap-1 text-[11px] font-semibold text-charcoal-700 shadow-md">
+        <div className="p-2.5 rounded-2xl neu-glass pointer-events-auto flex items-center gap-1.5 text-xs font-bold text-forest-950 shadow-md">
           <RotateCw className="w-3.5 h-3.5 text-emerald-600 animate-spin" style={{ animationDuration: "12s" }} />
           <span>Drag to Orbit / Scroll to Zoom</span>
         </div>
@@ -268,17 +268,17 @@ export const ThreeMasterPlan3D: React.FC<ThreeMasterPlan3DProps> = ({ onSelectPl
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
-              <span className="text-[10px] uppercase tracking-wider font-bold text-emerald-700 block">
+              <span className="text-xs uppercase tracking-wider font-black text-emerald-700 block">
                 Selected 3D Plot Inspection
               </span>
-              <span className="text-sm font-bold text-forest-950 font-serif">
+              <span className="text-sm font-bold text-forest-950 font-sans">
                 {selectedPlot}
               </span>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
-            <span className="text-[11px] text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-300 font-bold">
+            <span className="text-xs text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-300 font-black">
               Ready for Booking
             </span>
           </div>

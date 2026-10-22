@@ -44,8 +44,8 @@ export const Infrastructure: React.FC = () => {
             <Sparkles className="w-4 h-4 text-emerald-600" />
             Engineering Standards
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight">
-            Robust <span className="vibrant-text-gradient">Infrastructure & Engineering</span>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
+            Robust <span className="vibrant-text-gradient">Infrastructure &amp; Engineering</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
             Heavy-duty asphalt roads, underground services, and eco-friendly utilities — built to strict township standards.
@@ -80,16 +80,16 @@ export const Infrastructure: React.FC = () => {
                   <div className={`p-3.5 rounded-2xl ${item.iconClass}`}>
                     {item.icon}
                   </div>
-                  <span className="text-[11px] font-black uppercase tracking-wider vibrant-badge-emerald px-3 py-1 rounded-full">
+                  <span className="text-xs font-black uppercase tracking-wider vibrant-badge-emerald px-3 py-1 rounded-full">
                     {item.tag}
                   </span>
                 </div>
 
-                <h3 className="text-lg font-bold text-forest-950 font-serif group-hover:text-emerald-700 transition-colors">
+                <h3 className="text-lg font-bold text-forest-950 font-sans group-hover:text-emerald-700 transition-colors">
                   {item.title}
                 </h3>
 
-                <p className="text-sm text-charcoal-700 leading-relaxed font-normal">
+                <p className="text-sm sm:text-base text-charcoal-700 leading-relaxed font-medium">
                   {item.desc}
                 </p>
               </div>

@@ -85,7 +85,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
               Direct Developer Desk
             </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-serif text-forest-950 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight leading-tight">
               Get in Touch for <br />
               <span className="vibrant-text-gradient">Exclusive Plot Pricing</span>
             </h2>
@@ -142,7 +142,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
                   <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-300 flex items-center justify-center mx-auto shadow-md">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
-                  <h3 className="text-2xl font-bold font-serif text-forest-950">
+                  <h3 className="text-2xl font-black font-sans text-forest-950">
                     Enquiry Received!
                   </h3>
                   <p className="text-sm text-charcoal-700 max-w-md mx-auto">
@@ -180,12 +180,12 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
                         <p className="text-xs font-black text-amber-300">
                           DASARA &amp; DEEPAWALI SPECIAL SCHEME
                         </p>
-                        <p className="text-[11px] text-white/85 font-medium">
+                        <p className="text-xs text-white/90 font-medium">
                           Book a plot &amp; receive up to <strong className="text-amber-200">50g Gold</strong> or <strong className="text-slate-200">1.5kg Silver</strong> guaranteed!
                         </p>
                       </div>
                     </div>
-                    <span className="hidden sm:inline-block text-[10px] font-black uppercase tracking-wider bg-amber-400 text-red-950 px-2.5 py-1 rounded-full flex-shrink-0">
+                    <span className="hidden sm:inline-block text-xs font-black uppercase tracking-wider bg-amber-400 text-red-950 px-2.5 py-1 rounded-full flex-shrink-0">
                       Active
                     </span>
                   </div>
@@ -263,7 +263,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
 
                     {/* WhatsApp Quick Alternative */}
                     <div className="pt-2 text-center">
-                      <span className="text-[11px] text-charcoal-500 block mb-1.5">or prefer chatting right away?</span>
+                      <span className="text-xs text-charcoal-600 block mb-1.5 font-medium">or prefer chatting right away?</span>
                       <a
                         href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
                           "Hi, I am interested in The Aurora Hills plots in Dharwad. Please share details and pricing on WhatsApp."
@@ -271,7 +271,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={trackWhatsAppClick}
-                        className="inline-flex items-center gap-2 text-xs font-bold text-emerald-800 hover:text-emerald-950 hover:underline"
+                        className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-emerald-800 hover:text-emerald-950 hover:underline"
                       >
                         <span className="w-2 h-2 rounded-full bg-[#25D366]" />
                         <span>Chat Directly with Sales Desk on WhatsApp</span>

@@ -44,7 +44,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
         <a
           href={`tel:${CONTACT_NUMBERS[0].replace(/\s+/g, "")}`}
           onClick={() => trackPhoneClick(CONTACT_NUMBERS[0])}
-          className="flex-1 flex flex-col items-center justify-center gap-0.5 py-1 text-[10px] font-bold text-forest-950 active:scale-95 transition-transform"
+          className="flex-1 flex flex-col items-center justify-center gap-0.5 py-1 text-xs font-bold text-forest-950 active:scale-95 transition-transform"
         >
           <div className="p-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
             <Phone className="w-3.5 h-3.5" />
@@ -57,7 +57,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
           target="_blank"
           rel="noopener noreferrer"
           onClick={trackWhatsAppClick}
-          className="flex-1 flex flex-col items-center justify-center gap-0.5 py-1 text-[10px] font-bold text-forest-950 active:scale-95 transition-transform"
+          className="flex-1 flex flex-col items-center justify-center gap-0.5 py-1 text-xs font-bold text-forest-950 active:scale-95 transition-transform"
         >
           <div className="p-1.5 rounded-full bg-[#25D366]/15 text-[#1ebd5a] border border-[#25D366]/40">
             <MessageCircle className="w-3.5 h-3.5 fill-current" />
@@ -67,7 +67,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
 
         <button
           onClick={onOpenSiteVisit}
-          className="flex-1 flex flex-col items-center justify-center gap-0.5 py-1 text-[10px] font-bold text-forest-950 active:scale-95 transition-transform"
+          className="flex-1 flex flex-col items-center justify-center gap-0.5 py-1 text-xs font-bold text-forest-950 active:scale-95 transition-transform"
         >
           <div className="p-1.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
             <Calendar className="w-3.5 h-3.5" />
@@ -77,7 +77,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
 
         <button
           onClick={() => onOpenEnquiry("Floating Mobile CTA")}
-          className="flex-[1.3] px-3 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white text-[11px] font-black uppercase tracking-wider shadow-md shadow-emerald-600/30 active:scale-95 transition-transform text-center"
+          className="flex-[1.3] px-3 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white text-xs font-black uppercase tracking-wider shadow-md shadow-emerald-600/30 active:scale-95 transition-transform text-center"
         >
           Enquire
         </button>

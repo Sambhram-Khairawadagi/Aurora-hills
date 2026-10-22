@@ -126,7 +126,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               height={36}
               className="h-8 w-auto object-contain"
             />
-            <span className="text-[11px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+            <span className="text-xs font-black text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
               From ₹42L
             </span>
           </div>
