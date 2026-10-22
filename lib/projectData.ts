@@ -389,7 +389,7 @@ export interface FestiveSchemeItem {
   startingPrice: string;
   accentColor: string;
   headerBg: string;
-  ribbonText: string;
+  image: string;
 }
 
 export const FESTIVE_SCHEME_DATA = {
@@ -410,6 +410,7 @@ export const FESTIVE_SCHEME_DATA = {
       giftWeight: "50 GRAMS",
       giftItem: "GOLD",
       giftValueBadge: "Gold Bars & Coins",
+      image: "/images/festive/festive-50g-gold.webp",
       idealFor: "Grand Hillside Luxury Villa / Mansion",
       description: "Book an expansive 2,400 sq.ft plot and receive 50 Grams of Gold to bless your family home.",
       startingPrice: "₹84 Lakhs*",
@@ -426,6 +427,7 @@ export const FESTIVE_SCHEME_DATA = {
       giftWeight: "1.5 KG",
       giftItem: "SILVER",
       giftValueBadge: "2 Ornate Traditional Silver Kalash",
+      image: "/images/festive/festive-1-5kg-silver.webp",
       idealFor: "Spacious Garden Living & 4BHK Villa",
       description: "Book a 1,500 sq.ft prime residential plot and receive 1.5 Kilograms of auspicious Silver.",
       startingPrice: "₹52.5 Lakhs*",
@@ -442,6 +444,7 @@ export const FESTIVE_SCHEME_DATA = {
       giftWeight: "1 KG",
       giftItem: "SILVER",
       giftValueBadge: "1 Ornate Traditional Silver Kalash",
+      image: "/images/festive/festive-1kg-silver.webp",
       idealFor: "Contemporary 3BHK Independent Home",
       description: "Book our most sought-after 1,200 sq.ft plot and receive 1 Kilogram of pure festive Silver.",
       startingPrice: "₹42 Lakhs*",

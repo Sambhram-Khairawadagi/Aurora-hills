@@ -20,19 +20,20 @@ The Aurora Hills is a premium real estate landing page and management portal for
 - **Plot & Scheme Tiers**:
   1. **40 × 60 Plot (2,400 sq.ft)**:
      - **Reward**: **50 Grams GOLD**
-     - **Graphic**: Stylized gold ingot card with bold **`GOLD`** label + gold coin.
+     - **Graphic**: Photorealistic 3D rendered gold bars & coin asset (`/images/festive/festive-50g-gold.webp`).
      - **Specifications**: 40ft × 60ft dimension, 2,400 sq.ft total area, HDUDA & NA-KJP approved.
   2. **30 × 50 Plot (1,500 sq.ft)**:
      - **Reward**: **1.5 KG SILVER**
-     - **Graphic**: Dual traditional silver Kalash ornaments.
+     - **Graphic**: Photorealistic 3D dual traditional ornate silver Kalash asset (`/images/festive/festive-1-5kg-silver.webp`).
      - **Specifications**: 30ft × 50ft dimension, 1,500 sq.ft total area, HDUDA & NA-KJP approved.
   3. **30 × 40 Plot (1,200 sq.ft)**:
      - **Reward**: **1 KG SILVER**
-     - **Graphic**: Single traditional silver Kalash ornament.
+     - **Graphic**: Photorealistic 3D single ornate traditional silver Kalash asset (`/images/festive/festive-1kg-silver.webp`).
      - **Specifications**: 30ft × 40ft dimension, 1,200 sq.ft total area, HDUDA & NA-KJP approved.
 - **Card Design Directives**:
   - Pricing has been removed from all 3 festive cards to focus customer attention on dimensions, areas, government approvals, and claiming festival gifts.
   - CTAs open `EnquiryModal` with pre-filled scheme metadata (`Festive Offer 40x60`, `Festive Offer 30x50`, `Festive Offer 30x40`).
+  - Cards upgraded with high-resolution responsive WebP visuals, ambient glow backdrops, and subtle hover zoom transitions.
 
 ### B. Sanctioned Layout & Inventory (`components/SanctionedLayout.tsx`)
 - High-resolution SVG / Interactive plot plan with pan, zoom, and fullscreen capabilities.
@@ -231,3 +232,7 @@ The Aurora Hills is a premium real estate landing page and management portal for
 - `4a17b8d`: docs: finalize commit hash d15e5af in MEMORY.md.
 - `622d981`: docs: update comprehensive negative keyword master list in ads strategy.
 - `6d3f2ea`: docs: document live production verification, multi-project isolation, and keyword calibration.
+- `c2f5964`: docs: record Oct 16 conversion milestone and Oct 17 live negative keyword deployment.
+- `7f9f0a7`: docs: record Oct 19 audit milestone, dimension keywords, and negative keyword updates in strategy.
+- `7700dd3`: fix(analytics): bulletproof gtag event queueing and explicit window.gtag binding.
+- feat(festive): upgrade festive scheme cards with high-res 3D gold and silver visual assets.

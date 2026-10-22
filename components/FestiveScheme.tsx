@@ -109,30 +109,25 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
               </p>
             </div>
 
-            {/* Visual Icon Illustration Card */}
-            <div className="p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-amber-50/70 via-white to-amber-50/40 relative">
-              
-              {/* Gold Ornament Illustration Container */}
-              <div className="relative w-44 h-40 sm:w-48 sm:h-44 flex items-center justify-center my-2">
-                <div className="absolute inset-0 bg-gradient-to-tr from-amber-300/30 to-yellow-200/20 rounded-full blur-xl animate-pulse" />
-                
-                {/* Stylized Gold Bars & Coins Icon Representation */}
-                <div className="relative z-10 flex flex-col items-center">
-                  <div className="relative w-28 h-20 bg-gradient-to-br from-amber-200 via-amber-400 to-yellow-600 rounded-lg shadow-xl border border-yellow-200 flex flex-col justify-center items-center transform -rotate-3 hover:rotate-0 transition-transform">
-                    <span className="text-lg font-black tracking-widest text-amber-950 uppercase drop-shadow-sm">GOLD</span>
-                  </div>
-                  <div className="w-14 h-14 -mt-4 bg-gradient-to-tr from-yellow-500 via-amber-300 to-yellow-200 rounded-full shadow-lg border-2 border-white flex items-center justify-center text-amber-950 font-black text-xs">
-                    🪙
-                  </div>
-                </div>
+            {/* Visual Festive Gift Card */}
+            <div className="p-5 sm:p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-amber-50/70 via-white to-amber-50/40 relative">
+              {/* Gold Ornament Visual Container */}
+              <div className="relative w-full h-48 sm:h-52 flex items-center justify-center my-1 group-hover:scale-105 transition-transform duration-300">
+                <div className="absolute inset-0 bg-gradient-to-tr from-amber-300/30 to-yellow-200/20 rounded-full blur-2xl animate-pulse" />
+                <Image
+                  src="/images/festive/festive-50g-gold.webp"
+                  alt="50 Grams Gold Auspicious Festive Scheme - The Aurora Hills 40x60 Plot"
+                  fill
+                  className="object-contain relative z-10 drop-shadow-[0_12px_24px_rgba(180,83,9,0.25)]"
+                  sizes="(max-width: 768px) 90vw, 360px"
+                  priority
+                />
               </div>
 
-              {/* Gold Ribbon Bar */}
-              <div className="w-full mt-2 py-3 px-4 rounded-2xl bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-400 text-amber-950 shadow-lg border border-amber-200">
-                <span className="block text-2xl sm:text-3xl font-black font-serif tracking-tight drop-shadow-sm">
-                  50 GRAMS GOLD
-                </span>
-                <span className="text-[10px] uppercase tracking-wider font-extrabold text-amber-900 block mt-0.5">
+              {/* Subtitle Ribbon Strip */}
+              <div className="w-full mt-3 py-2 px-3 rounded-xl bg-gradient-to-r from-amber-100 via-amber-50 to-amber-100 text-amber-950 border border-amber-300/80 shadow-sm">
+                <span className="text-[11px] uppercase tracking-wider font-extrabold text-amber-900 inline-flex items-center justify-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-amber-600" />
                   Guaranteed Festive Reward
                 </span>
               </div>
@@ -177,32 +172,24 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
               </p>
             </div>
 
-            {/* Visual Icon Illustration Card */}
-            <div className="p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-emerald-50/70 via-white to-emerald-50/40 relative">
-              
-              {/* Silver Ornaments Illustration Container */}
-              <div className="relative w-44 h-40 sm:w-48 sm:h-44 flex items-center justify-center my-2">
-                <div className="absolute inset-0 bg-gradient-to-tr from-slate-300/30 to-emerald-200/20 rounded-full blur-xl animate-pulse" />
-                
-                {/* Dual Silver Kalash Icon Representation */}
-                <div className="relative z-10 flex items-center justify-center gap-3">
-                  <div className="w-16 h-20 bg-gradient-to-b from-slate-100 via-slate-200 to-slate-400 rounded-t-full rounded-b-2xl shadow-xl border-2 border-white flex flex-col items-center justify-center text-slate-800">
-                    <span className="text-xl">🏺</span>
-                    <span className="text-[7px] font-black tracking-widest mt-1">SILVER</span>
-                  </div>
-                  <div className="w-16 h-20 bg-gradient-to-b from-slate-100 via-slate-200 to-slate-400 rounded-t-full rounded-b-2xl shadow-xl border-2 border-white flex flex-col items-center justify-center text-slate-800">
-                    <span className="text-xl">🏺</span>
-                    <span className="text-[7px] font-black tracking-widest mt-1">SILVER</span>
-                  </div>
-                </div>
+            {/* Visual Festive Gift Card */}
+            <div className="p-5 sm:p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-emerald-50/70 via-white to-emerald-50/40 relative">
+              {/* Silver Ornaments Visual Container */}
+              <div className="relative w-full h-48 sm:h-52 flex items-center justify-center my-1 group-hover:scale-105 transition-transform duration-300">
+                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-300/20 to-teal-200/20 rounded-full blur-2xl animate-pulse" />
+                <Image
+                  src="/images/festive/festive-1-5kg-silver.webp"
+                  alt="1.5 KG Silver Auspicious Festive Scheme - The Aurora Hills 30x50 Plot"
+                  fill
+                  className="object-contain relative z-10 drop-shadow-[0_12px_24px_rgba(5,150,105,0.22)]"
+                  sizes="(max-width: 768px) 90vw, 360px"
+                />
               </div>
 
-              {/* Silver Ribbon Bar */}
-              <div className="w-full mt-2 py-3 px-4 rounded-2xl bg-gradient-to-r from-slate-200 via-slate-100 to-slate-300 text-slate-900 shadow-lg border border-slate-300">
-                <span className="block text-2xl sm:text-3xl font-black font-serif tracking-tight drop-shadow-sm">
-                  1.5 KG SILVER
-                </span>
-                <span className="text-[10px] uppercase tracking-wider font-extrabold text-emerald-950 block mt-0.5">
+              {/* Subtitle Ribbon Strip */}
+              <div className="w-full mt-3 py-2 px-3 rounded-xl bg-gradient-to-r from-emerald-100 via-emerald-50 to-emerald-100 text-emerald-950 border border-emerald-300/80 shadow-sm">
+                <span className="text-[11px] uppercase tracking-wider font-extrabold text-emerald-950 inline-flex items-center justify-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
                   Guaranteed Festive Reward
                 </span>
               </div>
@@ -247,28 +234,24 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
               </p>
             </div>
 
-            {/* Visual Icon Illustration Card */}
-            <div className="p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-slate-50/70 via-white to-slate-50/40 relative">
-              
-              {/* Single Silver Kalash Illustration Container */}
-              <div className="relative w-44 h-40 sm:w-48 sm:h-44 flex items-center justify-center my-2">
-                <div className="absolute inset-0 bg-gradient-to-tr from-slate-200/40 to-slate-300/30 rounded-full blur-xl animate-pulse" />
-                
-                {/* Single Silver Kalash Icon Representation */}
-                <div className="relative z-10 flex items-center justify-center">
-                  <div className="w-20 h-24 bg-gradient-to-b from-slate-100 via-slate-200 to-slate-400 rounded-t-full rounded-b-2xl shadow-xl border-2 border-white flex flex-col items-center justify-center text-slate-800">
-                    <span className="text-2xl">🏺</span>
-                    <span className="text-[8px] font-black tracking-widest mt-1">SILVER KALASH</span>
-                  </div>
-                </div>
+            {/* Visual Festive Gift Card */}
+            <div className="p-5 sm:p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-slate-50/70 via-white to-slate-50/40 relative">
+              {/* Silver Kalash Visual Container */}
+              <div className="relative w-full h-48 sm:h-52 flex items-center justify-center my-1 group-hover:scale-105 transition-transform duration-300">
+                <div className="absolute inset-0 bg-gradient-to-tr from-slate-300/30 to-zinc-200/20 rounded-full blur-2xl animate-pulse" />
+                <Image
+                  src="/images/festive/festive-1kg-silver.webp"
+                  alt="1 KG Silver Auspicious Festive Scheme - The Aurora Hills 30x40 Plot"
+                  fill
+                  className="object-contain relative z-10 drop-shadow-[0_12px_24px_rgba(51,65,85,0.22)]"
+                  sizes="(max-width: 768px) 90vw, 360px"
+                />
               </div>
 
-              {/* Silver Ribbon Bar */}
-              <div className="w-full mt-2 py-3 px-4 rounded-2xl bg-gradient-to-r from-slate-200 via-slate-100 to-slate-300 text-slate-900 shadow-lg border border-slate-300">
-                <span className="block text-2xl sm:text-3xl font-black font-serif tracking-tight drop-shadow-sm">
-                  1 KG SILVER
-                </span>
-                <span className="text-[10px] uppercase tracking-wider font-extrabold text-slate-700 block mt-0.5">
+              {/* Subtitle Ribbon Strip */}
+              <div className="w-full mt-3 py-2 px-3 rounded-xl bg-gradient-to-r from-slate-100 via-slate-50 to-slate-100 text-slate-900 border border-slate-300/80 shadow-sm">
+                <span className="text-[11px] uppercase tracking-wider font-extrabold text-slate-800 inline-flex items-center justify-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5 text-slate-600" />
                   Guaranteed Festive Reward
                 </span>
               </div>
