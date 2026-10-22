@@ -163,6 +163,12 @@ export default function HomePage() {
         {/* 4 Trust Approvals Strip */}
         <TrustBadges />
 
+        {/* Photographic Media & Site Gallery — Directly below NA-KJP Approved section */}
+        <Gallery
+          onOpenVideo={handleOpenVideo}
+          onOpenEnquiry={handleOpenEnquiry}
+        />
+
         {/* Dedicated Dasara & Deepawali Gold & Silver Festive Scheme Section */}
         <FestiveScheme onOpenEnquiry={handleOpenEnquiry} />
 
@@ -170,12 +176,6 @@ export default function HomePage() {
         <ProjectIntro
           onOpenEnquiry={handleOpenEnquiry}
           onOpenLayout={handleScrollToLayout}
-        />
-
-        {/* Photographic Media & Site Gallery — Brought Up for High Visibility */}
-        <Gallery
-          onOpenVideo={handleOpenVideo}
-          onOpenEnquiry={handleOpenEnquiry}
         />
 
         {/* Standalone Main Video Showcase */}

@@ -32,9 +32,9 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const navLinks = [
     { label: "Overview", href: "#hero" },
+    { label: "Site Photos", href: "#gallery" },
     { label: "Festive Scheme 🎁", href: "#festive-offer", isSpecial: true },
     { label: "About", href: "#about" },
-    { label: "Site Photos", href: "#gallery" },
     { label: "Amenities", href: "#amenities" },
     { label: "Layout", href: "#layout" },
   ];

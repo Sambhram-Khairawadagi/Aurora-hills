@@ -30,8 +30,8 @@
   - Removed all text overlays, badges, dark gradient masks, and card footers directly over the images to keep pure, pristine, edge-to-edge photography.
   - Interactive Lightbox with keyboard support (ESC, Left/Right arrows), Next/Prev navigation, image counter, and booking CTA.
 - **Section Re-Ordering**:
-  - Moved `<Gallery />` high up on the homepage in `app/page.tsx` — placed directly after `<ProjectIntro />` (above videos and amenities) so visitors immediately see real on-ground execution.
-  - Updated `components/Navbar.tsx` navLinks to display `Site Photos` in natural top-down browsing sequence.
+  - Moved `<Gallery />` directly below `<TrustBadges />` (the NA-KJP APPROVED, HDUDA APPROVED, BANK LOANS APPROVED strip) in `app/page.tsx` — appearing immediately in the 2nd fold of the page right after the trust badges, before FestiveScheme and ProjectIntro.
+  - Updated `components/Navbar.tsx` navLinks (`Overview` -> `Site Photos` -> `Festive Scheme 🎁` -> `About` -> `Amenities` -> `Layout`) to match the exact visual layout order.
 
 ## 1. Project Overview
 The Aurora Hills is a premium real estate landing page and management portal for luxury residential villa plots located near NH-4 Highway, Kelgerri, Dharwad, Karnataka. The layout is HDUDA and NA-KJP approved with 20+ world-class amenities.
