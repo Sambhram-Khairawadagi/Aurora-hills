@@ -8,7 +8,34 @@
 
 ---
 
-## Latest Update: October 22, 2026 — On-Ground Progress Photo Gallery & Section Repositioning
+## Latest Update: October 22, 2026 — Comprehensive Mobile-First Optimization (99% Mobile Ad Traffic)
+- **Problem**: 99% of visitors arrive via mobile devices (Google Ads & Meta traffic on 360px–390px screens). Previous layout had a 6,000px single-column gallery scroll trap, a floating WhatsApp button obscuring content and forms, vertically stacked 4-card trust badges, and small input font sizes triggering iOS Safari auto-zoom.
+- **Audit & Implementation**:
+  1. **Gallery Grid (`components/Gallery.tsx`)**:
+     - Converted mobile grid to a sleek 2-column layout (`grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6 lg:gap-8`) with `h-36 xs:h-44 sm:h-72 lg:h-80` image height.
+     - Added progressive disclosure: Initially displays 8 preview photos on mobile with a prominent `"View All 24 Development Photos (+16 More)"` button, instantly eliminating scroll fatigue.
+     - Category filter chips converted to an edge-to-edge horizontally scrollable bar (`overflow-x-auto no-scrollbar`) with swipeable chips.
+     - Lightbox enhanced with native touch swipe gestures (`onTouchStart`, `onTouchEnd`) for fluid one-thumb browsing.
+  2. **Floating Action Bar (`components/FloatingActions.tsx`)**:
+     - Removed the intrusive floating circular WhatsApp button on mobile (`hidden sm:flex`).
+     - Integrated WhatsApp directly into the sticky bottom navigation bar: `[ 📞 Call Desk ]  [ 💬 WhatsApp ]  [ 📅 Site Visit ]  [ 🚀 Enquire ]`.
+     - Zero obstruction on forms, text, or footer, with 100% thumb-reachable primary actions.
+  3. **Trust Badges (`components/TrustBadges.tsx`)**:
+     - Switched from single-column vertical stack (4 screens tall) to a compact 2x2 grid (`grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6`).
+     - All 4 government & bank credentials (NA-KJP, HDUDA, Bank Loans, Property Tax) fit into a single mobile screen view.
+     - Highlight pills use `text-[7.5px] sm:text-[10px]` with `whitespace-nowrap leading-none`, completely eliminating text truncation.
+  4. **Hero Typography & Wrapping (`components/Hero.tsx`)**:
+     - Scaled H1 to `text-4xl xs:text-5xl sm:text-7xl` with `<br className="sm:hidden" />` between `THE AURORA` and `HILLS` to prevent edge overflow on 360px viewports.
+     - Full-width tap targets (min 44px) for Call (`tel:+918970198701`), Enquire, and Festive Scheme buttons.
+  5. **iOS Safari Zoom Prevention (`components/HeroLeadCard.tsx`, `components/EnquiryModal.tsx`, `components/SiteVisitModal.tsx`)**:
+     - Updated form inputs to `text-base sm:text-sm` (>= 16px on mobile) to eliminate iOS Safari's disruptive auto-zooming on focus.
+  6. **Phone Number Fix (`components/FestiveScheme.tsx`, `lib/projectData.ts`)**:
+     - Corrected invalid 9-digit number `735331107` to the verified 10-digit sales line `9019765265`.
+- **Verification**: Fully verified via headless Chrome DevTools Protocol emulation at 390x844 with visual screenshot inspection across 10 scroll checkpoints. Zero horizontal overflow (`document.documentElement.scrollWidth === clientWidth`). 100% TypeScript clean (`tsc --noEmit` exit code 0).
+
+---
+
+## Prior Update: October 22, 2026 — On-Ground Progress Photo Gallery & Section Repositioning
 - **Source Media**: Curated from `OCT-2026-PICS-20261022T083823Z-1-001/OCT-2026-PICS` containing 23 authentic on-ground development progress photos.
 - **Full 23-Photo Integration & WebP Optimization**:
   - Included 100% of all 23 photos from `OCT-2026-PICS-20261022T083823Z-1-001/OCT-2026-PICS` + the Sanctioned Layout Blueprint (24 items total):
