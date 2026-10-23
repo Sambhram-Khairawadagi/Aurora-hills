@@ -1,7 +1,15 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Cormorant_Garamond, Inter, Noto_Sans_Kannada } from "next/font/google";
 import "./globals.css";
 import { GoogleTag } from "@/components/GoogleTag";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#0A2E1D",
+};
+
 
 const inter = Inter({
   subsets: ["latin"],

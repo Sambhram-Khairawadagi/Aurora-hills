@@ -82,7 +82,7 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none" />
 
               {/* Floating Pin Highlight */}
-              <div className="absolute top-6 left-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-300/60 shadow-xl max-w-xs">
+              <div className="absolute top-3 left-3 right-3 sm:right-auto sm:top-6 sm:left-6 p-3.5 sm:p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-300/60 shadow-xl sm:max-w-xs">
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
                   <span className="text-sm font-black text-forest-950 font-sans">The Aurora Hills</span>

@@ -240,16 +240,16 @@ export const LocalSeoFaq: React.FC<LocalSeoFaqProps> = ({
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <button
                   onClick={() => onOpenEnquiry("SEO Buyer Guide CTA", "Price Quote & Layout Plan")}
-                  className="w-full py-3 px-5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:scale-[1.02] flex items-center justify-center gap-2"
+                  className="w-full sm:flex-1 py-3 px-5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:scale-[1.02] flex items-center justify-center gap-2"
                 >
-                  <PhoneCall className="w-4 h-4" />
+                  <PhoneCall className="w-4 h-4 flex-shrink-0" />
                   <span>Get Price Quote</span>
                 </button>
                 <button
                   onClick={onOpenBrochure}
-                  className="w-full py-3 px-5 rounded-full bg-white border border-emerald-300/80 text-forest-950 hover:text-emerald-700 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition-all"
+                  className="w-full sm:flex-1 py-3 px-5 rounded-full bg-white border border-emerald-300/80 text-forest-950 hover:text-emerald-700 text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-sm hover:shadow-md transition-all"
                 >
-                  <FileText className="w-4 h-4 text-emerald-600" />
+                  <FileText className="w-4 h-4 text-emerald-600 flex-shrink-0" />
                   <span>Download Layout</span>
                 </button>
               </div>

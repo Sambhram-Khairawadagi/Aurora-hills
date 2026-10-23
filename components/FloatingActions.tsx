@@ -40,7 +40,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
       </div>
 
       {/* Floating Bottom Navigation Bar on Mobile (4 Direct Thumb Actions: Call, WhatsApp, Site Visit, Enquire) */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 sm:hidden bg-white/95 backdrop-blur-xl border-t border-emerald-200/80 px-2 py-2 flex items-center justify-between gap-1 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
+      <div className="fixed bottom-0 left-0 right-0 z-50 sm:hidden bg-white/95 backdrop-blur-xl border-t border-emerald-200/80 px-2 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] flex items-center justify-between gap-1 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
         <a
           href={`tel:${CONTACT_NUMBERS[0].replace(/\s+/g, "")}`}
           onClick={() => trackPhoneClick(CONTACT_NUMBERS[0])}

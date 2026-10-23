@@ -47,16 +47,16 @@ export default function PlotsInDharwadPage() {
           <p className="text-lg sm:text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed mb-10">
             Buy premium 30×40, 30×50 & 40×60 villa plots near Karnatak University, NH-4 Highway & Sunset Viewpoint, Dharwad. 100% legally clear title. SBI · HDFC · ICICI bank loans pre-approved.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3.5 sm:gap-4 justify-center items-center">
             <a
               href="tel:+918970198701"
-              className="px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white font-black text-base uppercase tracking-wider transition-all shadow-xl shadow-emerald-900/50"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white font-black text-sm sm:text-base uppercase tracking-wider transition-all shadow-xl shadow-emerald-900/50 text-center"
             >
               📞 Call: 89701 98701
             </a>
             <Link
               href="/#layout"
-              className="px-8 py-4 rounded-full bg-white/10 border border-white/30 hover:bg-white/20 text-white font-black text-base uppercase tracking-wider transition-all"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 border border-white/30 hover:bg-white/20 text-white font-black text-sm sm:text-base uppercase tracking-wider transition-all text-center"
             >
               View Layout Plan →
             </Link>
@@ -75,7 +75,7 @@ export default function PlotsInDharwadPage() {
               Choose the right residential plot size in Dharwad that fits your dream home and budget.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 lg:gap-8">
             {[
               {
                 size: "30×40",
@@ -101,9 +101,9 @@ export default function PlotsInDharwadPage() {
             ].map((plot, i) => (
               <div
                 key={i}
-                className={`rounded-3xl border-2 p-8 text-center flex flex-col items-center gap-4 ${
+                className={`rounded-3xl border-2 p-6 lg:p-8 text-center flex flex-col items-center gap-4 transition-all ${
                   plot.highlight
-                    ? "border-emerald-500 bg-emerald-50 shadow-2xl shadow-emerald-200/80 scale-105"
+                    ? "border-emerald-500 bg-emerald-50 shadow-2xl shadow-emerald-200/80 lg:scale-105"
                     : "border-gray-200 bg-white shadow-md"
                 }`}
               >
@@ -339,10 +339,10 @@ export default function PlotsInDharwadPage() {
           <p className="text-emerald-200 text-lg mb-10 leading-relaxed">
             Every weekend we run free site visit pickups from Hubli (Navanagar, Gokul Road, Unkal, Keshwapur). The Aurora Hills is just 20 minutes from Hubli via NH-48. Come see the plots, roads, and amenities yourself — absolutely no obligation.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3.5 sm:gap-4 justify-center items-center">
             <a
               href="tel:+918970198701"
-              className="px-8 py-4 rounded-full bg-emerald-400 hover:bg-emerald-300 text-emerald-900 font-black text-base uppercase tracking-wider transition-all shadow-xl"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-400 hover:bg-emerald-300 text-emerald-900 font-black text-sm sm:text-base uppercase tracking-wider transition-all shadow-xl text-center"
             >
               📞 Call 89701 98701
             </a>
@@ -350,7 +350,7 @@ export default function PlotsInDharwadPage() {
               href="https://wa.me/918970198701?text=Hi!%20I%20am%20interested%20in%20buying%20a%20plot%20in%20Dharwad.%20Please%20share%20details%20for%20The%20Aurora%20Hills."
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full bg-white/10 border border-white/30 hover:bg-white/20 text-white font-black text-base uppercase tracking-wider transition-all"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 border border-white/30 hover:bg-white/20 text-white font-black text-sm sm:text-base uppercase tracking-wider transition-all text-center"
             >
               💬 WhatsApp Us
             </a>

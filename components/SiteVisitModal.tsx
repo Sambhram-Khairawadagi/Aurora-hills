@@ -123,7 +123,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
                 placeholder="Full name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-xs"
+                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm"
               />
             </div>
 
@@ -138,7 +138,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
                   placeholder="10-digit mobile"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-xs"
+                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm"
                 />
               </div>
 
@@ -151,7 +151,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
                   required
                   value={formData.preferred_date}
                   onChange={(e) => setFormData({ ...formData, preferred_date: e.target.value })}
-                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-base sm:text-xs"
+                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-base sm:text-sm"
                 />
               </div>
             </div>
@@ -164,7 +164,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
                 <select
                   value={formData.preferred_time}
                   onChange={(e) => setFormData({ ...formData, preferred_time: e.target.value })}
-                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-base sm:text-xs bg-[#F0F4ED]"
+                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-base sm:text-sm bg-[#F0F4ED]"
                 >
                   <option value="10:00 AM">Morning (10:00 AM)</option>
                   <option value="11:30 AM">Morning (11:30 AM)</option>
@@ -180,7 +180,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
                 <select
                   value={formData.transport_required}
                   onChange={(e) => setFormData({ ...formData, transport_required: e.target.value })}
-                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-base sm:text-xs bg-[#F0F4ED]"
+                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-base sm:text-sm bg-[#F0F4ED]"
                 >
                   <option value="Yes">Yes (Complimentary Pickup)</option>
                   <option value="No">No (Own Vehicle)</option>
@@ -197,7 +197,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 hover:from-emerald-500 hover:to-green-600 text-white font-black text-xs uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-transform hover:scale-[1.01] active:scale-[0.99]"
+              className="w-full py-3.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 hover:from-emerald-500 hover:to-green-600 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-transform hover:scale-[1.01] active:scale-[0.99]"
             >
               <Calendar className="w-4 h-4" />
               <span>{loading ? "Booking..." : "Confirm Site Visit"}</span>

@@ -181,7 +181,7 @@ export const DirectAnswerHub: React.FC<DirectAnswerHubProps> = ({
               </div>
 
               {/* Actions */}
-              <div className="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t border-emerald-100">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap items-center gap-3 pt-4 border-t border-emerald-100">
                 {onOpenSiteVisit && (
                   <button
                     onClick={onOpenSiteVisit}

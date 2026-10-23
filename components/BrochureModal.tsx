@@ -54,7 +54,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose })
 
   return (
     <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
-      <div className="bg-[#F7F9F6] border border-white/90 rounded-3xl p-6 sm:p-8 max-w-md w-full text-forest-950 shadow-2xl relative neu-card">
+      <div className="bg-[#F7F9F6] border border-white/90 rounded-3xl p-6 sm:p-8 max-w-md w-full text-forest-950 shadow-2xl relative neu-card max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
           className="absolute top-5 right-5 p-2 rounded-full neu-button text-charcoal-700 hover:text-forest-950 transition-colors"
@@ -108,7 +108,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose })
                 placeholder="Full name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-sm"
+                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm"
               />
             </div>
 
@@ -120,7 +120,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose })
                 placeholder="10-digit mobile"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-sm"
+                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm"
               />
             </div>
 
@@ -131,7 +131,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose })
                 placeholder="Optional email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-sm"
+                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm"
               />
             </div>
 

@@ -161,10 +161,10 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             {/* Action Buttons (High Contrast & Light-Theme Optimized) */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-3.5 pt-1 sm:pt-2 w-full">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2.5 sm:gap-3 pt-1 sm:pt-2 w-full">
               <button
                 onClick={() => onOpenEnquiry("Hero Primary CTA")}
-                className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-white bg-gradient-to-r from-emerald-700 via-emerald-600 to-forest-900 rounded-full shadow-lg shadow-emerald-700/25 hover:shadow-xl hover:shadow-emerald-700/40 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2"
+                className="w-full sm:w-auto justify-center px-5 sm:px-6 lg:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-white bg-gradient-to-r from-emerald-700 via-emerald-600 to-forest-900 rounded-full shadow-lg shadow-emerald-700/25 hover:shadow-xl hover:shadow-emerald-700/40 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2 text-center"
               >
                 <span>Enquire for Booking</span>
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -174,7 +174,7 @@ export const Hero: React.FC<HeroProps> = ({
               <a
                 href="tel:+918970198701"
                 id="hero-call-btn"
-                className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-forest-950 rounded-full bg-white border-2 border-emerald-600 hover:bg-emerald-50 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2 shadow-sm"
+                className="w-full sm:w-auto justify-center px-5 sm:px-6 lg:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-forest-950 rounded-full bg-white border-2 border-emerald-600 hover:bg-emerald-50 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2 shadow-sm text-center"
               >
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-700" />
                 <span>+91 89701 98701</span>
@@ -182,7 +182,7 @@ export const Hero: React.FC<HeroProps> = ({
 
               <a
                 href="#festive-offer"
-                className="w-full sm:w-auto justify-center px-6 sm:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-400 hover:from-amber-400 hover:to-yellow-500 rounded-full shadow-md shadow-amber-400/30 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2"
+                className="w-full sm:w-auto justify-center px-5 sm:px-6 lg:px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-black uppercase tracking-wider text-amber-950 bg-gradient-to-r from-amber-300 via-amber-400 to-yellow-400 hover:from-amber-400 hover:to-yellow-500 rounded-full shadow-md shadow-amber-400/30 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 flex items-center gap-2 text-center"
               >
                 <Sparkles className="w-4 h-4 text-amber-900" />
                 <span>Festive Scheme Offer</span>

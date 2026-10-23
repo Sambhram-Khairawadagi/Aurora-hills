@@ -128,7 +128,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                 Available Dimensions
               </h3>
               
-              <div className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
                 {/* Plot 1 */}
                 <div 
                   className="group border-l-2 border-transparent hover:border-emerald-500 pl-4 transition-all cursor-pointer bg-slate-50/50 p-2.5 rounded-r-xl" 

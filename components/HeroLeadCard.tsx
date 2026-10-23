@@ -108,13 +108,13 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
 
   return (
     <div
-      className={`rounded-3xl bg-white/95 backdrop-blur-xl border-2 border-emerald-500/40 shadow-2xl p-5 sm:p-6 text-forest-950 relative overflow-hidden ${className}`}
+      className={`rounded-3xl bg-white/95 backdrop-blur-xl border-2 border-emerald-500/40 shadow-2xl p-4 sm:p-6 text-forest-950 relative overflow-hidden ${className}`}
     >
       {/* Top Auspicious Festive Pill */}
       <div className="flex items-center justify-start gap-2 mb-3.5 pb-2.5 border-b border-amber-300/40">
         <div className="flex items-center gap-1.5 text-xs font-black text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300 shadow-sm">
-          <Sparkles className="w-3.5 h-3.5 text-amber-700 animate-pulse" />
-          <span>Dasara &amp; Deepawali Booking Gift Live!</span>
+          <Sparkles className="w-3.5 h-3.5 text-amber-700 animate-pulse flex-shrink-0" />
+          <span className="truncate">Dasara &amp; Deepawali Booking Gift Live!</span>
         </div>
       </div>
 
@@ -134,13 +134,13 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
             <label className="text-xs sm:text-sm font-black uppercase tracking-wider text-charcoal-800 block mb-1.5">
               Select Plot Size of Interest:
             </label>
-            <div className="grid grid-cols-4 gap-1.5">
+            <div className="grid grid-cols-4 gap-1 sm:gap-1.5">
               {PLOT_OPTIONS.map((opt) => (
                 <button
                   type="button"
                   key={opt.label}
                   onClick={() => setSelectedPlot(opt.label)}
-                  className={`py-1.5 px-1 rounded-xl text-center border transition-all flex flex-col items-center justify-center min-h-[46px] ${
+                  className={`py-1.5 px-0.5 sm:px-1 rounded-xl text-center border transition-all flex flex-col items-center justify-center min-h-[44px] ${
                     selectedPlot === opt.label
                       ? "bg-emerald-700 text-white border-emerald-800 shadow-md scale-102 font-black"
                       : "bg-emerald-50/70 text-charcoal-800 border-emerald-200 hover:bg-emerald-100 font-bold"
@@ -149,7 +149,7 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
                   <span className="block text-xs sm:text-sm leading-none whitespace-nowrap">{opt.label}</span>
                   {opt.sub ? (
                     <span
-                      className={`block text-xs mt-0.5 leading-none font-bold ${
+                      className={`block text-[10px] sm:text-xs mt-0.5 leading-none font-bold ${
                         selectedPlot === opt.label ? "text-emerald-100" : "text-charcoal-600"
                       }`}
                     >

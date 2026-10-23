@@ -32,7 +32,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
               </div>
 
               {/* Floating Stat Pill Badge */}
-              <div className="absolute bottom-6 left-6 right-6 p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-300/60 shadow-xl flex items-center justify-between">
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 p-3 sm:p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-300/60 shadow-xl flex items-center justify-between">
                 <div>
                   <span className="text-xs uppercase font-black text-emerald-700 tracking-wider">
                     Plotted Sanctuary

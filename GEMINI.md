@@ -65,6 +65,20 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
 ### E. Crawler Auto-Ping Route (`app/api/ping/route.ts`)
 * Built-in endpoint at `/api/ping` allowing instant notification to search engine crawlers with URL-encoded sitemap parameters.
 
+### F. End-to-End Mobile & Tablet Responsive Optimization (Oct 23, 2026)
+* **Next.js 14 Official `Viewport` Export (`app/layout.tsx`):** Added explicit `viewport` object (`width: "device-width", initialScale: 1, maximumScale: 5, themeColor: "#0A2E1D"`) preventing viewport miscalculations across mobile Safari, Android Chrome, and Samsung Internet.
+* **Universal Reset & Touch Protection (`app/globals.css`):** Enforced `overflow-x: hidden; max-width: 100vw; -webkit-text-size-adjust: 100%; -webkit-tap-highlight-color: transparent` across `html` and `body` to eliminate horizontal scroll rubber-banding.
+* **Hero CTA Flex Wrapping (`components/Hero.tsx`):** Added `sm:flex-wrap` and tablet-optimized padding (`px-5 sm:px-6 lg:px-8`) preventing button overflow on 768px tablet portrait.
+* **Instant Lead Card Optimization (`components/HeroLeadCard.tsx`):** Adjusted mobile padding to `p-4 sm:p-6`, tightened plot dimension selector grid (`gap-1 sm:gap-1.5`), and preserved touch targets (min 44px).
+* **Floating Mobile Drawer Edge Spacing (`components/Navbar.tsx`):** Added `mx-3.5 sm:mx-auto` so the opened mobile menu card never abuts screen edges on narrow phones.
+* **Festive Scheme Tablet Layout (`components/FestiveScheme.tsx`):** Refined card CTA font scaling (`md:text-[13px] lg:text-sm`) for 768px portrait, and added `max-h-[90vh] overflow-y-auto` to the festival poster lightbox modal.
+* **Sidebar Layout Tablet Grid (`components/SanctionedLayout.tsx`):** Converted plot dimension details in the sidebar to `grid-cols-1 sm:grid-cols-3 lg:grid-cols-1`, so when the sidebar stacks beneath the layout viewer on tablets, cards sit side-by-side gracefully.
+* **Map Badge Contained (`components/LocationConnectivity.tsx`):** Changed floating GPS badge from fixed offset to `top-3 left-3 right-3 sm:right-auto sm:top-6 sm:left-6 sm:max-w-xs`, eliminating overflow on 360px devices.
+* **Direct Knowledge Hub & FAQ Sizing (`components/DirectAnswerHub.tsx` & `components/LocalSeoFaq.tsx`):** Added `sm:flex-wrap` and `sm:flex-1` ensuring action buttons split width equally on tablets.
+* **iOS Safari Auto-Zoom Fixes (`components/SiteVisitModal.tsx` & `components/BrochureModal.tsx`):** Eliminated `sm:text-xs` (<16px) inputs in favor of `text-base sm:text-sm`, and added `max-h-[90vh] overflow-y-auto` so modal dialogs are scrollable on all screen heights.
+* **iOS Home Indicator Inset (`components/FloatingActions.tsx`):** Added `pb-[max(0.5rem,env(safe-area-inset-bottom))]` ensuring sticky bottom action buttons are never covered by the iPhone gesture bar.
+* **Plots Landing Page Polish (`app/plots-in-dharwad/page.tsx`):** Full-width mobile CTA buttons (`w-full sm:w-auto text-center`) and balanced tablet card gap/scaling (`lg:scale-105 md:scale-100`).
+
 ---
 
 ## 3. Google Ads Campaign & Costing Audit

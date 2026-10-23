@@ -152,10 +152,10 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
 
               <button
                 onClick={() => onOpenEnquiry("Festive Offer 40x60 (50g Gold)", "40x60 Plot (50g Gold Offer)")}
-                className="w-full py-3.5 px-4 rounded-full bg-gradient-to-r from-red-900 via-amber-700 to-red-900 hover:from-red-800 hover:to-amber-600 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-red-950/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
+                className="w-full py-3.5 px-3 sm:px-4 rounded-full bg-gradient-to-r from-red-900 via-amber-700 to-red-900 hover:from-red-800 hover:to-amber-600 text-white font-black text-xs md:text-[13px] lg:text-sm uppercase tracking-wider shadow-lg shadow-red-950/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-1.5 sm:gap-2 text-center"
               >
                 <span>Claim 50g Gold Scheme</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 flex-shrink-0" />
               </button>
             </div>
           </div>
@@ -214,10 +214,10 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
 
               <button
                 onClick={() => onOpenEnquiry("Festive Offer 30x50 (1.5kg Silver)", "30x50 Plot (1.5kg Silver Offer)")}
-                className="w-full py-3.5 px-4 rounded-full bg-gradient-to-r from-emerald-800 via-teal-700 to-emerald-900 hover:from-emerald-700 hover:to-teal-600 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-emerald-950/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
+                className="w-full py-3.5 px-3 sm:px-4 rounded-full bg-gradient-to-r from-emerald-800 via-teal-700 to-emerald-900 hover:from-emerald-700 hover:to-teal-600 text-white font-black text-xs md:text-[13px] lg:text-sm uppercase tracking-wider shadow-lg shadow-emerald-950/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-1.5 sm:gap-2 text-center"
               >
                 <span>Claim 1.5kg Silver Scheme</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 flex-shrink-0" />
               </button>
             </div>
           </div>
@@ -276,10 +276,10 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
 
               <button
                 onClick={() => onOpenEnquiry("Festive Offer 30x40 (1kg Silver)", "30x40 Plot (1kg Silver Offer)")}
-                className="w-full py-3.5 px-4 rounded-full bg-gradient-to-r from-slate-800 via-slate-900 to-black hover:from-slate-700 hover:to-slate-800 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-slate-950/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
+                className="w-full py-3.5 px-3 sm:px-4 rounded-full bg-gradient-to-r from-slate-800 via-slate-900 to-black hover:from-slate-700 hover:to-slate-800 text-white font-black text-xs md:text-[13px] lg:text-sm uppercase tracking-wider shadow-lg shadow-slate-950/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-1.5 sm:gap-2 text-center"
               >
                 <span>Claim 1kg Silver Scheme</span>
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 flex-shrink-0" />
               </button>
             </div>
           </div>
@@ -361,7 +361,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
           onClick={() => setIsPosterModalOpen(false)}
         >
           <div 
-            className="relative max-w-2xl w-full bg-white rounded-3xl p-3 sm:p-5 shadow-2xl overflow-hidden"
+            className="relative max-w-2xl w-full bg-white rounded-3xl p-3 sm:p-5 shadow-2xl max-h-[90vh] overflow-y-auto"
             onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between mb-3 pb-2 border-b border-gray-100">
