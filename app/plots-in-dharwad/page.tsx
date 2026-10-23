@@ -249,8 +249,8 @@ export default function PlotsInDharwadPage() {
         </div>
       </section>
 
-      {/* AI Grounding & Buyer Factsheet (Generative Engine Optimization) */}
-      <section className="py-16 px-4 bg-white border-t border-b border-emerald-100">
+      {/* AI Grounding & Buyer Factsheet (Generative Engine Optimization & AEO) */}
+      <section id="aeo-direct-answer" className="py-16 px-4 bg-white border-t border-b border-emerald-100" aria-label="Direct Answers about Dharwad Plots">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-10">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-wider mb-3">

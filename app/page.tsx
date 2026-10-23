@@ -39,6 +39,11 @@ const LocalSeoFaq = dynamic(
   { ssr: true }
 );
 
+const DirectAnswerHub = dynamic(
+  () => import("@/components/DirectAnswerHub").then((mod) => mod.DirectAnswerHub),
+  { ssr: true }
+);
+
 // Dynamically load modals on-demand (zero impact on initial bundle)
 const EnquiryModal = dynamic(
   () => import("@/components/EnquiryModal").then((mod) => mod.EnquiryModal),
@@ -239,6 +244,12 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
+        {/* Answer Engine Optimization (AEO) Direct Knowledge Hub */}
+        <DirectAnswerHub
+          onOpenEnquiry={handleOpenEnquiry}
+          onOpenSiteVisit={handleOpenSiteVisit}
+        />
 
         {/* Comprehensive Local SEO Hub & Real Estate FAQ */}
         <LocalSeoFaq
