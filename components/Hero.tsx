@@ -54,8 +54,9 @@ export const Hero: React.FC<HeroProps> = ({
           />
         </div>
 
-        {/* Clean, Subtle Light-Theme Gradient Overlays (Mist Greatly Reduced for Maximum Photo Clarity) */}
-        <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-white/30 to-transparent sm:from-white/50 sm:via-white/20 sm:to-transparent pointer-events-none" />
+        {/* High-Legibility Light Background: Specifically illuminates the marked text zone on the left while preserving pristine landscape and road clarity on the right */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/85 via-45% to-transparent sm:bg-gradient-to-r sm:from-[#F8FAF7]/95 sm:via-[#F8FAF7]/85 sm:via-48% sm:to-transparent sm:to-72% pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_35%,_rgba(255,255,255,0.95)_0%,_rgba(255,255,255,0.85)_40%,_transparent_72%)] pointer-events-none" />
         <div className="absolute bottom-0 inset-x-0 h-24 sm:h-32 bg-gradient-to-t from-[#F8FAF7] to-transparent pointer-events-none" />
       </div>
 
@@ -80,11 +81,11 @@ export const Hero: React.FC<HeroProps> = ({
           </div>
         </div>
           
-        {/* Bold Modern Sans Project Title Header */}
+        {/* Bold Modern Sans Project Title Header (Marked Area) */}
         <div className="mt-3 sm:mt-4 mb-5 sm:mb-7">
           <h1 className="text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[5.75rem] font-black font-sans text-forest-950 tracking-tight leading-[1.04] drop-shadow-[0_2px_12px_rgba(255,255,255,0.95)]">
             THE AURORA <br className="sm:hidden" /><span className="hidden sm:inline"> </span>HILLS
-            <span className="block text-2xl sm:text-4xl md:text-5xl lg:text-[2.75rem] font-sans font-extrabold text-amber-700 tracking-tight mt-2 sm:mt-3 drop-shadow-[0_1px_8px_rgba(255,255,255,0.9)]">
+            <span className="block text-2xl sm:text-4xl md:text-5xl lg:text-[2.75rem] font-sans font-extrabold text-amber-800 tracking-tight mt-2 sm:mt-3 drop-shadow-[0_1px_8px_rgba(255,255,255,0.9)]">
               Villa Plots in Dharwad
             </span>
           </h1>
@@ -105,20 +106,20 @@ export const Hero: React.FC<HeroProps> = ({
           {/* Left Column: Value Proposition & Showcase (7 Cols on desktop) */}
           <div className="lg:col-span-7 space-y-4 sm:space-y-6">
 
-            {/* Supporting Welcoming Copy */}
-            <div className="space-y-2 sm:space-y-2.5 max-w-2xl">
-              <p className="text-base sm:text-lg lg:text-xl font-bold text-forest-950 leading-snug drop-shadow-[0_1px_6px_rgba(255,255,255,0.95)]">
+            {/* Supporting Welcoming Copy with Dedicated Light Frosted Glass Card for 100% Legibility */}
+            <div className="space-y-2 sm:space-y-2.5 max-w-2xl bg-white/90 sm:bg-white/85 backdrop-blur-md p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-emerald-200/80 shadow-md">
+              <p className="text-base sm:text-lg lg:text-xl font-bold text-forest-950 leading-snug">
                 Discover Luxury Living Amidst Nature at{" "}
                 <a
                   href="https://share.google/lhDyTbBa3vWnMhOFK"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-emerald-900 hover:text-emerald-700 hover:underline transition-colors underline decoration-emerald-500/50"
+                  className="text-emerald-900 hover:text-emerald-700 hover:underline transition-colors underline decoration-emerald-500/50 font-black"
                 >
                   Sunset Viewpoint, Dharwad!
                 </a>
               </p>
-              <p className="text-sm sm:text-base text-charcoal-800 leading-relaxed font-semibold drop-shadow-[0_1px_4px_rgba(255,255,255,0.95)]">
+              <p className="text-sm sm:text-base text-charcoal-800 leading-relaxed font-semibold">
                 Premium villa plots, 20+ world-class amenities, wide paved roads, and seamless access to top schools, malls &amp; NH-4 — your dream lifestyle starts here!
               </p>
             </div>

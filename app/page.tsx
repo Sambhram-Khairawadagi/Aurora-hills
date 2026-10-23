@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { TrustBadges } from "@/components/TrustBadges";
@@ -205,6 +206,39 @@ export default function HomePage() {
         <WhyAuroraHills
           onOpenEnquiry={handleOpenEnquiry}
         />
+
+        {/* SEO Internal Linking Hub — helps Google discover all pages */}
+        <section className="py-10 bg-gradient-to-b from-[#F7F9F6] to-white border-t border-emerald-100/60">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-xs font-black uppercase tracking-widest text-emerald-700 mb-4 text-center">
+              Browse Plots by Location
+            </p>
+            <div className="flex flex-wrap justify-center gap-2.5">
+              {[
+                { href: "/plots-in-dharwad", label: "Plots in Dharwad" },
+                { href: "/#faq", label: "Plots in Hubli Dharwad" },
+                { href: "/#location", label: "Plots near Karnatak University" },
+                { href: "/#location", label: "Plots near NH-4 Dharwad" },
+                { href: "/#layout", label: "30x40 Sites in Dharwad" },
+                { href: "/#layout", label: "30x50 Sites in Dharwad" },
+                { href: "/#layout", label: "40x60 Sites in Dharwad" },
+                { href: "/#faq", label: "HDUDA Approved Plots Dharwad" },
+                { href: "/#faq", label: "Bank Loan Plots Dharwad" },
+                { href: "/#faq", label: "Gated Community Dharwad" },
+                { href: "/plots-in-dharwad", label: "Villa Plots in Dharwad" },
+                { href: "/#location", label: "Plots near Sunset Viewpoint" },
+              ].map(({ href, label }, i) => (
+                <Link
+                  key={i}
+                  href={href}
+                  className="text-xs sm:text-sm font-bold px-4 py-2 rounded-full border border-emerald-200 bg-white text-forest-950 hover:bg-emerald-50 hover:border-emerald-400 hover:text-emerald-800 transition-all shadow-sm"
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* Comprehensive Local SEO Hub & Real Estate FAQ */}
         <LocalSeoFaq

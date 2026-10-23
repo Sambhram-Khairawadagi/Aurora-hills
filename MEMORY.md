@@ -4,11 +4,29 @@
 **Main Branch**: `main`  
 **Hosting & Deployment**: Vercel (Auto-deploys on push to `origin/main`)  
 **Stack**: Next.js 14 (App Router), TypeScript, Tailwind CSS, Prisma (SQLite), Nodemailer  
-**Last Updated**: October 22, 2026
+**Last Updated**: October 23, 2026
 
 ---
 
-## Latest Update: October 22, 2026 — Modern Bold Sans-Serif Font Specimen Overhaul & End-to-End Sub-Text Enlargement
+## Latest Update: October 23, 2026 — Hero Section Marked Area Light Background for Maximum Text Legibility
+- **Reference**: User request with annotated image `WhatsApp Image 2026-10-22 at 9.37.48 PM.jpeg` ("make the marked area background light colour So that the text can be visible clearly").
+- **Area Identified**: The entire left column zone enclosing `THE AURORA HILLS` H1, `Villa Plots in Dharwad` subtitle, `HDUDA & NA-KJP APPROVED` pill, and the supporting luxury value proposition copy.
+- **Root Cause**: Previous white mist reduction cut gradient opacity down to 20-50%, causing dark green hillside grass, dark trees, and lamp posts to bleed directly behind dark text, degrading contrast and legibility.
+- **Implementation (`components/Hero.tsx`)**:
+  - **Zone-Targeted Light Background Overlays**:
+    - **Desktop**: Replaced weak sheer mist with an opaque-to-feathered light ivory/white gradient (`sm:from-[#F8FAF7]/95 sm:via-[#F8FAF7]/85 sm:via-48% sm:to-transparent sm:to-72%`) coupled with an elliptical light radial wash (`bg-[radial-gradient(ellipse_at_20%_35%,_rgba(255,255,255,0.95)_0%,_rgba(255,255,255,0.85)_40%,_transparent_72%)]`).
+    - **Mobile**: Vertical light wash (`from-white/95 via-white/85 via-45% to-transparent`) ensuring the upper 50% content block has crisp contrast while preserving the landscape and asphalt road below.
+  - **Supporting Copy Container**:
+    - Wrapped the previously floating paragraph inside a dedicated frosted glass luxury container: `bg-white/90 sm:bg-white/85 backdrop-blur-md p-4 sm:p-5 rounded-2xl sm:rounded-3xl border border-emerald-200/80 shadow-md`.
+    - Enhanced subtitle and link contrast (`text-forest-950` heading + `text-amber-800` subtitle + `font-black` Sunset Viewpoint link).
+  - **Preserved Landscape**: The Dharwad hills, sweeping asphalt boulevard, flowering marigold median, and blue skies on the right remain 100% sharp and clear with zero white mist.
+- **Verification**:
+  - `npx tsc --noEmit` passed with 0 errors.
+  - Verified via Chrome browser subagent with visual screenshot captures across desktop (1440px) and mobile (390px).
+
+---
+
+## Prior Update: October 22, 2026 — Modern Bold Sans-Serif Font Specimen Overhaul & End-to-End Sub-Text Enlargement
 - **Reference**: User request with font specimen image `9843e934-6757-46d8-931e-a53bb491504f.jpg` ("use this fonts and sub texts have become very small in everywhere please check end to end all the things ayout spaccing and everything if anything missing out add it r correct it").
 - **Font Specimen Identified**: Clean, modern, high-contrast, bold neo-grotesque Sans-Serif font (Inter / Arial style with heavy weights like "Penultimate" and "SCHADENFREUDE"). Replaced previous vintage serif styling across all headings and cards.
 - **Global Font Configuration (`tailwind.config.ts` & `app/layout.tsx`)**:

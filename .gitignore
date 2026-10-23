@@ -44,3 +44,16 @@ public/videos/drone-6.mp4
 godaddy_upload.zip
 test-out.css
 
+# Scratch & temporary workspace files
+scratch/
+*.xlsx
+*.csv
+*.psd
+*.zip
+OCT-2026-PICS-*
+mobile_390*.png
+WhatsApp Image 2026-10-22*
+8311f7a3-*.jpg
+9843e934-*.jpg
+
+

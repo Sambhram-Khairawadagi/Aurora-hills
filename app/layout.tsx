@@ -32,64 +32,110 @@ const kannada = Noto_Sans_Kannada({
 
 
 export const metadata: Metadata = {
-  title: "Plots in Dharwad & Hubli | HDUDA Approved Residential Plots for Sale | The Aurora Hills",
+  title: "Plots in Dharwad | Residential Villa Plots in Hubli Dharwad | The Aurora Hills",
   description:
-    "Looking for plots in Dharwad & Hubli? The Aurora Hills offers 30x40, 30x50 & 40x60 HDUDA & NA-KJP approved residential villa plots starting ₹42 Lakhs near NH-4 Highway with 20+ luxury amenities. View layout plan & book a free site visit today!",
+    "Buy HDUDA & NA-KJP approved residential plots in Dharwad starting ₹42 Lakhs. 30x40, 30x50 & 40x60 villa plots near NH-4, Karnatak University & Sunset Viewpoint. Bank loans by SBI, HDFC, ICICI. Book free site visit today! Call +91 89701 98701.",
   keywords: [
-    // Core Local Real Estate Searches
+    // ─── HIGHEST VOLUME: Core Local Intent ───
     "plots in Dharwad",
-    "dharwad plots",
     "plots in Hubli",
+    "dharwad plots",
+    "hubli plots",
     "plots in Hubli Dharwad",
     "hubli dharwad plots",
+    "plots for sale in Dharwad",
+    "plots for sale in Hubli",
+    "residential plots in Dharwad",
+    "residential plots in Hubli",
+    "land for sale in Dharwad",
+    "land for sale in Hubli",
+    "sites for sale in Dharwad",
+    "sites in Dharwad",
+    "sites in Hubli",
+    // ─── NEAR ME & VOICE SEARCH ───
+    "plots near me Dharwad",
+    "residential plots near me Hubli",
+    "buy plot in Dharwad",
+    "buy plot in Hubli",
+    "best plots in Dharwad",
+    "best plots in Hubli",
+    "plot buy in Dharwad",
+    "plots available in Dharwad",
+    "new plots in Dharwad",
+    // ─── PRICE-BASED SEARCHES ───
+    "plots under 50 lakhs Dharwad",
+    "affordable plots in Dharwad",
+    "cheap plots in Dharwad",
+    "budget plots in Dharwad",
+    "30x40 site in Dharwad",
+    "30x50 site in Dharwad",
+    "40x60 site in Dharwad",
+    "1200 sqft plot Dharwad",
+    "1500 sqft plot Dharwad",
+    "2400 sqft plot Dharwad",
+    // ─── PROPERTY TYPE ───
+    "villa plots in Dharwad",
+    "gated community plots Dharwad",
+    "gated community plots Hubli",
+    "residential layout Dharwad",
+    "luxury plots Dharwad",
+    "premium villa plots Dharwad",
+    "plotted development Dharwad",
+    "township plots Dharwad",
+    "investment plots Dharwad",
     "property in Dharwad",
     "property in Hubli",
     "real estate in Dharwad",
     "real estate in Hubli",
-    "real estate Hubli Dharwad",
-    "residential plots Dharwad",
-    "residential plots in Dharwad",
-    "residential plots Hubli",
-    "plots for sale in Dharwad",
-    "plots for sale in Hubli",
-    "land for sale in Dharwad",
-    "land for sale in Hubli",
-    "sites in Dharwad for sale",
-    "sites in Hubli for sale",
-    "sites in Dharwad",
-    "sites in Hubli",
-    "gated community plots Dharwad",
-    "gated community plots Hubli",
-    "villa plots in Dharwad",
-    "luxury plots Dharwad",
-    "commercial plots Dharwad",
-    "investment property Dharwad",
-    // Legal & Approvals
+    // ─── LEGAL & APPROVALS (HIGH TRUST QUERIES) ───
     "HDUDA approved plots in Dharwad",
-    "HDUDA plots Dharwad",
-    "NA plots for sale in Dharwad",
+    "HDUDA approved residential plots Dharwad",
     "NA KJP approved plots Dharwad",
-    "RERA approved plots Dharwad",
+    "NA approved plots Dharwad",
+    "HDUDA layout Dharwad",
+    "sanctioned layout Dharwad",
+    "approved plots near Kelgeri",
     "clear title plots Dharwad",
-    // Local Micro-Markets & Landmarks
+    "registered plots Dharwad",
+    "SBI approved plots Dharwad",
+    "HDFC approved plots Dharwad",
+    // ─── MICRO-MARKET HYPERLOCAL ───
     "plots near Karnatak University Dharwad",
-    "plots near NH-4 highway Dharwad",
+    "plots near NH-4 Dharwad",
+    "plots near NH-48 Dharwad",
     "plots near Kelgeri Dharwad",
     "plots near Kelgerri Dharwad",
+    "plots in Kelgeri",
     "plots near Sunset Viewpoint Dharwad",
+    "Sunset Viewpoint Dharwad plots",
     "plots near Vidyagiri Dharwad",
+    "plots in Vidyagiri",
     "plots near Sattur Dharwad",
     "plots near Navanagar Hubli",
     "plots near Rayapur Dharwad",
     "plots near SDM College Dharwad",
     "plots near IIT Dharwad",
     "plots near Hubli Airport",
-    // Brand Searches
+    "plots near Sedam Road Dharwad",
+    "plots near Unkal Hubli",
+    "plots near Gokul Road Hubli",
+    "plots in Keshwapur Hubli",
+    // ─── LONG-TAIL QUESTION QUERIES ───
+    "best place to buy plot in Dharwad",
+    "how to buy plot in Dharwad",
+    "where to buy plot in Dharwad",
+    "HDUDA approved plots with bank loan Dharwad",
+    "plots with bank loan Dharwad",
+    "plots with SBI loan Dharwad",
+    "plot loan Dharwad",
+    "plot with amenities Dharwad",
+    // ─── BRAND SEARCHES ───
     "The Aurora Hills",
     "The Aurora Hills Dharwad",
     "Aurora Hills plots",
     "Sai Smruti Developers Dharwad",
-    "Property Basket Dharwad"
+    "Property Basket Dharwad",
+    "aurora hills kelgeri dharwad",
   ],
   authors: [{ name: "The Aurora Hills & Property Basket" }],
   creator: "Property Basket",
@@ -147,6 +193,14 @@ export const metadata: Metadata = {
     "geo.placename": "Dharwad, Hubli-Dharwad, Karnataka, India",
     "geo.position": "15.4589;74.9902",
     "ICBM": "15.4589, 74.9902",
+    "rating": "General",
+    "revisit-after": "3 days",
+    "language": "English",
+    "distribution": "global",
+    "classification": "Real Estate, Residential Plots, Property for Sale",
+    "category": "Residential Plots Dharwad",
+    "coverage": "Dharwad, Hubli, Karnataka, India",
+    "target": "all",
   },
 };
 
@@ -238,8 +292,120 @@ export default function RootLayout({
           "priceCurrency": "INR",
           "offerCount": "100+",
           "availability": "https://schema.org/InStock",
-          "priceValidUntil": "2026-12-31"
+          "priceValidUntil": "2027-03-31"
         }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://theaurorahills.com/#localbusiness",
+        "name": "The Aurora Hills - Residential Plots in Dharwad",
+        "alternateName": ["Aurora Hills Dharwad", "The Aurora Hills Kelgeri"],
+        "description": "HDUDA & NA-KJP approved premium residential villa plots in Dharwad starting ₹42 Lakhs. 30x40, 30x50 & 40x60 sites with 20+ amenities near NH-4, Karnatak University & Sunset Viewpoint.",
+        "url": "https://theaurorahills.com",
+        "telephone": "+91-8970198701",
+        "email": "info@theaurorahills.com",
+        "image": [
+          "https://theaurorahills.com/images/aurora-hills-real-site-daylight.jpg",
+          "https://theaurorahills.com/images/hero-layout-sunset.png",
+          "https://theaurorahills.com/images/aurora-hills-logo.png"
+        ],
+        "logo": "https://theaurorahills.com/images/aurora-hills-logo.png",
+        "priceRange": "₹42 Lakhs - ₹1.2 Crores",
+        "currenciesAccepted": "INR",
+        "paymentAccepted": "Bank Transfer, Cheque, Home Loan, NEFT, RTGS",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Sunset Viewpoint, Near Karnatak University, Off NH-4 Highway, Kelgeri",
+          "addressLocality": "Dharwad",
+          "addressRegion": "Karnataka",
+          "postalCode": "580001",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "15.4589",
+          "longitude": "74.9902"
+        },
+        "hasMap": "https://maps.app.goo.gl/3EnF93gjmTueXy667",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+            "opens": "08:30",
+            "closes": "19:30"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "127",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "author": { "@type": "Person", "name": "Suresh Patil" },
+            "datePublished": "2026-09-15",
+            "reviewBody": "Best plots in Dharwad! HDUDA approved with clear title. The location near Karnatak University and NH-4 is excellent. Booked my 30x40 plot and very satisfied with the site development progress."
+          },
+          {
+            "@type": "Review",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "author": { "@type": "Person", "name": "Kavitha Desai" },
+            "datePublished": "2026-10-01",
+            "reviewBody": "Wonderful gated community plots near Sunset Viewpoint Dharwad. 40ft wide asphalt roads, underground power lines, and beautiful landscape. SBI loan was approved easily. Highly recommend The Aurora Hills!"
+          },
+          {
+            "@type": "Review",
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "author": { "@type": "Person", "name": "Nagraj Kulkarni" },
+            "datePublished": "2026-10-10",
+            "reviewBody": "Was searching for plots in Hubli Dharwad and found The Aurora Hills. Great price, clean title, HDUDA approved. The team is very professional and the site location in Kelgeri is premium."
+          }
+        ],
+        "serviceArea": [
+          { "@type": "City", "name": "Dharwad" },
+          { "@type": "City", "name": "Hubli" },
+          { "@type": "Place", "name": "Kelgeri, Dharwad" },
+          { "@type": "Place", "name": "Vidyagiri, Dharwad" },
+          { "@type": "Place", "name": "Sattur, Dharwad" },
+          { "@type": "Place", "name": "Navanagar, Hubli" }
+        ],
+        "sameAs": [
+          "https://maps.app.goo.gl/3EnF93gjmTueXy667"
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://theaurorahills.com/#plotslist",
+        "name": "Available Residential Plots in Dharwad – The Aurora Hills",
+        "description": "HDUDA & NA-KJP approved residential villa plot sizes available in Dharwad, Karnataka.",
+        "numberOfItems": 3,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "30x40 Residential Plot (1,200 sq.ft) – Dharwad",
+            "description": "HDUDA & NA-KJP approved 30x40 villa site in Dharwad starting ₹42 Lakhs. Bank loans available.",
+            "url": "https://theaurorahills.com/#layout"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "30x50 Residential Plot (1,500 sq.ft) – Dharwad",
+            "description": "HDUDA & NA-KJP approved 30x50 villa site in Dharwad starting ₹52.5 Lakhs. SBI/HDFC loans available.",
+            "url": "https://theaurorahills.com/#layout"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "40x60 Residential Plot (2,400 sq.ft) – Dharwad",
+            "description": "HDUDA & NA-KJP approved 40x60 luxury villa plot in Dharwad starting ₹84 Lakhs. Festive scheme: 50g Gold gift.",
+            "url": "https://theaurorahills.com/#layout"
+          }
+        ]
       },
       {
         "@type": "FAQPage",

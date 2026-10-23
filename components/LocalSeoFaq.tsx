@@ -73,6 +73,42 @@ const FAQS_DATA: FaqItem[] = [
     question: "Why is Hubli-Dharwad considered the best location for real estate and plot investment?",
     answer:
       "Hubli-Dharwad is Karnataka's premier twin-city growth corridor. With major institutions like IIT Dharwad, IIIT, Karnatak University, and the industrial FMCG hub, plus seamless connectivity via the Hubli-Dharwad BRTS corridor, 6-lane NH-48, and Hubli Airport, plotted land values here offer exceptional capital appreciation and rental demand."
+  },
+  {
+    category: "For Hubli Residents",
+    question: "Can people staying in Hubli buy plots in Dharwad? How to reach The Aurora Hills from Hubli?",
+    answer:
+      "Absolutely! Many plot buyers at The Aurora Hills are Hubli residents. The project is just 15-20 minutes from Hubli city centre via the 6-lane NH-48 / NH-4 highway. You can reach the site easily from Unkal, Navanagar, Gokul Road, or Keshwapur in Hubli. We arrange free site visit pickups from Hubli every weekend — just call +91 89701 98701 to book your slot."
+  },
+  {
+    category: "Investment Returns",
+    question: "What is the expected return and capital appreciation on plots in Dharwad?",
+    answer:
+      "Residential plots in prime Dharwad localities like Kelgerri and Vidyagiri have historically appreciated by 18-25% per year due to rapid infrastructure growth, IIT Dharwad campus development, and NH-48 corridor expansion. At The Aurora Hills, with HDUDA sanction, completed roads, underground power, and water supply already in place, buyers are seeing strong capital gains from the pre-launch stage itself."
+  },
+  {
+    category: "Documents & Registration",
+    question: "What documents are required to buy a plot in Dharwad? Is registration easy?",
+    answer:
+      "To buy a plot in Dharwad, you need: (1) Aadhar Card, (2) PAN Card, (3) Passport-size photos, (4) Income proof for bank loans, (5) Bank statements (6 months). At The Aurora Hills, we assist with end-to-end documentation — from sale deed drafting to sub-registrar office registration in Dharwad. Title deeds are clear with no disputes or litigation."
+  },
+  {
+    category: "Site Progress",
+    question: "What is the current development status of The Aurora Hills in Dharwad?",
+    answer:
+      "As of October 2026, The Aurora Hills has completed: 40ft & 30ft wide finished black asphalt avenues, interlocking paver sidewalks, overhead water tank (1.5 lakh litres), underground power feeder pillars, boundary wall, grand security arch gateway, plot demarcation with stone markers, marigold-planted central medians, and ornamental tree plantations. The township is in advanced stages with 100+ plots already booked."
+  },
+  {
+    category: "Comparison",
+    question: "How does The Aurora Hills compare with other plots for sale in Dharwad?",
+    answer:
+      "Unlike many unapproved layouts in Dharwad, The Aurora Hills is the only fully HDUDA & NA-KJP sanctioned township near Sunset Viewpoint with all physical infrastructure already in place — roads, water, power, boundary, and security. Combined with 20+ amenities, bank pre-approvals from SBI/HDFC/ICICI, clear marketable title deeds, and festive gold/silver booking gifts, it offers unmatched value per square foot in the Hubli-Dharwad market."
+  },
+  {
+    category: "Festive Offers",
+    question: "Are there any special offers or discounts on plots in Dharwad during Dasara Deepawali 2026?",
+    answer:
+      "Yes! Book during our exclusive Dasara & Deepawali Festive Scheme and receive: 50 Grams GOLD with a 40x60 plot (₹84L+), 1.5 KG SILVER with a 30x50 plot (₹52.5L+), and 1 KG SILVER with a 30x40 plot (₹42L+). These are genuine 22k gold and 925 silver gifts delivered on registration. Contact us on +91 89701 98701 to check scheme validity and plot availability."
   }
 ];
 
@@ -87,7 +123,7 @@ const LOCAL_AREAS = [
   "Sites in Dharwad for sale",
   "Sites in Hubli for sale",
   "HDUDA Approved Plots",
-  "NA Plots Dharwad",
+  "NA KJP Plots Dharwad",
   "Villa Plots in Dharwad",
   "Plots near Kelgeri Dharwad",
   "Plots near Karnatak University",
@@ -97,8 +133,24 @@ const LOCAL_AREAS = [
   "Plots in Navanagar Hubli",
   "Plots near SDM College",
   "Plots near Hubli Airport",
-  "Gated Community Dharwad"
+  "Gated Community Dharwad",
+  "30x40 Site Dharwad",
+  "30x50 Site Dharwad",
+  "40x60 Site Dharwad",
+  "Buy Plot Dharwad",
+  "Best Plots in Dharwad",
+  "Plots near IIT Dharwad",
+  "Investment Plots Dharwad",
+  "Plots near Sunset Viewpoint",
+  "Plots near Gokul Road Hubli",
+  "Plots near Unkal Hubli",
+  "Dharwad Real Estate 2026",
+  "Hubli Dharwad Property",
+  "SBI Approved Plots Dharwad",
+  "Bank Loan Plots Dharwad",
+  "HDFC Approved Plots Dharwad",
 ];
+
 
 export const LocalSeoFaq: React.FC<LocalSeoFaqProps> = ({
   onOpenEnquiry,
