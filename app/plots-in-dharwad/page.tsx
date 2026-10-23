@@ -14,6 +14,20 @@ export const metadata: Metadata = {
       "Best residential plots in Dharwad – HDUDA & NA-KJP approved. 30x40, 30x50, 40x60 villa sites near NH-4. Starting ₹42 Lakhs.",
     url: "https://theaurorahills.com/plots-in-dharwad",
     type: "website",
+    images: [
+      {
+        url: "https://theaurorahills.com/images/aurora-hills-real-site-daylight.jpg",
+        width: 1200,
+        height: 630,
+        alt: "The Aurora Hills - Villa Plots in Dharwad",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Plots in Dharwad for Sale | The Aurora Hills",
+    description: "HDUDA & NA-KJP approved residential villa plots in Dharwad starting ₹42 Lakhs.",
+    images: ["https://theaurorahills.com/images/aurora-hills-real-site-daylight.jpg"],
   },
 };
 
