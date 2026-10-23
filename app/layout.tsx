@@ -373,6 +373,51 @@ export default function RootLayout({
           { "@type": "Place", "name": "Sattur, Dharwad" },
           { "@type": "Place", "name": "Navanagar, Hubli" }
         ],
+        "disambiguatingDescription": "The Aurora Hills is an 18-acre HDUDA and NA-KJP approved gated plotted community offering residential villa plots near Sunset Viewpoint, Kelgeri, Dharwad, Karnataka.",
+        "knowsAbout": [
+          "HDUDA Approved Plots",
+          "Residential Villa Plots in Dharwad",
+          "Plots in Hubli Dharwad",
+          "Sites for Sale in Dharwad",
+          "NA KJP Sanctioned Land Karnataka",
+          "Plots near Sunset Viewpoint Dharwad",
+          "30x40 Plots Dharwad",
+          "30x50 Plots Dharwad",
+          "40x60 Plots Dharwad",
+          "SBI Approved Plots Dharwad",
+          "Gated Community Layouts Dharwad",
+          "Villa Construction in Dharwad"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Residential Villa Plots Catalog",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Executive Villa Plot (30x40)",
+              "description": "1,200 sq.ft residential plot ideal for 3BHK villa with 1 KG Assured Silver festive offer.",
+              "price": "4200000",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "Premium Villa Plot (30x50)",
+              "description": "1,500 sq.ft residential plot ideal for 3-4BHK duplex villa with 1.5 KG Assured Silver festive offer.",
+              "price": "5250000",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "Presidential Estate Plot (40x60)",
+              "description": "2,400 sq.ft signature villa plot with 50 Grams 22K Assured Gold festive offer.",
+              "price": "8400000",
+              "priceCurrency": "INR",
+              "availability": "https://schema.org/InStock"
+            }
+          ]
+        },
         "sameAs": [
           "https://maps.app.goo.gl/3EnF93gjmTueXy667"
         ]
@@ -543,6 +588,9 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.png" type="image/png" />
         <link rel="apple-touch-icon" href="/apple-icon.png" />
+        {/* LLM & Generative Engine Discovery Standards */}
+        <link rel="alternate" type="text/markdown" href="/llms.txt" title="The Aurora Hills LLM Knowledge Factsheet" />
+        <link rel="alternate" type="text/markdown" href="/llms-full.txt" title="The Aurora Hills Comprehensive LLM Knowledge Base" />
         <meta name="geo.region" content="IN-KA" />
         <meta name="geo.placename" content="Dharwad, Hubli-Dharwad, Karnataka, India" />
         <meta name="geo.position" content="15.4589;74.9902" />

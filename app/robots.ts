@@ -4,18 +4,24 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
       {
-        userAgent: 'Googlebot',
-        allow: ['/', '/plots-in-dharwad'],
-        disallow: ['/admin/', '/api/admin/'],
-      },
-      {
-        userAgent: 'Bingbot',
-        allow: ['/', '/plots-in-dharwad'],
+        userAgent: [
+          'Googlebot',
+          'Bingbot',
+          'GPTBot',
+          'ChatGPT-User',
+          'PerplexityBot',
+          'ClaudeBot',
+          'anthropic-ai',
+          'Google-Extended',
+          'Applebot-Extended',
+          'cohere-ai',
+        ],
+        allow: ['/', '/plots-in-dharwad', '/llms.txt', '/llms-full.txt'],
         disallow: ['/admin/', '/api/admin/'],
       },
       {
         userAgent: '*',
-        allow: '/',
+        allow: ['/', '/plots-in-dharwad', '/llms.txt', '/llms-full.txt'],
         disallow: ['/admin/', '/api/admin/'],
       },
     ],
@@ -25,3 +31,4 @@ export default function robots(): MetadataRoute.Robots {
     host: 'https://theaurorahills.com',
   };
 }
+
