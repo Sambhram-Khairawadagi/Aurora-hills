@@ -31,13 +31,16 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.phone || !formData.preferred_date) {
-      setErrorMsg("Please provide your name, phone, and visit date.");
+    const cleanPhone = formData.phone.replace(/[^0-9]/g, "");
+    if (cleanPhone.length < 10 || !formData.preferred_date) {
+      setErrorMsg("Please provide your 10-digit mobile number and preferred date.");
       return;
     }
 
     setLoading(true);
     setErrorMsg("");
+
+    const finalName = formData.name.trim() || "Interested Buyer";
 
     try {
       const utmParams = getStoredUtm();
@@ -50,6 +53,8 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
+          name: finalName,
+          phone: cleanPhone,
           source: finalSource,
           ...utmParams,
         }),
@@ -102,7 +107,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
               Visit Booked!
             </h4>
             <p className="text-sm text-charcoal-700 max-w-sm mx-auto font-medium">
-              Thank you, {formData.name}. Our tour manager will contact you at <strong>{formData.phone}</strong> to confirm your pickup details for <strong>{formData.preferred_date}</strong>.
+              Thank you{formData.name.trim() ? `, ${formData.name.trim()}` : ""}. Our tour manager will contact you at <strong>+91 {formData.phone.replace(/[^0-9]/g, "")}</strong> to confirm your complimentary pickup details for <strong>{formData.preferred_date}</strong>.
             </p>
             <button
               onClick={onClose}
@@ -113,14 +118,19 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Free Cab Pickup Highlight */}
+            <div className="p-2.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-950 text-xs font-bold flex items-center gap-2">
+              <span className="text-base flex-shrink-0">🚗</span>
+              <span><strong>Complimentary Cab Pickup &amp; Drop:</strong> Available across Hubli or Dharwad for your family site visit.</span>
+            </div>
+
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1">
-                Full Name *
+                Full Name <span className="text-charcoal-500 font-normal">(Optional)</span>
               </label>
               <input
                 type="text"
-                required
-                placeholder="Full name"
+                placeholder="e.g. Dr. Patil / Ramesh"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm"

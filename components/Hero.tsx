@@ -7,7 +7,9 @@ import {
   Sparkles, 
   ArrowRight, 
   ShieldCheck, 
-  Phone
+  Phone,
+  MapPin,
+  Car
 } from "lucide-react";
 import { HeroLeadCard } from "@/components/HeroLeadCard";
 
@@ -187,6 +189,19 @@ export const Hero: React.FC<HeroProps> = ({
                 <Sparkles className="w-4 h-4 text-amber-900" />
                 <span>Festive Scheme Offer</span>
               </a>
+            </div>
+
+            {/* Hubli Proximity & Complimentary Site Visit Pickup Trust Strip */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 p-3 sm:p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-300/80 shadow-md text-xs sm:text-sm font-bold text-forest-950">
+              <div className="flex items-center gap-1.5 text-emerald-900">
+                <MapPin className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                <span><strong className="text-forest-950 font-black">20 Mins from Hubli</strong> (via Toll/NH-4 Bypass)</span>
+              </div>
+              <span className="text-emerald-300 hidden sm:inline">•</span>
+              <div className="flex items-center gap-1.5 text-charcoal-800">
+                <Car className="w-4 h-4 text-amber-600 flex-shrink-0" />
+                <span><strong>Free Site Visit Cab Pickup &amp; Drop</strong> across Hubli &amp; Dharwad</span>
+              </div>
             </div>
           </div>
 

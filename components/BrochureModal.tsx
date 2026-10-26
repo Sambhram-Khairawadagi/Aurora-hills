@@ -20,15 +20,18 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const cleanPhone = phone.replace(/[^0-9]/g, "");
     setLoading(true);
+
+    const finalName = name.trim() || "Interested Buyer";
 
     try {
       await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name,
-          phone,
+          name: finalName,
+          phone: cleanPhone,
           email,
           requirement: "Digital Brochure Download",
           purpose: "Both",
@@ -101,11 +104,12 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose })
             </p>
 
             <div>
-              <label className="block text-xs font-bold text-charcoal-700 uppercase tracking-wider mb-1">Your Name *</label>
+              <label className="block text-xs font-bold text-charcoal-700 uppercase tracking-wider mb-1">
+                Your Name <span className="text-charcoal-500 font-normal">(Optional)</span>
+              </label>
               <input
                 type="text"
-                required
-                placeholder="Full name"
+                placeholder="e.g. Dr. Patil / Ramesh"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm"

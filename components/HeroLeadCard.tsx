@@ -110,12 +110,15 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
     <div
       className={`rounded-3xl bg-white/95 backdrop-blur-xl border-2 border-emerald-500/40 shadow-2xl p-4 sm:p-6 text-forest-950 relative overflow-hidden ${className}`}
     >
-      {/* Top Auspicious Festive Pill */}
-      <div className="flex items-center justify-start gap-2 mb-3.5 pb-2.5 border-b border-amber-300/40">
-        <div className="flex items-center gap-1.5 text-xs font-black text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300 shadow-sm">
+      {/* Top Auspicious Festive Pill & Urgency Scarcity Pill */}
+      <div className="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b border-amber-300/40">
+        <div className="flex items-center gap-1.5 text-xs font-black text-amber-900 bg-amber-100 px-2.5 py-1 rounded-full border border-amber-300 shadow-sm">
           <Sparkles className="w-3.5 h-3.5 text-amber-700 animate-pulse flex-shrink-0" />
-          <span className="truncate">Dasara &amp; Deepawali Booking Gift Live!</span>
+          <span className="truncate">Deepawali Offer Active</span>
         </div>
+        <span className="text-[11px] font-black text-rose-800 bg-rose-50 border border-rose-200/80 px-2.5 py-0.5 rounded-full flex-shrink-0 shadow-sm animate-pulse">
+          ⚡ Only 7 Plots in Phase 1
+        </span>
       </div>
 
       {!submitted ? (
@@ -127,6 +130,11 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
             <p className="text-xs sm:text-sm text-charcoal-700 font-medium mt-0.5">
               Receive official sanctioned layout PDF &amp; price sheet directly on WhatsApp.
             </p>
+            {/* Hubli Cab Pickup Mini-Banner */}
+            <div className="mt-2 py-1 px-2.5 rounded-xl bg-emerald-50/90 border border-emerald-200/80 text-[11px] text-emerald-950 font-bold flex items-center gap-1.5">
+              <span className="flex-shrink-0">🚗</span>
+              <span className="truncate">Visiting from Hubli? Complimentary family cab pickup available.</span>
+            </div>
           </div>
 
           {/* Plot Size Selector */}

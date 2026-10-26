@@ -44,13 +44,16 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.phone) {
-      setErrorMsg("Please provide your name and mobile number.");
+    const cleanPhone = formData.phone.replace(/[^0-9]/g, "");
+    if (cleanPhone.length < 10) {
+      setErrorMsg("Please provide a valid 10-digit mobile number.");
       return;
     }
 
     setLoading(true);
     setErrorMsg("");
+
+    const finalName = formData.name.trim() || "Interested Buyer";
 
     try {
       const utmParams = getStoredUtm();
@@ -63,6 +66,8 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
+          name: finalName,
+          phone: cleanPhone,
           source: finalSource,
           ...utmParams,
         }),
@@ -126,10 +131,10 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
               <CheckCircle2 className="w-8 h-8" />
             </div>
             <h4 className="text-xl font-black font-sans text-forest-950">
-              Thank You, {formData.name}!
+              Thank You{formData.name.trim() ? `, ${formData.name.trim()}` : ""}!
             </h4>
             <p className="text-sm text-charcoal-700 max-w-sm mx-auto font-medium">
-              Your inquiry has been submitted. Our property consultant will call you at <strong>{formData.phone}</strong> with complete pricing and festive offer details.
+              Your inquiry has been submitted. Our property consultant will call you at <strong>+91 {formData.phone.replace(/[^0-9]/g, "")}</strong> with complete pricing and festive offer details.
             </p>
             <button
               onClick={onClose}
@@ -143,14 +148,13 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             {/* Field 1: Name */}
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1">
-                Full Name *
+                Full Name <span className="text-charcoal-500 font-normal">(Optional)</span>
               </label>
               <div className="relative">
                 <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal-400 pointer-events-none" />
                 <input
                   type="text"
-                  required
-                  placeholder="Your full name"
+                  placeholder="e.g. Dr. Patil / Ramesh"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full pl-9 pr-3.5 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm font-medium"

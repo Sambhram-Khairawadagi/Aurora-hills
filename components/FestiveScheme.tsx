@@ -94,6 +94,19 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
           </div>
         </div>
 
+        {/* Phase 1 Scarcity & Hubli Free Cab Callout */}
+        <div className="max-w-3xl mx-auto mb-8 p-3 sm:p-3.5 rounded-2xl bg-white/95 border-2 border-amber-300/80 text-amber-950 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-md text-xs sm:text-sm font-bold">
+          <div className="flex items-center gap-2.5">
+            <span className="px-2 py-0.5 rounded-full bg-rose-600 text-white text-[11px] font-black tracking-wider uppercase animate-pulse flex-shrink-0">
+              ⚡ Limited Release
+            </span>
+            <span>Deepawali Gold &amp; Silver rewards applicable on first-come-first-served basis (Only 7 plots left in Phase 1).</span>
+          </div>
+          <span className="text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 flex-shrink-0 text-xs font-black whitespace-nowrap">
+            🚗 Free Hubli Cab Pickup
+          </span>
+        </div>
+
         {/* 3 Festive Plot Cards Matching the Poster */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
           

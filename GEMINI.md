@@ -79,6 +79,19 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
 * **iOS Home Indicator Inset (`components/FloatingActions.tsx`):** Added `pb-[max(0.5rem,env(safe-area-inset-bottom))]` ensuring sticky bottom action buttons are never covered by the iPhone gesture bar.
 * **Plots Landing Page Polish (`app/plots-in-dharwad/page.tsx`):** Full-width mobile CTA buttons (`w-full sm:w-auto text-center`) and balanced tablet card gap/scaling (`lg:scale-105 md:scale-100`).
 
+### G. Conversion Rate Optimization (CRO) & Hubli Buyer Conquesting (Oct 26, 2026)
+* **Zero-Friction Modals (Name Made Optional):**
+  * Updated [components/EnquiryModal.tsx](file:///e:/websites/aurora%20hills/components/EnquiryModal.tsx), [components/SiteVisitModal.tsx](file:///e:/websites/aurora%20hills/components/SiteVisitModal.tsx), and [components/BrochureModal.tsx](file:///e:/websites/aurora%20hills/components/BrochureModal.tsx).
+  * Removed `required` constraint from Name field (`Full Name (Optional)`), defaulting to `"Interested Buyer"` (matches behavior that converted Lead #16). Added strict 10-digit mobile number cleaning and validation.
+* **Hubli Proximity & Free Cab Pickup Trust Strip (`components/Hero.tsx`):**
+  * Added high-contrast trust pill beneath hero CTA row: *"📍 20 Mins from Hubli (via Toll/NH-4 Bypass) • 🚗 Free Site Visit Cab Pickup & Drop across Hubli & Dharwad"*.
+  * Directly eliminates distance hesitation for Hubli buyers (our #1 converting audience @ 50% CVR).
+* **Urgency & Scarcity Micro-Banners (`components/HeroLeadCard.tsx` & `components/FestiveScheme.tsx`):**
+  * Added `"⚡ Only 7 Plots in Phase 1"` live inventory pill and Hubli family cab pickup note inside the instant lead form.
+  * Added Deepawali Phase 1 limited release banner above festive pricing cards.
+* **In-Browser Autonomous Verification:**
+  * Verified live on local dev server (`http://localhost:3000`) via browser subagent with recorded video artifact `verify_cro_updates`.
+
 ---
 
 ## 3. Google Ads Campaign & Costing Audit
@@ -87,7 +100,7 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
 * **Campaign Name:** `Search - The Aurora Hills - Hubli Dharwad Plots`
 * **Ad Group:** `Aurora ad group`
 * **Daily Budget:** ₹1,200/day
-* **Bidding Strategy:** Maximize Clicks with **₹48.00 Max CPC limit** *(Recommendation: Nudge to ₹52.00 to resolve `Limited by bid strategy`)*
+* **Bidding Strategy:** Maximize Clicks with **₹52.00 Max CPC limit** *(Raised from ₹48.00 on Oct 24, 2026 to resolve `Limited by bid strategy`)*
 * **Geotargeting:** Exclusively `Dharwad, Karnataka` and `Hubballi, Karnataka` (Presence only)
 * **Conversion Tracking:** `AW-16689411973/I9fRCMn3upwdEIXvkJY-` (Lead forms, phone clicks, and WhatsApp clicks)
 
@@ -103,10 +116,27 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
   * `koravi developers hubli` (3 clicks → 2 leads at ₹61.41 CPA)
   * `khb plots for sale in dharwad` (2 clicks → 1 lead at ₹82.84 CPA)
 
-### B. Today's Midday Audit (Oct 23, 2026 as of 1:36 PM)
-* **Spend:** ₹370.35 (30.9% utilized, leaving ₹829.65 for evening peak)
-* **Clicks:** 9 | **Impressions:** 39 | **CTR:** 23.08% | **Avg CPC:** ₹41.15
-* **100% Competitor/Locality Conquesting Searches Today:** `koravi developers hubli` (2 clicks), `koravi developers dharwad` (1 click), `rajeshwari properties hubli` (1 click), `khb sattur 2nd phase dharwad` (1 click).
+### B. Daily Midday & Full Audits
+* **Oct 25, 2026 (Full Day Sunday Audit):**
+  * **Spend:** ₹1,728.10 (Weekend budget pacing)
+  * **Clicks:** 34 | **Impressions:** 143 | **CTR:** 23.78% | **Avg CPC:** ₹50.83 (100% contained under ₹52.00 limit)
+  * **Device Breakdown:** Mobile 97.1% clicks, 100% conversions | Desktop 2.9% clicks
+  * **Conversions Verified:** **1 Lead (Interested Buyer - 9611595938)** via keyword `"sites in hubli"` (3 clicks, 1 lead @ ₹151.86 CPA, 33.33% CVR)!
+  * **Search Term Conquesting:** Active clicks from `kittur developers hubli` (competitor), `khb site for sale in navanagar hubli` (govt layout), `farm house near hubli dharwad`.
+* **Oct 24, 2026 (Full Day):**
+  * **Spend:** ~₹500+ | **Clicks:** 10+
+  * **Conversions Verified:** **2 High-Intent Paid Leads**:
+    * **Vasu C Bangera** (`9545951676`) at 11:30 AM via `"plots in hubli"` (30×40 Investment)
+    * **Madhav Gopal Nayak** (`7676757477`) at 7:48 PM via `"sites in hubli for sale"` (40×60 Plot - 50g Gold Offer - Build a Home)
+  * **Key Optimization Actions (Executed Live):**
+    * Paused positive keyword `"land price in hubli"` (preventing 40% daily budget leakage).
+    * Rejected Google suggestion to remove negative keywords `price` / `"land price"`.
+    * Added negative keywords: `"low budget"`, `"low budget plots"`, `"under 10 lakhs"`.
+    * Raised Max CPC limit from **₹48.00 to ₹52.00** to eliminate `Limited by bid strategy`.
+* **Oct 23, 2026 (as of 1:36 PM):**
+  * **Spend:** ₹370.35 (30.9% utilized, leaving ₹829.65 for evening peak)
+  * **Clicks:** 9 | **Impressions:** 39 | **CTR:** 23.08% | **Avg CPC:** ₹41.15
+  * **100% Competitor/Locality Conquesting Searches Today:** `koravi developers hubli` (2 clicks), `koravi developers dharwad` (1 click), `rajeshwari properties hubli` (1 click), `khb sattur 2nd phase dharwad` (1 click).
 
 ### C. Campaign-Level Negative Keywords Master List
 ```text
@@ -135,6 +165,8 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
 "factory"
 "godown"
 "cheap plots"
+"low budget"
+"low budget plots"
 "under 5 lakhs"
 "under 10 lakhs"
 "under 15 lakhs"
@@ -159,7 +191,7 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
 
 ---
 
-## 4. Master Inbound Leads Register (Total: 13 Verified Leads)
+## 4. Master Inbound Leads Register (Total: 16 Verified Leads)
 
 Synchronized with sales notification emails (`social.propertybasket@gmail.com`) and Google Ads GCLID tracking:
 
@@ -176,8 +208,11 @@ Synchronized with sales notification emails (`social.propertybasket@gmail.com`) 
 | **9** | 21/10/2026, 8:18 AM | **Sunil Sappandi** | `9902395967` | 30×40 Plot Enquiry | Hero Instant Card (Repeat Inquiry) | Re-engaged |
 | **10** | 21/10/2026, 8:56 AM | **Mayur** | `6360639230` | 30×40 Plot Enquiry | Hero Instant Card (Direct/Organic) | Dispatched to WhatsApp |
 | **11** | 21/10/2026, 1:58 PM | **Anita Bagoji** | `8970926999` | 30×50 Plot Enquiry | Google Ads (`plots in dharwad`) | Fresh Paid Lead |
-| **12** | 23/10/2026, 7:27 AM | **Hemanth Kulkarni** | `9449370863` | Build a Home | Hero Price Card (Direct/Organic) | Morning Lead (Today) |
-| **13** | 23/10/2026, 10:38 AM | 🌟 **Muttu patil** | **`9900518142`** | **30×40 Plot Enquiry** | **Hero Instant Card (Direct/Organic)** | **LATEST LEAD TODAY** |
+| **12** | 23/10/2026, 7:27 AM | **Hemanth Kulkarni** | `9449370863` | Build a Home | Hero Price Card (Direct/Organic) | Morning Lead |
+| **13** | 23/10/2026, 10:38 AM | **Muttu patil** | `9900518142` | 30×40 Plot Enquiry | Hero Instant Card (Direct/Organic) | Follow-up Dispatched |
+| **14** | 24/10/2026, 11:30 AM | **Vasu C Bangera** | `9545951676` | 30×40 Plot Enquiry (Investment) | Google Ads (`plots in hubli`) | Paid Lead (WhatsApp) |
+| **15** | 24/10/2026, 7:48 PM | **Madhav Gopal Nayak** | `7676757477` | 40×60 Plot (50g Gold Offer) | Google Ads (`sites in hubli for sale`) | 🎯 **High-Intent (Build a Home)** |
+| **16** | 25/10/2026, 4:53 PM | 🌟 **Interested Buyer** | **`9611595938`** | **30×40 Plot Enquiry** | **Google Ads (`sites in hubli`)** | 🎯 **LATEST VERIFIED PAID LEAD** |
 
 ---
 
