@@ -187,6 +187,18 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
 "agents directory"
 "without broker"
 "brokerage"
+"farm house"
+"farmland"
+"resort"
+"flat"
+"flats"
+"apartment"
+"apartments"
+"2bhk"
+"3bhk"
+"house for sale"
+"independent house"
+"house for rent"
 ```
 
 ---
