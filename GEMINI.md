@@ -117,6 +117,11 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
   * `khb plots for sale in dharwad` (2 clicks → 1 lead at ₹82.84 CPA)
 
 ### B. Daily Midday & Full Audits
+* **Oct 26, 2026 (Comprehensive Conversion & Campaign Optimization):**
+  * **Device Bid Adjustment Executed:** Mobile phones: **+20%**, Computers: **-70%** (100% targeting alignment with our converting mobile audience).
+  * **Ad Schedule Executed:** Active delivery set strictly from **07:30 to 22:30** (7:30 AM to 10:30 PM), eliminating budget drain between 11 PM and 7 AM.
+  * **12 New Negative Keywords Added:** Blocked non-plot searches: `"farm house"`, `"farmland"`, `"resort"`, `"flat"`, `"flats"`, `"apartment"`, `"apartments"`, `"2bhk"`, `"3bhk"`, `"house for sale"`, `"independent house"`, `"house for rent"`.
+  * **Production Website Enhancements Verified Live (`commit 7aced40`):** Zero-friction optional name modals, 20-min Hubli bypass trust strip, and Phase 1 festive scarcity badges.
 * **Oct 25, 2026 (Full Day Sunday Audit):**
   * **Spend:** ₹1,728.10 (Weekend budget pacing)
   * **Clicks:** 34 | **Impressions:** 143 | **CTR:** 23.78% | **Avg CPC:** ₹50.83 (100% contained under ₹52.00 limit)
