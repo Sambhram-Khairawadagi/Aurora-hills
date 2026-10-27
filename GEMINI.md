@@ -92,6 +92,16 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
 * **In-Browser Autonomous Verification:**
   * Verified live on local dev server (`http://localhost:3000`) via browser subagent with recorded video artifact `verify_cro_updates`.
 
+### H. Twin-City 50/50 Dual Focus: Dharwad & Hubli (Oct 27, 2026)
+* **Strategic Intent:** Enforce equal prominence to both **Dharwad** (the home ground, prime location, scenic hill living) and **Hubli** (high-intent investor & weekend retreat buyers), preventing Hubli search queries from monopolizing the campaign or making the project look distant to local Dharwad buyers.
+* **Website Copy Enhancements (`components/Hero.tsx` & `components/HeroLeadCard.tsx`):**
+  * Updated Hero Trust Strip: *"📍 Dharwad: 5 Mins to Jubilee Circle, KUD & Kelgeri Lake • 📍 Hubli: 20 Mins via NH-4 Bypass • 🚗 Free Doorstep Cab Pickup across Dharwad & Hubli"*.
+  * Updated Instant Lead Card Mini-Banner: *"🚗 Visiting from Dharwad or Hubli? Complimentary doorstep cab pickup available."*
+* **Google Ads Equal Budget Allocation Action Plan:**
+  * Pause or bid-cap high-spend, non-converting generic Hubli keywords (`"hubli land for sale"`, `"sites in hubli for sale"`) that previously absorbed 75.8% of daily budget.
+  * Elevate high-intent Dharwad keywords (`"plots in dharwad"`, `"sites in dharwad"`, `"plots for sale in dharwad"`, `"villa plots in dharwad"`, `"kelgeri plots dharwad"`, `"hduda approved plots dharwad"`).
+  * Structure into 2 dedicated ad groups (`Dharwad Plots` vs `Hubli Plots`) to ensure guaranteed 50/50 impression and budget distribution.
+
 ---
 
 ## 3. Google Ads Campaign & Costing Audit
