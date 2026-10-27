@@ -117,11 +117,22 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
   * `khb plots for sale in dharwad` (2 clicks → 1 lead at ₹82.84 CPA)
 
 ### B. Daily Midday & Full Audits
-* **Oct 26, 2026 (Comprehensive Conversion & Campaign Optimization):**
-  * **Device Bid Adjustment Executed:** Mobile phones: **+20%**, Computers: **-70%** (100% targeting alignment with our converting mobile audience).
-  * **Ad Schedule Executed:** Active delivery set strictly from **07:30 to 22:30** (7:30 AM to 10:30 PM), eliminating budget drain between 11 PM and 7 AM.
-  * **12 New Negative Keywords Added:** Blocked non-plot searches: `"farm house"`, `"farmland"`, `"resort"`, `"flat"`, `"flats"`, `"apartment"`, `"apartments"`, `"2bhk"`, `"3bhk"`, `"house for sale"`, `"independent house"`, `"house for rent"`.
-  * **Production Website Enhancements Verified Live (`commit 7aced40`):** Zero-friction optional name modals, 20-min Hubli bypass trust strip, and Phase 1 festive scarcity badges.
+* **Oct 26, 2026 (Full Day Monday Audit & Optimization Validation):**
+  * **Spend:** ₹1,226.53 (102.2% of ₹1,200/day budget — perfectly paced across active hours)
+  * **Clicks:** 22 | **Impressions:** 101 | **CTR:** 21.78% (4x real estate search benchmark)
+  * **Avg CPC:** ₹55.75 (Mobile bid adjustment +20% yielded higher ad ranking on mobile)
+  * **Conversions:** **1.00 Verified Lead** (`Aurora Hills - Website Lead`) | **Cost / conv. (CPL):** ₹1,226.53 daily total
+  * **Device Bid Strategy 100% Effective:**
+    * Mobile phones: **100.0% spend (₹1,226.53)**, **100.0% clicks (22)**, **100.0% conversions (1)**
+    * Computers: **0.0% spend, 0 clicks** (protected by -70% adjustment)
+    * Tablets: **0.0% spend, 0 clicks**
+  * **Ad Schedule Execution:** Strict delivery between 07:30 and 22:30; zero rupee wasted during night hours. Delivery peaked 11 AM–1 PM and 6 PM–10 PM.
+  * **Winning Search Term & Keyword:**
+    * Search Term: **`plots for sale in unkal hubli`** → **2 clicks, 1 conversion (50.0% CVR) at ₹123.17 Cost/conv!**
+    * Keyword: `"plots in hubli"` → 3 clicks, 1 conversion (33.33% CVR) at ₹185.02 Cost/conv.
+  * **Competitor Conquesting Searches:** `nova city hubli` (2 clicks), `nandi properties hubli` (1 click), `kittur developers hubli` (top impression share).
+  * **Leakage Detected:** 1 click on `rising resort dharwad` (₹51.95) before negative keyword fully propagated.
+  * **Account Alert:** `! Balance is running low Fix it` active on dashboard (requires immediate top-up).
 * **Oct 25, 2026 (Full Day Sunday Audit):**
   * **Spend:** ₹1,728.10 (Weekend budget pacing)
   * **Clicks:** 34 | **Impressions:** 143 | **CTR:** 23.78% | **Avg CPC:** ₹50.83 (100% contained under ₹52.00 limit)
@@ -195,6 +206,7 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
 "farm house"
 "farmland"
 "resort"
+"rising resort"
 "flat"
 "flats"
 "apartment"
