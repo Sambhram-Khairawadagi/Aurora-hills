@@ -127,6 +127,12 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
   * `khb plots for sale in dharwad` (2 clicks → 1 lead at ₹82.84 CPA)
 
 ### B. Daily Midday & Full Audits
+* **Oct 27, 2026 (Twin-City Keyword Rebalancing & Budget Liberation Executed):**
+  * **Generic Hubli Leakage Paused:** Paused positive keyword `"hubli land for sale"` (liberating ~₹215/day for Dharwad searches).
+  * **Bid Capped:** Capped Max CPC on high-volume `"sites in hubli for sale"` to prevent budget monopolization.
+  * **Core Dharwad Keywords Activated & Prioritized:** Enabled and elevated `"plots in dharwad"`, `"sites in dharwad"`, `"sites in dharwad for sale"`, `"plots for sale in dharwad"`, `"villa plots in dharwad"`, `"residential plots in dharwad"`, `"kelgeri plots dharwad"`, `"hduda approved plots dharwad"`, `"khb plots for sale in dharwad"`.
+  * **Structure:** Retained single ad group (`Aurora ad group`) to preserve existing campaign learning and conversion history while directly steering keyword impression share.
+  * **Website Production Updates Live (`commit 8ffffa1`):** Hero trust strip and instant card updated with twin-city 50/50 Dharwad (5 mins to Jubilee Circle/KUD/Kelgeri) and Hubli (20 mins via bypass) + doorstep family cab pickup.
 * **Oct 26, 2026 (Full Day Monday Audit & Optimization Validation):**
   * **Spend:** ₹1,226.53 (102.2% of ₹1,200/day budget — perfectly paced across active hours)
   * **Clicks:** 22 | **Impressions:** 101 | **CTR:** 21.78% (4x real estate search benchmark)
