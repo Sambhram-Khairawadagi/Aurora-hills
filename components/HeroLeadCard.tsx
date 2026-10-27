@@ -130,10 +130,10 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
             <p className="text-xs sm:text-sm text-charcoal-700 font-medium mt-0.5">
               Receive official sanctioned layout PDF &amp; price sheet directly on WhatsApp.
             </p>
-            {/* Hubli Cab Pickup Mini-Banner */}
+            {/* Dharwad & Hubli Cab Pickup Mini-Banner */}
             <div className="mt-2 py-1 px-2.5 rounded-xl bg-emerald-50/90 border border-emerald-200/80 text-[11px] text-emerald-950 font-bold flex items-center gap-1.5">
               <span className="flex-shrink-0">🚗</span>
-              <span className="truncate">Visiting from Hubli? Complimentary family cab pickup available.</span>
+              <span className="truncate">Visiting from Dharwad or Hubli? Complimentary doorstep cab pickup available.</span>
             </div>
           </div>
 
