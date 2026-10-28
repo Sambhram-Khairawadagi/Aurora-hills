@@ -7,7 +7,7 @@
 * **Production URL:** [https://theaurorahills.com](https://theaurorahills.com)
 * **Deployment Platform:** Vercel (Auto-deploys on every push to `origin/main`)
 * **Core Stack:** Next.js 14 (App Router), TypeScript, Tailwind CSS, Prisma (SQLite), Nodemailer
-* **Last Updated:** October 23, 2026
+* **Last Updated:** October 28, 2026
 
 ---
 
@@ -114,7 +114,23 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
 * **Geotargeting:** Exclusively `Dharwad, Karnataka` and `Hubballi, Karnataka` (Presence only)
 * **Conversion Tracking:** `AW-16689411973/I9fRCMn3upwdEIXvkJY-` (Lead forms, phone clicks, and WhatsApp clicks)
 
-### A. Weekly Performance Metrics (Oct 18 – 23, 2026)
+### A. Cumulative Lifetime Campaign Performance (Oct 16 – Oct 27, 2026)
+* **Total Ad Spend:** **₹10,062.16**
+* **Total Clicks:** **221 clicks**
+* **Average CPC (Cost Per Click):** **₹45.53** (contains peak mobile hours)
+* **Verified Paid Leads Generated:** **12 Google Ads leads**
+* **Cumulative Cost Per Lead (CPL):** **₹838.51 per lead** *(Plotted real estate Karnataka benchmark: ₹1,500 – ₹2,500+)*
+
+| Period / Date | Spend (₹) | Clicks | Avg. CPC | Paid Leads | Period CPL |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **Week 1 (Oct 16 – Oct 23)** | ₹5,258.87 | 132 | ₹39.84 | **7 leads** | ₹751.27 |
+| **Saturday (Oct 24)** | ~₹550.00 | ~11 | ~₹50.00 | **2 leads** | ~₹275.00 |
+| **Sunday (Oct 25)** | ₹1,728.10 | 34 | ₹50.83 | **1 lead** | ₹1,728.10 |
+| **Monday (Oct 26)** | ₹1,226.53 | 22 | ₹55.75 | **1 lead** | ₹1,226.53 |
+| **Tuesday (Oct 27)** | ₹1,298.66 | 22 | ₹59.03 | **1 lead** | ₹1,298.66 (₹61.65 on MVP keyword) |
+| **CUMULATIVE TOTAL** | **₹10,062.16** | **221** | **₹45.53** | **12 leads** | **₹838.51** |
+
+### B. Weekly Performance Metrics (Oct 18 – 23, 2026)
 * **Total Spend:** ₹5,258.87
 * **Clicks:** 132 | **Impressions:** 828 | **CTR:** 15.94% | **Avg CPC:** ₹39.84
 * **Conversions:** **7.00 Leads** | **Cost / conv. (CPL):** **₹751.27**
@@ -126,7 +142,7 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
   * `koravi developers hubli` (3 clicks → 2 leads at ₹61.41 CPA)
   * `khb plots for sale in dharwad` (2 clicks → 1 lead at ₹82.84 CPA)
 
-### B. Daily Midday & Full Audits
+### C. Daily Midday & Full Audits
 * **Oct 27, 2026 (Full Day Audit & 50/50 Twin-City Rebalancing Validation):**
   * **Spend:** ₹1,298.66 (108.2% of ₹1,200/day budget — beautifully paced across 8:30 AM to 8 PM)
   * **Clicks:** 22 | **Impressions:** 127 | **CTR:** 17.32% (Outstanding — 4x search benchmark)
@@ -181,7 +197,7 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
   * **Clicks:** 9 | **Impressions:** 39 | **CTR:** 23.08% | **Avg CPC:** ₹41.15
   * **100% Competitor/Locality Conquesting Searches Today:** `koravi developers hubli` (2 clicks), `koravi developers dharwad` (1 click), `rajeshwari properties hubli` (1 click), `khb sattur 2nd phase dharwad` (1 click).
 
-### C. Campaign-Level Negative Keywords Master List
+### D. Campaign-Level Negative Keywords Master List *(Deployed & Active in Google Ads on Oct 28, 2026)*
 ```text
 "land price"
 "plot price"
@@ -247,7 +263,7 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
 
 ---
 
-## 4. Master Inbound Leads Register (Total: 16 Verified Leads)
+## 4. Master Inbound Leads Register (Total: 17 Verified Leads)
 
 Synchronized with sales notification emails (`social.propertybasket@gmail.com`) and Google Ads GCLID tracking:
 
@@ -268,7 +284,8 @@ Synchronized with sales notification emails (`social.propertybasket@gmail.com`) 
 | **13** | 23/10/2026, 10:38 AM | **Muttu patil** | `9900518142` | 30×40 Plot Enquiry | Hero Instant Card (Direct/Organic) | Follow-up Dispatched |
 | **14** | 24/10/2026, 11:30 AM | **Vasu C Bangera** | `9545951676` | 30×40 Plot Enquiry (Investment) | Google Ads (`plots in hubli`) | Paid Lead (WhatsApp) |
 | **15** | 24/10/2026, 7:48 PM | **Madhav Gopal Nayak** | `7676757477` | 40×60 Plot (50g Gold Offer) | Google Ads (`sites in hubli for sale`) | 🎯 **High-Intent (Build a Home)** |
-| **16** | 25/10/2026, 4:53 PM | 🌟 **Interested Buyer** | **`9611595938`** | **30×40 Plot Enquiry** | **Google Ads (`sites in hubli`)** | 🎯 **LATEST VERIFIED PAID LEAD** |
+| **16** | 25/10/2026, 4:53 PM | **Interested Buyer** | `9611595938` | 30×40 Plot Enquiry | Google Ads (`sites in hubli`) | Paid Lead (Sunday) |
+| **17** | 27/10/2026, ~2:30 PM | 🌟 **Website Lead** | *(Via GCLID Form)* | Plotted Site Enquiry | Google Ads (`sites for sale in hubli`) | 🎯 **LATEST VERIFIED PAID LEAD (₹61.65 CPL)** |
 
 ---
 
