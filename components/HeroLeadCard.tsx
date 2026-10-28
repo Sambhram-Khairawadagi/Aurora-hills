@@ -132,64 +132,87 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
               Receive official sanctioned layout PDF &amp; price sheet directly on WhatsApp.
             </p>
             {/* Dharwad & Hubli Proximity & Cab Pickup Mini-Banner */}
-            <div className="mt-2 py-1.5 px-2.5 rounded-xl bg-emerald-50/95 border border-emerald-300 text-[11px] text-emerald-950 font-bold flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-              <span className="flex items-center gap-1.5 truncate">
-                <span className="flex-shrink-0">📍</span>
-                <span><strong>5 Mins to Jubilee Circle</strong> (20 Mins from Hubli)</span>
+            <div className="mt-2.5 py-2 px-3 rounded-xl bg-emerald-50/90 border border-emerald-200/90 text-xs text-emerald-950 font-bold flex items-center justify-between gap-2">
+              <div className="flex items-center gap-1.5 truncate">
+                <span className="flex-shrink-0 text-emerald-700">📍</span>
+                <span><strong>5 Mins to Jubilee Circle</strong> • 20 Mins from Hubli</span>
+              </div>
+              <span className="text-[11px] font-extrabold text-emerald-800 bg-white px-2 py-0.5 rounded-md border border-emerald-200 shadow-xs flex-shrink-0">
+                🚗 Free Cab
               </span>
-              <span className="text-emerald-800 font-extrabold flex-shrink-0">🚗 Free Cab Pickup</span>
             </div>
           </div>
 
-          {/* Plot Size Selector */}
+          {/* Plot Size Selector (Clean 2-Column Spacious Grid) */}
           <div>
-            <div className="flex items-center justify-between mb-1.5">
+            <div className="flex items-center justify-between mb-2">
               <label className="text-xs sm:text-sm font-black uppercase tracking-wider text-charcoal-800">
                 Select Plot Dimension:
               </label>
-              <span className="text-[11px] font-extrabold text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-full border border-emerald-300/80">
+              <span className="text-[11px] font-bold text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-full border border-emerald-300/80">
                 80% Bank Loan Approved
               </span>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
-              {PLOT_OPTIONS.map((opt) => (
-                <button
-                  type="button"
-                  key={opt.label}
-                  onClick={() => setSelectedPlot(opt.label)}
-                  className={`py-2 px-1 rounded-xl text-center border transition-all flex flex-col items-center justify-center min-h-[58px] ${
-                    selectedPlot === opt.label
-                      ? "bg-emerald-700 text-white border-emerald-800 shadow-md scale-102 font-black"
-                      : "bg-emerald-50/70 text-charcoal-800 border-emerald-200 hover:bg-emerald-100 font-bold"
-                  }`}
-                >
-                  <div className="flex items-center gap-1">
-                    <span className="text-xs sm:text-sm font-black leading-none">{opt.label}</span>
-                    {opt.sub ? (
-                      <span className={`text-[10px] leading-none ${selectedPlot === opt.label ? "text-emerald-200" : "text-charcoal-500"}`}>
-                        ({opt.sub})
+
+            <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
+              {PLOT_OPTIONS.map((opt) => {
+                const isSelected = selectedPlot === opt.label;
+                return (
+                  <button
+                    type="button"
+                    key={opt.label}
+                    onClick={() => setSelectedPlot(opt.label)}
+                    className={`p-2.5 rounded-2xl text-left border-2 transition-all flex flex-col justify-between ${
+                      isSelected
+                        ? "bg-emerald-800 text-white border-emerald-950 shadow-md scale-[1.01]"
+                        : "bg-emerald-50/50 text-forest-950 border-emerald-200/80 hover:border-emerald-300 hover:bg-emerald-50"
+                    }`}
+                  >
+                    <div className="flex items-center justify-between gap-1 w-full">
+                      <span className="text-sm font-black font-sans leading-tight">
+                        {opt.label}
                       </span>
-                    ) : null}
-                  </div>
-                  <div className="mt-1 flex items-center gap-1">
-                    <span className={`text-xs font-black ${selectedPlot === opt.label ? "text-amber-300" : "text-emerald-800 font-extrabold"}`}>
-                      {opt.price}
-                    </span>
-                  </div>
-                  <span className={`text-[10px] leading-tight font-medium ${selectedPlot === opt.label ? "text-emerald-100" : "text-charcoal-600"}`}>
-                    {opt.emi}
-                  </span>
-                </button>
-              ))}
+                      {opt.sub ? (
+                        <span
+                          className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${
+                            isSelected
+                              ? "bg-emerald-700/80 text-emerald-100"
+                              : "bg-white text-charcoal-600 border border-emerald-100"
+                          }`}
+                        >
+                          {opt.sub}
+                        </span>
+                      ) : null}
+                    </div>
+
+                    <div className="mt-1.5 flex items-baseline justify-between gap-1 w-full">
+                      <span
+                        className={`text-sm sm:text-base font-black ${
+                          isSelected ? "text-amber-300" : "text-emerald-800 font-extrabold"
+                        }`}
+                      >
+                        {opt.price}
+                      </span>
+                      <span
+                        className={`text-[10px] font-semibold ${
+                          isSelected ? "text-emerald-100" : "text-charcoal-600"
+                        }`}
+                      >
+                        {opt.emi}
+                      </span>
+                    </div>
+                  </button>
+                );
+              })}
             </div>
 
             {/* Down Payment & Bank Loan Callout */}
-            <div className="mt-2 py-1.5 px-3 rounded-xl bg-amber-50/90 border border-amber-300/80 text-[11px] text-amber-950 font-bold flex items-center justify-between">
-              <span className="flex items-center gap-1">
+            <div className="mt-2.5 py-2 px-3 rounded-xl bg-amber-50/90 border border-amber-300/80 text-xs text-amber-950 font-bold flex items-center justify-between">
+              <div className="flex items-center gap-1.5">
                 <span>💰</span>
-                <span>Down Payment: <strong>Only ₹8.4 Lakhs</strong></span>
-              </span>
-              <span className="text-emerald-900 font-extrabold">
+                <span>Down Payment: <strong className="text-amber-900 font-black">Only ₹8.4 Lakhs</strong></span>
+              </div>
+              <span className="text-[11px] font-extrabold text-emerald-900 bg-white px-2 py-0.5 rounded-md border border-amber-200 shadow-xs">
                 SBI • HDFC Pre-Approved
               </span>
             </div>
