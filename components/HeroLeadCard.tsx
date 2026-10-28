@@ -13,10 +13,10 @@ interface HeroLeadCardProps {
 }
 
 const PLOT_OPTIONS = [
-  { label: "30×40", sub: "1,200 sq.ft" },
-  { label: "30×50", sub: "1,500 sq.ft" },
-  { label: "40×60", sub: "2,400 sq.ft" },
-  { label: "Odd Size", sub: "" },
+  { label: "30×40", sub: "1,200 sq.ft", price: "₹42L*", emi: "~₹26.5k EMI" },
+  { label: "30×50", sub: "1,500 sq.ft", price: "₹52.5L*", emi: "~₹33k EMI" },
+  { label: "40×60", sub: "2,400 sq.ft", price: "₹84L*", emi: "~₹52.5k EMI" },
+  { label: "Odd Size", sub: "Custom", price: "On Request", emi: "Bank Loan" },
 ];
 
 export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
@@ -49,7 +49,8 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
         ? `Google Ads (${utmParams.utm_campaign || sourceTag})`
         : sourceTag;
 
-      const requirementStr = `${selectedPlot} Plot Enquiry`;
+      const currentOpt = PLOT_OPTIONS.find((p) => p.label === selectedPlot) || PLOT_OPTIONS[0];
+      const requirementStr = `${selectedPlot} (${currentOpt.price}) Plot Enquiry`;
 
       const res = await fetch("/api/leads", {
         method: "POST",
@@ -61,7 +62,7 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
           requirement: requirementStr,
           purpose: "Plot Purchase / Investment",
           preferred_contact: "WhatsApp",
-          message: `Inquired via Instant Hero Card for ${selectedPlot}. Sent directly to WhatsApp.`,
+          message: `Inquired via Instant Hero Card for ${selectedPlot} (${currentOpt.price}, ${currentOpt.emi}). Sent directly to WhatsApp.`,
           source: finalSource,
           ...utmParams,
         }),
@@ -76,7 +77,7 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
 
         // Pre-compose WhatsApp URL
         const waText = encodeURIComponent(
-          `Hi, I just submitted an enquiry on your website for The Aurora Hills plots in Dharwad (${requirementStr}). Please send me the HDUDA Layout Plan PDF and Price List on WhatsApp.`
+          `Hi, I just submitted an enquiry on your website for The Aurora Hills plots in Dharwad (${selectedPlot} starting from ${currentOpt.price}). Please send me the HDUDA Layout Plan PDF and SBI Loan details on WhatsApp.`
         );
         const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
 
@@ -130,42 +131,67 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
             <p className="text-xs sm:text-sm text-charcoal-700 font-medium mt-0.5">
               Receive official sanctioned layout PDF &amp; price sheet directly on WhatsApp.
             </p>
-            {/* Dharwad & Hubli Cab Pickup Mini-Banner */}
-            <div className="mt-2 py-1 px-2.5 rounded-xl bg-emerald-50/90 border border-emerald-200/80 text-[11px] text-emerald-950 font-bold flex items-center gap-1.5">
-              <span className="flex-shrink-0">🚗</span>
-              <span className="truncate">Visiting from Dharwad or Hubli? Complimentary doorstep cab pickup available.</span>
+            {/* Dharwad & Hubli Proximity & Cab Pickup Mini-Banner */}
+            <div className="mt-2 py-1.5 px-2.5 rounded-xl bg-emerald-50/95 border border-emerald-300 text-[11px] text-emerald-950 font-bold flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <span className="flex items-center gap-1.5 truncate">
+                <span className="flex-shrink-0">📍</span>
+                <span><strong>5 Mins to Jubilee Circle</strong> (20 Mins from Hubli)</span>
+              </span>
+              <span className="text-emerald-800 font-extrabold flex-shrink-0">🚗 Free Cab Pickup</span>
             </div>
           </div>
 
           {/* Plot Size Selector */}
           <div>
-            <label className="text-xs sm:text-sm font-black uppercase tracking-wider text-charcoal-800 block mb-1.5">
-              Select Plot Size of Interest:
-            </label>
-            <div className="grid grid-cols-4 gap-1 sm:gap-1.5">
+            <div className="flex items-center justify-between mb-1.5">
+              <label className="text-xs sm:text-sm font-black uppercase tracking-wider text-charcoal-800">
+                Select Plot Dimension:
+              </label>
+              <span className="text-[11px] font-extrabold text-emerald-800 bg-emerald-100/80 px-2 py-0.5 rounded-full border border-emerald-300/80">
+                80% Bank Loan Approved
+              </span>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5">
               {PLOT_OPTIONS.map((opt) => (
                 <button
                   type="button"
                   key={opt.label}
                   onClick={() => setSelectedPlot(opt.label)}
-                  className={`py-1.5 px-0.5 sm:px-1 rounded-xl text-center border transition-all flex flex-col items-center justify-center min-h-[44px] ${
+                  className={`py-2 px-1 rounded-xl text-center border transition-all flex flex-col items-center justify-center min-h-[58px] ${
                     selectedPlot === opt.label
                       ? "bg-emerald-700 text-white border-emerald-800 shadow-md scale-102 font-black"
                       : "bg-emerald-50/70 text-charcoal-800 border-emerald-200 hover:bg-emerald-100 font-bold"
                   }`}
                 >
-                  <span className="block text-xs sm:text-sm leading-none whitespace-nowrap">{opt.label}</span>
-                  {opt.sub ? (
-                    <span
-                      className={`block text-[10px] sm:text-xs mt-0.5 leading-none font-bold ${
-                        selectedPlot === opt.label ? "text-emerald-100" : "text-charcoal-600"
-                      }`}
-                    >
-                      {opt.sub}
+                  <div className="flex items-center gap-1">
+                    <span className="text-xs sm:text-sm font-black leading-none">{opt.label}</span>
+                    {opt.sub ? (
+                      <span className={`text-[10px] leading-none ${selectedPlot === opt.label ? "text-emerald-200" : "text-charcoal-500"}`}>
+                        ({opt.sub})
+                      </span>
+                    ) : null}
+                  </div>
+                  <div className="mt-1 flex items-center gap-1">
+                    <span className={`text-xs font-black ${selectedPlot === opt.label ? "text-amber-300" : "text-emerald-800 font-extrabold"}`}>
+                      {opt.price}
                     </span>
-                  ) : null}
+                  </div>
+                  <span className={`text-[10px] leading-tight font-medium ${selectedPlot === opt.label ? "text-emerald-100" : "text-charcoal-600"}`}>
+                    {opt.emi}
+                  </span>
                 </button>
               ))}
+            </div>
+
+            {/* Down Payment & Bank Loan Callout */}
+            <div className="mt-2 py-1.5 px-3 rounded-xl bg-amber-50/90 border border-amber-300/80 text-[11px] text-amber-950 font-bold flex items-center justify-between">
+              <span className="flex items-center gap-1">
+                <span>💰</span>
+                <span>Down Payment: <strong>Only ₹8.4 Lakhs</strong></span>
+              </span>
+              <span className="text-emerald-900 font-extrabold">
+                SBI • HDFC Pre-Approved
+              </span>
             </div>
           </div>
 

@@ -102,6 +102,23 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
   * Elevate high-intent Dharwad keywords (`"plots in dharwad"`, `"sites in dharwad"`, `"plots for sale in dharwad"`, `"villa plots in dharwad"`, `"kelgeri plots dharwad"`, `"hduda approved plots dharwad"`).
   * Structure into 2 dedicated ad groups (`Dharwad Plots` vs `Hubli Plots`) to ensure guaranteed 50/50 impression and budget distribution.
 
+### I. Lead Quality Pre-Qualification, Down Payment Anchoring & Distance Reframe (Oct 28, 2026)
+* **Diagnostic Identified:** Out of 17 inbound leads, 0 had converted to bookings due to two universal objections:
+  1. *"Too high / Out of budget"* — un-anchored leads expected ₹15L–₹25L unapproved layouts.
+  2. *"Location is too far because it's a township"* — perception of a distant, isolated, deserted project.
+* **Instant Lead Card Overhaul (`components/HeroLeadCard.tsx`):**
+  * **Explicit Plot Dimension & Price Selector:**
+    * `30×40 (1,200 sq.ft)`: **`₹42L*`** • **`~₹26.5k EMI`**
+    * `30×50 (1,500 sq.ft)`: **`₹52.5L*`** • **`~₹33k EMI`**
+    * `40×60 (2,400 sq.ft)`: **`₹84L*`** • **`~₹52.5k EMI`**
+    * `Odd Size`: **`Custom`** • **`Bank Loan`**
+  * **Down Payment Value Anchor:** Added *"💰 Down Payment: Only ₹8.4 Lakhs • SBI & HDFC Pre-Approved"* to destroy lump-sum price shock.
+  * **Proximity Reframe:** Highlighted *"📍 5 Mins to Jubilee Circle (20 Mins from Hubli) • 🚗 Free Cab Pickup"*.
+  * **Lead Attribution Tagging:** Form submissions and WhatsApp pre-composed text explicitly tag selected plot and price (`30×40 (₹42L*) Plot Enquiry`), guaranteeing that all incoming leads are pre-qualified.
+* **Festive Scheme Price Transparency (`components/FestiveScheme.tsx`):**
+  * Added starting rates and down payments across all 3 festive reward cards (`₹84L / ₹16.8L Down Payment`, `₹52.5L / ₹10.5L Down Payment`, `₹42L / ₹8.4L Down Payment`).
+* **Verification:** `npx tsc --noEmit` exited with code 0 (zero compiler errors).
+
 ---
 
 ## 3. Google Ads Campaign & Costing Audit
