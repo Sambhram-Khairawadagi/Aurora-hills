@@ -38,7 +38,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
             </div>
 
             <p className="text-sm sm:text-base text-charcoal-700 leading-relaxed max-w-md font-medium">
-              Dharwad City’s premier planned residential sanctuary at Sunset Viewpoint. NA-KJP & HDUDA approved layout starting from <strong className="text-emerald-900 font-bold">₹42 Lakhs</strong> with clear titles and 20+ lifestyle amenities.
+              Dharwad City’s premier planned residential sanctuary at Sunset Viewpoint. NA-KJP & HDUDA approved layout available under <strong className="text-emerald-900 font-bold">Pre-Launch Advantage</strong> with clear titles and 20+ lifestyle amenities.
             </p>
 
             <PageViewCounter />

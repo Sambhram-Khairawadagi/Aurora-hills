@@ -139,7 +139,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                     <span className="text-xs font-black text-slate-800 bg-slate-200 px-2.5 py-0.5 rounded-full">30 × 40</span>
                   </div>
                   <p className="text-sm text-charcoal-700 mt-0.5 font-medium">3BHK Luxury Villa</p>
-                  <p className="text-sm font-black text-emerald-800 mt-0.5">Starting ₹42 Lakhs*</p>
+                  <p className="text-sm font-black text-emerald-800 mt-0.5">Price on Request</p>
                   <span className="inline-block mt-2 px-3 py-0.5 rounded-md bg-slate-100 border border-slate-300 text-slate-800 text-xs font-black">
                     🎁 Festive Gift: 1 KG Silver
                   </span>
@@ -155,7 +155,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                     <span className="text-xs font-black text-emerald-900 bg-emerald-200 px-2.5 py-0.5 rounded-full">30 × 50</span>
                   </div>
                   <p className="text-sm text-charcoal-700 mt-0.5 font-medium">Spacious Garden Living</p>
-                  <p className="text-sm font-black text-emerald-800 mt-0.5">Starting ₹52.5 Lakhs*</p>
+                  <p className="text-sm font-black text-emerald-800 mt-0.5">Price on Request</p>
                   <span className="inline-block mt-2 px-3 py-0.5 rounded-md bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-black">
                     🎁 Festive Gift: 1.5 KG Silver
                   </span>
@@ -171,7 +171,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                     <span className="text-xs font-black text-amber-950 bg-amber-200 px-2.5 py-0.5 rounded-full">40 × 60</span>
                   </div>
                   <p className="text-sm text-charcoal-700 mt-0.5 font-medium">Grand Hillside Mansion</p>
-                  <p className="text-sm font-black text-emerald-800 mt-0.5">Starting ₹84 Lakhs*</p>
+                  <p className="text-sm font-black text-emerald-800 mt-0.5">Price on Request</p>
                   <span className="inline-block mt-2 px-3 py-0.5 rounded-md bg-amber-200/80 border border-amber-400 text-red-950 text-xs font-black">
                     🎁 Festive Gift: 50g Gold
                   </span>

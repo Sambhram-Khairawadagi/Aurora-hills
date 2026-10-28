@@ -4,14 +4,14 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Plots in Dharwad for Sale | HDUDA Approved Villa Plots | The Aurora Hills",
   description:
-    "Buy HDUDA & NA-KJP approved residential plots in Dharwad starting ₹42 Lakhs. 30x40, 30x50 & 40x60 sites near Karnatak University, NH-4 Highway & Sunset Viewpoint. SBI/HDFC bank loans pre-approved. Call +91 89701 98701.",
+    "Buy HDUDA & NA-KJP approved residential plots in Dharwad with pre-approved bank loans. 30x40, 30x50 & 40x60 sites near Karnatak University, NH-4 Highway & Sunset Viewpoint. SBI/HDFC bank loans pre-approved. Call +91 89701 98701.",
   alternates: {
     canonical: "https://theaurorahills.com/plots-in-dharwad",
   },
   openGraph: {
     title: "Plots in Dharwad for Sale | HDUDA Approved | The Aurora Hills",
     description:
-      "Best residential plots in Dharwad – HDUDA & NA-KJP approved. 30x40, 30x50, 40x60 villa sites near NH-4. Starting ₹42 Lakhs.",
+      "Best residential plots in Dharwad – HDUDA & NA-KJP approved. 30x40, 30x50, 40x60 villa sites near NH-4. Pre-Launch Phase.",
     url: "https://theaurorahills.com/plots-in-dharwad",
     type: "website",
     images: [
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Plots in Dharwad for Sale | The Aurora Hills",
-    description: "HDUDA & NA-KJP approved residential villa plots in Dharwad starting ₹42 Lakhs.",
+    description: "HDUDA & NA-KJP approved residential villa plots in Dharwad under pre-launch advantage.",
     images: ["https://theaurorahills.com/images/aurora-hills-real-site-daylight.jpg"],
   },
 };
@@ -42,7 +42,7 @@ export default function PlotsInDharwadPage() {
           </div>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight">
             Residential Plots in Dharwad
-            <span className="block text-emerald-300 mt-2">Starting ₹42 Lakhs*</span>
+            <span className="block text-emerald-300 mt-2">Pre-Launch Advantage</span>
           </h1>
           <p className="text-lg sm:text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed mb-10">
             Buy premium 30×40, 30×50 & 40×60 villa plots near Karnatak University, NH-4 Highway & Sunset Viewpoint, Dharwad. 100% legally clear title. SBI · HDFC · ICICI bank loans pre-approved.
@@ -80,21 +80,21 @@ export default function PlotsInDharwadPage() {
               {
                 size: "30×40",
                 sqft: "1,200 sq.ft",
-                price: "₹42 Lakhs*",
+                price: "Price on Request",
                 bonus: "1 KG Silver Gift",
                 highlight: false,
               },
               {
                 size: "30×50",
                 sqft: "1,500 sq.ft",
-                price: "₹52.5 Lakhs*",
+                price: "Price on Request",
                 bonus: "1.5 KG Silver Gift",
                 highlight: true,
               },
               {
                 size: "40×60",
                 sqft: "2,400 sq.ft",
-                price: "₹84 Lakhs*",
+                price: "Price on Request",
                 bonus: "50g Gold Gift 🥇",
                 highlight: false,
               },
@@ -302,7 +302,7 @@ export default function PlotsInDharwadPage() {
                 💰 Pricing &amp; Bank Loan Pre-Approvals
               </h3>
               <p className="text-sm text-gray-700 leading-relaxed">
-                Plot prices start from ₹42 Lakhs onwards. Pre-approved for instant home and land purchase loans up to 75%–80% by State Bank of India (SBI), HDFC Bank, ICICI Bank, and IDFC First Bank with flexible repayment tenures.
+                Plot rates available under exclusive Pre-Launch Advantage. Pre-approved for instant home and land purchase loans up to 75%–80% by State Bank of India (SBI), HDFC Bank, ICICI Bank, and IDFC First Bank with flexible repayment tenures.
               </p>
             </div>
 

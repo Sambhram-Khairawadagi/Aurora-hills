@@ -2,17 +2,17 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { 
-  Sparkles, 
-  Gift, 
-  ShieldCheck, 
-  MapPin, 
-  Phone, 
-  ArrowRight, 
-  CheckCircle2, 
-  TreePine, 
-  Landmark, 
-  Maximize2, 
+import {
+  Sparkles,
+  Gift,
+  ShieldCheck,
+  MapPin,
+  Phone,
+  ArrowRight,
+  CheckCircle2,
+  TreePine,
+  Landmark,
+  Maximize2,
   X,
   Flame,
   Award
@@ -30,13 +30,13 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
     <section id="festive-offer" className="relative py-20 lg:py-28 bg-gradient-to-b from-[#FAF6E8] via-[#F4E7B5]/30 to-[#F7F9F6] text-[#14281D] overflow-hidden border-y border-amber-200/60">
       {/* Decorative Traditional Toran & Festive Background Elements */}
       <div className="absolute top-0 left-0 right-0 h-4 bg-gradient-to-r from-red-800 via-amber-500 to-emerald-800 opacity-90 shadow-sm" />
-      
+
       {/* Subtle Festive Ambient Glow */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-amber-400/15 rounded-full blur-[120px] pointer-events-none -z-10" />
       <div className="absolute bottom-10 right-10 w-96 h-96 bg-emerald-500/10 rounded-full blur-[100px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Top Floating Dharwad City Limits Tag */}
         <div className="flex justify-center mb-4">
           <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/95 border-2 border-amber-300 shadow-md shadow-amber-900/5 text-amber-950 font-black text-xs sm:text-sm tracking-wider uppercase">
@@ -47,12 +47,12 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
 
         {/* Traditional Festive Crest Header */}
         <div className="text-center max-w-4xl mx-auto space-y-3 sm:space-y-4 mb-14">
-          
+
           {/* Ornate Dasara & Deepawali Header Badge */}
           <div className="inline-block relative">
             <div className="relative px-8 sm:px-12 py-3 sm:py-4 rounded-2xl bg-gradient-to-r from-[#450A14] via-[#7B1123] to-[#450A14] text-white shadow-2xl border-2 border-amber-400/70 overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-400/20 via-transparent to-transparent pointer-events-none" />
-              
+
               <div className="flex items-center justify-center gap-2 text-amber-300 text-xs sm:text-sm font-black uppercase tracking-[0.25em] mb-1">
                 <Sparkles className="w-4 h-4" />
                 <span>Special Festive Celebration</span>
@@ -77,9 +77,9 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
           </div>
 
           <p className="text-charcoal-700 text-sm sm:text-base max-w-2xl mx-auto font-medium leading-relaxed">
-            Celebrate auspicious new beginnings in Dharwad City's most scenic plotted community. 
-            Book your sanctioned residential plot this festive season and receive authentic 
-            <strong className="text-red-900 font-extrabold"> 50g Gold</strong> or 
+            Celebrate auspicious new beginnings in Dharwad City's most scenic plotted community.
+            Book your sanctioned residential plot this festive season and receive authentic
+            <strong className="text-red-900 font-extrabold"> 50g Gold</strong> or
             <strong className="text-slate-800 font-extrabold"> up to 1.5kg Silver</strong> as a permanent festive blessing.
           </p>
 
@@ -109,7 +109,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
 
         {/* 3 Festive Plot Cards Matching the Poster */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto items-stretch">
-          
+
           {/* Card 1: 40x60 PLOT -> 50 GRAMS GOLD */}
           <div className="relative rounded-3xl bg-white border-2 border-amber-400 shadow-2xl hover:shadow-[0_20px_50px_rgba(245,158,11,0.25)] transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1.5">
             {/* Top Plot Badge */}
@@ -302,7 +302,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
         {/* 4 Poster Feature Badges */}
         <div className="mt-12 pt-8 border-t border-amber-200/80 max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            
+
             <div className="p-3.5 rounded-2xl bg-white/80 border border-amber-200/60 shadow-sm flex flex-col items-center">
               <Award className="w-6 h-6 text-emerald-700 mb-1" />
               <span className="text-xs sm:text-sm font-black text-forest-950 uppercase tracking-wider">Premium Layout</span>
@@ -331,7 +331,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
 
           {/* Campaign Partners & Contact Helpline Strip */}
           <div className="mt-8 p-4 sm:p-6 rounded-3xl bg-gradient-to-r from-red-950 via-[#60101D] to-red-950 text-white shadow-xl flex flex-col md:flex-row items-center justify-between gap-4">
-            
+
             <div className="flex items-center gap-3">
               <div className="p-2.5 rounded-2xl bg-amber-400 text-red-950">
                 <Gift className="w-6 h-6" />
@@ -369,11 +369,11 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
 
       {/* Full Resolution Official Poster Modal Lightbox */}
       {isPosterModalOpen && (
-        <div 
+        <div
           className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/90 backdrop-blur-md animate-fade-in"
           onClick={() => setIsPosterModalOpen(false)}
         >
-          <div 
+          <div
             className="relative max-w-2xl w-full bg-white rounded-3xl p-3 sm:p-5 shadow-2xl max-h-[90vh] overflow-y-auto"
             onClick={(e: React.MouseEvent) => e.stopPropagation()}
           >

@@ -135,8 +135,8 @@ export const Hero: React.FC<HeroProps> = ({
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
                 <div>
                   <div className="text-2xl sm:text-3xl md:text-4xl font-black text-forest-950 font-sans flex items-baseline gap-2 mt-0.5 sm:mt-1">
-                    <span className="text-xs sm:text-sm font-bold text-charcoal-600">Starting</span>
-                    <span className="text-emerald-700">{startingPrice}</span>
+                    
+                    <span className="text-emerald-700">Special Pre-Launch Rates</span>
                   </div>
                 </div>
 
@@ -144,7 +144,7 @@ export const Hero: React.FC<HeroProps> = ({
                   onClick={() => onOpenEnquiry("Hero Price Card")}
                   className="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 rounded-full bg-forest-950 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-md hover:bg-emerald-800 transition-all hover:scale-105 active:scale-95 text-center flex-shrink-0"
                 >
-                  Claim Offer →
+                  Get Price Sheet →
                 </button>
               </div>
 

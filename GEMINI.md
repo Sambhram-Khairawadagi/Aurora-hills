@@ -111,6 +111,11 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
     3. Site Visit Modal ([components/SiteVisitModal.tsx](file:///e:/websites/aurora%20hills/components/SiteVisitModal.tsx))
     4. Brochure Download Modal ([components/BrochureModal.tsx](file:///e:/websites/aurora%20hills/components/BrochureModal.tsx))
   * Prevents anonymous "Interested Buyer" submissions and guarantees that sales desk receives both prospect name and verified phone number.
+* **Strategic Price Gating / Lead Magnet Overhaul (Oct 29, 2026):**
+  * Removed static "Starting ₹42 Lakhs" price tags from the Hero price card ([components/Hero.tsx](file:///e:/websites/aurora%20hills/components/Hero.tsx)) and Sanctioned Layout sidebar ([components/SanctionedLayout.tsx](file:///e:/websites/aurora%20hills/components/SanctionedLayout.tsx)).
+  * Replaced with **"Special Pre-Launch Rates"** and high-intent **"Get Price Sheet →"** CTA.
+  * Eliminates upfront sticker shock that causes drop-offs, compelling visitors to submit name and number to receive the price sheet.
+  * High-budget buyers are indirectly qualified through luxury signals: 20+ world-class amenities, 50g Gold / 1.5kg Silver festive rewards, 40ft blacktop avenues, and HDUDA/SBI pre-approvals.
 * **Verification:** `npx tsc --noEmit` exited with code 0 (zero compiler errors).
 
 ---

@@ -42,7 +42,7 @@ const kannada = Noto_Sans_Kannada({
 export const metadata: Metadata = {
   title: "Plots in Dharwad | Residential Villa Plots in Hubli Dharwad | The Aurora Hills",
   description:
-    "Buy HDUDA & NA-KJP approved residential plots in Dharwad starting ₹42 Lakhs. 30x40, 30x50 & 40x60 villa plots near NH-4, Karnatak University & Sunset Viewpoint. Bank loans by SBI, HDFC, ICICI. Book free site visit today! Call +91 89701 98701.",
+    "Buy HDUDA & NA-KJP approved residential plots in Dharwad under Pre-Launch Advantage. 30x40, 30x50 & 40x60 villa plots near NH-4, Karnatak University & Sunset Viewpoint. Bank loans by SBI, HDFC, ICICI. Book free site visit today! Call +91 89701 98701.",
   keywords: [
     // ─── HIGHEST VOLUME: Core Local Intent ───
     "plots in Dharwad",
@@ -155,7 +155,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Plots in Dharwad & Hubli | HDUDA Approved Residential Plots for Sale",
     description:
-      "HDUDA & NA-KJP approved luxury residential villa plots in Dharwad & Hubli starting from ₹42 Lakhs. Gated township near NH-4 Highway with 20+ lifestyle amenities, clubhouse & scenic hill views.",
+      "HDUDA & NA-KJP approved luxury residential villa plots in Dharwad & Hubli under Pre-Launch Advantage. Gated township near NH-4 Highway with 20+ lifestyle amenities, clubhouse & scenic hill views.",
     url: "https://theaurorahills.com",
     siteName: "The Aurora Hills",
     images: [
@@ -173,7 +173,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Plots in Dharwad & Hubli | The Aurora Hills Gated Community",
     description:
-      "HDUDA & NA approved residential villa plots in Dharwad starting ₹42 Lakhs near NH-4 Highway. Bank loans pre-approved by SBI, HDFC, ICICI.",
+      "HDUDA & NA approved residential villa plots in Dharwad under Pre-Launch Advantage near NH-4 Highway. Bank loans pre-approved by SBI, HDFC, ICICI.",
     images: ["/images/hero-layout-sunset.png"],
   },
   robots: {
@@ -291,7 +291,7 @@ export default function RootLayout({
         "@type": "SingleFamilyResidence",
         "@id": "https://theaurorahills.com/#property",
         "name": "Residential Villa Plots at The Aurora Hills Dharwad",
-        "description": "Ready-for-registration HDUDA & NA-KJP approved residential plots starting from ₹42 Lakhs with 20+ lifestyle amenities in Dharwad near NH-4 Highway.",
+        "description": "Ready-for-registration HDUDA & NA-KJP approved residential plots under Pre-Launch Advantage with 20+ lifestyle amenities in Dharwad near NH-4 Highway.",
         "url": "https://theaurorahills.com",
         "offers": {
           "@type": "AggregateOffer",
@@ -308,7 +308,7 @@ export default function RootLayout({
         "@id": "https://theaurorahills.com/#localbusiness",
         "name": "The Aurora Hills - Residential Plots in Dharwad",
         "alternateName": ["Aurora Hills Dharwad", "The Aurora Hills Kelgeri"],
-        "description": "HDUDA & NA-KJP approved premium residential villa plots in Dharwad starting ₹42 Lakhs. 30x40, 30x50 & 40x60 sites with 20+ amenities near NH-4, Karnatak University & Sunset Viewpoint.",
+        "description": "HDUDA & NA-KJP approved premium residential villa plots in Dharwad under Pre-Launch Advantage. 30x40, 30x50 & 40x60 sites with 20+ amenities near NH-4, Karnatak University & Sunset Viewpoint.",
         "url": "https://theaurorahills.com",
         "telephone": "+91-8970198701",
         "email": "info@theaurorahills.com",
@@ -441,21 +441,21 @@ export default function RootLayout({
             "@type": "ListItem",
             "position": 1,
             "name": "30x40 Residential Plot (1,200 sq.ft) – Dharwad",
-            "description": "HDUDA & NA-KJP approved 30x40 villa site in Dharwad starting ₹42 Lakhs. Bank loans available.",
+            "description": "HDUDA & NA-KJP approved 30x40 villa site in Dharwad under Pre-Launch Advantage. Bank loans available.",
             "url": "https://theaurorahills.com/#layout"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "30x50 Residential Plot (1,500 sq.ft) – Dharwad",
-            "description": "HDUDA & NA-KJP approved 30x50 villa site in Dharwad starting ₹52.5 Lakhs. SBI/HDFC loans available.",
+            "description": "HDUDA & NA-KJP approved 30x50 villa site in Dharwad under Pre-Launch Advantage. SBI/HDFC loans available.",
             "url": "https://theaurorahills.com/#layout"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "40x60 Residential Plot (2,400 sq.ft) – Dharwad",
-            "description": "HDUDA & NA-KJP approved 40x60 luxury villa plot in Dharwad starting ₹84 Lakhs. Festive scheme: 50g Gold gift.",
+            "description": "HDUDA & NA-KJP approved 40x60 luxury villa plot in Dharwad under Pre-Launch Advantage. Festive scheme: 50g Gold gift.",
             "url": "https://theaurorahills.com/#layout"
           }
         ]
@@ -469,7 +469,7 @@ export default function RootLayout({
             "name": "What is the average price of land and residential plots in Dharwad?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The average price of residential land and plots in Dharwad typically ranges between ₹2,000 to ₹4,000 per sq.ft depending on location, HDUDA approval status, and amenities. At The Aurora Hills (Kelgerri, adjacent to Karnatak University & NH-4), premium HDUDA & NA-KJP sanctioned villa plots start at ₹42 Lakhs (approx. ₹3,500/sq.ft) under our pre-launch advantage with pre-approved bank loans up to 80%."
+              "text": "The average price of residential land and plots in Dharwad typically ranges between ₹2,000 to ₹4,000 per sq.ft depending on location, HDUDA approval status, and amenities. At The Aurora Hills (Kelgerri, adjacent to Karnatak University & NH-4), premium HDUDA & NA-KJP sanctioned villa plots are available under our limited pre-launch advantage with pre-approved bank loans up to 80%. Exact unit pricing and custom site dimensions are provided on request upon booking an enquiry or site visit."
             }
           },
           {
@@ -477,7 +477,7 @@ export default function RootLayout({
             "name": "What is the price of a 30x40 and 30x50 site in Hubballi-Dharwad?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A standard 30x40 site (1,200 sq.ft) in Dharwad costs between ₹38 Lakhs to ₹48 Lakhs, while a 30x50 site (1,500 sq.ft) averages ₹48 Lakhs to ₹65 Lakhs. At The Aurora Hills, 30x40 plots start from ₹42 Lakhs*, 30x50 plots start from ₹52.5 Lakhs*, and 40x60 plots (2,400 sq.ft) start from ₹84 Lakhs*, complete with all township infrastructure and festive booking rewards."
+              "text": "A standard 30x40 site (1,200 sq.ft) in Dharwad costs between ₹38 Lakhs to ₹48 Lakhs, while a 30x50 site (1,500 sq.ft) averages ₹48 Lakhs to ₹65 Lakhs. At The Aurora Hills, 30x40, 30x50, and 40x60 plots are offered with exclusive pre-launch booking pricing, complete with all township infrastructure, pre-approved bank loans, and festive booking rewards (Gold/Silver). Contact our sales desk or submit the form for the complete official rate sheet."
             }
           },
           {
@@ -573,7 +573,7 @@ export default function RootLayout({
             "name": "Are there any special offers or discounts on plots in Dharwad during Dasara Deepawali 2026?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! Book during the Dasara & Deepawali Festive Scheme and receive: 50 Grams 22K Gold with a 40x60 plot (₹84L+), 1.5 KG 925 Silver with a 30x50 plot (₹52.5L+), and 1 KG 925 Silver with a 30x40 plot (₹42L+), delivered on registration."
+              "text": "Yes! Book during the Dasara & Deepawali Festive Scheme and receive: 50 Grams 22K Gold with a 40x60 plot, 1.5 KG 925 Silver with a 30x50 plot, and 1 KG 925 Silver with a 30x40 plot, delivered on registration."
             }
           }
         ]

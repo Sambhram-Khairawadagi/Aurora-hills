@@ -30,13 +30,13 @@ const FAQS_DATA: FaqItem[] = [
     category: "Pricing & Land Value",
     question: "What is the average price of land and residential plots in Dharwad?",
     answer:
-      "The average price of residential land and plots in Dharwad typically ranges between ₹2,000 to ₹4,000 per sq.ft depending on location, HDUDA approval status, and amenities. At The Aurora Hills (Kelgerri, adjacent to Karnatak University & NH-4), premium HDUDA & NA-KJP sanctioned villa plots start at ₹42 Lakhs (approx. ₹3,500/sq.ft) under our pre-launch advantage with pre-approved bank loans up to 80%."
+      "The average price of residential land and plots in Dharwad typically ranges between ₹2,000 to ₹4,000 per sq.ft depending on location, HDUDA approval status, and amenities. At The Aurora Hills (Kelgerri, adjacent to Karnatak University & NH-4), premium HDUDA & NA-KJP sanctioned villa plots are available under our limited pre-launch advantage with pre-approved bank loans up to 80%. Exact unit pricing and custom site dimensions are provided on request upon booking an enquiry or site visit."
   },
   {
     category: "Plot Dimensions & Cost",
     question: "What is the price of a 30x40 and 30x50 site in Hubballi-Dharwad?",
     answer:
-      "A standard 30x40 site (1,200 sq.ft) in Dharwad costs between ₹38 Lakhs to ₹48 Lakhs, while a 30x50 site (1,500 sq.ft) averages ₹48 Lakhs to ₹65 Lakhs. At The Aurora Hills, 30x40 plots start from ₹42 Lakhs*, 30x50 plots start from ₹52.5 Lakhs*, and 40x60 plots (2,400 sq.ft) start from ₹84 Lakhs*, complete with all township infrastructure and festive booking rewards."
+      "A standard 30x40 site (1,200 sq.ft) in Dharwad costs between ₹38 Lakhs to ₹48 Lakhs, while a 30x50 site (1,500 sq.ft) averages ₹48 Lakhs to ₹65 Lakhs. At The Aurora Hills, 30x40, 30x50, and 40x60 plots are offered with exclusive pre-launch booking pricing, complete with all township infrastructure, pre-approved bank loans, and festive booking rewards (Gold/Silver). Contact our sales desk or submit the form for the complete official rate sheet."
   },
   {
     category: "Best Localities",
@@ -108,7 +108,7 @@ const FAQS_DATA: FaqItem[] = [
     category: "Festive Offers",
     question: "Are there any special offers or discounts on plots in Dharwad during Dasara Deepawali 2026?",
     answer:
-      "Yes! Book during our exclusive Dasara & Deepawali Festive Scheme and receive: 50 Grams GOLD with a 40x60 plot (₹84L+), 1.5 KG SILVER with a 30x50 plot (₹52.5L+), and 1 KG SILVER with a 30x40 plot (₹42L+). These are genuine 22k gold and 925 silver gifts delivered on registration. Contact us on +91 89701 98701 to check scheme validity and plot availability."
+      "Yes! Book during our exclusive Dasara & Deepawali Festive Scheme and receive: 50 Grams GOLD with a 40x60 plot, 1.5 KG SILVER with a 30x50 plot, and 1 KG SILVER with a 30x40 plot. These are genuine 22k gold and 925 silver gifts delivered on registration. Contact us on +91 89701 98701 to check scheme validity and plot availability."
   }
 ];
 

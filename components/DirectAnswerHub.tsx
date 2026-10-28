@@ -22,14 +22,14 @@ const QUICK_ANSWERS: QuickAnswer[] = [
     id: "price-plots-dharwad",
     query: "What is the price of residential plots in Dharwad?",
     category: "Pricing",
-    capsule: "Residential plots in Dharwad at The Aurora Hills start from ₹42 Lakhs for a 30x40 site (1,200 sq.ft), ₹52.5 Lakhs for a 30x50 site (1,500 sq.ft), and ₹84 Lakhs for a 40x60 site (2,400 sq.ft). Land rates average ~₹3,500 per sq.ft with pre-approved bank loans up to 80% from SBI, HDFC, and ICICI.",
+    capsule: "Residential plot rates at The Aurora Hills Dharwad are offered under an exclusive Pre-Launch Advantage with pre-approved bank loans up to 80% from SBI, HDFC, and ICICI. Dimension options include 30x40 (1,200 sq.ft), 30x50 (1,500 sq.ft), 40x60 (2,400 sq.ft), and custom villa estates. Request the official layout and comprehensive pre-launch price sheet via WhatsApp or phone.",
     bulletPoints: [
-      "30x40 (1,200 sq.ft): ₹42 Lakhs* + 1 KG Silver gift",
-      "30x50 (1,500 sq.ft): ₹52.5 Lakhs* + 1.5 KG Silver gift",
-      "40x60 (2,400 sq.ft): ₹84 Lakhs* + 50g Gold gift",
-      "Bank Loan EMI starts at ~₹28,500/month with SBI/HDFC"
+      "30x40 (1,200 sq.ft): Pre-Launch Rate + 1 KG Silver gift",
+      "30x50 (1,500 sq.ft): Pre-Launch Rate + 1.5 KG Silver gift",
+      "40x60 (2,400 sq.ft): Pre-Launch Rate + 50g Gold gift",
+      "Pre-approved 80% Bank Loans with SBI, HDFC & ICICI"
     ],
-    keyStat: "From ₹42 Lakhs"
+    keyStat: "Pre-Launch Rates"
   },
   {
     id: "best-hduda-layout",

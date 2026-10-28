@@ -127,7 +127,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="h-8 w-auto object-contain"
             />
             <span className="text-xs font-black text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
-              From ₹42L
+              Pre-Launch Phase
             </span>
           </div>
 
