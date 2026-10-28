@@ -127,12 +127,23 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
   * `khb plots for sale in dharwad` (2 clicks → 1 lead at ₹82.84 CPA)
 
 ### B. Daily Midday & Full Audits
-* **Oct 27, 2026 (Twin-City Keyword Rebalancing & Budget Liberation Executed):**
-  * **Generic Hubli Leakage Paused:** Paused positive keyword `"hubli land for sale"` (liberating ~₹215/day for Dharwad searches).
-  * **Bid Capped:** Capped Max CPC on high-volume `"sites in hubli for sale"` to prevent budget monopolization.
-  * **Core Dharwad Keywords Activated & Prioritized:** Enabled and elevated `"plots in dharwad"`, `"sites in dharwad"`, `"sites in dharwad for sale"`, `"plots for sale in dharwad"`, `"villa plots in dharwad"`, `"residential plots in dharwad"`, `"kelgeri plots dharwad"`, `"hduda approved plots dharwad"`, `"khb plots for sale in dharwad"`.
-  * **Structure:** Retained single ad group (`Aurora ad group`) to preserve existing campaign learning and conversion history while directly steering keyword impression share.
-  * **Website Production Updates Live (`commit 8ffffa1`):** Hero trust strip and instant card updated with twin-city 50/50 Dharwad (5 mins to Jubilee Circle/KUD/Kelgeri) and Hubli (20 mins via bypass) + doorstep family cab pickup.
+* **Oct 27, 2026 (Full Day Audit & 50/50 Twin-City Rebalancing Validation):**
+  * **Spend:** ₹1,298.66 (108.2% of ₹1,200/day budget — beautifully paced across 8:30 AM to 8 PM)
+  * **Clicks:** 22 | **Impressions:** 127 | **CTR:** 17.32% (Outstanding — 4x search benchmark)
+  * **Avg CPC:** ₹59.03
+  * **Conversions:** **1.00 Verified Lead** (`Aurora Hills - Website Lead` at ~2:30 PM) | **Cost / conv. (CPL):** ₹1,298.66 daily total
+  * **🎯 WINNING MVP KEYWORD:**
+    * **`"sites for sale in hubli"`:** 1 click → **1 CONVERSION (100% CVR) at an incredible ₹61.65 Cost/conv!** (Now accounts for 5 total historical leads!)
+  * **50/50 Twin-City Budget Balance Validated:**
+    * **Dharwad Spend:** ₹594.12 (**45.8%** across 5 keywords). `"residential plots in dharwad"` was #1 clicked keyword in account (4 clicks, 66.67% CTR).
+    * **Hubli Spend:** ₹704.34 (**54.2%** across 7 keywords). Generated the day's conversion.
+  * **Device Bid Strategy 100% Mobile Domination:**
+    * Mobile phones (+20% bid): **100.0% spend (₹1,298.66)**, **100.0% clicks (22)**, **100.0% conversions (1)**
+    * Computers (-70% bid): **0.0% spend, 0 clicks**
+    * Tablets: **0.0% spend, 0 clicks**
+  * **Competitor Conquesting Impressions:** `ghodke plot anand nagar hubli`, `lotus park dharwad`, `rd properties hubli`, `rotsan solitaire hubli`, `navanagar hubli plots for sale`.
+  * **Critical Account Alert:** `! Balance exhausted` active on dashboard banner — ads paused/ineligible until immediate wallet recharge.
+  * **Minor Leakage:** `"land price in hubli"` received 1 click (₹61.48); confirmed for immediate pause.
 * **Oct 26, 2026 (Full Day Monday Audit & Optimization Validation):**
   * **Spend:** ₹1,226.53 (102.2% of ₹1,200/day budget — perfectly paced across active hours)
   * **Clicks:** 22 | **Impressions:** 101 | **CTR:** 21.78% (4x real estate search benchmark)
