@@ -53,7 +53,13 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
     setLoading(true);
     setErrorMsg("");
 
-    const finalName = formData.name.trim() || "Interested Buyer";
+    const trimmedName = formData.name.trim();
+    if (!trimmedName) {
+      setErrorMsg("Please enter your full name.");
+      return;
+    }
+
+    const finalName = trimmedName;
 
     try {
       const utmParams = getStoredUtm();
@@ -148,13 +154,13 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             {/* Field 1: Name */}
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1">
-                Full Name <span className="text-charcoal-500 font-normal">(Optional)</span>
+                Full Name <span className="text-rose-600 font-bold">*</span>
               </label>
               <div className="relative">
                 <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal-400 pointer-events-none" />
                 <input
                   type="text"
-                  placeholder="e.g. Dr. Patil / Ramesh"
+                  required placeholder="e.g. Dr. Patil / Ramesh"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="w-full pl-9 pr-3.5 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm font-medium"

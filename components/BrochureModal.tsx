@@ -23,7 +23,12 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose })
     const cleanPhone = phone.replace(/[^0-9]/g, "");
     setLoading(true);
 
-    const finalName = name.trim() || "Interested Buyer";
+    const trimmedName = name.trim();
+    if (!trimmedName) {
+      setLoading(false);
+      return;
+    }
+    const finalName = trimmedName;
 
     try {
       await fetch("/api/leads", {
@@ -105,11 +110,11 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose })
 
             <div>
               <label className="block text-xs font-bold text-charcoal-700 uppercase tracking-wider mb-1">
-                Your Name <span className="text-charcoal-500 font-normal">(Optional)</span>
+                Your Name <span className="text-rose-600 font-bold">*</span>
               </label>
               <input
                 type="text"
-                placeholder="e.g. Dr. Patil / Ramesh"
+                required placeholder="e.g. Dr. Patil / Ramesh"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm"

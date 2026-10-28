@@ -161,14 +161,6 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
                   <span>Approval:</span>
                   <span className="text-emerald-700 font-black">HDUDA &amp; NA-KJP</span>
                 </div>
-                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pt-2 border-t border-gray-100">
-                  <span>Starting Price:</span>
-                  <span className="text-forest-950 font-black">₹84 Lakhs*</span>
-                </div>
-                <div className="flex items-center justify-between text-xs font-bold text-amber-950 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200">
-                  <span>Down Payment:</span>
-                  <span className="font-black text-amber-900">Only ₹16.8L (SBI 80% Loan)</span>
-                </div>
               </div>
 
               <button
@@ -231,14 +223,6 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
                   <span>Approval:</span>
                   <span className="text-emerald-700 font-black">HDUDA &amp; NA-KJP</span>
                 </div>
-                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pt-2 border-t border-gray-100">
-                  <span>Starting Price:</span>
-                  <span className="text-forest-950 font-black">₹52.5 Lakhs*</span>
-                </div>
-                <div className="flex items-center justify-between text-xs font-bold text-emerald-950 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200">
-                  <span>Down Payment:</span>
-                  <span className="font-black text-emerald-900">Only ₹10.5L (SBI 80% Loan)</span>
-                </div>
               </div>
 
               <button
@@ -300,14 +284,6 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
                 <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700">
                   <span>Approval:</span>
                   <span className="text-emerald-700 font-black">HDUDA &amp; NA-KJP</span>
-                </div>
-                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pt-2 border-t border-gray-100">
-                  <span>Starting Price:</span>
-                  <span className="text-forest-950 font-black">₹42 Lakhs*</span>
-                </div>
-                <div className="flex items-center justify-between text-xs font-bold text-slate-900 bg-slate-50 px-2.5 py-1 rounded-lg border border-slate-200">
-                  <span>Down Payment:</span>
-                  <span className="font-black text-slate-800">Only ₹8.4L (SBI 80% Loan)</span>
                 </div>
               </div>
 

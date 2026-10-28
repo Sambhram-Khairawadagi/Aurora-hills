@@ -40,7 +40,13 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
     setLoading(true);
     setErrorMsg("");
 
-    const finalName = formData.name.trim() || "Interested Buyer";
+    const trimmedName = formData.name.trim();
+    if (!trimmedName) {
+      setErrorMsg("Please enter your full name.");
+      return;
+    }
+
+    const finalName = trimmedName;
 
     try {
       const utmParams = getStoredUtm();
@@ -126,11 +132,11 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
 
             <div>
               <label className="block text-xs font-bold uppercase tracking-wider text-charcoal-700 mb-1">
-                Full Name <span className="text-charcoal-500 font-normal">(Optional)</span>
+                Full Name <span className="text-rose-600 font-bold">*</span>
               </label>
               <input
                 type="text"
-                placeholder="e.g. Dr. Patil / Ramesh"
+                required placeholder="e.g. Dr. Patil / Ramesh"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm"
