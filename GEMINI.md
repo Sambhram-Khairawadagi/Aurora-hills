@@ -113,6 +113,7 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
     * `40×60 (2,400 sq.ft)`: **`₹84L*`** • **`~₹52.5k EMI`**
     * `Odd Size`: **`Custom`** • **`Bank Loan`**
   * **Down Payment Value Anchor:** Added *"💰 Down Payment: Only ₹8.4 Lakhs • SBI & HDFC Pre-Approved"* to destroy lump-sum price shock.
+  * **Spacious 2-Column Responsive Grid:** Replaced congested 4-column layout with an airy 2×2 grid (`grid-cols-2 gap-2.5`). Dimensions, price, and EMI now render with generous breathing room, crisp font scaling, and zero text overlapping.
   * **Proximity Reframe:** Highlighted *"📍 5 Mins to Jubilee Circle (20 Mins from Hubli) • 🚗 Free Cab Pickup"*.
   * **Lead Attribution Tagging:** Form submissions and WhatsApp pre-composed text explicitly tag selected plot and price (`30×40 (₹42L*) Plot Enquiry`), guaranteeing that all incoming leads are pre-qualified.
 * **Festive Scheme Price Transparency (`components/FestiveScheme.tsx`):**
