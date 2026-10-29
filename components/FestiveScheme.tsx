@@ -97,7 +97,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
         {/* Phase 1 Scarcity & Hubli Free Cab Callout */}
         <div className="max-w-3xl mx-auto mb-8 p-3 sm:p-3.5 rounded-2xl bg-white/95 border-2 border-amber-300/80 text-amber-950 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-md text-xs sm:text-sm font-bold">
           <div className="flex items-center gap-2.5">
-            <span className="px-2 py-0.5 rounded-full bg-rose-600 text-white text-[11px] font-black tracking-wider uppercase animate-pulse flex-shrink-0">
+            <span className="px-2 py-0.5 rounded-full bg-rose-600 text-white text-[11px] font-black tracking-wider uppercase flex-shrink-0">
               ⚡ Limited Release
             </span>
             <span>Deepawali Gold &amp; Silver rewards applicable on first-come-first-served basis (Only 7 plots left in Phase 1).</span>
@@ -114,7 +114,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
           <div className="relative rounded-3xl bg-white border-2 border-amber-400 shadow-2xl hover:shadow-[0_20px_50px_rgba(245,158,11,0.25)] transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1.5">
             {/* Top Plot Badge */}
             <div className="bg-[#60101D] text-white text-center py-3.5 px-4 relative overflow-hidden">
-              <span className="inline-block text-xl sm:text-2xl font-black font-sans tracking-wider">
+              <span className="inline-block text-xl sm:text-2xl font-bold font-sans tracking-wider">
                 40 × 60 PLOT
               </span>
               <p className="text-xs text-amber-200 uppercase tracking-widest font-bold mt-0.5">
@@ -126,7 +126,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             <div className="p-5 sm:p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-amber-50/70 via-white to-amber-50/40 relative">
               {/* Gold Ornament Visual Container */}
               <div className="relative w-full h-52 sm:h-56 flex items-center justify-center my-1 group-hover:scale-105 transition-transform duration-300">
-                <div className="absolute inset-0 bg-gradient-to-tr from-amber-300/30 to-yellow-200/20 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-amber-300/30 to-yellow-200/20 rounded-full blur-2xl" />
                 <Image
                   src="/images/festive/festive-50g-gold.webp"
                   alt="50 Grams Gold Auspicious Festive Scheme - The Aurora Hills 40x60 Plot"
@@ -149,23 +149,23 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             {/* Scheme Details & CTA */}
             <div className="p-6 pt-2 flex flex-col flex-1 justify-between bg-white border-t border-amber-100">
               <div className="space-y-3 mb-6">
-                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-sm font-semibold text-forest-900/90 pb-2 border-b border-gray-100">
                   <span>Dimension:</span>
-                  <span className="text-forest-950 font-black">40ft × 60ft</span>
+                  <span className="text-forest-950 font-bold">40ft × 60ft</span>
                 </div>
-                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-sm font-semibold text-forest-900/90 pb-2 border-b border-gray-100">
                   <span>Total Area:</span>
-                  <span className="text-forest-950 font-black">2,400 sq.ft</span>
+                  <span className="text-forest-950 font-bold">2,400 sq.ft</span>
                 </div>
-                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700">
+                <div className="flex items-center justify-between text-sm font-semibold text-forest-900/90">
                   <span>Approval:</span>
-                  <span className="text-emerald-700 font-black">HDUDA &amp; NA-KJP</span>
+                  <span className="text-emerald-700 font-bold">HDUDA &amp; NA-KJP</span>
                 </div>
               </div>
 
               <button
                 onClick={() => onOpenEnquiry("Festive Offer 40x60 (50g Gold)", "40x60 Plot (50g Gold Offer)")}
-                className="w-full py-3.5 px-3 sm:px-4 rounded-full bg-gradient-to-r from-red-900 via-amber-700 to-red-900 hover:from-red-800 hover:to-amber-600 text-white font-black text-xs md:text-[13px] lg:text-sm uppercase tracking-wider shadow-lg shadow-red-950/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-1.5 sm:gap-2 text-center"
+                className="w-full py-3.5 px-3 sm:px-4 rounded-full bg-gradient-to-r from-red-900 via-amber-700 to-red-900 hover:from-red-800 hover:to-amber-600 text-white font-bold text-xs md:text-[13px] lg:text-sm uppercase tracking-wider shadow-lg shadow-red-950/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-1.5 sm:gap-2 text-center"
               >
                 <span>Claim 50g Gold Scheme</span>
                 <ArrowRight className="w-4 h-4 flex-shrink-0" />
@@ -177,7 +177,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
           <div className="relative rounded-3xl bg-white border-2 border-emerald-400 shadow-2xl hover:shadow-[0_20px_50px_rgba(16,185,129,0.25)] transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1.5">
             {/* Top Plot Badge */}
             <div className="bg-[#0A2E1D] text-white text-center py-3.5 px-4 relative overflow-hidden">
-              <span className="inline-block text-xl sm:text-2xl font-black font-sans tracking-wider">
+              <span className="inline-block text-xl sm:text-2xl font-bold font-sans tracking-wider">
                 30 × 50 PLOT
               </span>
               <p className="text-xs text-emerald-200 uppercase tracking-widest font-bold mt-0.5">
@@ -189,7 +189,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             <div className="p-5 sm:p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-emerald-50/70 via-white to-emerald-50/40 relative">
               {/* Silver Ornaments Visual Container */}
               <div className="relative w-full h-52 sm:h-56 flex items-center justify-center my-1 group-hover:scale-105 transition-transform duration-300">
-                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-300/20 to-teal-200/20 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-emerald-300/20 to-teal-200/20 rounded-full blur-2xl" />
                 <Image
                   src="/images/festive/festive-1-5kg-silver.webp"
                   alt="1.5 KG Silver Auspicious Festive Scheme - The Aurora Hills 30x50 Plot"
@@ -211,23 +211,23 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             {/* Scheme Details & CTA */}
             <div className="p-6 pt-2 flex flex-col flex-1 justify-between bg-white border-t border-emerald-100">
               <div className="space-y-3 mb-6">
-                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-sm font-semibold text-forest-900/90 pb-2 border-b border-gray-100">
                   <span>Dimension:</span>
-                  <span className="text-forest-950 font-black">30ft × 50ft</span>
+                  <span className="text-forest-950 font-bold">30ft × 50ft</span>
                 </div>
-                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-sm font-semibold text-forest-900/90 pb-2 border-b border-gray-100">
                   <span>Total Area:</span>
-                  <span className="text-forest-950 font-black">1,500 sq.ft</span>
+                  <span className="text-forest-950 font-bold">1,500 sq.ft</span>
                 </div>
-                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700">
+                <div className="flex items-center justify-between text-sm font-semibold text-forest-900/90">
                   <span>Approval:</span>
-                  <span className="text-emerald-700 font-black">HDUDA &amp; NA-KJP</span>
+                  <span className="text-emerald-700 font-bold">HDUDA &amp; NA-KJP</span>
                 </div>
               </div>
 
               <button
                 onClick={() => onOpenEnquiry("Festive Offer 30x50 (1.5kg Silver)", "30x50 Plot (1.5kg Silver Offer)")}
-                className="w-full py-3.5 px-3 sm:px-4 rounded-full bg-gradient-to-r from-emerald-800 via-teal-700 to-emerald-900 hover:from-emerald-700 hover:to-teal-600 text-white font-black text-xs md:text-[13px] lg:text-sm uppercase tracking-wider shadow-lg shadow-emerald-950/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-1.5 sm:gap-2 text-center"
+                className="w-full py-3.5 px-3 sm:px-4 rounded-full bg-gradient-to-r from-emerald-800 via-teal-700 to-emerald-900 hover:from-emerald-700 hover:to-teal-600 text-white font-bold text-xs md:text-[13px] lg:text-sm uppercase tracking-wider shadow-lg shadow-emerald-950/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-1.5 sm:gap-2 text-center"
               >
                 <span>Claim 1.5kg Silver Scheme</span>
                 <ArrowRight className="w-4 h-4 flex-shrink-0" />
@@ -239,7 +239,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
           <div className="relative rounded-3xl bg-white border-2 border-slate-400 shadow-2xl hover:shadow-[0_20px_50px_rgba(71,85,105,0.25)] transition-all duration-300 flex flex-col overflow-hidden group hover:-translate-y-1.5">
             {/* Top Plot Badge */}
             <div className="bg-[#1E293B] text-white text-center py-3.5 px-4 relative overflow-hidden">
-              <span className="inline-block text-xl sm:text-2xl font-black font-sans tracking-wider">
+              <span className="inline-block text-xl sm:text-2xl font-bold font-sans tracking-wider">
                 30 × 40 PLOT
               </span>
               <p className="text-xs text-slate-300 uppercase tracking-widest font-bold mt-0.5">
@@ -251,7 +251,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             <div className="p-5 sm:p-6 flex flex-col items-center justify-center text-center bg-gradient-to-b from-slate-50/70 via-white to-slate-50/40 relative">
               {/* Silver Kalash Visual Container */}
               <div className="relative w-full h-52 sm:h-56 flex items-center justify-center my-1 group-hover:scale-105 transition-transform duration-300">
-                <div className="absolute inset-0 bg-gradient-to-tr from-slate-300/30 to-zinc-200/20 rounded-full blur-2xl animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-slate-300/30 to-zinc-200/20 rounded-full blur-2xl" />
                 <Image
                   src="/images/festive/festive-1kg-silver.webp"
                   alt="1 KG Silver Auspicious Festive Scheme - The Aurora Hills 30x40 Plot"
@@ -273,23 +273,23 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             {/* Scheme Details & CTA */}
             <div className="p-6 pt-2 flex flex-col flex-1 justify-between bg-white border-t border-slate-100">
               <div className="space-y-3 mb-6">
-                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-sm font-semibold text-forest-900/90 pb-2 border-b border-gray-100">
                   <span>Dimension:</span>
-                  <span className="text-forest-950 font-black">30ft × 40ft</span>
+                  <span className="text-forest-950 font-bold">30ft × 40ft</span>
                 </div>
-                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700 pb-2 border-b border-gray-100">
+                <div className="flex items-center justify-between text-sm font-semibold text-forest-900/90 pb-2 border-b border-gray-100">
                   <span>Total Area:</span>
-                  <span className="text-forest-950 font-black">1,200 sq.ft</span>
+                  <span className="text-forest-950 font-bold">1,200 sq.ft</span>
                 </div>
-                <div className="flex items-center justify-between text-sm font-semibold text-charcoal-700">
+                <div className="flex items-center justify-between text-sm font-semibold text-forest-900/90">
                   <span>Approval:</span>
-                  <span className="text-emerald-700 font-black">HDUDA &amp; NA-KJP</span>
+                  <span className="text-emerald-700 font-bold">HDUDA &amp; NA-KJP</span>
                 </div>
               </div>
 
               <button
                 onClick={() => onOpenEnquiry("Festive Offer 30x40 (1kg Silver)", "30x40 Plot (1kg Silver Offer)")}
-                className="w-full py-3.5 px-3 sm:px-4 rounded-full bg-gradient-to-r from-slate-800 via-slate-900 to-black hover:from-slate-700 hover:to-slate-800 text-white font-black text-xs md:text-[13px] lg:text-sm uppercase tracking-wider shadow-lg shadow-slate-950/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-1.5 sm:gap-2 text-center"
+                className="w-full py-3.5 px-3 sm:px-4 rounded-full bg-gradient-to-r from-slate-800 via-slate-900 to-black hover:from-slate-700 hover:to-slate-800 text-white font-bold text-xs md:text-[13px] lg:text-sm uppercase tracking-wider shadow-lg shadow-slate-950/20 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-1.5 sm:gap-2 text-center"
               >
                 <span>Claim 1kg Silver Scheme</span>
                 <ArrowRight className="w-4 h-4 flex-shrink-0" />
@@ -306,25 +306,25 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
             <div className="p-3.5 rounded-2xl bg-white/80 border border-amber-200/60 shadow-sm flex flex-col items-center">
               <Award className="w-6 h-6 text-emerald-700 mb-1" />
               <span className="text-xs sm:text-sm font-black text-forest-950 uppercase tracking-wider">Premium Layout</span>
-              <span className="text-xs text-charcoal-700 font-semibold">Asphalted Wide Roads</span>
+              <span className="text-xs text-forest-900/90 font-semibold">Asphalted Wide Roads</span>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-white/80 border border-amber-200/60 shadow-sm flex flex-col items-center">
               <TreePine className="w-6 h-6 text-emerald-600 mb-1" />
               <span className="text-xs sm:text-sm font-black text-forest-950 uppercase tracking-wider">Green Surroundings</span>
-              <span className="text-xs text-charcoal-700 font-semibold">Lush Sunset Hills</span>
+              <span className="text-xs text-forest-900/90 font-semibold">Lush Sunset Hills</span>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-white/80 border border-amber-200/60 shadow-sm flex flex-col items-center">
               <ShieldCheck className="w-6 h-6 text-amber-600 mb-1" />
               <span className="text-xs sm:text-sm font-black text-forest-950 uppercase tracking-wider">NA-KJP Approved</span>
-              <span className="text-xs text-charcoal-700 font-semibold">100% Legal Clearances</span>
+              <span className="text-xs text-forest-900/90 font-semibold">100% Legal Clearances</span>
             </div>
 
             <div className="p-3.5 rounded-2xl bg-white/80 border border-amber-200/60 shadow-sm flex flex-col items-center">
               <Landmark className="w-6 h-6 text-blue-700 mb-1" />
-              <span className="text-xs sm:text-sm font-black text-forest-950 uppercase tracking-wider">HUDDA Approved</span>
-              <span className="text-xs text-charcoal-700 font-semibold">Government Sanctioned</span>
+              <span className="text-xs sm:text-sm font-black text-forest-950 uppercase tracking-wider">HDUDA Approved</span>
+              <span className="text-xs text-forest-900/90 font-semibold">Government Sanctioned</span>
             </div>
 
           </div>

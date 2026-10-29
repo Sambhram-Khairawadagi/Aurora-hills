@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Phone, MessageCircle, Calendar, FileText } from "lucide-react";
+import { Phone, MessageCircle } from "lucide-react";
 import { WHATSAPP_NUMBER, CONTACT_NUMBERS } from "@/lib/projectData";
 import { trackWhatsAppClick, trackPhoneClick } from "@/lib/gtag";
 
@@ -11,14 +11,12 @@ interface FloatingActionsProps {
   onOpenBrochure: () => void;
 }
 
-export const FloatingActions: React.FC<FloatingActionsProps> = ({
-  onOpenEnquiry,
-  onOpenSiteVisit,
-  onOpenBrochure,
-}) => {
+export const FloatingActions: React.FC<FloatingActionsProps> = () => {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-    "Hi, I am interested in The Aurora Hills luxury plots in Dharwad. Please share details and pricing."
+    "Hi, I am interested in The Aurora Hills luxury plots in Dharwad. Please share layout plan and pre-launch pricing."
   )}`;
+
+  const salesPhone = CONTACT_NUMBERS[0] || "8970198701";
 
   return (
     <>
@@ -29,7 +27,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
           target="_blank"
           rel="noopener noreferrer"
           onClick={trackWhatsAppClick}
-          className="px-5 py-3 rounded-full bg-[#25D366] text-white shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2 hover:scale-105 group border border-white/40"
+          className="px-5 py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center gap-2 hover:scale-105 group border border-white/40"
           aria-label="Chat on WhatsApp"
         >
           <MessageCircle className="w-5 h-5 fill-current" />
@@ -39,48 +37,29 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
         </a>
       </div>
 
-      {/* Floating Bottom Navigation Bar on Mobile (4 Direct Thumb Actions: Call, WhatsApp, Site Visit, Enquire) */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 sm:hidden bg-white/95 backdrop-blur-xl border-t border-emerald-200/80 px-2 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] flex items-center justify-between gap-1 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
+      {/* Sleek High-Converting Mobile Dual Action Dock */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 sm:hidden bg-white/95 backdrop-blur-xl border-t border-emerald-200/90 px-3.5 pt-2.5 pb-[max(0.65rem,env(safe-area-inset-bottom))] flex items-center gap-2.5 shadow-[0_-8px_30px_rgba(0,0,0,0.12)]">
+        {/* Left Action: Direct Phone Call (38% width) */}
         <a
-          href={`tel:${CONTACT_NUMBERS[0].replace(/\s+/g, "")}`}
-          onClick={() => trackPhoneClick(CONTACT_NUMBERS[0])}
-          className="flex-1 flex flex-col items-center justify-center gap-0.5 py-1 text-xs font-bold text-forest-950 active:scale-95 transition-transform"
+          href={`tel:${salesPhone.replace(/\s+/g, "")}`}
+          onClick={() => trackPhoneClick(salesPhone)}
+          className="flex-1 py-3 px-2 rounded-xl bg-white border-2 border-emerald-700 text-forest-950 font-bold text-xs flex items-center justify-center gap-1.5 shadow-xs active:scale-95 transition-all text-center"
         >
-          <div className="p-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
-            <Phone className="w-3.5 h-3.5" />
-          </div>
-          <span>Call Desk</span>
+          <Phone className="w-3.5 h-3.5 text-emerald-700 flex-shrink-0" />
+          <span>Call Sales</span>
         </a>
 
+        {/* Right Action: WhatsApp Price Sheet & Layout (62% width) */}
         <a
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
           onClick={trackWhatsAppClick}
-          className="flex-1 flex flex-col items-center justify-center gap-0.5 py-1 text-xs font-bold text-forest-950 active:scale-95 transition-transform"
+          className="flex-[1.6] py-3 px-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-extrabold text-xs flex items-center justify-center gap-1.5 shadow-md shadow-[#25D366]/30 active:scale-95 transition-all text-center tracking-wide"
         >
-          <div className="p-1.5 rounded-full bg-[#25D366]/15 text-[#1ebd5a] border border-[#25D366]/40">
-            <MessageCircle className="w-3.5 h-3.5 fill-current" />
-          </div>
-          <span>WhatsApp</span>
+          <MessageCircle className="w-4 h-4 fill-white flex-shrink-0" />
+          <span>Get Layout on WhatsApp</span>
         </a>
-
-        <button
-          onClick={onOpenSiteVisit}
-          className="flex-1 flex flex-col items-center justify-center gap-0.5 py-1 text-xs font-bold text-forest-950 active:scale-95 transition-transform"
-        >
-          <div className="p-1.5 rounded-full bg-amber-50 text-amber-700 border border-amber-200">
-            <Calendar className="w-3.5 h-3.5" />
-          </div>
-          <span>Site Visit</span>
-        </button>
-
-        <button
-          onClick={() => onOpenEnquiry("Floating Mobile CTA")}
-          className="flex-[1.3] px-3 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white text-xs font-black uppercase tracking-wider shadow-md shadow-emerald-600/30 active:scale-95 transition-transform text-center"
-        >
-          Enquire
-        </button>
       </div>
     </>
   );

@@ -13,7 +13,7 @@ export const Partners: React.FC = () => {
             <Handshake className="w-3.5 h-3.5 text-gold-500" />
             Strategic Marketing Partners
           </div>
-          <h2 className="text-2xl sm:text-3xl font-black font-sans text-forest-950">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-forest-950 tracking-tight">
             Promoted &amp; Marketed By
           </h2>
         </div>
@@ -31,9 +31,9 @@ export const Partners: React.FC = () => {
               />
             </div>
             <div>
-              <h3 className="text-lg font-black font-sans text-forest-950">Property Basket</h3>
+              <h3 className="text-lg font-bold font-sans text-forest-950">Property Basket</h3>
               <p className="text-xs sm:text-sm text-gold-700 font-bold">“Carry the Reality” • Powered by SAMSO</p>
-              <p className="text-sm text-charcoal-700 mt-2 max-w-xs leading-relaxed font-medium">
+              <p className="text-sm text-forest-900/85 mt-2 max-w-xs leading-relaxed font-semibold">
                 Official strategic real estate marketing and project execution advisory partner.
               </p>
             </div>
@@ -51,9 +51,9 @@ export const Partners: React.FC = () => {
               />
             </div>
             <div>
-              <h3 className="text-lg font-black font-sans text-forest-950">Reachmaxx</h3>
+              <h3 className="text-lg font-bold font-sans text-forest-950">Reachmaxx</h3>
               <p className="text-xs sm:text-sm text-gold-700 font-bold">“Idea Rules the World”</p>
-              <p className="text-sm text-charcoal-700 mt-2 max-w-xs leading-relaxed font-medium">
+              <p className="text-sm text-forest-900/85 mt-2 max-w-xs leading-relaxed font-semibold">
                 Creative brand ideation, campaign strategy, and digital outreach specialists.
               </p>
             </div>

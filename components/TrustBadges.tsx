@@ -26,17 +26,17 @@ export const TrustBadges: React.FC = () => {
                 <div className="p-2 rounded-xl vibrant-icon-emerald shrink-0">
                   {iconMap[card.id] || <ShieldCheck className="w-4 h-4 text-white" />}
                 </div>
-                <span className="text-xs uppercase font-black tracking-wider vibrant-badge-emerald px-3 py-1 rounded-full text-center whitespace-nowrap leading-none shrink-0 shadow-xs">
+                <span className="text-xs uppercase font-extrabold tracking-wider vibrant-badge-emerald px-3 py-1 rounded-full text-center whitespace-nowrap leading-none shrink-0 shadow-xs">
                   {card.highlight}
                 </span>
               </div>
 
               {/* Title & Description */}
               <div>
-                <h3 className="text-sm sm:text-base font-black text-forest-950 font-sans group-hover:text-emerald-700 transition-colors leading-tight">
+                <h3 className="text-sm sm:text-base font-bold text-forest-950 font-sans group-hover:text-emerald-700 transition-colors leading-tight">
                   {card.title} {card.subtitle}
                 </h3>
-                <p className="text-xs sm:text-sm text-charcoal-700 mt-1 sm:mt-1.5 leading-relaxed font-medium">
+                <p className="text-xs sm:text-sm text-forest-900/85 mt-1 sm:mt-1.5 leading-relaxed font-semibold">
                   {card.description}
                 </p>
               </div>
