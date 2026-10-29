@@ -37,7 +37,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
               </div>
             </div>
 
-            <p className="text-sm sm:text-base text-forest-900/85 leading-relaxed max-w-md font-medium">
+            <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-md font-normal">
               Dharwad City’s premier planned residential sanctuary at Sunset Viewpoint. NA-KJP & HDUDA approved layout available under <strong className="text-emerald-900 font-semibold">Pre-Launch Advantage</strong> with clear titles and 20+ lifestyle amenities.
             </p>
 
@@ -63,7 +63,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
             <h4 className="text-sm font-black uppercase tracking-widest text-emerald-900">
               Quick Navigation
             </h4>
-            <ul className="space-y-2.5 text-sm text-forest-900/90 font-medium">
+            <ul className="space-y-2.5 text-sm text-charcoal-700 font-medium">
               <li><a href="#hero" className="hover:text-emerald-700 transition-colors">Overview</a></li>
               <li><a href="#about" className="hover:text-emerald-700 transition-colors">About Project</a></li>
               <li><a href="#development" className="hover:text-emerald-700 transition-colors">Site Video & Drone Tour</a></li>
@@ -83,7 +83,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
               Direct Helpline & Downloads
             </h4>
 
-            <div className="space-y-3 text-sm text-forest-900/90 font-medium">
+            <div className="space-y-3 text-sm text-charcoal-700 font-medium">
               <div className="flex items-start gap-2.5">
                 <Phone className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-1" />
                 <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-bold">
@@ -146,7 +146,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBrochure, onOpenQR }) => {
               />
             </div>
           </div>
-          <div className="flex items-center justify-center gap-3 sm:gap-4 text-forest-900/90 flex-wrap">
+          <div className="flex items-center justify-center gap-3 sm:gap-4 text-charcoal-700 flex-wrap">
             <Link href="/privacy-policy" className="hover:text-emerald-700 transition-colors font-medium">
               Privacy Policy
             </Link>

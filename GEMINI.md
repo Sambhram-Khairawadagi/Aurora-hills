@@ -133,23 +133,6 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
   * Increased padding (`p-6 sm:p-8`), expanded input heights (48px) with clean borders, and refined the 4-pill plot size selector.
 * **Verification:** `npx tsc --noEmit` exited with code 0 (zero compiler errors).
 
-### K. End-to-End Website Decluttering, Video Consolidation & Typography Overhaul (Oct 29, 2026)
-* **Removed SEO-Clutter Blocks from UI:**
-  * Completely removed `LocalSeoFaq` (FAQ accordion) and `DirectAnswerHub` (AEO fact sheet & key specifications bullets) from `app/page.tsx`, while retaining all structured JSON-LD schemas (`FAQPage`, `LocalBusiness`, `HowTo`) in `app/layout.tsx` for Google bots and AI engines.
-  * Eliminated keyword tag clouds (`Popular Search Localities`, `Browse Plots by Location`) and redundant `WhyAuroraHills` cards per user direction.
-* **Consolidated Tabbed Video Showcase (`components/VideoShowcase.tsx`):**
-  * Merged dual stacked video sections (`MainShowcaseVideo` and `DevelopmentVideo`) into a single high-performance theater player with interactive tabs (*Project Cinematic Tour* vs *4K Aerial Drone Tours*).
-  * Eliminated simultaneous background video decodes that caused GPU lag on mobile devices.
-* **High-Converting Mobile Dual Action Dock (`components/FloatingActions.tsx`):**
-  * Replaced cramped 4-button mobile navigation bar with a high-contrast dual dock:
-    1. Direct Phone Call (38% width): `📞 Call Sales`
-    2. WhatsApp Price Sheet & Layout (62% width): `🟢 Get Layout on WhatsApp`
-* **Consistent Typography & High Daylight Contrast Across All Components:**
-  * Standardized all section headings to prestigious `Playfair Display` (`font-serif font-bold text-forest-950`).
-  * Converted body text and descriptions from washed-out grays (`text-gray-500`, `text-charcoal-700`) to deep, readable tones (`text-forest-900/90 font-medium` or `font-semibold`).
-  * Removed unnecessary `animate-pulse` jitter effects and corrected typo `HUDDA Approved` to `HDUDA Approved`.
-* **Clean Codebase:** Deleted orphaned components (`MainShowcaseVideo.tsx`, `DevelopmentVideo.tsx`, `WhyAuroraHills.tsx`, `LocalSeoFaq.tsx`, `DirectAnswerHub.tsx`). All verified with `npx tsc --noEmit` (0 errors) and pushed to `main`.
-
 ---
 
 ## 3. Google Ads Campaign & Costing Audit

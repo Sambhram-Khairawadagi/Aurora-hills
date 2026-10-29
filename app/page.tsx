@@ -8,7 +8,8 @@ import { Hero } from "@/components/Hero";
 import { TrustBadges } from "@/components/TrustBadges";
 import { FestiveScheme } from "@/components/FestiveScheme";
 import { ProjectIntro } from "@/components/ProjectIntro";
-import { VideoShowcase } from "@/components/VideoShowcase";
+import { MainShowcaseVideo } from "@/components/MainShowcaseVideo";
+import { DevelopmentVideo } from "@/components/DevelopmentVideo";
 import { Amenities } from "@/components/Amenities";
 import { SanctionedLayout } from "@/components/SanctionedLayout";
 import { Partners } from "@/components/Partners";
@@ -32,6 +33,10 @@ const LocationConnectivity = dynamic(
 
 
 
+const DirectAnswerHub = dynamic(
+  () => import("@/components/DirectAnswerHub").then((mod) => mod.DirectAnswerHub),
+  { ssr: true }
+);
 
 // Dynamically load modals on-demand (zero impact on initial bundle)
 const EnquiryModal = dynamic(
@@ -173,10 +178,12 @@ export default function HomePage() {
           onOpenLayout={handleScrollToLayout}
         />
 
-        {/* Consolidated Video Showcase & 4K Drone Tour Hub */}
-        <VideoShowcase
+        {/* Standalone Main Video Showcase */}
+        <MainShowcaseVideo />
+
+        {/* Official Drone Video Tour & Actual Site Footage */}
+        <DevelopmentVideo
           onOpenEnquiry={handleOpenEnquiry}
-          onOpenSiteVisit={handleOpenSiteVisit}
         />
 
         {/* Photo-Rich Lifestyle Amenities */}
@@ -196,7 +203,12 @@ export default function HomePage() {
 
 
 
-        
+        {/* Answer Engine Optimization (AEO) Direct Knowledge Hub */}
+        <DirectAnswerHub
+          onOpenEnquiry={handleOpenEnquiry}
+          onOpenSiteVisit={handleOpenSiteVisit}
+        />
+
 
 
         {/* Official Marketing Partners */}

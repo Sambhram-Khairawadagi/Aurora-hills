@@ -46,7 +46,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
                   <span className="text-xs font-black text-emerald-700 block">
                     30ft &amp; 40ft Paved Roads
                   </span>
-                  <span className="text-xs sm:text-sm text-forest-900/85 font-semibold">
+                  <span className="text-xs sm:text-sm text-charcoal-700 font-medium">
                     Underground Electricity
                   </span>
                 </div>
@@ -56,17 +56,17 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
 
           {/* Right Column: Introduction Narrative */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs sm:text-sm font-bold uppercase tracking-widest">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs sm:text-sm font-black uppercase tracking-widest">
               <Sparkles className="w-4 h-4 text-emerald-600" />
               About The Development
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-950 tracking-tight leading-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight leading-tight">
               An Architectural Eden in <br />
               <span className="vibrant-text-gradient">Dharwad City</span>
             </h2>
 
-            <p className="text-forest-900/90 text-base sm:text-lg leading-relaxed font-medium">
+            <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed font-normal">
               <strong className="text-forest-950 font-bold">The Aurora Hills</strong> is Dharwad’s premier master-planned plotted community at <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="text-emerald-900 font-bold hover:text-emerald-600 hover:underline transition-colors">Sunset Viewpoint, Karnatak University</a>, offering scenic green views and effortless connectivity to NH-4 and top educational hubs.
             </p>
 
@@ -78,7 +78,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
                   Prime Address • <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-200 hover:underline transition-colors">Sunset Viewpoint, Dharwad</a>
                 </span>
               </div>
-              <p className="text-xs sm:text-sm text-forest-900/85 font-semibold">
+              <p className="text-xs sm:text-sm text-charcoal-700 font-medium">
                 5 mins to Karnatak University, 10 mins to SDM, 7 mins to D-Mart, adjacent to NH-4.
               </p>
             </div>
@@ -104,7 +104,7 @@ export const ProjectIntro: React.FC<ProjectIntroProps> = ({
             <div className="flex flex-wrap items-center gap-3.5 pt-4">
               <button
                 onClick={() => onOpenEnquiry("About Section CTA")}
-                className="px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white text-xs sm:text-sm font-bold uppercase tracking-wider shadow-md shadow-emerald-600/30 hover:shadow-emerald-600/50 transition-all hover:scale-105"
+                className="px-8 py-3.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all hover:scale-105"
               >
                 Request Availability
               </button>

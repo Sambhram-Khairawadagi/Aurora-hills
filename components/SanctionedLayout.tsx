@@ -45,7 +45,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-950 tracking-tight">
             Approved <span className="green-text-gradient">Layout Plan &amp; Site Progress</span>
           </h2>
-          <p className="text-forest-900/90 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-normal">
             Officially approved layout plan with demarcated plot boundaries and completed physical road infrastructure.
           </p>
 
@@ -138,7 +138,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                     <h4 className="font-serif text-lg font-bold text-forest-950 group-hover:text-emerald-700 transition-colors">1,200 sq.ft</h4>
                     <span className="text-xs font-medium text-slate-700 bg-slate-200/80 px-2.5 py-0.5 rounded-full">30 × 40</span>
                   </div>
-                  <p className="text-xs text-forest-900/80 mt-0.5 font-semibold">3BHK Luxury Villa</p>
+                  <p className="text-xs text-gray-600 mt-0.5 font-normal">3BHK Luxury Villa</p>
                   <p className="text-xs font-semibold text-emerald-800 mt-0.5">Price on Request</p>
                   <span className="inline-block mt-2 px-2.5 py-0.5 rounded-md bg-white border border-gray-200 text-slate-800 text-[11px] font-medium">
                     🎁 1 KG Hallmarked Silver
@@ -154,7 +154,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                     <h4 className="font-serif text-lg font-bold text-forest-950 group-hover:text-emerald-700 transition-colors">1,500 sq.ft</h4>
                     <span className="text-xs font-medium text-emerald-900 bg-emerald-100 px-2.5 py-0.5 rounded-full">30 × 50</span>
                   </div>
-                  <p className="text-xs text-forest-900/80 mt-0.5 font-semibold">Spacious Garden Living</p>
+                  <p className="text-xs text-gray-600 mt-0.5 font-normal">Spacious Garden Living</p>
                   <p className="text-xs font-semibold text-emerald-800 mt-0.5">Price on Request</p>
                   <span className="inline-block mt-2 px-2.5 py-0.5 rounded-md bg-white border border-emerald-200 text-emerald-900 text-[11px] font-medium">
                     🎁 1.5 KG Hallmarked Silver
@@ -170,7 +170,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                     <h4 className="font-serif text-lg font-bold text-forest-950 group-hover:text-emerald-700 transition-colors">2,400 sq.ft</h4>
                     <span className="text-xs font-medium text-amber-950 bg-amber-100 px-2.5 py-0.5 rounded-full">40 × 60</span>
                   </div>
-                  <p className="text-xs text-forest-900/80 mt-0.5 font-semibold">Grand Hillside Mansion</p>
+                  <p className="text-xs text-gray-600 mt-0.5 font-normal">Grand Hillside Mansion</p>
                   <p className="text-xs font-semibold text-emerald-800 mt-0.5">Price on Request</p>
                   <span className="inline-block mt-2 px-2.5 py-0.5 rounded-md bg-white border border-amber-200 text-amber-950 text-[11px] font-medium">
                     🎁 50g 22K Gold

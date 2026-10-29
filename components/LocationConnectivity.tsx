@@ -39,7 +39,7 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-950 tracking-tight">
             Strategic Location &amp; <span className="vibrant-text-gradient">Landmark Proximities</span>
           </h2>
-          <p className="text-forest-900/90 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-normal">
             Minutes from top schools, universities, malls, and major highways.
           </p>
 
@@ -54,7 +54,7 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
               <button
                 key={id}
                 onClick={() => setActiveCategory(id as any)}
-                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center gap-2 transition-all ${
+                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider flex items-center gap-2 transition-all ${
                   activeCategory === id
                     ? "bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-500/30 scale-105"
                     : "bg-white text-charcoal-800 border border-emerald-200/80 hover:bg-emerald-50 shadow-sm"
@@ -87,7 +87,7 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
                   <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
                   <span className="text-sm font-black text-forest-950 font-sans">The Aurora Hills</span>
                 </div>
-                <p className="text-sm text-forest-900/90 font-semibold">
+                <p className="text-sm text-charcoal-700 font-medium">
                   <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-700 hover:underline transition-colors">Sunset Viewpoint, Karnatak University, Dharwad</a>
                 </p>
                 <div className="mt-2 text-xs font-bold text-emerald-800 vibrant-badge-emerald px-3 py-1 rounded-full inline-block">
@@ -143,12 +143,12 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
                       <h3 className="text-sm sm:text-base font-bold text-forest-950 group-hover:text-emerald-700 transition-colors">
                         {item.name}
                       </h3>
-                      <span className="text-xs text-forest-900/80 font-semibold">{item.distance}</span>
+                      <span className="text-xs text-charcoal-600 font-medium">{item.distance}</span>
                     </div>
                   </div>
 
                   <div className="text-right flex-shrink-0">
-                    <span className="text-xs sm:text-sm font-bold vibrant-badge-emerald px-3.5 py-1.5 rounded-full">
+                    <span className="text-xs sm:text-sm font-black vibrant-badge-emerald px-3.5 py-1.5 rounded-full">
                       {item.time}
                     </span>
                   </div>

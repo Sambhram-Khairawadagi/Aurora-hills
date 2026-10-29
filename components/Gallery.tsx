@@ -466,12 +466,12 @@ export const Gallery: React.FC<GalleryProps> = ({
       <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto space-y-3 sm:space-y-4 mb-6 sm:mb-10">
-          <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-forest-950 tracking-tight whitespace-normal lg:whitespace-nowrap">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black font-sans text-forest-950 tracking-tight whitespace-normal lg:whitespace-nowrap">
             Real Site Photos &amp;{" "}
             <span className="vibrant-text-gradient">Township Progress</span>
           </h2>
 
-          <p className="text-forest-900/90 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="text-charcoal-700 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
             See the actual on-ground transformation: 40ft wide finished asphalt boulevards, flowering medians, <br className="hidden sm:inline" />
             demarcated villa plots, underground power feeder pillars, and hilltop water reservoir.
           </p>
