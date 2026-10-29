@@ -31,10 +31,7 @@ const LocationConnectivity = dynamic(
 
 
 
-const LocalSeoFaq = dynamic(
-  () => import("@/components/LocalSeoFaq").then((mod) => mod.LocalSeoFaq),
-  { ssr: true }
-);
+
 
 const DirectAnswerHub = dynamic(
   () => import("@/components/DirectAnswerHub").then((mod) => mod.DirectAnswerHub),
@@ -212,12 +209,7 @@ export default function HomePage() {
           onOpenSiteVisit={handleOpenSiteVisit}
         />
 
-        {/* Comprehensive Local SEO Hub & Real Estate FAQ */}
-        <LocalSeoFaq
-          onOpenEnquiry={handleOpenEnquiry}
-          onOpenBrochure={handleOpenBrochure}
-          onOpenSiteVisit={handleOpenSiteVisit}
-        />
+
 
         {/* Official Marketing Partners */}
         <Partners />
