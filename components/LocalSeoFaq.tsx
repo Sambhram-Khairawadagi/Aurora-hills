@@ -255,23 +255,7 @@ export const LocalSeoFaq: React.FC<LocalSeoFaqProps> = ({
               </div>
             </div>
 
-            {/* Quick Micro-Market Area Badges (SEO Keywords) */}
-            <div className="p-6 rounded-3xl bg-white/80 border border-emerald-200/60 shadow-sm space-y-3">
-              <div className="flex items-center gap-2 text-xs font-black uppercase tracking-widest text-emerald-800">
-                <MapPin className="w-3.5 h-3.5 text-emerald-600" />
-                <span>Popular Search Localities in Dharwad & Hubli</span>
-              </div>
-              <div className="flex flex-wrap gap-2 pt-1">
-                {LOCAL_AREAS.map((tag, i) => (
-                  <span
-                    key={i}
-                    className="text-xs font-bold px-3 py-1.5 rounded-full bg-emerald-50 text-forest-950 border border-emerald-200/60 hover:bg-emerald-100/70 transition-colors cursor-default"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
+
           </div>
 
           {/* Right Column (7 Cols): Expandable FAQ Accordions */}

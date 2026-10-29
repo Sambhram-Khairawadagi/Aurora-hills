@@ -29,10 +29,7 @@ const LocationConnectivity = dynamic(
   { ssr: true }
 );
 
-const WhyAuroraHills = dynamic(
-  () => import("@/components/WhyAuroraHills").then((mod) => mod.WhyAuroraHills),
-  { ssr: true }
-);
+
 
 const LocalSeoFaq = dynamic(
   () => import("@/components/LocalSeoFaq").then((mod) => mod.LocalSeoFaq),
@@ -207,55 +204,7 @@ export default function HomePage() {
           onOpenQR={handleOpenQR}
         />
 
-        {/* Strategic Investment Advantages & Why Aurora Hills */}
-        <WhyAuroraHills
-          onOpenEnquiry={handleOpenEnquiry}
-        />
 
-        {/* High-Intent Locality Explorer Hub */}
-        <section className="py-12 sm:py-16 bg-[#F4F8F3] border-t border-b border-emerald-200/80">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-2xl mx-auto mb-7">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 border border-emerald-300 text-emerald-900 text-xs font-extrabold uppercase tracking-wider mb-2">
-                📍 Strategic Locality Quick Links
-              </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold font-sans text-forest-950 tracking-tight">
-                Explore Plots &amp; Sites by Locality
-              </h3>
-              <p className="text-sm font-semibold text-emerald-950/80 mt-1">
-                Fast-track access to layout dimensions, bank approvals, and scenic site views
-              </p>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3 max-w-5xl mx-auto">
-              {[
-                { href: "/plots-in-dharwad", label: "Plots in Dharwad", badge: "High Demand" },
-                { href: "/#faq", label: "Plots in Hubli Dharwad", badge: "Twin-City" },
-                { href: "/#location", label: "Plots near Karnatak University", badge: "5 Mins" },
-                { href: "/#location", label: "Plots near NH-4 Dharwad", badge: "Highway" },
-                { href: "/#layout", label: "30×40 Sites in Dharwad", badge: "1,200 sq.ft" },
-                { href: "/#layout", label: "30×50 Sites in Dharwad", badge: "1,500 sq.ft" },
-                { href: "/#layout", label: "40×60 Sites in Dharwad", badge: "2,400 sq.ft" },
-                { href: "/#faq", label: "HDUDA Approved Plots Dharwad", badge: "Sanctioned" },
-                { href: "/#faq", label: "Bank Loan Plots Dharwad", badge: "SBI / HDFC" },
-                { href: "/#faq", label: "Gated Community Dharwad", badge: "20+ Amenities" },
-                { href: "/plots-in-dharwad", label: "Villa Plots in Dharwad", badge: "Luxury" },
-                { href: "/#location", label: "Plots near Sunset Viewpoint", badge: "Scenic Hills" },
-              ].map(({ href, label, badge }, i) => (
-                <Link
-                  key={i}
-                  href={href}
-                  className="group px-4 py-2.5 rounded-xl border-2 border-emerald-200/90 bg-white hover:border-emerald-600 hover:bg-emerald-50 text-forest-950 font-bold text-xs sm:text-sm shadow-xs hover:shadow-md transition-all flex items-center gap-2 active:scale-95"
-                >
-                  <span>{label}</span>
-                  <span className="text-[10px] font-black uppercase tracking-wider text-emerald-800 bg-emerald-100 group-hover:bg-emerald-200 px-2 py-0.5 rounded-md">
-                    {badge}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Answer Engine Optimization (AEO) Direct Knowledge Hub */}
         <DirectAnswerHub
