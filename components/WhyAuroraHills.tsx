@@ -24,14 +24,14 @@ export const WhyAuroraHills: React.FC<WhyAuroraHillsProps> = ({ onOpenEnquiry })
     <section className="py-24 lg:py-32 vibrant-section-glow text-forest-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs sm:text-sm font-black uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs sm:text-sm font-semibold uppercase tracking-wider">
             <Sparkles className="w-4 h-4 text-emerald-600" />
             Strategic Investment Advantages
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-950 tracking-tight">
             Why Choose <span className="vibrant-text-gradient">The Aurora Hills?</span>
           </h2>
-          <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-normal">
             An unmatched harmony of hill serenity, school proximity, and rapid capital appreciation.
           </p>
         </div>
@@ -54,10 +54,10 @@ export const WhyAuroraHills: React.FC<WhyAuroraHillsProps> = ({ onOpenEnquiry })
               </div>
 
               <div>
-                <h3 className="text-xl font-black text-forest-950 font-sans mb-2 group-hover:text-emerald-700 transition-colors">
+                <h3 className="text-lg font-bold font-serif text-forest-950 mb-2 group-hover:text-emerald-700 transition-colors">
                   {point.title}
                 </h3>
-                <p className="text-sm sm:text-base text-charcoal-700 leading-relaxed font-medium">
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed font-normal">
                   {point.description}
                 </p>
               </div>

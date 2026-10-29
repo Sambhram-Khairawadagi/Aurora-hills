@@ -116,6 +116,21 @@ The Aurora Hills is an 18-acre luxury residential plotted community located adja
   * Replaced with **"Special Pre-Launch Rates"** and high-intent **"Get Price Sheet →"** CTA.
   * Eliminates upfront sticker shock that causes drop-offs, compelling visitors to submit name and number to receive the price sheet.
   * High-budget buyers are indirectly qualified through luxury signals: 20+ world-class amenities, 50g Gold / 1.5kg Silver festive rewards, 40ft blacktop avenues, and HDUDA/SBI pre-approvals.
+
+### J. Luxury Typography & De-Cluttered Spatial Refactoring (Oct 29, 2026)
+* **Tailwind Font Hierarchy Restoration (`tailwind.config.ts`):**
+  * Connected `font-serif` to `var(--font-serif)` (Playfair Display) and `font-vintage` to `var(--font-vintage)` (Cormorant Garamond).
+  * Resolved regression where luxury serif headings were being flattened to default Arial/Inter sans.
+* **Eliminated Font-Weight Overkill:**
+  * Replaced brute-force `font-black` (weight 900) across section headings, plot cards, and body text with elegant `font-bold` (700) or `font-semibold` (600) for titles and `font-normal` (400) for copy.
+  * Dramatically improves legibility and brings a prestigious, architectural editorial aesthetic.
+* **Hero Section Unified Composition (`components/Hero.tsx`):**
+  * Removed 3 competing nested frosted glass cards and 5 multi-colored floating pills.
+  * Consolidated into a single, cohesive glass panel with generous negative space and clear typographic hierarchy.
+  * Streamlined CTAs into two decisive actions: Primary ("Enquire for Booking") and Secondary ("+91 89701 98701").
+* **Lead Form Breathing Room (`components/HeroLeadCard.tsx`):**
+  * Removed duplicate internal cab banners and urgency pills.
+  * Increased padding (`p-6 sm:p-8`), expanded input heights (48px) with clean borders, and refined the 4-pill plot size selector.
 * **Verification:** `npx tsc --noEmit` exited with code 0 (zero compiler errors).
 
 ---

@@ -114,62 +114,52 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
 
   return (
     <div
-      className={`rounded-3xl bg-white/95 backdrop-blur-xl border-2 border-emerald-500/40 shadow-2xl p-4 sm:p-6 text-forest-950 relative overflow-hidden ${className}`}
+      className={`rounded-3xl bg-white/95 backdrop-blur-xl border border-gray-200/90 shadow-xl p-6 sm:p-8 text-forest-950 relative overflow-hidden ${className}`}
     >
-      {/* Top Auspicious Festive Pill & Urgency Scarcity Pill */}
-      <div className="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b border-amber-300/40">
-        <div className="flex items-center gap-1.5 text-xs font-black text-amber-900 bg-amber-100 px-2.5 py-1 rounded-full border border-amber-300 shadow-sm">
-          <Sparkles className="w-3.5 h-3.5 text-amber-700 animate-pulse flex-shrink-0" />
-          <span className="truncate">Deepawali Offer Active</span>
-        </div>
-        <span className="text-[11px] font-black text-rose-800 bg-rose-50 border border-rose-200/80 px-2.5 py-0.5 rounded-full flex-shrink-0 shadow-sm animate-pulse">
-          ⚡ Only 7 Plots in Phase 1
+      {/* Top Auspicious Status Header */}
+      <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-gray-100">
+        <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-900 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/70">
+          <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
+          Pre-Launch Advantage
+        </span>
+        <span className="text-xs text-amber-900 font-medium">
+          🎁 Assured Festive Gifts
         </span>
       </div>
 
       {!submitted ? (
-        <form onSubmit={handleSubmit} className="space-y-3.5">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <h3 className="text-lg sm:text-xl font-black font-sans text-forest-950 leading-tight">
-              Get HDUDA Layout Map &amp; Pricing
+            <h3 className="font-serif text-2xl font-bold text-forest-950 tracking-tight">
+              Get Layout Map &amp; Pricing
             </h3>
-            <p className="text-xs sm:text-sm text-charcoal-700 font-medium mt-0.5">
-              Receive official sanctioned layout PDF &amp; price sheet directly on WhatsApp.
+            <p className="text-xs sm:text-sm text-gray-600 font-normal mt-1 leading-relaxed">
+              Official HDUDA sanctioned layout &amp; pre-launch price sheet sent directly to WhatsApp.
             </p>
-            {/* Dharwad & Hubli Proximity & Cab Pickup Mini-Banner */}
-            <div className="mt-2.5 py-2 px-3 rounded-xl bg-emerald-50/90 border border-emerald-200/90 text-xs text-emerald-950 font-bold flex items-center justify-between gap-2">
-              <div className="flex items-center gap-1.5 truncate">
-                <span className="flex-shrink-0 text-emerald-700">📍</span>
-                <span><strong>5 Mins to Jubilee Circle</strong> • 20 Mins from Hubli</span>
-              </div>
-              <span className="text-[11px] font-extrabold text-emerald-800 bg-white px-2 py-0.5 rounded-md border border-emerald-200 shadow-xs flex-shrink-0">
-                🚗 Free Cab
-              </span>
-            </div>
           </div>
 
           {/* Plot Size Selector */}
-          <div>
-            <label className="text-xs sm:text-sm font-black uppercase tracking-wider text-charcoal-800 block mb-1.5">
-              Select Plot Size of Interest:
+          <div className="pt-1">
+            <label className="text-xs font-semibold uppercase tracking-wider text-gray-700 block mb-2">
+              Select Preferred Plot Dimension:
             </label>
-            <div className="grid grid-cols-4 gap-1 sm:gap-1.5">
+            <div className="grid grid-cols-4 gap-2">
               {PLOT_OPTIONS.map((opt) => (
                 <button
                   type="button"
                   key={opt.label}
                   onClick={() => setSelectedPlot(opt.label)}
-                  className={`py-2 px-1 rounded-xl text-center border transition-all flex flex-col items-center justify-center min-h-[46px] ${
+                  className={`py-2.5 px-1.5 rounded-xl text-center border transition-all flex flex-col items-center justify-center min-h-[50px] ${
                     selectedPlot === opt.label
-                      ? "bg-emerald-700 text-white border-emerald-800 shadow-md font-black"
-                      : "bg-emerald-50/70 text-charcoal-800 border-emerald-200 hover:bg-emerald-100 font-bold"
+                      ? "bg-emerald-800 text-white border-emerald-800 shadow-sm font-semibold"
+                      : "bg-gray-50 hover:bg-emerald-50/50 text-gray-800 border-gray-200 font-medium"
                   }`}
                 >
-                  <span className="block text-xs sm:text-sm leading-none whitespace-nowrap">{opt.label}</span>
+                  <span className="block text-xs sm:text-sm leading-tight whitespace-nowrap">{opt.label}</span>
                   {opt.sub ? (
                     <span
-                      className={`block text-[10px] sm:text-xs mt-1 leading-none font-semibold ${
-                        selectedPlot === opt.label ? "text-emerald-100" : "text-charcoal-600"
+                      className={`block text-[10px] sm:text-xs mt-0.5 leading-tight ${
+                        selectedPlot === opt.label ? "text-emerald-100" : "text-gray-500 font-normal"
                       }`}
                     >
                       {opt.sub}
@@ -181,10 +171,10 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
           </div>
 
           {/* Inputs */}
-          <div className="space-y-2.5">
+          <div className="space-y-3 pt-1">
             <div>
-              <label className="text-xs sm:text-sm font-bold text-charcoal-800 block mb-1">
-                Your Name <span className="text-rose-600 font-bold">*</span>
+              <label className="text-xs font-semibold text-gray-700 block mb-1">
+                Your Full Name <span className="text-rose-600">*</span>
               </label>
               <input
                 type="text"
@@ -192,17 +182,17 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Dr. Patil / Ramesh"
-                className="w-full px-3.5 py-2.5 rounded-xl border border-charcoal-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 text-base sm:text-sm text-forest-950 bg-white shadow-inner outline-none transition-all font-medium"
+                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 text-sm text-forest-950 bg-white shadow-xs outline-none transition-all placeholder:text-gray-400 font-normal"
               />
             </div>
 
             <div>
-              <label className="text-xs sm:text-sm font-bold text-charcoal-800 block mb-1">
-                WhatsApp Mobile Number <span className="text-rose-600 font-bold">*</span>
+              <label className="text-xs font-semibold text-gray-700 block mb-1">
+                WhatsApp Mobile Number <span className="text-rose-600">*</span>
               </label>
               <div className="relative flex items-center">
-                <span className="absolute left-3 text-xs sm:text-sm font-black text-charcoal-700 border-r border-charcoal-300 pr-2">
-                  🇮🇳 +91
+                <span className="absolute left-3.5 text-xs sm:text-sm font-semibold text-gray-600 border-r border-gray-200 pr-2">
+                  +91
                 </span>
                 <input
                   type="tel"
@@ -211,23 +201,23 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
                   value={phone}
                   onChange={(e) => setPhone(e.target.value.replace(/[^0-9]/g, ""))}
                   placeholder="Enter 10-digit number"
-                  className="w-full pl-20 pr-3.5 py-2.5 rounded-xl border-2 border-emerald-600/60 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 text-base sm:text-sm font-bold text-forest-950 bg-white shadow-inner outline-none transition-all placeholder:font-normal"
+                  className="w-full pl-16 pr-4 py-3 rounded-xl border border-gray-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 text-sm font-medium text-forest-950 bg-white shadow-xs outline-none transition-all placeholder:text-gray-400 placeholder:font-normal"
                 />
               </div>
             </div>
           </div>
 
           {errorMsg && (
-            <p className="text-xs text-rose-700 bg-rose-50 p-2 rounded-lg border border-rose-200 font-semibold">
+            <p className="text-xs text-rose-700 bg-rose-50 p-2.5 rounded-lg border border-rose-200 font-medium">
               {errorMsg}
             </p>
           )}
 
-          {/* High-Impact Green WhatsApp CTA Button */}
+          {/* Sleek, High-Converting Button */}
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 sm:py-3.5 rounded-2xl bg-gradient-to-r from-emerald-600 via-[#25D366] to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg shadow-emerald-600/30 hover:shadow-xl hover:shadow-emerald-600/50 transition-all duration-300 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70"
+            className="w-full py-3.5 sm:py-4 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-sm tracking-wide shadow-md hover:shadow-lg transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 mt-2"
           >
             {loading ? (
               <span className="flex items-center gap-2">
@@ -237,29 +227,28 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
             ) : (
               <>
                 <Send className="w-4 h-4" />
-                <span>Get Layout &amp; Prices on WhatsApp 🟢</span>
+                <span>Get Layout &amp; Prices on WhatsApp</span>
               </>
             )}
           </button>
 
           {/* Trust Guarantees */}
-          <div className="pt-1 flex flex-col items-center gap-1.5 text-center">
-            <div className="flex items-center gap-3 text-xs text-charcoal-700 font-semibold">
-              <span className="flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" /> 100% Privacy Protected
-              </span>
+          <div className="pt-2 text-center space-y-1.5">
+            <div className="flex items-center justify-center gap-2 text-xs text-gray-500 font-normal">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+              <span>100% Privacy Protected</span>
               <span>•</span>
-              <span className="text-emerald-700 font-bold">Instant Delivery</span>
+              <span>Direct Developer Rate</span>
             </div>
 
-            <div className="text-xs sm:text-sm text-charcoal-700 pt-0.5 font-medium">
+            <div className="text-xs text-gray-600 font-normal">
               Need immediate answers?{" "}
               <a
                 href={`tel:${salesPhone.replace(/\s+/g, "")}`}
                 onClick={() => trackPhoneClick(salesPhone)}
-                className="font-black text-emerald-800 hover:underline inline-flex items-center gap-1 ml-1"
+                className="font-semibold text-emerald-800 hover:underline inline-flex items-center gap-1 ml-1"
               >
-                <Phone className="w-3.5 h-3.5" /> Call +91 {salesPhone}
+                <Phone className="w-3 h-3" /> Call +91 {salesPhone}
               </a>
             </div>
           </div>
@@ -270,28 +259,28 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
           <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-300 flex items-center justify-center mx-auto shadow-md">
             <CheckCircle2 className="w-8 h-8" />
           </div>
-          <h4 className="text-xl font-bold font-sans text-forest-950">
+          <h4 className="font-serif text-2xl font-bold text-forest-950">
             Request Received!
           </h4>
-          <p className="text-xs sm:text-sm text-charcoal-700 max-w-xs mx-auto">
+          <p className="text-xs sm:text-sm text-gray-600 max-w-xs mx-auto leading-relaxed">
             Your brochure and layout map are downloading. Our consultant is also reaching out on WhatsApp at <strong>+91 {phone}</strong>.
           </p>
 
-          <div className="pt-2 flex flex-col sm:flex-row gap-2 justify-center">
+          <div className="pt-2 flex flex-col sm:flex-row gap-2.5 justify-center">
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
                 `Hi, I just submitted an enquiry for The Aurora Hills plots in Dharwad. Please share the layout plan.`
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 rounded-full bg-[#25D366] text-white text-xs font-black uppercase tracking-wider shadow-md hover:bg-[#1ebd5a] transition-all flex items-center justify-center gap-1.5"
+              className="px-5 py-2.5 rounded-full bg-[#25D366] text-white text-xs font-semibold uppercase tracking-wider shadow-sm hover:bg-[#1ebd5a] transition-all flex items-center justify-center gap-1.5"
             >
-              Open in WhatsApp 🟢
+              Open in WhatsApp
             </a>
             <a
               href="/brochure/the-aurora-hills-brochure.pdf"
               download="The-Aurora-Hills-Brochure.pdf"
-              className="px-4 py-2 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold uppercase tracking-wider border border-emerald-300 hover:bg-emerald-200 transition-all flex items-center justify-center gap-1.5"
+              className="px-5 py-2.5 rounded-full bg-emerald-50 text-emerald-900 text-xs font-semibold uppercase tracking-wider border border-emerald-200 hover:bg-emerald-100 transition-all flex items-center justify-center gap-1.5"
             >
               <Download className="w-3.5 h-3.5" /> Direct PDF
             </a>

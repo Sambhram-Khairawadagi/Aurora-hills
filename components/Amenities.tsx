@@ -34,14 +34,14 @@ export const Amenities: React.FC<AmenitiesProps> = ({ onOpenEnquiry }) => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col items-center text-center gap-4 mb-10 sm:mb-12 animate-fade-in-up">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-emerald-200 text-emerald-800 text-xs font-bold uppercase tracking-widest shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-emerald-200 text-emerald-800 text-xs font-semibold uppercase tracking-wider shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
             20+ Facilities
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-950 tracking-tight">
             Lifestyle <span className="green-text-gradient">Amenities</span>
           </h2>
-          <p className="text-base text-charcoal-700 max-w-xl mx-auto font-medium">
+          <p className="text-base text-gray-600 max-w-xl mx-auto font-normal leading-relaxed">
             Discover a thoughtfully curated collection of facilities designed to elevate your everyday living.
           </p>
         </div>

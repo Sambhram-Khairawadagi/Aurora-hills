@@ -32,14 +32,14 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs sm:text-sm font-black uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs sm:text-sm font-semibold uppercase tracking-wider">
             <MapPin className="w-4 h-4 text-emerald-600" />
             Prime Dharwad City Location
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-950 tracking-tight">
             Strategic Location &amp; <span className="vibrant-text-gradient">Landmark Proximities</span>
           </h2>
-          <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-normal">
             Minutes from top schools, universities, malls, and major highways.
           </p>
 

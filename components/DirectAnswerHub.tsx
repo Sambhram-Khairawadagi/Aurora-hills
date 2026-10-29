@@ -89,16 +89,16 @@ export const DirectAnswerHub: React.FC<DirectAnswerHubProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-300 text-emerald-900 text-xs font-black uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-100/80 border border-emerald-300 text-emerald-900 text-xs font-semibold uppercase tracking-wider mb-4">
             <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-            Answer Engine Direct Knowledge Hub
+            Direct Knowledge Hub
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-forest-950 tracking-tight leading-tight">
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-forest-950 tracking-tight leading-tight">
             Direct Answers to Popular Questions <br className="hidden sm:inline" />
             About Plots in Dharwad
           </h2>
-          <p className="mt-3.5 text-base sm:text-lg text-charcoal-700 font-medium">
-            Verified, concise answers for property buyers, voice assistants, and search engines.
+          <p className="mt-3.5 text-base sm:text-lg text-gray-600 font-normal leading-relaxed">
+            Verified, concise answers for property buyers and home builders.
           </p>
         </div>
 

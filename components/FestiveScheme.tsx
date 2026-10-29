@@ -59,7 +59,7 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
                 <Sparkles className="w-4 h-4" />
               </div>
 
-              <h2 className="text-2xl sm:text-4xl md:text-5xl font-black font-sans tracking-tight text-white drop-shadow-md">
+              <h2 className="font-serif text-2xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white drop-shadow-md">
                 THIS DASARA &amp; DEEPAWALI <br className="sm:hidden" />
                 <span className="text-amber-300">SPECIAL</span>
               </h2>
@@ -68,19 +68,19 @@ export const FestiveScheme: React.FC<FestiveSchemeProps> = ({ onOpenEnquiry }) =
 
           {/* Authentic Bilingual Tagline */}
           <div className="pt-2">
-            <h3 className="font-kannada text-2xl sm:text-3xl md:text-4xl font-black text-red-900 tracking-normal drop-shadow-sm leading-relaxed">
+            <h3 className="font-kannada text-2xl sm:text-3xl md:text-4xl font-bold text-red-900 tracking-normal drop-shadow-sm leading-relaxed">
               ಭೂಮಿ &amp; ಬಂಗಾರ <span className="text-amber-600 mx-2">|</span> ಭೂಮಿ &amp; ಬೆಳ್ಳಿ
             </h3>
-            <p className="text-base sm:text-xl font-sans text-amber-950 font-black tracking-wide mt-1">
-              "A Precious Beginning. A Precious Honour."
+            <p className="text-base sm:text-xl font-serif text-amber-950 font-semibold tracking-wide mt-1 italic">
+              &quot;A Precious Beginning. A Precious Honour.&quot;
             </p>
           </div>
 
-          <p className="text-charcoal-700 text-sm sm:text-base max-w-2xl mx-auto font-medium leading-relaxed">
-            Celebrate auspicious new beginnings in Dharwad City's most scenic plotted community.
+          <p className="text-gray-700 text-sm sm:text-base max-w-2xl mx-auto font-normal leading-relaxed">
+            Celebrate auspicious new beginnings in Dharwad City&apos;s most scenic plotted community.
             Book your sanctioned residential plot this festive season and receive authentic
-            <strong className="text-red-900 font-extrabold"> 50g Gold</strong> or
-            <strong className="text-slate-800 font-extrabold"> up to 1.5kg Silver</strong> as a permanent festive blessing.
+            <strong className="text-red-900 font-semibold"> 50g Gold</strong> or
+            <strong className="text-slate-800 font-semibold"> up to 1.5kg Silver</strong> as a permanent festive blessing.
           </p>
 
           <div className="flex items-center justify-center gap-3 pt-1">
