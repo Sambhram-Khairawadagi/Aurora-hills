@@ -148,15 +148,15 @@ export const metadata: Metadata = {
   authors: [{ name: "The Aurora Hills & Property Basket" }],
   creator: "Property Basket",
   publisher: "The Aurora Hills",
-  metadataBase: new URL("https://theaurorahills.com"),
+  metadataBase: new URL("https://www.theaurorahills.com"),
   alternates: {
-    canonical: "https://theaurorahills.com",
+    canonical: "https://www.theaurorahills.com",
   },
   openGraph: {
     title: "Plots in Dharwad & Hubli | HDUDA Approved Residential Plots for Sale",
     description:
       "HDUDA & NA-KJP approved luxury residential villa plots in Dharwad & Hubli under Pre-Launch Advantage. Gated township near NH-4 Highway with 20+ lifestyle amenities, clubhouse & scenic hill views.",
-    url: "https://theaurorahills.com",
+    url: "https://www.theaurorahills.com",
     siteName: "The Aurora Hills",
     images: [
       {
@@ -222,10 +222,10 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "Place",
-        "@id": "https://theaurorahills.com/#place",
+        "@id": "https://www.theaurorahills.com/#place",
         "name": "The Aurora Hills",
         "description": "HDUDA-approved premium plotted township sanctuary in Dharwad City, Karnataka, India.",
-        "url": "https://theaurorahills.com",
+        "url": "https://www.theaurorahills.com",
         "hasMap": "https://maps.app.goo.gl/3EnF93gjmTueXy667",
         "address": {
           "@type": "PostalAddress",
@@ -240,16 +240,16 @@ export default function RootLayout({
           "latitude": "15.4589",
           "longitude": "74.9902"
         },
-        "photo": "https://theaurorahills.com/images/hero-layout-sunset.png"
+        "photo": "https://www.theaurorahills.com/images/hero-layout-sunset.png"
       },
       {
         "@type": "RealEstateAgent",
-        "@id": "https://theaurorahills.com/#organization",
+        "@id": "https://www.theaurorahills.com/#organization",
         "name": "The Aurora Hills - Real Estate & Residential Plots Dharwad",
         "legalName": "The Aurora Hills Plotted Township",
-        "url": "https://theaurorahills.com",
-        "logo": "https://theaurorahills.com/images/aurora-hills-logo.png",
-        "image": "https://theaurorahills.com/images/hero-layout-sunset.png",
+        "url": "https://www.theaurorahills.com",
+        "logo": "https://www.theaurorahills.com/images/aurora-hills-logo.png",
+        "image": "https://www.theaurorahills.com/images/hero-layout-sunset.png",
         "telephone": "+91-8970198701",
         "priceRange": "₹42,00,000 - ₹1,20,00,000",
         "currenciesAccepted": "INR",
@@ -289,10 +289,10 @@ export default function RootLayout({
       },
       {
         "@type": "SingleFamilyResidence",
-        "@id": "https://theaurorahills.com/#property",
+        "@id": "https://www.theaurorahills.com/#property",
         "name": "Residential Villa Plots at The Aurora Hills Dharwad",
         "description": "Ready-for-registration HDUDA & NA-KJP approved residential plots under Pre-Launch Advantage with 20+ lifestyle amenities in Dharwad near NH-4 Highway.",
-        "url": "https://theaurorahills.com",
+        "url": "https://www.theaurorahills.com",
         "offers": {
           "@type": "AggregateOffer",
           "lowPrice": "4200000",
@@ -305,19 +305,19 @@ export default function RootLayout({
       },
       {
         "@type": "LocalBusiness",
-        "@id": "https://theaurorahills.com/#localbusiness",
+        "@id": "https://www.theaurorahills.com/#localbusiness",
         "name": "The Aurora Hills - Residential Plots in Dharwad",
         "alternateName": ["Aurora Hills Dharwad", "The Aurora Hills Kelgeri"],
         "description": "HDUDA & NA-KJP approved premium residential villa plots in Dharwad under Pre-Launch Advantage. 30x40, 30x50 & 40x60 sites with 20+ amenities near NH-4, Karnatak University & Sunset Viewpoint.",
-        "url": "https://theaurorahills.com",
+        "url": "https://www.theaurorahills.com",
         "telephone": "+91-8970198701",
         "email": "info@theaurorahills.com",
         "image": [
-          "https://theaurorahills.com/images/aurora-hills-real-site-daylight.jpg",
-          "https://theaurorahills.com/images/hero-layout-sunset.png",
-          "https://theaurorahills.com/images/aurora-hills-logo.png"
+          "https://www.theaurorahills.com/images/aurora-hills-real-site-daylight.jpg",
+          "https://www.theaurorahills.com/images/hero-layout-sunset.png",
+          "https://www.theaurorahills.com/images/aurora-hills-logo.png"
         ],
-        "logo": "https://theaurorahills.com/images/aurora-hills-logo.png",
+        "logo": "https://www.theaurorahills.com/images/aurora-hills-logo.png",
         "priceRange": "₹42 Lakhs - ₹1.2 Crores",
         "currenciesAccepted": "INR",
         "paymentAccepted": "Bank Transfer, Cheque, Home Loan, NEFT, RTGS",
@@ -432,7 +432,7 @@ export default function RootLayout({
       },
       {
         "@type": "ItemList",
-        "@id": "https://theaurorahills.com/#plotslist",
+        "@id": "https://www.theaurorahills.com/#plotslist",
         "name": "Available Residential Plots in Dharwad – The Aurora Hills",
         "description": "HDUDA & NA-KJP approved residential villa plot sizes available in Dharwad, Karnataka.",
         "numberOfItems": 3,
@@ -442,27 +442,27 @@ export default function RootLayout({
             "position": 1,
             "name": "30x40 Residential Plot (1,200 sq.ft) – Dharwad",
             "description": "HDUDA & NA-KJP approved 30x40 villa site in Dharwad under Pre-Launch Advantage. Bank loans available.",
-            "url": "https://theaurorahills.com/#layout"
+            "url": "https://www.theaurorahills.com/#layout"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "30x50 Residential Plot (1,500 sq.ft) – Dharwad",
             "description": "HDUDA & NA-KJP approved 30x50 villa site in Dharwad under Pre-Launch Advantage. SBI/HDFC loans available.",
-            "url": "https://theaurorahills.com/#layout"
+            "url": "https://www.theaurorahills.com/#layout"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "40x60 Residential Plot (2,400 sq.ft) – Dharwad",
             "description": "HDUDA & NA-KJP approved 40x60 luxury villa plot in Dharwad under Pre-Launch Advantage. Festive scheme: 50g Gold gift.",
-            "url": "https://theaurorahills.com/#layout"
+            "url": "https://www.theaurorahills.com/#layout"
           }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://theaurorahills.com/#faq",
+        "@id": "https://www.theaurorahills.com/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -580,7 +580,7 @@ export default function RootLayout({
       },
       {
         "@type": "HowTo",
-        "@id": "https://theaurorahills.com/#howto-buy-plot",
+        "@id": "https://www.theaurorahills.com/#howto-buy-plot",
         "name": "How to Buy and Register a Residential Plot in Dharwad",
         "description": "Step-by-step legal and registration guide to purchase an HDUDA approved residential villa plot in Dharwad, Karnataka.",
         "totalTime": "P7D",
@@ -590,89 +590,89 @@ export default function RootLayout({
             "position": 1,
             "name": "Book a Free Site Inspection",
             "text": "Visit the site at Sunset Viewpoint, Kelgeri, Dharwad to inspect 40ft & 30ft asphalt roads, water reservoir, and demarcated stone markers. Call +91 89701 98701 for free pickup.",
-            "url": "https://theaurorahills.com/plots-in-dharwad"
+            "url": "https://www.theaurorahills.com/plots-in-dharwad"
           },
           {
             "@type": "HowToStep",
             "position": 2,
             "name": "Select Plot Size & Review Approvals",
             "text": "Choose from 30x40, 30x50, or 40x60 plot configurations and review certified HDUDA sanction orders and NA-KJP approval documents.",
-            "url": "https://theaurorahills.com/#layout"
+            "url": "https://www.theaurorahills.com/#layout"
           },
           {
             "@type": "HowToStep",
             "position": 3,
             "name": "Reserve Plot with Token Booking",
             "text": "Lock in your plot number, pre-launch price, and festive gold or silver scheme benefit with an initial booking token.",
-            "url": "https://theaurorahills.com/plots-in-dharwad"
+            "url": "https://www.theaurorahills.com/plots-in-dharwad"
           },
           {
             "@type": "HowToStep",
             "position": 4,
             "name": "Avail Pre-Approved Bank Loan",
             "text": "Submit standard KYC documents to partner banks (SBI, HDFC, ICICI, or IDFC First) for fast loan sanction up to 80% LTV.",
-            "url": "https://theaurorahills.com/#faq"
+            "url": "https://www.theaurorahills.com/#faq"
           },
           {
             "@type": "HowToStep",
             "position": 5,
             "name": "Execute Registered Sale Deed",
             "text": "Complete registration at the Dharwad Sub-Registrar Office for immediate clear-title legal ownership and possession.",
-            "url": "https://theaurorahills.com/plots-in-dharwad"
+            "url": "https://www.theaurorahills.com/plots-in-dharwad"
           }
         ]
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://theaurorahills.com/#breadcrumbs",
+        "@id": "https://www.theaurorahills.com/#breadcrumbs",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://theaurorahills.com"
+            "item": "https://www.theaurorahills.com"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Plots in Dharwad & Hubli",
-            "item": "https://theaurorahills.com/#layout"
+            "item": "https://www.theaurorahills.com/#layout"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Amenities & Master Plan",
-            "item": "https://theaurorahills.com/#amenities"
+            "item": "https://www.theaurorahills.com/#amenities"
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": "Location & Connectivity",
-            "item": "https://theaurorahills.com/#location"
+            "item": "https://www.theaurorahills.com/#location"
           },
           {
             "@type": "ListItem",
             "position": 5,
             "name": "Real Estate FAQ",
-            "item": "https://theaurorahills.com/#faq"
+            "item": "https://www.theaurorahills.com/#faq"
           }
         ]
       },
       {
         "@type": "WebSite",
-        "@id": "https://theaurorahills.com/#website",
-        "url": "https://theaurorahills.com",
+        "@id": "https://www.theaurorahills.com/#website",
+        "url": "https://www.theaurorahills.com",
         "name": "The Aurora Hills - Plots in Dharwad & Hubli",
         "description": "Premier HDUDA approved residential plots and real estate township in Dharwad and Hubli.",
         "inLanguage": "en-IN"
       },
       {
         "@type": "WebPage",
-        "@id": "https://theaurorahills.com/#webpage",
-        "url": "https://theaurorahills.com",
+        "@id": "https://www.theaurorahills.com/#webpage",
+        "url": "https://www.theaurorahills.com",
         "name": "Plots in Dharwad | Residential Villa Plots Hubli Dharwad | The Aurora Hills",
         "isPartOf": {
-          "@id": "https://theaurorahills.com/#website"
+          "@id": "https://www.theaurorahills.com/#website"
         },
         "speakable": {
           "@type": "SpeakableSpecification",

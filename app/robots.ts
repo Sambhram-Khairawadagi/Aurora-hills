@@ -26,9 +26,9 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: [
-      'https://theaurorahills.com/sitemap.xml',
+      'https://www.theaurorahills.com/sitemap.xml',
     ],
-    host: 'https://theaurorahills.com',
+    host: 'https://www.theaurorahills.com',
   };
 }
 

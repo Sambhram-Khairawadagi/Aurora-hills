@@ -6,17 +6,17 @@ export const metadata: Metadata = {
   description:
     "Buy HDUDA & NA-KJP approved residential plots in Dharwad with pre-approved bank loans. 30x40, 30x50 & 40x60 sites near Karnatak University, NH-4 Highway & Sunset Viewpoint. SBI/HDFC bank loans pre-approved. Call +91 89701 98701.",
   alternates: {
-    canonical: "https://theaurorahills.com/plots-in-dharwad",
+    canonical: "https://www.theaurorahills.com/plots-in-dharwad",
   },
   openGraph: {
     title: "Plots in Dharwad for Sale | HDUDA Approved | The Aurora Hills",
     description:
       "Best residential plots in Dharwad – HDUDA & NA-KJP approved. 30x40, 30x50, 40x60 villa sites near NH-4. Pre-Launch Phase.",
-    url: "https://theaurorahills.com/plots-in-dharwad",
+    url: "https://www.theaurorahills.com/plots-in-dharwad",
     type: "website",
     images: [
       {
-        url: "https://theaurorahills.com/images/aurora-hills-real-site-daylight.jpg",
+        url: "https://www.theaurorahills.com/images/aurora-hills-real-site-daylight.jpg",
         width: 1200,
         height: 630,
         alt: "The Aurora Hills - Villa Plots in Dharwad",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Plots in Dharwad for Sale | The Aurora Hills",
     description: "HDUDA & NA-KJP approved residential villa plots in Dharwad under pre-launch advantage.",
-    images: ["https://theaurorahills.com/images/aurora-hills-real-site-daylight.jpg"],
+    images: ["https://www.theaurorahills.com/images/aurora-hills-real-site-daylight.jpg"],
   },
 };
 
