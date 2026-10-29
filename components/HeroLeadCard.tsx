@@ -130,17 +130,17 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
       {!submitted ? (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <h3 className="font-serif text-2xl font-bold text-forest-950 tracking-tight">
+            <h3 className="text-xl sm:text-2xl font-extrabold font-sans text-forest-950 tracking-tight">
               Get Layout Map &amp; Pricing
             </h3>
-            <p className="text-xs sm:text-sm text-gray-600 font-normal mt-1 leading-relaxed">
-              Official HDUDA sanctioned layout &amp; pre-launch price sheet sent directly to WhatsApp.
+            <p className="text-xs sm:text-sm text-forest-900/90 font-semibold mt-1 leading-relaxed">
+              Official HDUDA layout map &amp; pre-launch rate sheet sent directly to WhatsApp.
             </p>
           </div>
 
           {/* Plot Size Selector */}
           <div className="pt-1">
-            <label className="text-xs font-semibold uppercase tracking-wider text-gray-700 block mb-2">
+            <label className="text-xs font-extrabold uppercase tracking-wider text-forest-950 block mb-2">
               Select Preferred Plot Dimension:
             </label>
             <div className="grid grid-cols-4 gap-2">
@@ -151,15 +151,15 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
                   onClick={() => setSelectedPlot(opt.label)}
                   className={`py-2.5 px-1.5 rounded-xl text-center border transition-all flex flex-col items-center justify-center min-h-[50px] ${
                     selectedPlot === opt.label
-                      ? "bg-emerald-800 text-white border-emerald-800 shadow-sm font-semibold"
-                      : "bg-gray-50 hover:bg-emerald-50/50 text-gray-800 border-gray-200 font-medium"
+                      ? "bg-emerald-800 text-white border-emerald-900 shadow-md font-extrabold"
+                      : "bg-emerald-50/50 hover:bg-emerald-100/60 text-forest-950 border-emerald-200/90 font-bold"
                   }`}
                 >
                   <span className="block text-xs sm:text-sm leading-tight whitespace-nowrap">{opt.label}</span>
                   {opt.sub ? (
                     <span
                       className={`block text-[10px] sm:text-xs mt-0.5 leading-tight ${
-                        selectedPlot === opt.label ? "text-emerald-100" : "text-gray-500 font-normal"
+                        selectedPlot === opt.label ? "text-emerald-100 font-bold" : "text-forest-900/80 font-bold"
                       }`}
                     >
                       {opt.sub}
@@ -173,8 +173,8 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
           {/* Inputs */}
           <div className="space-y-3 pt-1">
             <div>
-              <label className="text-xs font-semibold text-gray-700 block mb-1">
-                Your Full Name <span className="text-rose-600">*</span>
+              <label className="text-xs font-extrabold text-forest-950 block mb-1">
+                Your Full Name <span className="text-rose-600 font-black">*</span>
               </label>
               <input
                 type="text"
@@ -182,13 +182,13 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Dr. Patil / Ramesh"
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 text-sm text-forest-950 bg-white shadow-xs outline-none transition-all placeholder:text-gray-400 font-normal"
+                className="w-full px-4 py-3 rounded-xl border-2 border-emerald-300 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-500/30 text-sm sm:text-base text-forest-950 bg-white shadow-xs outline-none transition-all placeholder:text-gray-400 font-bold"
               />
             </div>
 
             <div>
-              <label className="text-xs font-semibold text-gray-700 block mb-1">
-                WhatsApp Mobile Number <span className="text-rose-600">*</span>
+              <label className="text-xs font-extrabold text-forest-950 block mb-1">
+                WhatsApp Mobile Number <span className="text-rose-600 font-black">*</span>
               </label>
               <div className="relative flex items-center">
                 <span className="absolute left-3.5 text-xs sm:text-sm font-semibold text-gray-600 border-r border-gray-200 pr-2">
@@ -201,7 +201,7 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
                   value={phone}
                   onChange={(e) => setPhone(e.target.value.replace(/[^0-9]/g, ""))}
                   placeholder="Enter 10-digit number"
-                  className="w-full pl-16 pr-4 py-3 rounded-xl border border-gray-300 focus:border-emerald-600 focus:ring-2 focus:ring-emerald-500/20 text-sm font-medium text-forest-950 bg-white shadow-xs outline-none transition-all placeholder:text-gray-400 placeholder:font-normal"
+                  className="w-full pl-16 pr-4 py-3 rounded-xl border-2 border-emerald-300 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-500/30 text-sm sm:text-base font-extrabold text-forest-950 bg-white shadow-xs outline-none transition-all placeholder:text-gray-400 placeholder:font-normal"
                 />
               </div>
             </div>

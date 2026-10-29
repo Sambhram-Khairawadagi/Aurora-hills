@@ -41,8 +41,8 @@ export const Amenities: React.FC<AmenitiesProps> = ({ onOpenEnquiry }) => {
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-forest-950 tracking-tight">
             Lifestyle <span className="green-text-gradient">Amenities</span>
           </h2>
-          <p className="text-base text-gray-600 max-w-xl mx-auto font-normal leading-relaxed">
-            Discover a thoughtfully curated collection of facilities designed to elevate your everyday living.
+          <p className="text-sm sm:text-base font-bold text-forest-900/90 max-w-xl mx-auto leading-relaxed">
+            Discover a thoughtfully curated collection of 20+ facilities designed to elevate your everyday living.
           </p>
         </div>
 
@@ -69,14 +69,14 @@ export const Amenities: React.FC<AmenitiesProps> = ({ onOpenEnquiry }) => {
             <div
               key={amenity.id}
               onClick={() => onOpenEnquiry("Amenity List", amenity.name)}
-              className="group flex flex-col sm:flex-row sm:items-center gap-4 p-4 sm:p-5 rounded-2xl bg-white border border-transparent hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-900/5 transition-all duration-300 cursor-pointer"
+              className="group flex flex-col sm:flex-row sm:items-start gap-4 p-4 sm:p-5 rounded-2xl bg-white border-2 border-emerald-100/90 hover:border-emerald-500 hover:shadow-lg transition-all duration-300 cursor-pointer shadow-xs"
             >
-              <div className="w-12 h-12 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-500 shadow-inner">
-                 <CheckCircle2 className="w-6 h-6" />
+              <div className="w-10 h-10 rounded-xl bg-emerald-100 border border-emerald-300 text-emerald-800 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-700 group-hover:text-white transition-all duration-300 shadow-xs mt-0.5">
+                 <CheckCircle2 className="w-5 h-5" />
               </div>
               <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-2 mb-1">
-                  <h3 className="font-bold text-forest-950 group-hover:text-emerald-700 transition-colors">
+                  <h3 className="text-base sm:text-lg font-extrabold text-forest-950 font-sans group-hover:text-emerald-700 transition-colors">
                     {amenity.name}
                   </h3>
                   {amenity.badge && (
@@ -85,7 +85,7 @@ export const Amenities: React.FC<AmenitiesProps> = ({ onOpenEnquiry }) => {
                     </span>
                   )}
                 </div>
-                <p className="text-sm text-charcoal-700 leading-relaxed group-hover:text-charcoal-900 transition-colors font-medium">
+                <p className="text-xs sm:text-sm font-semibold text-forest-950/80 leading-relaxed mt-1 font-sans">
                   {amenity.description}
                 </p>
               </div>

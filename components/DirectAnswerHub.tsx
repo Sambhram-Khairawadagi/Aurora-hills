@@ -167,14 +167,22 @@ export const DirectAnswerHub: React.FC<DirectAnswerHubProps> = ({
 
               {/* Bulleted Key Takeaways */}
               <div className="space-y-3 mb-8">
-                <p className="text-xs font-black uppercase tracking-wider text-charcoal-700">
-                  Key Specifications &amp; Highlights:
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-700" />
+                  Key Specifications &amp; Highlights
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                   {activeAnswer.bulletPoints.map((bullet, i) => (
-                    <div key={i} className="flex items-start gap-2 text-sm text-charcoal-800 font-medium">
-                      <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                      <span>{bullet}</span>
+                    <div
+                      key={i}
+                      className="p-3.5 sm:p-4 rounded-xl bg-white border-2 border-emerald-100 hover:border-emerald-400 shadow-xs hover:shadow-sm transition-all flex items-center gap-3"
+                    >
+                      <div className="w-7 h-7 rounded-lg bg-emerald-700 text-white flex items-center justify-center flex-shrink-0 shadow-xs font-bold text-xs">
+                        ✓
+                      </div>
+                      <span className="text-sm sm:text-base font-bold text-forest-950 font-sans leading-snug">
+                        {bullet}
+                      </span>
                     </div>
                   ))}
                 </div>

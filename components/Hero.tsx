@@ -104,17 +104,17 @@ export const Hero: React.FC<HeroProps> = ({
 
             {/* Single Cohesive Glass Card for Value & Pre-Launch Advantage */}
             <div className="p-5 sm:p-6 rounded-3xl bg-white/90 backdrop-blur-md border border-emerald-200/70 shadow-md space-y-4 max-w-2xl">
-              <p className="text-base sm:text-lg text-forest-950 leading-relaxed font-normal">
-                Discover Dharwad’s most exclusive residential plotted sanctuary at{" "}
+              <p className="text-base sm:text-lg text-forest-950 leading-relaxed font-medium">
+                Discover Dharwad’s most exclusive residential sanctuary at{" "}
                 <a
                   href="https://share.google/lhDyTbBa3vWnMhOFK"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-emerald-900 underline hover:text-emerald-700 transition-colors"
+                  className="font-bold text-emerald-900 underline decoration-2 hover:text-emerald-700 transition-colors"
                 >
                   Sunset Viewpoint, Kelgeri
                 </a>
-                . Wide 40ft blacktop avenues, underground utilities, lush parks, and instant access to schools and NH-4.
+                . Featuring <strong className="font-bold text-forest-950">40ft blacktop avenues</strong>, <strong className="font-bold text-forest-950">underground cabling</strong>, <strong className="font-bold text-forest-950">20+ lifestyle amenities</strong>, and instant access to schools, universities &amp; NH-4.
               </p>
 
               {/* Pre-Launch Pricing Advantage Strip */}
@@ -123,12 +123,12 @@ export const Hero: React.FC<HeroProps> = ({
                   <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-800 block">
                     Limited Pre-Launch Advantage
                   </span>
-                  <span className="text-lg sm:text-xl font-serif font-bold text-forest-950">
-                    Special Plot Rates on Request
+                  <span className="text-lg sm:text-xl font-bold font-sans text-forest-950">
+                    Special Pre-Launch Rates on Request
                   </span>
-                  <p className="text-xs text-amber-900 font-medium mt-0.5 flex items-center gap-1">
-                    <Sparkles className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" />
-                    <span>Festive Gift: Assured 50g Gold or up to 1.5kg Silver</span>
+                  <p className="text-xs sm:text-sm text-amber-950 font-bold mt-1 flex items-center gap-1.5">
+                    <Sparkles className="w-4 h-4 text-amber-600 flex-shrink-0 animate-pulse" />
+                    <span>Festive Blessing: Assured 50g Gold or up to 1.5kg Silver</span>
                   </p>
                 </div>
 
@@ -170,18 +170,16 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             {/* Dharwad & Hubli Transit Note */}
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs sm:text-sm text-gray-600 pt-1">
-              <span className="inline-flex items-center gap-1.5 font-medium text-forest-950">
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 text-xs sm:text-sm text-forest-950 pt-2 font-bold">
+              <span className="inline-flex items-center gap-1.5 text-forest-950 bg-white/90 px-3 py-1 rounded-full border border-gray-200 shadow-2xs">
                 <MapPin className="w-3.5 h-3.5 text-emerald-700 flex-shrink-0" />
                 5 Mins to Jubilee Circle
               </span>
-              <span className="text-gray-300 hidden sm:inline">•</span>
-              <span className="inline-flex items-center gap-1.5 font-medium text-forest-950">
+              <span className="inline-flex items-center gap-1.5 text-forest-950 bg-white/90 px-3 py-1 rounded-full border border-gray-200 shadow-2xs">
                 <MapPin className="w-3.5 h-3.5 text-emerald-700 flex-shrink-0" />
                 20 Mins from Hubli
               </span>
-              <span className="text-gray-300 hidden sm:inline">•</span>
-              <span className="inline-flex items-center gap-1.5 font-semibold text-emerald-900">
+              <span className="inline-flex items-center gap-1.5 text-emerald-950 bg-emerald-100/90 px-3 py-1 rounded-full border border-emerald-300 shadow-2xs">
                 <Car className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" />
                 Free Doorstep Cab for Site Visits
               </span>

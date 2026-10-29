@@ -178,9 +178,9 @@ export const LocalSeoFaq: React.FC<LocalSeoFaqProps> = ({
             Buyer's Guide & Real Estate Knowledge
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
-            Plots & Real Estate in <span className="vibrant-text-gradient">Dharwad & Hubli</span>
+            Plots & Real Estate in <span className="vibrant-text-gradient">Dharwad &amp; Hubli</span>
           </h2>
-          <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
+          <p className="text-forest-900/90 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-semibold">
             Everything you need to know about purchasing legally verified, HDUDA-approved residential plots and securing high-growth land investments in North Karnataka.
           </p>
         </div>
@@ -312,7 +312,7 @@ export const LocalSeoFaq: React.FC<LocalSeoFaqProps> = ({
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-charcoal-700 leading-relaxed font-normal border-t border-emerald-100/60 animate-fade-in">
+                    <div className="px-5 sm:px-6 pb-6 pt-1 text-sm sm:text-base text-forest-950/90 leading-relaxed font-medium font-sans border-t border-emerald-100/80 animate-fade-in">
                       <p>{faq.answer}</p>
                     </div>
                   )}
