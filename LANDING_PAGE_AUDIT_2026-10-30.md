@@ -34,6 +34,9 @@ The user authorised all recommendations from the live mobile/desktop audit, upda
 - Screenshots retained locally in `scratch/audit-2026-10-30/` (excluded from Git).
 
 ## Deployment and follow-up
+
+**Deployment verified:** implementation commit `254c695fb4aaca3ea6436c39318b260c27a3e846` was pushed to `origin/main`; Vercel reported success on October 30, 2026. The live `https://www.theaurorahills.com/` returned HTTP 200 with the new media hub and shared FAQ. Live 390px browser check confirmed 16px labelled inputs, no page-width overflow and zero video elements before interaction. No real sales enquiry was submitted.
+
 Push to `origin/main` triggers the configured Vercel deployment. A Git push is not proof of a finished deployment: inspect the live page after the build becomes available. No production leads are submitted automatically during verification.
 
 The existing Search Console HTML whitespace edit is left uncommitted. Preview-generated database changes are restored, not shipped. Production mailbox/CRM receipt and actual conversion quality must be evaluated from authorised real enquiries. Optional secondary Ads conversion setup requires a real label supplied/configured in Google Ads and Vercel; no guessed label is used.

@@ -2,6 +2,8 @@
 
 ## Current baseline — October 30, 2026: Google Ads landing-page audit implemented
 
+**Deployment verified:** implementation commit `254c695fb4aaca3ea6436c39318b260c27a3e846` was pushed to `origin/main`; Vercel reported success on October 30, 2026. The live `https://www.theaurorahills.com/` returned HTTP 200 with the new media hub and shared FAQ. Live 390px browser check confirmed 16px labelled inputs, no page-width overflow and zero video elements before interaction. No real sales enquiry was submitted.
+
 This entry supersedes conflicting older UI and conversion instructions below. The user requested the full audit recommendations, project-memory updates, and a GitHub push.
 
 - **Objective:** qualified plot enquiries and confirmed site visits from Dharwad and Hubli; mobile comes first.
