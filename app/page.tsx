@@ -2,13 +2,13 @@
 
 import React, { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
-import Link from "next/link";
+
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { TrustBadges } from "@/components/TrustBadges";
 import { FestiveScheme } from "@/components/FestiveScheme";
-import { ProjectIntro } from "@/components/ProjectIntro";
-import { MainShowcaseVideo } from "@/components/MainShowcaseVideo";
+
+
 import { DevelopmentVideo } from "@/components/DevelopmentVideo";
 import { Amenities } from "@/components/Amenities";
 import { SanctionedLayout } from "@/components/SanctionedLayout";
@@ -75,8 +75,7 @@ export default function HomePage() {
   const [isQROpen, setIsQROpen] = useState(false);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
 
-  // Dynamic settings from backend (default starting price is ₹42 Lakhs)
-  const [startingPrice, setStartingPrice] = useState("₹42 Lakhs");
+  // Ad-specific header visibility
   const [hasAdsTopBar, setHasAdsTopBar] = useState(false);
 
   useEffect(() => {
@@ -94,16 +93,6 @@ export default function HomePage() {
       })
     }).catch(() => {});
 
-    // Fetch site settings
-    fetch("/api/admin/settings")
-      .then((res) => res.json())
-      .then((data) => {
-        const price = data?.settings?.starting_price || data?.starting_price;
-        if (price) {
-          setStartingPrice(price);
-        }
-      })
-      .catch(() => {});
   }, []);
 
   const handleOpenEnquiry = (source?: string, requirement?: string) => {
@@ -155,63 +144,26 @@ export default function HomePage() {
         {/* Real Estate Hero Section with Sunset Layout & Family in Garden */}
         <Hero
           onOpenEnquiry={handleOpenEnquiry}
-          onOpenVideo={handleOpenVideo}
-          onOpenBrochure={handleOpenBrochure}
-          startingPrice={startingPrice}
-        />
-
-        {/* 4 Trust Approvals Strip */}
-        <TrustBadges />
-
-        {/* Photographic Media & Site Gallery — Directly below NA-KJP Approved section */}
-        <Gallery
-          onOpenVideo={handleOpenVideo}
-          onOpenEnquiry={handleOpenEnquiry}
-        />
-
-        {/* Dedicated Dasara & Deepawali Gold & Silver Festive Scheme Section */}
-        <FestiveScheme onOpenEnquiry={handleOpenEnquiry} />
-
-        {/* Project Introduction */}
-        <ProjectIntro
-          onOpenEnquiry={handleOpenEnquiry}
-          onOpenLayout={handleScrollToLayout}
-        />
-
-        {/* Standalone Main Video Showcase */}
-        <MainShowcaseVideo />
-
-        {/* Official Drone Video Tour & Actual Site Footage */}
-        <DevelopmentVideo
-          onOpenEnquiry={handleOpenEnquiry}
-        />
-
-        {/* Photo-Rich Lifestyle Amenities */}
-        <Amenities onOpenEnquiry={handleOpenEnquiry} />
-
-        {/* Sanctioned Layout Blueprint & Real Construction Progress */}
-        <SanctionedLayout
-          onOpenEnquiry={handleOpenEnquiry}
-          onOpenBrochure={handleOpenBrochure}
-        />
-
-        {/* Strategic Location & Landmark Proximity Hub */}
-        <LocationConnectivity
-          onOpenEnquiry={handleOpenEnquiry}
-          onOpenQR={handleOpenQR}
-        />
-
-
-
-        {/* Answer Engine Optimization (AEO) Direct Knowledge Hub */}
-        <DirectAnswerHub
-          onOpenEnquiry={handleOpenEnquiry}
           onOpenSiteVisit={handleOpenSiteVisit}
         />
 
-
-
-        {/* Official Marketing Partners */}
+        <TrustBadges />
+        <SanctionedLayout onOpenEnquiry={handleOpenEnquiry} onOpenBrochure={handleOpenBrochure} />
+        <LocationConnectivity onOpenEnquiry={handleOpenEnquiry} onOpenQR={handleOpenQR} />
+        <Gallery onOpenVideo={handleOpenVideo} onOpenEnquiry={handleOpenEnquiry} onOpenSiteVisit={handleOpenSiteVisit} />
+        <DevelopmentVideo onOpenSiteVisit={handleOpenSiteVisit} />
+        <Amenities onOpenEnquiry={handleOpenEnquiry} />
+        <FestiveScheme onOpenEnquiry={handleOpenEnquiry} />
+        <DirectAnswerHub onOpenEnquiry={handleOpenEnquiry} onOpenSiteVisit={handleOpenSiteVisit} />
+        <section id="about" className="py-12 sm:py-16 px-4 bg-emerald-950 text-white text-center">
+          <p className="text-sm text-emerald-100 mb-3">Sai Smruti Developers · The Aurora Hills</p>
+          <h2 className="font-serif text-3xl sm:text-4xl font-semibold">See your future address in person</h2>
+          <p className="max-w-xl mx-auto mt-4 text-base text-emerald-50 leading-relaxed">Walk the site, review the approved layout and discuss available plots with our team. Complimentary pickup across Dharwad and Hubli.</p>
+          <div className="flex flex-wrap justify-center gap-3 mt-6">
+            <button className="primary-button" onClick={handleOpenSiteVisit}>Book a Free Site Visit</button>
+            <button className="secondary-button" onClick={() => handleOpenEnquiry("Final Price Sheet CTA")}>Get Layout &amp; Price Sheet</button>
+          </div>
+        </section>
         <Partners />
       </main>
 

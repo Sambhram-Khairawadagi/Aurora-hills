@@ -1,11 +1,12 @@
 "use client";
 
+import { Modal } from "@/components/Modal";
 import React, { useState, useEffect } from "react";
 import { X, Send, CheckCircle2, ShieldCheck, Sparkles, Phone, Mail, User } from "lucide-react";
 import confetti from "canvas-confetti";
 
 import { getStoredUtm } from "@/lib/utm";
-import { trackLeadSubmit } from "@/lib/gtag";
+import { trackLeadSubmit, trackWhatsAppClick } from "@/lib/gtag";
 
 interface EnquiryModalProps {
   isOpen: boolean;
@@ -24,7 +25,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
     name: "",
     phone: "",
     email: "",
-    requirement: defaultRequirement || "40x60 Plot (50g Gold Offer)",
+    requirement: defaultRequirement || "Not decided yet",
     purpose: "Build a Home",
     preferred_contact: "Phone",
     message: "",
@@ -35,17 +36,17 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
   const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
-    if (defaultRequirement) {
-      setFormData((prev) => ({ ...prev, requirement: defaultRequirement }));
-    }
+    setFormData((prev) => ({ ...prev, requirement: defaultRequirement || "Not decided yet" }));
   }, [defaultRequirement]);
+
+  useEffect(() => { if (!isOpen) { setSubmitted(false); } }, [isOpen]);
 
   if (!isOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const cleanPhone = formData.phone.replace(/[^0-9]/g, "");
-    if (cleanPhone.length < 10) {
+    if (!/^[6-9]\d{9}$/.test(cleanPhone)) {
       setErrorMsg("Please provide a valid 10-digit mobile number.");
       return;
     }
@@ -54,7 +55,8 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
     setErrorMsg("");
 
     const trimmedName = formData.name.trim();
-    if (!trimmedName) {
+    if (trimmedName.length < 2) {
+      setLoading(false);
       setErrorMsg("Please enter your full name.");
       return;
     }
@@ -64,7 +66,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
     try {
       const utmParams = getStoredUtm();
       const finalSource = utmParams.utm_source
-        ? `Google Ads (${utmParams.utm_campaign || source})`
+        ? `${utmParams.utm_source} (${utmParams.utm_campaign || source})`
         : source;
 
       const res = await fetch("/api/leads", {
@@ -95,7 +97,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
+    <Modal open={isOpen} onClose={onClose}>
       <div className="bg-[#F7F9F6] border border-white/90 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-forest-950 shadow-2xl relative neu-card max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
@@ -110,33 +112,21 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             <Sparkles className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="text-xl font-black font-sans text-forest-950">
-              Request Exclusive Details
+            <h3 className="text-xl font-semibold font-sans text-forest-950">
+              Get Layout & Price Sheet
             </h3>
             <span className="text-xs sm:text-sm text-charcoal-700 font-medium">The Aurora Hills • Dharwad</span>
           </div>
         </div>
 
-        {/* Festive Dasara & Deepawali Scheme Alert */}
-        <div className="p-3 rounded-2xl bg-gradient-to-r from-[#450A14] via-[#7B1123] to-[#450A14] text-white mb-4 border border-amber-400/60 shadow-md flex items-center justify-between gap-2">
-          <div className="flex items-center gap-2.5">
-            <span className="p-1.5 rounded-full bg-amber-400 text-red-950 text-xs font-black">🪔</span>
-            <div className="text-xs leading-snug">
-              <span className="font-black text-amber-300 block">Dasara &amp; Deepawali Festive Special</span>
-              <span className="text-white/90 font-medium">Bookings qualify for 50g Gold or up to 1.5kg Silver!</span>
-            </div>
-          </div>
-          <span className="text-xs uppercase tracking-wider font-black bg-amber-400 text-red-950 px-2.5 py-0.5 rounded-full flex-shrink-0">
-            Active
-          </span>
-        </div>
+        <p className="text-sm text-gray-600 mb-5">Choose a plot size and our team will share current availability and pricing.</p>
 
         {submitted ? (
           <div className="text-center py-8 space-y-4 animate-fade-in">
             <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 border border-emerald-300 flex items-center justify-center mx-auto shadow-md">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h4 className="text-xl font-black font-sans text-forest-950">
+            <h4 className="text-xl font-semibold font-sans text-forest-950">
               Thank You{formData.name.trim() ? `, ${formData.name.trim()}` : ""}!
             </h4>
             <p className="text-sm text-charcoal-700 max-w-sm mx-auto font-medium">
@@ -159,11 +149,11 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
               <div className="relative">
                 <User className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal-400 pointer-events-none" />
                 <input
-                  type="text"
+                  type="text" autoComplete="name" minLength={2}
                   required placeholder="e.g. Dr. Patil / Ramesh"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full pl-9 pr-3.5 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm font-medium"
+                  className="w-full pl-9 pr-3.5 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-base font-medium"
                 />
               </div>
             </div>
@@ -176,12 +166,12 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
               <div className="relative">
                 <Phone className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-charcoal-400 pointer-events-none" />
                 <input
-                  type="tel"
+                  type="tel" autoComplete="tel-national" inputMode="numeric" maxLength={10} pattern="[6-9][0-9]{9}"
                   required
                   placeholder="10-digit mobile number"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full pl-9 pr-3.5 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm font-medium"
+                  className="w-full pl-9 pr-3.5 py-3 neu-input text-forest-950 placeholder-charcoal-400 text-base font-medium"
                 />
               </div>
             </div>
@@ -194,18 +184,19 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
               <select
                 value={formData.requirement}
                 onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
-                className="w-full px-3.5 py-3 neu-input text-forest-950 text-base sm:text-sm bg-[#F0F4ED] font-semibold"
+                className="w-full px-3.5 py-3 neu-input text-forest-950 text-base bg-[#F0F4ED] font-semibold"
               >
-                <option value="40x60 Plot (50g Gold Offer)">40 × 60 ft (2,400 sq.ft) — 🎁 Win 50g Gold</option>
-                <option value="30x50 Plot (1.5kg Silver Offer)">30 × 50 ft (1,500 sq.ft) — 🎁 Win 1.5kg Silver</option>
-                <option value="30x40 Plot (1kg Silver Offer)">30 × 40 ft (1,200 sq.ft) — 🎁 Win 1kg Silver</option>
+                {formData.requirement && !["40x60 Plot (50g Gold Offer)", "30x50 Plot (1.5kg Silver Offer)", "30x40 Plot (1kg Silver Offer)", "Corner / Odd Size Plot", "Not decided yet"].includes(formData.requirement) && <option value={formData.requirement}>{formData.requirement}</option>}
+                <option value="40x60 Plot (50g Gold Offer)">40 × 60 · 2,400 sq.ft</option>
+                <option value="30x50 Plot (1.5kg Silver Offer)">30 × 50 · 1,500 sq.ft</option>
+                <option value="30x40 Plot (1kg Silver Offer)">30 × 40 · 1,200 sq.ft</option>
                 <option value="Corner / Odd Size Plot">Corner / Odd Size Plot</option>
-                <option value="Not decided yet">Not decided yet — Show me all options</option>
+                <option value="Not decided yet">Not decided yet</option>
               </select>
             </div>
 
             {errorMsg && (
-              <div className="p-2.5 bg-red-100 border border-red-300 rounded-xl text-red-700 text-xs font-semibold">
+              <div role="alert" className="p-2.5 bg-red-100 border border-red-300 rounded-xl text-red-700 text-xs font-semibold">
                 {errorMsg}
               </div>
             )}
@@ -213,7 +204,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 hover:from-emerald-500 hover:to-green-600 text-white font-black text-sm uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-transform hover:scale-[1.01] active:scale-[0.99]"
+              className="w-full py-4 rounded-full bg-emerald-700 hover:from-emerald-500 hover:to-green-600 text-white font-semibold text-sm uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-transform hover:scale-[1.01] active:scale-[0.99]"
             >
               <Send className="w-4 h-4" />
               <span>{loading ? "Submitting..." : "Get Pricing & Layout Plan"}</span>
@@ -222,20 +213,21 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
             {/* WhatsApp Alternative CTA */}
             <a
               href={`https://wa.me/918970198701?text=${encodeURIComponent("Hi, I am interested in The Aurora Hills plots in Dharwad. Please share pricing and layout plan details.")}`}
+              onClick={trackWhatsAppClick}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3 rounded-full border-2 border-[#25D366] text-[#128C5E] font-black text-sm uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#25D366] hover:text-white transition-all duration-200"
+              className="w-full py-3 rounded-full border-2 border-[#25D366] text-[#128C5E] font-semibold text-sm uppercase tracking-wider flex items-center justify-center gap-2 hover:bg-[#25D366] hover:text-white transition-all duration-200"
             >
               <span>💬</span>
               <span>WhatsApp Instead</span>
             </a>
 
             <p className="text-center text-xs text-charcoal-600 font-medium">
-              🔒 Your number is safe. Our consultant calls within 15 minutes.
+              🔒 Your number is safe. Our team will contact you about this enquiry.
             </p>
           </form>
         )}
       </div>
-    </div>
+    </Modal>
   );
 };

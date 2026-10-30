@@ -1,5 +1,6 @@
 "use client";
 
+import { Modal } from "@/components/Modal";
 import React from "react";
 import Image from "next/image";
 import { X, QrCode, Sparkles, Navigation, Download } from "lucide-react";
@@ -13,7 +14,7 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({ isOpen, onClose }) => 
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/70 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
+    <Modal open={isOpen} onClose={onClose}>
       <div className="bg-gradient-to-b from-white to-emerald-50/50 border-2 border-emerald-300/60 rounded-3xl p-6 sm:p-8 max-w-sm w-full text-forest-950 shadow-2xl shadow-emerald-950/20 relative text-center max-h-[90vh] overflow-y-auto">
         {/* Close Button */}
         <button
@@ -81,6 +82,6 @@ export const QRCodeModal: React.FC<QRCodeModalProps> = ({ isOpen, onClose }) => 
           </a>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 };

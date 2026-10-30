@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Phone, CheckCircle2, ShieldCheck, Sparkles, Send, Download } from "lucide-react";
 import confetti from "canvas-confetti";
 import { getStoredUtm } from "@/lib/utm";
-import { trackLeadSubmit, trackPhoneClick } from "@/lib/gtag";
+import { trackLeadSubmit, trackPhoneClick, trackWhatsAppClick } from "@/lib/gtag";
 import { WHATSAPP_NUMBER, CONTACT_NUMBERS } from "@/lib/projectData";
 
 interface HeroLeadCardProps {
@@ -34,14 +34,14 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
     e.preventDefault();
 
     const trimmedName = name.trim();
-    if (!trimmedName) {
+    if (trimmedName.length < 2) {
       setErrorMsg("Please enter your full name.");
       return;
     }
 
     // Clean phone number
     const cleanPhone = phone.replace(/[^0-9]/g, "");
-    if (cleanPhone.length < 10) {
+    if (!/^[6-9]\d{9}$/.test(cleanPhone)) {
       setErrorMsg("Please enter a valid 10-digit WhatsApp number.");
       return;
     }
@@ -52,7 +52,7 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
     try {
       const utmParams = getStoredUtm();
       const finalSource = utmParams.utm_source
-        ? `Google Ads (${utmParams.utm_campaign || sourceTag})`
+        ? `${utmParams.utm_source} (${utmParams.utm_campaign || sourceTag})`
         : sourceTag;
 
       const requirementStr = `${selectedPlot} Plot Enquiry`;
@@ -80,26 +80,6 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
         confetti({ particleCount: 80, spread: 90 });
         trackLeadSubmit(finalSource, requirementStr);
 
-        // Pre-compose WhatsApp URL
-        const waText = encodeURIComponent(
-          `Hi, I just submitted an enquiry on your website for The Aurora Hills plots in Dharwad (${requirementStr}). Please send me the HDUDA Layout Plan PDF and Price List on WhatsApp.`
-        );
-        const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
-
-        // Automatically trigger PDF download after 1 second
-        setTimeout(() => {
-          const link = document.createElement("a");
-          link.href = "/brochure/the-aurora-hills-brochure.pdf";
-          link.download = "The-Aurora-Hills-Brochure-Layout.pdf";
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        }, 800);
-
-        // Redirect to WhatsApp chat after 2 seconds for instant conversation
-        setTimeout(() => {
-          window.open(waUrl, "_blank");
-        }, 2000);
       } else {
         setErrorMsg(data.error || "Submission failed. Please call us directly.");
       }
@@ -116,31 +96,20 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
     <div
       className={`rounded-3xl bg-white/95 backdrop-blur-xl border border-gray-200/90 shadow-xl p-6 sm:p-8 text-forest-950 relative overflow-hidden ${className}`}
     >
-      {/* Top Auspicious Status Header */}
-      <div className="flex items-center justify-between pb-3.5 mb-4 border-b border-gray-100">
-        <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-900 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/70">
-          <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
-          Pre-Launch Advantage
-        </span>
-        <span className="text-xs text-amber-900 font-medium">
-          🎁 Assured Festive Gifts
-        </span>
-      </div>
-
       {!submitted ? (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <h3 className="text-xl sm:text-2xl font-extrabold font-sans text-forest-950 tracking-tight">
-              Get Layout Map &amp; Pricing
+            <h3 className="text-xl sm:text-2xl font-semibold font-sans text-forest-950 tracking-tight">
+              Get Layout &amp; Price Sheet
             </h3>
             <p className="text-xs sm:text-sm text-forest-900/90 font-semibold mt-1 leading-relaxed">
-              Official HDUDA layout map &amp; pre-launch rate sheet sent directly to WhatsApp.
+              Request the approved layout and current prices. Our sales team will follow up on your enquiry.
             </p>
           </div>
 
           {/* Plot Size Selector */}
           <div className="pt-1">
-            <label className="text-xs font-extrabold uppercase tracking-wider text-forest-950 block mb-2">
+            <label className="text-xs font-semibold uppercase tracking-wider text-forest-950 block mb-2">
               Select Preferred Plot Dimension:
             </label>
             <div className="grid grid-cols-4 gap-2">
@@ -148,17 +117,18 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
                 <button
                   type="button"
                   key={opt.label}
+                  aria-pressed={selectedPlot === opt.label}
                   onClick={() => setSelectedPlot(opt.label)}
-                  className={`py-2.5 px-1.5 rounded-xl text-center border transition-all flex flex-col items-center justify-center min-h-[50px] ${
+                  className={`py-2.5 px-1.5 rounded-xl text-center border transition-all flex flex-col items-center justify-center min-h-[44px] ${
                     selectedPlot === opt.label
-                      ? "bg-emerald-800 text-white border-emerald-900 shadow-md font-extrabold"
+                      ? "bg-emerald-800 text-white border-emerald-900 shadow-md font-semibold"
                       : "bg-emerald-50/50 hover:bg-emerald-100/60 text-forest-950 border-emerald-200/90 font-bold"
                   }`}
                 >
                   <span className="block text-xs sm:text-sm leading-tight whitespace-nowrap">{opt.label}</span>
                   {opt.sub ? (
                     <span
-                      className={`block text-[10px] sm:text-xs mt-0.5 leading-tight ${
+                      className={`hidden sm:block text-xs mt-0.5 leading-tight ${
                         selectedPlot === opt.label ? "text-emerald-100 font-bold" : "text-forest-900/80 font-bold"
                       }`}
                     >
@@ -173,21 +143,22 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
           {/* Inputs */}
           <div className="space-y-3 pt-1">
             <div>
-              <label className="text-xs font-extrabold text-forest-950 block mb-1">
+              <label htmlFor="hero-name" className="text-xs font-semibold text-forest-950 block mb-1">
                 Your Full Name <span className="text-rose-600 font-black">*</span>
               </label>
               <input
+                id="hero-name" autoComplete="name" minLength={2}
                 type="text"
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="e.g. Dr. Patil / Ramesh"
-                className="w-full px-4 py-3 rounded-xl border-2 border-emerald-300 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-500/30 text-sm sm:text-base text-forest-950 bg-white shadow-xs outline-none transition-all placeholder:text-gray-400 font-bold"
+                placeholder="Your full name"
+                className="w-full px-4 py-3 rounded-xl border-2 border-emerald-300 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-500/30 text-base text-forest-950 bg-white shadow-xs outline-none transition-all placeholder:text-gray-400 font-bold"
               />
             </div>
 
             <div>
-              <label className="text-xs font-extrabold text-forest-950 block mb-1">
+              <label htmlFor="hero-phone" className="text-xs font-semibold text-forest-950 block mb-1">
                 WhatsApp Mobile Number <span className="text-rose-600 font-black">*</span>
               </label>
               <div className="relative flex items-center">
@@ -195,20 +166,21 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
                   +91
                 </span>
                 <input
+                  id="hero-phone" autoComplete="tel-national" inputMode="numeric" pattern="[6-9][0-9]{9}"
                   type="tel"
                   required
                   maxLength={10}
                   value={phone}
                   onChange={(e) => setPhone(e.target.value.replace(/[^0-9]/g, ""))}
                   placeholder="Enter 10-digit number"
-                  className="w-full pl-16 pr-4 py-3 rounded-xl border-2 border-emerald-300 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-500/30 text-sm sm:text-base font-extrabold text-forest-950 bg-white shadow-xs outline-none transition-all placeholder:text-gray-400 placeholder:font-normal"
+                  className="w-full pl-16 pr-4 py-3 rounded-xl border-2 border-emerald-300 focus:border-emerald-700 focus:ring-2 focus:ring-emerald-500/30 text-base font-semibold text-forest-950 bg-white shadow-xs outline-none transition-all placeholder:text-gray-400 placeholder:font-normal"
                 />
               </div>
             </div>
           </div>
 
           {errorMsg && (
-            <p className="text-xs text-rose-700 bg-rose-50 p-2.5 rounded-lg border border-rose-200 font-medium">
+            <p role="alert" className="text-sm text-rose-700 bg-rose-50 p-2.5 rounded-lg border border-rose-200 font-medium">
               {errorMsg}
             </p>
           )}
@@ -227,16 +199,16 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
             ) : (
               <>
                 <Send className="w-4 h-4" />
-                <span>Get Layout &amp; Prices on WhatsApp</span>
+                <span>Request Layout &amp; Price Sheet</span>
               </>
             )}
           </button>
 
           {/* Trust Guarantees */}
           <div className="pt-2 text-center space-y-1.5">
-            <div className="flex items-center justify-center gap-2 text-xs text-gray-500 font-normal">
+            <div className="flex flex-wrap items-center justify-center gap-2 text-xs text-gray-600 font-normal">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-              <span>100% Privacy Protected</span>
+              <span>Used to respond to your enquiry</span>
               <span>•</span>
               <span>Direct Developer Rate</span>
             </div>
@@ -263,7 +235,7 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
             Request Received!
           </h4>
           <p className="text-xs sm:text-sm text-gray-600 max-w-xs mx-auto leading-relaxed">
-            Your brochure and layout map are downloading. Our consultant is also reaching out on WhatsApp at <strong>+91 {phone}</strong>.
+            Your enquiry has been received. Download the brochure below or continue on WhatsApp to request current pricing from our sales team.
           </p>
 
           <div className="pt-2 flex flex-col sm:flex-row gap-2.5 justify-center">
@@ -271,18 +243,19 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
                 `Hi, I just submitted an enquiry for The Aurora Hills plots in Dharwad. Please share the layout plan.`
               )}`}
+              onClick={trackWhatsAppClick}
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 rounded-full bg-[#25D366] text-white text-xs font-semibold uppercase tracking-wider shadow-sm hover:bg-[#1ebd5a] transition-all flex items-center justify-center gap-1.5"
             >
-              Open in WhatsApp
+              Continue on WhatsApp
             </a>
             <a
               href="/brochure/the-aurora-hills-brochure.pdf"
               download="The-Aurora-Hills-Brochure.pdf"
               className="px-5 py-2.5 rounded-full bg-emerald-50 text-emerald-900 text-xs font-semibold uppercase tracking-wider border border-emerald-200 hover:bg-emerald-100 transition-all flex items-center justify-center gap-1.5"
             >
-              <Download className="w-3.5 h-3.5" /> Direct PDF
+              <Download className="w-3.5 h-3.5" /> Download Brochure
             </a>
           </div>
         </div>

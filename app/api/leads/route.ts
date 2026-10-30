@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from "next/server";
+import { hasDurableDatabase, sendLeadWebhook } from "@/lib/lead-delivery";
 import { db } from "@/lib/db";
 import { sendAdminNotification, sendUserConfirmation } from "@/lib/email";
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
+    if (!body || typeof body !== "object" || Array.isArray(body)) return NextResponse.json({ success: false, error: "Invalid request." }, { status: 400 });
+    const textFields = ["name", "phone", "email", "requirement", "purpose", "preferred_contact", "message", "source", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "preferred_date", "preferred_time", "transport_required"];
+    if (textFields.some(key => body[key] != null && (typeof body[key] !== "string" || body[key].length > 4000))) return NextResponse.json({ success: false, error: "Please check your form details." }, { status: 400 });
     const {
       name,
       phone,
@@ -32,8 +36,8 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, error: "Please enter your valid full name." }, { status: 400 });
     }
 
-    const cleanPhone = (phone || "").replace(/[^0-9+]/g, "");
-    if (!cleanPhone || cleanPhone.length < 10) {
+    const cleanPhone = typeof phone === "string" ? phone.replace(/\D/g, "").replace(/^91(?=\d{10}$)/, "") : "";
+    if (!/^[6-9]\d{9}$/.test(cleanPhone)) {
       return NextResponse.json({ success: false, error: "Please enter a valid 10-digit mobile number." }, { status: 400 });
     }
 
@@ -63,6 +67,7 @@ export async function POST(req: NextRequest) {
           utm_source: utm_source || "direct",
           utm_medium: utm_medium || "",
           utm_campaign: utm_campaign || "",
+          notes: JSON.stringify({ gclid: body.gclid || "", utm_term: body.utm_term || "", utm_content: body.utm_content || "" }),
           device: isMobile ? "Mobile" : "Desktop"
         }
       });
@@ -100,17 +105,26 @@ export async function POST(req: NextRequest) {
       leadPayload['Google Ads Channel'] = utm_source || 'direct';
       leadPayload['Ad Campaign'] = utm_campaign || 'N/A';
       if (utm_term) leadPayload['Search Keyword'] = utm_term;
-      if (body.gclid) leadPayload['Google Click ID'] = body.gclid;
+
     }
 
+    if (body.gclid) leadPayload['Google Click ID'] = body.gclid;
+    if (utm_medium) leadPayload['Ad Medium'] = utm_medium;
+    if (utm_content) leadPayload['Ad Content'] = utm_content;
     leadPayload['Saved To Database'] = savedToDb ? "Yes" : "Fallback (Email Captured)";
     leadPayload['Submitted At'] = new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
 
+    let emailSent = false;
     // 2. Await Admin Email Notification (critical for serverless to prevent premature container termination)
     try {
-      await sendAdminNotification('Lead', leadPayload);
+      emailSent = await sendAdminNotification('Lead', leadPayload);
     } catch (mailErr) {
       console.error("[leads] Failed to send admin notification:", mailErr);
+    }
+
+    const webhookSent = await sendLeadWebhook({ type: "lead", id: leadId, ...leadPayload });
+    if (!(savedToDb && hasDurableDatabase()) && !emailSent && !webhookSent) {
+      return NextResponse.json({ success: false, error: "We could not securely record your request. Please try again or call +91 89701 98701." }, { status: 503 });
     }
 
     // 3. User Confirmation Email
@@ -120,15 +134,6 @@ export async function POST(req: NextRequest) {
       } catch (userMailErr) {
         console.error("[leads] Failed to send user confirmation:", userMailErr);
       }
-    }
-
-    // 4. Optional Webhook (for Google Sheets, Zapier, Make, CRM)
-    if (process.env.LEADS_WEBHOOK_URL) {
-      fetch(process.env.LEADS_WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "lead", id: leadId, ...leadPayload }),
-      }).catch(e => console.error("[leads] Webhook dispatch error:", e?.message));
     }
 
     return NextResponse.json({

@@ -29,13 +29,14 @@ export interface GalleryItem {
 }
 
 interface GalleryProps {
+  onOpenSiteVisit: () => void;
   onOpenVideo?: () => void;
   onOpenEnquiry?: (source?: string, requirement?: string) => void;
 }
 
 export const Gallery: React.FC<GalleryProps> = ({
   onOpenVideo,
-  onOpenEnquiry,
+  onOpenEnquiry, onOpenSiteVisit,
 }) => {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
@@ -441,10 +442,7 @@ export const Gallery: React.FC<GalleryProps> = ({
                 type="button"
                 onClick={() => {
                   setLightboxIndex(null);
-                  onOpenEnquiry(
-                    `Gallery Photo: ${currentLightboxItem.title}`,
-                    `Inquiry regarding site photo: ${currentLightboxItem.title}`
-                  );
+                  onOpenSiteVisit();
                 }}
                 className="w-full sm:w-auto flex-shrink-0 px-4 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-bold text-xs sm:text-sm shadow-lg hover:shadow-emerald-500/30 transition-all hover:scale-105 active:scale-95 flex items-center justify-center gap-1.5"
               >
@@ -461,12 +459,12 @@ export const Gallery: React.FC<GalleryProps> = ({
   return (
     <section
       id="gallery"
-      className="py-14 sm:py-20 lg:py-28 vibrant-section-glow text-forest-950 relative overflow-hidden"
+      className="py-14 sm:py-12 lg:py-20 vibrant-section-glow text-forest-950 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto space-y-3 sm:space-y-4 mb-6 sm:mb-10">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-black font-sans text-forest-950 tracking-tight whitespace-normal lg:whitespace-nowrap">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold font-serif text-forest-950 tracking-tight whitespace-normal lg:whitespace-nowrap">
             Real Site Photos &amp;{" "}
             <span className="vibrant-text-gradient">Township Progress</span>
           </h2>
@@ -499,7 +497,7 @@ export const Gallery: React.FC<GalleryProps> = ({
                 <Icon className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isActive ? "text-emerald-400" : "text-emerald-700"}`} />
                 <span>{cat.label}</span>
                 <span
-                  className={`text-xs px-2 py-0.5 rounded-full font-black ${
+                  className={`text-xs px-2 py-0.5 rounded-full font-semibold ${
                     isActive
                       ? "bg-emerald-500/30 text-emerald-200"
                       : "bg-emerald-100 text-emerald-800"
@@ -516,13 +514,15 @@ export const Gallery: React.FC<GalleryProps> = ({
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 sm:gap-6 lg:gap-8">
           {filteredItems.map((item, idx) => {
             const isHiddenOnMobile =
-              activeCategory === "all" && !showAllMobile && idx >= 8;
+              activeCategory === "all" && !showAllMobile && idx >= 6;
             return (
               <div
                 key={item.id}
                 onClick={() => setLightboxIndex(idx)}
+                role="button" tabIndex={0} aria-label={`View ${item.title}`}
+                onKeyDown={(event) => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); setLightboxIndex(idx); } }}
                 className={`group relative rounded-2xl sm:rounded-3xl overflow-hidden bg-white border-2 border-emerald-300/40 p-1.5 sm:p-2.5 shadow-md sm:shadow-xl shadow-emerald-950/8 cursor-pointer hover:shadow-2xl hover:border-emerald-500 hover:-translate-y-1.5 transition-all duration-300 ${
-                  isHiddenOnMobile ? "hidden sm:block" : "block"
+                  isHiddenOnMobile ? "hidden" : "block"
                 }`}
               >
                 <div className="relative h-36 xs:h-44 sm:h-72 lg:h-80 rounded-xl sm:rounded-2xl overflow-hidden bg-sand-200">
@@ -546,14 +546,14 @@ export const Gallery: React.FC<GalleryProps> = ({
 
         {/* Mobile Progressive Disclosure Expand Button */}
         {activeCategory === "all" && !showAllMobile && (
-          <div className="mt-6 text-center sm:hidden">
+          <div className="mt-6 text-center">
             <button
               type="button"
               onClick={() => setShowAllMobile(true)}
-              className="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-forest-950 to-emerald-950 text-white font-black text-xs uppercase tracking-wider shadow-xl border border-emerald-500/30 flex items-center justify-center gap-2 active:scale-98 transition-all"
+              className="w-full py-3.5 px-5 rounded-2xl bg-gradient-to-r from-forest-950 to-emerald-950 text-white font-semibold text-xs uppercase tracking-wider shadow-xl border border-emerald-500/30 flex items-center justify-center gap-2 active:scale-98 transition-all"
             >
               <Sparkles className="w-4 h-4 text-emerald-400" />
-              <span>View All 24 Development Photos (+16 More)</span>
+              <span>View All 24 Site Photos (+18 More)</span>
             </button>
           </div>
         )}
@@ -565,7 +565,7 @@ export const Gallery: React.FC<GalleryProps> = ({
               <Calendar className="w-3.5 h-3.5" />
               <span>Complimentary Weekend Site Visits Available</span>
             </div>
-            <h3 className="text-lg sm:text-2xl font-black font-sans">
+            <h3 className="text-lg sm:text-2xl font-semibold font-sans">
               Want to walk on these finished avenues in person?
             </h3>
             <p className="text-white/90 text-xs sm:text-sm max-w-xl font-medium">
@@ -578,13 +578,8 @@ export const Gallery: React.FC<GalleryProps> = ({
             {onOpenEnquiry && (
               <button
                 type="button"
-                onClick={() =>
-                  onOpenEnquiry(
-                    "Township Gallery Bottom Banner",
-                    "Complimentary site visit request to inspect finished roads and plots"
-                  )
-                }
-                className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-forest-950 font-black text-xs sm:text-sm shadow-xl shadow-amber-500/20 hover:scale-105 active:scale-95 transition-all cursor-pointer text-center"
+                onClick={onOpenSiteVisit}
+                className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-forest-950 font-semibold text-xs sm:text-sm shadow-xl shadow-amber-500/20 hover:scale-105 active:scale-95 transition-all cursor-pointer text-center"
               >
                 Schedule Free Site Visit
               </button>

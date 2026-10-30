@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -401,4 +400,36 @@ body {
 
 .animate-liquid-fluid-3 {
   animation: liquidFluidAura 14s ease-in-out infinite 3s;
+}
+/* Landing-page design system: consistent type, calm surfaces and accessible controls. */
+.primary-button, .secondary-button {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  min-height: 44px; padding: .75rem 1.25rem; border-radius: .75rem;
+  font-family: var(--font-sans), sans-serif; font-size: .875rem; font-weight: 600;
+  line-height: 1.4; text-align: center; transition: background-color .2s;
+}
+.primary-button { background: #047857; color: white; border: 1px solid #047857; }
+.primary-button:hover { background: #065f46; }
+.secondary-button { background: white; color: #064e3b; border: 1px solid #a7c9bc; }
+.secondary-button:hover { background: #ecfdf5; }
+.aurora-dialog {
+  padding: 0; border: 0; background: transparent; color: #14281D;
+  width: min(100% - 2rem, 40rem); max-height: calc(100dvh - 2rem);
+  overflow: auto; border-radius: 1.5rem; margin: auto;
+}
+.aurora-dialog::backdrop { background: rgba(5, 25, 17, .65); backdrop-filter: blur(4px); }
+.aurora-dialog > div { max-width: none; max-height: calc(100dvh - 2rem); }
+:where(button, a, input, select, textarea, summary, [tabindex]):focus-visible { outline: 3px solid #b7791f; outline-offset: 3px; }
+section[id], #faq { scroll-margin-top: 120px; }
+main h2 { font-family: var(--font-serif), Georgia, serif; font-weight: 600; }
+main .font-black, main .font-extrabold { font-weight: 600; }
+main p { line-height: 1.65; }
+@media (max-width: 639px) {
+  body { padding-bottom: 78px; }
+  input, select, textarea { font-size: 16px !important; }
+  #hero { padding-top: 112px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }

@@ -1,5 +1,29 @@
 # GEMINI.md — Project Memory, Rules & Progress Register
 
+## Current baseline — October 30, 2026: Google Ads landing-page audit implemented
+
+This entry supersedes conflicting older UI and conversion instructions below. The user requested the full audit recommendations, project-memory updates, and a GitHub push.
+
+- **Objective:** qualified plot enquiries and confirmed site visits from Dharwad and Hubli; mobile comes first.
+- **Design:** preserve daylight imagery, forest green/ivory branding, Playfair Display headings and Plus Jakarta Sans body text. Fonts use `next/font`; the duplicate remote CSS import is removed. Required names and phone numbers remain. No new public price claim is introduced.
+- **Page order:** compact hero/form → approvals → plot sizes/approved layout → location → six-photo preview → one on-demand video hub → six key amenities (expandable) → compact festive cards → buyer FAQ → final site-visit CTA → partners/footer.
+- **Hero:** shorter supporting copy, earlier form, one price-sheet request objective; desktop secondary action opens the actual site-visit form. Mobile inputs are 16px with associated labels and autocomplete. Approval pills wrap without clipping.
+- **Offers/content:** removed hard-coded “Only 7 plots left”, obsolete extra festive contact and HUDDA typo; plot labels do not imply a built villa. Amenities distinguish on-site infrastructure from the proposed lifestyle offering; exact completion dates still require business confirmation. Actual photos and existing rewards remain.
+- **Media:** no video element or download before visitor selection. Selecting another video unmounts the previous player. Three new web encodes total ~15.7 MiB vs ~161.7 MiB originals; originals retained. New paths end in `-web.mp4`.
+- **Enquiries:** common native `Modal` supplies Escape, focus trapping/return, background scroll lock and associated labels. Site-visit CTAs consistently open the booking form, including gallery/lightbox. Brochure requests check API success and retain UTM/GCLID. Downloads and WhatsApp continuation require explicit visitor clicks; no automatic popup/download or claim of automatic WhatsApp delivery.
+- **Lead reliability:** `/api/leads` and `/api/site-visits` return 503 if no usable capture destination succeeds. An SMTP helper returning `false` counts as failure. Webhooks are awaited, timed out and checked for successful HTTP status. Local persistent DB can satisfy capture; ephemeral serverless SQLite alone cannot. Email/CRM delivery still depends on actual deployment credentials and service availability. Do not promise “zero lead loss.”
+- **Attribution:** form submissions retain the existing primary Google Ads conversion. Phone/WhatsApp clicks remain contact events, and only send a separate Ads conversion if `NEXT_PUBLIC_GOOGLE_CONTACT_SEND_TO` is configured. Never reuse the primary lead label for clicks. Configure that optional secondary action in Google Ads/Vercel separately; no Ads-account changes were made here. UTM keyword/content and GCLID also persist in existing lead notes (no schema migration).
+- **FAQ:** visible questions and FAQ JSON-LD now share `lib/buyer-faq.ts`; `#faq` exists again. No stale 14-question schema disconnected from the page.
+- **Verification:** Final production build and TypeScript check passed; production-mode `/` and `/icon.png` returned 200. 25 isolated route/client delivery, validation, attribution and tracking checks pass (`node scripts/lead-flow.test.cjs`). Browser checks cover 360px, 390px, 768px and 1440px; no page-width overflow; Escape/focus return, labels, visit routing, video switching and compressed playback verified. No test enquiries were sent to real sales destinations.
+- **Measured 390px comparison:** first input ~1,385 → 626px; layout starts ~14,852 → 1,465px; location ~16,502 → 3,019px; page ~22,260 → 12,624px (about 43% shorter). Post-change capture includes ad-header state; exact metrics vary with viewport/header/content.
+- **Operational boundaries:** existing Search Console verification-file whitespace change belongs to the pre-existing workspace and is excluded from this implementation commit. Local preview changes to `prisma/dev.db` are also excluded/restored. Push to `origin/main` triggers Vercel, so build/type checks must pass first.
+- **Known remaining operational checks:** verify production email/CRM receipt with a real authorised enquiry; configure optional separate contact conversion action; monitor qualified leads/site visits rather than raw click totals. This work does not guarantee improved conversion rates. Build emits existing `jose` Edge Runtime CompressionStream warnings; these are not landing-page errors.
+
+Detailed implementation and test evidence: [LANDING_PAGE_AUDIT_2026-10-30.md](./LANDING_PAGE_AUDIT_2026-10-30.md).
+
+---
+
+
 ## The Aurora Hills (ದಿ ಅರೋರಾ ಹಿಲ್ಸ್) — Luxury Villa Plots in Dharwad
 
 * **Repository:** [Sambhram-Khairawadagi/Aurora-hills](https://github.com/Sambhram-Khairawadagi/Aurora-hills)

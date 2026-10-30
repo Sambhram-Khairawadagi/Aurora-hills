@@ -28,7 +28,7 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
   const [activeCategory, setActiveCategory] = useState<"education" | "shopping" | "transit" | "nature">("education");
 
   return (
-    <section id="location" className="py-24 lg:py-32 vibrant-section-glow text-forest-950 relative overflow-hidden">
+    <section id="location" className="py-12 lg:py-20 vibrant-section-glow text-forest-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
@@ -54,9 +54,9 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
               <button
                 key={id}
                 onClick={() => setActiveCategory(id as any)}
-                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider flex items-center gap-2 transition-all ${
+                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-wider flex items-center gap-2 transition-all ${
                   activeCategory === id
-                    ? "bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-500/30 scale-105"
+                    ? "bg-emerald-700 text-white shadow-lg shadow-emerald-500/30 scale-105"
                     : "bg-white text-charcoal-800 border border-emerald-200/80 hover:bg-emerald-50 shadow-sm"
                 }`}
               >
@@ -85,7 +85,7 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
               <div className="absolute top-3 left-3 right-3 sm:right-auto sm:top-6 sm:left-6 p-3.5 sm:p-4 rounded-2xl bg-white/95 backdrop-blur-md border border-emerald-300/60 shadow-xl sm:max-w-xs">
                 <div className="flex items-center gap-2 mb-1">
                   <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
-                  <span className="text-sm font-black text-forest-950 font-sans">The Aurora Hills</span>
+                  <span className="text-sm font-semibold text-forest-950 font-sans">The Aurora Hills</span>
                 </div>
                 <p className="text-sm text-charcoal-700 font-medium">
                   <a href="https://share.google/lhDyTbBa3vWnMhOFK" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-700 hover:underline transition-colors">Sunset Viewpoint, Karnatak University, Dharwad</a>
@@ -115,7 +115,7 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
                   href="https://maps.app.goo.gl/3EnF93gjmTueXy667"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white text-xs sm:text-sm font-black uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:scale-105"
+                  className="px-5 py-2.5 rounded-full bg-emerald-700 text-white text-xs sm:text-sm font-semibold uppercase tracking-wider flex items-center gap-2 shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 transition-all hover:scale-105"
                 >
                   <Navigation className="w-4 h-4" />
                   <span>Open Maps</span>
@@ -148,7 +148,7 @@ export const LocationConnectivity: React.FC<LocationConnectivityProps> = ({ onOp
                   </div>
 
                   <div className="text-right flex-shrink-0">
-                    <span className="text-xs sm:text-sm font-black vibrant-badge-emerald px-3.5 py-1.5 rounded-full">
+                    <span className="text-xs sm:text-sm font-semibold vibrant-badge-emerald px-3.5 py-1.5 rounded-full">
                       {item.time}
                     </span>
                   </div>

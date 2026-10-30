@@ -34,7 +34,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { label: "Overview", href: "#hero" },
     { label: "Site Photos", href: "#gallery" },
     { label: "Festive Scheme 🎁", href: "#festive-offer", isSpecial: true },
-    { label: "About", href: "#about" },
+    { label: "Location", href: "#location" },
     { label: "Amenities", href: "#amenities" },
     { label: "Layout", href: "#layout" },
   ];
@@ -42,7 +42,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header
       className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
-        hasAdsTopBar ? "top-[38px] sm:top-[40px]" : "top-0"
+        hasAdsTopBar ? "top-[44px]" : "top-0"
       }`}
     >
       {!hasAdsTopBar && <FestiveTicker onOpenEnquiry={onOpenEnquiry} />}
@@ -60,7 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             alt="The Aurora Hills"
             width={160}
             height={50}
-            className="h-9 sm:h-11 lg:h-12 w-auto object-contain transition-transform group-hover:scale-105"
+            className="h-11 sm:h-12 lg:h-14 w-auto object-contain transition-transform group-hover:scale-105"
             priority
           />
         </Link>
@@ -73,7 +73,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               href={link.href}
               className={`relative px-2.5 py-1 text-sm font-bold transition-all whitespace-nowrap group ${
                 link.isSpecial
-                  ? "text-red-900 bg-amber-100 hover:bg-amber-200/90 px-3.5 py-1 rounded-full border border-amber-300 shadow-sm font-black animate-pulse-subtle"
+                  ? "text-red-900 bg-amber-100 hover:bg-amber-200/90 px-3.5 py-1 rounded-full border border-amber-300 shadow-sm font-semibold animate-pulse-subtle"
                   : "text-gray-700 hover:text-emerald-700"
               }`}
             >
@@ -89,9 +89,9 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="hidden sm:flex items-center gap-4 lg:gap-6 flex-shrink-0">
           <button
             onClick={() => onOpenEnquiry("Navbar CTA")}
-            className="px-6 py-3 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-xl shadow-emerald-500/30 hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 active:scale-95 whitespace-nowrap flex items-center gap-2"
+            className="px-6 py-3 rounded-full bg-emerald-700 hover:from-emerald-500 hover:to-teal-500 text-white text-xs sm:text-sm font-semibold uppercase tracking-wider shadow-sm hover:shadow-emerald-500/50 transition-all duration-300 hover:scale-105 hover:-translate-y-0.5 active:scale-95 whitespace-nowrap flex items-center gap-2"
           >
-            <span>Enquire Now</span>
+            <span>Get Price Sheet</span>
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>
@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center gap-2 lg:hidden">
           <button
             onClick={() => onOpenEnquiry("Mobile Quick CTA")}
-            className="sm:hidden px-3.5 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs font-black uppercase tracking-wider shadow-md shadow-emerald-500/30 whitespace-nowrap"
+            className="sm:hidden px-3.5 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white text-xs font-semibold uppercase tracking-wider shadow-md shadow-emerald-500/30 whitespace-nowrap"
           >
             Enquire
           </button>
@@ -126,7 +126,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               height={36}
               className="h-8 w-auto object-contain"
             />
-            <span className="text-xs font-black text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+            <span className="text-xs font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
               Pre-Launch Phase
             </span>
           </div>
@@ -139,7 +139,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onClick={() => setMobileMenuOpen(false)}
                 className={`p-2.5 rounded-xl text-sm font-bold text-center transition-all ${
                   link.isSpecial
-                    ? "col-span-2 bg-gradient-to-r from-[#450A14] via-[#7B1123] to-[#450A14] text-amber-300 font-black border border-amber-400/50 shadow-md py-3"
+                    ? "col-span-2 bg-gradient-to-r from-[#450A14] via-[#7B1123] to-[#450A14] text-amber-300 font-semibold border border-amber-400/50 shadow-md py-3"
                     : "text-gray-700 hover:text-emerald-700 hover:bg-emerald-50"
                 }`}
               >

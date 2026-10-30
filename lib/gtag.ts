@@ -68,10 +68,8 @@ export const trackPhoneClick = (phone: string = "8970198701") => {
     value: 500,
   });
 
-  // Fire Google Ads conversion so inbound phone intent is attributed and counted
-  if (GOOGLE_CONVERSION_SEND_TO) {
-    trackConversion(GOOGLE_CONVERSION_SEND_TO, 500, "INR");
-  }
+  // Optional separate secondary Ads action; never reuse the submitted-lead label.
+  if (process.env.NEXT_PUBLIC_GOOGLE_CONTACT_SEND_TO) trackConversion(process.env.NEXT_PUBLIC_GOOGLE_CONTACT_SEND_TO, 0, "INR");
 };
 
 // Track WhatsApp Chat Clicks
@@ -82,8 +80,5 @@ export const trackWhatsAppClick = () => {
     value: 500,
   });
 
-  // Fire Google Ads conversion so inbound WhatsApp intent is attributed and counted
-  if (GOOGLE_CONVERSION_SEND_TO) {
-    trackConversion(GOOGLE_CONVERSION_SEND_TO, 500, "INR");
-  }
+  if (process.env.NEXT_PUBLIC_GOOGLE_CONTACT_SEND_TO) trackConversion(process.env.NEXT_PUBLIC_GOOGLE_CONTACT_SEND_TO, 0, "INR");
 };

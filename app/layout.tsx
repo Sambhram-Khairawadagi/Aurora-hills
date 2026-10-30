@@ -1,5 +1,6 @@
+import { BUYER_FAQS } from "@/lib/buyer-faq";
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Cormorant_Garamond, Inter, Noto_Sans_Kannada } from "next/font/google";
+import { Playfair_Display, Cormorant_Garamond, Plus_Jakarta_Sans, Noto_Sans_Kannada } from "next/font/google";
 import "./globals.css";
 import { GoogleTag } from "@/components/GoogleTag";
 
@@ -11,7 +12,7 @@ export const viewport: Viewport = {
 };
 
 
-const inter = Inter({
+const inter = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-sans",
@@ -463,120 +464,7 @@ export default function RootLayout({
       {
         "@type": "FAQPage",
         "@id": "https://www.theaurorahills.com/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is the average price of land and residential plots in Dharwad?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The average price of residential land and plots in Dharwad typically ranges between ₹2,000 to ₹4,000 per sq.ft depending on location, HDUDA approval status, and amenities. At The Aurora Hills (Kelgerri, adjacent to Karnatak University & NH-4), premium HDUDA & NA-KJP sanctioned villa plots are available under our limited pre-launch advantage with pre-approved bank loans up to 80%. Exact unit pricing and custom site dimensions are provided on request upon booking an enquiry or site visit."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the price of a 30x40 and 30x50 site in Hubballi-Dharwad?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A standard 30x40 site (1,200 sq.ft) in Dharwad costs between ₹38 Lakhs to ₹48 Lakhs, while a 30x50 site (1,500 sq.ft) averages ₹48 Lakhs to ₹65 Lakhs. At The Aurora Hills, 30x40, 30x50, and 40x60 plots are offered with exclusive pre-launch booking pricing, complete with all township infrastructure, pre-approved bank loans, and festive booking rewards (Gold/Silver). Contact our sales desk or submit the form for the complete official rate sheet."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Which is the best area to live and buy plots in Dharwad?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Kelgerri / Sunset Viewpoint, Vidyagiri, and Sattur near Karnatak University and NH-4 Highway are widely regarded as the best residential areas in Dharwad. Kelgerri offers pristine hill serenity, zero pollution, easy access to Dharwad Railway Station, and swift commuting to Hubli via the 6-lane NH-48 and BRTS corridor, making it the most preferred destination for families and luxury villa builders."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are plots at The Aurora Hills Dharwad HDUDA and NA approved?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, The Aurora Hills is fully NA-KJP and HDUDA sanctioned with 100% clear marketable titles. Every plot comes with clean marketable titles, approved blueprints, and pre-approved home loan options from top national banks including SBI, HDFC, ICICI, and IDFC First Bank."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Where is The Aurora Hills located in Dharwad and how far is it from Hubli?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The Aurora Hills is located at Sunset Viewpoint near Karnatak University in Dharwad City, directly accessible from the 6-lane NH-4 Highway. It is 5 minutes from Karnatak University, 10 minutes from Dharwad Railway Station, and just 15 to 20 minutes from the Hubli-Dharwad Twin City commercial center and Hubli Airport via the high-speed corridor."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I avail a home or plot loan for buying property at The Aurora Hills?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, leading financial institutions including State Bank of India (SBI), HDFC Bank, ICICI Bank, and IDFC First Bank have verified and approved The Aurora Hills for hassle-free home and land loans."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What amenities are provided in this gated community in Dharwad?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The Aurora Hills offers 20+ lifestyle amenities including a modern clubhouse, swimming pool, championship tennis court, pickleball court, cricket net arena, futsal turf, children's park, temple, tree-lined avenues, 30ft & 40ft wide asphalt roads, underground utilities, 1.5 lakh litre overhead water tank, and 24/7 round-the-clock security."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why is Hubli-Dharwad considered the best location for real estate and plot investment?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Hubli-Dharwad is the economic and educational nerve center of North Karnataka, home to premier institutions like IIT Dharwad, IIIT, Karnatak University, and the industrial FMCG hub. With rapid infrastructure expansion via the BRTS corridor, 6-lane NH-48, and airport flights, property here yields consistently high capital appreciation."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can people staying in Hubli buy plots in Dharwad? How to reach The Aurora Hills from Hubli?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, many plot owners at The Aurora Hills are Hubli residents. The project is just 15-20 minutes from Hubli city centre via the 6-lane NH-48 / NH-4 highway. Easily accessible from Unkal, Navanagar, Gokul Road, or Keshwapur. Free site visit pickups from Hubli are arranged every weekend by calling +91 89701 98701."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the expected return and capital appreciation on plots in Dharwad?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Residential plots in prime Dharwad localities like Kelgeri and Vidyagiri have appreciated by 18-25% annually due to infrastructure growth, IIT Dharwad development, and the NH-48 corridor. At The Aurora Hills, with HDUDA sanction and physical infrastructure completed, buyers see strong capital gains."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What documents are required to buy a plot in Dharwad? Is registration easy?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "To buy a plot in Dharwad, buyers need: Aadhar Card, PAN Card, passport photos, and income proof (if availing bank loan). At The Aurora Hills, the legal team assists with end-to-end documentation from agreement to registered sale deed execution at the Dharwad Sub-Registrar Office."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the current development status of The Aurora Hills in Dharwad?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "As of October 2026, The Aurora Hills has completed 40ft & 30ft asphalt avenues, paver sidewalks, 1.5 Lakh Litre overhead water tank, underground power cabling with feeder pillars, boundary fencing, entrance arch, and landscaped medians with 100+ plots booked."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does The Aurora Hills compare with other plots for sale in Dharwad?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Unlike unapproved agricultural layouts in Dharwad, The Aurora Hills is a fully HDUDA & NA-KJP sanctioned township near Sunset Viewpoint with completed on-site roads, water, power, 20+ amenities, bank approvals from SBI/HDFC/ICICI, and festive gold/silver gifts."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Are there any special offers or discounts on plots in Dharwad during Dasara Deepawali 2026?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes! Book during the Dasara & Deepawali Festive Scheme and receive: 50 Grams 22K Gold with a 40x60 plot, 1.5 KG 925 Silver with a 30x50 plot, and 1 KG 925 Silver with a 30x40 plot, delivered on registration."
-            }
-          }
-        ]
+        "mainEntity": BUYER_FAQS.map(answer => ({ "@type": "Question", "name": answer.query, "acceptedAnswer": { "@type": "Answer", "text": answer.capsule } }))
       },
       {
         "@type": "HowTo",

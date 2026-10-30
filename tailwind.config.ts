@@ -49,9 +49,9 @@ const config: Config = {
         }
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        vintage: ['"Cormorant Garamond"', 'Playfair Display', 'serif'],
+        sans: ['var(--font-sans)', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+        serif: ['var(--font-serif)', 'Georgia', 'serif'],
+        vintage: ['var(--font-vintage)', 'Georgia', 'serif'],
         kannada: ["var(--font-kannada)", "Noto Sans Kannada", "sans-serif"],
       },
       animation: {

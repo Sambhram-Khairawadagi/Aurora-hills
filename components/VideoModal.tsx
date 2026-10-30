@@ -1,5 +1,6 @@
 "use client";
 
+import { Modal } from "@/components/Modal";
 import React from "react";
 import { X, Video } from "lucide-react";
 
@@ -15,7 +16,7 @@ export const VideoModal: React.FC<VideoModalProps> = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/90 backdrop-blur-2xl flex items-center justify-center p-4 animate-fade-in">
+    <Modal open={isOpen} onClose={onClose}>
       <div className="relative max-w-5xl w-full rounded-3xl overflow-hidden bg-black border border-white/20 shadow-2xl">
         {/* Top Control Bar */}
         <div className="absolute top-4 right-4 z-30 flex items-center gap-2">
@@ -29,8 +30,9 @@ export const VideoModal: React.FC<VideoModalProps> = ({
         </div>
 
         <div className="relative aspect-video w-full bg-black">
+          <h2 className="sr-only">Aurora Hills site tour</h2>
           <video
-            src="/aurora-hills.mp4"
+            src="/videos/drone-2-compressed.mp4"
             autoPlay
             controls
             playsInline
@@ -39,6 +41,6 @@ export const VideoModal: React.FC<VideoModalProps> = ({
           />
         </div>
       </div>
-    </div>
+    </Modal>
   );
 };

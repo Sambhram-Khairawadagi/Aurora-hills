@@ -77,7 +77,7 @@ export const FloatingActions: React.FC<FloatingActionsProps> = ({
 
         <button
           onClick={() => onOpenEnquiry("Floating Mobile CTA")}
-          className="flex-[1.3] px-3 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 text-white text-xs font-black uppercase tracking-wider shadow-md shadow-emerald-600/30 active:scale-95 transition-transform text-center"
+          className="flex-[1.3] px-3 py-2.5 rounded-full bg-emerald-700 text-white text-xs font-semibold uppercase tracking-wider shadow-md shadow-emerald-600/30 active:scale-95 transition-transform text-center"
         >
           Enquire
         </button>

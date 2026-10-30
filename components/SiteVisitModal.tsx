@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import { Modal } from "@/components/Modal";
+import React, { useState, useEffect } from "react";
 import { X, Calendar, CheckCircle2, ShieldCheck, Sparkles, Clock, Car } from "lucide-react";
 import confetti from "canvas-confetti";
 import { getStoredUtm } from "@/lib/utm";
@@ -17,7 +18,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
     phone: "",
     email: "",
     preferred_date: "",
-    preferred_time: "11:00 AM",
+    preferred_time: "10:00 AM",
     visitors: 2,
     transport_required: "Yes",
     message: "",
@@ -27,12 +28,14 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
   const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
 
+  useEffect(() => { if (!isOpen) { setSubmitted(false); } }, [isOpen]);
+
   if (!isOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const cleanPhone = formData.phone.replace(/[^0-9]/g, "");
-    if (cleanPhone.length < 10 || !formData.preferred_date) {
+    if (!/^[6-9]\d{9}$/.test(cleanPhone) || !formData.preferred_date) {
       setErrorMsg("Please provide your 10-digit mobile number and preferred date.");
       return;
     }
@@ -41,7 +44,8 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
     setErrorMsg("");
 
     const trimmedName = formData.name.trim();
-    if (!trimmedName) {
+    if (trimmedName.length < 2) {
+      setLoading(false);
       setErrorMsg("Please enter your full name.");
       return;
     }
@@ -51,7 +55,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
     try {
       const utmParams = getStoredUtm();
       const finalSource = utmParams.utm_source
-        ? `Google Ads Site Visit (${utmParams.utm_campaign || "Search"})`
+        ? `${utmParams.utm_source} Site Visit (${utmParams.utm_campaign || "Website"})`
         : "Site Visit Modal";
 
       const res = await fetch("/api/site-visits", {
@@ -82,7 +86,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-4 animate-fade-in">
+    <Modal open={isOpen} onClose={onClose}>
       <div className="bg-[#F7F9F6] border border-white/90 rounded-3xl p-6 sm:p-8 max-w-lg w-full text-forest-950 shadow-2xl relative neu-card max-h-[90vh] overflow-y-auto">
         <button
           onClick={onClose}
@@ -97,7 +101,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
             <Calendar className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="text-xl font-black font-sans text-forest-950">
+            <h3 className="text-xl font-semibold font-sans text-forest-950">
               Book a Free Site Visit
             </h3>
             <span className="text-sm text-charcoal-700 font-medium">Personalized plot inspection in Dharwad</span>
@@ -135,11 +139,11 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
                 Full Name <span className="text-rose-600 font-bold">*</span>
               </label>
               <input
-                type="text"
+                type="text" autoComplete="name" minLength={2}
                 required placeholder="e.g. Dr. Patil / Ramesh"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm"
+                className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base"
               />
             </div>
 
@@ -149,12 +153,12 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
                   Mobile Number *
                 </label>
                 <input
-                  type="tel"
+                  type="tel" autoComplete="tel-national" inputMode="numeric" maxLength={10} pattern="[6-9][0-9]{9}"
                   required
                   placeholder="10-digit mobile"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base sm:text-sm"
+                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 placeholder-charcoal-400 text-base"
                 />
               </div>
 
@@ -164,10 +168,11 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
                 </label>
                 <input
                   type="date"
+                  min={new Date().toLocaleDateString("en-CA", { timeZone: "Asia/Kolkata" })}
                   required
                   value={formData.preferred_date}
                   onChange={(e) => setFormData({ ...formData, preferred_date: e.target.value })}
-                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-base sm:text-sm"
+                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-base"
                 />
               </div>
             </div>
@@ -180,7 +185,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
                 <select
                   value={formData.preferred_time}
                   onChange={(e) => setFormData({ ...formData, preferred_time: e.target.value })}
-                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-base sm:text-sm bg-[#F0F4ED]"
+                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-base bg-[#F0F4ED]"
                 >
                   <option value="10:00 AM">Morning (10:00 AM)</option>
                   <option value="11:30 AM">Morning (11:30 AM)</option>
@@ -196,7 +201,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
                 <select
                   value={formData.transport_required}
                   onChange={(e) => setFormData({ ...formData, transport_required: e.target.value })}
-                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-base sm:text-sm bg-[#F0F4ED]"
+                  className="w-full px-3.5 py-2.5 neu-input text-forest-950 text-base bg-[#F0F4ED]"
                 >
                   <option value="Yes">Yes (Complimentary Pickup)</option>
                   <option value="No">No (Own Vehicle)</option>
@@ -205,7 +210,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
             </div>
 
             {errorMsg && (
-              <div className="p-2.5 bg-red-100 border border-red-300 rounded-xl text-red-700 text-xs font-semibold">
+              <div role="alert" className="p-2.5 bg-red-100 border border-red-300 rounded-xl text-red-700 text-xs font-semibold">
                 {errorMsg}
               </div>
             )}
@@ -213,14 +218,14 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-green-500 hover:from-emerald-500 hover:to-green-600 text-white font-black text-xs sm:text-sm uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-transform hover:scale-[1.01] active:scale-[0.99]"
+              className="w-full py-3.5 rounded-full bg-emerald-700 hover:from-emerald-500 hover:to-green-600 text-white font-semibold text-xs sm:text-sm uppercase tracking-wider shadow-lg flex items-center justify-center gap-2 transition-transform hover:scale-[1.01] active:scale-[0.99]"
             >
               <Calendar className="w-4 h-4" />
-              <span>{loading ? "Booking..." : "Confirm Site Visit"}</span>
+              <span>{loading ? "Booking..." : "Request Site Visit"}</span>
             </button>
           </form>
         )}
       </div>
-    </div>
+    </Modal>
   );
 };

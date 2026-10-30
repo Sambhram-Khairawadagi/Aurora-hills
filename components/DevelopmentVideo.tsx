@@ -1,78 +1,33 @@
 "use client";
-
-import React, { useRef, useState } from "react";
-import { Play, CheckCircle2, Video } from "lucide-react";
-
-interface DevelopmentVideoProps {
-  onOpenEnquiry: (source?: string) => void;
-}
-
-export const DevelopmentVideo: React.FC<DevelopmentVideoProps> = ({ onOpenEnquiry }) => {
-  const videos = [
-    { id: 0, src: "/videos/drone-1.mp4", title: "Site Tour Overview", type: "Full HD 1080p", poster: "/images/posters/drone-1-poster.jpg" },
-    { id: 1, src: "/videos/drone-2-compressed.mp4", title: "Aerial Flyover 1", type: "4K Drone Video", poster: "/images/posters/drone-2-poster.jpg" },
-    { id: 2, src: "/videos/drone-3.mp4", title: "Aerial Flyover 2", type: "4K Drone Video", poster: "/images/posters/drone-3-poster.jpg" },
-    { id: 3, src: "/videos/drone-4-compressed.mp4", title: "Site Progress Tour", type: "4K Drone Video", poster: "/images/posters/drone-4-poster.jpg" },
-  ];
-
-  const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
-
-  return (
-    <section id="development" className="py-24 lg:py-32 vibrant-section-glow text-forest-950 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full vibrant-badge-emerald text-xs sm:text-sm font-black uppercase tracking-widest">
-            <Video className="w-4 h-4 text-emerald-600" />
-            Official Site Walkthrough & Drone Tours
-          </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black font-sans text-forest-950 tracking-tight">
-            Watch <span className="vibrant-text-gradient">The Aurora Hills Drone Tours</span>
-          </h2>
-          <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
-            Explore the real on-ground development — asphalt roads, hill contours, and scenic sunset vantage point across multiple aerial videos.
-          </p>
-        </div>
-
-        {/* Video Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {videos.map((video) => (
-            <div key={video.id} className="rounded-3xl overflow-hidden bg-white border-2 border-emerald-300/40 p-3 shadow-2xl shadow-emerald-950/10 relative flex flex-col">
-              <div className="relative aspect-video rounded-2xl overflow-hidden bg-black shadow-2xl group flex-grow">
-                <video
-                  ref={(el) => {
-                    videoRefs.current[video.id] = el;
-                  }}
-                  src={video.src}
-                  poster={video.poster}
-                  autoPlay
-                  controls
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Under Video Quick CTAs */}
-        <div className="max-w-4xl mx-auto mt-8 p-4 rounded-2xl bg-gradient-to-r from-emerald-50 via-teal-50/50 to-emerald-50 border border-emerald-200/80 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-emerald-950">
-            <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
-            <span>Real-time on-ground footage of roads, plot demarcations, and scenic greenery.</span>
-          </div>
-
-          <button
-            onClick={() => onOpenEnquiry("Video Section CTA")}
-            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-emerald-600 via-emerald-500 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs sm:text-sm font-black uppercase tracking-wider shadow-lg shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:scale-105 active:scale-95 transition-all"
-          >
-            Book Site Visit
-          </button>
-        </div>
+import { useState } from "react";
+import Image from "next/image";
+import { Play } from "lucide-react";
+const tours = [
+  { title: "Project overview", src: "/videos/aurora-hills-main-web.mp4", poster: "/images/welcome-gate-sunset.jpg" },
+  { title: "Site walkthrough", src: "/videos/drone-1-web.mp4", poster: "/images/posters/drone-1-poster.jpg" },
+  { title: "Aerial flyover", src: "/videos/drone-2-compressed.mp4", poster: "/images/posters/drone-2-poster.jpg" },
+  { title: "Hillside views", src: "/videos/drone-3-web.mp4", poster: "/images/posters/drone-3-poster.jpg" },
+  { title: "Development tour", src: "/videos/drone-4-compressed.mp4", poster: "/images/posters/drone-4-poster.jpg" },
+];
+export function DevelopmentVideo({ onOpenSiteVisit }: { onOpenSiteVisit: () => void }) {
+  const [selected, setSelected] = useState(0);
+  const [playing, setPlaying] = useState(false);
+  const tour = tours[selected];
+  return <section id="development" className="py-12 lg:py-20 bg-white px-4 sm:px-6">
+    <div className="max-w-5xl mx-auto">
+      <h2 className="font-serif text-3xl sm:text-4xl font-semibold text-center">Explore the site, at your pace</h2>
+      <p className="text-base text-center text-gray-600 mt-3 mb-6">Choose a tour to see the roads, plot boundaries and hillside setting.</p>
+      <div className="relative aspect-video bg-emerald-950 rounded-2xl overflow-hidden">
+        {playing ? <video key={tour.src} src={tour.src} poster={tour.poster} autoPlay controls playsInline preload="none" className="w-full h-full" aria-label={tour.title} /> :
+          <button className="relative w-full h-full group" onClick={() => setPlaying(true)} aria-label={`Play ${tour.title}`}>
+            <Image src={tour.poster} alt={tour.title} fill sizes="(max-width: 1024px) 100vw, 1024px" className="object-cover" />
+            <span className="absolute inset-0 bg-black/25 flex items-center justify-center"><span className="rounded-full bg-white p-5 text-emerald-900"><Play className="w-7 h-7" /></span></span>
+          </button>}
       </div>
-    </section>
-  );
-};
+      <div className="flex gap-2 overflow-x-auto py-4" aria-label="Choose a site video">
+        {tours.map((item, index) => <button key={item.src} aria-pressed={selected === index} onClick={() => { setSelected(index); setPlaying(false); }} className={`min-h-11 px-4 py-2 rounded-xl text-sm shrink-0 border ${selected === index ? 'bg-emerald-800 text-white border-emerald-800' : 'bg-white text-emerald-950 border-gray-300'}`}>{item.title}</button>)}
+      </div>
+      <div className="text-center"><button className="secondary-button" onClick={onOpenSiteVisit}>Book a Free Site Visit</button></div>
+    </div>
+  </section>;
+}

@@ -1,3 +1,18 @@
+# Current delivery rule — October 30, 2026
+
+The historical notes below describe the original workaround, not a guarantee of delivery.
+- Await and inspect the boolean result of `sendAdminNotification`.
+- Await optional webhook dispatch, require a successful HTTP status and use a timeout.
+- Return HTTP 503 with `success: false` when neither email, webhook nor a durable local DB has captured the enquiry.
+- Serverless `/tmp` SQLite is ephemeral and must never be the only basis for reporting capture success.
+- Fire primary Google Ads lead conversions only after an API success. Contact clicks use their own events/optional separate conversion destination.
+- Preserve attribution in notifications and existing lead notes. Test with mocks, not real sales notifications.
+- See `LANDING_PAGE_AUDIT_2026-10-30.md` and the newest entries in GEMINI.md and MEMORY.md.
+
+---
+
+## Historical implementation (superseded where conflicting)
+
 # Vercel Serverless & Form Submission Architecture
 
 ## Context & Past Root Cause

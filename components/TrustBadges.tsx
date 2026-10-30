@@ -22,18 +22,18 @@ export const TrustBadges: React.FC = () => {
           >
             <div className="flex-1 flex flex-col">
               {/* Header row: Icon + Highlight Pill */}
-              <div className="flex items-center justify-between gap-2 mb-2 sm:mb-2.5">
+              <div className="flex flex-wrap items-center gap-2 mb-2 sm:mb-2.5">
                 <div className="p-2 rounded-xl vibrant-icon-emerald shrink-0">
                   {iconMap[card.id] || <ShieldCheck className="w-4 h-4 text-white" />}
                 </div>
-                <span className="text-xs uppercase font-black tracking-wider vibrant-badge-emerald px-3 py-1 rounded-full text-center whitespace-nowrap leading-none shrink-0 shadow-xs">
+                <span className="text-xs uppercase font-semibold tracking-normal vibrant-badge-emerald px-3 py-1 rounded-full text-center whitespace-normal leading-snug min-w-0 max-w-full shadow-xs">
                   {card.highlight}
                 </span>
               </div>
 
               {/* Title & Description */}
               <div>
-                <h3 className="text-sm sm:text-base font-black text-forest-950 font-sans group-hover:text-emerald-700 transition-colors leading-tight">
+                <h3 className="text-sm sm:text-base font-semibold text-forest-950 font-sans group-hover:text-emerald-700 transition-colors leading-tight">
                   {card.title} {card.subtitle}
                 </h3>
                 <p className="text-xs sm:text-sm text-charcoal-700 mt-1 sm:mt-1.5 leading-relaxed font-medium">

@@ -34,7 +34,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
   };
 
   return (
-    <section id="layout" className="py-24 lg:py-32 bg-[#F7F9F6] text-forest-950 relative overflow-hidden">
+    <section id="layout" className="py-12 lg:py-20 bg-[#F7F9F6] text-forest-950 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
@@ -122,7 +122,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
           <div className="w-full lg:w-1/4 flex flex-col">
             <div className="bg-white rounded-3xl p-6 shadow-xl border border-emerald-100">
               <span className="text-xs font-semibold uppercase tracking-wider text-amber-900 bg-amber-50 px-3 py-1 rounded-full border border-amber-200 inline-block mb-3">
-                Festive Rewards Active
+                Plot sizes
               </span>
               <h3 className="font-serif text-xl font-bold text-forest-950 mb-5 border-b border-gray-100 pb-3">
                 Available Dimensions
@@ -138,7 +138,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                     <h4 className="font-serif text-lg font-bold text-forest-950 group-hover:text-emerald-700 transition-colors">1,200 sq.ft</h4>
                     <span className="text-xs font-medium text-slate-700 bg-slate-200/80 px-2.5 py-0.5 rounded-full">30 × 40</span>
                   </div>
-                  <p className="text-xs text-gray-600 mt-0.5 font-normal">3BHK Luxury Villa</p>
+                  <p className="text-xs text-gray-600 mt-0.5 font-normal">Suitable for a villa home</p>
                   <p className="text-xs font-semibold text-emerald-800 mt-0.5">Price on Request</p>
                   <span className="inline-block mt-2 px-2.5 py-0.5 rounded-md bg-white border border-gray-200 text-slate-800 text-[11px] font-medium">
                     🎁 1 KG Hallmarked Silver
@@ -170,7 +170,7 @@ export const SanctionedLayout: React.FC<SanctionedLayoutProps> = ({
                     <h4 className="font-serif text-lg font-bold text-forest-950 group-hover:text-emerald-700 transition-colors">2,400 sq.ft</h4>
                     <span className="text-xs font-medium text-amber-950 bg-amber-100 px-2.5 py-0.5 rounded-full">40 × 60</span>
                   </div>
-                  <p className="text-xs text-gray-600 mt-0.5 font-normal">Grand Hillside Mansion</p>
+                  <p className="text-xs text-gray-600 mt-0.5 font-normal">Larger villa plot</p>
                   <p className="text-xs font-semibold text-emerald-800 mt-0.5">Price on Request</p>
                   <span className="inline-block mt-2 px-2.5 py-0.5 rounded-md bg-white border border-amber-200 text-amber-950 text-[11px] font-medium">
                     🎁 50g 22K Gold
