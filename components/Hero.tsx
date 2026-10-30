@@ -15,38 +15,18 @@ export const Hero: React.FC<HeroProps> = ({
 }) => {
   return (
     <section id="hero" className="relative lg:min-h-screen flex flex-col justify-center pt-28 sm:pt-36 lg:pt-40 pb-10 sm:pb-16 overflow-hidden">
-      {/* Daylight Real-Site Background Images (Responsive Mobile 9:16 & Desktop 16:9) */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        {/* Mobile Portrait (9:16 Ratio) */}
-        <div className="block sm:hidden absolute inset-0">
-          <Image
-            src="/images/aurora-hills-real-site-daylight-mobile.webp"
-            alt="The Aurora Hills Plotted Villa Sanctuary Dharwad (Mobile)"
-            fill
-            priority
-            quality={90}
-            sizes="100vw"
-            className="object-cover object-top"
-          />
-        </div>
-
-        {/* Desktop Landscape (16:9 Ratio) */}
+      {/* Generated concept landscape; actual development photography remains in the gallery. */}
+      <div className="absolute inset-0 z-0 overflow-hidden bg-[#F8F7F2]">
         <div className="hidden sm:block absolute inset-0">
           <Image
-            src="/images/aurora-hills-real-site-daylight.webp"
-            alt="The Aurora Hills Plotted Villa Sanctuary at Sunset Viewpoint"
-            fill
-            priority
-            quality={90}
-            sizes="100vw"
+            src="/images/aurora-hills-sunrise-hero.webp"
+            alt="Artist’s impression of Aurora Hills-inspired villa plots, native greenery and a winding avenue in the Dharwad hills"
+            fill priority quality={85} sizes="100vw"
             className="object-cover object-center"
           />
         </div>
-
-        {/* High-Legibility Light Background: Specifically illuminates the text zone on the left while preserving pristine landscape and road clarity on the right */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-white/85 via-45% to-transparent sm:bg-gradient-to-r sm:from-[#F8FAF7]/95 sm:via-[#F8FAF7]/85 sm:via-50% sm:to-transparent sm:to-75% pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_20%_35%,_rgba(255,255,255,0.95)_0%,_rgba(255,255,255,0.85)_40%,_transparent_72%)] pointer-events-none" />
-        <div className="absolute bottom-0 inset-x-0 h-24 sm:h-32 bg-gradient-to-t from-[#F8FAF7] to-transparent pointer-events-none" />
+        <div className="hidden sm:block absolute inset-0 hero-landscape-scrim pointer-events-none" />
+        <div className="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-[#F8F7F2] to-transparent pointer-events-none" />
       </div>
 
       {/* Main Content Container */}
@@ -99,6 +79,10 @@ export const Hero: React.FC<HeroProps> = ({
             <p className="text-sm text-emerald-900 flex items-center gap-2">
               <Car className="w-4 h-4 shrink-0" /> Free site-visit pickup across Dharwad &amp; Hubli.
             </p>
+            <figure className="relative sm:hidden h-40 rounded-2xl overflow-hidden border border-emerald-900/10 shadow-sm">
+              <Image src="/images/aurora-hills-sunrise-hero-mobile.webp" alt="Artist’s impression of a landscaped avenue and open plots in the Dharwad hills" fill priority quality={85} sizes="(max-width: 639px) 100vw, 1px" className="object-cover object-[center_76%]" />
+              <figcaption className="absolute bottom-2 right-2 rounded bg-white/90 px-2 py-1 text-[11px] text-gray-700">Artist’s impression</figcaption>
+            </figure>
             <div className="hidden lg:flex flex-wrap gap-3 pt-2">
               <button onClick={() => onOpenEnquiry("Hero Price Sheet")} className="primary-button">Get Layout &amp; Price Sheet</button>
               <button onClick={onOpenSiteVisit} className="secondary-button">Book a Free Site Visit</button>
@@ -113,6 +97,7 @@ export const Hero: React.FC<HeroProps> = ({
         </div>
 
       </div>
+      <p className="hidden sm:block absolute bottom-3 left-5 z-10 rounded bg-white/85 px-2 py-1 text-xs text-gray-700">Artist’s impression · View actual photos below</p>
     </section>
   );
 };

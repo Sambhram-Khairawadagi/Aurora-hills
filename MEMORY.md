@@ -1,5 +1,10 @@
 # Project Memory & Development History — The Aurora Hills
 
+## Latest visual refinement — October 30, 2026
+
+User requested a newly generated hero image. Replaced the old hero with a warm sunrise landscape inspired by Dharwad's low hills, open plots, red earth and landscaped internal avenues. Built-in image generation produced matching desktop/mobile assets, each about 290 KB WebP. Desktop has a directional ivory overlay; mobile displays a compact scenic strip above the enquiry form. Keep the visible artist's-impression labels and retain actual site gallery photos. The mobile strip adds about 180px before the form, so earlier audit vertical measurements are historical. No form or conversion logic changed. Full prompts, asset paths and visual checks: [HERO_IMAGE_PROMPTS_2026-10-30.md](./HERO_IMAGE_PROMPTS_2026-10-30.md).
+
+
 ## Current baseline — October 30, 2026: Google Ads landing-page audit implemented
 
 **Deployment verified:** implementation commit `254c695fb4aaca3ea6436c39318b260c27a3e846` was pushed to `origin/main`; Vercel reported success on October 30, 2026. The live `https://www.theaurorahills.com/` returned HTTP 200 with the new media hub and shared FAQ. Live 390px browser check confirmed 16px labelled inputs, no page-width overflow and zero video elements before interaction. No real sales enquiry was submitted.

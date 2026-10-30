@@ -433,3 +433,11 @@ main p { line-height: 1.65; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Preserve the new landscape's colour and detail; shade only the text column. */
+.hero-landscape-scrim {
+  background: linear-gradient(90deg, rgba(248,247,242,.94) 0%, rgba(248,247,242,.86) 29%, rgba(248,247,242,.56) 49%, rgba(248,247,242,.08) 72%, transparent 100%);
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .hero-landscape-scrim { background: linear-gradient(180deg, rgba(248,247,242,.88) 0%, rgba(248,247,242,.74) 37%, rgba(248,247,242,.15) 70%); }
+}
