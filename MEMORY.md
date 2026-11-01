@@ -1,5 +1,10 @@
 # Project Memory & Development History — The Aurora Hills
 
+## Google Ads keyword checkpoint — November 2, 2026
+
+Verified November 1: paused phrase-match keyword `hubli land for sale` in Aurora ad group. October 2–31 report showed INR 1,710.59 spend, 38 clicks, zero recorded conversions. Direct status menu was used and the resulting row explicitly read Paused. Evidence: `scratch/ads-audit-2026-10-31/keyword-paused-nov1.png`. Retained converting Hubli keywords: `sites for sale in hubli` (5 conversions, INR 206.08/conv), `plots in hubli` (2, INR 796.84/conv), `sites in hubli for sale` (1, INR 1,212.74/conv). Historical conversion figures remain subject to the tracking caveat below. `land price in hubli` was still enabled, with INR 634.83 spend, 14 clicks, zero conversions; no pause applied to that keyword yet. Campaign displayed Limited by budget; budget remains unchanged at INR 1,500/day. Dedicated Aurora enquiry goal was reverified in campaign settings. Negative list reviewed partially; no exclusions removed. Location report opened but review incomplete. Full audit remains in progress.
+
+
 ## Google Ads live audit checkpoint — recorded November 1, 2026
 
 Audit remains IN PROGRESS. Confirmed changes saved during October 31 session: created custom goal `Aurora Hills - Completed Website Enquiries`, containing only `Aurora Hills - Website Lead`, and applied it as the sole campaign-specific goal to `Search - The Aurora Hills - Hubli Dharwad Plots` (campaign 24347822598). Shared Contacts and Submit lead forms categories are no longer this campaign's selected bidding goals; other campaigns' goals were not edited. Removed the Aurora ad group's explicit INR 32 target CPA override by clearing its field. Saved UI verified inherited INR 890.14 target CPA. Daily budget remains INR 1,500, unchanged by this audit. These live values supersede older Maximize Clicks/INR 52 CPC/INR 1,200 budget notes.
