@@ -1,5 +1,16 @@
 # Project Memory & Development History — The Aurora Hills
 
+## Google Ads live audit checkpoint — recorded November 1, 2026
+
+Audit remains IN PROGRESS. Confirmed changes saved during October 31 session: created custom goal `Aurora Hills - Completed Website Enquiries`, containing only `Aurora Hills - Website Lead`, and applied it as the sole campaign-specific goal to `Search - The Aurora Hills - Hubli Dharwad Plots` (campaign 24347822598). Shared Contacts and Submit lead forms categories are no longer this campaign's selected bidding goals; other campaigns' goals were not edited. Removed the Aurora ad group's explicit INR 32 target CPA override by clearing its field. Saved UI verified inherited INR 890.14 target CPA. Daily budget remains INR 1,500, unchanged by this audit. These live values supersede older Maximize Clicks/INR 52 CPC/INR 1,200 budget notes.
+
+Live account header reads 838-030-4291 (older notes say 830-030-4291). September 30–October 29 snapshot: INR 14,851.67 spend, 332 clicks, 1,980 impressions, 14 recorded conversions (12 Aurora Website Lead, 2 Contact), INR 1,060.83 per recorded conversion. Historical website tracking also counted contact clicks under the lead label before October 30; do not call these verified qualified leads without CRM reconciliation. Aurora action: active, primary, count one, 90-day click window, data-driven attribution, enhanced conversions shown enabled. No end-to-end sales receipt test performed.
+
+Pending: inspect search-term/keyword performance and negative conflicts; location presence options; schedule/device settings; ad copy and current INR 42L claim; assets and URLs; auto-applied recommendations; reconcile actual qualified leads/site visits. Google displayed low prepaid funds and conflicting-negative alerts; no payment made. Do not infer zero historical cross-project attribution solely from shared goal configuration. Prior 50/50 ad-group budget guarantee claim is incorrect: ad groups do not guarantee equal budget allocation.
+
+Evidence saved locally: `scratch/ads-audit-2026-10-31/aurora-goal-saved.png` and `scratch/ads-audit-2026-10-31/aurora-cpa-fixed.png`. Full audit and outcome measurement are not complete; no conversion uplift claimed.
+
+
 ## Latest visual refinement — October 30, 2026
 
 User requested a newly generated hero image. Replaced the old hero with a warm sunrise landscape inspired by Dharwad's low hills, open plots, red earth and landscaped internal avenues. Built-in image generation produced matching desktop/mobile assets, each about 290 KB WebP. Desktop has a directional ivory overlay; mobile displays a compact scenic strip above the enquiry form. Keep the visible artist's-impression labels and retain actual site gallery photos. The mobile strip adds about 180px before the form, so earlier audit vertical measurements are historical. No form or conversion logic changed. Full prompts, asset paths and visual checks: [HERO_IMAGE_PROMPTS_2026-10-30.md](./HERO_IMAGE_PROMPTS_2026-10-30.md).
