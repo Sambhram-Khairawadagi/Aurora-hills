@@ -1,5 +1,41 @@
 # Project Memory & Development History — The Aurora Hills
 
+## Current Google Ads handoff — recorded November 4, 2026
+
+This is the authoritative handoff for work verified through November 2, 2026. It supersedes conflicting bidding values and pending-check statements in older chronological entries below. No live account recheck was performed on November 4; this update records the completed work and the user's explicit decisions.
+
+### Current user-approved settings
+
+- Campaign: `Search - The Aurora Hills - Hubli Dharwad Plots` (24347822598), account 838-030-4291; ad group `Aurora ad group` (201171088076).
+- **Keep Maximize clicks.** On November 2 the user confirmed this was an intentional change and explicitly instructed us to keep it. Campaign and ad-group settings were inspected; campaign maximum CPC limit was INR 60.00 and daily budget INR 1,500. Do not restore the earlier INR 890.14 Target CPA strategy without a new decision. The audit did not make this later bidding switch.
+- Dedicated campaign goal remains `Aurora Hills - Completed Website Enquiries`, containing only `Aurora Hills - Website Lead`. Under Maximize clicks, bidding pursues clicks; this goal configuration does not mean bidding optimizes for completed enquiries.
+- User confirmed the INR 42 lakh starting price and 50g gold / 1.5kg silver offers are current. Retain these existing claims.
+
+### Applied and verified changes
+
+1. Isolated Aurora's conversion goal from shared Contacts and generic Submit lead forms categories. Other campaigns' goals were not edited. Earlier INR 32 ad-group Target CPA override was removed while Target CPA was in use; that is historical after the user's bidding change.
+2. Paused phrase keyword `hubli land for sale`: October 2–31 report had 38 clicks, INR 1,710.59 spend and zero recorded conversions.
+3. Paused phrase keyword `khb plots for sale in dharwad`; retained campaign negative `khb plots`. The recommendation to remove that negative was not applied. Paused row verified.
+4. Updated three RSA headlines to `Plots in Kelgeri, Dharwad`, `Request Plot Availability`, and `Book Your Dharwad Site Visit`. Updated three descriptions to clarify Dharwad location and encourage prices/plot-size enquiries, layout review, loan-option questions and a site visit. Exact descriptions are recorded below. Saved assets were Enabled / Eligible; revised copy persisted after browser reconnection.
+5. Corrected campaign sitelink **Sanctioned Layout Plan** from `https://theaurorahills.com/#inventory` to `https://www.theaurorahills.com/#layout`. Corrected **Gold & Silver Offer** from `https://theaurorahills.com/#festive-scheme` to `https://www.theaurorahills.com/#festive-offer`. Both saved destination URLs were read back from the asset details; both showed Pending / Under review at last inspection. Existing page section IDs were checked in the repository. Approval after that inspection has not been rechecked.
+
+### Reviewed settings and findings
+
+- Location presence-only targeting includes Dharwad, Hubballi and Hubli-Dharwad. Retained these locations; historical reporting does not justify excluding either city.
+- Google Search partners and Google Display Network are both off. Schedule is every day, 07:30–22:00 IST. No changes made.
+- Auto-apply recommendations: 0 of 7 Maintain your ads and 0 of 14 Grow your business selected. No types enabled; no account-wide edits.
+- Device report, October 3–November 1: mobile 334 clicks / INR 14,683.57 / 13 recorded conversions; computers 16 / INR 671.81 / 2; tablets 0 clicks / INR 0 / 0. Device adjustments were blank/none; retained all devices. Figures are recorded conversions, not verified qualified buyers.
+- Manual sitelinks inspected: location uses `#location`, approvals uses `#faq`, free site visit uses `#contact`, amenities uses `#amenities`; these anchors exist in the landing-page source. Five Google AI sitelinks were listed as eligible, but their individual final URLs were not verified.
+- Lead-form asset was Enabled / Eligible (Limited), with a financial-services policy label including United Kingdom and another item. Cause and applicability to this India-targeted campaign were not fully inspected; do not claim it is disapproved in India.
+- Low prepaid funds warning was present. No recharge or payment made.
+
+### Remaining work and measurement limits
+
+The full audit remains in progress. Finish remaining search terms/negative-list review, automated sitelink destinations, call number/schedule/conversion settings, hosted lead-form policy/delivery review, and actual sales/CRM reconciliation. Call asset filter was opened, but its loaded result was not read. Do not infer completion from an attempted navigation. No measured lead-quality or conversion uplift claimed. Older website tracking counted contact clicks under the lead label, so historical conversions cannot be treated as qualified leads. No real test enquiry was submitted to the sales team.
+
+Evidence already saved locally: `scratch/ads-audit-2026-10-31/ad-copy-saved-nov2.png`, `khb-paused-nov2.png`, `keyword-paused-nov1.png`, `aurora-goal-saved.png`, and `aurora-cpa-fixed.png` in the same folder. Earlier landing-page audit and generated hero work are recorded below and in LANDING_PAGE_AUDIT_2026-10-30.md and HERO_IMAGE_PROMPTS_2026-10-30.md.
+
+
 ### Follow-up verification — November 2, 2026
 
 User explicitly confirmed the INR 42 lakh starting price and 50g gold / 1.5kg silver offers are all current; retain these existing claims. Inspected exact conflict: campaign negative `khb plots` blocks phrase keyword `khb plots for sale in dharwad`. Retained the exclusion and paused that active keyword because it names a different project category. Verified resulting keyword row Paused. Evidence: scratch/ads-audit-2026-10-31/khb-paused-nov2.png. Earlier card shorthand `khb plots in dharwad` is superseded by this exact text. Auto-apply settings verified: 0 of 7 Maintain your ads and 0 of 14 Grow your business selected; no automatic recommendation types enabled. No account-wide changes made. Browser reconnection on November 2 also displayed the revised ad copy in the overview, confirming persistence. Today-only numbers (47 clicks, INR 2,576.34, 3 recorded conversions at inspection) are an incomplete-day snapshot, not a measured improvement or qualified-lead count. Latest campaign status showed Eligible (Learning).
