@@ -2,6 +2,8 @@
 
 ## November 16, 2026 — Budget review and brochure conversion correction
 
+Verified production deployment 51e9bb3, the INR 38 lakh starting price on the live enquiry form and the brochure_request event in the deployed site code. Updated the Aurora responsive search ad headline to “Dharwad Villa Plots From ₹38L” and its first description to “HDUDA approved villa plots in Dharwad from ₹38 lakh. Check availability and book a visit.” Verified the new description in the saved ad row. Delivery of a specific headline combination has not been measured.
+
 Owner confirmed INR 38 lakh as the current lowest bookable price across the project. Updated the main enquiry form, project-wide price defaults, estimator introduction, terms example and structured price range. Specific size quotes remain separate. Bundled the existing landing-page typefaces locally after Vercel reported a Google Fonts loader error.
 
 Held the average daily budget at INR 1,500. The live campaign showed Eligible (Learning) on Maximize conversions. Google disabled the budget simulator for insufficient recent data. Review the November 17–30 lead cohort after follow-up, using distinct budget-qualified buyers, attended visits and spend per attended visit. The brochure-only form now emits a separate brochure_request analytics event on success. Verified separately that the plot and visit enquiry tracking helper still sends the Ads conversion. Website build passed. Historical Ads enquiry counts may include brochure requests.
