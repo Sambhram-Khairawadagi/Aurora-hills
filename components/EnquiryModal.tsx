@@ -107,7 +107,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
           <X className="w-5 h-5" />
         </button>
 
-        <div className="flex items-center gap-3 mb-5">
+        <div className="flex items-center gap-3 mb-5 pr-10">
           <div className="p-3 rounded-2xl neu-inset text-emerald-700">
             <Sparkles className="w-6 h-6" />
           </div>
@@ -119,7 +119,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
           </div>
         </div>
 
-        <p className="text-sm text-gray-600 mb-5">Choose a plot size and our team will share current availability and pricing.</p>
+        <p className="text-sm text-gray-600 mb-5">Villa plots start at ₹38 lakh. Choose a plot size to get availability and pricing.</p>
 
         {submitted ? (
           <div className="text-center py-8 space-y-4 animate-fade-in">

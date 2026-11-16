@@ -1,5 +1,9 @@
 # GEMINI.md — Project Memory, Rules & Progress Register
 
+## November 16, 2026 — Post-switch buyer journey recheck
+
+Verified Google Search, Maximize conversions, INR 1,500/day, Completed Website Enquiries, local presence targeting (Dharwad, Hubballi and Hubli-Dharwad), AI Max off, and campaign-wide broad match off. Website ad eligible. Call asset matches the website. Hosted lead form eligible (limited), zero impressions November 15. Reviewed responsive Enquire and Site Visit dialogs, tagged redirect, brochure PDF and form validation. No synthetic lead sent to sales. Replaced the paid-traffic promotional banner with the confirmed starting price and added it to the quick enquiry dialog. Added room for its close button on narrow screens. Compare cost per qualified contact and attended visit after follow-up; website goals do not measure completed bookings.
+
 ## November 16, 2026 — Budget review and brochure conversion correction
 
 Verified production deployment 51e9bb3, the INR 38 lakh starting price on the live enquiry form and the brochure_request event in the deployed site code. Updated the Aurora responsive search ad headline to “Dharwad Villa Plots From ₹38L” and its first description to “HDUDA approved villa plots in Dharwad from ₹38 lakh. Check availability and book a visit.” Verified the new description in the saved ad row. Delivery of a specific headline combination has not been measured.

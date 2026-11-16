@@ -60,9 +60,7 @@ export const AdsTopBar: React.FC<AdsTopBarProps> = ({ onOpenEnquiry, onVisibilit
       <div className="flex items-center gap-2 min-w-0">
         <span className="flex-shrink-0 w-2 h-2 rounded-full bg-amber-400 animate-ping" />
         <span className="text-xs sm:text-sm font-bold text-white/90 truncate">
-          <span className="text-amber-300 font-black">🪔 Festive Offer Live:</span>{" "}
-          <span className="hidden sm:inline">50g Gold on 40×60 | 1.5kg Silver on 30×50 | </span>
-          Book a Plot Today
+          Dharwad villa plots <span className="text-amber-300 font-black">from ₹38 lakh</span>
         </span>
       </div>
 
