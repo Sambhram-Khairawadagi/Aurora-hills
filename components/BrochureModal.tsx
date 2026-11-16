@@ -4,7 +4,7 @@ import { Modal } from "@/components/Modal";
 import React, { useState, useEffect } from "react";
 import { X, Download, FileText, CheckCircle2, ShieldCheck, Sparkles } from "lucide-react";
 import { getStoredUtm } from "@/lib/utm";
-import { trackLeadSubmit } from "@/lib/gtag";
+import { trackBrochureRequest } from "@/lib/gtag";
 import confetti from "canvas-confetti";
 
 interface BrochureModalProps {
@@ -56,7 +56,7 @@ export const BrochureModal: React.FC<BrochureModalProps> = ({ isOpen, onClose })
 
       const result = await response.json();
       if (!response.ok || !result.success) { setErrorMsg(result.error || "We could not save your request. Please try again."); return; }
-      trackLeadSubmit("Brochure Modal Form", "Digital Brochure Download");
+      trackBrochureRequest();
       setDownloadReady(true);
       confetti({ particleCount: 60, spread: 70 });
 

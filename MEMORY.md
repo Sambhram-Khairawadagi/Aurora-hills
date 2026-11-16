@@ -1,5 +1,76 @@
 # Project Memory & Development History — The Aurora Hills
 
+## November 16, 2026 — Budget review and brochure conversion correction
+
+Held the average daily budget at INR 1,500. The live campaign showed Eligible (Learning) on Maximize conversions. Google disabled the budget simulator for insufficient recent data. Review the November 17–30 lead cohort after follow-up, using distinct budget-qualified buyers, attended visits and spend per attended visit. The brochure-only form now emits a separate brochure_request analytics event on success. Verified separately that the plot and visit enquiry tracking helper still sends the Ads conversion. Website build passed. Historical Ads enquiry counts may include brochure requests.
+
+## November 16, 2026 — Aurora Search bidding switched to Maximize conversions
+
+Saved and verified the switch from Maximize clicks (INR 60 CPC limit) to Maximize conversions without a target CPA. Campaign settings showed Eligible (Learning), INR 1,500 average daily budget, and the campaign-specific Aurora Hills - Completed Website Enquiries goal. The previous CPC limit belonged to Maximize clicks. Review post-change qualified contacts, attended visits and bookings alongside cost per outcome. November 16 includes both strategies and keyword edits.
+
+## November 16, 2026 — Aurora Google Ads lead-quality review
+
+Aurora ad group, October 17–November 15 inclusive: 816 clicks, INR 36,908.42 spend, 44 Google Ads conversions, INR 838.83 per recorded conversion. Individually reported queries accounted for INR 13,154.37 of that spend. November 15 alone showed 44 clicks and six conversions. November inbox audits found 33 submissions across the reviewed dates, up to 27 contacts across all sources and up to 23 campaign-tagged contacts before cross-period deduplication. Owner reports zero bookings. November 13 feedback had one attended visit attributed to the brand keyword.
+
+Live changes on November 16: paused three phrase-match keywords: "site for sale in dharwad" (51 clicks, INR 2,390.82), "land price in hubli" (37 clicks, INR 1,692.83), and "na plots for 3 lakhs in dharwad" (2 clicks, INR 88.94). All three had zero Google Ads conversions for the 30-day window. Google confirmed the pauses.
+
+Added and verified five exact-match negatives at Aurora ad-group level: [hubli site for sale 1 to 2 lakhs], [low budget plots for sale in hubli under 10 lakhs], [na plots for 3 lakhs in dharwad], [farm house near hubli dharwad], [farmhouse near hubli]. Retained buyer-intent and brand coverage. No budget, bidding or ad-copy edits. Evaluate post-change results by unique qualified enquiries, attended visits, bookings and spend per attended visit. Price copy needs alignment between the earlier INR 42 lakh confirmation and later INR 38 lakh reel instruction before changing live price claims.
+
+## November 13, 2026 — November sales feedback reconciled
+
+Matched all 18 distinct November 5–12 inbox contacts to the November 2026 sales worksheet by normalized phone number across 19 Google-labelled rows. The extra row was a repeated contact with both a visit discussion and an unanswered follow-up. Use submission email timestamps for acquisition dates because the sheet dates were edited.
+
+Of 16 contacts with Aurora Search email tracking, sales notes recorded one completed site visit with a loan in process, three visit discussions or visit-related callbacks, six other follow-ups or decisions pending, four unanswered or switched-off contacts, and two explicit no-requirement responses. No closure was recorded for these 16. Of the two additional contacts labelled Google in the sheet but unverified in email tracking, one mentioned a December visit and the other a callback while travelling.
+
+The recorded visit with loan progress matched the keyword `aurora hills dharwad`. Visit discussions also matched `sites in dharwad` and `dharwad plots for sale`. Three contacts matching `plots in hubli` had one callback pending, one switched-off phone, and one explicit no-requirement response. Review again after callbacks and with keyword spend before changing bids or pausing. No campaign edits made from this review. Daily feedback monitoring scheduled for 5 PM local time.
+
+## November 13, 2026 — Aurora Hills lead email audit
+
+Property Basket Gmail received 21 lead forms and one site-visit form from November 5–12. The 22 messages represented 18 distinct phone numbers within this period. Gmail displayed the website's notifications as sent by “me”. A contact who submitted both forms requested a November 7 visit. Attendance and sales qualification remain unverified.
+
+| November date | Submission emails | Distinct phone numbers | Contacts tagged to Aurora Google Search |
+| --- | ---: | ---: | ---: |
+| 5 | 7 | 5 | 4 |
+| 6 | 1 | 1 | 1 |
+| 7 | 6 | 4 | 4 |
+| 8 | 1 | 1 | 1 |
+| 9 | 3 | 3 | 3 |
+| 10 | 3 | 3 | 3 |
+| 11 | 0 | 0 | 0 |
+| 12 | 1 | 1 | 0 |
+
+Matched campaign name `aurora_hills_search` and the Google Click ID field in 20 messages from 16 distinct contacts. Two contacts had neither match. The most recent campaign-tagged enquiry arrived November 10 at 8:28 PM. A 30×40 plot enquiry arrived November 12 at 10:26 AM with unverified acquisition source. No further submission was visible on November 13 at the time checked. The owner reported a ₹15,000 top-up on November 12. The posting time, daily spend, impressions and any delivery interruption still require verification in Google Ads.
+
+## Latest reel — uppercase headline
+
+User requested all caps: VILLA PLOTS STARTS FROM 38LAKHS. Latest Full HD deliverable: outputs/reel-2026-11-04/Aurora-Hills-Reel-1080p-v3.mp4; source render_reel_1080p_v3.py. Encoded preview checked; full decode passed. All other content and audio retained. Supersedes the mixed-case v2 headline.
+
+
+## Reel wording correction — November 4, 2026
+
+User explicitly requested exact wording: Villa Plots Starts From 38lakhs. Updated Full HD deliverable: outputs/reel-2026-11-04/Aurora-Hills-Reel-1080p-v2.mp4. Phrase is split across two lines with 38lakhs emphasized. Remaining design, DHARWAD location and original audio unchanged. Encoded preview verified and full decode passed. Source: render_reel_1080p_v2.py. This supersedes prior reel headline wording.
+
+
+## Reel Full HD export — November 4, 2026
+
+User requested higher quality. Latest deliverable: outputs/reel-2026-11-04/Aurora-Hills-Reel-1080p.mp4 (1080x1920, 9:16, 30 fps, 34.47 seconds, 9,305,603 bytes). Branding/text re-rendered from supersampled artwork at delivery resolution; original central footage enlarged with Lanczos and mild sharpening. Original AAC audio copied; no speed/content changes. Full decode passed and encoded preview inspected. This is an upscale from the supplied 478x850 source, not newly captured HD detail. Reusable source: render_reel_1080p.py. All v3 content retained, including DHARWAD and VILLA PLOTS FROM 38LAKHS.
+
+
+## Reel revision 3 — November 4, 2026
+
+User requested removing Kelgeri from the reel location line. Updated it to DHARWAD only; all other v2 design, price wording and original news/audio retained. Latest deliverable: outputs/reel-2026-11-04/Aurora-Hills-Reel-v3.mp4. Source: render_reel_v3.py; preview-v3.png alongside it. Preview inspected and complete export decoded without errors. Prior versions preserved.
+
+
+## Reel revision 2 — November 4, 2026
+
+User requested removing Property Basket branding and pricing-confirmation footnote, improving the template, and changing copy to `VILLA PLOTS FROM 38LAKHS`. Delivered `outputs/reel-2026-11-04/Aurora-Hills-Reel-v2.mp4` with Aurora Hills' existing logo, ivory/forest-green panels, larger gold price, refined location/approval hierarchy and site-visit contact card. Original central news clip and audio retained; original and v1 files preserved. Full export decoded without errors; preview visually inspected; audio hash matches source. Reusable source: render_reel_v2.py; preview-v2.png and edit-manifest-v2.json alongside output. The INR 38 lakh wording is the user's explicit correction for this reel, superseding v1's INR 42 lakh reel copy. No website or Google Ads price edits were requested or made in this revision.
+
+
+## Property Basket branded reel — November 4, 2026
+
+Created `outputs/reel-2026-11-04/Aurora-Hills-Property-Basket-Reel.mp4` from the user's `WhatsApp Video 2026-11-04 at 3.48.25 PM.mp4`. Replaced FB Estates' top logo panel and bottom locations/contact panel with the existing Property Basket logo, The Aurora Hills, Kelgeri/Dharwad, HDUDA-approved residential plots, 30x40/30x50/40x60 sizes, user-confirmed INR 42 lakh starting price, site-visit CTA, 89701 98701, and www.theaurorahills.com. Retained central Kannada news footage/channel attribution and source audio; no factual endorsement or independent verification of the news content is implied. Original file untouched. Output: 34.47 seconds, 478x850, 30fps, H.264/AAC, about 2.5 MB. Original audio stream and exported audio SHA-256 hashes match exactly. Full export decoded without errors; representative frames inspected across runtime. No complete audiovisual playback/listening review performed. Reusable source: `outputs/reel-2026-11-04/render_reel.py`; overlay, preview, contact sheet and edit-manifest.json saved alongside MP4. Not published to social media.
+
+
 ## Current Google Ads handoff — recorded November 4, 2026
 
 This is the authoritative handoff for work verified through November 2, 2026. It supersedes conflicting bidding values and pending-check statements in older chronological entries below. No live account recheck was performed on November 4; this update records the completed work and the user's explicit decisions.

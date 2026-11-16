@@ -44,6 +44,12 @@ export const trackConversion = (sendTo?: string, value: number = 0, currency: st
   });
 };
 
+export const trackBrochureRequest = () => {
+  safeGtag("event", "brochure_request", {
+    event_label: "Brochure Modal Form",
+  });
+};
+
 // Track Lead Form Submissions
 export const trackLeadSubmit = (source: string = "Website Form", requirement?: string) => {
   // General Google Analytics lead event
