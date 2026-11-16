@@ -3,10 +3,12 @@
 **Project Name**: The Aurora Hills  
 **Location**: Near Kelgeri / Sunset Viewpoint, Dharwad City (Direct NH-4 Highway Connectivity)  
 **Landing Page**: [https://theaurorahills.com](https://theaurorahills.com)  
-**Daily Budget**: ₹1,200 / day (~₹36,000 / month)  
-**Target Geo**: Hubballi-Dharwad Twin Cities + High-Net-Worth Belagavi/Bengaluru Commuter Pockets  
+**Current daily budget (November 16, 2026)** — ₹1,500 on Maximize conversions, with no target CPA.
+**Current locations** — People in or regularly in Dharwad, Hubballi and Hubli-Dharwad.
 **Target Audience**: High-Intent Plot Buyers, Investors, Business Owners, Doctors, Senior Academics & Expats  
-**Primary Campaign Objective**: High-Converting Inbound Phone Enquiries, WhatsApp Chats, and Site-Visit Bookings  
+**Current bidding goal** — Aurora Hills - Completed Website Enquiries. Sales tracks qualified buyers, attended visits and bookings separately.
+
+The dated [budget decision and review criteria](MEMORY.md#november-16-2026--budget-decision-and-next-review) govern the next budget review. The blueprint below records earlier plans and campaign history.
 
 ---
 

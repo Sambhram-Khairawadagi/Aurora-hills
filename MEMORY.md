@@ -1,5 +1,15 @@
 # Project Memory & Development History — The Aurora Hills
 
+## November 16, 2026 — Budget decision and next review
+
+Keep Aurora Hills Search at **₹1,500 average daily budget** on **Maximize conversions**, with no target CPA. Maximize clicks sought visits to the website. The current strategy bids toward completed plot enquiries and site-visit requests. Brochure-only requests have their own analytics event. Sales confirms attendance and bookings separately.
+
+From October 17 through November 15, spend averaged ₹1,230.28/day (₹36,908.42 over 30 days). The current budget allows about ₹270/day above that historical average. Sales feedback documented one attended visit and the owner reported zero bookings. The effect of the November 16 changes on sales is still unknown.
+
+Review leads first received **November 17–30** after sales follow-up. Match original submission dates and phone numbers, count each buyer once, and record whether they confirmed a budget of at least ₹38 lakh, attended a visit, or booked. Divide the same period’s ad spend by distinct qualified buyers and by distinct buyers who attended. If attendance is zero, report zero visits and leave cost per visit undefined.
+
+Consider a **₹1,800/day test** only if spend regularly approaches ₹1,500/day, multiple budget-qualified buyers attend, and the company finds the cost per attended visit sustainable. This proposed 20% increase would add ₹300/day, or ₹2,100 over a week at the average budget. If enquiries grow but visits stall, review price fit, location and follow-up outcomes before increasing spend.
+
 ## November 16, 2026 — Post-switch buyer journey recheck
 
 Verified Google Search, Maximize conversions, INR 1,500/day, Completed Website Enquiries, local presence targeting (Dharwad, Hubballi and Hubli-Dharwad), AI Max off, and campaign-wide broad match off. Website ad eligible. Call asset matches the website. Hosted lead form eligible (limited), zero impressions November 15. Reviewed responsive Enquire and Site Visit dialogs, tagged redirect, brochure PDF and form validation. No synthetic lead sent to sales. Replaced the paid-traffic promotional banner with the confirmed starting price and added it to the quick enquiry dialog. Added room for its close button on narrow screens. Compare cost per qualified contact and attended visit after follow-up; website goals do not measure completed bookings.
