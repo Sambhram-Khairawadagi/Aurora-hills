@@ -1,6 +1,6 @@
 import { BUYER_FAQS } from "@/lib/buyer-faq";
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Cormorant_Garamond, Plus_Jakarta_Sans, Noto_Sans_Kannada } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { GoogleTag } from "@/components/GoogleTag";
 
@@ -12,33 +12,33 @@ export const viewport: Viewport = {
 };
 
 
-const inter = Plus_Jakarta_Sans({
-  subsets: ["latin"],
+const inter = localFont({
+  src: "./fonts/plusjakartasans/variable.woff2",
   display: "swap",
   variable: "--font-sans",
+  weight: "200 800",
 });
 
-const playfair = Playfair_Display({
-  subsets: ["latin"],
+const playfair = localFont({
+  src: "./fonts/playfairdisplay/variable.woff2",
   display: "swap",
   variable: "--font-serif",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  weight: "400 900",
 });
 
-const vintage = Cormorant_Garamond({
-  subsets: ["latin"],
+const vintage = localFont({
+  src: "./fonts/cormorantgaramond/variable.woff2",
   display: "swap",
   variable: "--font-vintage",
-  weight: ["400", "500", "600", "700"],
+  weight: "400 700",
 });
 
-const kannada = Noto_Sans_Kannada({
-  subsets: ["kannada"],
-  weight: ["400", "600", "700", "900"],
+const kannada = localFont({
+  src: "./fonts/notosanskannada/variable.woff2",
   display: "swap",
   variable: "--font-kannada",
+  weight: "400 900",
 });
-
 
 export const metadata: Metadata = {
   title: "Plots in Dharwad | Residential Villa Plots in Hubli Dharwad | The Aurora Hills",
@@ -252,7 +252,7 @@ export default function RootLayout({
         "logo": "https://www.theaurorahills.com/images/aurora-hills-logo.png",
         "image": "https://www.theaurorahills.com/images/hero-layout-sunset.png",
         "telephone": "+91-8970198701",
-        "priceRange": "₹42,00,000 - ₹1,20,00,000",
+        "priceRange": "₹38,00,000 - ₹1,20,00,000",
         "currenciesAccepted": "INR",
         "paymentAccepted": "Bank Loan, Cheque, Bank Transfer, NEFT/RTGS",
         "contactPoint": {
@@ -296,7 +296,7 @@ export default function RootLayout({
         "url": "https://www.theaurorahills.com",
         "offers": {
           "@type": "AggregateOffer",
-          "lowPrice": "4200000",
+          "lowPrice": "3800000",
           "highPrice": "12000000",
           "priceCurrency": "INR",
           "offerCount": "100+",
@@ -319,7 +319,7 @@ export default function RootLayout({
           "https://www.theaurorahills.com/images/aurora-hills-logo.png"
         ],
         "logo": "https://www.theaurorahills.com/images/aurora-hills-logo.png",
-        "priceRange": "₹42 Lakhs - ₹1.2 Crores",
+        "priceRange": "₹38 Lakhs - ₹1.2 Crores",
         "currenciesAccepted": "INR",
         "paymentAccepted": "Bank Transfer, Cheque, Home Loan, NEFT, RTGS",
         "address": {

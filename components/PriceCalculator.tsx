@@ -10,7 +10,7 @@ interface PriceCalculatorProps {
 
 export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
   onOpenEnquiry,
-  startingPrice = "₹42 LAKHS*",
+  startingPrice = "₹38 LAKHS*",
 }) => {
   const [selectedSize, setSelectedSize] = useState<string>("1200");
 
@@ -38,7 +38,7 @@ export const PriceCalculator: React.FC<PriceCalculatorProps> = ({
             Plot Dimensions &amp; <span className="vibrant-text-gradient">Investment Estimator</span>
           </h2>
           <p className="text-charcoal-700 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto font-medium">
-            Pre-launch pricing advantage starting from ₹42 Lakhs. Pre-approved plot loans available from SBI, HDFC, ICICI and leading nationalized banks.
+            Villa plots start at ₹38 lakh. Pricing varies by plot size and availability. Pre-approved plot loans available from SBI, HDFC, ICICI and leading nationalized banks.
           </p>
         </div>
 

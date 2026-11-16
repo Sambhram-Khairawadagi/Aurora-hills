@@ -103,7 +103,7 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
               Get Layout &amp; Price Sheet
             </h3>
             <p className="text-xs sm:text-sm text-forest-900/90 font-semibold mt-1 leading-relaxed">
-              Request the approved layout and current prices. Our sales team will follow up on your enquiry.
+              Villa plots in Dharwad start at ₹38 lakh. Get the approved layout and prices for available plots.
             </p>
           </div>
 

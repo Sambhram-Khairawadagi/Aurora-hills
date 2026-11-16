@@ -2,6 +2,8 @@
 
 ## November 16, 2026 — Budget review and brochure conversion correction
 
+Owner confirmed INR 38 lakh as the current lowest bookable price across the project. Updated the main enquiry form, project-wide price defaults, estimator introduction, terms example and structured price range. Specific size quotes remain separate. Bundled the existing landing-page typefaces locally after Vercel reported a Google Fonts loader error.
+
 Held the average daily budget at INR 1,500. The live campaign showed Eligible (Learning) on Maximize conversions. Google disabled the budget simulator for insufficient recent data. Review the November 17–30 lead cohort after follow-up, using distinct budget-qualified buyers, attended visits and spend per attended visit. The brochure-only form now emits a separate brochure_request analytics event on success. Verified separately that the plot and visit enquiry tracking helper still sends the Ads conversion. Website build passed. Historical Ads enquiry counts may include brochure requests.
 
 ## November 16, 2026 — Aurora Search bidding switched to Maximize conversions
