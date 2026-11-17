@@ -1,5 +1,9 @@
 # GEMINI.md — Project Memory, Rules & Progress Register
 
+## November 17, 2026 - Price sheet enquiry confirmations
+
+Both price sheet forms acknowledge receipt and explain that sales will follow up with current prices and availability. The quick enquiry confirmation hides the plot selection prompt. The main form offers optional brochure download and WhatsApp follow-up. Production build passed.
+
 ## November 16, 2026 — Budget decision and next review
 
 Keep Aurora Hills Search at **₹1,500 average daily budget** on **Maximize conversions**, with no target CPA. Maximize clicks sought visits to the website. The current strategy bids toward completed plot enquiries and site-visit requests. Brochure-only requests have their own analytics event. Sales confirms attendance and bookings separately.

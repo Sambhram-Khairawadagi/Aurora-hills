@@ -113,13 +113,15 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
           </div>
           <div>
             <h3 className="text-xl font-semibold font-sans text-forest-950">
-              Get Layout & Price Sheet
+              {submitted ? "Request received" : "Get Layout & Price Sheet"}
             </h3>
             <span className="text-xs sm:text-sm text-charcoal-700 font-medium">The Aurora Hills • Dharwad</span>
           </div>
         </div>
 
-        <p className="text-sm text-gray-600 mb-5">Villa plots start at ₹38 lakh. Choose a plot size to get availability and pricing.</p>
+        {!submitted && (
+          <p className="text-sm text-gray-600 mb-5">Villa plots start at ₹38 lakh. Choose a plot size to get availability and pricing.</p>
+        )}
 
         {submitted ? (
           <div className="text-center py-8 space-y-4 animate-fade-in">
@@ -130,7 +132,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
               Thank You{formData.name.trim() ? `, ${formData.name.trim()}` : ""}!
             </h4>
             <p className="text-sm text-charcoal-700 max-w-sm mx-auto font-medium">
-              Your inquiry has been submitted. Our property consultant will call you at <strong>+91 {formData.phone.replace(/[^0-9]/g, "")}</strong> with complete pricing and festive offer details.
+              We’ve received your request for the Aurora Hills layout and price sheet. Our team will contact you on the number you provided with current prices and availability.
             </p>
             <button
               onClick={onClose}

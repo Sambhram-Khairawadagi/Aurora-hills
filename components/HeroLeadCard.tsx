@@ -235,20 +235,20 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
             Request Received!
           </h4>
           <p className="text-xs sm:text-sm text-gray-600 max-w-xs mx-auto leading-relaxed">
-            Your enquiry has been received. Download the brochure below or continue on WhatsApp to request current pricing from our sales team.
+            We’ve received your request for the Aurora Hills layout and price sheet. Our team will contact you on the number you provided with current prices and availability.
           </p>
 
           <div className="pt-2 flex flex-col sm:flex-row gap-2.5 justify-center">
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-                `Hi, I just submitted an enquiry for The Aurora Hills plots in Dharwad. Please share the layout plan.`
+                `Hi, I just submitted an enquiry for The Aurora Hills plots in Dharwad. I have a follow-up question.`
               )}`}
               onClick={trackWhatsAppClick}
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-2.5 rounded-full bg-[#25D366] text-white text-xs font-semibold uppercase tracking-wider shadow-sm hover:bg-[#1ebd5a] transition-all flex items-center justify-center gap-1.5"
             >
-              Continue on WhatsApp
+              Chat on WhatsApp
             </a>
             <a
               href="/brochure/the-aurora-hills-brochure.pdf"
