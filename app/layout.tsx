@@ -252,7 +252,7 @@ export default function RootLayout({
         "logo": "https://www.theaurorahills.com/images/aurora-hills-logo.png",
         "image": "https://www.theaurorahills.com/images/hero-layout-sunset.png",
         "telephone": "+91-8970198701",
-        "priceRange": "₹38,00,000 - ₹1,20,00,000",
+        "priceRange": "₹42,00,000 - ₹1,20,00,000",
         "currenciesAccepted": "INR",
         "paymentAccepted": "Bank Loan, Cheque, Bank Transfer, NEFT/RTGS",
         "contactPoint": {
@@ -296,7 +296,7 @@ export default function RootLayout({
         "url": "https://www.theaurorahills.com",
         "offers": {
           "@type": "AggregateOffer",
-          "lowPrice": "3800000",
+          "lowPrice": "4200000",
           "highPrice": "12000000",
           "priceCurrency": "INR",
           "offerCount": "100+",
@@ -319,7 +319,7 @@ export default function RootLayout({
           "https://www.theaurorahills.com/images/aurora-hills-logo.png"
         ],
         "logo": "https://www.theaurorahills.com/images/aurora-hills-logo.png",
-        "priceRange": "₹38 Lakhs - ₹1.2 Crores",
+        "priceRange": "₹42 Lakhs - ₹1.2 Crores",
         "currenciesAccepted": "INR",
         "paymentAccepted": "Bank Transfer, Cheque, Home Loan, NEFT, RTGS",
         "address": {

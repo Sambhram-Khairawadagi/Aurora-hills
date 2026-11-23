@@ -16,7 +16,8 @@ export function Modal({ open, onClose, children }: { open: boolean; onClose: () 
     const heading = dialog.querySelector('h2, h3');
     if (heading) { heading.id = `${id}-title`; dialog.setAttribute('aria-labelledby', heading.id); }
     dialog.querySelectorAll('label').forEach((label, index) => {
-      const control = label.parentElement?.querySelector('input, select, textarea');
+      if (label.htmlFor) return;
+      const control = label.querySelector('input, select, textarea') || label.parentElement?.querySelector('input, select, textarea');
       if (control) { control.id ||= `${id}-field-${index}`; label.htmlFor = control.id; }
     });
     const overflow = document.body.style.overflow;

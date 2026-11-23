@@ -15,6 +15,7 @@ async function checkRoute(route, options = {}) {
   let confirmationSent = false;
   const create = async ({ data }) => { if (options.dbFails) throw Error('DB unavailable'); captured.push(data); return { id: 'test-record', ...data }; };
   const api = load(`app/api/${route}/route.ts`, {
+    'node:crypto': require('node:crypto'),
     'next/server': { NextResponse: { json: (body, init) => ({ body, status: init?.status || 200 }) } },
     '@/lib/db': { db: { lead: { create }, siteVisit: { create }, analyticsEvent: { create: async () => ({}) } } },
     '@/lib/email': { sendAdminNotification: async () => Boolean(options.email), sendUserConfirmation: async () => { confirmationSent = true; } },
@@ -46,6 +47,27 @@ async function checkRoute(route, options = {}) {
   assert.equal(events.filter(e => e[1] === 'conversion').length, 0); checks++;
   tracking.trackLeadSubmit('Test', '30x40');
   assert.equal(events.filter(e => e[1] === 'conversion').length, 1); checks++;
+  events.length = 0;
+  tracking.trackLeadSubmit('Test', '30x40', { submissionId: 'submission-123', email: ' Audit@Example.com ', phone: '919999999999', consent: true });
+  const match = events.find(e => e[0] === 'set' && e[2]);
+  assert.equal(match[2].email, 'audit@example.com');
+  assert.equal(match[2].phone_number, '+919999999999');
+  assert.equal(events.find(e => e[1] === 'conversion')[2].transaction_id, 'submission-123');
+  assert.equal(events.at(-1)[2], null);
+  assert.equal(JSON.stringify(events.filter(e => e[0] === 'event')).includes('audit@example.com'), false); checks++;
+  for (const consent of [false, undefined]) {
+    events.length = 0;
+    tracking.trackLeadSubmit('Test', '', { email: 'audit@example.com', phone: '9999999999', consent });
+    assert.equal(events.some(e => e[0] === 'set' && e[2]), false);
+    assert.equal(events.filter(e => e[1] === 'conversion').length, 1); checks++;
+  }
+  for (const route of ['leads', 'site-visits']) {
+    const result = await checkRoute(route, { durable: true, body: { budget: '38-50 lakh', location_fit: 'Dharwad', measurement_consent: true } });
+    const notes = JSON.parse(result.captured[0].notes);
+    assert.equal(notes.budget, '38-50 lakh');
+    assert.equal(notes.location_fit, 'Dharwad');
+    assert.equal(notes.measurement_consent, true); checks++;
+  }
   const delivery = load('lib/lead-delivery.ts', {}, {
     process: { env: { VERCEL: '1', LEADS_WEBHOOK_URL: 'https://example.invalid/test' } },
     AbortSignal, fetch: async () => ({ ok: false }),
@@ -74,7 +96,7 @@ async function checkRoute(route, options = {}) {
       '@/components/Modal': { Modal: 'dialog' },
       'canvas-confetti': { default() {} },
       '@/lib/utm': { getStoredUtm: () => ({ gclid: 'test-click' }) },
-      '@/lib/gtag': { trackLeadSubmit: (...args) => conversions.push(args) },
+      '@/lib/gtag': { trackBrochureRequest: (...args) => conversions.push(args) },
     }, { fetch: async () => ({ ok: success, json: async () => ({ success, error: 'Delivery unavailable' }) }) });
     const tree = component.BrochureModal({ isOpen: true, onClose() {} });
     function findForm(node) { if (!node || typeof node !== 'object') return; if (node.type === 'form') return node; return node.children?.flat(Infinity).map(findForm).find(Boolean); }

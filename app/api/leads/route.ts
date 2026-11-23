@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import { NextRequest, NextResponse } from "next/server";
 import { hasDurableDatabase, sendLeadWebhook } from "@/lib/lead-delivery";
 import { db } from "@/lib/db";
@@ -7,7 +8,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     if (!body || typeof body !== "object" || Array.isArray(body)) return NextResponse.json({ success: false, error: "Invalid request." }, { status: 400 });
-    const textFields = ["name", "phone", "email", "requirement", "purpose", "preferred_contact", "message", "source", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "preferred_date", "preferred_time", "transport_required"];
+    const textFields = ["name", "phone", "email", "requirement", "purpose", "preferred_contact", "message", "source", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "preferred_date", "preferred_time", "transport_required", "budget", "location_fit", "measurement_email"];
     if (textFields.some(key => body[key] != null && (typeof body[key] !== "string" || body[key].length > 4000))) return NextResponse.json({ success: false, error: "Please check your form details." }, { status: 400 });
     const {
       name,
@@ -45,11 +46,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ success: false, error: "Please enter a valid email address." }, { status: 400 });
     }
 
+    if (body.measurement_consent != null && typeof body.measurement_consent !== "boolean") return NextResponse.json({ success: false, error: "Invalid measurement preference." }, { status: 400 });
+    const qualification = {
+      budget: body.budget || "Not specified",
+      location_fit: body.location_fit || "Not specified",
+      measurement_consent: body.measurement_consent === true,
+      consent_version: "2026-11-23",
+    };
+
     const ip = req.headers.get("x-forwarded-for") || "127.0.0.1";
     const userAgent = req.headers.get("user-agent") || "";
     const isMobile = /mobile|android|iphone/i.test(userAgent);
 
-    let leadId = `lead_${Date.now()}`;
+    let leadId = `lead_${randomUUID()}`;
     let savedToDb = false;
 
     // 1. Try persisting to Database (Graceful degradation for serverless environments)
@@ -67,7 +76,7 @@ export async function POST(req: NextRequest) {
           utm_source: utm_source || "direct",
           utm_medium: utm_medium || "",
           utm_campaign: utm_campaign || "",
-          notes: JSON.stringify({ gclid: body.gclid || "", utm_term: body.utm_term || "", utm_content: body.utm_content || "" }),
+          notes: JSON.stringify({ ...qualification, gclid: body.gclid || "", utm_term: body.utm_term || "", utm_content: body.utm_content || "" }),
           device: isMobile ? "Mobile" : "Desktop"
         }
       });
@@ -91,6 +100,10 @@ export async function POST(req: NextRequest) {
     }
 
     const leadPayload: Record<string, any> = {
+      "Lead ID": leadId,
+      "Plot Budget": qualification.budget,
+      "Dharwad Location Preference": qualification.location_fit,
+      "Google Measurement Consent": qualification.measurement_consent ? "Granted" : "Not granted",
       Name: name.trim(),
       Phone: cleanPhone,
       Email: (email || "Not Provided").trim(),

@@ -1,5 +1,222 @@
 # Project Memory & Development History — The Aurora Hills
 
+## November 23, 2026 - Owner corrects price and premium buyer positioning
+
+Latest owner instruction: villa plots START AT INR 42 LAKH, superseding the earlier INR 38 lakh direction for current marketing. Position Aurora Hills as a premium township with amenities and villa plots in Dharwad, for interested buyers across Hubli-Dharwad and North Karnataka. Desired personas include HNIs, investors, business owners and higher-earning professionals, including banking and senior public-service professionals. Qualify by actual budget, location fit, purpose and timeline; job titles are not proof of purchasing ability. No political-affiliation targeting or VIP-only housing eligibility.
+
+Local code updated: main hero and enquiry copy, optional budget choices, ad-traffic banner, price defaults, FAQ, terms example and structured starting price now use INR 42 lakh. Historic audits and reel exports retain their original dated prices. New strategy: docs/premium-buyer-strategy.md. The earlier optional buyer-detail fields, consented matching and lead transaction IDs remain included in this local implementation. Production build and 30 isolated lead-flow checks passed. Deployment and live Ads INR 42 lakh update are not yet verified. No bidding, budget, audience, keyword or geographic targeting change applied in this update. The prior SEO accuracy cleanup and regional guide remain pending.
+
+
+## November 23, 2026 - November 21-23 Google Ads and Gmail audit
+
+Live account 838-030-4291 and Aurora campaign reviewed in Chrome. November 21 completed day: 127 impressions, 28 clicks, INR 2,334.52 spend, INR 83.38 CPC, one conversion (also one by conversion time). November 22 completed day: 131 impressions, 30 clicks, INR 1,513.83 spend, INR 50.46 CPC, zero conversions. November 23 morning partial: nine impressions in search-term report, two clicks, INR 450.84 spend, INR 225.42 CPC, zero conversions. The earlier overview showed eight impressions before the report refresh. Combined snapshot: 60 clicks, INR 4,299.19 spend, one reported conversion. These are form conversions, not plot bookings; today's numbers are incomplete and reporting can revise.
+
+Verified enabled campaign, Maximize conversions, INR 1,500/day, Eligible (Limited): Limited by search volume. Visible ad eligible, Dharwad location and INR 38 lakh description. Latest displayed account balance INR 7,507.60, low-funds warning, last INR 15,000 payment November 19. One intermediate cached card showed INR 8,039.59; use the latest repeated INR 7,507.60 snapshot, not a reconciled billing ledger. No budget, bidding, keyword or ad edits made. Do not raise budget based on platform spend benchmarks or apply Performance Max/broad-match recommendations automatically.
+
+Search terms: November 21 named terms INR 524.89/7 clicks and Other search terms INR 1,809.63/21 clicks/one conversion. Swarna griha dharwad INR 244.70/two clicks; yaligar layout dharwad INR 31.24/one; plot for sale in hubli INR 163.73/two; 60x40 site in dharwad INR 61.66/one; plots for sale in navanagar hubli INR 23.56/one. November 22 named terms INR 473.66/11 clicks, Other INR 1,040.17/19 clicks. Named paid queries included shree it park dharwad INR 123.67/one, rajeshwari properties hubli INR 40.13/one, plots for sale in sutagatti hubli INR 56.46/two, plus relevant Dharwad/Hubli plot searches. November 23 all INR 450.84/two clicks sits in Other search terms; matched keyword shown in overview is plots in hubli. Named swarna griha dharwad had one impression and no click today. No specific new exclusion supported by these small samples; monitor recurring competitor/location queries over a wider window and match sales outcomes before exclusions.
+
+Gmail social.propertybasket@gmail.com verified. All-folder submission search using IST Unix date boundaries November 21 00:00 through November 24 00:00 returned exactly one email, existing November 21 C071 (row 99). No additional Aurora submission emails for November 22 or November 23 as of this morning check. Register remains 99 submissions including two tests, 97 non-test submissions, 70 distinct non-test contacts, 60 Ads-tagged and 37 source-unverified. No duplicate row appended. This search does not count phone calls or portal leads.
+
+Conversion diagnostics: Aurora Hills - Website Lead is Primary, Count One, 90-day click window, one conversion on November 21. Needs attention popup explicitly says conversions recorded within last seven days; last recorded conversion November 21 17:30, last event ping November 21 10:21. Specific warning: Implement in-page code in addition to Automatic for better results; current coverage may improve with website code. This is an enhanced measurement implementation follow-up, not proof that basic form tracking is broken. Separate Suraksha conversion is Misconfigured; do not confuse with Aurora. Contact (Google tag) showed two secondary-to-this-audit contact actions on November 21, while campaign conversion count remains one; do not count these as two extra verified form leads. Account-level action is labelled Primary, but Aurora's campaign-specific goal selection was not re-opened in this check. Previously verified completed-website-enquiries custom goal remains historical context.
+
+Recommended next technical follow-up: inspect existing website enhanced-conversion implementation and Google's diagnostic detail, then validate any change before deployment. Sales feedback/site-visit attendance and booking evidence were not refreshed in this audit. Preserve last verified sales-sheet outcomes separately. No website deployment or external messages in this task.
+
+## November 21, 2026 - Full workbook count correction
+
+Downloaded read-only XLSX from the live sheet at approximately 17:08 IST. Reviewed both Dasara & Deepavali Offer Leads and November 2026, rather than only the email register. Offer tab has 389 named lead rows (including one missing phone); November tab has 130 named lead rows, including three additional Meta rows 130-132. Combined 519 lead records, not unique people. Sources combined: Meta 198; Google-labelled 74; Vijayavani 198; Housing 22; Reference 20; Manohar 1; unspecified 6. Normalizing single 10-digit numbers or 12-digit country-code numbers, including numeric cells without .0, gives 469 distinct valid phone numbers across the two tabs; 14 rows have missing/malformed/multiple numbers requiring manual reconciliation. Do not call 519 unique buyers or 74 verified campaign-attributed contacts. Sheet1 is a separate historical list and was not added wholesale. Edited dates and inconsistent date parsing mean these are tab/cohort totals, not a proven October 1-November 21 acquisition total.
+
+Completed-visit wording appears on 25 rows across the two tabs, representing 23 phone-linked records after merging two repeats: offer rows 138/153 share a phone and offer rows 284/327 share a phone. One of the 23 is a friend's visit recorded under a referring contact (offer row 11). Not every completed visit has a date; therefore 23 is a documented visited-contact/referral count within these cohorts, not 23 verified visits occurring strictly in October-November. November contributes five explicit completed-visit records, including the previously omitted Vijayavani contact at row 61. Amogh's "already seen it" remains ambiguous and excluded. One reported booking remains November row 36.
+
+Future explicitly dated visit plans: offer rows 14 (30/11), 213 (28/11), 333 (22/11), 391 (24/11); November rows 50 (22/11), 52 (28/11), 57 (28/11), 63 (26/11), 75 (25/11), 100 (22/11), 114 (27/11), 128 (27/11), 129 (22/11). Total 13 dated plans, not confirmed appointments. November row 128 refers to Gamangatti/Gokul Road and needs project clarification; it must not be counted as confirmed Aurora attendance. Five later-period visit intentions: offer row 348; November rows 30,84,101,106 (December / December-January). Additional Sunday/relative-date notes need confirmation and are excluded from the 13: November rows 26,29,55,79. November row 19's 28/11 is only a callback date, excluded. Past proposed visits with no attendance confirmation also excluded.
+
+Previous reply's 92 submissions / 67 contacts is correct only for the October-November website email register, not the whole sales workbook. Previous four completed / three upcoming answer was too narrow. Source sheet unchanged; personal data retained in original workbook, not copied here.
+
+## November 21, 2026 - Scheduled feedback check around 17:00 IST
+
+Browser fallback refreshed the November sheet and Property Basket mailbox after the sheet connector returned 403 and Gmail connector selected another account. Row 129 / C071 now has feedback for a Sunday November 22 visit, coming directly from Kalyan Nagar, with a call requested. Previously its feedback was blank. This is a visit discussion, not confirmed attendance or a new submission. Row 127 / C070 now has a no-answer comment following its proposed Saturday noon visit; attendance remains unverified. Row 124 now says the contact will call back. L36 still reports advance paid/booked plot; no additional booking evidence was inspected.
+
+Today's all-folder Aurora submission search returned only the already-registered 10:21 email. Register stays 99 submissions, two tests, 97 non-test submissions, 70 distinct contacts. Latest contacts matched to prior register using observed phone numbers; original email timestamps retained. No new negative keyword, bidding or budget change supported. Full historical phone reconciliation was not repeated. Priority is confirmation of tomorrow's requested visit and follow-up on today's unconfirmed visit.
+
+## November 21, 2026 - November sales-feedback review and reported booking
+
+Read the open November 2026 tab in Aurora Hilla Project Leads, spreadsheet 1HehRDZvJufTWfXirZfHP1KUlwHkaxZIlJ3_D0o9dtJk, gid 580890074. Connector returned 403; browser review succeeded. Reviewed visible entries from the beginning through row 129, including feedback, comments, follow-up and outcome columns. Dates in this sheet may have been edited and are not acquisition dates. Serial numbering, repeated contacts, ambiguous notes and mixed sources prevent treating the last serial 129 as a unique-lead total. A complete row-by-row phone reconciliation against all November Gmail submissions was not performed in this review. No sheet cells or campaign settings changed.
+
+IMPORTANT: row 36, source C36 = Google Leads, has follow-up L36 exactly "he is pay advance, booked plot". Comments say loan approved; initial feedback describes a completed self-visit and loan processing. This establishes ONE SALES-SHEET-REPORTED BOOKING and supersedes the earlier zero-recorded-bookings statement. The payment receipt, amount, plot number and booking date were not inspected. Dedicated closure/site-visit fields were blank in the reviewed view. Do not equate this with a verified transaction or an imported Google Ads booked-sale conversion. Contact identity remains in the source sheet, row 36.
+
+Other significant Google-labelled rows: row 112 notes self-visit but low budget; row 113 notes self-visit and interest. Row 13 describes an earlier visit but later says already bought a plot, without identifying the project; do not count as an Aurora booking. Row 114 mentions November 27 visit; row 123 has Saturday 11 AM visit discussion but later no answer. Row 127 (register C070) proposes Saturday noon visit from NTTF; attendance is not recorded. Row 128 (C012) explicitly says repeated lead and Sunday visit discussion. Its November 20 emails retain unverified per-submission attribution despite Google label in sheet. Row 129 (C071, today's enquiry) has no sales feedback yet. Rows 122, 125 and 126 show details sent / not connected or no answer. Rows 125-126 are C068/C069 confirmed from recent register context.
+
+Quality and follow-up issues: row 116 high price/not interested; row 117 already bought plot/not interested; row 118 wrong number; row 119 no requirements; row 27 high price/not interested; row 44 wants Hubli and notes INR 25 lakh budget; row 47 wants Kusugal Road/Hubli and finds location too far; row 40 wants near agriculture university and finds location too far; row 43 out-of-service contact. Many other rows show no answer, disconnected calls or pending callbacks. These outcomes are distinct from confirmed lack of interest.
+
+Other sources also appear: Meta, Housing, a Vijayav... source group and a Manoh... source label. Housing row 50 has November 22 visit wording that mixes future and past tense; confirm attendance rather than assume it. Housing row 51 seeks a flat, not a plot. Row 124 has a Saturday visit discussion from Bagalkot. Several non-Google rows want Bengaluru, lower prices or have invalid numbers; do not attribute these to Aurora Google Ads or use them to exclude Google keywords.
+
+Next actions: sales to confirm the row 36 booking details; contact today's C071; confirm attendance/outcomes for today's proposed visits and tomorrow's C012 visit including transport; record explicit appointment date, attended date, budget fit, location fit, next follow-up date and booking evidence. Reconcile duplicate rows by phone while preserving every submission. Do not increase ad spend or add negatives solely from mixed-source/ambiguous feedback. Match rejected Google contacts to their actual search terms before query exclusions. Existing INR 38 lakh qualification remains useful; describe Dharwad clearly and qualify Hubli-only preferences. No new ad changes made.
+
+## November 21, 2026 - Morning enquiry verified and Ads snapshot
+
+Gmail overlap search for November 20-21 returned five emails: four already recorded for November 20 and one new enquiry on November 21 at 10:21:04 IST. New contact C071 requested a 30x40 plot, purpose Plot Purchase / Investment. Email carried google / cpc / aurora_hills_search and keyword "sites in dharwad", and confirmed Saved To Database: Yes. A phone search across earlier Aurora submission emails returned no matches. Added row 99 once. Totals now 99 submissions including two local tests, 97 non-test submissions, 70 distinct non-test contacts, 60 Ads-tagged submissions and 37 source-unverified submissions. Personal details remain in Gmail.
+
+Earlier November 21 Ads snapshot: six clicks, 35 impressions, INR 401.81 spend, zero reported conversions. November 20 completed-day snapshot: 20 clicks, 142 impressions, INR 1,289.80 spend, one conversion. Today's visible query "plot for sale in hubli" cost INR 163.73 for two clicks; Other search terms cost INR 238.08 for four clicks. Other visible queries had no clicks. Ad eligible and description showed INR 38 lakh. Latest displayed balance INR 12,198.76; last payment INR 15,000 on November 19. No campaign changes justified or made from this small sample. Full post-switch/settings audit remains outstanding.
+
+The verified email lead is counted independently of the earlier zero in Ads. Its campaign tag does not prove that Google received the conversion event. Reporting delay and attribution to an earlier click date are possible explanations, not confirmed causes. Reconcile against Conversions (by conv. time), a wider click-date range and conversion diagnostics before diagnosing a tracking failure. Gmail receipt/database confirmation establishes submission receipt, not sales qualification or a booking.
+
+## November 20, 2026 - Four new inbox submissions recorded
+
+Property Basket Gmail overlap search covered November 19-20 in IST across all folders. Five submission emails were visible: the existing November 19 09:42 row and four new November 20 emails. All four new message bodies confirmed Saved To Database: Yes. The earlier mailbox-access gap is resolved by this check.
+
+Returning contact C012 submitted an undecided-size enquiry at 07:45:20 from Mobile Quick CTA, a Festive Scheme enquiry at 07:46:11 from Top Festive Ticker, and a site-visit request at 07:50:31 from Site Visit Modal. Both enquiries stated Build a Home and phone contact. The requested visit is November 22, 2026 at 10:00 AM, two visitors, transport required. This is a requested appointment, not a confirmed appointment, attended visit or booking. The visit email showed ad source direct with blank campaign and keyword; the two enquiry emails had no campaign tag. All three new submissions therefore remain source-unverified. C012 has a previously tagged Google Ads enquiry on November 13, which does not establish attribution for these new submissions.
+
+New contact C070 submitted a 30x50 Plot (1.5kg Silver Offer) enquiry at 13:12:21, Build a Home, phone contact, tagged google / cpc / aurora_hills_search with keyword "plots for sale in dharwad". A pre-November-20 phone search found C012's existing October 19 08:27, October 21 08:18 and November 13 19:23 submissions and no earlier submission for C070.
+
+Rows 95-98 preserve all four new emails. Today adds one new distinct contact and one returning contact, not four new buyers. Updated totals: 98 submissions including two local tests; 96 non-test submissions across 69 distinct phone numbers; 59 Google Ads-tagged submissions and 37 source-unverified submissions. Personal contact details remain in Gmail. No campaign changes made in this lead-recording task.
+
+## November 20, 2026 - November 19 and 20 Ads audit, mailbox refresh blocked
+
+Aurora ad group verified for November 19: 23 clicks, 156 impressions, INR 924.58 spend, one recorded conversion, INR 40.20 average CPC. November 20 intraday snapshot: nine clicks, 54 impressions, INR 583.25 spend, one conversion, INR 64.81 average CPC. Combined spend INR 1,507.83 for 32 clicks and two conversions, INR 753.92 per conversion. These are Ads attribution counts; new mailbox submissions were not verified.
+
+Account billing card confirmed the INR 15,000 payment on November 19 and INR 13,636.94 available funds on November 20. An account low-funds warning remained visible. Both dates showed a conversion within Other search terms, preventing query-level identification. November 19 other terms cost INR 465.02 and November 20 other terms cost INR 343.72. Paid visible named queries included ark majestic town hubli (INR 67.39), swarna griha dharwad (INR 31.20) and shree it park dharwad (INR 90.85), all with one click and zero conversions on their respective dates. No exclusion is supported by these small samples alone. Recommendations for Performance Max, broader matching and increased spend were visible; no recommendation was applied.
+
+Browser access stopped when opening a new tab for Gmail because the tool could not verify the current browser URL. The mailbox and lead register were not refreshed. Latest verified submission register remains 94 through the November 19 check. No campaign changes were made.
+
+## November 19, 2026 - Google Ads account top-up
+
+Owner reported adding INR 15,000 today because the account balance was exhausted. This is an owner-confirmed account funding transaction; receipt, credited balance and any interruption to ad delivery have not been verified. Attribute campaign expenses from Google Ads spend reports, because the account funding can serve multiple campaigns. Latest verified Aurora campaign budget remains INR 1,500/day on Maximize conversions.
+
+## November 19, 2026 - November 17-19 Ads and inbox audit
+
+Live browser access restored. Account 838-030-4291, Aurora ad group. November 17-19 snapshot showed 62 clicks, 378 impressions, INR 3,521.30 spend, three Google Ads conversions, INR 56.80 average CPC and INR 1,173.77 per conversion. November 19 is partial and reporting can update. Later refresh already showed additional impressions.
+
+Property Basket Gmail confirmed six submission emails from three distinct phones, all tagged aurora_hills_search. November 17 had one at 07:59 (already row 89). November 18 had four from one contact at 21:13 twice, 21:14 and 21:15. November 19 had one at 09:42. The two additional contacts had no matching submission before November 17. All five new emails are appended below, including both same-minute submissions. November 18 latest email keyword was "dharwad plots for sale"; November 19 keyword was "residential plots for sale in hubli". Both opened messages confirmed database storage. Budget qualification, visit attendance and bookings were not established from these emails.
+
+Visible converting queries were "hubli plot for sale" and "plot for sale dharwad" (one conversion each). Other search terms carried one conversion, 36 clicks and INR 2,024.41 spend, so query-level decisions cannot cover all spend. Four named-development searches consumed INR 551.32 across seven clicks with zero recorded conversions: "aishwarya nano city dharwad" INR 173.84 / 3 clicks; "neelgund developers hubli" INR 106.35 / 2; "swarna griha dharwad" INR 31.20 / 1; "shristi hill view hubli" INR 239.93 / 1. Monitor these for sustained spend and sales evidence before exact-match exclusions. Small samples alone do not establish lead quality.
+
+Verified Maximize conversions, INR 1,500/day and Aurora Hills - Completed Website Enquiries goal. No campaign settings or negative keywords changed in this audit. Prioritize sales qualification of the three contacts and cost per attended visit before budget expansion.
+
+## November 19, 2026 - Scheduled feedback review access failure
+
+At approximately 16:55 IST, the sales sheet connector again returned 403 permission denied and the Gmail connector still selected a different mailbox from Property Basket. Browser fallback stopped because Computer Use could not confidently determine the current Chrome URL on Windows. Neither source was refreshed. No verified changes to leads or sales outcomes were established, and no campaign changes were made. The latest verified submission register remains the November 17 check.
+
+## November 18, 2026 - Scheduled feedback review interrupted
+
+At approximately 17:00 IST, the November sales sheet connector returned permission denied. The Gmail connector was connected to a different mailbox from Property Basket. Browser fallback was attempted, then stopped by the user with Escape. Neither source was refreshed. The November 13 sales baseline and November 17 submission register remain the latest verified records. No new outcome or keyword recommendation could be established.
+
+## November 17, 2026 - Price sheet enquiry confirmations
+
+Both price sheet forms acknowledge receipt and explain that sales will follow up with current prices and availability. The quick enquiry confirmation hides the plot selection prompt. The main form offers optional brochure download and WhatsApp follow-up. Production build passed.
+
+## Aurora Hills website submission register through 21 November 2026
+
+Verified against the Property Basket Gmail mailbox, including archived mail, spam and trash. The broad project lead search returned 90 results: 89 submission emails and one spreadsheet sharing notification. The submission search with the phone field independently returned 89 emails. The initial coverage ran from 26 August through the 17 November check, with five new emails appended from November 18-19 and four from November 20 and one from November 21 after overlapping date searches. Portal-only, offline and sales-sheet-only leads are outside these inbox totals.
+
+**99 submissions logged**, including two explicitly labelled local tests. The other 97 submissions used 70 distinct phone numbers. Of those 97, 60 carried the Aurora Hills Google Ads campaign tag and 37 have unverified attribution. These figures count forms received, including repeat and brochure requests, without asserting sales qualification.
+
+Count every separate submission email once, including same-minute repeats. Use the contact reference to count distinct phone numbers separately. Each row can be located in Gmail by date, time and form type. For future updates, recheck an overlapping date range and compare the number of messages for each matching timestamp, contact and form type before appending. Preserve previously recorded submissions.
+
+| Submission | Date | Time (IST) | Contact | Source | Email type |
+|---:|---|---|---|---|---|
+| 1 | 2026-08-26 | 15:49 | C001 | Unverified | Enquiry form |
+| 2 | 2026-09-05 | 14:49 | C002 | Unverified | Enquiry form |
+| 3 | 2026-09-05 | 15:04 | C003 | Local test | Enquiry form |
+| 4 | 2026-09-05 | 15:04 | C003 | Local test | Site visit request |
+| 5 | 2026-09-07 | 13:01 | C002 | Unverified | Enquiry form |
+| 6 | 2026-09-07 | 13:10 | C004 | Unverified | Enquiry form |
+| 7 | 2026-09-08 | 11:31 | C005 | Unverified | Enquiry form |
+| 8 | 2026-10-04 | 21:07 | C006 | Unverified | Enquiry form |
+| 9 | 2026-10-14 | 14:01 | C007 | Unverified | Enquiry form |
+| 10 | 2026-10-16 | 15:49 | C001 | Unverified | Enquiry form |
+| 11 | 2026-10-16 | 20:21 | C008 | Google Ads | Enquiry form |
+| 12 | 2026-10-17 | 10:22 | C009 | Unverified | Enquiry form |
+| 13 | 2026-10-17 | 14:45 | C010 | Unverified | Enquiry form |
+| 14 | 2026-10-18 | 19:28 | C011 | Google Ads | Enquiry form |
+| 15 | 2026-10-19 | 08:27 | C012 | Unverified | Enquiry form |
+| 16 | 2026-10-19 | 08:43 | C013 | Unverified | Enquiry form |
+| 17 | 2026-10-19 | 08:45 | C013 | Unverified | Enquiry form |
+| 18 | 2026-10-19 | 16:39 | C014 | Google Ads | Enquiry form |
+| 19 | 2026-10-19 | 19:21 | C015 | Unverified | Enquiry form |
+| 20 | 2026-10-21 | 08:18 | C012 | Unverified | Enquiry form |
+| 21 | 2026-10-21 | 08:56 | C016 | Unverified | Enquiry form |
+| 22 | 2026-10-21 | 13:50 | C017 | Google Ads | Enquiry form |
+| 23 | 2026-10-23 | 07:27 | C018 | Unverified | Enquiry form |
+| 24 | 2026-10-23 | 10:38 | C019 | Unverified | Enquiry form |
+| 25 | 2026-10-24 | 11:30 | C020 | Google Ads | Enquiry form |
+| 26 | 2026-10-24 | 19:48 | C021 | Google Ads | Enquiry form |
+| 27 | 2026-10-25 | 16:53 | C022 | Google Ads | Enquiry form |
+| 28 | 2026-10-26 | 18:22 | C023 | Google Ads | Enquiry form |
+| 29 | 2026-10-27 | 12:59 | C024 | Google Ads | Enquiry form |
+| 30 | 2026-10-29 | 23:30 | C025 | Unverified | Enquiry form |
+| 31 | 2026-11-01 | 08:31 | C026 | Google Ads | Enquiry form |
+| 32 | 2026-11-01 | 08:33 | C026 | Google Ads | Enquiry form |
+| 33 | 2026-11-01 | 11:44 | C027 | Unverified | Enquiry form |
+| 34 | 2026-11-01 | 11:45 | C027 | Unverified | Enquiry form |
+| 35 | 2026-11-01 | 12:05 | C028 | Unverified | Enquiry form |
+| 36 | 2026-11-01 | 12:06 | C028 | Unverified | Enquiry form |
+| 37 | 2026-11-01 | 12:07 | C028 | Unverified | Enquiry form |
+| 38 | 2026-11-01 | 15:19 | C029 | Unverified | Enquiry form |
+| 39 | 2026-11-01 | 19:03 | C030 | Unverified | Enquiry form |
+| 40 | 2026-11-01 | 19:35 | C031 | Unverified | Enquiry form |
+| 41 | 2026-11-01 | 22:06 | C032 | Unverified | Enquiry form |
+| 42 | 2026-11-02 | 09:47 | C033 | Google Ads | Enquiry form |
+| 43 | 2026-11-02 | 11:17 | C034 | Unverified | Enquiry form |
+| 44 | 2026-11-02 | 14:44 | C035 | Google Ads | Enquiry form |
+| 45 | 2026-11-02 | 16:51 | C036 | Google Ads | Enquiry form |
+| 46 | 2026-11-02 | 16:52 | C036 | Google Ads | Enquiry form |
+| 47 | 2026-11-03 | 15:11 | C037 | Google Ads | Enquiry form |
+| 48 | 2026-11-05 | 11:23 | C038 | Google Ads | Enquiry form |
+| 49 | 2026-11-05 | 12:15 | C038 | Google Ads | Enquiry form |
+| 50 | 2026-11-05 | 13:56 | C039 | Google Ads | Enquiry form |
+| 51 | 2026-11-05 | 15:31 | C040 | Unverified | Enquiry form |
+| 52 | 2026-11-05 | 19:22 | C041 | Google Ads | Enquiry form |
+| 53 | 2026-11-05 | 19:23 | C041 | Google Ads | Site visit request |
+| 54 | 2026-11-05 | 20:13 | C042 | Google Ads | Enquiry form |
+| 55 | 2026-11-06 | 09:15 | C043 | Google Ads | Enquiry form |
+| 56 | 2026-11-07 | 10:46 | C044 | Google Ads | Enquiry form |
+| 57 | 2026-11-07 | 10:47 | C044 | Google Ads | Enquiry form |
+| 58 | 2026-11-07 | 13:06 | C045 | Google Ads | Enquiry form |
+| 59 | 2026-11-07 | 15:35 | C046 | Google Ads | Enquiry form |
+| 60 | 2026-11-07 | 15:56 | C046 | Google Ads | Enquiry form |
+| 61 | 2026-11-07 | 18:40 | C047 | Google Ads | Enquiry form |
+| 62 | 2026-11-08 | 10:21 | C048 | Google Ads | Enquiry form |
+| 63 | 2026-11-09 | 11:31 | C049 | Google Ads | Enquiry form |
+| 64 | 2026-11-09 | 11:38 | C050 | Google Ads | Enquiry form |
+| 65 | 2026-11-09 | 16:34 | C051 | Google Ads | Enquiry form |
+| 66 | 2026-11-10 | 13:44 | C023 | Google Ads | Enquiry form |
+| 67 | 2026-11-10 | 15:14 | C052 | Google Ads | Enquiry form |
+| 68 | 2026-11-10 | 20:28 | C053 | Google Ads | Enquiry form |
+| 69 | 2026-11-12 | 10:26 | C054 | Unverified | Enquiry form |
+| 70 | 2026-11-13 | 17:06 | C055 | Google Ads | Enquiry form |
+| 71 | 2026-11-13 | 19:23 | C012 | Google Ads | Enquiry form |
+| 72 | 2026-11-14 | 14:08 | C056 | Google Ads | Enquiry form |
+| 73 | 2026-11-15 | 09:06 | C057 | Google Ads | Enquiry form |
+| 74 | 2026-11-15 | 12:00 | C058 | Unverified | Enquiry form |
+| 75 | 2026-11-15 | 12:26 | C059 | Google Ads | Enquiry form |
+| 76 | 2026-11-15 | 12:56 | C060 | Unverified | Enquiry form |
+| 77 | 2026-11-15 | 16:42 | C061 | Google Ads | Enquiry form |
+| 78 | 2026-11-15 | 17:22 | C062 | Google Ads | Enquiry form |
+| 79 | 2026-11-15 | 17:22 | C062 | Google Ads | Enquiry form |
+| 80 | 2026-11-15 | 17:23 | C062 | Google Ads | Enquiry form |
+| 81 | 2026-11-15 | 21:14 | C063 | Google Ads | Enquiry form |
+| 82 | 2026-11-15 | 21:15 | C064 | Google Ads | Enquiry form |
+| 83 | 2026-11-16 | 09:57 | C065 | Unverified | Enquiry form |
+| 84 | 2026-11-16 | 19:52 | C066 | Google Ads | Enquiry form |
+| 85 | 2026-11-16 | 19:53 | C066 | Google Ads | Enquiry form |
+| 86 | 2026-11-16 | 19:53 | C066 | Google Ads | Enquiry form |
+| 87 | 2026-11-16 | 19:54 | C066 | Google Ads | Enquiry form |
+| 88 | 2026-11-16 | 19:54 | C066 | Google Ads | Enquiry form |
+| 89 | 2026-11-17 | 07:59 | C067 | Google Ads | Enquiry form |
+| 90 | 2026-11-18 | 21:13 | C068 | Google Ads | Enquiry form |
+| 91 | 2026-11-18 | 21:13 | C068 | Google Ads | Enquiry form |
+| 92 | 2026-11-18 | 21:14 | C068 | Google Ads | Enquiry form |
+| 93 | 2026-11-18 | 21:15 | C068 | Google Ads | Enquiry form |
+| 94 | 2026-11-19 | 09:42 | C069 | Google Ads | Enquiry form |
+| 95 | 2026-11-20 | 07:45 | C012 | Unverified | Enquiry form |
+| 96 | 2026-11-20 | 07:46 | C012 | Unverified | Enquiry form |
+| 97 | 2026-11-20 | 07:50 | C012 | Unverified | Site visit request |
+| 98 | 2026-11-20 | 13:12 | C070 | Google Ads | Enquiry form |
+| 99 | 2026-11-21 | 10:21 | C071 | Google Ads | Enquiry form |
+
+## November 17, 2026 — First full day on Maximize conversions, intraday audit
+
+Property Basket Gmail returned one Aurora submission received at 7:59 AM for a 30×50 plot, tagged google / aurora_hills_search. Sales qualification, attendance and booking were unverified. Aurora ad group showed 127 impressions, 19 clicks, INR 1,001.39 spend and one conversion. The converting query was "hubli plot for sale" (one click, INR 27.96). Individually reported terms covered seven clicks and INR 303.17. Other search terms accounted for 12 clicks and INR 698.22. "neelgund developers hubli" had one click at INR 59.70 and zero conversions. Monitor repeat competitor spend and sales feedback. No campaign edits were warranted in this audit. Hold INR 1,500/day and retain Hubli buyer searches.
+
 ## November 16, 2026 — Budget decision and next review
 
 Keep Aurora Hills Search at **₹1,500 average daily budget** on **Maximize conversions**, with no target CPA. Maximize clicks sought visits to the website. The current strategy bids toward completed plot enquiries and site-visit requests. Brochure-only requests have their own analytics event. Sales confirms attendance and bookings separately.

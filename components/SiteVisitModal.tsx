@@ -4,6 +4,7 @@ import { Modal } from "@/components/Modal";
 import React, { useState, useEffect } from "react";
 import { X, Calendar, CheckCircle2, ShieldCheck, Sparkles, Clock, Car } from "lucide-react";
 import confetti from "canvas-confetti";
+import { BuyerDetails, emptyBuyerDetails } from "@/components/BuyerDetails";
 import { getStoredUtm } from "@/lib/utm";
 import { trackLeadSubmit } from "@/lib/gtag";
 
@@ -24,6 +25,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
     message: "",
   });
 
+  const [buyerDetails, setBuyerDetails] = useState(emptyBuyerDetails);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -67,6 +69,8 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
           phone: cleanPhone,
           source: finalSource,
           ...utmParams,
+          ...buyerDetails,
+          email: buyerDetails.measurement_email.trim(),
         }),
       });
 
@@ -74,7 +78,7 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
       if (res.ok && data.success) {
         setSubmitted(true);
         confetti({ particleCount: 70, spread: 80 });
-        trackLeadSubmit(finalSource, "Site Visit Request");
+        trackLeadSubmit(finalSource, "Site Visit Request", { submissionId: data.lead_id, email: buyerDetails.measurement_email, phone: cleanPhone, consent: buyerDetails.measurement_consent });
       } else {
         setErrorMsg(data.error || "Failed to schedule. Please call us.");
       }
@@ -208,6 +212,8 @@ export const SiteVisitModal: React.FC<SiteVisitModalProps> = ({ isOpen, onClose 
                 </select>
               </div>
             </div>
+
+            <BuyerDetails value={buyerDetails} onChange={setBuyerDetails} />
 
             {errorMsg && (
               <div role="alert" className="p-2.5 bg-red-100 border border-red-300 rounded-xl text-red-700 text-xs font-semibold">

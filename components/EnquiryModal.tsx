@@ -4,6 +4,7 @@ import { Modal } from "@/components/Modal";
 import React, { useState, useEffect } from "react";
 import { X, Send, CheckCircle2, ShieldCheck, Sparkles, Phone, Mail, User } from "lucide-react";
 import confetti from "canvas-confetti";
+import { BuyerDetails, emptyBuyerDetails } from "@/components/BuyerDetails";
 
 import { getStoredUtm } from "@/lib/utm";
 import { trackLeadSubmit, trackWhatsAppClick } from "@/lib/gtag";
@@ -31,6 +32,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
     message: "",
   });
 
+  const [buyerDetails, setBuyerDetails] = useState(emptyBuyerDetails);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -78,6 +80,8 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
           phone: cleanPhone,
           source: finalSource,
           ...utmParams,
+          ...buyerDetails,
+          email: buyerDetails.measurement_email.trim(),
         }),
       });
 
@@ -85,7 +89,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
       if (res.ok && data.success) {
         setSubmitted(true);
         confetti({ particleCount: 70, spread: 80 });
-        trackLeadSubmit(finalSource, formData.requirement);
+        trackLeadSubmit(finalSource, formData.requirement, { submissionId: data.lead_id, email: buyerDetails.measurement_email, phone: cleanPhone, consent: buyerDetails.measurement_consent });
       } else {
         setErrorMsg(data.error || "Submission failed. Please try again.");
       }
@@ -120,7 +124,7 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
         </div>
 
         {!submitted && (
-          <p className="text-sm text-gray-600 mb-5">Villa plots start at ₹38 lakh. Choose a plot size to get availability and pricing.</p>
+          <p className="text-sm text-gray-600 mb-5">Villa plots start at ₹42 lakh. Choose a plot size to get availability and pricing.</p>
         )}
 
         {submitted ? (
@@ -196,6 +200,8 @@ export const EnquiryModal: React.FC<EnquiryModalProps> = ({
                 <option value="Not decided yet">Not decided yet</option>
               </select>
             </div>
+
+            <BuyerDetails value={buyerDetails} onChange={setBuyerDetails} />
 
             {errorMsg && (
               <div role="alert" className="p-2.5 bg-red-100 border border-red-300 rounded-xl text-red-700 text-xs font-semibold">

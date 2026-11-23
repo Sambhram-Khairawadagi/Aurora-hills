@@ -84,7 +84,7 @@ export default function TermsAndConditionsPage() {
                 4. Pricing, Taxes & Availability
               </h2>
               <ul className="list-disc pl-6 space-y-1.5 text-charcoal-700">
-                <li>Prices displayed (e.g., &quot;Starting from ₹38 Lakhs*&quot;) represent promotional pre-launch baseline figures and are subject to revision without prior notice at developer discretion.</li>
+                <li>Prices displayed (e.g., &quot;Starting from ₹42 Lakhs*&quot;) represent promotional pre-launch baseline figures and are subject to revision without prior notice at developer discretion.</li>
                 <li>Statutory government levies including Stamp Duty, Registration Fees, GST (if applicable), HDUDA betterment/khata transfer fees, and legal documentation costs are payable extra as per prevailing government rates.</li>
                 <li>Plot allotment is confirmed strictly on a first-come, first-served basis upon receipt of standard token advance and execution of the formal booking agreement.</li>
               </ul>

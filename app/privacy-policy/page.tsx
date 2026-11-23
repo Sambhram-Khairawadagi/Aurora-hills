@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
               Privacy Policy
             </h1>
             <p className="text-sm sm:text-base text-charcoal-600 font-medium">
-              Last Updated: September 2026 • The Aurora Hills (Marketed by Property Basket)
+              Last Updated: November 2026 • The Aurora Hills (Marketed by Property Basket)
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export default function PrivacyPolicyPage() {
                 <li>To improve user experience, website security, and analyze marketing performance.</li>
               </ul>
               <p className="font-bold text-forest-950 pt-1">
-                We do NOT sell, rent, trade, or distribute your personal contact information to third-party telemarketers or advertisers.
+                We do not sell or rent your personal contact information. If you select the optional Google measurement permission on an enquiry form, your email and phone number are supplied to Google’s tag for enhanced conversion measurement. Google hashes this information before transmission for matching ad interactions. This optional permission does not affect your ability to enquire. Budget and location preferences are used by our sales team and are not included in these matching fields.
               </p>
             </section>
 

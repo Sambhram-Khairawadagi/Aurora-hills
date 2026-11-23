@@ -2,7 +2,7 @@ export const BUYER_FAQS = [
   {
     "id": "pricing",
     "query": "How do I get current plot prices?",
-    "capsule": "Choose a plot size and request the layout and price sheet. Our team will share current rates and availability for 30×40, 30×50, 40×60 and custom-size plots. Ask for a complete cost breakdown, including applicable charges, before booking."
+    "capsule": "Villa plots at The Aurora Hills in Dharwad start at ₹42 lakh, subject to plot availability. Request the layout and price sheet for 30×40, 30×50, 40×60 and custom-size plots. This is plot pricing; villa construction is separate. Ask for a complete cost breakdown, including applicable charges, before booking."
   },
   {
     "id": "approvals",

@@ -447,7 +447,7 @@ export const FESTIVE_SCHEME_DATA = {
       image: "/images/festive/festive-1kg-silver.webp",
       idealFor: "Contemporary 3BHK Independent Home",
       description: "Book our most sought-after 1,200 sq.ft plot and receive 1 Kilogram of pure festive Silver.",
-      startingPrice: "₹38 Lakhs*",
+      startingPrice: "₹42 Lakhs*",
       accentColor: "from-slate-700 via-slate-600 to-zinc-800",
       headerBg: "bg-gradient-to-r from-slate-900 via-zinc-900 to-slate-950 text-white",
       ribbonText: "Festive Silver Blessing"

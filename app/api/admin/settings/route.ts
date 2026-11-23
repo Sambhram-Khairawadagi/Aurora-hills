@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { db } from "@/lib/db";
 
 const defaultSettings = {
-  startingPrice: "₹38 Lakhs",
+  startingPrice: "₹42 Lakhs",
   phoneNumbers: JSON.stringify(["89701 98701", "73533 11107", "98801 66275", "92425 08288"]),
   primaryPhone: "8970198701",
   whatsappNumber: "8970198701",

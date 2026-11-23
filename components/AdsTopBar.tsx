@@ -60,7 +60,7 @@ export const AdsTopBar: React.FC<AdsTopBarProps> = ({ onOpenEnquiry, onVisibilit
       <div className="flex items-center gap-2 min-w-0">
         <span className="flex-shrink-0 w-2 h-2 rounded-full bg-amber-400 animate-ping" />
         <span className="text-xs sm:text-sm font-bold text-white/90 truncate">
-          Dharwad villa plots <span className="text-amber-300 font-black">from ₹38 lakh</span>
+          Dharwad villa plots <span className="text-amber-300 font-black">from ₹42 lakh</span>
         </span>
       </div>
 

@@ -1,5 +1,12 @@
 # GEMINI.md — Project Memory, Rules & Progress Register
 
+## November 23, 2026 - Current price and premium positioning (supersedes older pricing)
+
+Owner confirmed a revised starting price of INR 42 lakh. Use this for current marketing instead of the earlier INR 38 lakh instruction. Position the Dharwad project as a premium township with lifestyle amenities and villa plots, welcoming budget-compatible buyers from Hubli and across North Karnataka. HNIs, investors, business owners and higher-earning professionals are desired buyer personas; qualify genuine requirements, budget, Dharwad fit and buying timeline rather than assuming intent from occupation. Do not target political affiliation or restrict housing access by social status.
+
+Updated local website pricing, hero value proposition, FAQ, structured starting price and optional budget bands. New plan: docs/premium-buyer-strategy.md. Build and 30 isolated lead-flow checks passed. Deployment and live Ads price change remain unverified; no campaign budget, bidding, geographic or audience changes made. Preserve historical dated prices and outcomes in the register. Prior SEO fixes/regional content and offline sales outcome setup remain pending.
+
+
 ## November 17, 2026 - Price sheet enquiry confirmations
 
 Both price sheet forms acknowledge receipt and explain that sales will follow up with current prices and availability. The quick enquiry confirmation hides the plot selection prompt. The main form offers optional brochure download and WhatsApp follow-up. Production build passed.

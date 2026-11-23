@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Phone, User, Send, CheckCircle2, ShieldCheck, Sparkles, Download, MessageSquare } from "lucide-react";
 import confetti from "canvas-confetti";
+import { BuyerDetails, emptyBuyerDetails } from "@/components/BuyerDetails";
 import { CONTACT_NUMBERS, WHATSAPP_NUMBER } from "@/lib/projectData";
 import { getStoredUtm } from "@/lib/utm";
 import { trackLeadSubmit, trackPhoneClick, trackWhatsAppClick } from "@/lib/gtag";
@@ -18,6 +19,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
     requirement: "30x40 Plot (1,200 sq.ft)",
   });
 
+  const [buyerDetails, setBuyerDetails] = useState(emptyBuyerDetails);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -36,7 +38,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
     try {
       const utmParams = getStoredUtm();
       const finalSource = utmParams.utm_source
-        ? `Google Ads (${utmParams.utm_campaign || "Footer Enquiry Form"})`
+        ? `${utmParams.utm_source} (${utmParams.utm_campaign || "Footer Enquiry Form"})`
         : "Footer Enquiry Form";
 
       const res = await fetch("/api/leads", {
@@ -45,13 +47,14 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
         body: JSON.stringify({
           name: formData.name.trim(),
           phone: cleanPhone,
-          email: "",
           requirement: formData.requirement,
           purpose: "Plot Purchase / Investment",
           preferred_contact: "Phone",
           message: "Submitted via main website contact section.",
           source: finalSource,
           ...utmParams,
+          ...buyerDetails,
+          email: buyerDetails.measurement_email.trim(),
         }),
       });
 
@@ -59,7 +62,7 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
       if (res.ok && data.success) {
         setSubmitted(true);
         confetti({ particleCount: 75, spread: 85 });
-        trackLeadSubmit(finalSource, formData.requirement);
+        trackLeadSubmit(finalSource, formData.requirement, { submissionId: data.lead_id, email: buyerDetails.measurement_email, phone: cleanPhone, consent: buyerDetails.measurement_consent });
         if (onSuccess) onSuccess();
       } else {
         setErrorMsg(data.error || "Submission failed. Please call us directly.");
@@ -246,7 +249,9 @@ export const EnquirySection: React.FC<EnquirySectionProps> = ({ onSuccess }) => 
                       </select>
                     </div>
 
-                    {errorMsg && (
+                    <BuyerDetails value={buyerDetails} onChange={setBuyerDetails} />
+
+            {errorMsg && (
                       <div className="p-3 bg-red-50 border border-red-200 rounded-xl text-red-700 text-xs font-semibold">
                         {errorMsg}
                       </div>

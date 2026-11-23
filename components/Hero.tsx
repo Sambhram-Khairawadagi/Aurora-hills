@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             <p className="text-base sm:text-lg text-forest-950 leading-relaxed max-w-xl">
-              Villa plots at Sunset Viewpoint, Kelgeri. Explore the approved layout and current availability.
+              Premium township villa plots from ₹42 lakh at Sunset Viewpoint, Dharwad. Explore the lifestyle amenities, approved layout and space for your future home.
             </p>
             <p className="text-sm text-emerald-900 flex items-center gap-2">
               <Car className="w-4 h-4 shrink-0" /> Free site-visit pickup across Dharwad &amp; Hubli.

@@ -33,12 +33,13 @@ export const pageview = (url: string) => {
 };
 
 // Track Google Ads conversions
-export const trackConversion = (sendTo?: string, value: number = 0, currency: string = "INR") => {
+export const trackConversion = (sendTo?: string, value: number = 0, currency: string = "INR", transactionId?: string) => {
   const target = sendTo || GOOGLE_CONVERSION_SEND_TO;
   if (!target) return;
 
   safeGtag("event", "conversion", {
     send_to: target,
+    ...(transactionId ? { transaction_id: transactionId } : {}),
     value: value,
     currency: currency,
   });
@@ -50,20 +51,33 @@ export const trackBrochureRequest = () => {
   });
 };
 
-// Track Lead Form Submissions
-export const trackLeadSubmit = (source: string = "Website Form", requirement?: string) => {
-  // General Google Analytics lead event
+export interface LeadMeasurement {
+  submissionId?: string;
+  email?: string;
+  phone?: string;
+  consent?: boolean;
+}
+
+// Only successful enquiry responses call this; brochure/contact actions stay separate.
+export const trackLeadSubmit = (source: string = "Website Form", requirement?: string, measurement: LeadMeasurement = {}) => {
   safeGtag("event", "generate_lead", {
     event_category: "Real Estate Leads",
     event_label: source,
-    value: 1000,
     requirement: requirement || "Not Specified",
   });
-
-  // Google Ads conversion event if send_to is set
+  // Do not put contact details in analytics event parameters or browser storage.
+  const email = measurement.email?.trim().toLowerCase();
+  const digits = measurement.phone?.replace(/\D/g, "").replace(/^91(?=\d{10}$)/, "");
+  const phone = digits && /^[6-9]\d{9}$/.test(digits) ? `+91${digits}` : undefined;
+  const canMatch = measurement.consent === true && !!email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  safeGtag("set", "user_data", canMatch ? { email, ...(phone ? { phone_number: phone } : {}) } : null);
   if (GOOGLE_CONVERSION_SEND_TO) {
-    trackConversion(GOOGLE_CONVERSION_SEND_TO, 1000, "INR");
+    safeGtag("event", "conversion", {
+      send_to: GOOGLE_CONVERSION_SEND_TO,
+      ...(measurement.submissionId ? { transaction_id: measurement.submissionId } : {}),
+    });
   }
+  safeGtag("set", "user_data", null);
 };
 
 // Track Direct Phone Call Clicks

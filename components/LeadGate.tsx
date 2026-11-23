@@ -105,7 +105,7 @@ export const LeadGate: React.FC = () => {
 
     try {
       const utmParams = getStoredUtm();
-      const adSource = utmParams.utm_source ? `Google Ads (${utmParams.utm_campaign || "Lead Gate"})` : "Lead Gate";
+      const adSource = utmParams.utm_source ? `${utmParams.utm_source} (${utmParams.utm_campaign || "Lead Gate"})` : "Lead Gate";
       const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -127,7 +127,7 @@ export const LeadGate: React.FC = () => {
         setAlreadyUnlocked(true);
         setSubmitted(true);
 
-        trackLeadSubmit(adSource, formData.requirement);
+        trackLeadSubmit(adSource, formData.requirement, { submissionId: data.lead_id });
 
         // Safe celebration confetti
         try {

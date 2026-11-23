@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Phone, CheckCircle2, ShieldCheck, Sparkles, Send, Download } from "lucide-react";
 import confetti from "canvas-confetti";
+import { BuyerDetails, emptyBuyerDetails } from "@/components/BuyerDetails";
 import { getStoredUtm } from "@/lib/utm";
 import { trackLeadSubmit, trackPhoneClick, trackWhatsAppClick } from "@/lib/gtag";
 import { WHATSAPP_NUMBER, CONTACT_NUMBERS } from "@/lib/projectData";
@@ -26,6 +27,7 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [selectedPlot, setSelectedPlot] = useState("30×40");
+  const [buyerDetails, setBuyerDetails] = useState(emptyBuyerDetails);
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
@@ -63,13 +65,14 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
         body: JSON.stringify({
           name: trimmedName,
           phone: cleanPhone,
-          email: "",
           requirement: requirementStr,
           purpose: "Plot Purchase / Investment",
           preferred_contact: "WhatsApp",
           message: `Inquired via Instant Hero Card for ${selectedPlot}. Sent directly to WhatsApp.`,
           source: finalSource,
           ...utmParams,
+          ...buyerDetails,
+          email: buyerDetails.measurement_email.trim(),
         }),
       });
 
@@ -78,7 +81,7 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
       if (res.ok && data.success) {
         setSubmitted(true);
         confetti({ particleCount: 80, spread: 90 });
-        trackLeadSubmit(finalSource, requirementStr);
+        trackLeadSubmit(finalSource, requirementStr, { submissionId: data.lead_id, email: buyerDetails.measurement_email, phone: cleanPhone, consent: buyerDetails.measurement_consent });
 
       } else {
         setErrorMsg(data.error || "Submission failed. Please call us directly.");
@@ -103,7 +106,7 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
               Get Layout &amp; Price Sheet
             </h3>
             <p className="text-xs sm:text-sm text-forest-900/90 font-semibold mt-1 leading-relaxed">
-              Villa plots in Dharwad start at ₹38 lakh. Get the approved layout and prices for available plots.
+              Villa plots in Dharwad start at ₹42 lakh. Get the approved layout and prices for available plots.
             </p>
           </div>
 
@@ -179,7 +182,9 @@ export const HeroLeadCard: React.FC<HeroLeadCardProps> = ({
             </div>
           </div>
 
-          {errorMsg && (
+          <BuyerDetails value={buyerDetails} onChange={setBuyerDetails} />
+
+            {errorMsg && (
             <p role="alert" className="text-sm text-rose-700 bg-rose-50 p-2.5 rounded-lg border border-rose-200 font-medium">
               {errorMsg}
             </p>
