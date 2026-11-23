@@ -65,7 +65,7 @@ export const Hero: React.FC<HeroProps> = ({
                   HDUDA &amp; NA-KJP Approved
                 </span>
                 <span className="px-3 py-1 rounded-full bg-white/90 text-gray-700 font-medium border border-gray-200 shadow-xs">
-                  18 to 30 Scenic Acres
+                  30 Scenic Acres
                 </span>
                 <span className="px-3 py-1 rounded-full bg-white/90 text-gray-700 font-medium border border-gray-200 shadow-xs">
                   30×40 · 30×50 · 40×60
