@@ -1,5 +1,26 @@
 # Project Memory & Development History — The Aurora Hills
 
+## November 23, 2026 - Late-evening Ads audit, four emails and live price correction
+
+Audit covers November 23, completed across the midnight rollover into November 24 IST. Late-evening campaign snapshot: 85 impressions, 16 clicks, INR 1,350.47 spend, 18.82% CTR, INR 84.40 average CPC, three Website Lead conversions, INR 450.16 per conversion and 18.75% conversion rate. Conversions by conversion time also showed three. November 22 comparison: 131 impressions, 30 clicks, INR 1,513.83 and zero conversions. These snapshots can revise; form conversions are not qualified buyers or plot bookings.
+
+Gmail all-folder overlap search November 21-23 returned the existing November 21 email plus FOUR new November 23 submissions from THREE new phone numbers. A broader November 23 project search found the same four submissions plus two Google Ads marketing/report emails, which are not leads. Historical all-folder submission search for all three phone numbers before November 23 returned no matches. All four new emails carry google / cpc / aurora_hills_search, a Google click ID and Saved To Database: Yes. No November 22 submission was found. No sales feedback or visit attendance was refreshed in this audit.
+
+- Row 100, C072, November 23 10:31:50 IST: 30x40 instant hero enquiry; Plot Purchase / Investment; WhatsApp; keyword sites in dharwad.
+- Row 101, C072, November 23 10:32:53 IST: separate 30x40 Plot (1kg Silver Offer) form; Build a Home; Phone; same keyword and click ID. Preserve the submission but count the buyer once.
+- Row 102, C073, November 23 11:49:41 IST: 40x60 instant hero enquiry; Plot Purchase / Investment; WhatsApp; keyword dharwad plots for sale.
+- Row 103, C074, November 23 16:34:54 IST: 30x40 instant hero enquiry; Plot Purchase / Investment; WhatsApp; keyword plots in dharwad.
+
+Register now totals 103 submissions including two tests, 101 non-test submissions, 73 distinct non-test contacts, 64 Ads-tagged submissions and 37 source-unverified submissions. Three Ads conversions and three distinct inbox contacts are consistent aggregate counts, not a proven event-by-event attribution match. Private names, phone numbers and click IDs remain in Gmail.
+
+Reviewed all 13 named search terms. Named terms contributed 31 impressions, four clicks, INR 393.25 and one conversion; Other search terms contributed 54 impressions, 12 clicks, INR 957.22 and two conversions (70.88% of spend is not individually disclosed). Paid named terms: the aurora hills dharwad, one click/INR 151.69/zero conversions; plots for sale in sattur dharwad, one click/INR 52.72/one conversion; sites in dharwad monthly instalment, two clicks/INR 188.84/zero conversions. Competitor terms vistara dharwad, neelgund developers hubli, swarna griha dharwad, gyanba layout dharwad and vaasa dharwad had no clicks. Other visible terms with no clicks: plots in dharwad, plots in hubli, hubli land for sale, hubli site for sale, property for sale in hubli. No new negatives added: this sample does not justify excluding competitors, financing interest or the converting Sattur query. Wider-window query and sales-outcome review remains pending.
+
+Verified enabled campaign, Maximize conversions, INR 1,500/day, campaign goal Aurora Hills - Completed Website Enquiries, status Eligible (Limited): Limited by search volume. Budget, bidding, geographic and audience settings were not changed. Billing balance was not refreshed in the evening; the earlier INR 7,507.60 balance is a morning snapshot only.
+
+LIVE AD CHANGE SAVED: RSA 827918306295 headline 8 now reads "Dharwad Villa Plots From ₹42L". Description 1: "HDUDA approved villa plots in Dharwad from ₹42 lakh. Check availability and book a visit." Description 2: "Explore premium township villa plots in Dharwad. View amenities and book a site visit." Other assets and final URL retained. Save confirmation said no policy issues; saved table showed the new descriptions, Eligible and ad strength Pending. This late-evening edit cannot explain enquiries received earlier that day. Local screenshot: outputs/ads-audit-2026-11-23/price-copy-saved.png.
+
+WEBSITE DEPLOYMENT VERIFIED: commit 316836c was pushed to main, Vercel reported success, and public HTML returned HTTP 200 with INR 42 lakh premium positioning and buyer-detail fields. This supersedes the earlier pending-deployment notes below. Includes optional budget/location qualification, opt-in enhanced matching, per-submission conversion transaction IDs and the modal-label fix. Build and 30 isolated lead-flow checks passed before deployment; no synthetic live lead was submitted. Google's enhanced-conversion diagnostic clearance has not yet been verified after real traffic. Offline qualified-lead/visit/booking imports, SEO accuracy cleanup and North Karnataka content/targeting expansion remain pending.
+
 ## November 23, 2026 - Owner corrects price and premium buyer positioning
 
 Latest owner instruction: villa plots START AT INR 42 LAKH, superseding the earlier INR 38 lakh direction for current marketing. Position Aurora Hills as a premium township with amenities and villa plots in Dharwad, for interested buyers across Hubli-Dharwad and North Karnataka. Desired personas include HNIs, investors, business owners and higher-earning professionals, including banking and senior public-service professionals. Qualify by actual budget, location fit, purpose and timeline; job titles are not proof of purchasing ability. No political-affiliation targeting or VIP-only housing eligibility.
@@ -103,11 +124,13 @@ At approximately 17:00 IST, the November sales sheet connector returned permissi
 
 Both price sheet forms acknowledge receipt and explain that sales will follow up with current prices and availability. The quick enquiry confirmation hides the plot selection prompt. The main form offers optional brochure download and WhatsApp follow-up. Production build passed.
 
-## Aurora Hills website submission register through 21 November 2026
+## Aurora Hills website submission register through 23 November 2026
 
 Verified against the Property Basket Gmail mailbox, including archived mail, spam and trash. The broad project lead search returned 90 results: 89 submission emails and one spreadsheet sharing notification. The submission search with the phone field independently returned 89 emails. The initial coverage ran from 26 August through the 17 November check, with five new emails appended from November 18-19 and four from November 20 and one from November 21 after overlapping date searches. Portal-only, offline and sales-sheet-only leads are outside these inbox totals.
 
-**99 submissions logged**, including two explicitly labelled local tests. The other 97 submissions used 70 distinct phone numbers. Of those 97, 60 carried the Aurora Hills Google Ads campaign tag and 37 have unverified attribution. These figures count forms received, including repeat and brochure requests, without asserting sales qualification.
+Four further emails were appended from November 23 after an all-folder November 21-23 overlap search and historical phone checks.
+
+**103 submissions logged**, including two explicitly labelled local tests. The other 101 submissions used 73 distinct phone numbers. Of those 101, 64 carried the Aurora Hills Google Ads campaign tag and 37 have unverified attribution. These figures count forms received, including repeat and brochure requests, without asserting sales qualification.
 
 Count every separate submission email once, including same-minute repeats. Use the contact reference to count distinct phone numbers separately. Each row can be located in Gmail by date, time and form type. For future updates, recheck an overlapping date range and compare the number of messages for each matching timestamp, contact and form type before appending. Preserve previously recorded submissions.
 
@@ -212,6 +235,10 @@ Count every separate submission email once, including same-minute repeats. Use t
 | 97 | 2026-11-20 | 07:50 | C012 | Unverified | Site visit request |
 | 98 | 2026-11-20 | 13:12 | C070 | Google Ads | Enquiry form |
 | 99 | 2026-11-21 | 10:21 | C071 | Google Ads | Enquiry form |
+| 100 | 2026-11-23 | 10:31:50 | C072 | Google Ads | Enquiry form |
+| 101 | 2026-11-23 | 10:32:53 | C072 | Google Ads | Enquiry form |
+| 102 | 2026-11-23 | 11:49:41 | C073 | Google Ads | Enquiry form |
+| 103 | 2026-11-23 | 16:34:54 | C074 | Google Ads | Enquiry form |
 
 ## November 17, 2026 — First full day on Maximize conversions, intraday audit
 

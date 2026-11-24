@@ -1,5 +1,13 @@
 # GEMINI.md — Project Memory, Rules & Progress Register
 
+## November 23, 2026 - Late-evening audit and deployed changes
+
+Audit finalized across the November 24 IST rollover, covering November 23. Campaign: 85 impressions, 16 clicks, INR 1,350.47, three Website Lead conversions (also three by conversion time), INR 450.16 per conversion. Gmail: four new submissions from three new contacts, all Aurora Google Ads tagged and database-saved; one person submitted twice. Earlier-phone search found no prior submissions for these contacts. MEMORY.md rows 100-103 added as C072 twice, C073 and C074. Current register: 103 submissions including two tests, 101 non-test submissions, 73 distinct contacts, 64 Ads-tagged submissions, 37 source-unverified. These are enquiries, not qualified buyers or bookings.
+
+Saved live RSA headline "Dharwad Villa Plots From ₹42L" and two descriptions emphasizing INR 42 lakh and premium township villa plots in Dharwad. Save reported no policy issues; saved row showed Eligible, ad strength Pending. Kept Maximize conversions, INR 1,500/day and Completed Website Enquiries goal. Campaign limited by search volume. Reviewed all 13 named daily queries; no additional negative justified. Sattur plot query converted; instalment query alone is not grounds for exclusion. Other search terms account for 70.88% of spend. No evening balance or sales-feedback refresh.
+
+Website commit 316836c pushed and production deployment verified successful, with live INR 42 lakh copy and optional buyer details. Build and 30 isolated checks passed before deployment. Includes opt-in matching and per-submission transaction IDs; no live test enquiry sent. Earlier pending-deployment wording below is historical and superseded. Enhanced-conversion diagnostic clearance, offline outcome imports, wider post-switch quality review, SEO accuracy fixes and North Karnataka expansion remain pending. No budget or geographic expansion applied.
+
 ## November 23, 2026 - Current price and premium positioning (supersedes older pricing)
 
 Owner confirmed a revised starting price of INR 42 lakh. Use this for current marketing instead of the earlier INR 38 lakh instruction. Position the Dharwad project as a premium township with lifestyle amenities and villa plots, welcoming budget-compatible buyers from Hubli and across North Karnataka. HNIs, investors, business owners and higher-earning professionals are desired buyer personas; qualify genuine requirements, budget, Dharwad fit and buying timeline rather than assuming intent from occupation. Do not target political affiliation or restrict housing access by social status.

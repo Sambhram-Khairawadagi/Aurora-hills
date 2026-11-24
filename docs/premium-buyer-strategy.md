@@ -30,7 +30,7 @@ Count distinct buyers contacted, budget/location-qualified buyers, attended site
 
 ## Implementation status
 
-Local website price references, price defaults, structured starting price, hero message, FAQ and optional budget bands updated on 23 November. Historical MD entries and old reel exports intentionally retain their original dated prices. Live Ads copy still needs checking and changing from its last verified INR 38 lakh message. Brochure and third-party listings need a separate current-price review. Search/AI accuracy cleanup and regional guide from the prior audit remain pending. Do not describe these as deployed or saved in Ads until verified.
+Website price references, price defaults, structured starting price, hero message, FAQ and optional budget bands were deployed in commit 316836c on 23 November; Vercel success and public HTML were verified. Historical MD entries and old reel exports retain their original dated prices. The live RSA was updated and saved late on November 23 with "Dharwad Villa Plots From ₹42L", the INR 42 lakh description and a premium township description. Saved row showed Eligible and ad strength Pending, with no policy issues reported at save. Budget remains INR 1,500/day on Maximize conversions. No audience or geographic expansion applied. Brochure and third-party listings need a separate current-price review. Search/AI accuracy cleanup and regional guide remain pending.
 
 ## Official references
 
