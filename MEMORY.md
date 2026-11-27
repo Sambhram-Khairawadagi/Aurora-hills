@@ -1,5 +1,9 @@
 # Project Memory & Development History — The Aurora Hills
 
+## November 27, 2026 - Scheduled feedback review incomplete
+
+At approximately 17:05 IST, the Google Sheets connector returned 403 permission denied for the November workbook; the Gmail connector was still connected to a different personal mailbox, not Property Basket. Browser fallback could identify the correct November 2026 sheet and Property Basket account, but no feedback cells were read. Active user input was detected and the browser moved to another task, so automation stopped to avoid interfering. Neither the feedback data nor Property Basket submission emails were refreshed. This is an access/interruption result, not evidence of zero new leads, unchanged feedback or no visits. Last verified register remains 103 submissions including two tests, 101 non-test submissions and 73 distinct contacts through November 23. No campaign, bidding, budget, keyword or source-sheet changes were made. Resume with an overlap from November 23 when the browser is available; preserve the November 21 reported-booking finding and do not infer new sales outcomes.
+
 ## November 23, 2026 - Late-evening Ads audit, four emails and live price correction
 
 Audit covers November 23, completed across the midnight rollover into November 24 IST. Late-evening campaign snapshot: 85 impressions, 16 clicks, INR 1,350.47 spend, 18.82% CTR, INR 84.40 average CPC, three Website Lead conversions, INR 450.16 per conversion and 18.75% conversion rate. Conversions by conversion time also showed three. November 22 comparison: 131 impressions, 30 clicks, INR 1,513.83 and zero conversions. These snapshots can revise; form conversions are not qualified buyers or plot bookings.
